@@ -1,0 +1,89 @@
+"DOTAUnits"
+{
+    "npc_majia"
+    {//必填字段
+        "BaseClass"	"npc_dota_creature"//单位的基类
+        "Model"		"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"//模型
+    //自定义字段
+"TksPopUse"		"2"		//招募消耗人口
+"TksAttackType" "fire"  //自定义的攻击类型 火   攻击类型："none","tree","fire","electrical","water","land","god"
+"TksDefendType" "water" //自定义的防御类型 水             普通    木     火         电        水      地     神
+"UnitLabel"		"shuguo"//单位标签 我在这里写了国家 分别是shuguo / weiguo/ wuguo/ qunxiong 都是小写
+    //基础设置字段
+        "ModelScale"		"1.0"//模型比例
+        "Level"				"1"  //出生等级
+        "ArmorPhysical"		"1"	 //物理护甲
+        "StatusHealth"		"200"//基础生命值
+        "StatusHealthRegen"	"0.0"//基础生命回复
+        "StatusMana"		"20" //基础魔法值
+        "StatusManaRegen"	"0.0"//基础魔法恢复
+        
+        "BountyXP" 		"0"//被击杀提供的经验奖励
+        "BountyGoldMin"	"0"//被击杀提供的最小金钱奖励
+        "BountyGoldMax"	"0"//被击杀提供的最大经验奖励
+    //移动相关
+        "MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"//移动类型
+        "MovementSpeed"			"280"//移动速度
+        "VisionDaytimeRange"	"400"//白天视野范围
+        "VisionNighttimeRange"	"400"//夜晚视野范围
+    //技能
+        "Ability1"	"skill_hero_rende"
+        "Ability2"	""
+        "Ability7"	""
+        "Ability8"	""
+        "Ability9"	""
+        "Ability10"	""
+        "Ability11"	""
+    //普攻
+        "AttackDamageMin"	"50" //最小普攻伤害
+        "AttackDamageMax"	"90" //最大普攻伤害
+        "AttackRange"		"400"//普攻距离
+        "AttackRate"		"1.6"//普攻频率
+        "AttackAcquisitionRange"	"1800"//仇恨范围
+        "AttackAnimationPoint"		"0.4"//攻击动画
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"//攻击类型，近战/远程
+        "ProjectileModel"	"particles/econ/items/luna/luna_crescent_moon/luna_attack_crescent_moon.vpcf"//远程单位的普攻投射物
+        "ProjectileSpeed"	"1000"//普攻投射物的速度
+    }
+}
+
+"DOTAHeroes"{
+    "npc_hero_zhangzilong"
+    {
+        "override_hero"	"npc_dota_hero_ancient_apparition"
+        "UnitLabel"		"shuguo"
+        "TksPopUse"		"2"     //招募消耗人口
+        "TksAttackType"	"fire"  //攻击类型："none","tree","fire","electrical","water","land","god"
+        "TksdefendType"	"none"  //          普通    木     火         电        水      地     神
+        "vscripts"		"units/npc_hero_liubei"
+
+        "Level"		"1"
+        "Ability1"	"skill_hero_rende"
+        "Ability2"	"skill_hero_jijiang"
+        "Ability3"	"skill_create_test2"
+        "Ability7"	""
+        "Ability8"	""
+        "Ability9"	""
+        "Ability10"	""
+        "Ability11"	""
+
+        "AttributeBaseStrength"		"20"
+        "AttributeStrengthGain"		"0.5"
+        "AttributeBaseAgility"		"12"
+        "AttributeAgilityGain"		"1"
+        "AttributeBaseIntelligence"	"12"
+        "AttributeIntelligenceGain"	"1"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"			"50"
+        "AttackDamageMax"			"70"
+        "AttackRate"				"230"
+        "AttackAcquisitionRange"	"900"
+        "AttackRange"				"150"
+        "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"				"275"
+        "StatusHealth"				"2000"
+        "StatusHealthRegen"			"0.5"
+        "StatusMana"				"100"
+        "StatusManaRegen"			"0.5"
+    }
+}
