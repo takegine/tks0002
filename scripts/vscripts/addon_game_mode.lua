@@ -32,7 +32,7 @@ function CAddonTemplateGameMode:InitGameMode()
     GameRules:SetUseUniversalShopMode(true)
     GameRules:SetHeroRespawnEnabled( false )
     GameRules:SetCustomGameSetupAutoLaunchDelay(0)
-    GameRules:EnableCustomGameSetupAutoLaunch(true)
+    --GameRules:EnableCustomGameSetupAutoLaunch(true)
     GameRules:LockCustomGameSetupTeamAssignment(true)
     GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)--死亡后自己不扣钱
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 0 )
@@ -50,14 +50,16 @@ function CAddonTemplateGameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetHUDVisible(5,true)   --设置HUD元素，1元素可见
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_STRENGTH_DAMAGE, 5 )
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_STRENGTH_HP, 100 )
-    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_STRENGTH_HP_REGEN, 0 )
+    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_STRENGTH_HP_REGEN, 0.03 )
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_AGILITY_DAMAGE, 5 )
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_AGILITY_ARMOR, 0.25 )
-    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_AGILITY_ATTACK_SPEED, 0 )
+    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_AGILITY_ATTACK_SPEED, 0.01 )
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_DAMAGE, 5 )
-    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 0.2 )
+    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 0.25 )
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN, 0.01 )
+    GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( CAddonTemplateGameMode, "DamageFilter" ), self )
     ListenToGameEvent("game_rules_state_change",Dynamic_Wrap(CAddonTemplateGameMode,"OnGameRulesStateChange"), self)
+    ListenToGameEvent("entity_hurt",            Dynamic_Wrap(CAddonTemplateGameMode, "entity_hurt"), self)
     
     CustomGameEventManager:RegisterListener( "createnewherotest", Dynamic_Wrap(self,"createnewherotest") )
     CustomGameEventManager:RegisterListener("refreshlist",Dynamic_Wrap(self, 'refreshlist'))
@@ -85,8 +87,7 @@ function CAddonTemplateGameMode:OnGameRulesStateChange( keys )
 
         elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
                 print("Player game begin")  --玩家开始游戏
-                
-                --ShuaGuai("npc_dota_creature_gnoll_assassin",1)--测试刷怪
+
                 print("Player---- OnGameInProgress endding")  --玩家开始游戏
 
                 CAddonTemplateGameMode:refreshlist()
@@ -109,18 +110,6 @@ end
 -- Evaluate the state of the game
 function CAddonTemplateGameMode:OnThink() return 1 end
 
-function ShuaGuai( CreateName,number)
-        for i=1,number do
-                --获取ShuaGuai_1这个实体
-                local ShuaGuai_entity = Entities:FindByName(nil,"creep_birth_0")
-                --创建单位
-                local ShuaGuai = CreateUnitByName(CreateName,ShuaGuai_entity:GetOrigin(),false,nil,nil,DOTA_TEAM_NEUTRALS)
-                --添加相位移动的modifier，持续时间0.1秒
-                --当相位移动的modifier消失，系统会自动计算碰撞，这样就避免了卡位
-                ShuaGuai:AddNewModifier(nil, nil, "modifier_phased", {duration=0.1})        
-        end
-end
-
 function CAddonTemplateGameMode:createnewherotest( data ) 
     local hero   = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
     local teamid = 3
@@ -134,4 +123,31 @@ function CAddonTemplateGameMode:refreshlist()
                         CustomGameEventManager:Send_ServerToAllClients('hero_info', {name=name,hero=info.override_hero}) 
                 end
         end
+end
+
+function CAddonTemplateGameMode:entity_hurt(keys)
+        
+        print("entity_hurt")
+        DeepPrintTable(keys)
+
+        local killedUnit = EntIndexToHScript( keys.entindex_killed   ) 
+        local killerUnit = EntIndexToHScript( keys.entindex_attacker ) 
+        --damagebits
+end
+
+function CAddonTemplateGameMode:DamageFilter(filterTable)
+        print("DamageFilter")
+        DeepPrintTable(filterTable)
+        local damage=filterTable.damage
+        local killedUnit = EntIndexToHScript( filterTable.entindex_victim_const   ) 
+        local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const ) 
+        local armor = killedUnit:GetPhysicalArmorValue(false)
+        local oldkang  = 1-52/48*armor/(18.75+armor)
+        local newkang  = 1-armor/(100+armor)
+        print(damage,oldkang)
+        
+        filterTable.damage=filterTable.damage/oldkang*newkang
+        print(filterTable.damage,newkang)
+
+        return true
 end
