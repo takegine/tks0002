@@ -1,9 +1,5 @@
-// Dota2 Editor
-// Get latest version: https://github.com/zombieJ/nw-dota2editor
-
 "DOTAUnits"
 {
-	"Version"		"1"
 
 	// =================================================================================
 	// Creature: Gnoll Assassin
@@ -120,30 +116,5 @@
 		"UnitLabel"	"shuguo"
 		"ConsideredHero"	"0"
 		"UseNeutralCreepBehavior"	"0"
-	}
-
-	"npc_creature_0"
-	{
-		"BaseClass"	"npc_dota_player"
-		"Ability1"	""
-		"Ability2"	""
-		"Ability3"	""
-		"Ability4"	""
-		"Ability5"	""
-		"Ability6"	""
-		"Ability7"	""
-		"Ability8"	""
-		"Ability9"	""
-		"Ability10"	""
-		"Ability11"	""
-		"Ability12"	""
-		"Ability13"	""
-		"Ability14"	""
-		"Ability15"	""
-		"Ability16"	""
-		"Model"	"models/items/hex/sheep_hex/sheep_hex_gold.vmdl"
-		"MovementSpeed"	"0"
-		"AttackDamageMax"	"0"
-		"AttackDamageMin"	"0"
 	}
 }
