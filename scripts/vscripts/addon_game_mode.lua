@@ -59,50 +59,50 @@ function CAddonTemplateGameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN, 0.01 )
     GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( CAddonTemplateGameMode, "DamageFilter" ), self )
     ListenToGameEvent("game_rules_state_change",Dynamic_Wrap(CAddonTemplateGameMode,"OnGameRulesStateChange"), self)
-    ListenToGameEvent("entity_hurt",            Dynamic_Wrap(CAddonTemplateGameMode, "entity_hurt"), self)
-    
+    ListenToGameEvent("entity_hurt",        Dynamic_Wrap(CAddonTemplateGameMode, "entity_hurt"), self)
+
     CustomGameEventManager:RegisterListener( "createnewherotest", Dynamic_Wrap(self,"createnewherotest") )
     CustomGameEventManager:RegisterListener("refreshlist",Dynamic_Wrap(self, 'refreshlist'))
 end
 
 function CAddonTemplateGameMode:OnGameRulesStateChange( keys )
-        print ("print  OnGameRulesStateChange is running.")
-               DeepPrintTable(keys)    --详细打印传递进来的表
-        local newState = GameRules:State_Get() --获取当前游戏阶段
+    print ("print  OnGameRulesStateChange is running.")
+           DeepPrintTable(keys)    --详细打印传递进来的表
+    local newState = GameRules:State_Get() --获取当前游戏阶段
 
-        if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
-                print("Player begin select team") --玩家处于选择队伍
-                
-        elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then    
-        		print("Player begin select hero")  --玩家处于选择英雄界面
+    if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+        print("Player begin select team") --玩家处于选择队伍
+
+    elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+    		print("Player begin select hero")  --玩家处于选择英雄界面
 
 
-        elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
-                print("Player in befor game")  --进游戏直到倒数结束
-                --CustomUI:DynamicHud_Create(-1,"psd","file://{resources}/layout/custom_game/uiscreen.xml",nil)--创建选择难度面板
+    elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
+        print("Player in befor game")  --进游戏直到倒数结束
+        --CustomUI:DynamicHud_Create(-1,"psd","file://{resources}/layout/custom_game/uiscreen.xml",nil)--创建选择难度面板
 
-                --CreateHeroForPlayer(string unitName, handle player)
+        --CreateHeroForPlayer(string unitName, handle player)
 
-                --CreateUnitByName(npc_creature_0,Entities:FindByName(nil,"playerlocal_1"):GetOrigin(),false,nil,nil,DOTA_TEAM_CUSTOM_1)
+        --CreateUnitByName(npc_creature_0,Entities:FindByName(nil,"playerlocal_1"):GetOrigin(),false,nil,nil,DOTA_TEAM_CUSTOM_1)
 
-        elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-                print("Player game begin")  --玩家开始游戏
+    elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        print("Player game begin")  --玩家开始游戏
 
-                print("Player---- OnGameInProgress endding")  --玩家开始游戏
+        print("Player---- OnGameInProgress endding")  --玩家开始游戏
 
-                CAddonTemplateGameMode:refreshlist()
+        CAddonTemplateGameMode:refreshlist()
 
-        elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
-        	for i=0, PlayerResource:GetPlayerCount()-1 do
-                    if  PlayerResource:HasSelectedHero(i) == false then
-                    	
-                        PlayerResource:GetPlayer(i):MakeRandomHeroSelection()
-                    end
+    elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+    	for i=0, PlayerResource:GetPlayerCount()-1 do
+            if  PlayerResource:HasSelectedHero(i) == false then
+
+            PlayerResource:GetPlayer(i):MakeRandomHeroSelection()
             end
-
-        elseif newState == DOTA_GAMERULES_STATE_POST_GAME then
-                print("Player are show case")  --游戏结束
         end
+
+    elseif newState == DOTA_GAMERULES_STATE_POST_GAME then
+        print("Player are show case")  --游戏结束
+    end
 end
 
 
@@ -110,58 +110,57 @@ end
 -- Evaluate the state of the game
 function CAddonTemplateGameMode:OnThink() return 1 end
 
-function CAddonTemplateGameMode:createnewherotest( data ) 
+function CAddonTemplateGameMode:createnewherotest( data )
     local hero   = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
     local teamid = 3
-    if data.good then teamid = PlayerResource:GetCustomTeamAssignment(data.PlayerID) end 
-    CreateUnitByNameAsync( data.way, Entities:FindByName(nil,"creep_birth_"..(teamid-3)):GetAbsOrigin(), true, nil, nil, teamid,  function( v ) v:SetControllableByPlayer( data.PlayerID, false ) v:Hold() v:SetIdleAcquire( false ) v:SetAcquisitionRange( 0 ) end )  
+    if data.good then teamid = PlayerResource:GetCustomTeamAssignment(data.PlayerID) end
+    CreateUnitByNameAsync( data.way, Entities:FindByName(nil,"creep_birth_"..(teamid-3)):GetAbsOrigin(), true, nil, nil, teamid,  function( v ) v:SetControllableByPlayer( data.PlayerID, false ) v:Hold() v:SetIdleAcquire( false ) v:SetAcquisitionRange( 0 ) end )
 end
 
 function CAddonTemplateGameMode:refreshlist()
-        local relist = {}
-        local herolist= LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
-        local ablelist= LoadKeyValues('scripts/npc/npc_skill_custom.txt')
-        for name,info in pairs(herolist)do 
-                if info ~= 1 and name ~= SET_FORCE_HERO then 
-                        relist['name']=name
-                        relist['hero']=info.override_hero
+    local relist = {}
+    local herolist= LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
+    local ablelist= LoadKeyValues('scripts/npc/npc_skill_custom.txt')
+    for name,info in pairs(herolist)do
+        if info ~= 1 and name ~= SET_FORCE_HERO then
+            relist['name']=name
+            relist['hero']=info.override_hero
 
-                        if ablelist[name] then
-                                relist['able']={}
-                                for k,v in pairs(ablelist[name]) do
-                                        relist['able'][k]=v
-                                end
-                        end
+            if ablelist[name] then
+                relist['able']={}
+                for k,v in pairs(ablelist[name]) do
+                    relist['able'][k]=v
                 end
-        end
+            end
 
-        
-        CustomGameEventManager:Send_ServerToAllClients('hero_info', relist) 
+        CustomGameEventManager:Send_ServerToAllClients('hero_info', relist)
+        end
+    end
 end
 
 function CAddonTemplateGameMode:entity_hurt(keys)
-        
-        print("entity_hurt")
-        DeepPrintTable(keys)
 
-        local killedUnit = EntIndexToHScript( keys.entindex_killed   ) 
-        local killerUnit = EntIndexToHScript( keys.entindex_attacker ) 
-        --damagebits
+    print("entity_hurt")
+    DeepPrintTable(keys)
+
+    local killedUnit = EntIndexToHScript( keys.entindex_killed   )
+    local killerUnit = EntIndexToHScript( keys.entindex_attacker )
+    --damagebits
 end
 
 function CAddonTemplateGameMode:DamageFilter(filterTable)
-        print("DamageFilter")
-        DeepPrintTable(filterTable)
-        local damage=filterTable.damage
-        local killedUnit = EntIndexToHScript( filterTable.entindex_victim_const   ) 
-        local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const ) 
-        local armor = killedUnit:GetPhysicalArmorValue(false)
-        local oldkang  = 1-52/48*armor/(18.75+armor)
-        local newkang  = 1-armor/(100+armor)
-        print(damage,oldkang)
-        
-        filterTable.damage=filterTable.damage/oldkang*newkang
-        print(filterTable.damage,newkang)
+    print("DamageFilter")
+    DeepPrintTable(filterTable)
+    local damage=filterTable.damage
+    local killedUnit = EntIndexToHScript( filterTable.entindex_victim_const   )
+    local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const )
+    local armor = killedUnit:GetPhysicalArmorValue(false)
+    local oldkang  = 1-52/48*armor/(18.75+armor)
+    local newkang  = 1-armor/(100+armor)
+    print(damage,oldkang)
 
-        return true
+    filterTable.damage=filterTable.damage/oldkang*newkang
+    print(filterTable.damage,newkang)
+
+    return true
 end
