@@ -118,11 +118,24 @@ function CAddonTemplateGameMode:createnewherotest( data )
 end
 
 function CAddonTemplateGameMode:refreshlist()
-        for name,info in pairs(LoadKeyValues('scripts/npc/npc_heroes_custom.txt'))do 
+        local relist = {}
+        local herolist= LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
+        local ablelist= LoadKeyValues('scripts/npc/npc_skill_custom.txt')
+        for name,info in pairs(herolist)do 
                 if info ~= 1 and name ~= SET_FORCE_HERO then 
-                        CustomGameEventManager:Send_ServerToAllClients('hero_info', {name=name,hero=info.override_hero}) 
+                        relist[name]['name']=name
+                        relist[name]['hero']=info.override_hero
+
+                        if ablelist[name] then
+                                for k,v in pairs(ablelist[name]) do
+                                        relist[name][ab..k]=v
+                                end
+                        end
                 end
         end
+
+        
+        CustomGameEventManager:Send_ServerToAllClients('hero_info', relist) 
 end
 
 function CAddonTemplateGameMode:entity_hurt(keys)
