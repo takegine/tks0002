@@ -3314,23 +3314,24 @@
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"	"1"
-		"MaxLevel"	"4"
+		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
-		"AbilityCastPoint"	"0.1 0.1 0.1 0.1"
+		"AbilityCastPoint"	"0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1"
+		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_1"
 		// Time
 		// -------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"	"3.0 3.0 3.0 3.0"
+		"AbilityCooldown"	"18.0 18.0 18.0 18.0 18.0 18.0 18.0 18.0 18.0 18.0"
 		// Cost
 		// -------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"	"10 20 30 40"
+		"AbilityManaCost"	"0"
 		// Casting
 		// -------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"	"1000"
 		"precache"
 		{
-			"particle"	"particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_dagger_debuff.vpcf"
-			"particle"	"particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_dagger_debuff.vpcf"
 			"particle"	"meixianghao"
+			"particle"	"particles\econ\items\phantom_assassin\pa_ti8_immortal_head\pa_ti8_immortal_dagger_debuff.vpcf"
+			"particle"	"particles/econ/items/witch_doctor/wd_ti8_immortal_head/wd_ti8_immortal_head_ambient_bubbles.vpcf"
 		}
 		"OnSpellStart"
 		{
@@ -3339,30 +3340,11 @@
 				"EffectName"	"kongzhe"
 				"Target"	"TARGET"
 			}
-			"FireEffect"
-			{
-				"Target"	"TARGET"
-				"EffectName"	"particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_dagger_debuff.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"ControlPoints"
-				{
-					"00"	"%fanwei %fanwei %fanwei"
-				}
-			}
-			"FireEffect"
-			{
-				"Target"	"TARGET"
-				"EffectName"	"particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_dagger_debuff.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"ControlPoints"
-				{
-					"00"	"%fanwei %fanwei %fanwei"
-				}
-			}
 			"ApplyModifier"
 			{
 				"Target"	"TARGET"
 				"ModifierName"	"modifier_skill_hero_zhuronglieren"
+				"Duration"	"jianjia"
 			}
 			"ActOnTargets"
 			{
@@ -3378,8 +3360,8 @@
 					"ApplyModifier"
 					{
 						"Target"	"TARGET"
-						"ModifierName"	"modifier_skill_hero_zhuronglieren"
-						"Duration"	"jianjia"
+						"ModifierName"	"modifier_skill_hero_zhuronglieren_2"
+						"Duration"	"difangshanghai"
 					}
 					"FireEffect"
 					{
@@ -3388,6 +3370,11 @@
 						"EffectAttachType"	"follow_origin"
 						"ControlPoints"	{}
 						"ControlPointEntities"	{}
+					}
+					"ApplyModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_skill_hero_zhuronglieren_3"
 					}
 				}
 			}
@@ -3400,7 +3387,7 @@
 				"IsDebuff"	"1"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-5"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%jianjia"
 				}
 				"States"	{}
 				"OnIntervalThink"
@@ -3411,8 +3398,63 @@
 						"Type"	"DAMAGE_TYPE_MAGICAL"
 						"Damage"	"%shanghai"
 					}
+					"FireEffect"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"particles\econ\items\phantom_assassin\pa_ti8_immortal_head\pa_ti8_immortal_dagger_debuff.vpcf"
+					}
 				}
 				"ThinkInterval"	"1"
+				"EffectAttachType"	"attach_origin"
+				"StatusEffectName"	"particles\econ\items\phantom_assassin\pa_ti8_immortal_head\pa_ti8_immortal_dagger_debuff.vpcf"
+				"IsHidden"	"0"
+			}
+			"modifier_skill_hero_zhuronglieren_2"
+			{
+				"Duration"	"%chixushijian"
+				"IsDebuff"	"1"
+				"EffectAttachType"	"attach_hitloc"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"	"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%fujinshanghai"
+					}
+					"AttachEffect"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"particles/econ/items/witch_doctor/wd_ti8_immortal_head/wd_ti8_immortal_head_ambient_bubbles.vpcf"
+						"EffectAttachType"	"attach_hitloc"
+					}
+				}
+				"ThinkInterval"	"1"
+				"IsHidden"	"1"
+				"StatusEffectName"	"particles\econ\items\phantom_assassin\pa_ti8_immortal_head\pa_ti8_immortal_dagger_debuff.vpcf"
+			}
+			"modifier_skill_hero_zhuronglieren_3"
+			{
+				"OnIntervalThink"
+				{
+					"RemoveModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_skill_hero_zhuronglieren"
+					}
+					"RemoveModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_skill_hero_zhuronglieren_2"
+					}
+					"RemoveModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_skill_hero_zhuronglieren_3"
+					}
+				}
+				"ThinkInterval"	"%chixushijian"
+				"IsHidden"	"1"
 			}
 		}
 		// Special
@@ -3422,7 +3464,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"shanghai"	"50 50 50 50"
+				"shanghai"	"44 297 473 682 924 1199 1507 1848 2222"
 			}
 			"02"
 			{
@@ -3433,6 +3475,16 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"chixushijian"	"5"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"jianjia"	"-4 -8 -12 -16 -20 -24 -28 -32 -36 -40"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"fujinshanghai"	"33 110 209 330 473 638 825 1034 1265 1518"
 			}
 		}
 	}
@@ -3798,7 +3850,6 @@
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"	"1"
 		"LevelsBetweenUpgrades"	"1"
