@@ -1,6 +1,5 @@
 "DOTAUnits"
 {
-
 	// =================================================================================
 	// Creature: Gnoll Assassin
 	// =================================================================================
@@ -18,7 +17,7 @@
 		// Abilities
 		// ----------------------------------------------------------------
 		// Ability 1
-		"Ability1"	"templar_assassin_refraction_holdout"
+		"Ability1"	""
 		// Ability 2
 		"Ability2"	""
 		// Ability 3
@@ -31,7 +30,7 @@
 		"ArmorPhysical"	"1"
 		// Attack
 		// ----------------------------------------------------------------
-		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		// Damage range min.
 		"AttackDamageMin"	"70"
 		// Damage range max.
@@ -41,7 +40,7 @@
 		// Normalized time in animation cycle to attack.
 		"AttackAnimationPoint"	"0.4"
 		// Range within a target can be acquired.
-		"AttackAcquisitionRange"	"800"
+		"AttackAcquisitionRange"	"1800"
 		// Range within a target can be attacked.
 		"AttackRange"	"500"
 		// Particle system model for projectile.
@@ -64,11 +63,11 @@
 		// ----------------------------------------------------------------
 		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
 		// Speed.
-		"MovementSpeed"	"270"
+		"MovementSpeed"	"280"
 		// Status
 		// ----------------------------------------------------------------
 		// Base health.
-		"StatusHealth"	"75"
+		"StatusHealth"	"200"
 		// Health regeneration rate.
 		"StatusHealthRegen"	"0.5"
 		// Base mana.
@@ -116,5 +115,266 @@
 		"UnitLabel"	"shuguo"
 		"ConsideredHero"	"0"
 		"UseNeutralCreepBehavior"	"0"
+		"TksPopUse"	"1"
+	}
+
+	"npc_majia"
+	{
+		// 单位的基类
+		"BaseClass"	"npc_dota_creature"
+		// 模型
+		"Model"	"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		// 基础设置字段
+		// 模型比例
+		"ModelScale"	"1.0"
+		// 出生等级
+		"Level"	"1"
+		// 物理护甲
+		"ArmorPhysical"	"1"
+		// 基础生命值
+		"StatusHealth"	"200"
+		// 基础生命回复
+		"StatusHealthRegen"	"0.0"
+		// 基础魔法值
+		"StatusMana"	"20"
+		// 基础魔法恢复
+		"StatusManaRegen"	"0.0"
+		// 被击杀提供的经验奖励
+		"BountyXP"	"0"
+		// 被击杀提供的最小金钱奖励
+		"BountyGoldMin"	"0"
+		// 被击杀提供的最大经验奖励
+		"BountyGoldMax"	"0"
+		// 移动相关
+		// 移动类型
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+		// 移动速度
+		"MovementSpeed"	"280"
+		// 白天视野范围
+		"VisionDaytimeRange"	"400"
+		// 夜晚视野范围
+		"VisionNighttimeRange"	"400"
+		// 技能
+		"Ability1"	""
+		"Ability2"	""
+		"Ability7"	""
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		// 普攻
+		// 最小普攻伤害
+		"AttackDamageMin"	"50"
+		// 最大普攻伤害
+		"AttackDamageMax"	"90"
+		// 普攻距离
+		"AttackRange"	"400"
+		// 普攻频率
+		"AttackRate"	"1.6"
+		// 仇恨范围
+		"AttackAcquisitionRange"	"1800"
+		// 攻击动画
+		"AttackAnimationPoint"	"0.4"
+		// 攻击类型，近战/远程
+		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		// 远程单位的普攻投射物
+		"ProjectileModel"	"particles/econ/items/luna/luna_crescent_moon/luna_attack_crescent_moon.vpcf"
+		// 普攻投射物的速度
+		"ProjectileSpeed"	"1000"
+		"Ability3"	""
+		"Ability4"	""
+		"Ability5"	""
+		"Ability6"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+	}
+
+	"npc_unit_nvlieshou"
+	{
+		// 单位的基类
+		"BaseClass"	"npc_dota_creature"
+		// 模型
+		"Model"	"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		// 基础设置字段
+		// 模型比例
+		"ModelScale"	"1.0"
+		// 出生等级
+		"Level"	"1"
+		// 物理护甲
+		"ArmorPhysical"	"1"
+		// 基础生命值
+		"StatusHealth"	"200"
+		// 基础生命回复
+		"StatusHealthRegen"	"0.0"
+		// 基础魔法值
+		"StatusMana"	"20"
+		// 基础魔法恢复
+		"StatusManaRegen"	"0.0"
+		// 被击杀提供的经验奖励
+		"BountyXP"	"0"
+		// 被击杀提供的最小金钱奖励
+		"BountyGoldMin"	"0"
+		// 被击杀提供的最大经验奖励
+		"BountyGoldMax"	"0"
+		// 移动相关
+		// 移动类型
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+		// 移动速度
+		"MovementSpeed"	"280"
+		// 白天视野范围
+		"VisionDaytimeRange"	"400"
+		// 夜晚视野范围
+		"VisionNighttimeRange"	"400"
+		// 技能
+		"Ability1"	""
+		"Ability2"	""
+		"Ability7"	""
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		// 普攻
+		// 最小普攻伤害
+		"AttackDamageMin"	"50"
+		// 最大普攻伤害
+		"AttackDamageMax"	"90"
+		// 普攻距离
+		"AttackRange"	"400"
+		// 普攻频率
+		"AttackRate"	"1.6"
+		// 仇恨范围
+		"AttackAcquisitionRange"	"1800"
+		// 攻击动画
+		"AttackAnimationPoint"	"0.4"
+		// 攻击类型，近战/远程
+		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		// 远程单位的普攻投射物
+		"ProjectileModel"	"particles/econ/items/luna/luna_crescent_moon/luna_attack_crescent_moon.vpcf"
+		// 普攻投射物的速度
+		"ProjectileSpeed"	"1000"
+		"Ability3"	""
+		"Ability4"	""
+		"Ability5"	""
+		"Ability6"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+	}
+
+	"build_zhalan"
+	{
+		"BaseClass"	"npc_dota_fort"
+		"Ability1"	""
+		"Ability2"	""
+		"Ability3"	""
+		"Ability4"	""
+		"Ability5"	""
+		"Ability6"	""
+		"Ability7"	""
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+		"Model"	"models/props_generic/barrel_01.vmdl"
+		"BoundsHullName"	"DOTA_HULL_SIZE_REGULAR"
+	}
+
+	"tower_zhugong"
+	{
+		"BaseClass"	"npc_dota_building"
+		"Ability1"	""
+		"Ability2"	""
+		"Ability3"	""
+		"Ability4"	""
+		"Ability5"	""
+		"Ability6"	""
+		"Ability7"	"skill_loseHP"
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
+		"Model"	"models/props_generic/tent_01a.vmdl"
+		"HasInventory"	"1"
+		"ConsideredHero"	"1"
+		"ModelScale"	"1.1"
+		"RingRadius"	"100"
+	}
+//先生 6-13
+	"npc_dota_creature_gnoll_jinzhan"
+	{
+		"BaseClass"	"npc_dota_creature"
+		"Ability1"	""
+		"Ability2"	""
+		"Ability3"	""
+		"Ability4"	""
+		"Ability5"	""
+		"Ability6"	""
+		"Ability7"	""
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+		"Model"	"models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmdl"
+		"ModelScale"	"1"
+		"Level"	"3"
+		"BountyXP"	"50"
+		"BountyGoldMin"	"50"
+		"BountyGoldMax"	"100"
+		"HealthBarOffset"	"170"
+		"RingRadius"	"40"
+		"ConsideredHero"	"0"
+		"GameSoundsFile"	"soundevents/game_sounds_creeps.vsndevts"
+		"SoundSet"	"n_creep_Ranged"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"	"70"
+		"AttackDamageMax"	"100"
+		"AttackRate"	"0.8"
+		"AttackAnimationPoint"	"0.4"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"	"180"
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"	"270"
+		"StatusHealth"	"99999"
+		"StatusMana"	"99999"
+		"StatusHealthRegen"	"0.5"
+		"StatusManaRegen"	"0.5"
+		"VisionDaytimeRange"	"400"
+		"VisionNighttimeRange"	"400"
+		"Creature"
+		{
+			"HPGain"	"50"
+			"DamageGain"	"2"
+			"ArmorGain"	"2"
+			"MagicResistGain"	"2"
+			"MoveSpeedGain"	"1"
+			"BountyGain"	"50"
+			"XPGain"	"50"
+		}
+		"TeamName"	"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"	"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"UnitRelationShipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"CombatClassDefend"	"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	}
 }

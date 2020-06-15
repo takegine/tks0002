@@ -1,0 +1,110 @@
+//羁绊：需求单位
+
+"DOTAShips"
+{
+	
+	"npc_dota_hero_anti_mage"   		  //override_hero关银屏
+	{
+		"1" "skill_hero_xueji"            //血祭
+		"2" "skill_ship_longyue_gyp"      //龙跃凤鸣
+        "3" "skill_ship_hufu_gyp"         //虎父无犬女
+	}
+	"npc_dota_hero_abaddon"   		      //override_hero关羽
+	{
+		"1" "skill_hero_danji"            //单骑
+		"2" "skill_hero_wusheng"          //武圣
+		"3" "skill_ship_hufu_gy"          //虎父无犬女
+		"4" "skill_ship_taoyuan"          //桃园结义
+		"5" "skill_ship_wuhu_gy"          //五虎上将
+	}
+	"npc_dota_hero_arc_warden"            //override_hero黄忠
+	{
+		"1" "skill_hero_juji"             //狙击
+		"2" "skill_hero_liegong"          //烈弓
+		"3" "skill_ship_feihuo_hz"        //飞火流星
+		"4" "skill_ship_zhiqu_hz"         //智取定军山
+		"5" "skill_ship_wuhu_hz"          //五虎上将
+	}
+	"npc_dota_hero_ancient_apparition"    //override_hero火诸葛
+	{
+		"1" "skill_hero_bagua"            //八卦
+		"2" "skill_hero_huogong"          //火攻
+	    "3" "skill_hero_kanpo"            //看破
+	}
+	"npc_dota_hero_bloodseeker"           //override_hero姜维
+	{
+		"1" "skill_hero_tiaoxin"          //挑衅
+		"2" "skill_ship_qunxing_jw"       //群星陨落
+	    "3" "skill_ship_jizhi"            //志继
+	}
+	"npc_dota_hero_bane"                  //override_hero老诸葛
+	{
+		"1" "skill_hero_guanxing"         //观星
+		"2" "skill_hero_kongcheng"        //空城
+		"3" "skill_ship_qizong_zg"        //七纵之恩
+		"4" "skill_ship_qunxing_zg"       //群星陨落
+		"5" "skill_ship_xingyue_zg"       //星月交辉
+	}
+	"npc_dota_hero_bounty_hunter"         //override_hero刘备
+	{
+		"1" "skill_hero_rende"            //仁德
+		"2" "skill_ship_menjie_lb"        //梦结良缘
+		"3" "skill_ship_quhu_lb"          //驱虎吞狼
+		"4" "skill_ship_taoyuan"          //桃园结义
+		"5" "skill_ship_yemeng_lb"        //夜梦北斗
+	}
+		"npc_dota_hero_alchemist"         //override_hero马超
+	{
+		"1" "skill_hero_mashu_mc"         //马术
+		"2" "skill_hero_tieji"            //铁骑
+		"3" "skill_ship_yiji_mc"          //一骑当千
+		"4" "skill_ship_wuhu_mc"          //五虎上将
+	}
+		"npc_dota_hero_clinkz"            //override_hero马岱
+	{
+		"1" "skill_hero_mashu_md"         //马术
+		"2" "skill_ship_shuigan_md"       //谁敢杀我
+	    "3" "skill_ship_yiji_md"          //一骑当千
+	}
+		"npc_dota_hero_beastmaster"       //override_hero孟获
+	{
+		"1" "skill_hero_zaiqi"            //再起
+		"2" "skill_ship_huoshou"          //祸首
+	    "3" " "                           //
+	}
+		"npc_dota_hero_batrider"          //override_hero庞统
+	{
+		"1" "skill_hero_liansuo"          //连锁
+		"2" "skill_hero_yuhuo"            //浴火重生
+	    "3" " "                           //
+	}
+		"npc_dota_hero_brewmaster"        //override_hero魏延
+	{
+		"1" "skill_hero_kuanggu"          //狂骨
+		"2" "skill_ship_shuigan_wy"       //谁敢杀我
+	    "3" "skill_ship_feihuo_wy"        //飞火流星
+	}
+		"npc_dota_hero_bristleback"       //override_hero张飞
+	{
+		"1" "skill_hero_paoxiao"          //咆哮
+		"2" "skill_hero_yinghan"          //硬汉
+		"3" "skill_ship_taoyuan"          //桃园结义
+		"4" "skill_ship_wuhu_zf"          //五虎上将
+	}
+		"npc_dota_hero_broodmother"       //override_hero赵云
+	{
+		"1" "skill_hero_longdan"          //龙胆
+		"2" "skill_hero_chongzhen"        //冲阵
+		"3" "skill_ship_longyue_zy"       //龙跃凤鸣
+		"4" "skill_ship_qijin_zy"         //七近七出
+		"5" "skill_ship_wuhu_zy"          //五虎上将
+	}
+		"npc_dota_hero_drow_ranger"        //override_hero祝融
+	{
+		"1" "skill_hero_lieren"           //烈刃
+		"2" "skill_ship_nanman_zr"        //南蛮兽王
+	    "3" ""       //
+	}
+}
+
+
