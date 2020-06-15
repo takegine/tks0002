@@ -3344,7 +3344,7 @@
 			{
 				"Target"	"TARGET"
 				"ModifierName"	"modifier_skill_hero_zhuronglieren"
-				"Duration"	"jianjia"
+				"Duration"	"zhumubiaojianjia"
 			}
 			"ActOnTargets"
 			{
