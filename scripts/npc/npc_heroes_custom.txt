@@ -5,23 +5,10 @@
 	{
 		// Hero to override
 		"override_hero"	"npc_dota_hero_phoenix"
-		// Ability 1
-		"Ability1"	""
-		"Ability2"	""
-		"Ability3"	""
-		"Ability4"	""
-		"Ability5"	""
-		"Ability6"	"skill_player_onback"
-		"Ability7"	"skill_player_onsell"
+		//"Ability6"	"skill_player_onback"
+		//"Ability7"	"skill_player_onsell"
 		"Ability8"	"skill_player_lvlup"
 		"Ability9"	"skill_player_noattack"
-		"Ability10"	""
-		"Ability11"	""
-		"Ability12"	""
-		"Ability13"	""
-		"Ability14"	""
-		"Ability15"	""
-		"Ability16"	""
 		// Range of vision at night time.
 		"VisionNighttimeRange"	"1800"
 		"StatusHealthRegen"	"0"

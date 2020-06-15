@@ -112,9 +112,21 @@ function CAddonTemplateGameMode:OnThink() return 1 end
 
 function CAddonTemplateGameMode:createnewherotest( data )
     local hero   = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-    local teamid = 3
+    local ablelist= LoadKeyValues('scripts/npc/npc_skill_custom.txt')
+    local teamid = 3   
     if data.good then teamid = PlayerResource:GetCustomTeamAssignment(data.PlayerID) end
-    CreateUnitByNameAsync( data.way, Entities:FindByName(nil,"creep_birth_"..(teamid-3)):GetAbsOrigin(), true, nil, nil, teamid,  function( v ) v:SetControllableByPlayer( data.PlayerID, false ) v:Hold() v:SetIdleAcquire( false ) v:SetAcquisitionRange( 0 ) end )
+
+    CreateUnitByNameAsync( data.way, Entities:FindByName(nil,"creep_birth_"..(teamid-3)):GetAbsOrigin(), true, nil, nil, teamid,  function( h ) 
+        h:SetControllableByPlayer( data.PlayerID, false ) 
+        h:Hold() 
+        h:SetIdleAcquire( false ) 
+        h:SetAcquisitionRange( 0 ) 
+        if ablelist[data.way] then
+            for c,abi in pairs(ablelist[data.way]) do
+                h:AddAbility(v):SetLevel(1)
+            end
+        end
+    end )
 end
 
 function CAddonTemplateGameMode:refreshlist()
@@ -126,9 +138,9 @@ function CAddonTemplateGameMode:refreshlist()
             relist['name']=name
             relist['hero']=info.override_hero
 
-            if ablelist[name] then
+            if ablelist[info.override_hero] then
                 relist['able']={}
-                for k,v in pairs(ablelist[name]) do
+                for k,v in pairs(ablelist[info.override_hero]) do
                     relist['able'][k]=v
                 end
             end
