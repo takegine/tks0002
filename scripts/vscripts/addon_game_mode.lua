@@ -123,7 +123,8 @@ function CAddonTemplateGameMode:createnewherotest( data )
         h:SetAcquisitionRange( 0 ) 
         if ablelist[data.way] then
             for c,abi in pairs(ablelist[data.way]) do
-                h:AddAbility(v):SetLevel(1)
+                h:AddAbility(abi)
+                if h:HasAbility(abi) then h:FindAbilityByName(abi):SetLevel(1) end
             end
         end
     end )
