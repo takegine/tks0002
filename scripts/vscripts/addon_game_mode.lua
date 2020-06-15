@@ -123,12 +123,13 @@ function CAddonTemplateGameMode:refreshlist()
         local ablelist= LoadKeyValues('scripts/npc/npc_skill_custom.txt')
         for name,info in pairs(herolist)do 
                 if info ~= 1 and name ~= SET_FORCE_HERO then 
-                        relist[name]['name']=name
-                        relist[name]['hero']=info.override_hero
+                        relist['name']=name
+                        relist['hero']=info.override_hero
 
                         if ablelist[name] then
+                                relist['able']={}
                                 for k,v in pairs(ablelist[name]) do
-                                        relist[name][ab..k]=v
+                                        relist['able'][k]=v
                                 end
                         end
                 end
