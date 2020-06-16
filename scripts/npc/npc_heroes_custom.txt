@@ -100,7 +100,7 @@
 	"npc_hero_wudalang"
 	{
 		"Ability1"	"yinshen"
-		"Ability2"	"skill_hero_guanxing"
+		"Ability2"	"skill_hero_huangzhongjuji"
 		"Ability3"	"skill_hero_kuangre"
 		"Ability4"	"skill_hero_julihuikan"
 		"Ability5"	"skill_hero_ganglie"

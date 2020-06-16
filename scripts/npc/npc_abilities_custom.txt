@@ -3216,23 +3216,23 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"	"1"
+		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
-		"AbilityCooldown"	"3"
+		"AbilityCooldown"	"6"
 		"AbilityCastRange"	"1200"
 		"precache"
 		{
-			"particle"	"particles\units\heroes\hero_skeletonking\skeletonking_hellfireblast.vpcf"
+			"particle"	"particles/econ/items/sniper/sniper_charlie/sniper_base_attack_charlie.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
-			"particle"	"huoyantexiao"
+			"particle"	"particles/addons_gameplay/lamp_flame_tintable_f.vpcf"
 		}
 		"OnSpellStart"
 		{
 			"TrackingProjectile"
 			{
 				"Target"	"TARGET"
-				"EffectName"	"particles\units\heroes\hero_skeletonking\skeletonking_hellfireblast.vpcf"
+				"EffectName"	"particles/econ/items/sniper/sniper_charlie/sniper_base_attack_charlie.vpcf"
 				"Dodgeable"	"1"
 				"MoveSpeed"	"1000"
 				"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
@@ -3276,15 +3276,16 @@
 				"IsHidden"	"0"
 				"IsDebuff"	"1"
 				"ThinkInterval"	"1"
-				"Duration"	"10"
-				"EffectName"	"huoyantexiao"
+				"Duration"	"%chixushijian"
+				"EffectName"	"particles/addons_gameplay/lamp_flame_tintable_f.vpcf"
 				"OverrideAnimation"	"ACT_DOTA_DISABLED"
 				"States"	{}
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-10"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%hujiajianshao"
 				}
 				"EffectAttachType"	"follow_overhead"
+				"StatusEffectName"	"particles/addons_gameplay/lamp_flame_tintable_f.vpcf"
 			}
 		}
 		"AbilitySpecial"
@@ -3292,12 +3293,22 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"mofaxiaohao"	"10"
+				"mofaxiaohao"	"0"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"shifayanchi"	"1"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"chixushijian"	"18 21 24 27 30 33 36 39 42 45"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"hujiajianshao"	"-9 -13 -17 -21 -25 -29 -33 -37 -41 -45"
 			}
 		}
 	}
