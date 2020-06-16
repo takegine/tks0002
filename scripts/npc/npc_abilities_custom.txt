@@ -3493,6 +3493,185 @@
 		}
 	}
 
+	"skill_hero_luanwu"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_PREFER_ENEMIES"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"	"1"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCastPoint"	"0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1"
+		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_1"
+		// Time
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"	"18.0 18.0 18.0 18.0 18.0 18.0 18.0 18.0 18.0 18.0"
+		// Cost
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"	"0"
+		// Casting
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"	"1000"
+		"precache"
+		{
+			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start_v2_ring_rope.vpcf"
+		}
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"kongzhe"
+				"Target"	"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"Target"	"TARGET"
+				"ModifierName"	"modifier_skill_hero_luanwu"
+				"Duration"	"zhumubiaofeixue"
+			}
+			"Damage"
+			{
+				"Target"	"TARGET"
+				"Type"	"DAMAGE_TYPE_PHYSICAL"
+				"Damage"	"%shanghai"
+			}
+			"FireEffect"
+			{
+				"Target"	"TARGET"
+				"EffectName"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start_v2_ring_rope.vpcf"
+				"EffectAttachType"	"attach_origin"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Radius"	"%fanwei"
+					"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"Action"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"	"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%fujinshanghai"
+					}
+					"ApplyModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_skill_hero_luanwu_2"
+						"Duration"	"difangshanghai"
+					}
+					"ApplyModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_skill_hero_luanwu_3"
+					}
+				}
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_skill_hero_luanwu"
+			{
+				"Duration"	"%chixushijian"
+				"IsDebuff"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%yidongsudu"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%gongjisudu"
+				}
+				"States"	{}
+				"ThinkInterval"	"1"
+				"EffectAttachType"	"follow_origin"
+				"StatusEffectName"	"particles\econ\items\phantom_assassin\pa_ti8_immortal_head\pa_ti8_immortal_dagger_debuff.vpcf"
+				"IsHidden"	"1"
+			}
+			"modifier_skill_hero_luanwu_2"
+			{
+				"Duration"	"3"
+				"IsDebuff"	"1"
+				"EffectAttachType"	"follow_origin"
+				"ThinkInterval"	"1"
+				"IsHidden"	"0"
+				"StatusEffectName"	"particles\econ\items\phantom_assassin\pa_ti8_immortal_head\pa_ti8_immortal_dagger_debuff.vpcf"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%gongjisudu"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%yidongsudu"
+				}
+			}
+			"modifier_skill_hero_luanwu_3"
+			{
+				"OnIntervalThink"
+				{
+					"RemoveModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_skill_hero_zhuronglieren"
+					}
+					"RemoveModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_skill_hero_zhuronglieren_2"
+					}
+					"RemoveModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_skill_hero_zhuronglieren_3"
+					}
+				}
+				"ThinkInterval"	"3"
+				"IsHidden"	"1"
+				"Duration"	"3"
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"shanghai"	"344 688 1376 1720 2064 2408 2752 3096 3441 4129"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"fanwei"	"400"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"chixushijian"	"3"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"fujinshanghai"	"688 1376 2064 2752 3441 4129 4817 5505 6193 6882"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"yidongsudu"	"-30"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"gongjisudu"	"-30"
+			}
+		}
+	}
+
 	"skill_hero_huozhugedehuo"
 	{
 		// General
@@ -5536,14 +5715,6 @@
 		}
 	}
 
-	"skill_hero_luanwu"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	}
-
 	"skill_hero_paoxiao"
 	{
 		"BaseClass"	"ability_datadriven"
@@ -5639,6 +5810,71 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"	"3"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCastPoint"	"0.1"
+		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"	"3"
+		"AbilityManaCost"	"0"
+		"AbilityCastRange"	"1200"
+		"precache"
+		{
+			"particle"	"particles/econ/items/bane/slumbering_terror/bane_slumber_nightmare.vpcf"
+		}
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"	"TARGET"
+				"ModifierName"	"modifier_skill_hero_shuimian"
+			}
+			"FireSound"
+			{
+				"Target"	"TARGET"
+				"EffectName"	"Shrine.Cast"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_skill_hero_shuimian"
+			{
+				"IsDebuff"	"1"
+				"Duration"	"%shijian"
+				"States"
+				{
+					"MODIFIER_STATE_NIGHTMARED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MUTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FROZEN"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnAttacked"
+				{
+					"RemoveModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_skill_hero_shuimian"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"	"-100"
+				}
+				"EffectName"	"particles/econ/items/bane/slumbering_terror/bane_slumber_nightmare.vpcf"
+				"EffectAttachType"	"attach_origin"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"shijian"	"20 40 60"
+			}
+		}
 	}
 
 	"skill_hero_tianluodiwang"

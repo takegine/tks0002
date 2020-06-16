@@ -12,7 +12,7 @@
 		// Hero to override
 		"override_hero"	"npc_dota_hero_phoenix"
 		// Ability 1
-		"Ability1"	"skill_hero_liegong"
+		"Ability1"	"skill_hero_luanwu"
 		"Ability2"	""
 		"Ability3"	""
 		"Ability4"	""
@@ -100,7 +100,7 @@
 	"npc_hero_wudalang"
 	{
 		"Ability1"	"yinshen"
-		"Ability2"	"skill_hero_huangzhongjuji"
+		"Ability2"	"skill_hero_luanwu"
 		"Ability3"	"skill_hero_kuangre"
 		"Ability4"	"skill_hero_julihuikan"
 		"Ability5"	"skill_hero_ganglie"
