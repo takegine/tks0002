@@ -4409,11 +4409,12 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityCooldown"	"1.35"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"precache"
 		{
-			"particle"	"particles/econ/items/storm_spirit/strom_spirit_ti8/storm_sprit_ti8_overload_discharge.vpcf"
 			"soundfile"	"soundevents/game_sounds_creeps.vsndevts"
+			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start.vpcf"
 		}
 		"Modifiers"
 		{
@@ -4449,8 +4450,22 @@
 						}
 					}
 				}
+				"OnAttackStart"
+				{
+					"FireSound"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"n_creep_ForestTrollHighPriest.Heal"
+					}
+				}
 				"OnAttackLanded"
 				{
+					"FireEffect"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
 					"ActOnTargets"
 					{
 						"Target"
@@ -4468,14 +4483,6 @@
 								"Type"	"DAMAGE_TYPE_MAGICAL"
 								"Damage"	"%shanghai"
 							}
-							"FireEffect"
-							{
-								"Target"	"TARGET"
-								"ControlPoints"	{}
-								"ControlPointEntities"	{}
-								"EffectName"	"particles/econ/items/storm_spirit/strom_spirit_ti8/storm_sprit_ti8_overload_discharge.vpcf"
-								"EffectAttachType"	"follow_origin"
-							}
 						}
 					}
 					"ApplyModifier"
@@ -4487,14 +4494,6 @@
 					{
 						"Target"	"CASTER"
 						"ModifierName"	"modifier_skill_hero_guanxing"
-					}
-				}
-				"OnAttackStart"
-				{
-					"FireSound"
-					{
-						"EffectName"	"n_creep_ForestTrollHighPriest.Heal"
-						"Target"	"TARGET"
 					}
 				}
 			}
@@ -4514,8 +4513,8 @@
 						"ModifierName"	"modifier_skill_hero_guanxing_2"
 					}
 				}
-				"ThinkInterval"	"1.35"
-				"Duration"	"1.35"
+				"ThinkInterval"	"%chixu"
+				"Duration"	"%chixu"
 				"IsHidden"	"1"
 			}
 		}
@@ -4524,12 +4523,17 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"banjing"	"350"
+				"banjing"	"200"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"shanghai"	"105"
+				"shanghai"	"105 240 405 600 825 1080 1365 1680 2025 2400"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"chixu"	"1.35 1.3 1.25 1.2 1.15 1.1 1.05 1.0 0.95 0.9"
 			}
 		}
 	}
