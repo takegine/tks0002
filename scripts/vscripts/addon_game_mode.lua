@@ -122,7 +122,6 @@ function CAddonTemplateGameMode:entity_hurt(keys)
 end
 
 function CAddonTemplateGameMode:DamageFilter(filterTable)
-    print("DamageFilter")
     DeepPrintTable(filterTable)
     local damage=filterTable.damage
     local killedUnit = EntIndexToHScript( filterTable.entindex_victim_const   )
@@ -130,11 +129,7 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     local armor = killedUnit:GetPhysicalArmorValue(false)
     local oldkang  = 1-52/48*armor/(18.75+armor)
     local newkang  = 1-armor/(100+armor)
-    print(damage,oldkang)
-
     filterTable.damage=filterTable.damage/oldkang*newkang
-    print(filterTable.damage,newkang)
-
     return true
 end
 
@@ -149,7 +144,6 @@ function CAddonTemplateGameMode:npc_spawned(keys )
     npc.bFirstSpawned = true
 
     if npc:GetName()==SET_FORCE_HERO then npc.ship={} end
-
     if npc:IsHero() then
         for i=0,15 do if npc:GetAbilityByIndex(i) then npc:GetAbilityByIndex(i):SetLevel(1) end end 
     end
@@ -171,11 +165,13 @@ function CAddonTemplateGameMode:player_chat(keys )
         count=count+1
     end
 
-    if list[1]=="ship" then
-        if list[2]=="true" then
-            hero.ship[list[3]]=true
+    if list[1]=="ship" and list[2] then
+        if list[3]=="true" then
+            hero.ship[list[2]]=true
+            GameRules:SendCustomMessage( "羁绊名："..list[2].." ，已设置为有效", hero:GetTeamNumber(), 1)
         else
-            hero.ship[list[3]]=nil
+            hero.ship[list[2]]=nil
+            GameRules:SendCustomMessage( "羁绊名："..list[2].." ，已设置为失效", hero:GetTeamNumber(), 1)
         end
     elseif list[1]=="lvlup" then
         for k,u in pairs(Entities:FindAllInSphere( Vector( 0, 0, 0 ), 9999)) do
