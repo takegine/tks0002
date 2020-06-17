@@ -6,14 +6,10 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"precache"
 		{
-			"particle"	"particles/world_outpost/world_outpost_dire_ambient_shockwave.vpcf"
 			"particle"	"particles/world_outpost/world_outpost_channel_finish_embers.vpcf"
 			"particle"	"particles/units/heroes/hero_sniper/sniper_assassinate_startpoint.vpcf"
 			"particle"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate_impact.vpcf"
-			"particle"	"particles/world_outpost/world_outpost_channel_finish_embers.vpcf"
-			"particle"	"particles/units/heroes/hero_sniper/sniper_assassinate_startpoint.vpcf"
 			"soundfile"	"soundevents/music/valve_dota_001/game_sounds_music.vsndevts"
-			"particle"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate_impact.vpcf"
 		}
 		"Modifiers"
 		{

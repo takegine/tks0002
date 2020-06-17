@@ -57,68 +57,28 @@ function CAddonTemplateGameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_DAMAGE, 5 )
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 0.25 )
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN, 0.01 )
-    GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( CAddonTemplateGameMode, "DamageFilter" ), self )
-    ListenToGameEvent("game_rules_state_change",Dynamic_Wrap(CAddonTemplateGameMode,"OnGameRulesStateChange"), self)
-    ListenToGameEvent("entity_hurt",        Dynamic_Wrap(CAddonTemplateGameMode, "entity_hurt"), self)
-
+    GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( self, "DamageFilter" ), self )
+    ListenToGameEvent("entity_hurt",Dynamic_Wrap(self, "entity_hurt"), self)
+    ListenToGameEvent("npc_spawned",Dynamic_Wrap(self, "npc_spawned"), self)
+    ListenToGameEvent("player_chat",Dynamic_Wrap(self, "player_chat"), self)
+    
     CustomGameEventManager:RegisterListener( "createnewherotest", Dynamic_Wrap(self,"createnewherotest") )
     CustomGameEventManager:RegisterListener("refreshlist",Dynamic_Wrap(self, 'refreshlist'))
 end
-
-function CAddonTemplateGameMode:OnGameRulesStateChange( keys )
-    print ("print  OnGameRulesStateChange is running.")
-           DeepPrintTable(keys)    --详细打印传递进来的表
-    local newState = GameRules:State_Get() --获取当前游戏阶段
-
-    if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
-        print("Player begin select team") --玩家处于选择队伍
-
-    elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
-    		print("Player begin select hero")  --玩家处于选择英雄界面
-
-
-    elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
-        print("Player in befor game")  --进游戏直到倒数结束
-        --CustomUI:DynamicHud_Create(-1,"psd","file://{resources}/layout/custom_game/uiscreen.xml",nil)--创建选择难度面板
-
-        --CreateHeroForPlayer(string unitName, handle player)
-
-        --CreateUnitByName(npc_creature_0,Entities:FindByName(nil,"playerlocal_1"):GetOrigin(),false,nil,nil,DOTA_TEAM_CUSTOM_1)
-
-    elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-        print("Player game begin")  --玩家开始游戏
-
-        print("Player---- OnGameInProgress endding")  --玩家开始游戏
-
-        CAddonTemplateGameMode:refreshlist()
-
-    elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
-    	for i=0, PlayerResource:GetPlayerCount()-1 do
-            if  PlayerResource:HasSelectedHero(i) == false then
-
-            PlayerResource:GetPlayer(i):MakeRandomHeroSelection()
-            end
-        end
-
-    elseif newState == DOTA_GAMERULES_STATE_POST_GAME then
-        print("Player are show case")  --游戏结束
-    end
-end
-
-
 
 -- Evaluate the state of the game
 function CAddonTemplateGameMode:OnThink() return 1 end
 
 function CAddonTemplateGameMode:createnewherotest( data )
-    local hero   = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
+    local hero    = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
     local ablelist= LoadKeyValues('scripts/npc/npc_skill_custom.txt')
-    local teamid = 3   
+    local teamid  = 3   
     if data.good then teamid = PlayerResource:GetCustomTeamAssignment(data.PlayerID) end
 
-    CreateUnitByNameAsync( data.way, Entities:FindByName(nil,"creep_birth_"..(teamid-3)):GetAbsOrigin(), true, nil, nil, teamid,  function( h ) 
+    CreateUnitByNameAsync( data.way, Entities:FindByName(nil,"creep_birth_"..(teamid-3)):GetAbsOrigin(), true, hero, hero, teamid,  function( h ) 
         h:SetControllableByPlayer( data.PlayerID, false ) 
         h:Hold() 
+        h:SetOwner(hero)
         h:SetIdleAcquire( false ) 
         h:SetAcquisitionRange( 0 ) 
         if ablelist[data.way] then
@@ -176,4 +136,62 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     print(filterTable.damage,newkang)
 
     return true
+end
+
+function CAddonTemplateGameMode:npc_spawned(keys )
+    local  npc = EntIndexToHScript(keys.entindex)
+    if npc:GetName()== "npc_dota_fort" 
+    or npc:GetName()== "npc_dota_building" 
+    or npc.bFirstSpawned then 
+        return 
+    end
+
+    npc.bFirstSpawned = true
+
+    if npc:GetName()==SET_FORCE_HERO then npc.ship={} end
+
+    if npc:IsHero() then
+        for i=0,15 do if npc:GetAbilityByIndex(i) then npc:GetAbilityByIndex(i):SetLevel(1) end end 
+    end
+end
+
+function CAddonTemplateGameMode:player_chat(keys )
+    -- playerid	0
+    -- game_event_listener	184549379
+    -- game_event_name	player_chat
+    -- text	ç¾ç»
+    -- teamonly	1
+    -- userid	1
+    -- splitscreenplayer	-1
+    local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
+    local list = {}
+    local count = 1
+    for k in string.gmatch(keys.text, "%a+") do
+        list[count]=k
+        count=count+1
+    end
+
+    if list[1]=="ship" then
+        if list[2]=="true" then
+            hero.ship[list[3]]=true
+        else
+            hero.ship[list[3]]=nil
+        end
+    elseif list[1]=="lvlup" then
+        for k,u in pairs(Entities:FindAllInSphere( Vector( 0, 0, 0 ), 9999)) do
+            if u.bFirstSpawned then
+                local lvl = u:GetLevel()+1
+
+                while( u:GetLevel() < lvl ) do
+                    if   u:IsHero() then
+                        u:HeroLevelUp( false )
+                    else u:CreatureLevelUp( 1 )
+                    end
+                end
+                for i=0,15 do 
+                    if  u:GetAbilityByIndex(i) then u:GetAbilityByIndex(i):SetLevel(lvl) end 
+                end
+            end
+        end
+    end
 end
