@@ -331,20 +331,15 @@
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"greevil_blade_fury"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCooldown"	"0.5"
 		"AOERadius"	"%radius"
-		"precache"
-		{
-			"particle"	"particles/econ/items/axe/axe_cinder/axe_cinder_battle_hunger_start.vpcf"
-			"particle"	"particles/econ/items/legion/legion_weapon_voth_domosh/legion_commander_duel_arcana.vpcf"
-			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_stunned.vpcf"
-			"particle"	"particles/econ/items/axe/axe_cinder/axe_cinder_battle_hunger_start.vpcf"
-			"particle"	"particles/econ/items/legion/legion_weapon_voth_domosh/legion_commander_duel_arcana.vpcf"
-			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_stunned.vpcf"
-		}
 		"Modifiers"
 		{
 			"modifier_skill_hero_wusheng"
@@ -352,62 +347,13 @@
 				"Passive"	"1"
 				"OnAttacked"
 				{
-					"Random"
+					"RunScript"
 					{
-						"OnSuccess"
-						{
-							"FireEffect"
-							{
-								"Target"	"CASTER"
-								"ControlPoints"	{}
-								"ControlPointEntities"	{}
-								"EffectName"	"particles/econ/items/axe/axe_cinder/axe_cinder_battle_hunger_start.vpcf"
-								"EffectAttachType"	"attach_attack1"
-							}
-							"ActOnTargets"
-							{
-								"Target"
-								{
-									"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-									"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_ALL"
-									"Center"	"CASTER"
-									"Radius"	"%radius"
-								}
-								"Action"
-								{
-									"Damage"
-									{
-										"Target"	"TARGET"
-										"Type"	"DAMAGE_TYPE_PHYSICAL"
-										"Damage"	"%damage"
-									}
-									"ApplyModifier"
-									{
-										"Target"	"TARGET"
-										"ModifierName"	"modifier_skill_hero_wusheng_2"
-										"Duration"	"0.5"
-									}
-								}
-							}
-							"AttachEffect"
-							{
-								"Target"	"CASTER"
-								"ControlPoints"	{}
-								"ControlPointEntities"	{}
-								"EffectName"	"particles/econ/items/legion/legion_weapon_voth_domosh/legion_commander_duel_arcana.vpcf"
-								"EffectAttachType"	"follow_overhead"
-							}
-						}
-						"Chance"	"%change"
+						"ScriptFile"	"skill/hero_wusheng.lua"
+						"Function"	"wusheng"
 					}
 				}
 				"IsHidden"	"1"
-			}
-			"modifier_skill_hero_wusheng_2"
-			{
-				"IsHidden"	"1"
-				"EffectName"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_stunned.vpcf"
-				"EffectAttachType"	"follow_overhead"
 			}
 		}
 		"AbilitySpecial"
@@ -425,7 +371,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"change"	"15"
+				"chance"	"15"
 			}
 			"04"
 			{
@@ -5528,4 +5474,5 @@
 		}
 		"AbilityDuration"	"7.0"
 	}
+	
 }
