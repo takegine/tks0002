@@ -61,7 +61,7 @@ function CAddonTemplateGameMode:InitGameMode()
     ListenToGameEvent("entity_hurt",Dynamic_Wrap(self, "entity_hurt"), self)
     ListenToGameEvent("npc_spawned",Dynamic_Wrap(self, "npc_spawned"), self)
     ListenToGameEvent("player_chat",Dynamic_Wrap(self, "player_chat"), self)
-    
+
     CustomGameEventManager:RegisterListener( "createnewherotest", Dynamic_Wrap(self,"createnewherotest") )
     CustomGameEventManager:RegisterListener("refreshlist",Dynamic_Wrap(self, 'refreshlist'))
 end
@@ -72,15 +72,15 @@ function CAddonTemplateGameMode:OnThink() return 1 end
 function CAddonTemplateGameMode:createnewherotest( data )
     local hero    = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
     local ablelist= LoadKeyValues('scripts/npc/npc_skill_custom.txt')
-    local teamid  = 3   
+    local teamid  = 3
     if data.good then teamid = PlayerResource:GetCustomTeamAssignment(data.PlayerID) end
 
-    CreateUnitByNameAsync( data.way, Entities:FindByName(nil,"creep_birth_"..(teamid-3)):GetAbsOrigin(), true, hero, hero, teamid,  function( h ) 
-        h:SetControllableByPlayer( data.PlayerID, false ) 
-        h:Hold() 
+    CreateUnitByNameAsync( data.way, Entities:FindByName(nil,"creep_birth_"..(teamid-3)):GetAbsOrigin(), true, hero, hero, teamid,  function( h )
+        h:SetControllableByPlayer( data.PlayerID, false )
+        h:Hold()
         h:SetOwner(hero)
-        h:SetIdleAcquire( false ) 
-        h:SetAcquisitionRange( 0 ) 
+        h:SetIdleAcquire( false )
+        h:SetAcquisitionRange( 0 )
         if ablelist[data.way] then
             for c,abi in pairs(ablelist[data.way]) do
                 h:AddAbility(abi)
@@ -135,17 +135,20 @@ end
 
 function CAddonTemplateGameMode:npc_spawned(keys )
     local  npc = EntIndexToHScript(keys.entindex)
-    if npc:GetName()== "npc_dota_fort" 
-    or npc:GetName()== "npc_dota_building" 
-    or npc.bFirstSpawned then 
-        return 
+    if npc:GetName()== "npc_dota_fort"
+    or npc:GetName()== "npc_dota_building"
+    or npc.bFirstSpawned then
+        return
     end
 
     npc.bFirstSpawned = true
 
-    if npc:GetName()==SET_FORCE_HERO then npc.ship={} end
+    if npc:GetName()==SET_FORCE_HERO then
+        npc.ship={}
+        CreateUnitByName( "npc_dota_hero_target_dummy", RandomVector(20), true, nil, nil, 7 )
+    end
     if npc:IsHero() then
-        for i=0,15 do if npc:GetAbilityByIndex(i) then npc:GetAbilityByIndex(i):SetLevel(1) end end 
+        for i=0,15 do if npc:GetAbilityByIndex(i) then npc:GetAbilityByIndex(i):SetLevel(1) end end
     end
 end
 
@@ -184,8 +187,8 @@ function CAddonTemplateGameMode:player_chat(keys )
                     else u:CreatureLevelUp( 1 )
                     end
                 end
-                for i=0,15 do 
-                    if  u:GetAbilityByIndex(i) then u:GetAbilityByIndex(i):SetLevel(lvl) end 
+                for i=0,15 do
+                    if  u:GetAbilityByIndex(i) then u:GetAbilityByIndex(i):SetLevel(lvl) end
                 end
             end
         end
