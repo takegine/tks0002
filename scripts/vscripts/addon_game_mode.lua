@@ -112,17 +112,12 @@ function CAddonTemplateGameMode:refreshlist()
 end
 
 function CAddonTemplateGameMode:entity_hurt(keys)
-
-    print("entity_hurt")
-    DeepPrintTable(keys)
-
     local killedUnit = EntIndexToHScript( keys.entindex_killed   )
     local killerUnit = EntIndexToHScript( keys.entindex_attacker )
     --damagebits
 end
 
 function CAddonTemplateGameMode:DamageFilter(filterTable)
-    DeepPrintTable(filterTable)
     local damage=filterTable.damage
     local killedUnit = EntIndexToHScript( filterTable.entindex_victim_const   )
     local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const )
