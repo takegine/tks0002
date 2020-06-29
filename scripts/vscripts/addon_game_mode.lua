@@ -187,5 +187,13 @@ function CAddonTemplateGameMode:player_chat(keys )
                 end
             end
         end
+    elseif list[1]=="myid" then
+        print(
+            "your SteamID x64:",
+            PlayerResource:GetSteamID(0),
+            "\n",
+            "your SteamID x32:",
+            PlayerResource:GetSteamAccountID(0)
+    )
     end
 end
