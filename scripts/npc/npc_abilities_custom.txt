@@ -455,73 +455,36 @@
 	}
 
 
-	"skill_ship_taoyuan"
+	"skill_hero_liutao"
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"beastmaster_inner_beast"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"MaxLevel"	"10"
 		"precache"
 		{
-			"particle"	"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_cylinder_active.vpcf"
 			"particle"	"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_cylinder_active.vpcf"
 		}
 		"Modifiers"
 		{
-			"modifier_skill_ship_taoyuan"
+			"modifier_skill_hero_liutao"
 			{
-				"OnUnitMoved"
-				{
-					"ActOnTargets"
-					{
-						"Target"
-						{
-							"Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-							"Types"	"DOTA_UNIT_TARGET_ALL"
-							"Center"	"CASTER"
-							"Radius"	"%radius"
-							"Flags"	"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
-						}
-						"Action"
-						{
-							"ApplyModifier"
-							{
-								"Target"	"TARGET"
-								"ModifierName"	"modifier_skill_ship_taoyuan_2"
-								"Duration"	"%duration"
-							}
-						}
-					}
-				}
 				"IsHidden"	"1"
-				"TextureName"	"batrider_flaming_lasso"
-				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
-				"Properties"	{}
-				"States"	{}
-				"OnAttack"
+				"Passive" "1"
+				"OnIntervalThink"
 				{
-					"ActOnTargets"
+					"RunScript"
 					{
-						"Target"
-						{
-							"Types"	"DOTA_UNIT_TARGET_ALL"
-							"Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-							"Flags"	"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
-							"Center"	"CASTER"
-							"Radius"	"%radius"
-						}
-						"Action"
-						{
-							"ApplyModifier"
-							{
-								"Target"	"TARGET"
-								"ModifierName"	"modifier_skill_ship_taoyuan_2"
-								"Duration"	"%duration"
-							}
-						}
+						"ScriptFile"	"skill/hero_liutao.lua"
+						"Function"		"liutao"
 					}
 				}
+				"ThinkInterval"	"2"
 			}
-			"modifier_skill_ship_taoyuan_2"
+			"modifier_skill_hero_liutao_2"
 			{
 				"IsBuff"	"1"
 				"Properties"
@@ -537,17 +500,6 @@
 						"EffectAttachType"	"attach_origin"
 					}
 				}
-				"TextureName"	"beastmaster_inner_beast"
-				"States"	{}
-				"OnIntervalThink"
-				{
-					"RemoveModifier"
-					{
-						"Target"	"TARGET"
-						"ModifierName"	"modifier_skill_ship_taoyuan"
-					}
-				}
-				"ThinkInterval"	"0.1"
 			}
 		}
 		"AbilitySpecial"
@@ -555,7 +507,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"999"
+				"radius"	"1500"
 			}
 			"02"
 			{
@@ -3361,79 +3313,6 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"damage_bonus"	"15 30 45 60"
-			}
-		}
-	}
-
-	"skill_ship_taoyuan"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"beastmaster_inner_beast"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"precache"
-		{
-			"particle"	"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_cylinder_active.vpcf"
-			"particle"	"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_cylinder_active.vpcf"
-		}
-		"Modifiers"
-		{
-			"modifier_skill_ship_taoyuan"
-			{
-				"OnUnitMoved"
-				{
-					"ActOnTargets"
-					{
-						"Target"
-						{
-							"Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-							"Types"	"DOTA_UNIT_TARGET_ALL"
-							"Center"	"CASTER"
-							"Radius"	"999"
-						}
-						"Action"
-						{
-							"ApplyModifier"
-							{
-								"Target"	"TARGET"
-								"ModifierName"	"modifier_skill_ship_taoyuan_2"
-								"Duration"	"4"
-							}
-						}
-					}
-				}
-				"IsHidden"	"1"
-				"TextureName"	"batrider_flaming_lasso"
-				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
-				"Properties"	{}
-				"States"	{}
-			}
-			"modifier_skill_ship_taoyuan_2"
-			{
-				"IsBuff"	"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE"	"-100"
-				}
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target"	"TARGET"
-						"EffectName"	"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_cylinder_active.vpcf"
-						"EffectAttachType"	"attach_origin"
-					}
-				}
-				"TextureName"	"beastmaster_inner_beast"
-				"States"	{}
-				"OnIntervalThink"
-				{
-					"RemoveModifier"
-					{
-						"Target"	"TARGET"
-						"ModifierName"	"modifier_skill_ship_taoyuan"
-					}
-				}
-				"ThinkInterval"	"0.1"
 			}
 		}
 	}
