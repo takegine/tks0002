@@ -221,16 +221,18 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"centaur_hoof_stomp"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"SpellImmunityType"	"SPELL_IMMUNITY_NONE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCooldown"	"1"
-		"AbilityManaCost"	"2 2 4	 4 6 6 8 8 10 10"
+		"AbilityManaCost"	"2 2 4 4 6 6 8 8 10 10"
 		"AbilityCastRange"	"640"
 		"AOERadius"	"%radius"
 		"precache"
 		{
-			"particle"	"particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_pu_ti6_heal_hammers.vpcf"
 			"particle"	"particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_pu_ti6_heal_hammers.vpcf"
 		}
 		"OnSpellStart"
@@ -239,25 +241,18 @@
 			{
 				"Target"
 				{
-					"Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Teams"	"DOTA_UNIT_TARGET_TEAM_BOTH"
 					"Center"	"POINT"
 					"Radius"	"%radius"
-					"Flags"	"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 				}
 				"Action"
 				{
-					"Heal"
+					"RunScript"
 					{
-						"Target"	"TARGET"
-						"HealAmount"	"%hp_re"
-					}
-					"AttachEffect"
-					{
-						"Target"	"TARGET"
-						"ControlPoints"	{}
-						"ControlPointEntities"	{}
-						"EffectAttachType"	"attach_origin"
-						"EffectName"	"particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_pu_ti6_heal_hammers.vpcf"
+						"ScriptFile"	"skill/hero_rende.lua"
+						"Function"	"rende"
+						"Target" "TARGET"
+						"partfri" "particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_pu_ti6_heal_hammers.vpcf"
 					}
 				}
 			}
@@ -273,6 +268,11 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"radius"	"300"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"15 20 25 30 35 40 45 50 55 60"
 			}
 		}
 	}
