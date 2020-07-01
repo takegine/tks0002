@@ -410,46 +410,25 @@
 
 	"skill_hero_jijiang"
 	{
-		"BaseClass"	"ability_datadriven"
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"scripts/vscripts/skill/hero_jijiang.lua"
 		"AbilityTextureName"	"ursa_fury_swipes"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"MaxLevel"	"1"
 		"RequiredLevel"	"0"
-		"Modifiers"
-		{
-			"modifier_skill_hero_jijiang"
-			{
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"Target"	"CASTER"
-						"ScriptFile"	"scripts/vscripts/skill/hero_jijiang.lua"
-						"Function"	"jijiangaura"
-					}
-				}
-				"ThinkInterval"	"%duration"
-				"Passive"	"0"
-				"IsHidden"	"1"
-				"Properties"	{}
-			}
-		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damagebase"	"0.05"
+				"damagebase"	"5"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"radius"	"2000"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"duration"	"3"
 			}
 		}
 	}
