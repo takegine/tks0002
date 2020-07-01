@@ -434,6 +434,24 @@
 	}
 
 
+	"skill_hero_liusan"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"scripts/vscripts/skill/hero_liusan.lua"
+		"AbilityTextureName"	""
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"1"
+		"RequiredLevel"	"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"bonus_status"	"60"
+			}
+		}
+	}
+
 	"skill_hero_liutao"
 	{
 		"BaseClass"	"ability_datadriven"
