@@ -36,7 +36,7 @@ function skill_hero_jijiang:needwaveup()
         if  v:GetName() ~= "npc_dota_hero_phoenix" then
             v:AddNewModifier(caster, self, modifierName, {})
             v:SetModifierStackCount( modifierName, caster ,
-            v:IsRangedAttacker() and math.ceil(count * v:GetAttackDamage() * damagebase) or 0 )
+            v:IsRangedAttacker() and 0 or math.ceil(count * v:GetAttackDamage() * damagebase)  )
             print(math.ceil(count * v:GetAttackDamage() * damagebase))
         end
     end
