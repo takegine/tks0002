@@ -294,6 +294,8 @@
 		{
 			"modifier_skill_hero_yinghan"
 			{
+				"Passive"	"1"
+				"IsHidden"	"1"
 				"OnTakeDamage"
 				{
 					"RunScript"
@@ -303,17 +305,14 @@
 						"Function"	"yinghan"
 					}
 				}
-				"Properties"	{}
-				"Passive"	"1"
-				"IsHidden"	"1"
 			}
 			"modifier_skill_hero_yinghan_2"
 			{
+				"IsHidden"	"0"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE"	"%armor"
 				}
-				"IsHidden"	"0"
 			}
 		}
 		"AbilitySpecial"

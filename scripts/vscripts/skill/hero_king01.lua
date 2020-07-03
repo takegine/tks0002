@@ -1,17 +1,20 @@
 --[[
 	Author: 西索酱
-	Date: 12.05.2020
+	Date: 03.07.2020
 	小于50%的血增加护甲30+lvl*3
 ]]
 function yinghan( keys )
 	local caster  = keys.caster  
   --local target  = keys.target
 	local ability = keys.ability
-	local damagebase = ability:GetLevelSpecialValueFor("armor",(ability:GetLevel()-1))
+    local owner   = caster:GetOwner() or {ship={}}
+	local armor   = ability:GetLevelSpecialValueFor("armor",(ability:GetLevel()-1))
 	local modifierName = "modifier_skill_hero_yinghan_2"
 
+	local percentage = owner.ship['taoyuan'] and 0.9 or 0.5
+
 	if  not caster:HasModifier(modifierName) 
-	and caster:GetHealth() < caster:GetMaxHealth()/2 then
+	and caster:GetHealth() / caster:GetMaxHealth() < percentage then
 		ability:ApplyDataDrivenModifier( caster, caster, modifierName, nil )
 		caster:SetModelScale(caster:GetModelScale()+0.2)
 	end
