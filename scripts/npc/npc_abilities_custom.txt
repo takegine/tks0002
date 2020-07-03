@@ -4630,7 +4630,7 @@
 		}
 	}
 
-	"skill_hero_paoxiao"
+	"skill_hero_paoxiao_xx"
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"ogre_magi_bloodlust"
@@ -4653,7 +4653,7 @@
 			"ApplyModifier"
 			{
 				"Target"	"TARGET"
-				"ModifierName"	"modifier_skill_hero_paoxiao"
+				"ModifierName"	"modifier_skill_hero_paoxiao_xx"
 			}
 			"FireEffect"
 			{
@@ -4669,7 +4669,7 @@
 		}
 		"Modifiers"
 		{
-			"modifier_skill_hero_paoxiao"
+			"modifier_skill_hero_paoxiao_xx"
 			{
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Duration"	"%shijian"
@@ -5350,4 +5350,105 @@
 		"AbilityDuration"	"7.0"
 	}
 	
+	"skill_hero_paoxiao"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"sven_warcry"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"precache"
+		{
+			"particle"	"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_disarm_ti6_debuff.vpcf"
+			"particle"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
+		}
+		"Modifiers"
+		{
+			"Modifier_skill_hero_paoxiao"
+			{
+				"IsHidden" "1"
+				"Passive"  "1"
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"skill/hero_paoxiao.lua"
+						"Function"	"OnAttack"
+						"attspeedmod" "Modifier_skill_hero_paoxiao_attackspeed"
+						"debuffname" "modifer_skill_hero_paoxiao_debuff"
+					}
+				}
+			}
+			
+			"Modifier_skill_hero_paoxiao_attackspeed"
+			{
+				"IsHidden" "1"
+				"EffectName"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%speed_up"
+				}				
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Axe.Pick"
+						"Target"	"CASTER"
+					}
+				}
+			}
+			"modifer_skill_hero_paoxiao_debuff"
+			{
+				"IsDebuff" "1"
+				"EffectName"	"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_disarm_ti6_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"  "%damage_low"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_low"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"chance"	"5 10 15 20 25 30 35 40 45 50"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"1024"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"speed_dur"	"3"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"debuff_dur"	"6"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage_low"	"-50"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"armor_low"	"-45"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"speed_up"	"200"
+			}
+		}
+		
+	}
 }
