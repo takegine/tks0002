@@ -1214,55 +1214,6 @@
 		}
 	}
 
-	"skill_hero_longdan"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"juggernaut_blade_dance"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"precache"
-		{
-			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_stunned_bg.vpcf"
-		}
-		"Modifiers"
-		{
-			"modifier_skill_hero_longdan"
-			{
-				"Passive"	"1"
-				"OnAttacked"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"skill/hero_king01.lua"
-						"Function"	"longdan"
-						"Target"	"TARGET"
-					}
-				}
-				"OnAttack"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"skill/hero_king01.lua"
-						"Function"	"longdan"
-						"Target"	"TARGET"
-					}
-				}
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"change"	"13	16	19	22	25	28	31	34	37	40"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"damage"	"300"
-			}
-		}
-	}
 
 	"skill_hero_huozhugedehuo"
 	{
@@ -5450,5 +5401,35 @@
 			}
 		}
 		
+	}
+	
+	"skill_hero_fengdan"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_fengdan"
+		"AbilityTextureName"	"phantom_assassin_coup_de_grace"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"crit_bonus"	"300"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"crit_chance"	"13 16 19 22 25 28 31 34 37 40"
+			}
+		}
 	}
 }
