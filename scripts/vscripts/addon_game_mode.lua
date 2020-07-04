@@ -122,7 +122,7 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     local killedUnit = EntIndexToHScript( filterTable.entindex_victim_const   )
     local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const )
     local armor = killedUnit:GetPhysicalArmorValue(false)
-    local oldkang  = 1-52/48*armor/(18.75+armor)
+    local oldkang  = 1-6*armor/(100+6*armor)--1-52/48*armor/(18.75+armor)
     local newkang  = 1-armor/(100+armor)
     filterTable.damage=filterTable.damage/oldkang*newkang
     return true
