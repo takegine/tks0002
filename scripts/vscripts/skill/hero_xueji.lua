@@ -86,13 +86,13 @@ end
 function modifier_skill_hero_xueji:GetModifierBaseAttackTimeConstant( params )
     local ability = self:GetAbility()
     local speed   = self.baseatttime or 0
-    return speed - self:GetStackCount() * ability:GetLevel() *self.attack_time
+    return speed - self:GetStackCount() *self.attack_time
 end
 
 -- function modifier_skill_hero_xueji:GetModifierLifestealRegenAmplify_Percentage ( params )
 --     local ability = self:GetAbility()
 
---     return self:GetStackCount() * ability:GetLevel() * self.vamp_bonus
+--     return self:GetStackCount() * self.vamp_bonus
 -- end
 
 function modifier_skill_hero_xueji:GetModifierIncomingDamage_Percentage ( params )
