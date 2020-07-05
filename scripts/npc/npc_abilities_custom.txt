@@ -1039,8 +1039,8 @@
 	{
 		// General
 		// -------------------------------------------------------------------------------------------------------------
-		"BaseClass"	"ability_datadriven"
-		"ScriptFile"	"skill/hero_liansuo"
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_xueji.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"FightRecapLevel"	"1"
 		"precache"
@@ -1048,47 +1048,24 @@
 			"particle"	"particles/units/heroes/hero_huskar/huskar_berserker_blood_hero_effect.vpcf"
 			"particle"	"particles/units/heroes/hero_huskar/huskar_berserkers_blood_glow.vpcf"
 		}
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"skill/hero_xueji.lua"
-				"Function"	"xuejicreate"
-			}
-		}
 		// Special
 		// -------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
+				"var_type"	"FIELD_FLOAT"
 				"vamp_bonus_per_stack"	"0.1"
 			}
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"resistance_per_stack"	"0"
+				"var_type"	"FIELD_FLOAT"
+				"reduce_dam_per_stack"	"0.05"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"attack_time_per_stack"	"0.02"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"hurt_health_ceiling"	"1"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"hurt_health_floor"	"0"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"hurt_health_step"	"0.01"
+				"attack_time_per_stack"	"0.003"
 			}
 		}
 	}
