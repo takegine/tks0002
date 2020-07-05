@@ -360,17 +360,17 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"80 240 480 800 1200 1680 224 2880 3600 4400"
+				"damage"	"80 240 480 800 1200 1680 2240 2880 3600 4400"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"300"
+				"radius"	"215"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"chance"	"15"
+				"chance"	"20"
 			}
 			"04"
 			{
@@ -5406,6 +5406,56 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"crit_chance"	"13 16 19 22 25 28 31 34 37 40"
+			}
+		}
+	}
+	
+	
+	"skill_hero_wuji"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"greevil_blade_fury"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"0.5"
+		"AOERadius"	"%radius"
+		"Modifiers"
+		{
+			"modifier_skill_hero_wuji"
+			{
+				"Passive"	"1"
+				"OnAttacked"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"skill/hero_wuji.lua"
+						"Function"	"wuji"
+					}
+				}
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"80 240 480 800 1200 1680 2240 2880 3600 4400"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"215"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"chance"	"20"
 			}
 		}
 	}
