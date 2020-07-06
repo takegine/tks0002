@@ -84,68 +84,76 @@
 		}
 	}
 
+	"skill_player_price"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"root/PlayerBuild.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
+		"MaxLevel"	"1"
+	}
+
 	"skill_player_lvlup"
 	{
 		"BaseClass"	"ability_lua"
-		"AbilityTextureName"	"mud_golem_rock_destroy"
-		"ScriptFile"	"skill/PlayerBuild.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityTextureName"	"player\BTNLevelTeam"
+		"ScriptFile"	"root/PlayerBuild.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"	"1"
-		"AbilityCooldown"	"1"
-	}
-
-	"skill_player_onback"
-	{
-		"BaseClass"	"ability_lua"
-		"AbilityTextureName"	"razor_static_link_alt_gold"
-		"ScriptFile"	"skill/PlayerBuild.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
-		"MaxLevel"	"1"
-		"AbilityCooldown"	"1"
-	}
-
-	"skill_player_onsell"
-	{
-		"BaseClass"	"ability_lua"
-		"AbilityTextureName"	"buyback"
-		"ScriptFile"	"skill/PlayerBuild.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
-		"MaxLevel"	"1"
-		"AbilityCooldown"	"1"
-	}
-
-	"skill_player_bench"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel"	"1"
-		"Modifiers"
+		"AbilitySpecial"
 		{
-			"modifier_skill_player_bench"
+			"01"
 			{
-				"Passive"	"1"
-				"States"
-				{
-					"MODIFIER_STATE_ROOTED"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_BLIND"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_MUTED"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_DISABLED"
-					"MODIFIER_STATE_PASSIVES_DISABLED"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_SOFT_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-				"IsHidden"	"1"
-				"Properties"	{}
-				"TextureName"	"keeper_of_the_light_spirit_form_illuminate"
+				"var_type"	"FIELD_INTEGER"
+				"basecost"	"0 125 300 1000 1225 1475 2250 2550 2875 3725"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"vipcost"	"0 175 400 1150 1425 2225 2550 3400 3775 4675"
 			}
 		}
+	}
+	"skill_player_lvlkeep"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"player\BTNLevelTeam"
+		"ScriptFile"	"root/PlayerBuild.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
+		"MaxLevel"	"1"
+	}
+
+		"skill_player_onsale"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"player\BTNExile"
+		"ScriptFile"	"root/PlayerBuild.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
+		"MaxLevel"	"1"
+	}
+	
+	"skill_player_toggle"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"player\BTNExpel"
+		"ScriptFile"	"root/PlayerBuild.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
+		"MaxLevel"	"1"
+	}
+
+	"skill_player_sell"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"player\BTNExile"
+		"ScriptFile"	"root/PlayerBuild.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
+		"MaxLevel"	"1"
+		"AbilityCooldown"	"0.1"
 	}
 
 	"skill_player_noattack"
@@ -170,33 +178,55 @@
 		}
 	}
 
-	"skill_player_countdown"
+	"skill_player_lock"
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"1"
 		"Modifiers"
 		{
-			"modifier_skill_player_countdown"
+			"skill_player_lock_plan"
 			{
-				"Passive"	"1"
+				"IsHidden"	"1"
+				"Passive"	"0"
 				"States"
 				{
+					"MODIFIER_STATE_MUTED"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_ROOTED"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_BLIND"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_MUTED"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_DISABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_PASSIVES_DISABLED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"skill_player_lock_battle"
+			{
+				"IsHidden"	"1"
+				"Passive"	"0"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NIGHTMARED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"skill_player_lock_bench"
+			{
+				"IsHidden"	"1"
+				"Passive"	"0"
+				"States"
+				{
+					"MODIFIER_STATE_MUTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_SOFT_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_PASSIVES_DISABLED"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
-				"IsHidden"	"1"
-				"Properties"	{}
-				"TextureName"	"keeper_of_the_light_spirit_form_illuminate"
 			}
 		}
 	}
