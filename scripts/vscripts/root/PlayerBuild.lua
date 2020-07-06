@@ -77,6 +77,18 @@ function skill_player_onsell:OnSpellStart()
 end
 
 
+skill_player_sell = skill_player_sell or {}
+--------------------------------------------------------------------------------
+
+function skill_player_sell:OnSpellStart()
+    local target   = self:GetCursorTarget()
+    local caster   = self:GetCaster()
+    local plid     = caster:GetPlayerOwnerID()
+
+    target:ForceKill(true)
+    
+end
+
 skill_player_lvlup = skill_player_lvlup or {}
 --------------------------------------------------------------------------------
 
