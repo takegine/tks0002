@@ -1,11 +1,11 @@
 "able_addon"
 {
 
-	"npc_dota_hero_antimage"   		  //override_hero关银屏
+	"npc_dota_hero_anti_mage"   		  //override_hero关银屏
 	{
-		"3" "skill_ship_hufu_gyp"         //仁德
-		"2" "skill_ship_longyue_gyp"      //龙跃凤鸣
 		"1" "skill_hero_xueji"            //血祭
+		"2" "skill_ship_longyue_gyp"      //龙跃凤鸣
+        "3" "skill_ship_hufu_gyp"         //虎父无犬女
 	}
 	"npc_dota_hero_abaddon"   		      //override_hero关羽
 	{
@@ -64,7 +64,7 @@
 		"2" "skill_ship_shuigan_md"       //谁敢杀我
 	    "3" "skill_ship_yiji_md"          //一骑当千
 	}
-		"npc_dota_hero_beastmaster"            //override_hero孟获
+		"npc_dota_hero_beastmaster"       //override_hero孟获
 	{
 		"1" "skill_hero_zaiqi"            //再起
 		"2" "skill_ship_huoshou"          //祸首
@@ -91,7 +91,7 @@
 	}
 		"npc_dota_hero_broodmother"       //override_hero赵云
 	{
-		"1" ""         //
+		"1" "skill_hero_longdan"          //龙胆
 		"2" "skill_hero_chongzhen"        //冲阵
 		"3" "skill_ship_longyue_zy"       //龙跃凤鸣
 		"4" "skill_ship_qijin_zy"         //七近七出

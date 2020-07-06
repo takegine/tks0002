@@ -1,3 +1,185 @@
+// Dota2 Editor
+// Get latest version: https://github.com/zombieJ/nw-dota2editor
+
 "DOTAAbilities"
 {
+	// 青釭剑
+	// 参考暗灭
+	"item_weapon_qinggangjian"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"wuping_qinggangjian"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ID"	"2000"
+		"ItemQuality"	"artifact"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		"ItemCost"	"100"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"1"
+		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShopTags"	"damage;unique"
+		"ItemAliases"	"qinggangjian"
+		"ItemRequirements"	{}
+		"precache"
+		{
+			"particle"	"particles/items_fx/desolator_projectile.vpcf"
+			"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		}
+		"Modifiers"
+		{
+			"modifier_item_desolator_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				// "Properties"
+				// {
+				// 	"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"						"%bonus_damage"
+				// }
+				"Orb"
+				{
+					"Priority"	"DOTA_ORB_PRIORITY_ITEM"
+					"ProjectileName"	"particles/items_fx/desolator_projectile.vpcf"
+					"CastAttack"	"0"
+				}
+				"OnOrbFire"
+				{
+					"ApplyModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_item_desolator_datadriven_corruption"
+					}
+					"FireSound"
+					{
+						"EffectName"	"Item_Desolator.Target"
+						"Target"	"TARGET"
+					}
+				}
+			}
+			"modifier_item_desolator_datadriven_corruption"
+			{
+				"Duration"	"%corruption_duration"
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%corruption_armor"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			// "01"
+			// {
+			// 	"var_type"				"FIELD_INTEGER"
+			// 	"bonus_damage"			"60"
+			// }
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"corruption_armor"	"-7"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"corruption_duration"	"15.0"
+			}
+		}
+	}
+
+	// 白玉环
+	// 借鉴 戒心光环
+	"item_jewelry_baiyuhuan"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		
+		"AbilityTextureName"	"wuping_baiyuhuan"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		// Casting
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"	"1200"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+        "ItemAliases"	"baiyuhuan"
+        "BaseClass"	    "item_datadriven"
+		"ID"	        "2001"
+		"ItemQuality"	"artifact"
+		"ItemCost"	    "100"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"1"
+		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShopTags"	"damage;unique"
+		"ItemRequirements"	{}
+		"ItemDisplayCharges" "1"
+		"ItemInitialCharges" "1"
+		"Modifiers"
+		{
+			"modifier_heartstopper_aura_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Aura"	"modifier_heartstopper_debuff_datadriven"
+				"Aura_Radius"	"%aura_radius"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+			"modifier_heartstopper_debuff_datadriven"
+			{
+				"IsDebuff"	"1"
+				"IsHidden"	"1"
+				"ThinkInterval"	"%aura_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"skill/item_jewelry_baiyuhuan_aura.lua"
+						"Function"	"HeartstopperAura"
+						"visibility_modifier"	"modifier_heartstopper_debuff_visibility"
+					}
+				}
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_heartstopper_debuff_visibility"
+						"Target"	"TARGET"
+					}
+				}
+			}
+			"modifier_heartstopper_debuff_visibility"
+			{
+				"IsDebuff"	"1"
+				"IsHidden"	"0"
+				"IsPurgable"	"0"
+				"Passive"	"0"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				// If you change this, also change the AbilityCastRange above
+				"aura_radius"	"640 800 960 1120 1280"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"aura_damage"	"1 2 3 4 5 6"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"aura_interval"	"1"
+			}
+		}
+	}
 }

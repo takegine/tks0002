@@ -1,0 +1,23 @@
+"round_create"
+{
+	"1" {
+        "1" {"unit" "npc_majia" "lvl" "1"}
+        "2" {"unit" "npc_majia" "lvl" "1"}
+        "3" {"unit" "npc_majia" "lvl" "1"}
+        "4" {"unit" "npc_majia" "lvl" "1"}
+        "5" {"unit" "npc_majia" "lvl" "1"}
+    }
+    "3" {
+        "1" {"unit" "npc_dota_creature_gnoll_assassin"  "lvl" "1"}
+        "2" {"unit" "npc_dota_creature_gnoll_assassin"  "lvl" "1"}
+        "3" {"unit" "npc_dota_creature_gnoll_assassin"  "lvl" "1"}
+        "4" {"unit" "npc_dota_creature_gnoll_assassin"  "lvl" "1"}
+        "5" {"unit" "npc_majia" "lvl" "1"}                        
+        "6" {"unit" "npc_majia" "lvl" "1"}                        
+        "7" {"unit" "npc_majia" "lvl" "1"}                        
+        "8" {"unit" "npc_majia" "lvl" "1"}                        
+    }
+    
+}
+
+

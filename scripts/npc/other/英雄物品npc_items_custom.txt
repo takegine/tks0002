@@ -1,0 +1,159 @@
+// Dota2 Editor
+// Get latest version: https://github.com/zombieJ/nw-dota2editor
+
+"DOTAAbilities"
+{
+
+	"item_hero_liubei"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_wujiang_shenliubei"
+		"ID"	"150100"
+		"ItemQuality"	"common"
+		"ItemCastOnPickup"	"1"
+		"Model"	"models/heroes/omniknight/omniknight.vmdl"
+		"ItemCost"	"100"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"1"
+		"ItemAlertable"	"0"
+		"ItemPermanent"	"0"
+		"ItemStackable"	"0"
+		"ItemStockMax"	"0"
+		"ItemRecipe"	"0"
+		"ItemRequirements"	{}
+		"ItemDisassembleRule"	"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+	"item_hero_guanyu"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_wujiang_shenguanyu"
+		"ID"	"150101"
+		"ItemQuality"	"common"
+		"ItemCastOnPickup"	"1"
+		"Model"	"models/heroes/axe/axe.vmdl"
+		"ItemCost"	"100"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"1"
+		"ItemAlertable"	"0"
+		"ItemPermanent"	"0"
+		"ItemStackable"	"0"
+		"ItemStockMax"	"0"
+		"ItemRecipe"	"0"
+		"ItemRequirements"	{}
+		"ItemDisassembleRule"	"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+	"item_hero_caocao"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_wujiang_shencaocao"
+		"ID"	"150200"
+		"ItemQuality"	"common"
+		"ItemCastOnPickup"	"1"
+		"Model"	"models/heroes/pugna/pugna.vmdl"
+		"ItemCost"	"100"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"1"
+		"ItemAlertable"	"0"
+		"ItemPermanent"	"0"
+		"ItemStackable"	"0"
+		"ItemStockMax"	"0"
+		"ItemRecipe"	"0"
+		"ItemRequirements"	{}
+		"ItemDisassembleRule"	"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+	"item_hero_sunquan"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_wujiang_shenzhaoyun"
+		"ID"	"150300"
+		"ItemQuality"	"common"
+		"ItemCastOnPickup"	"1"
+		"Model"	"models/heroes/drow/drow_base.vmdl"
+		"ItemCost"	"100"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"1"
+		"ItemAlertable"	"0"
+		"ItemPermanent"	"0"
+		"ItemStackable"	"0"
+		"ItemStockMax"	"0"
+		"ItemRecipe"	"0"
+		"ItemRequirements"	{}
+		"ItemDisassembleRule"	"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+	"item_hero_dongzhuo"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_wuping_baiyinshizi"
+		"ID"	"150400"
+		"ItemQuality"	"common"
+		"ItemCastOnPickup"	"1"
+		"Model"	"models/items/pudge/arcana/pudge_arcana_base.vmdl"
+		"ItemCost"	"100"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"1"
+		"ItemAlertable"	"0"
+		"ItemPermanent"	"0"
+		"ItemStackable"	"0"
+		"ItemStockMax"	"0"
+		"ItemRecipe"	"0"
+		"ItemRequirements"	{}
+		"ItemDisassembleRule"	"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+	// =================================================================================================================
+	// Recipe: Arcane Boots
+	// =================================================================================================================
+	"item_empty_block"
+	{
+		"BaseClass"	"item_recipe_arcane_boots"
+		"AbilityTextureName"	"item_emptyitembg"
+		"ID"	"150001"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"0"
+		// Recipe
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"	"0"
+		"ItemRequirements"	{}
+	}
+
+	"item_dota_creature_gnoll_assassin"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_branches"
+		"ID"	"150103"
+		"ItemQuality"	"common"
+		"ItemRequirements"	{}
+	}
+
+	"item_hero_guanyinping"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_default"
+		"ID"	"1500"
+		"ItemQuality"	"common"
+		"ItemRequirements"	{}
+	}
+
+	"item_hero_zhaoyun"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_default"
+		"ID"	"1501"
+		"ItemQuality"	"common"
+		"ItemRequirements"	{}
+	}
+
+	"item_hero_pangtong"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_default"
+		"ID"	"1502"
+		"ItemQuality"	"common"
+		"ItemRequirements"	{}
+	}
+}
