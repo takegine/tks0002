@@ -1134,10 +1134,6 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"big_thunder_lizard_slam"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"precache"
-		{
-			"particle"	"particles/econ/items/huskar/huskar_searing_dominator/huskar_searing_life_break.vpcf"
-		}
 		"Modifiers"
 		{
 			"modifier_skill_hero_danji"
@@ -1153,7 +1149,6 @@
 			}
 			"modifier_skill_hero_danji_2"
 			{
-				"Properties"	{}
 				"OnAttack"
 				{
 					"Lifesteal"
@@ -1163,8 +1158,6 @@
 					}
 				}
 				"IsHidden"	"0"
-				"EffectName"	"particles/econ/items/huskar/huskar_searing_dominator/huskar_searing_life_break.vpcf"
-				"EffectAttachType"	"attach_origin"
 			}
 		}
 		"AbilitySpecial"
