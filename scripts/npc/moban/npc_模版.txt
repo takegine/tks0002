@@ -1,17 +1,17 @@
 "DOTAUnits"
 {
-    "npc_majia"
+    "npc_majia" //单位的调用名字
     {//必填字段
         "BaseClass"	"npc_dota_creature"//单位的基类
         "Model"		"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"//模型
     //自定义字段
-"TksPopUse"		"2"		//招募消耗人口
-"TksAttackType" "fire"  //自定义的攻击类型 火   攻击类型："none","tree","fire","electrical","water","land","god"
-"TksDefendType" "water" //自定义的防御类型 水             普通    木     火         电        水      地     神
-"UnitLabel"		"shuguo"//单位标签 我在这里写了国家 分别是shuguo / weiguo/ wuguo/ qunxiong 都是小写
+        "TksPopUse"		"2"		//招募消耗人口
+        "TksAttackType" "fire"  //自定义的攻击类型 火   攻击类型："none","tree","fire","electrical","water","land","god"
+        "TksDefendType" "water" //自定义的防御类型 水             普通    木     火         电        水      地     神
+        "UnitLabel"		"shuguo"//单位标签 我在这里写了国家 分别是shuguo / weiguo/ wuguo/ qunxiong 都是小写
     //基础设置字段
         "ModelScale"		"1.0"//模型比例
-        "Level"				"1"  //出生等级
+        "Level"				"5"  //出生等级
         "ArmorPhysical"		"1"	 //物理护甲
         "StatusHealth"		"200"//基础生命值
         "StatusHealthRegen"	"0.0"//基础生命回复
@@ -27,7 +27,7 @@
         "VisionDaytimeRange"	"400"//白天视野范围
         "VisionNighttimeRange"	"400"//夜晚视野范围
     //技能
-        "Ability1"	"skill_hero_rende"
+        "Ability1"	""
         "Ability2"	""
         "Ability7"	""
         "Ability8"	""
@@ -35,10 +35,10 @@
         "Ability10"	""
         "Ability11"	""
     //普攻
-        "AttackDamageMin"	"50" //最小普攻伤害
-        "AttackDamageMax"	"90" //最大普攻伤害
-        "AttackRange"		"400"//普攻距离
-        "AttackRate"		"1.6"//普攻频率
+        "AttackDamageMin"	"50"    //最小普攻伤害
+        "AttackDamageMax"	"90"    //最大普攻伤害
+        "AttackRange"		"400"   //普攻距离
+        "AttackRate"		"1.6"   //普攻间隔
         "AttackAcquisitionRange"	"1800"//仇恨范围
         "AttackAnimationPoint"		"0.4"//攻击动画
         "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"//攻击类型，近战/远程
@@ -47,36 +47,46 @@
     }
 }
 
-"DOTAHeroes"{
-    "npc_hero_zhangzilong"
+"DOTAHeroes"
+{
+    "npc_dota_hero_ancient_apparition" //覆盖原生英雄，同时也是调用名，与override_hero保持一致
     {
-        "override_hero"	"npc_dota_hero_ancient_apparition"
-        "UnitLabel"		"shuguo"
-        "TksPopUse"		"2"     //招募消耗人口
-        "TksAttackType"	"fire"  //攻击类型："none","tree","fire","electrical","water","land","god"
-        "TksdefendType"	"none"  //          普通    木     火         电        水      地     神
-        "vscripts"		"units/npc_hero_liubei"
+        "override_hero"	"npc_dota_hero_ancient_apparition" //使用的英雄模版，
+        "UnitLabel"		"shuguo"    //单位标签 我在这里写了国家 分别是shuguo / weiguo/ wuguo/ qunxiong 都是小写
+        "TksPopUse"		"2"         //招募消耗人口
+		"TksPayedGold"	"325"       //招募消耗金钱
+        "TksAttackType"	"fire"      //攻击类型："none","tree","fire","electrical","water","land","god"
+        "TksdefendType"	"none"      //          普通    木     火         电        水      地     神
+        "vscripts"		"units/npc_hero_liubei" //自动操作的逻辑脚本
 
-        "Level"		"1"
-        "Ability1"	"skill_hero_rende"
-        "Ability2"	"skill_hero_jijiang"
-        "Ability3"	"skill_create_test2"
+        "Level"		"1"     //出生的等级
+
+        "Ability1"	""      //清空该英雄默认技能
+        "Ability2"	""
+        "Ability3"	""
         "Ability7"	""
         "Ability8"	""
         "Ability9"	""
         "Ability10"	""
         "Ability11"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+		"Ability17"	""
 
-        "AttributeBaseStrength"		"20"
-        "AttributeStrengthGain"		"0.5"
-        "AttributeBaseAgility"		"12"
-        "AttributeAgilityGain"		"1"
-        "AttributeBaseIntelligence"	"12"
-        "AttributeIntelligenceGain"	"1"
-        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"			"50"
+		"AttributePrimary"	        "DOTA_ATTRIBUTE_INTELLECT" //主属性：影响攻击力的属性
+        "AttributeBaseStrength"		"20"    //初始力量
+        "AttributeStrengthGain"		"0.5"   //每级提升力量
+        "AttributeBaseAgility"		"12"    //初始敏捷
+        "AttributeAgilityGain"		"1"     //每级提升敏捷
+        "AttributeBaseIntelligence"	"12"    //初始智力
+        "AttributeIntelligenceGain"	"1"     //每级提升智力
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"    //攻击类型近战
+        "AttackDamageMin"			"50"    //最小普攻伤害
         "AttackDamageMax"			"70"
-        "AttackRate"				"230"
+        "AttackRate"				"2.20"   //攻击间隔
         "AttackAcquisitionRange"	"900"
         "AttackRange"				"150"
         "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
@@ -85,5 +95,8 @@
         "StatusHealthRegen"			"0.5"
         "StatusMana"				"100"
         "StatusManaRegen"			"0.5"
+		"ArmorPhysical"	            "6"     //初始护甲
+		"MagicalResistance"         "0"     //初始魔抗
+
     }
 }

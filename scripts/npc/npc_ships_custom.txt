@@ -59,7 +59,7 @@
     //星月交辉  黄月英老诸葛
     "skill_ship_xingyue" 
     {
-        "01" "npc_dota_hero_"
+        // "01" "npc_dota_hero_"
         "02" "npc_dota_hero_bane"
     }
 
@@ -67,15 +67,15 @@
     "skill_ship_qizong" 
     {
         "01" "npc_dota_hero_bountyhunter"
-        "02" "npc_dota_hero_"
+        // "02" "npc_dota_hero_"
     }
 
     //驱虎吞狼  刘备荀彧吕布
     "skill_ship_quhu" 
     {
         "01" "npc_dota_hero_bountyhunter"
-        "02" "npc_dota_hero_"
-        "03" "npc_dota_hero_"
+        // "02" "npc_dota_hero_"
+        // "03" "npc_dota_hero_"
     }
 
     //夜梦北斗  刘备刘禅
