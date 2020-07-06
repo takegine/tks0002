@@ -5426,4 +5426,65 @@
 			}
 		}
 	}
+	
+	"skill_hero_tiaoxin"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"mud_golem_rock_destroy"
+		"ScriptFile"	"skill/hero_tiaoxin.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_NO"
+		"MaxLevel"	"10"
+		"AbilityCooldown"	"1"
+		"precache"
+		{
+			
+			"particle"	"particles/econ/events/winter_major_2016/blink_dagger_wm_end_smoke.vpcf"
+		}
+		
+		"Modifiers"
+		{
+			"modifier_smoke_screen"
+			{
+				"Duration"				"3"
+
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						//fix sound!
+						"EffectName"	"Hero_Riki.Smoke_Screen"
+						"Target"		"CASTER"
+					}
+
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+						"ControlPoints"
+						{
+							"00" "0 0 0"
+							"01" "%radius %radius %radius"
+						}
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"130 260 390"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"500"
+			}
+		}
+	}
 }
