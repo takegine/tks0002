@@ -129,21 +129,26 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
 end
 
 function CAddonTemplateGameMode:npc_spawned(keys )
-    local  npc = EntIndexToHScript(keys.entindex)
-    if npc:GetName()== "npc_dota_fort"
-    or npc:GetName()== "npc_dota_building"
-    or npc.bFirstSpawned then
-        return
+    local npc = EntIndexToHScript(keys.entindex)
+    if    npc:GetName()== "npc_dota_fort"
+    or    npc:GetName()== "npc_dota_building"
+    or    npc.bFirstSpawned 
+    then  return
     end
 
     npc.bFirstSpawned = true
 
     if npc:GetName()==SET_FORCE_HERO then
         npc.ship={}
-        CreateUnitByName( "npc_dota_hero_target_dummy", RandomVector(20), true, nil, nil, 7 )
+        local targetdummy = CreateUnitByName( "npc_dota_hero_target_dummy", RandomVector(20), true, nil, nil, 7 )
+              targetdummy:SetBaseMagicalResistanceValue( 0 )
     end
     if npc:IsHero() then
-        for i=0,15 do if npc:GetAbilityByIndex(i) then npc:GetAbilityByIndex(i):SetLevel(1) end end
+        for i=0,15 do 
+            if   npc:GetAbilityByIndex(i) 
+            then npc:GetAbilityByIndex(i):SetLevel(1) 
+            end 
+        end
     end
 end
 
