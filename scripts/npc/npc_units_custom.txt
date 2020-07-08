@@ -117,4 +117,11 @@
 		"ConsideredHero"	"0"
 		"UseNeutralCreepBehavior"	"0"
 	}
+
+	"npc_damage_dummy"
+	{
+		"BaseClass"	"npc_dota_fort"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
+	}
 }
