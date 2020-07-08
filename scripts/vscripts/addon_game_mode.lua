@@ -64,6 +64,20 @@ function CAddonTemplateGameMode:InitGameMode()
 
     CustomGameEventManager:RegisterListener( "createnewherotest", Dynamic_Wrap(self,"createnewherotest") )
     CustomGameEventManager:RegisterListener("refreshlist",Dynamic_Wrap(self, 'refreshlist'))
+
+    self.DamageKV = LoadKeyValues("scripts/damage_table.kv")
+    self.tkUnitList = {}
+    table.foreach( LoadKeyValues('scripts/npc/npc_units_custom.txt'), function(k,v)
+        if type(v)=="table" then
+            self.tkUnitList[k]=v
+        end
+    end)
+    table.foreach( LoadKeyValues('scripts/npc/npc_heroes_custom.txt'), function(k,v)
+        if type(v)=="table" then
+            self.tkUnitList[k]=v
+        end
+    end)
+
 end
 
 -- Evaluate the state of the game
@@ -118,27 +132,43 @@ function CAddonTemplateGameMode:entity_hurt(keys)
 end
 
 function CAddonTemplateGameMode:DamageFilter(filterTable)
-    local damage=filterTable.damage
+    local damage     = filterTable.damage
+    local damtype    = filterTable.damagetype_const
     local killedUnit = EntIndexToHScript( filterTable.entindex_victim_const   )
-    local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const )
-    local armor = killedUnit:GetPhysicalArmorValue(false)
-    local oldkang  = 1-6*armor/(100+6*armor)--1-52/48*armor/(18.75+armor)
-    local newkang  = 1-armor/(100+armor)
-    filterTable.damage=filterTable.damage/oldkang*newkang
+    local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const )    
+
+    if damtype == DAMAGE_TYPE_PHYSICAL then
+
+        local armor    =  killedUnit:GetPhysicalArmorValue(false)
+        local oldkang  = 1-6*armor/(100+6*armor)--1-52/48*armor/(18.75+armor)
+        local newkang  = 1-armor/(100+armor)
+
+        filterTable.damage = filterTable.damage /oldkang *newkang
+    end
+
+    if not self.DamageKV
+    or not killerUnit.attack_type
+    then return true 
+    end
+    killedUnit.defend_type  = killedUnit.defend_type or "none"
+    local damage_multiplier = self.DamageKV[killerUnit.attack_type][killedUnit.defend_type] or 1
+
+    filterTable["damage"] = filterTable["damage"] * damage_multiplier
     return true
+
 end
 
 function CAddonTemplateGameMode:npc_spawned(keys )
-    local npc = EntIndexToHScript(keys.entindex)
-    if    npc:GetName()== "npc_dota_fort"
-    or    npc:GetName()== "npc_dota_building"
+    local npc   = EntIndexToHScript(keys.entindex)
+    local nameX = npc:GetName()
+    if    nameX== "npc_dota_building"
     or    npc.bFirstSpawned 
     then  return
     end
 
     npc.bFirstSpawned = true
 
-    if npc:GetName()==SET_FORCE_HERO then
+    if nameX==SET_FORCE_HERO then
         npc.ship={}
         local targetdummy = CreateUnitByName( "npc_dota_hero_target_dummy", RandomVector(20), true, nil, nil, 7 )
               targetdummy:SetBaseMagicalResistanceValue( 0 )
@@ -149,6 +179,10 @@ function CAddonTemplateGameMode:npc_spawned(keys )
             then npc:GetAbilityByIndex(i):SetLevel(1) 
             end 
         end
+    end
+    if self.tkUnitList[nameX] then
+        npc.attack_type = self.tkUnitList[nameX]["TksAttackType"]
+        npc.defend_type = self.tkUnitList[nameX]["TksDefendType"]
     end
 end
 
