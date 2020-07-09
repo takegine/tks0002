@@ -170,8 +170,33 @@ function CAddonTemplateGameMode:npc_spawned(keys )
 
     if nameX==SET_FORCE_HERO then
         npc.ship={}
-        local targetdummy = CreateUnitByName( "npc_dota_hero_target_dummy", RandomVector(20), true, nil, nil, 7 )
-              targetdummy:SetBaseMagicalResistanceValue( 0 )
+        local elementlist =  { "none", "god", "tree", "fire", "electrical", "water", "land" }
+        local colorlist = {
+            255, 255, 255,--原色
+              0,   0,   0,--黑色
+              0, 255,   0,--绿色
+            255,   0,   0,--红色
+            255,   0, 255,--紫色
+              0,   0, 255,--蓝色
+            237, 189, 101,--黄色
+              0, 255, 255,--青色
+        }
+        for i=1,7 do
+            local Pos = -npc:GetAbsOrigin() + npc:GetForwardVector() * i * 300
+            local targetdummy = CreateUnitByName( "npc_dota_hero_target_dummy", Pos, true, nil, nil, i+6 )
+            targetdummy:SetBaseMagicalResistanceValue( 0 )
+            targetdummy:SetRenderColor( colorlist[i*3-2], colorlist[i*3-1], colorlist[i*3] )
+            targetdummy.defend_type = elementlist[i]
+
+            
+		local rotationAngle =  (360/8 * i) - 40
+		local relPos = Vector( 0, 400 , 0 )
+		relPos = RotatePosition( Vector(0,0,0), QAngle( 0, -rotationAngle, 0 ), relPos )
+
+		local absPos = GetGroundPosition( relPos + npc:GetAbsOrigin(), targetdummy )
+        --newSpirit:StartGesture(ACT_DOTA_CAPTURE)
+		targetdummy:SetAbsOrigin( absPos )
+        end
     end
     if npc:IsHero() then
         for i=0,15 do 
