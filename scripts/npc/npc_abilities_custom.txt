@@ -5426,4 +5426,119 @@
 			}
 		}
 	}
+	"skill_hero_huogong"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"jakiro_macropyre"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastPoint"	"0.5"
+		"MaxLevel"	"10"
+		"AOERadius"	"%path_radius"
+		"AbilityCooldown"	"12"
+		"AbilityManaCost"	"10 12 14 16 18 20 22 24 26 28" 
+		// "AbilityCastRange"	"800"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
+		}
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Jakiro.Macropyre.Cast"
+				"Target"	"CASTER"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"skill/hero_huogong.lua"
+				"Function"		"Fire_thefire"
+				"Target"		"POINT"
+				"path_radius"	"%path_radius"
+				"damage"		"%damage"
+				"duration"		"%duration"
+				"dummyMod"		"modifier_macropyre_destroy_tree_datadriven"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"skill/hero_huogong.lua"
+				"Function"		"ApplyDummyModifier"
+				"Target"		"TARGET"
+				"modifier_name"	"modifier_macropyre_check_range_datadriven"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_macropyre_check_range_datadriven"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsHidden"	"1"
+				"IsPurgable"	"0"
+				"ThinkInterval"	"%burn_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"skill/hero_huogong.lua"
+						"Function"		"deal_damage"
+						"Target"		"TARGET"
+						"path_radius"	"%path_radius"
+						"burn_interval"	"%burn_interval"
+					}
+				}
+			}
+			"modifier_macropyre_destroy_tree_datadriven"
+			{
+				"OnCreated"
+				{
+					"DestroyTrees"
+					{
+						"Target"	"TARGET"
+						"Radius"	"%path_radius"
+					}
+					"ApplyModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_kill"
+						"Duration"	"%duration"
+					}
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"40 130 245 385 550 740 955 1195 1460 1750"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"duration"	"3"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"path_radius"	"288"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"burn_interval"	"0.33"
+			}
+		}
+	}
 }
