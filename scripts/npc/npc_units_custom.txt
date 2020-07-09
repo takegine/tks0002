@@ -377,4 +377,11 @@
 		"UnitRelationShipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"CombatClassDefend"	"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	}
+
+	"npc_damage_dummy"
+	{
+		"BaseClass"	"npc_dota_fort"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
+	}
 }
