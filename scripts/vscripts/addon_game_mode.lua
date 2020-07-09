@@ -266,9 +266,9 @@ function CAddonTemplateGameMode:player_chat(keys )
                 local lvl = u:GetLevel()+1
 
                 while( u:GetLevel() < lvl ) do
-                    if   u:IsHero() then
-                            u:HeroLevelUp( false )
-                    else u:CreatureLevelUp( 1 )
+                    if u:IsCreature() then u:CreatureLevelUp( 1 )
+                    elseif u:IsHero() then u:HeroLevelUp( false )
+                    else print(u:GetUnitName(),"cant level up") break
                     end
                 end
                 for i=0,15 do
