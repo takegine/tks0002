@@ -1,5 +1,10 @@
+// Dota2 Editor
+// Get latest version: https://github.com/zombieJ/nw-dota2editor
+
 "DOTAAbilities"
 {
+	"Version"		"1"
+
 	"skill_loseHP"
 	{
 		"BaseClass"	"ability_datadriven"
@@ -8,8 +13,8 @@
 		{
 			"particle"	"particles/world_outpost/world_outpost_channel_finish_embers.vpcf"
 			"particle"	"particles/units/heroes/hero_sniper/sniper_assassinate_startpoint.vpcf"
-			"particle"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate_impact.vpcf"
 			"soundfile"	"soundevents/music/valve_dota_001/game_sounds_music.vsndevts"
+			"particle"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate_impact.vpcf"
 		}
 		"Modifiers"
 		{
@@ -115,6 +120,7 @@
 			}
 		}
 	}
+
 	"skill_player_lvlkeep"
 	{
 		"BaseClass"	"ability_lua"
@@ -125,7 +131,7 @@
 		"MaxLevel"	"1"
 	}
 
-		"skill_player_onsale"
+	"skill_player_onsale"
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"player\BTNExile"
@@ -134,7 +140,7 @@
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"	"1"
 	}
-	
+
 	"skill_player_toggle"
 	{
 		"BaseClass"	"ability_lua"
@@ -251,8 +257,8 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"centaur_hoof_stomp"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"	"10"
@@ -281,8 +287,8 @@
 					{
 						"ScriptFile"	"skill/hero_rende.lua"
 						"Function"	"rende"
-						"Target" "TARGET"
-						"partfri" "particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_pu_ti6_heal_hammers.vpcf"
+						"Target"	"TARGET"
+						"partfri"	"particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_pu_ti6_heal_hammers.vpcf"
 					}
 				}
 			}
@@ -440,8 +446,8 @@
 	"skill_hero_jijiang"
 	{
 		"BaseClass"	"ability_lua"
-		"ScriptFile"	"scripts/vscripts/skill/hero_jijiang.lua"
 		"AbilityTextureName"	"ursa_fury_swipes"
+		"ScriptFile"	"scripts/vscripts/skill/hero_jijiang.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -462,12 +468,10 @@
 		}
 	}
 
-
 	"skill_hero_liusan"
 	{
 		"BaseClass"	"ability_lua"
 		"ScriptFile"	"scripts/vscripts/skill/hero_liusan.lua"
-		"AbilityTextureName"	""
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"1"
 		"RequiredLevel"	"0"
@@ -499,13 +503,13 @@
 			"modifier_skill_hero_liutao"
 			{
 				"IsHidden"	"1"
-				"Passive" "1"
+				"Passive"	"1"
 				"OnIntervalThink"
 				{
 					"RunScript"
 					{
 						"ScriptFile"	"skill/hero_liutao.lua"
-						"Function"		"liutao"
+						"Function"	"liutao"
 					}
 				}
 				"ThinkInterval"	"2"
@@ -1177,7 +1181,7 @@
 		"AbilityCooldown"	"50"
 	}
 
-//先生 6-18
+	// 先生 6-18
 	"skill_hero_chongzhen"
 	{
 		"BaseClass"	"ability_datadriven"
@@ -1213,7 +1217,6 @@
 			}
 		}
 	}
-
 
 	"skill_hero_huozhugedehuo"
 	{
@@ -1680,7 +1683,7 @@
 			}
 		}
 	}
-    
+
 	"skill_hero_kuangre"
 	{
 		"BaseClass"	"ability_datadriven"
@@ -1918,7 +1921,8 @@
 			}
 		}
 	}
-"skill_hero_huixue"
+
+	"skill_hero_huixue"
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3407,7 +3411,32 @@
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_creeps.vsndevts"
-			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start.vpcf"
+			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_r.vpcf"
+			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_l.vpcf"
+		}
+		"OnAttack"
+		{
+			"FireSound"
+			{
+				"Target"	"TARGET"
+				"EffectName"	"n_creep_ForestTrollHighPriest.Heal"
+			}
+			"ApplyModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"modifier_skill_hero_guanxing"
+			}
+			"ApplyModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"modifier_skill_hero_guanxing_3"
+			}
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/skill/guanxing.lua"
+				"Function"	"guanxing"
+			}
 		}
 		"Modifiers"
 		{
@@ -3443,20 +3472,12 @@
 						}
 					}
 				}
-				"OnAttackStart"
-				{
-					"FireSound"
-					{
-						"Target"	"TARGET"
-						"EffectName"	"n_creep_ForestTrollHighPriest.Heal"
-					}
-				}
 				"OnAttackLanded"
 				{
 					"FireEffect"
 					{
 						"Target"	"TARGET"
-						"EffectName"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start.vpcf"
+						"EffectName"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_r.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
 					"ActOnTargets"
@@ -3505,10 +3526,86 @@
 						"Target"	"CASTER"
 						"ModifierName"	"modifier_skill_hero_guanxing_2"
 					}
+					"ApplyModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_skill_hero_guanxing_3"
+					}
 				}
 				"ThinkInterval"	"%chixu"
 				"Duration"	"%chixu"
 				"IsHidden"	"1"
+			}
+			"modifier_skill_hero_guanxing_3"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Properties"	{}
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Radius"	"%radius"
+						"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+					"Action"
+					{
+						"Damage"
+						{
+							"Target"	"TARGET"
+							"Type"	"DAMAGE_TYPE_PURE"
+							"Damage"	"%heal"
+						}
+						"FireEffect"
+						{
+							"Target"	"TARGET"
+							"EffectName"	"particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf"
+							"EffectAttachType"	"follow_origin"
+							"ControlPoints"	{}
+							"ControlPointEntities"	{}
+						}
+					}
+				}
+				"OnAttackLanded"
+				{
+					"FireEffect"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_l.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Center"	"TARGET"
+							"Radius"	"%banjing"
+						}
+						"Action"
+						{
+							"Damage"
+							{
+								"Target"	"TARGET"
+								"Type"	"DAMAGE_TYPE_MAGICAL"
+								"Damage"	"%shanghai"
+							}
+						}
+					}
+					"ApplyModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_skill_hero_guanxing_2"
+					}
+					"RemoveModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_skill_hero_guanxing_3"
+					}
+				}
 			}
 		}
 		"AbilitySpecial"
@@ -5244,47 +5341,47 @@
 		}
 		"AbilityDuration"	"7.0"
 	}
-	
+
 	"skill_hero_paoxiao"
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"sven_warcry"
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetFlags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"precache"
 		{
-			"particle"	"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_disarm_ti6_debuff.vpcf"
 			"particle"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
+			"soundfile"	"soundevents/game_sounds_hero_pick.vsndevts"
+			"particle"	"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_disarm_ti6_debuff.vpcf"
 		}
 		"Modifiers"
 		{
 			"Modifier_skill_hero_paoxiao"
 			{
-				"IsHidden" "1"
-				"Passive"  "1"
+				"IsHidden"	"1"
+				"Passive"	"1"
 				"OnAttack"
 				{
 					"RunScript"
 					{
 						"ScriptFile"	"skill/hero_paoxiao.lua"
 						"Function"	"OnAttack"
-						"attspeedmod" "Modifier_skill_hero_paoxiao_attackspeed"
-						"debuffname" "modifer_skill_hero_paoxiao_debuff"
+						"attspeedmod"	"Modifier_skill_hero_paoxiao_attackspeed"
+						"debuffname"	"modifer_skill_hero_paoxiao_debuff"
 					}
 				}
 			}
-			
 			"Modifier_skill_hero_paoxiao_attackspeed"
 			{
-				"IsHidden" "1"
+				"IsHidden"	"1"
 				"EffectName"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%speed_up"
-				}				
+				}
 				"OnCreated"
 				{
 					"FireSound"
@@ -5296,13 +5393,13 @@
 			}
 			"modifer_skill_hero_paoxiao_debuff"
 			{
-				"IsDebuff" "1"
+				"IsDebuff"	"1"
 				"EffectName"	"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_disarm_ti6_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"  "%damage_low"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_low"
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%damage_low"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_low"
 				}
 			}
 		}
@@ -5338,20 +5435,19 @@
 				"var_type"	"FIELD_INTEGER"
 				"armor_low"	"-45"
 			}
-			"06"
+			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"speed_up"	"200"
 			}
 		}
-		
 	}
-	
+
 	"skill_hero_fengdan"
 	{
 		"BaseClass"	"ability_lua"
-		"ScriptFile"	"skill/hero_fengdan"
 		"AbilityTextureName"	"phantom_assassin_coup_de_grace"
+		"ScriptFile"	"skill/hero_fengdan"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -5376,8 +5472,7 @@
 			}
 		}
 	}
-	
-	
+
 	"skill_hero_wuji"
 	{
 		"BaseClass"	"ability_datadriven"

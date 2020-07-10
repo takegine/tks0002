@@ -1,5 +1,10 @@
+// Dota2 Editor
+// Get latest version: https://github.com/zombieJ/nw-dota2editor
+
 "DOTAUnits"
 {
+	"Version"		"1"
+
 	// =================================================================================
 	// Creature: Gnoll Assassin
 	// =================================================================================
@@ -316,7 +321,8 @@
 		"ModelScale"	"1.1"
 		"RingRadius"	"100"
 	}
-//先生 6-13
+
+	// 先生 6-13
 	"npc_dota_creature_gnoll_jinzhan"
 	{
 		"BaseClass"	"npc_dota_creature"
