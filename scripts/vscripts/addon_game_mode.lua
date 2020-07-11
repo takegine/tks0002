@@ -237,46 +237,51 @@ function CAddonTemplateGameMode:player_chat(keys )
     elseif list[1]=="ship" and list[2] then
         hero.ship[list[2]]= list[3]=="true" or nil
         GameRules:SendCustomMessage( "羁绊名："..list[2].." ，已设置为"..(list[3]=="true" and "有" or "失").."效", hero:GetTeamNumber(), 1)
+        
+        herochange("waveup")
     elseif list[1]=="hero" and list[2] then
-        
-        local reList = Entities:FindAllInSphere(Vector(0,0,0),9999)
-        
-        for k = #reList, 1, -1 do  
-            local u= reList[k] 
+        herochange(list[2])
+    end
+end
 
-            if not u.bFirstSpawned
-            or not u:IsAlive()
-            or u:GetName() == SET_FORCE_HERO 
-            or u:GetName() == "npc_dota_courier" 
-            then table.remove( reList , k )            
+function herochange(keys)
+    local reList = Entities:FindAllInSphere(Vector(0,0,0),9999)
+    
+    for k = #reList, 1, -1 do  
+        local u= reList[k] 
+
+        if not u.bFirstSpawned
+        or not u:IsAlive()
+        or u:GetName() == SET_FORCE_HERO 
+        or u:GetName() == "npc_dota_courier" 
+        then table.remove( reList , k )            
+        end
+    end
+
+    if keys=="waveup" then
+        table.foreach(reList,function(_,u)
+            for i=0,10 do
+                local abi =u:GetAbilityByIndex(i)
+                if abi and abi.needwaveup then
+                    abi:needwaveup()
+                end
             end
-        end
+        end)
+    elseif keys=="lvlup" then
+        table.foreach(reList,function(_,u)
+            local lvl = u:GetLevel()+1
 
-        if list[2]=="refresh" then
-            table.foreach(reList,function(_,u)
-                for i=0,10 do
-                    local abi =u:GetAbilityByIndex(i)
-                    if abi and abi.needwaveup then
-                        abi:needwaveup()
-                    end
+            while( u:GetLevel() < lvl ) do
+                if u:IsCreature() then u:CreatureLevelUp( 1 )
+                elseif u:IsHero() then u:HeroLevelUp( false )
+                else print(u:GetUnitName(),"cant level up") break
                 end
-            end)
-        elseif list[2]=="lvlup" then
-            table.foreach(reList,function(_,u)
-                local lvl = u:GetLevel()+1
-
-                while( u:GetLevel() < lvl ) do
-                    if u:IsCreature() then u:CreatureLevelUp( 1 )
-                    elseif u:IsHero() then u:HeroLevelUp( false )
-                    else print(u:GetUnitName(),"cant level up") break
-                    end
+            end
+            for i=0,15 do
+                if  u:GetAbilityByIndex(i) then 
+                    u:GetAbilityByIndex(i):SetLevel(lvl) 
                 end
-                for i=0,15 do
-                    if  u:GetAbilityByIndex(i) then 
-                        u:GetAbilityByIndex(i):SetLevel(lvl) 
-                    end
-                end
-            end)
-        end
+            end
+        end)
     end
 end
