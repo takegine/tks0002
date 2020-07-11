@@ -141,8 +141,8 @@ end
 
 if modifier_skill_hero_wusheng_armor == nil then modifier_skill_hero_wusheng_armor = class({}) end
 
-function modifier_skill_hero_wusheng_armor:IsHidden()		return false end
-function modifier_skill_hero_wusheng_armor:IsPurgable() 	return false end
-function modifier_skill_hero_wusheng_armor:RemoveOnDeath()	return true end
-function modifier_skill_hero_wusheng_armor:DeclareFunctions()	return { MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE } end
-function modifier_skill_hero_wusheng_armor:GetModifierPhysicalArmorBonusUniqueActive()	return 10*self:GetStackCount() end
+function modifier_skill_hero_wusheng_armor:IsHidden()		return false end -- 如果应该在增益栏上显示此修饰符 buff图标
+function modifier_skill_hero_wusheng_armor:IsPurgable() 	return false end -- 如果可以清除此修饰符 可不可以被净化
+function modifier_skill_hero_wusheng_armor:RemoveOnDeath()	return true end  -- 如果父项死亡时删除了此修饰符  单位死亡删除这个技能（否）
+function modifier_skill_hero_wusheng_armor:DeclareFunctions()	return { MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE } end --运行所有关联的destroy函数 
+function modifier_skill_hero_wusheng_armor:GetModifierPhysicalArmorBonusUniqueActive()	return 10*self:GetStackCount() end --获取唯一的护甲加成，获取层数

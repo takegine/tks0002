@@ -3455,7 +3455,7 @@
 					"RunScript"
 					{
 						"Target"	"CASTER"
-						"ScriptFile"	"scripts/vscripts/skill/guanxing.lua"
+						"ScriptFile"	"scripts/vscripts/skill/zhugeliannu.lua"
 						"Function"	"guanxing"
 					}
 				}
@@ -3472,6 +3472,12 @@
 						"Target"	"TARGET"
 						"EffectName"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_r.vpcf"
 						"EffectAttachType"	"follow_origin"
+					}
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/skill/qunxingjiban.lua"
+						"Function"	"guanxingjiban"
 					}
 					"ActOnTargets"
 					{
@@ -3502,6 +3508,9 @@
 						"Target"	"CASTER"
 						"ModifierName"	"modifier_skill_hero_guanxing"
 					}
+					"RemoveModifier"
+					{
+					}
 				}
 				"ThinkInterval"	"0.01"
 			}
@@ -3528,7 +3537,7 @@
 			"modifier_skill_hero_guanxing_3"
 			{
 				"Passive"	"0"
-				"IsHidden"	"0"
+				"IsHidden"	"1"
 				"Properties"	{}
 				"ActOnTargets"
 				{
@@ -3589,13 +3598,8 @@
 						"Target"	"CASTER"
 						"ModifierName"	"modifier_skill_hero_guanxing_4"
 					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_guanxing_3"
-					}
 				}
-				"IsBuff"	"1"
+				"IsBuff"	"0"
 			}
 			"modifier_skill_hero_guanxing_4"
 			{
@@ -3606,11 +3610,6 @@
 					{
 						"Target"	"CASTER"
 						"ModifierName"	"modifier_skill_hero_guanxing"
-					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_guanxing_3"
 					}
 				}
 				"ThinkInterval"	"%chixu"
