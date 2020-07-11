@@ -51,3 +51,61 @@ Clamp( 2, 0, 10) == 2
 Clamp(12, 0, 10) == 10
 Clamp(-5, 0, 10) == 0
 ```
+
+## 后置生效方法 needwaveup
+
+有的羁绊或者装备只需要判断一次，又没有合适触发事件时，我们写成后置生效的方法。
+游戏中运行的顺序是 
+1. 生成战斗单位
+2. 添加技能 （所有的Oncreate会在这里执行）
+3. 判断羁绊，为owner.ship赋值
+4. 添加装备，依照玩家信使来复制装备
+5. 执行后置生效方法
+
+如果是 `ability_lua` 类的技能就非常直接，下方是一个参考。更多实例可以参考技能：激将，狂骨，刘桃
+
+```lua
+function skill_hero_example:needwaveup()
+    local caster  = self:GetCaster()
+    local owner   = caster:GetOwner() or {ship={}}
+
+    if  owner.ship['temp'] then
+        print("waveup is working")
+    end
+end
+```
+
+如果是 `ability_datadriven` 类的技能,就相对复杂一点点。我们给技能一个默认拥有的修改器，或者已有的修改器中，写当`修改器创建`的事件，然后在里面执行脚本。
+下方是一个参考。更多实例可以参考技能：观星
+```
+"Modifiers"
+    {
+        "modifier_example"
+        {
+            "Passive"	"1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"  "skill/example.lua"
+                    "Function"	  "addwaveup"
+                }
+            }
+        }
+    }
+```
+
+```lua
+function addwaveup ( params )
+    local ability = params.ability
+
+	ability.needwaveup = function ( ability)
+		local caster   = ability:GetCaster()
+        local owner    = caster:GetOwner() or {ship={}}
+
+        if  owner.ship['temp'] then
+            print("waveup is working")
+        end
+    end
+end
+```
