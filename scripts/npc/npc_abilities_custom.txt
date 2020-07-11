@@ -5541,4 +5541,29 @@
 			}
 		}
 	}
+
+	"skill_hero_kuanggu"
+	{
+		"BaseClass"		"ability_lua"
+		"ScriptFile"	"skill/hero_kuanggu.lua"
+		"MaxLevel"	"10"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"300"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius_ship"	"200"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"heallvl"	"53 56 59 62 65 68 71 74 77 80"
+			}
+		}
+	}
 }
