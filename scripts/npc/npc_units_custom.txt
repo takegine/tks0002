@@ -120,7 +120,7 @@
 
 	"npc_damage_dummy"
 	{
-		"BaseClass"	"npc_dota_fort"
+		"BaseClass"	"npc_dota_thinker"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
 		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
 	}
