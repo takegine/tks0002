@@ -3410,33 +3410,11 @@
 		"LevelsBetweenUpgrades"	"1"
 		"precache"
 		{
+			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_l.vpcf"
+			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_r.vpcf"
 			"soundfile"	"soundevents/game_sounds_creeps.vsndevts"
 			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_r.vpcf"
 			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_l.vpcf"
-		}
-		"OnAttack"
-		{
-			"FireSound"
-			{
-				"Target"	"TARGET"
-				"EffectName"	"n_creep_ForestTrollHighPriest.Heal"
-			}
-			"ApplyModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_skill_hero_guanxing"
-			}
-			"ApplyModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_skill_hero_guanxing_3"
-			}
-			"RunScript"
-			{
-				"Target"	"CASTER"
-				"ScriptFile"	"scripts/vscripts/skill/guanxing.lua"
-				"Function"	"guanxing"
-			}
 		}
 		"Modifiers"
 		{
@@ -3472,8 +3450,23 @@
 						}
 					}
 				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/skill/guanxing.lua"
+						"Function"	"guanxing"
+					}
+				}
+				"States"	{}
 				"OnAttackLanded"
 				{
+					"FireSound"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"n_creep_ForestTrollHighPriest.Heal"
+					}
 					"FireEffect"
 					{
 						"Target"	"TARGET"
@@ -3510,10 +3503,11 @@
 						"ModifierName"	"modifier_skill_hero_guanxing"
 					}
 				}
+				"ThinkInterval"	"0.01"
 			}
 			"modifier_skill_hero_guanxing_2"
 			{
-				"Passive"	"1"
+				"Passive"	"0"
 				"OnIntervalThink"
 				{
 					"ApplyModifier"
@@ -3526,11 +3520,6 @@
 						"Target"	"CASTER"
 						"ModifierName"	"modifier_skill_hero_guanxing_2"
 					}
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_guanxing_3"
-					}
 				}
 				"ThinkInterval"	"%chixu"
 				"Duration"	"%chixu"
@@ -3538,8 +3527,8 @@
 			}
 			"modifier_skill_hero_guanxing_3"
 			{
-				"Passive"	"1"
-				"IsHidden"	"1"
+				"Passive"	"0"
+				"IsHidden"	"0"
 				"Properties"	{}
 				"ActOnTargets"
 				{
@@ -3598,7 +3587,7 @@
 					"ApplyModifier"
 					{
 						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_guanxing_2"
+						"ModifierName"	"modifier_skill_hero_guanxing_4"
 					}
 					"RemoveModifier"
 					{
@@ -3606,6 +3595,27 @@
 						"ModifierName"	"modifier_skill_hero_guanxing_3"
 					}
 				}
+				"IsBuff"	"1"
+			}
+			"modifier_skill_hero_guanxing_4"
+			{
+				"Passive"	"0"
+				"OnIntervalThink"
+				{
+					"ApplyModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_skill_hero_guanxing"
+					}
+					"RemoveModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_skill_hero_guanxing_3"
+					}
+				}
+				"ThinkInterval"	"%chixu"
+				"Duration"	"%chixu"
+				"IsHidden"	"1"
 			}
 		}
 		"AbilitySpecial"
