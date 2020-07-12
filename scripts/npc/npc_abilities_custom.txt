@@ -1180,36 +1180,28 @@
 //先生 6-18
 	"skill_hero_chongzhen"
 	{
-		"BaseClass"	"ability_datadriven"
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_chongzhen.lua"
 		"AbilityTextureName"	"juggernaut_blade_dance"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"precache"
 		{
 			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_stunned_bg.vpcf"
 		}
-		"Modifiers"
-		{
-			"modifier_skill_hero_chongzhen"
-			{
-				"Passive"	"1"
-				"OnAttack"
-				{
-					"RunScript"
-					{
-						"Target"	"TARGET"
-						"ScriptFile"	"skill/hero_king01.lua"
-						"Function"	"chongzheng"
-					}
-				}
-			}
-		}
+	
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"hp_re"	"14"
+				"var_type"	"FIELD_INT"
+				"heal"	"3 6 9 12 15 18 21 24 27 30"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INT"
+				"chance"	"13 16 19 22 25 28 31 34 37 40"
 			}
 		}
 	}
@@ -2794,78 +2786,6 @@
 		}
 	}
 
-	"skill_hero_chongzhen"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"	"10"
-		"LevelsBetweenUpgrades"	"1"
-		"Modifiers"
-		{
-			"modifier_skill_hero_liegong"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"OnAttackStart"
-				{
-					"Random"
-					{
-						"OnSuccess"
-						{
-							"ApplyModifier"
-							{
-								"Target"	"CASTER"
-								"ModifierName"	"modifier_skill_hero_liegong_2"
-							}
-						}
-						"PseudoRandom"	"PseudoRandom"
-						"Chance"	"%gailv"
-					}
-				}
-			}
-			"modifier_skill_hero_liegong_2"
-			{
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%baojishanghai"
-				}
-				"IsHidden"	"0"
-				"OnAttackLanded"
-				{
-					"Lifesteal"
-					{
-						"Target"	"ATTACKER"
-						"LifestealPercent"	"%xixue"
-					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_liegong_2"
-					}
-				}
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"baojishanghai"	"300"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"xixue"	"42"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"gailv"	"13 16 19 22 25 28 31 34 37 40"
-			}
-		}
-	}
 
 	"skill_hero_kanpo"
 	{
