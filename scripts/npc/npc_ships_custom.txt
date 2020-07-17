@@ -93,7 +93,7 @@
     }
 
     //谁敢杀我  魏延马岱
-    "skill_ship_yiji" 
+    "skill_ship_shawo" 
     {
         "01" "npc_dota_hero_brewmaster"
         "02" "npc_dota_hero_clinkz"
@@ -125,6 +125,20 @@
     {
         "01" "npc_dota_hero_bountyhunter"
         "02" "npc_dota_hero_orge_magi"
+    }
+
+    //三足鼎立  刘备曹操孙权
+    "skill_ship_dingli" 
+    {
+        "01" "npc_dota_hero_bounty_hunter"
+        // "02" "npc_dota_hero_"
+        // "03" "npc_dota_hero_"
+    }
+    //珠联璧合  黄月英 火诸葛
+    "skill_ship_bihe" 
+    {
+        "01" "npc_dota_hero_viper"
+        "02" "npc_dota_hero_ancient_apparition"
     }
 
 }
