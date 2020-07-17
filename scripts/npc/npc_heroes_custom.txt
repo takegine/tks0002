@@ -276,7 +276,7 @@
 	{
 		"Ability1"	""
 		"Ability2"	""
-		"Ability3"	""
+		"Ability3"	"skill_hero_chaoqi"
 		"Ability4"	""
 		"Ability5"	""
 		"Ability6"	""

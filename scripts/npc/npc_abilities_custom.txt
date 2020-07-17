@@ -416,6 +416,8 @@
 		"AbilityTextureName"	"chen_hand_of_god"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"	"25"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"OnSpellStart"
 		{
 			"SpawnUnit"
@@ -445,8 +447,8 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"MaxLevel"	"1"
-		"RequiredLevel"	"0"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -469,8 +471,8 @@
 		"ScriptFile"	"scripts/vscripts/skill/hero_liusan.lua"
 		"AbilityTextureName"	""
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel"	"1"
-		"RequiredLevel"	"0"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -490,6 +492,7 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"precache"
 		{
 			"particle"	"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_cylinder_active.vpcf"
@@ -798,6 +801,8 @@
 		"ScriptFile"	"skill/hero_fangquan"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCooldown"	"36"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -907,7 +912,8 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
-		"MaxLevel" "10"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"AbilityCastPoint"	"0.53"
 		"AbilityCastRange"	"1000"
 		// Time
@@ -1009,6 +1015,8 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"	"1"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		// Casting
 		// -------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"	"0.5 0.5 0.5 0.5"
@@ -1063,6 +1071,8 @@
 		"ScriptFile"	"skill/hero_xueji.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"FightRecapLevel"	"1"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_huskar/huskar_berserker_blood_hero_effect.vpcf"
@@ -1090,40 +1100,13 @@
 		}
 	}
 
-	"skill_ship_tigerfather"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"beastmaster_primal_roar"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Modifiers"
-		{
-			"modifier_skill_ship_tigerfather"
-			{
-				"IsHidden"	"1"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"Target"	"CASTER"
-						"ScriptFile"	"skill/ship_king01.lua"
-						"Function"	"tigerfather"
-					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_ship_tigerfather"
-					}
-				}
-				"Properties"	{}
-			}
-		}
-	}
-
 	"skill_hero_danji"
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"big_thunder_lizard_slam"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"Modifiers"
 		{
 			"modifier_skill_hero_danji"
@@ -1165,6 +1148,8 @@
 		"BaseClass"	"ability_lua"
 		"ScriptFile"	"skill/hero_buqu"
 		"AbilityCooldown"	"50"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 	}
 
 //先生 6-18
@@ -5430,6 +5415,7 @@
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCastPoint"	"0.5"
 		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"AOERadius"	"%path_radius"
 		"AbilityCooldown"	"12"
 		"AbilityManaCost"	"10 12 14 16 18 20 22 24 26 28" 
@@ -5538,6 +5524,7 @@
 		"BaseClass"		"ability_lua"
 		"ScriptFile"	"skill/hero_kuanggu.lua"
 		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -5564,6 +5551,8 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"Modifiers"
 		{
 			"modifier_skill_hero_kuangguguanghuan"
@@ -5602,7 +5591,8 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
-		"MaxLevel" "10"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
