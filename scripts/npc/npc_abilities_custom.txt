@@ -5556,4 +5556,41 @@
 			}
 		}
 	}
+	
+	"skill_hero_kuangguguanghuan"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"Modifiers"
+		{
+			"modifier_skill_hero_kuangguguanghuan"
+			{
+				"Passive" "1"
+				"Aura"	"modifier_skill_hero_kuangguguanghuan_2"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"	"DOTA_UNIT_TARGET_ALL"
+				"Aura_ApplyToCaster"	"1"
+				"Aura_Radius"	"1600"
+			}
+			"modifier_skill_hero_kuangguguanghuan_2"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%speed"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"speed"	"5 10 15 20 25 30 35 40 45 50"
+			}
+		}
+	}
 }
