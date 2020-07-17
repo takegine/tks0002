@@ -5594,4 +5594,79 @@
 			}
 		}
 	}
+
+	"skill_hero_chaoqi"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	""
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel" "10"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"skill/hero_chaoqi"
+				"Function"	"HitUnitDamage"
+				"Target"		"TARGET"
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_skill_hero_chaoqi"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"skill/hero_chaoqi"
+						"Function"	"Oncreated"
+					}
+				}
+			}
+			"modifier_skill_hero_chaoqi_attack"
+			{
+				"OnAttack"
+				{
+					"LinearProjectile"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+						"MoveSpeed"	"1000"
+						"StartRadius"	"128"
+						"EndRadius"	"0"
+						"FixedDistance" "%range"
+						"StartPosition"	"attach_origin"
+						"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"TargetFlags"	""
+						"TargetTypes"	"DOTA_UNIT_TARGET_ALL"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"240 480 720 960 1200 1440 1680 1920 2160 2400"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"range"	"600 640 680 720 760 800 840 880 920 960"
+			}
+		}
+	}
 }
