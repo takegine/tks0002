@@ -1,7 +1,7 @@
 "able_addon"
 {
 
-	"npc_dota_hero_anti_mage"   		  //override_hero关银屏
+	"npc_dota_hero_antimage"   		      //override_hero关银屏
 	{
 		"1" "skill_hero_xueji"            //血祭
 		"2" "skill_hero_wuji"             //武姬

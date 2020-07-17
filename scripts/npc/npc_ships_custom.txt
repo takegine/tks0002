@@ -6,14 +6,14 @@
     //虎父无犬女   关银屏关羽
 	"skill_ship_hufu" 
     {
-        "01" "npc_dota_hero_anti_mage"
+        "01" "npc_dota_hero_antimage"
         "02" "npc_dota_hero_abaddon"
     }
 
     //龙跃凤鸣     关银屏赵云
     "skill_ship_longyue" 
     {
-        "01" "npc_dota_hero_anti_mage"
+        "01" "npc_dota_hero_antimage"
         "02" "npc_dota_hero_broodmother"
     }
 
