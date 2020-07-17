@@ -906,11 +906,13 @@
 		"AbilityTextureName"	"tinker_march_of_the_machines"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastPoint"	"0.53 0.53 0.53 0.53"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel" "10"
+		"AbilityCastPoint"	"0.53"
+		"AbilityCastRange"	"1000"
 		// Time
 		// -------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"	"1"
+		"AbilityCooldown"	"28 26 24 22 20 18 16 14 12 10"
 		// Cost
 		// -------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"	"0"
@@ -918,9 +920,7 @@
 		// -------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
-			"particle"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate.vpcf"
 			"particle"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
 		}
 		"OnAbilityPhaseStart"
@@ -943,17 +943,17 @@
 				"ScriptFile"	"skill/hero_tieji.lua"
 				"Function"	"march_of_the_machines_spawn"
 				"Target"	"POINT"
-				"projectile_name"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate.vpcf"
+				"projectile_name"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
 			}
 		}
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"	"1"
-			"Damage"
+			"RunScript"
 			{
+				"ScriptFile"	"skill/hero_tieji.lua"
+				"Function"	"HitUnitDamage"
 				"Target"	"TARGET"
-				"Type"	"DAMAGE_TYPE_MAGICAL"
-				"Damage"	"%damage"
 			}
 		}
 		// Special
@@ -963,17 +963,12 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"1050"
+				"radius"	"1000"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"collision_radius"	"50"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"splash_radius"	"50"
+				"collision_radius"	"32"
 			}
 			"04"
 			{
@@ -983,12 +978,12 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"speed"	"400 400 400 400"
+				"speed"	"400"
 			}
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"machines_per_sec"	"4"
+				"wave"	"12"
 			}
 			"07"
 			{
@@ -998,12 +993,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"distance_scepter"	"1800"
-			}
-			"09"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"damage"	"240"
+				"damage"	"120 240 360 480 600 720 840 960 1080 1200"
 			}
 		}
 	}
