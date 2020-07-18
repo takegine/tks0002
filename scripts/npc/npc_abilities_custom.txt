@@ -3410,11 +3410,20 @@
 		"LevelsBetweenUpgrades"	"1"
 		"precache"
 		{
-			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_l.vpcf"
 			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_r.vpcf"
+			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_l.vpcf"
 			"soundfile"	"soundevents/game_sounds_creeps.vsndevts"
 			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_r.vpcf"
 			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_l.vpcf"
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/skill/zhugeliannu.lua"
+				"Function"	"guanxing"
+			}
 		}
 		"Modifiers"
 		{
@@ -3448,15 +3457,6 @@
 							"ControlPoints"	{}
 							"ControlPointEntities"	{}
 						}
-					}
-				}
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"Target"	"CASTER"
-						"ScriptFile"	"scripts/vscripts/skill/zhugeliannu.lua"
-						"Function"	"guanxing"
 					}
 				}
 				"States"	{}
@@ -3507,9 +3507,6 @@
 					{
 						"Target"	"CASTER"
 						"ModifierName"	"modifier_skill_hero_guanxing"
-					}
-					"RemoveModifier"
-					{
 					}
 				}
 				"ThinkInterval"	"0.01"
@@ -4544,14 +4541,6 @@
 		}
 	}
 
-	"skill_hero_feihuoliuxing"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	}
-
 	"skill_hero_junzizhijiao"
 	{
 		"BaseClass"	"ability_datadriven"
@@ -5527,6 +5516,120 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"chance"	"20"
+			}
+		}
+	}
+
+	"skill_hero_weixing"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCastPoint"	"0"
+		"AbilityCooldown"	"0"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_creeps.vsndevts"
+			"particle"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_r.vpcf"
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/skill/weixing.lua"
+				"Function"	"weixing"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_skill_hero_weixing_2"
+			{
+				"IsBuff"	"0"
+				"IsHidden"	"1"
+				"OnAttackLanded"
+				{
+					"FireSound"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"n_creep_ForestTrollHighPriest.Heal"
+					}
+					"AttachEffect"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"particles/econ/items/mirana/mirana_ti8_immortal_mount/mirana_ti8_immortal_leap_start_wing_r.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Center"	"TARGET"
+							"Radius"	"%banjing"
+						}
+						"Action"
+						{
+							"Damage"
+							{
+								"Target"	"TARGET"
+								"Type"	"DAMAGE_TYPE_MAGICAL"
+								"Damage"	"%shanghai"
+							}
+						}
+					}
+					"RemoveModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_skill_hero_weixing_2"
+					}
+					"ApplyModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_skill_hero_weixing"
+					}
+				}
+			}
+			"modifier_skill_hero_weixing"
+			{
+				"Passive"	"0"
+				"IsHidden"	"1"
+				"IsBuff"	"0"
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_skill_hero_weixing_2"
+					}
+					"RemoveModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_skill_hero_weixing"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"shanghai"	"600 1200 1800 2400 3000 3600 4200 4800 5400 6000"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"banjing"	"300"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
 			}
 		}
 	}
