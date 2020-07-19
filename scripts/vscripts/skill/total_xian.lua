@@ -1,3 +1,95 @@
+-- 不用linkluamodifier 也不是多次执行脚本的技能，可以把脚本都放在这里
+-- 这个文件是给 先生放置脚本的
+
+function weixing(keys)
+    local ability = keys.ability    --技能魏星
+    local caster  = keys.caster     --施法者，这里是魏延
+    local target  = keys.target     --目标，这里应该是空值
+    
+    --给这个技能后置生效，这个needwaveup会在游戏中，所有羁绊添加完成，所有物品添加完成后执行。
+    ability.needwaveup = function ( ability)
+        local caster   = ability:GetCaster()
+        local owner   = caster:GetOwner() or {ship={}}--魏延的持有者，即 玩家操作的信使
+
+        --判断是否拥有对应的羁绊
+        if owner.ship['feihuo'] then
+            ability:ApplyDataDrivenModifier( caster, caster , "modifier_skill_hero_weixing", nil  )
+        end
+
+    end
+end
+
+--首先判断是不是拥有诸葛连弩 如果有，则添加modifier_skill_hero_guanxing_3修饰器
+function guanxing(keys)
+    local ability  = keys.ability     --技能观星
+    local caster   = keys.caster     --目标，这里是自己本身
+    
+    --给这个技能后置生效，这个needwaveup会在游戏中，所有羁绊添加完成，所有物品添加完成后执行。
+    ability.needwaveup = function ( ability)
+        local caster   = ability:GetCaster()
+
+        --判断物品：第一个格子（武器栏）是不是诸葛连弩
+        if  caster:GetItemInSlot(0) and caster:GetItemInSlot(0):GetName()=='item_weapon_zhugeliannu' then
+               ability:ApplyDataDrivenModifier( caster, caster , "modifier_skill_hero_guanxing_3", nil )
+        end
+        
+    end
+
+end
+
+--LinkLuaModifier("qunxingyunluo", "scripts/vscripts/skill/qunxingjiban.lua", LUA_MODIFIER_MOTION_NONE)
+--if modifier_skill_hero_wusheng_armor == nil then modifier_skill_hero_wusheng_armor = class({}) end
+--function qunxingyunluo:RemoveOnDeath()	return true end
+function guanxingjiban(keys)
+    local caster  = keys.caster    
+    local ability = keys.ability
+	ability.count = 1 + ( ability.count or 0)
+	print(ability.count)
+	
+    if ability.count > 3 then 
+        ability.count=0
+        --hero:AddNewModifier( hero, self, "修饰器名字", {"补充参数，没有就空着"} )
+		print("yes")
+	end
+end
+
+--[[
+	Author: Noya
+	Date: 14.01.2015.
+	Applies a Lifesteal modifier if the attacked target is not a building and not a mechanical unit
+]]
+function VampiricAuraApply( event )
+	-- Variables
+	local attacker = event.attacker
+	local target = event.target
+	local ability = event.ability
+
+	if target.GetInvulnCount == nil  then
+		ability:ApplyDataDrivenModifier(attacker, attacker, "modifier_skill_hero_xixue_3", {duration = 1})
+	end
+	if target.GetInvulnCount == nil  then
+		ability:ApplyDataDrivenModifier(attacker, attacker, "skill_hero_chongzhen_baoji", {duration = 1})
+	end
+
+end
+
+function yiqidangqian(data)
+    local caster = data.caster
+
+    if caster:GetUnitName() == "npc_hero_madai" then
+        --如果是马岱
+        caster:ApplyDataDrivenModifier( caster, caster, "modifier_skill_ship_yiqidangqian", nil )
+        --就给马岱加上一个 修饰器，名字是Modifier_skill_ship_NAME_for_zhaoyun
+    end
+
+    if caster:GetUnitName() == "npc_hero_machao" then
+        --如果是马超
+        caster:ApplyDataDrivenModifier( caster, caster, "modifier_skill_ship_yiqidangqian", nil )
+        --就给马岱加上一个 修饰器，名字是Modifier_skill_ship_NAME_for_zhaoyun
+    end
+
+end
+
 --[[Author: Pizzalol
 	Date: 25.03.2015.
 	Creates the stasis trap unit and initializes all the required functions of the unit]]
