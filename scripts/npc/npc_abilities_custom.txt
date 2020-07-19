@@ -5,6 +5,7 @@
 {
 	"Version"		"1"
 
+// 西索 7-19
 	"skill_loseHP"
 	{
 		"BaseClass"	"ability_datadriven"
@@ -285,7 +286,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"skill/hero_rende.lua"
+						"ScriptFile"	"skill/total_xisuo"
 						"Function"	"rende"
 						"Target"	"TARGET"
 						"partfri"	"particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_pu_ti6_heal_hammers.vpcf"
@@ -337,7 +338,7 @@
 					"RunScript"
 					{
 						"Target"	"CASTER"
-						"ScriptFile"	"skill/hero_king01.lua"
+						"ScriptFile"	"skill/total_xisuo"
 						"Function"	"yinghan"
 					}
 				}
@@ -421,9 +422,9 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"chen_hand_of_god"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"	"25"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"25"
 		"OnSpellStart"
 		{
 			"SpawnUnit"
@@ -449,7 +450,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"ursa_fury_swipes"
-		"ScriptFile"	"scripts/vscripts/skill/hero_jijiang.lua"
+		"ScriptFile"	"skill/hero_jijiang.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -473,7 +474,7 @@
 	"skill_hero_liusan"
 	{
 		"BaseClass"	"ability_lua"
-		"ScriptFile"	"scripts/vscripts/skill/hero_liusan.lua"
+		"ScriptFile"	"skill/hero_liusan.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
@@ -503,19 +504,27 @@
 		}
 		"Modifiers"
 		{
-			"modifier_skill_hero_liutao"
+			"modifier_skill_hero_liutao_needwaveup"
 			{
-				"IsHidden"	"1"
 				"Passive"	"1"
-				"OnIntervalThink"
+				"OnCreated"
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"skill/hero_liutao.lua"
-						"Function"	"liutao"
+						"ScriptFile"	"skill/total_xisuo.lua"
+						"Function"		"liutao"
 					}
 				}
-				"ThinkInterval"	"2"
+			}
+			"modifier_skill_hero_liutao"
+			{
+				"IsHidden"	"1"
+				"Passive"	"0"
+				"Aura"	"modifier_skill_hero_liutao_2"
+				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+				"Aura_Types"	"DOTA_UNIT_TARGET_ALL"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Radius"	"%radius"
 			}
 			"modifier_skill_hero_liutao_2"
 			{
@@ -524,15 +533,8 @@
 				{
 					"MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE"	"-100"
 				}
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target"	"TARGET"
-						"EffectName"	"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_cylinder_active.vpcf"
-						"EffectAttachType"	"attach_origin"
-					}
-				}
+				"EffectName"	"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_cylinder_active.vpcf"
+				"EffectAttachType"	"attach_origin"
 			}
 		}
 		"AbilitySpecial"
@@ -801,18 +803,18 @@
 	"skill_hero_fangquan"
 	{
 		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"	"death_prophet_spirit_siphon"
-		"ScriptFile"	"skill/hero_fangquan"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityCooldown"	"36"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"36"
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"skill/hero_fangquan.lua"
-				"Function"	"on_created"
+				"ScriptFile"	"skill/total_xisuo"
+				"Function"	"fangquan_created"
 			}
 		}
 		"Modifiers"
@@ -827,8 +829,8 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"skill/hero_fangquan.lua"
-						"Function"	"on_destroy"
+						"ScriptFile"	"skill/total_xisuo"
+						"Function"	"fangquan_destroy"
 					}
 				}
 			}
@@ -849,8 +851,8 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"skill/hero_fangquan.lua"
-						"Function"	"on_destroy"
+						"ScriptFile"	"skill/total_xisuo"
+						"Function"	"fangquan_destroy"
 					}
 				}
 			}
@@ -864,8 +866,8 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"skill/hero_fangquan.lua"
-						"Function"	"on_destroy"
+						"ScriptFile"	"skill/total_xisuo"
+						"Function"	"fangquan_destroy"
 					}
 				}
 			}
@@ -919,13 +921,13 @@
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCastPoint"	"0.53"
-		"AbilityCastRange"	"1000"
 		// Time
 		// -------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"	"28 26 24 22 20 18 16 14 12 10"
 		// Cost
 		// -------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"	"0"
+		"AbilityCastRange"	"1000"
 		// Data driven
 		// -------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -950,8 +952,8 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"skill/hero_tieji.lua"
-				"Function"	"march_of_the_machines_spawn"
+				"ScriptFile"	"skill/total_xisuo"
+				"Function"	"tieji"
 				"Target"	"POINT"
 				"projectile_name"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
 			}
@@ -961,8 +963,8 @@
 			"DeleteOnHit"	"1"
 			"RunScript"
 			{
-				"ScriptFile"	"skill/hero_tieji.lua"
-				"Function"	"HitUnitDamage"
+				"ScriptFile"	"skill/total_xisuo"
+				"Function"	"tieji_HitUnitDamage"
 				"Target"	"TARGET"
 			}
 		}
@@ -980,27 +982,27 @@
 				"var_type"	"FIELD_INTEGER"
 				"collision_radius"	"32"
 			}
-			"04"
+			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"duration"	"5.0"
 			}
-			"05"
+			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"speed"	"400"
 			}
-			"06"
+			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"wave"	"12"
 			}
-			"07"
+			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"distance"	"1800"
 			}
-			"08"
+			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"damage"	"120 240 360 480 600 720 840 960 1080 1200"
@@ -1151,62 +1153,449 @@
 	{
 		"BaseClass"	"ability_lua"
 		"ScriptFile"	"skill/hero_buqu"
-		"AbilityCooldown"	"50"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"50"
 	}
 
-//先生 6-18
-	"skill_hero_longdan"
+	"skill_hero_paoxiao"
 	{
-		"BaseClass"	"ability_lua"
-		"ScriptFile"	"skill/hero_longdan.lua"
-		"AbilityTextureName"	"juggernaut_blade_dance"
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"sven_warcry"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"precache"
 		{
-			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_stunned_bg.vpcf"
+			"particle"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
+			"soundfile"	"soundevents/game_sounds_hero_pick.vsndevts"
+			"particle"	"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_disarm_ti6_debuff.vpcf"
 		}
-	
+		"Modifiers"
+		{
+			"Modifier_skill_hero_paoxiao"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"skill/total_xisuo"
+						"Function"	"paoxiao"
+						"attspeedmod"	"Modifier_skill_hero_paoxiao_attackspeed"
+						"debuffname"	"modifer_skill_hero_paoxiao_debuff"
+					}
+				}
+			}
+			"Modifier_skill_hero_paoxiao_attackspeed"
+			{
+				"IsHidden"	"1"
+				"EffectName"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%speed_up"
+				}
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Axe.Pick"
+						"Target"	"CASTER"
+					}
+				}
+			}
+			"modifer_skill_hero_paoxiao_debuff"
+			{
+				"IsDebuff"	"1"
+				"EffectName"	"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_disarm_ti6_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%damage_low"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_low"
+				}
+			}
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"heal"	"3 6 9 12 15 18 21 24 27 30"
+				"chance"	"5 10 15 20 25 30 35 40 45 50"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"chance"	"13 16 19 22 25 28 31 34 37 40"
+				"radius"	"1024"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"speed_dur"	"3"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"debuff_dur"	"6"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage_low"	"-50"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"armor_low"	"-45"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"speed_up"	"200"
 			}
 		}
 	}
-"skill_hero_chongzhen"
+
+	"skill_hero_fengdan"
 	{
 		"BaseClass"	"ability_lua"
-		"ScriptFile"	"skill/hero_chongzhen.lua"
-		"AbilityTextureName"	"juggernaut_blade_dance"
+		"AbilityTextureName"	"phantom_assassin_coup_de_grace"
+		"ScriptFile"	"skill/hero_fengdan"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"	"10"
 		"precache"
 		{
-			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_stunned_bg.vpcf"
+			"particle"	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
 		}
-
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"heal"	"3 6 9 12 15 18 21 24 27 30"
+				"crit_bonus"	"300"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"crit_chance"	"13 16 19 22 25 28 31 34 37 40"
 			}
 		}
 	}
 
+	"skill_hero_wuji"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"greevil_blade_fury"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"0.5"
+		"AOERadius"	"%radius"
+		"Modifiers"
+		{
+			"modifier_skill_hero_wuji"
+			{
+				"Passive"	"1"
+				"OnAttacked"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"skill/total_xisuo"
+						"Function"	"wuji"
+					}
+				}
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"80 240 480 800 1200 1680 2240 2880 3600 4400"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"215"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"chance"	"20"
+			}
+		}
+	}
+
+	"skill_hero_huogong"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"jakiro_macropyre"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCastPoint"	"0.5"
+		"AbilityCooldown"	"12"
+		"AbilityManaCost"	"10 12 14 16 18 20 22 24 26 28"
+		"AOERadius"	"%path_radius"
+		// "AbilityCastRange"	"800"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
+		}
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Jakiro.Macropyre.Cast"
+				"Target"	"CASTER"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"skill/hero_huogong.lua"
+				"Function"		"Fire_thefire"
+				"Target"		"POINT"
+				"path_radius"	"%path_radius"
+				"damage"		"%damage"
+				"duration"		"%duration"
+				"dummyMod"		"modifier_macropyre_destroy_tree_datadriven"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"skill/hero_huogong.lua"
+				"Function"		"ApplyDummyModifier"
+				"Target"		"TARGET"
+				"modifier_name"	"modifier_macropyre_check_range_datadriven"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_macropyre_check_range_datadriven"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsHidden"	"1"
+				"IsPurgable"	"0"
+				"ThinkInterval"	"%burn_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"skill/hero_huogong.lua"
+						"Function"		"deal_damage"
+						"Target"		"TARGET"
+						"path_radius"	"%path_radius"
+						"burn_interval"	"%burn_interval"
+					}
+				}
+			}
+			"modifier_macropyre_destroy_tree_datadriven"
+			{
+				"OnCreated"
+				{
+					"DestroyTrees"
+					{
+						"Target"	"TARGET"
+						"Radius"	"%path_radius"
+					}
+					"ApplyModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_kill"
+						"Duration"	"%duration"
+					}
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"40 130 245 385 550 740 955 1195 1460 1750"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"duration"	"3"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"path_radius"	"288"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"burn_interval"	"0.33"
+			}
+		}
+	}
+
+	"skill_hero_kuanggu"
+	{
+		"BaseClass"		"ability_lua"
+		"ScriptFile"	"skill/hero_kuanggu.lua"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"300"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius_ship"	"200"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"heallvl"	"53 56 59 62 65 68 71 74 77 80"
+			}
+		}
+	}
+
+	"skill_hero_kuangguguanghuan"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"Modifiers"
+		{
+			"modifier_skill_hero_kuangguguanghuan"
+			{
+				"Passive"	"1"
+				"Aura"	"modifier_skill_hero_kuangguguanghuan_2"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"	"DOTA_UNIT_TARGET_ALL"
+				"Aura_ApplyToCaster"	"1"
+				"Aura_Radius"	"1600"
+			}
+			"modifier_skill_hero_kuangguguanghuan_2"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%speed"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"speed"	"5 10 15 20 25 30 35 40 45 50"
+			}
+		}
+	}
+
+	"skill_hero_chaoqi"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"skill/total_xisuo"
+				"Function"		"chaoji_HitUnitDamage"
+				"Target"		"TARGET"
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_skill_hero_chaoqi"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"skill/total_xisuo"
+						"Function"	"chaoji"
+					}
+				}
+			}
+			"modifier_skill_hero_chaoqi_attack"
+			{
+				"OnAttack"
+				{
+					"LinearProjectile"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+						"MoveSpeed"	"1000"
+						"StartRadius"	"128"
+						"EndRadius"	"0"
+						"FixedDistance"	"%range"
+						"StartPosition"	"attach_origin"
+						"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"TargetTypes"	"DOTA_UNIT_TARGET_ALL"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"240 480 720 960 1200 1440 1680 1920 2160 2400"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"range"	"600 640 680 720 760 800 840 880 920 960"
+			}
+		}
+	}
+
+// 先生 7-19
 	"skill_hero_huozhugedehuo"
 	{
 		// General
@@ -2786,7 +3175,6 @@
 			}
 		}
 	}
-
 
 	"skill_hero_kanpo"
 	{
@@ -5257,445 +5645,6 @@
 		"AbilityDuration"	"7.0"
 	}
 
-	"skill_hero_paoxiao"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"sven_warcry"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"precache"
-		{
-			"particle"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
-			"soundfile"	"soundevents/game_sounds_hero_pick.vsndevts"
-			"particle"	"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_disarm_ti6_debuff.vpcf"
-		}
-		"Modifiers"
-		{
-			"Modifier_skill_hero_paoxiao"
-			{
-				"IsHidden"	"1"
-				"Passive"	"1"
-				"OnAttack"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"skill/hero_paoxiao.lua"
-						"Function"	"OnAttack"
-						"attspeedmod"	"Modifier_skill_hero_paoxiao_attackspeed"
-						"debuffname"	"modifer_skill_hero_paoxiao_debuff"
-					}
-				}
-			}
-			"Modifier_skill_hero_paoxiao_attackspeed"
-			{
-				"IsHidden"	"1"
-				"EffectName"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%speed_up"
-				}
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						"EffectName"	"Hero_Axe.Pick"
-						"Target"	"CASTER"
-					}
-				}
-			}
-			"modifer_skill_hero_paoxiao_debuff"
-			{
-				"IsDebuff"	"1"
-				"EffectName"	"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_disarm_ti6_debuff.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%damage_low"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_low"
-				}
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"chance"	"5 10 15 20 25 30 35 40 45 50"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"1024"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"speed_dur"	"3"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"debuff_dur"	"6"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"damage_low"	"-50"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"armor_low"	"-45"
-			}
-			"07"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"speed_up"	"200"
-			}
-		}
-	}
-
-	"skill_hero_fengdan"
-	{
-		"BaseClass"	"ability_lua"
-		"AbilityTextureName"	"phantom_assassin_coup_de_grace"
-		"ScriptFile"	"skill/hero_fengdan"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel" "10"
-		"precache"
-		{
-			"particle"	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
-		}
-		// Special
-		// -------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"crit_bonus"	"300"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"crit_chance"	"13 16 19 22 25 28 31 34 37 40"
-			}
-		}
-	}
-
-	"skill_hero_wuji"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"greevil_blade_fury"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
-		"MaxLevel"	"10"
-		"LevelsBetweenUpgrades"	"1"
-		"AbilityCooldown"	"0.5"
-		"AOERadius"	"%radius"
-		"Modifiers"
-		{
-			"modifier_skill_hero_wuji"
-			{
-				"Passive"	"1"
-				"OnAttacked"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"skill/hero_wuji.lua"
-						"Function"	"wuji"
-					}
-				}
-				"IsHidden"	"1"
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"damage"	"80 240 480 800 1200 1680 2240 2880 3600 4400"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"215"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"chance"	"20"
-			}
-		}
-	}
-	"skill_hero_huogong"
-	{
-		// General
-		// -------------------------------------------------------------------------------------------------------------
-		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"jakiro_macropyre"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastPoint"	"0.5"
-		"MaxLevel"	"10"
-		"LevelsBetweenUpgrades"	"1"
-		"AOERadius"	"%path_radius"
-		"AbilityCooldown"	"12"
-		"AbilityManaCost"	"10 12 14 16 18 20 22 24 26 28" 
-		// "AbilityCastRange"	"800"
-		"precache"
-		{
-			"particle"	"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
-		}
-		"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"EffectName"	"Hero_Jakiro.Macropyre.Cast"
-				"Target"	"CASTER"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"skill/hero_huogong.lua"
-				"Function"		"Fire_thefire"
-				"Target"		"POINT"
-				"path_radius"	"%path_radius"
-				"damage"		"%damage"
-				"duration"		"%duration"
-				"dummyMod"		"modifier_macropyre_destroy_tree_datadriven"
-			}
-		}
-		"OnProjectileHitUnit"
-		{
-			"DeleteOnHit"	"0"
-			"RunScript"
-			{
-				"ScriptFile"	"skill/hero_huogong.lua"
-				"Function"		"ApplyDummyModifier"
-				"Target"		"TARGET"
-				"modifier_name"	"modifier_macropyre_check_range_datadriven"
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_macropyre_check_range_datadriven"
-			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"IsHidden"	"1"
-				"IsPurgable"	"0"
-				"ThinkInterval"	"%burn_interval"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"skill/hero_huogong.lua"
-						"Function"		"deal_damage"
-						"Target"		"TARGET"
-						"path_radius"	"%path_radius"
-						"burn_interval"	"%burn_interval"
-					}
-				}
-			}
-			"modifier_macropyre_destroy_tree_datadriven"
-			{
-				"OnCreated"
-				{
-					"DestroyTrees"
-					{
-						"Target"	"TARGET"
-						"Radius"	"%path_radius"
-					}
-					"ApplyModifier"
-					{
-						"Target"	"TARGET"
-						"ModifierName"	"modifier_kill"
-						"Duration"	"%duration"
-					}
-				}
-			}
-		}
-		// Special
-		// -------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"damage"	"40 130 245 385 550 740 955 1195 1460 1750"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"duration"	"3"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"path_radius"	"288"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"burn_interval"	"0.33"
-			}
-		}
-	}
-
-	"skill_hero_kuanggu"
-	{
-		"BaseClass"		"ability_lua"
-		"ScriptFile"	"skill/hero_kuanggu.lua"
-		"MaxLevel"	"10"
-		"LevelsBetweenUpgrades"	"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"300"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius_ship"	"200"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"heallvl"	"53 56 59 62 65 68 71 74 77 80"
-			}
-		}
-	}
-	
-	"skill_hero_kuangguguanghuan"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel"	"10"
-		"LevelsBetweenUpgrades"	"1"
-		"Modifiers"
-		{
-			"modifier_skill_hero_kuangguguanghuan"
-			{
-				"Passive" "1"
-				"Aura"	"modifier_skill_hero_kuangguguanghuan_2"
-				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"	"DOTA_UNIT_TARGET_ALL"
-				"Aura_ApplyToCaster"	"1"
-				"Aura_Radius"	"1600"
-			}
-			"modifier_skill_hero_kuangguguanghuan_2"
-			{
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%speed"
-				}
-			}
-		}
-		// Special
-		// -------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"speed"	"5 10 15 20 25 30 35 40 45 50"
-			}
-		}
-	}
-
-	"skill_hero_chaoqi"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	""
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
-		"MaxLevel"	"10"
-		"LevelsBetweenUpgrades"	"1"
-		"precache"
-		{
-			"particle"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
-		}
-		"OnProjectileHitUnit"
-		{
-			"DeleteOnHit"	"0"
-			"RunScript"
-			{
-				"ScriptFile"	"skill/hero_chaoqi"
-				"Function"	"HitUnitDamage"
-				"Target"		"TARGET"
-			}
-		}
-		// Special
-		// -------------------------------------------------------------------------------------------------------------
-		"Modifiers"
-		{
-			"modifier_skill_hero_chaoqi"
-			{
-				"Passive"			"1"
-				"IsHidden"			"0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"Target"	"CASTER"
-						"ScriptFile"	"skill/hero_chaoqi"
-						"Function"	"Oncreated"
-					}
-				}
-			}
-			"modifier_skill_hero_chaoqi_attack"
-			{
-				"OnAttack"
-				{
-					"LinearProjectile"
-					{
-						"Target"	"TARGET"
-						"EffectName"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
-						"MoveSpeed"	"1000"
-						"StartRadius"	"128"
-						"EndRadius"	"0"
-						"FixedDistance" "%range"
-						"StartPosition"	"attach_origin"
-						"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"TargetFlags"	""
-						"TargetTypes"	"DOTA_UNIT_TARGET_ALL"
-					}
-				}
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"damage"	"240 480 720 960 1200 1440 1680 1920 2160 2400"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"range"	"600 640 680 720 760 800 840 880 920 960"
-			}
-		}
-	}
-
-	//先生
 	"skill_hero_weixing"
 	{
 		"BaseClass"	"ability_datadriven"
@@ -5810,6 +5759,57 @@
 		}
 	}
 
+// 表表 7-19
+	"skill_hero_longdan"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"juggernaut_blade_dance"
+		"ScriptFile"	"skill/hero_longdan.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"precache"
+		{
+			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_stunned_bg.vpcf"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"heal"	"3 6 9 12 15 18 21 24 27 30"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"chance"	"13 16 19 22 25 28 31 34 37 40"
+			}
+		}
+	}
+
+	"skill_hero_chongzhen"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"juggernaut_blade_dance"
+		"ScriptFile"	"skill/hero_chongzhen.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"precache"
+		{
+			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_stunned_bg.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"heal"	"3 6 9 12 15 18 21 24 27 30"
+			}
+		}
+	}
+
 	"skill_hero_tiaoxin"
 	{
 		"BaseClass"	"ability_lua"
@@ -5823,8 +5823,9 @@
 		"AbilityCooldown"	"1"
 		"precache"
 		{
-			
 			"particle"	"particles/econ/events/winter_major_2016/blink_dagger_wm_end_smoke.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
+			"particle"	"particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
 		}
 		
 		"Modifiers"
@@ -5870,4 +5871,9 @@
 			}
 		}
 	}
+
+// 临天 7-19
+
+// 白喵 7-19
+
 }
