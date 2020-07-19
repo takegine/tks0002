@@ -6,21 +6,21 @@
     //虎父无犬女   关银屏关羽
 	"skill_ship_hufu" 
     {
-        "01" "npc_dota_hero_anti_mage"
+        "01" "npc_dota_hero_antimage"
         "02" "npc_dota_hero_abaddon"
     }
 
     //龙跃凤鸣     关银屏赵云
     "skill_ship_longyue" 
     {
-        "01" "npc_dota_hero_anti_mage"
+        "01" "npc_dota_hero_antimage"
         "02" "npc_dota_hero_broodmother"
     }
 
     //桃园结义   刘备关羽张飞
     "skill_ship_taoyuan" 
     {
-        "01" "npc_dota_hero_bountyhunter"
+        "01" "npc_dota_hero_bounty_hunter"
         "02" "npc_dota_hero_abaddon"  
         "03" "npc_dota_hero_bristleback"
     }
@@ -66,14 +66,14 @@
     //梦结良缘  刘备孙尚香
     "skill_ship_qizong" 
     {
-        "01" "npc_dota_hero_bountyhunter"
+        "01" "npc_dota_hero_bounty_hunter"
         // "02" "npc_dota_hero_"
     }
 
     //驱虎吞狼  刘备荀彧吕布
     "skill_ship_quhu" 
     {
-        "01" "npc_dota_hero_bountyhunter"
+        "01" "npc_dota_hero_bounty_hunter"
         // "02" "npc_dota_hero_"
         // "03" "npc_dota_hero_"
     }
@@ -82,7 +82,7 @@
     "skill_ship_yemeng" 
     {
         "01" "npc_dota_hero_bountyhunter"
-        "02" "npc_dota_hero_orge_magi"
+        "02" "npc_dota_hero_ogre_magi"
     }
 
     //一骑当千  马超马岱
@@ -93,7 +93,7 @@
     }
 
     //谁敢杀我  魏延马岱
-    "skill_ship_yiji" 
+    "skill_ship_shawo" 
     {
         "01" "npc_dota_hero_brewmaster"
         "02" "npc_dota_hero_clinkz"
@@ -116,15 +116,29 @@
     //七进七出     刘禅赵云
     "skill_ship_qijin" 
     {
-        "01" "npc_dota_hero_orge_magi "
+        "01" "npc_dota_hero_ogre_magi "
         "02" "npc_dota_hero_broodmother"
     }
 
     //夜梦北斗  刘备刘禅
     "skill_ship_yemeng" 
     {
-        "01" "npc_dota_hero_bountyhunter"
-        "02" "npc_dota_hero_orge_magi"
+        "01" "npc_dota_hero_bounty_hunter"
+        "02" "npc_dota_hero_ogre_magi"
+    }
+
+    //三足鼎立  刘备曹操孙权
+    "skill_ship_dingli" 
+    {
+        "01" "npc_dota_hero_bounty_hunter"
+        // "02" "npc_dota_hero_"
+        // "03" "npc_dota_hero_"
+    }
+    //珠联璧合  黄月英 火诸葛
+    "skill_ship_bihe" 
+    {
+        "01" "npc_dota_hero_viper"
+        "02" "npc_dota_hero_ancient_apparition"
     }
 
 }
