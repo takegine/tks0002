@@ -5633,4 +5633,54 @@
 			}
 		}
 	}
+
+	"skill_hero_mashu"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"Modifiers"
+		{
+			"modifier_skill_hero_mashu"
+			{
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Radius"	"%banjing"
+				"Aura"	"modifier_skill_hero_mashu_2"
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"Aura_ApplyToCaster"	"1"
+				"IsHidden"	"1"
+			}
+			"modifier_skill_hero_mashu_2"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%yidong"
+				}
+				"IsHidden"	"0"
+				"IsBuff"	"1"
+				"Passive"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"yidong"	"7 9 11 13 15 17 19 21 23 25"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"banjing"	"2000"
+			}
+		}
+	}
 }
