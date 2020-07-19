@@ -28,7 +28,7 @@ function skill_hero_tiaoxin:OnSpellStart()
 
         for key,unit in pairs(enemy) do
             unit:AddNewModifier(caster, self, "modifier_tiaoxin", {})
-            unit:SetModifierStackCount( "modifier_tiaoxin", self ,count)
+           -- unit:SetModifierStackCount( "modifier_tiaoxin", self ,count)
         end
 
 
@@ -37,16 +37,16 @@ function skill_hero_tiaoxin:OnSpellStart()
         -- ParticleManager:ReleaseParticleIndex(wu)
         -- self:ApplyDataDrivenModifier(caster, target, 'modifier_smoke_screen', nil)
         
-        target:AddNewModifier(caster, self, 'modifier_smoke_screen', nil)
-        target:SetModifierStackCount( "modifier_smoke_screen", self ,radius)
+       -- target:AddNewModifier(caster, self, 'modifier_smoke_screen', nil)
+       -- target:SetModifierStackCount( "modifier_smoke_screen", self ,radius)
     else
         target:AddNewModifier(caster, self, "modifier_tiaoxin", {})  --如果没写duration,会一直有，不死就一直存在这个buff
-        target:SetModifierStackCount( "modifier_tiaoxin", self ,count)
+      --  target:SetModifierStackCount( "modifier_tiaoxin", self ,count)
     end
 
 end
 
-LinkLuaModifier('modifier_tiaoxin', 'lieren.lua', 0)
+LinkLuaModifier('modifier_tiaoxin', 'skill/hero_tiaoxin.lua', 0)
 modifier_tiaoxin=class({})
 
 function modifier_tiaoxin:OnCreated()
@@ -60,12 +60,19 @@ end
 
 function modifier_tiaoxin:OnIntervalThink(keys)
     if not IsServer() then return end
+    local ability=self:GetAbility()
+    local damage  =ability:GetLevelSpecialValueFor("damage",ability:GetLevel()-1)
+    local parent = self:GetParent()
+    local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, parent, parent, parent:GetTeamNumber() )
+    dummy.attack_type  = "electrical"
+    dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
+
     local  damage_table = {
 
-    attacker     = self.caster,
+    attacker     = dummy,
     victim       = self.parent,
     damage_type  = DAMAGE_TYPE_PHYSICAL,
-    damage       = self:GetStackCount(),
+    damage       = damage,
     damage_flags = DOTA_DAMAGE_FLAG_NONE
 }
     ApplyDamage(damage_table)
@@ -79,7 +86,7 @@ end
 function modifier_tiaoxin:DeclareFunctions()   
     return { 
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-        MODIFIER_EVENT_ON_TAKEDAMAGE,
+        MODIFIER_EVENT_ON_HERO_KILLED,
         MODIFIER_EVENT_ON_TAKEDAMAGE_KILLCREDIT
     } 
 end
@@ -88,23 +95,41 @@ function modifier_tiaoxin:GetModifierAttackSpeedBonus_Constant()
     return -50
 end
 
+function modifier_tiaoxin:OnTakeDamageKillCredit( params)
 
-function modifier_tiaoxin:OnTakeDamage(keys)
-    print('\n','on take damage')
-    for i= 1,#keys ,1 do
-        print(" =>   ",i,keys[i])
+    if  params.attacker ~= self:GetParent() then 
+        return 
+    end
+    
+    local parent   = self:GetParent()
+    local ability  = self:GetAbility()
+    local owner    = parent:GetOwner() or {ship={}}
+    local attacker = params.attacker
+    local target   = params.target
+    local damage   = params.damage
+    
+    if not target:IsHero() 
+    and damage > target:GetHealth() then
+        parent:RemoveModifierByName("modifier_tiaoxin")
     end
 end
 
+function modifier_tiaoxin:OnHeroKilled( params)
+    
+    local parent   = self:GetParent()
+    local ability  = self:GetAbility()
+    local radius   = ability:GetSpecialValueFor("radius")
+    local heallvl  = ability:GetLevelSpecialValueFor("heallvl", ability:GetLevel()-1) /100
+    local owner    = parent:GetOwner() or {ship={}}
+    local unit     = params.unit
+    local attacker = params.attacker
+    local target   = params.target
 
-function modifier_tiaoxin:OnTakeDamageKillCredit(keys)
-    print("\n",'on take damage credit')
-    for i= 1,#keys ,1 do
-        print(" =>   ",i,keys[i])
+    if unit == parent then
+       
+        parent:RemoveModifierByName("modifier_tiaoxin")
     end
 end
-
-
 
 
 modifier_smoke_screen = {}
