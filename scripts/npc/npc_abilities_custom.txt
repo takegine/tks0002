@@ -1156,39 +1156,53 @@
 		"LevelsBetweenUpgrades"	"1"
 	}
 
-	// 先生 6-18
-	"skill_hero_chongzhen"
+//先生 6-18
+	"skill_hero_longdan"
 	{
-		"BaseClass"	"ability_datadriven"
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_longdan.lua"
 		"AbilityTextureName"	"juggernaut_blade_dance"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"precache"
 		{
 			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_stunned_bg.vpcf"
 		}
-		"Modifiers"
-		{
-			"modifier_skill_hero_chongzhen"
-			{
-				"Passive"	"1"
-				"OnAttack"
-				{
-					"RunScript"
-					{
-						"Target"	"TARGET"
-						"ScriptFile"	"skill/hero_king01.lua"
-						"Function"	"chongzheng"
-					}
-				}
-			}
-		}
+	
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"hp_re"	"14"
+				"heal"	"3 6 9 12 15 18 21 24 27 30"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"chance"	"13 16 19 22 25 28 31 34 37 40"
+			}
+		}
+	}
+"skill_hero_chongzhen"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_chongzhen.lua"
+		"AbilityTextureName"	"juggernaut_blade_dance"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"precache"
+		{
+			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_stunned_bg.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"heal"	"3 6 9 12 15 18 21 24 27 30"
 			}
 		}
 	}
@@ -2773,78 +2787,6 @@
 		}
 	}
 
-	"skill_hero_chongzhen"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"	"10"
-		"LevelsBetweenUpgrades"	"1"
-		"Modifiers"
-		{
-			"modifier_skill_hero_liegong"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"OnAttackStart"
-				{
-					"Random"
-					{
-						"OnSuccess"
-						{
-							"ApplyModifier"
-							{
-								"Target"	"CASTER"
-								"ModifierName"	"modifier_skill_hero_liegong_2"
-							}
-						}
-						"PseudoRandom"	"PseudoRandom"
-						"Chance"	"%gailv"
-					}
-				}
-			}
-			"modifier_skill_hero_liegong_2"
-			{
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%baojishanghai"
-				}
-				"IsHidden"	"0"
-				"OnAttackLanded"
-				{
-					"Lifesteal"
-					{
-						"Target"	"ATTACKER"
-						"LifestealPercent"	"%xixue"
-					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_liegong_2"
-					}
-				}
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"baojishanghai"	"300"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"xixue"	"42"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"gailv"	"13 16 19 22 25 28 31 34 37 40"
-			}
-		}
-	}
 
 	"skill_hero_kanpo"
 	{
@@ -5864,6 +5806,67 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
+			}
+		}
+	}
+
+	"skill_hero_tiaoxin"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"mud_golem_rock_destroy"
+		"ScriptFile"	"skill/hero_tiaoxin.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_NO"
+		"MaxLevel"	"10"
+		"AbilityCooldown"	"1"
+		"precache"
+		{
+			
+			"particle"	"particles/econ/events/winter_major_2016/blink_dagger_wm_end_smoke.vpcf"
+		}
+		
+		"Modifiers"
+		{
+			"modifier_smoke_screen"
+			{
+				"Duration"				"3"
+
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						//fix sound!
+						"EffectName"	"Hero_Riki.Smoke_Screen"
+						"Target"		"CASTER"
+					}
+
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+						"ControlPoints"
+						{
+							"00" "0 0 0"
+							"01" "%radius %radius %radius"
+						}
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"130 260 390"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"500"
 			}
 		}
 	}
