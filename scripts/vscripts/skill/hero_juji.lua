@@ -23,6 +23,9 @@ function skill_hero_juji:OnSpellStart()
 target:AddNewModifier(caster, self, 'modifier_skill_hero_juji', {duration=duration})  -- 添加减甲buff
 -- target:AddNewModifier(caster, self, 'modifier_skill_hero_juji2', {duration=duration})  --获得单位视野
 
+caster.juji_amountlist = caster.juji_amountlist or {}
+table.insert(caster.juji_amountlist , target)
+
 end
 
 modifier_skill_hero_juji=class({})  --狙击的修饰器  这个修饰器减少护甲5+等级*4

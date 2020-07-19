@@ -2748,65 +2748,7 @@
 		}
 	}
 
-	"skill_hero_liegong"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"	"10"
-		"LevelsBetweenUpgrades"	"1"
-		"Modifiers"
-		{
-			"modifier_skill_hero_liegong"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"OnAttackStart"
-				{
-					"Random"
-					{
-						"OnSuccess"
-						{
-							"ApplyModifier"
-							{
-								"Target"	"CASTER"
-								"ModifierName"	"modifier_skill_hero_liegong_2"
-							}
-						}
-						"PseudoRandom"	"PseudoRandom"
-						"Chance"	"33%"
-					}
-				}
-			}
-			"modifier_skill_hero_liegong_2"
-			{
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%baojishanghai"
-				}
-				"IsHidden"	"0"
-				"OnAttackLanded"
-				{
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_liegong_2"
-					}
-				}
-				"IsBuff"	"1"
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"baojishanghai"	"210 220 230 240 250 260 270 280 290 300"
-			}
-		}
-	}
-
+	
 
 	"skill_hero_kanpo"
 	{
@@ -5466,6 +5408,21 @@
 	{
 		"BaseClass"		"ability_lua"
 		"ScriptFile"	"skill/hero_maqian.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"skill_hero_juji"
+	{
+		"BaseClass"		"ability_lua"
+		"ScriptFile"	"skill/hero_juji.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityCooldown"	"8"
+	}
+	"skill_hero_liegong"
+	{
+		"BaseClass"		"ability_lua"
+		"ScriptFile"	"skill/hero_liegong.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 }
