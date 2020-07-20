@@ -68,6 +68,7 @@ function CAddonTemplateGameMode:InitGameMode()
     CustomGameEventManager:RegisterListener("refreshlist",Dynamic_Wrap(self, 'refreshlist'))
 
     self.DamageKV = LoadKeyValues("scripts/damage_table.kv")
+    self.shiplist = LoadKeyValues("scripts/羁绊名汉化.kv")
     self.tkUnitList = {}
     table.foreach( LoadKeyValues('scripts/npc/npc_units_custom.txt'), function(k,v)
         if type(v)=="table" then
@@ -238,9 +239,10 @@ function CAddonTemplateGameMode:player_chat(keys )
         )
     elseif list[1]=="ship" and list[2] then
         hero.ship[list[2]]= list[3]=="true" or nil
-        GameRules:SendCustomMessage( "羁绊名："..list[2].." ，已设置为"..(list[3]=="true" and "有" or "失").."效", hero:GetTeamNumber(), 1)
-        
+        local shipname = self.shiplist["skill_ship_"..list[2]] or list[2]
+        GameRules:SendCustomMessage( "羁绊名："..shipname.." ，已设置:"..(list[3]=="true" and "生" or "失").."效", hero:GetTeamNumber(), 1)
         herochange("waveup")
+
     elseif list[1]=="hero" and list[2] then
         herochange(list[2])
     end
