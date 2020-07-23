@@ -70,16 +70,15 @@ function CAddonTemplateGameMode:InitGameMode()
     self.DamageKV = LoadKeyValues("scripts/damage_table.kv")
     self.shiplist = LoadKeyValues("scripts/羁绊名汉化.kv")
     self.tkUnitList = {}
-    table.foreach( LoadKeyValues('scripts/npc/npc_units_custom.txt'), function(k,v)
-        if type(v)=="table" then
-            self.tkUnitList[k]=v
-        end
-    end)
-    table.foreach( LoadKeyValues('scripts/npc/npc_heroes_custom.txt'), function(k,v)
-        if type(v)=="table" then
-            self.tkUnitList[k]=v
-        end
-    end)
+    local function insetlist(list)
+            table.foreach( list, function(k,v)
+            if type(v)=="table" then
+                self.tkUnitList[k]=v
+            end
+        end)
+    end
+    insetlist(LoadKeyValues('scripts/npc/npc_heroes_custom.txt'))
+    insetlist(LoadKeyValues('scripts/npc/npc_units_custom.txt'))
 
 end
 
@@ -99,7 +98,7 @@ function CAddonTemplateGameMode:createnewherotest( data )
         h:SetIdleAcquire( false )
         h:SetAcquisitionRange( 0 )
         if ablelist[data.way] then
-            for c,abi in pairs(ablelist[data.way]) do
+            for c,abi in pairs( ablelist[data.way]) do
                 h:AddAbility(abi)
                 if h:HasAbility(abi) then h:FindAbilityByName(abi):SetLevel(1) end
             end
@@ -109,23 +108,25 @@ end
 
 function CAddonTemplateGameMode:refreshlist()
     local relist = {}
-    local herolist= LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
-    local ablelist= LoadKeyValues('scripts/npc/npc_skill_custom.txt')
-    for name,info in pairs(herolist)do
-        if info ~= 1 and name ~= SET_FORCE_HERO then
-            relist['name']=name
-            relist['hero']=info.override_hero
 
-            if ablelist[info.override_hero] then
-                relist['able']={}
-                for k,v in pairs(ablelist[info.override_hero]) do
-                    relist['able'][k]=v
-                end
-            end
-
-        CustomGameEventManager:Send_ServerToAllClients('hero_info', relist)
+    local function messageT(list) 
+        local ablelist = LoadKeyValues('scripts/npc/npc_skill_custom.txt')
+        local nocreate = {"npc_dota_fort","npc_dota_building", }
+        for name,info in pairs(list)do
+            if info == 1 
+            or name == SET_FORCE_HERO
+            or info.BaseClass and info.BaseClass ~= "npc_dota_creature"
+            then goto continue
+            end            
+            relist['name'] = name
+            --relist['hero'] = info.override_hero 
+            relist['able'] = ablelist[info.override_hero]
+            CustomGameEventManager:Send_ServerToAllClients('hero_info', relist)
+            :: continue ::
         end
     end
+    messageT(LoadKeyValues('scripts/npc/npc_heroes_custom.txt'))
+    messageT(LoadKeyValues('scripts/npc/npc_Units_custom.txt')) 
 end
 
 function CAddonTemplateGameMode:entity_hurt(keys)
