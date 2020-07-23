@@ -79,10 +79,112 @@
 		"1" "skill_hero_longdan"          //龙胆
 		"2" "skill_hero_chongzhen"        //冲阵
 	}
-		"npc_dota_hero_drow_ranger"        //override_hero祝融
+		"npc_dota_hero_drow_ranger"       //override_hero祝融
 	{
 		"1" "skill_hero_lieren"           //烈刃
 		"2" "skill_ship_nanman_zr"        //南蛮兽王
 	    "3" ""       //
 	}
+
+		"npc_dota_hero_windrunner"        //override_hero孙尚香
+	{
+		"1" "skill_hero_jieyin"           //结姻
+		"2" "skill_hero_xiaoji"           //枭姬
+	}
+
+		"npc_dota_hero_queenofpain"       //override_hero大乔
+	{
+		 //（暂无技能）"1" ""          //
+		 //（暂无技能）"2" ""        //
+	}
+
+		"npc_dota_hero_slardar"           //override_hero周泰
+	{
+		"1" "skill_hero_buqu"             //不屈
+	}
+
+		"npc_dota_hero_wisp"  			  //override_hero小乔
+	{
+		"1" "skill_hero_tianxiang"        //天香
+		"2" "skill_hero_hongyan"          //红颜
+	}
+
+		"npc_dota_hero_razor"             //override_hero吕蒙
+	{
+		"1" "skill_hero_keji"             //克己
+		"2" "skill_hero_saoshe"           //扫射
+	}
+
+		"npc_dota_hero_vengefulspirit"    //override_hero周瑜
+	{
+		"1" "skill_hero_yingzi"           //英姿
+		"2" "skill_hero_zhousi"           //周四
+	}
+
+		"npc_dota_hero_witch_doctor"      //override_hero鲁肃
+	{
+		"1" "skill_hero_dimeng"           //缔盟
+		"2" "skill_hero_lusi"             //鲁四
+	}
+
+		"npc_dota_hero_undying"           //override_hero太史慈
+	{
+		"1" "skill_hero_tianyi"           //天义
+		"2" "skill_hero_taijun"           //太君
+	}
+
+		"npc_dota_hero_tidehunter"        //override_hero徐盛
+	{
+		"1" "skill_hero_pojun"            //破军
+	}
+
+		"npc_dota_hero_tiny"              //override_hero孙策
+	{
+		"1" "skill_hero_hunzi"            //魂姿
+		"2" "skill_hero_sunjun"           //孙君
+		"3" "skill_hero_sunchuan"         //孙传
+		"4" "skill_hero_sunjiang"         //孙江
+		"5" "skill_hero_zhiba"            //制霸
+	}
+
+		"npc_dota_hero_spectre"           //override_hero甘宁
+	{
+		"1" "skill_hero_qixi"             //奇袭
+		"2" "skill_hero_fenwei"           //奋威
+	}
+
+		"npc_dota_hero_phantom_lancer"    //override_hero孙权
+	{
+		"1" "skill_hero_zhiheng"          //制衡
+		"2" "skill_hero_jiuyuan"          //救援
+		"3" "skill_hero_sunchu"           //孙出
+		"4" "skill_hero_sunsan"           //孙三
+	}
+
+		"npc_dota_hero_venomancer"        //override_hero蒋钦
+	{
+		"1" "skill_hero_niaoxiang"        //鸟飞
+	}
+
+		"npc_dota_hero_tusk"              //override_hero黄盖
+	{
+		"1" "skill_hero_kurou"            //苦肉
+	}
+
+		"npc_dota_hero_spirit_breaker"    //override_hero丁奉
+	{
+		"1" "skill_hero_duanbing"         //短兵
+		"2" "skill_hero_fenxun"           //奋迅
+	}
+
+		"npc_dota_hero_visage"            //override_hero陆逊
+	{
+		"1" "skill_hero_qianxun"          //谦逊
+		"2" "skill_hero_lianying"         //连营
+	}
+		"npc_dota_hero_terrorblade"       //override_hero孙坚
+	{
+		"1" "skill_hero_yinghun"          //英魂
+	}
+
 }

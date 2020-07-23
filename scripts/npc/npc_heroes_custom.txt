@@ -742,7 +742,7 @@
 		"Ability15"	""
 		"Ability16"	""
 		"Ability17"	""
-		"AttributePrimary"	"DOTA_ATTRIBUTE_AGILITY"
+		"AttributePrimary"	"DOTA_ATTRIBUTE_STRENGTH"
 		"AttackRate"	"1.9"
 		"MovementSpeed"	"260"
 		"AttackRange"	"128"
@@ -911,7 +911,7 @@
 	 	"Ability14"	""
 	 	"Ability15"	""
 	 	"Ability16"	""
-	  "Ability17"	""
+	    "Ability17"	""
 	 	"AttributePrimary"	"DOTA_ATTRIBUTE_INTELLECT"
 	 	"AttackRate"	"2.20"
 	 	"MovementSpeed"	"240"
@@ -967,7 +967,7 @@
 	 	"Ability14"	""
 	 	"Ability15"	""
 	 	"Ability16"	""
-	  "Ability17"	""
+	    "Ability17"	""
 	 	"AttributePrimary"	"DOTA_ATTRIBUTE_INTELLECT"
 	 	"AttackRate"	"1.73"
 	 	"MovementSpeed"	"320"
@@ -1003,5 +1003,1384 @@
 	 	"ProjectileSpeed"	"1500"
 	 	"BountyGoldMin"	"101"
 	 	"BountyGoldMax"	"117"
+	 }
+
+	//  孙尚香
+	 "npc_dota_hero_windrunner"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量：DOTA_ATTRIBUTE_STRENGTH  敏捷：DOTA_ATTRIBUTE_AGILITY  智力：DOTA_ATTRIBUTE_INTELLECT
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_AGILITY"
+		// 攻击间隔
+	 	"AttackRate"	"1.95"
+		// 移动速度
+	 	"MovementSpeed"	"290"
+		// 攻击范围
+	 	"AttackRange"	"600"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"6"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"89"
+		// 最大攻击力
+	 	"AttackDamageMax"	"107"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"19"
+		// 成长力量
+	 	"AttributeStrengthGain"	"19"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"26"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"26"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"15"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"15"
+		// 初始生命值
+	 	"StatusHealth"	"2350"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_windrunner"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"3"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"fire"
+		// 护甲类型
+	 	"TksDefendType"	"water"
+		//招募消耗金钱
+	 	"TksPayedGold"	"499"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1300"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"127"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"148"
+	 }
+	//  大乔
+	 "npc_dota_hero_queenofpain"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量：DOTA_ATTRIBUTE_STRENGTH  敏捷：DOTA_ATTRIBUTE_AGILITY  智力：DOTA_ATTRIBUTE_INTELLECT
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_AGILITY"
+		// 攻击间隔
+	 	"AttackRate"	"1.90"
+		// 移动速度
+	 	"MovementSpeed"	"260"
+		// 攻击范围
+	 	"AttackRange"	"475"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"13"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"85"
+		// 最大攻击力
+	 	"AttackDamageMax"	"95"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"13"
+		// 成长力量
+	 	"AttributeStrengthGain"	"13"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"29"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"29"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"21"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"21"
+		// 初始生命值
+	 	"StatusHealth"	"2250"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_queenofpain"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"2"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"water"
+		// 护甲类型
+	 	"TksDefendType"	"water"
+		//招募消耗金钱
+	 	"TksPayedGold"	"325"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1300"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"84"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"105"
+	 }
+
+	//  周泰
+	 "npc_dota_hero_slardar"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_AGILITY"
+		// 攻击间隔
+	 	"AttackRate"	"1.87"
+		// 移动速度
+	 	"MovementSpeed"	"240"
+		// 攻击范围
+	 	"AttackRange"	"128"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"21"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"101"
+		// 最大攻击力
+	 	"AttackDamageMax"	"111"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"24"
+		// 成长力量
+	 	"AttributeStrengthGain"	"24"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"27"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"27"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"12"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"12"
+		// 初始生命值
+	 	"StatusHealth"	"2450"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_slardar"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"3"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"water"
+		// 护甲类型
+	 	"TksDefendType"	"land"
+		//招募消耗金钱
+	 	"TksPayedGold"	"375"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1300"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"96"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"118"
+	 }
+
+	//  小乔
+	 "npc_dota_hero_wisp"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_AGILITY"
+		// 攻击间隔
+	 	"AttackRate"	"1.77"
+		// 移动速度
+	 	"MovementSpeed"	"270"
+		// 攻击范围
+	 	"AttackRange"	"128"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"13"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"86"
+		// 最大攻击力
+	 	"AttackDamageMax"	"98"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"13"
+		// 成长力量
+	 	"AttributeStrengthGain"	"13"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"29"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"29"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"21"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"21"
+		// 初始生命值
+	 	"StatusHealth"	"2250"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_wisp"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"2"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"water"
+		// 护甲类型
+	 	"TksDefendType"	"water"
+		//招募消耗金钱
+	 	"TksPayedGold"	"325"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1300"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"84"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"109"
+	 }
+
+	//  吕蒙
+	 "npc_dota_hero_razor"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_AGILITY"
+		// 攻击间隔
+	 	"AttackRate"	"1.69"
+		// 移动速度
+	 	"MovementSpeed"	"320"
+		// 攻击范围
+	 	"AttackRange"	"450"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"13"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"117"
+		// 最大攻击力
+	 	"AttackDamageMax"	"128"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"21"
+		// 成长力量
+	 	"AttributeStrengthGain"	"21"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"28"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"28"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"21"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"21"
+		// 初始生命值
+	 	"StatusHealth"	"2460"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_razor"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"3"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"water"
+		// 护甲类型
+	 	"TksDefendType"	"water"
+		//招募消耗金钱
+	 	"TksPayedGold"	"555"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1300"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"84"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"109"
+	 }
+
+	//  周瑜
+	 "npc_dota_hero_vengefulspirit"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_INTELLECT"
+		// 攻击间隔
+	 	"AttackRate"	"1.81"
+		// 移动速度
+	 	"MovementSpeed"	"270"
+		// 攻击范围
+	 	"AttackRange"	"675"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"8"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"95"
+		// 最大攻击力
+	 	"AttackDamageMax"	"108"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"13"
+		// 成长力量
+	 	"AttributeStrengthGain"	"13"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"22"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"22"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"36"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"36"
+		// 初始生命值
+	 	"StatusHealth"	"2280"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_vengefulspirit"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"3"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"water"
+		// 护甲类型
+	 	"TksDefendType"	"water"
+		//招募消耗金钱
+	 	"TksPayedGold"	"666"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1200"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"169"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"190"
+	 }
+
+	//  鲁肃
+	 "npc_dota_hero_witch_doctor"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_INTELLECT"
+		// 攻击间隔
+	 	"AttackRate"	"1.95"
+		// 移动速度
+	 	"MovementSpeed"	"250"
+		// 攻击范围
+	 	"AttackRange"	"450"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"9"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"62"
+		// 最大攻击力
+	 	"AttackDamageMax"	"68"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"14"
+		// 成长力量
+	 	"AttributeStrengthGain"	"14"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"22"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"22"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"32"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"32"
+		// 初始生命值
+	 	"StatusHealth"	"2333"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_witch_doctor"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"2"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"water"
+		// 护甲类型
+	 	"TksDefendType"	"water"
+		//招募消耗金钱
+	 	"TksPayedGold"	"666"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1200"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"119"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"140"
+	 }
+
+	//  徐盛
+	 "npc_dota_hero_tidehunter"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_STRENGTH"
+		// 攻击间隔
+	 	"AttackRate"	"1.93"
+		// 移动速度
+	 	"MovementSpeed"	"240"
+		// 攻击范围
+	 	"AttackRange"	"128"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"19"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"95"
+		// 最大攻击力
+	 	"AttackDamageMax"	"104"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"31"
+		// 成长力量
+	 	"AttributeStrengthGain"	"31"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"18"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"18"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"16"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"16"
+		// 初始生命值
+	 	"StatusHealth"	"2850"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_tidehunter"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"2"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"water"
+		// 护甲类型
+	 	"TksDefendType"	"land"
+		//招募消耗金钱
+	 	"TksPayedGold"	"375"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1200"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"78"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"99"
+	 }
+
+	 //  孙策
+	 "npc_dota_hero_tiny"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_STRENGTH"
+		// 攻击间隔
+	 	"AttackRate"	"1.77"
+		// 移动速度
+	 	"MovementSpeed"	"260"
+		// 攻击范围
+	 	"AttackRange"	"128"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"28"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"134"
+		// 最大攻击力
+	 	"AttackDamageMax"	"156"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"33"
+		// 成长力量
+	 	"AttributeStrengthGain"	"33"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"23"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"23"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"14"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"14"
+		// 初始生命值
+	 	"StatusHealth"	"2850"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_tiny"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"3"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"fire"
+		// 护甲类型
+	 	"TksDefendType"	"electrical"
+		//招募消耗金钱
+	 	"TksPayedGold"	"666"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1200"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"169"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"190"
+	 }
+
+	 //  甘宁
+	 "npc_dota_hero_spectre"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_STRENGTH"
+		// 攻击间隔
+	 	"AttackRate"	"1.83"
+		// 移动速度
+	 	"MovementSpeed"	"310"
+		// 攻击范围
+	 	"AttackRange"	"128"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"17"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"103"
+		// 最大攻击力
+	 	"AttackDamageMax"	"109"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"32"
+		// 成长力量
+	 	"AttributeStrengthGain"	"32"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"26"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"26"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"12"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"12"
+		// 初始生命值
+	 	"StatusHealth"	"2440"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_spectre"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"2"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"electrical"
+		// 护甲类型
+	 	"TksDefendType"	"electrical"
+		//招募消耗金钱
+	 	"TksPayedGold"	"325"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1200"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"84"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"105"
+	 }
+
+	 //  蒋钦
+	 "npc_dota_hero_venomancer"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_AGILITY"
+		// 攻击间隔
+	 	"AttackRate"	"1.70"
+		// 移动速度
+	 	"MovementSpeed"	"290"
+		// 攻击范围
+	 	"AttackRange"	"475"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"16"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"95"
+		// 最大攻击力
+	 	"AttackDamageMax"	"104"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"21"
+		// 成长力量
+	 	"AttributeStrengthGain"	"21"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"29"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"29"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"17"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"17"
+		// 初始生命值
+	 	"StatusHealth"	"2475"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_venomancer"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"3"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"fire"
+		// 护甲类型
+	 	"TksDefendType"	"fire"
+		//招募消耗金钱
+	 	"TksPayedGold"	"375"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1200"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"78"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"99"
+	 }
+
+	 //  黄盖
+	 "npc_dota_hero_tusk"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_STRENGTH"
+		// 攻击间隔
+	 	"AttackRate"	"1.90"
+		// 移动速度
+	 	"MovementSpeed"	"240"
+		// 攻击范围
+	 	"AttackRange"	"128"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"28"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"99"
+		// 最大攻击力
+	 	"AttackDamageMax"	"105"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"30"
+		// 成长力量
+	 	"AttributeStrengthGain"	"30"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"26"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"26"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"13"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"13"
+		// 初始生命值
+	 	"StatusHealth"	"2950"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_tusk"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"3"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"fire"
+		// 护甲类型
+	 	"TksDefendType"	"fire"
+		//招募消耗金钱
+	 	"TksPayedGold"	"425"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1200"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"109"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"130"
+	 }
+
+	 //  丁奉
+	 "npc_dota_hero_spirit_breaker"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_AGILITY"
+		// 攻击间隔
+	 	"AttackRate"	"1.81"
+		// 移动速度
+	 	"MovementSpeed"	"240"
+		// 攻击范围
+	 	"AttackRange"	"128"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"21"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"105"
+		// 最大攻击力
+	 	"AttackDamageMax"	"111"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"22"
+		// 成长力量
+	 	"AttributeStrengthGain"	"22"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"33"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"33"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"14"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"14"
+		// 初始生命值
+	 	"StatusHealth"	"2525"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_spirit_breaker"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"3"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"land"
+		// 护甲类型
+	 	"TksDefendType"	"electrical"
+		//招募消耗金钱
+	 	"TksPayedGold"	"325"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1200"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"84"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"105"
+	 }
+
+	 //  陆逊
+	 "npc_dota_hero_visage"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_INTELLECT"
+		// 攻击间隔
+	 	"AttackRate"	"2.03"
+		// 移动速度
+	 	"MovementSpeed"	"260"
+		// 攻击范围
+	 	"AttackRange"	"475"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"7"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"62"
+		// 最大攻击力
+	 	"AttackDamageMax"	"68"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"16"
+		// 成长力量
+	 	"AttributeStrengthGain"	"16"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"17"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"17"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"37"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"37"
+		// 初始生命值
+	 	"StatusHealth"	"2225"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_visage"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"3"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"fire"
+		// 护甲类型
+	 	"TksDefendType"	"fire"
+		//招募消耗金钱
+	 	"TksPayedGold"	"444"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1200"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"109"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"130"
+	 }
+
+	 //  孙坚
+	 "npc_dota_hero_terrorblade"
+	 {
+	 	"Ability1"	""
+	 	"Ability2"	""
+	 	"Ability3"	""
+	 	"Ability4"	""
+	 	"Ability5"	""
+	 	"Ability6"	""
+	 	"Ability7"	""
+	 	"Ability8"	""
+	 	"Ability9"	""
+	 	"Ability10"	""
+	 	"Ability11"	""
+	 	"Ability12"	""
+	 	"Ability13"	""
+	 	"Ability14"	""
+	 	"Ability15"	""
+	 	"Ability16"	""
+	    "Ability17"	""
+		// 主要属性  力量："DOTA_ATTRIBUTE_STRENGTH"  敏捷："DOTA_ATTRIBUTE_AGILITY"  智力："DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"	"DOTA_ATTRIBUTE_STRENGTH"
+		// 攻击间隔
+	 	"AttackRate"	"1.77"
+		// 移动速度
+	 	"MovementSpeed"	"270"
+		// 攻击范围
+	 	"AttackRange"	"128"
+		// 攻击范围缓冲
+	 	"AttackRangeBuffer"	"250"
+		// 基础护甲
+	 	"ArmorPhysical"	"28"
+		// 魔法抗性
+	 	"MagicalResistance" "0"
+		// 主动攻击范围
+	 	"AttackAcquisitionRange"	"2048"
+		// 最小攻击力
+	 	"AttackDamageMin"	"113"
+		// 最大攻击力
+	 	"AttackDamageMax"	"128"
+		// 转身速率
+	 	"MovementTurnRate"	"0.5"
+		// 初始力量
+	 	"AttributeBaseStrength"	"37"
+		// 成长力量
+	 	"AttributeStrengthGain"	"37"
+		// 初始敏捷
+	 	"AttributeBaseAgility"	"22"
+		// 成长敏捷
+	 	"AttributeAgilityGain"	"22"
+		// 初始智力
+	 	"AttributeBaseIntelligence"	"11"
+		// 成长智力
+	 	"AttributeIntelligenceGain"	"11"
+		// 初始生命值
+	 	"StatusHealth"	"3600"
+		// 基础生命回复
+	 	"StatusHealthRegen"	"32"
+		//基础魔法值
+	 	"StatusMana"	"5"
+		//单位出生魔法值 -1=出生满蓝
+	 	"StatusStartingMana"	"-1"
+		//白天视野范围
+	 	"VisionDaytimeRange"	"1800"
+		//夜晚视野范围
+	 	"VisionNighttimeRange"	"800"
+		//攻击类型，近战 DOTA_UNIT_CAP_MELEE_ATTACK  远程  DOTA_UNIT_CAP_RANGED_ATTACK
+	 	"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		//原生英雄
+	 	"override_hero"	"npc_dota_hero_terrorblade"
+		//单位装备物品 1是可用
+	 	"HasInventory"	"1"
+		//招募消耗人口
+	 	"TksPopUse"	"3"
+		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+	 	"TksAttackType"	"fire"
+		// 护甲类型
+	 	"TksDefendType"	"fire"
+		//招募消耗金钱
+	 	"TksPayedGold"	"555"
+		//所属国家  蜀国："shuguo" 魏国："weiguo" 吴国："wuguo" 群雄："qunxiong"
+	 	"UnitLabel"	"wuguo"
+		//基础魔法恢复
+	 	"StatusManaRegen"	"0"
+		//普攻投射物的速度
+	 	"ProjectileSpeed"	"1200"
+		//击杀提供最小金钱
+	 	"BountyGoldMin"	"169"
+		//击杀提供最大金钱
+	 	"BountyGoldMax"	"190"
 	 }
 }

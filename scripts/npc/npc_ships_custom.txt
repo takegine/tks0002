@@ -64,10 +64,10 @@
     }
 
     //梦结良缘  刘备孙尚香
-    "skill_ship_qizong" 
+    "skill_ship_mengjie" 
     {
         "01" "npc_dota_hero_bounty_hunter"
-        // "02" "npc_dota_hero_"
+        "02" "npc_dota_hero_windrunner"
     }
 
     //驱虎吞狼  刘备荀彧吕布
@@ -134,11 +134,93 @@
         // "02" "npc_dota_hero_"
         // "03" "npc_dota_hero_"
     }
+
     //珠联璧合  黄月英 火诸葛
     "skill_ship_bihe" 
     {
         "01" "npc_dota_hero_viper"
         "02" "npc_dota_hero_ancient_apparition"
+    }
+
+    //莫逆之交  蒋钦 徐盛 
+    "skill_ship_moni" 
+    {
+        "01" "npc_dota_hero_venomancer"
+        "02" "npc_dota_hero_tidehunter"
+    }
+
+    //吾之邓禹  孙权 鲁肃 
+    "skill_ship_wuzhi" 
+    {
+        "01" "npc_dota_hero_phantom_lancer"
+        "02" "npc_dota_hero_witch_doctor"
+    }
+
+    //苦肉计  周瑜 黄盖 
+    "skill_ship_kurou" 
+    {
+        "01" "npc_dota_hero_tusk"
+        "02" "npc_dota_hero_vengefulspirit"
+    }
+
+    //君子之交  孙策 太史慈 
+    "skill_ship_junzi" 
+    {
+        "01" "npc_dota_hero_tiny"
+        "02" "npc_dota_hero_undying"
+    }
+
+     //江东之花  大乔 小乔 
+    "skill_ship_jianghua" 
+    {
+        "01" "npc_dota_hero_wisp"
+        "02" "npc_dota_hero_queenofpain"
+    }
+
+     //小鸟依人  周瑜 小乔 
+    "skill_ship_xiaoniao" 
+    {
+        "01" "npc_dota_hero_wisp"
+        "02" "npc_dota_hero_vengefulspirit"
+    }
+
+     //东吴之志  孙坚 孙权 孙策 孙尚香 
+    "skill_ship_dongwu" 
+    {
+        "01" "npc_dota_hero_terrorblade"
+        "02" "npc_dota_hero_phantom_lancer"
+        "03" "npc_dota_hero_tiny"
+        "04" "npc_dota_hero_windrunner"
+    }
+
+      //东吴四英杰  周瑜 鲁肃 吕蒙 陆逊 
+    "skill_ship_dongwu" 
+    {
+        "01" "npc_dota_hero_vengefulspirit"
+        "02" "npc_dota_hero_witch_doctor"
+        "03" "npc_dota_hero_razor"
+        "04" "npc_dota_hero_visage"
+    }
+
+      //传世佳话  大乔 孙策 
+    "skill_ship_chuanshi" 
+    {
+        "01" "npc_dota_hero_queenofpain"
+        "02" "npc_dota_hero_tiny"
+    }
+
+      //出生入死  周泰 孙权 
+    "skill_ship_chusheng" 
+    {
+        "01" "npc_dota_hero_slardar"
+        "02" "npc_dota_hero_phantom_lancer"
+    }
+
+      //江东双璧  周瑜 孙策 
+    "skill_ship_shuangbi" 
+    {
+        "01" "npc_dota_hero_vengefulspirit"
+        "02" "npc_dota_hero_tiny"
     }
 
 }
