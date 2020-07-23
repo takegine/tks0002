@@ -182,4 +182,26 @@
 			}
 		}
 	}
+
+	"item_queue_fengshizhen"
+	{
+		"ID"			"1500"
+		"BaseClass"		"item_lua"
+		"ScriptFile"	"items/5/item_queue_fengshizhen"
+		"ItemShopTags"	"锋;矢;阵;法;"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"1"
+		"ItemDisplayCharges" "1"
+		"ItemInitialCharges" "1"
+		"AbilityBehavior"	 "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" "queue/锋矢"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"p1"	"8 16 24 32 40 48 56 64 72 80"
+			}
+		}
+	}
 }
