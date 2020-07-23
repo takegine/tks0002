@@ -270,6 +270,10 @@ function herochange(keys)
                 if abi and abi.needwaveup then
                     abi:needwaveup()
                 end
+                local item = u:GetItemInSlot(i)
+                if item and item.needwaveup then
+                    item:needwaveup()
+                end
             end
         end)
     elseif keys=="lvlup" then
