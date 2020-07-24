@@ -455,7 +455,7 @@
 		// 攻击类型，近战/远程
 		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
 		// 远程单位的普攻投射物
-		"ProjectileModel"	"particles/econ/items/luna/luna_crescent_moon/luna_attack_crescent_moon.vpcf"
+		"ProjectileModel"	"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
 		// 普攻投射物的速度
 		"ProjectileSpeed"	"1000"
 		"Ability3"	""
@@ -477,7 +477,7 @@
 		"Model"	"models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"1.0"
+		"ModelScale"	"0.75"
 		// 出生等级
 		"Level"	"1"
 		// 物理护甲
@@ -539,7 +539,7 @@
 		// 攻击类型，近战/远程
 		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
 		// 远程单位的普攻投射物
-		"ProjectileModel"	"particles/econ/items/luna/luna_crescent_moon/luna_attack_crescent_moon.vpcf"
+		"ProjectileModel"	"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
 		// 普攻投射物的速度
 		"ProjectileSpeed"	"1000"
 		"Ability3"	""
