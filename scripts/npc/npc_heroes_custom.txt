@@ -276,7 +276,7 @@
 	{
 		"Ability1"	""
 		"Ability2"	""
-		"Ability3"	"skill_hero_chaoqi"
+		"Ability3"	""
 		"Ability4"	""
 		"Ability5"	""
 		"Ability6"	""
@@ -443,8 +443,8 @@
 	// 赵云
 	"npc_dota_hero_broodmother"
 	{
-		"Ability1"	"paoxiao"
-		"Ability2"	"yinghan"
+		"Ability1"	""
+		"Ability2"	""
 		"Ability3"	""
 		"Ability4"	""
 		"Ability5"	""
