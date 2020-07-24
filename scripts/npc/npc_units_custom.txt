@@ -17,19 +17,12 @@
 		// Abilities
 		// ----------------------------------------------------------------
 		// Ability 1
-		"Ability1"	""
-		// Ability 2
-		"Ability2"	""
-		// Ability 3
-		"Ability3"	""
-		// Ability 4
-		"Ability4"	""
-		// Armor
-		// ----------------------------------------------------------------
-		// Physical protection.
+		"Ability1"	"skill_player_lvlup"
+		"Ability2"	"skill_player_lvlkeep"
+		"Ability3"	"skill_player_onsale"
+		"Ability4"	"skill_player_price"
+		"Ability6"	"skill_player_toggle"
 		"ArmorPhysical"	"1"
-		// Attack
-		// ----------------------------------------------------------------
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		// Damage range min.
 		"AttackDamageMin"	"70"
@@ -101,7 +94,6 @@
 			"XPGain"	"15"
 		}
 		"Ability5"	""
-		"Ability6"	""
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""
