@@ -370,6 +370,12 @@
 		"DOTA_Tooltip_modifier_skill_hero_longdan"	""
 		"DOTA_Tooltip_modifier_skill_hero_longdan_Description"	""
 		"DOTA_Tooltip_ability_skill_hero_liegong"	"烈弓"
+		
+		"DOTA_Tooltip_ability_skill_hero_yingzi"	"英姿"
+		"DOTA_Tooltip_ability_skill_hero_yingzi_Description"	"武将全属性获得大幅度的提升。"
+		
+		"DOTA_Tooltip_ability_skill_hero_jiang"	"激昂"
+		"DOTA_Tooltip_ability_skill_hero_jiang_Description"	"每次暴击时立即获得决斗效果，并且恢复造成的暴击伤害一定百分比的生命值。"
 	// ---------------------------------------------单位技能-临天-----
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"

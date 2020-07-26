@@ -1,28 +1,35 @@
-
-
 LinkLuaModifier("modifier_skill_hero_yingzi",'skill/hero_yingzi.lua',0)
-
-
-
 
 skill_hero_yingzi=class({})
 
 function skill_hero_yingzi:needwaveup()
-  
-    print('123')
+
     local caster=self:GetCaster()
+    local ability=self
+    local add= 10 +ability:GetLevel() *6.5
+    local owner =caster:GetOwner() or {ship={}}
+
+    if  owner.ship['xiaoniao'] and caster:GetUnitName()=='周瑜'
+    then  add=add+30
+    end
+        local intintellent = caster:GetIntellect() *add /100
+        local intAgility   = caster:GetAgility() *add /100 
+        local intStrength  = caster:GetStrength()*add  /100
+
+    local mod = caster:AddNewModifier(caster,ability, "modifier_skill_hero_yingzi", {})
     
-    caster:AddNewModifier(caster, self, "modifier_skill_hero_yingzi", {})
+    mod.intellect   = mod.intellect   or intintellent
+    mod.intAgility  = mod.intAgility  or intAgility
+    mod.intStrength = mod.intStrength or intStrength 
+
+
 end
 
 
-
-
-modifier_skill_hero_yingzi = {}
+modifier_skill_hero_yingzi =class({})
 
 function modifier_skill_hero_yingzi:DeclareFunctions()
-
-    return {
+     return {
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS
@@ -30,41 +37,17 @@ function modifier_skill_hero_yingzi:DeclareFunctions()
 end
 
 function modifier_skill_hero_yingzi:GetModifierBonusStats_Strength()
-
-    local caster=self:GetCaster()
-    local owner =caster:GetOwner() or {ship{}}
-    local ability=self:GetAgility()
-   if  owner.ship['xiaoniao']  then  
-   return caster:GetStrength()*(140+ability:GetLevel()*6.5)/100
-   else
-    return   100-- caster:GetStrength()*(110+ability:GetLevel()*6.5)/100    
-end
+    return self.intStrength or 0  
 end
 
 
 function modifier_skill_hero_yingzi:GetModifierBonusStats_Agility()
-
-    local caster=self:GetCaster()
-    local owner =caster:GetOwner() or {ship{}}
-
-    if  owner.ship['xiaoniao']  then  
-   return caster:GetAgility()()*(140+ability:GetLevel()*6.5)/100
-    else
-    return caster:GetAgility()*(110+ability:GetLevel()*6.5)/100    
-end
+    return self.intAgility or 0 
 end
 
 
 function modifier_skill_hero_yingzi:GetModifierBonusStats_Intellect()
-
-    local caster=self:GetCaster()
-    local owner =caster:GetOwner() or {ship{}}
-
-  if  owner.ship['xiaoniao']  then   
-   return caster:GetIntellect()()*(140+ability:GetLevel()*6.5)/100
-    else
-    return caster:GetIntellect()*(110+ability:GetLevel()*6.5)/100    
-end
+   return   self.intellect or 0  
 end
 
 
