@@ -379,6 +379,11 @@
 
 		"DOTA_Tooltip_ability_skill_hero_taijun"	"太君"
 		"DOTA_Tooltip_ability_skill_hero_taijun_Description"	"君子之交 太史慈可降低受到的130X等级点攻击伤害。"
+		"DOTA_Tooltip_ability_skill_hero_tianyi"			"天义"
+		"DOTA_Tooltip_ability_skill_hero_tianyi_Description"	"快速的挥舞武器产生旋风，5秒内持续对周围敌人造成伤害，，同时不断的将它们拉向太史慈，期间太史慈处于魔法免疫状态，并提升护甲。"
+		"DOTA_Tooltip_ability_skill_hero_tianyi_damage"		"每秒魔法伤害:"
+		"DOTA_Tooltip_ability_skill_hero_tianyi_far_radius"	"范围:"
+		"DOTA_Tooltip_ability_skill_hero_tianyi_duration"	"持续时间:"
 	// ---------------------------------------------单位技能-临天-----
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
