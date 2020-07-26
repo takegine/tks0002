@@ -367,6 +367,16 @@
 		"DOTA_Tooltip_ability_skill_hero_liegong"	"烈弓"
 	// ---------------------------------------------单位技能-临天-----
 	// ---------------------------------------------单位技能-白喵-----
+		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
+		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"
+		"DOTA_Tooltip_ability_skill_hero_yinghun" "英魂"
+		"DOTA_Tooltip_modifiler_hero_yinghun" "英魂"
+		"DOTA_Tooltip_modifiler_hero_xiaoji" "枭姬"
+		"DOTA_Tooltip_ability_hero_xiaoji" "枭姬"
+		"DOTA_Tooltip_modifiler_hero_qixi" "奇袭"
+		"DOTA_Tooltip_ability_hero_qixi" "奇袭"
+		"DOTA_Tooltip_modifiler_hero_lusi" "东吴四英杰"
+		"DOTA_Tooltip_ability_hero_lusi" "东吴四英杰"
 	// ---------------------------------------------其他------
 		"DOTA_Tooltip_modifier_skill_ship_hufu"	"虎父无犬女"
 		"DOTA_Tooltip_modifier_skill_ship_yiqidangqian"	"一骑当千"

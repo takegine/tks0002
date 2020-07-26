@@ -265,7 +265,7 @@
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCooldown"	"1"
-		"AbilityManaCost"	"2 2 4 4 6 6 8 8 10 10"
+		"AbilityManaCost"	"1 2 3 4 5 6 7 8 9 10"//2 2 4 4 6 6 8 8 10 10
 		"AbilityCastRange"	"640"
 		"AOERadius"	"%radius"
 		"precache"
@@ -299,12 +299,12 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"hp_re"	"300 600 900 1200 1500 1800 2100 2400 2700 3000"
+				"radius"	"300"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"300"
+				"hp_re"	"300 600 900 1200 1500 1800 2100 2400 2700 3000"
 			}
 			"03"
 			{
@@ -313,7 +313,7 @@
 			}
 		}
 	}
-
+	
 	// 小于50%的血增加护甲30+lvl*3
 	"skill_hero_yinghan"
 	{
@@ -1149,14 +1149,7 @@
 		}
 	}
 
-	"skill_hero_buqu"
-	{
-		"BaseClass"	"ability_lua"
-		"ScriptFile"	"skill/hero_buqu"
-		"MaxLevel"	"10"
-		"LevelsBetweenUpgrades"	"1"
-		"AbilityCooldown"	"50"
-	}
+
 
 	"skill_hero_paoxiao"
 	{
@@ -4491,29 +4484,7 @@
 		}
 	}
 
-	"skill_hero_buqu"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"MaxLevel"	"1"
-		"LevelsBetweenUpgrades"	"1"
-		"Modifiers"
-		{
-			"modifier_skill_hero_buqu"
-			{
-				"Passive"	"1"
-				"IsHidden"	"0"
-				"IsDebuff"	"0"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"50"
-					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"50"
-				}
-				"IsBuff"	"1"
-			}
-		}
-	}
+
 
 	// 测试完成 远程英雄会出现bug 攻击还没命中的时候就会继续攻击出去 近战英雄不会出现此bug
 	// 自动关闭修饰器modifier_skill_hero_chitu 如果出现二段攻击时有miss 就打开修饰器modifier_skill_hero_chitu即可（我没测出来miss过）
@@ -5931,12 +5902,72 @@
 	}
 	
 // 白喵 7-19
-	"skill_hero_example"
+	"skill_hero_yinghun"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_yinghun.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+	}
+
+	"skill_hero_dimeng"
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
+		"Modifiers"
+		{
+			"modifier_hero_dimeng"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"skill/total_miao.lua"
+						"Function"	"Dimeng"
+					}
+				}
+			}
+		}
+		"Duration"	"5"
+	}
+
+	"skill_hero_lusi"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"ScriptFile"	"skill/hero_lusi.lua"
+	}
+	"skill_hero_buqu"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"ScriptFile"	"skill/hero_buqu.lua"
+	}
+	"skill_hero_qixi"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"ScriptFile"	"skill/hero_qixi.lua"
+	}
+
+		"skill_hero_xiaoji"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"ScriptFile"	"skill/hero_xiaoji.lua"
 	}
 
 }
