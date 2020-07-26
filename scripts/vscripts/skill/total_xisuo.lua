@@ -20,6 +20,9 @@ function rende(keys)
 	local target_types = ability:GetAbilityTargetType()
     local target_flags = ability:GetAbilityTargetFlags()
 
+    if owner.ship['mengjie'] then
+        HPRegen = HPRegen * 1.5
+    end
 
     if target:GetUnitName() == "npc_dota_hero_phoenix" then
         return

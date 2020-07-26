@@ -13,6 +13,11 @@
 		"DOTA_Tooltip_modifier_item_queue_fengshizhen_Description"	"攻击力提升 %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% 点"
 
 	// ---------------------------------------------单位技能-西索-----
+		"DOTA_Tooltip_ability_skill_hero_rende"	"仁德"
+		"DOTA_Tooltip_ability_skill_hero_rende_Description"	"瞬间治疗范围内队友若干的生命值。"
+		"DOTA_Tooltip_ability_skill_hero_rende_radius"	"治疗半径："
+		"DOTA_Tooltip_ability_skill_hero_rende_hp_re"	"治疗量：\n"
+		"DOTA_Tooltip_ability_skill_hero_rende_damage"	"驱虎伤害：\n"
 		"DOTA_Tooltip_ability_skill_hero_jijiang"	"激将"
 		"DOTA_Tooltip_ability_skill_hero_jijiang_Description"	"主公技：\n每多一名势力为蜀国的友军时，可增加周围友军近战单位%damagebase% 额外伤害"
 		"DOTA_Tooltip_ability_skill_hero_jijiang_damagebase"	"%伤害加强"
