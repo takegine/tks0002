@@ -6206,7 +6206,7 @@
 		"ScriptFile"	"skill/hero_qixi.lua"
 	}
 
-		"skill_hero_xiaoji"
+	"skill_hero_xiaoji"
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
@@ -6214,5 +6214,12 @@
 		"LevelsBetweenUpgrades"	"1"
 		"ScriptFile"	"skill/hero_xiaoji.lua"
 	}
-
+	"skill_hero_sunwu"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"ScriptFile"	"skill/hero_sunwu.lua"
+	}
 }

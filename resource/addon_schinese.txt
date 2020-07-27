@@ -396,6 +396,8 @@
 		"DOTA_Tooltip_ability_hero_qixi" "奇袭"
 		"DOTA_Tooltip_modifiler_hero_lusi" "东吴四英杰"
 		"DOTA_Tooltip_ability_hero_lusi" "东吴四英杰"
+		"DOTA_Tooltip_ability_skill_hero_sunwu" "东吴之志"
+		"DOTA_Tooltip_modifier_hero_sunwu2" "东吴之志"
 	// ---------------------------------------------其他------
 		"DOTA_Tooltip_modifier_skill_ship_hufu"	"虎父无犬女"
 		"DOTA_Tooltip_modifier_skill_ship_yiqidangqian"	"一骑当千"
