@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-26 17:55:35
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-27 00:30:41
+* @LastEditTime: 2020-07-27 20:16:18
 --]]
 skill_hero_niaoxiang = {}
 
@@ -37,13 +37,14 @@ function modifier_hero_niaoxiang:OnAttackLanded(keys)
     local level = ability:GetLevel()
     local duration = 2+level*0.2
     local max = 3
+    local target = keys.target
     if owner.ship["moni"] then
         duration = duration *1.6--持续时间增加百分之60
         max = 5
     end
     if attacker:HasModifier("modifier_hero_niaoxiang") then
         if ability.number < max then
-            local zhanying = CreateUnitByName( "npc_unit_nanmanzhanying", attacker:GetAbsOrigin(), false, attacker, attacker, attacker:GetTeamNumber())
+            local zhanying = CreateUnitByName( "npc_unit_nanmanzhanying", target:GetAbsOrigin(), false, attacker, attacker, attacker:GetTeamNumber())
             zhanying:CreatureLevelUp(ability:GetLevel()-1)
             ability.number = ability.number+1
             zhanying:AddNewModifier(attacker, ability, 'modifier_summoned_death',nil)
