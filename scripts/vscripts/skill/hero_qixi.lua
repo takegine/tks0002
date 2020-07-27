@@ -3,21 +3,21 @@
 * @Author: 白喵
 * @Date: 2020-07-24 01:16:38
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-24 18:46:23
+* @LastEditTime: 2020-07-27 23:05:57
 --]]
 skill_hero_qixi = {}
 
 
 function skill_hero_qixi:needwaveup()
     local caster = self:GetCaster()
-    local radius = 200
+    local radius = self:GetSpecialValueFor("radius")
     local Origin = caster:GetAbsOrigin()
     local unitlist
     unitlist = FindUnitsInRadius(
                 caster:GetTeamNumber(),
                 Origin,
                 nil,
-                200,
+                radius,
                 DOTA_UNIT_TARGET_TEAM_FRIENDLY,
                 DOTA_UNIT_TARGET_HERO,
                 DOTA_UNIT_TARGET_FLAG_NONE,

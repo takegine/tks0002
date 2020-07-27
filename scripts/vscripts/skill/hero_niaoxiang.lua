@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-26 17:55:35
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-27 20:16:18
+* @LastEditTime: 2020-07-27 23:11:28
 --]]
 skill_hero_niaoxiang = {}
 
@@ -35,7 +35,7 @@ function modifier_hero_niaoxiang:OnAttackLanded(keys)
     local ability = self:GetAbility()
     local owner = attacker:GetOwner() or {ship={}}
     local level = ability:GetLevel()
-    local duration = 2+level*0.2
+    local duration = ability:GetLevelSpecialValueFor("duration", level-1)
     local max = 3
     local target = keys.target
     if owner.ship["moni"] then
@@ -82,7 +82,7 @@ function modifier_hero_niaoxiang2:OnAttackStart(keys)
         return
     end
     local ability = self:GetAbility()
-    local chance = 12
+    local chance = ability:GetSpecialValueFor("chance")
     local ramdom = RandomInt(1,100)
     attacker:RemoveModifierByName("modifier_hero_niaoxiang")
     if chance >= ramdom then

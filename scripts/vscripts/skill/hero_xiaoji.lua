@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-24 20:43:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-27 01:32:06
+* @LastEditTime: 2020-07-27 23:08:59
 --]]
 
 
@@ -31,7 +31,8 @@ function modifier_hero_xiaoji:IsAura()
 end
 
 function modifier_hero_xiaoji:GetAuraRadius()
-    return 900
+    local ability = self:GetAbility()
+    return ability:GetSpecialValueFor("radius")
 end
 
 function modifier_hero_xiaoji:IsDebuff()
@@ -65,8 +66,9 @@ function modifier_hero_xiaoji2:DeclareFunctions()
 end
 
 function modifier_hero_xiaoji2:GetModifierDamageOutgoing_Percentage()
-    local level = self:GetAbility():GetLevel()
-    return 6*level
+    local ability = self:GetAbility()
+    local level = ability:GetLevel()
+    return ability:GetLevelSpecialValueFor("attack", level-1)
 end
 function modifier_hero_xiaoji2:IsHidden()
     return false

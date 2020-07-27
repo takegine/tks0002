@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-26 22:45:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-27 01:35:26
+* @LastEditTime: 2020-07-27 23:10:37
 --]]
 skill_hero_sunwu = {}
 
@@ -38,7 +38,7 @@ function modifier_hero_sunwu:OnAttackLanded(keys)
     local ability = self:GetAbility()
     local owner = attacker:GetOwner() or {ship={}}
     local level = ability:GetLevel()
-    local duration = 6+level*0.3--持续时间
+    local duration = ability:GetLevelSpecialValueFor("duration", level-1)--持续时间
     local max = 8--最大存在数量
     if attacker:HasModifier("modifier_hero_sunwu") then
         if ability.number < max then
@@ -81,7 +81,7 @@ function modifier_hero_sunwu2:OnAttackStart(keys)
         return
     end
     local ability = self:GetAbility()
-    local chance = 15
+    local chance = ability:GetSpecialValueFor("chance")
     local ramdom = RandomInt(1,100)
     attacker:RemoveModifierByName("modifier_hero_sunwu")
     if chance >= ramdom then

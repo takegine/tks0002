@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-23 00:48:22
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-24 22:09:12
+* @LastEditTime: 2020-07-28 00:53:56
 --]]
 
 
@@ -68,7 +68,7 @@ function modifier_skill_hero_buqu:OnTakeDamage(keys)
     if keys.unit:IsSilenced() then
         return
     end
-    local duration = 2+0.3*ability.level
+    local duration = ability:GetLevelSpecialValueFor("duration", ability:GetLevel()-1)
     if ability.owner.ship['chusheng'] then
         duration = duration*(100+50)/100
     end
@@ -121,9 +121,12 @@ function modifier_skill_hero_buqu2:IsDebuff()
 end
 
 function modifier_skill_hero_buqu2:DeclareFunctions()
-    return {MODIFIER_PROPERTY_MIN_HEALTH}
+    return {MODIFIER_PROPERTY_MIN_HEALTH,MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE}
 end
 
 function modifier_skill_hero_buqu2:GetMinHealth()
     return 1
+end
+function modifier_skill_hero_buqu2:GetModifierMoveSpeedBonus_Percentage()
+    return -30
 end

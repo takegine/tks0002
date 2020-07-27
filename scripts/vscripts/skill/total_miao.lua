@@ -6,7 +6,7 @@
 * @Author: 白喵
 * @Date: 2020-07-21 22:49:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-23 00:42:50
+* @LastEditTime: 2020-07-28 00:24:12
 --]]
 
 --[[
@@ -20,7 +20,7 @@ function Dimeng(keys)
     local level = ability:GetLevel()
     local target = keys.target
     if ability:IsCooldownReady() then
-        local GiveMana = 10+5*level
+        local GiveMana = ability:GetSpecialValueFor("reduce")
         target:ReduceMana(GiveMana)--减少目标蓝量
         ability:StartCooldown(5.0)--使技能进入冷却
     end
