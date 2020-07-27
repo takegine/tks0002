@@ -6180,6 +6180,55 @@
 
 	}
 	
+	"skill_hero_sunjiang"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_sunjiang.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"precache"
+		{
+			"particle"			"particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave.vpcf"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"skill_hero_sunjiang_radius"	"300"
+			}
+			
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"skill_hero_sunjiang_damage"	"18 21 24 27 30 33 36 39 42 45"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_skill_hero_sunjiang"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				"OnAttackLanded"
+				{
+					"CleaveAttack"
+					{
+						"CleavePercent"		"%great_cleave_damage"
+						"CleaveRadius"		"%great_cleave_radius"
+						"CleaveEffect"		"particles/units/heroes/hero_sunce/skill_hero_sunjiang.vpcf"
+					}
+				}
+			}
+		}
+	}
+		
+
+	
 // 白喵 7-19
 	"skill_hero_yinghun"
 	{

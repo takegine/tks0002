@@ -389,6 +389,12 @@
 		"DOTA_Tooltip_ability_skill_hero_tianyi_far_radius"	"范围:"
 		"DOTA_Tooltip_ability_skill_hero_tianyi_duration"	"持续时间:"
 	// ---------------------------------------------单位技能-临天-----
+		
+		"DOTA_Tooltip_ability_skill_hero_sunjiang"	"孙江"
+		"DOTA_Tooltip_ability_skill_hero_sunjiang_Description"	"孙策可以获得一定比例的近战分裂能力"
+		"DOTA_Tooltip_ability_skill_hero_sunjiang_great_cleave_radius"	"分裂半径："
+		"DOTA_Tooltip_ability_skill_hero_sunjiang_great_cleave_damage"	"%分裂伤害: "
+
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"
