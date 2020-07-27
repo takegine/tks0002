@@ -6222,4 +6222,13 @@
 		"LevelsBetweenUpgrades"	"1"
 		"ScriptFile"	"skill/hero_sunwu.lua"
 	}
+	
+	"skill_hero_niaoxiang"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"ScriptFile"	"skill/hero_niaoxiang.lua"
+	}
 }
