@@ -5720,6 +5720,34 @@
 			}
 		}
 	}
+	
+	"skill_hero_qianxun"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"0"
+		"Modifiers"
+		{
+			"modifier_skill_hero_qianxun_waveup"
+			{
+				"Passive"	"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/skill/total_xian.lua"
+						"Function"	"fashudidang"
+					}
+				}
+				"ThinkInterval"	"0.1"
+				"IsHidden"	"1"
+			}
+		}
+	}
 
 // 表表 7-19
 	"skill_hero_longdan"

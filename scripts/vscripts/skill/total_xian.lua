@@ -187,3 +187,14 @@ function StasisTrapRemove( keys )
 		end
 	end
 end
+
+function fashudidang(keys)
+    local ability = keys.ability    --技能谦逊
+    local caster  = keys.caster     --施法者，这里是陆逊
+	local modName = "modifier_item_sphere_target"
+	if not caster:HasModifier( modName ) then  --如果没有这个修饰器，则添加一个修饰器
+		
+		caster:AddNewModifier( caster, ability , modName, nil  )
+	end
+	
+end

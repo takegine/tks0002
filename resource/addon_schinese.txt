@@ -357,6 +357,10 @@
 		"DOTA_Tooltip_ability_skill_hero_weixing_Description"	"魏延每两次攻击将召唤流星打击敌人，造成600*等级点魔法伤害。"
 		"DOTA_Tooltip_ability_skill_hero_mashu"	"马术"
 		"DOTA_Tooltip_ability_skill_hero_mashu_Description"	"提升周围的队友和自己额外的5+2x等级%移动速度。"
+
+		"DOTA_Tooltip_modifier_skill_hero_qianxun_waveup"	"法术抵挡"
+		"DOTA_Tooltip_modifier_skill_hero_qianxun_waveup_Description"	"抵抗指向性的法术攻击"
+
 	// ---------------------------------------------单位技能-表表-----
 		"DOTA_Tooltip_ability_skill_hero_chongzhen"	"冲阵"
 		"DOTA_Tooltip_modifier_skill_hero_chongzhen_attack"	""
@@ -446,5 +450,7 @@
 		"DOTA_Tooltip_modifier_skill_hero_lieren_2_Description"	""
 		"DOTA_Tooltip_modifier_skill_hero_lieren_3"	""
 		"DOTA_Tooltip_modifier_skill_hero_lieren_3_Description"	""
+		"DOTA_Tooltip_modifier_item_sphere_target"	""
+		"DOTA_Tooltip_modifier_item_sphere_target_Description"	""
 	}
 }
