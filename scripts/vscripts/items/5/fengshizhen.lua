@@ -1,4 +1,4 @@
-item_queue_fengshizhen = item_queue_fengshizhen or {}
+item_queue_fengshizhen = item_queue_fengshizhen or class(item_class)
 
 function item_queue_fengshizhen:needwaveup()
     

@@ -1,8 +1,8 @@
 
 
-abi_queue = {}
+item_class = {}
 
-function abi_queue:lvlup()
+function item_class:lvlup()
     print( self:GetName())
     local parent = self:GetParent()
     local level  = Clamp(1 + self:GetCurrentCharges(), 0 ,10)
@@ -11,7 +11,7 @@ function abi_queue:lvlup()
 
 end
 
-function abi_queue:OnUpgrade()
+function item_class:OnUpgrade()
     local parent = self:GetParent()
     local level  = self:GetLevel()
     
@@ -23,10 +23,15 @@ function abi_queue:OnUpgrade()
     end
 end
 
-function abi_queue:OnEquip()
+function item_class:OnEquip()
     
     local parent = self:GetParent()
     local level  = self:GetLevel()
     
     print("OnEquip", self:GetLevel())
+end
+
+
+function item_class:GetBehavior()
+    return DOTA_ABILITY_BEHAVIOR_PASSIVE
 end
