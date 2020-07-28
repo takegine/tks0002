@@ -12,7 +12,7 @@ function item_queue_fengshizhen:needwaveup()
 end
 
 ------------------------------------------------------------------
-LinkLuaModifier( "modifier_item_queue_fengshizhen","items/5/item_queue_fengshizhen", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_item_queue_fengshizhen","items/5/fengshizhen", LUA_MODIFIER_MOTION_NONE )
 modifier_item_queue_fengshizhen = modifier_item_queue_fengshizhen or {}
 
 
