@@ -8,7 +8,7 @@
 		"override_hero"	"npc_dota_hero_phoenix"
 		// Ability 1
 		"Ability1"	"skill_player_sell"
-		"Ability2"	""
+		"Ability2"	"skill_player_queue"
 		"Ability3"	""
 		"Ability4"	""
 		"Ability5"	""

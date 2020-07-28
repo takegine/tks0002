@@ -1,3 +1,27 @@
+skill_player_queue = skill_player_queue or {}
+--------------------------------------------------------------------------------
+
+function skill_player_queue:OnSpellStart(  )
+    local caster = self:GetCaster()
+    local queue  = caster:GetItemInSlot(5)
+    local level  = Clamp( self:GetLevel() + 1, 1, 10)
+    local cost   = self:GetSpecialValueFor("basecost")
+    local player = caster:GetPlayerOwnerID()
+
+    if self:GetLevel() >= level then 
+        return
+    elseif caster:GetGold() < cost then 
+        return
+    elseif not queue then 
+        return
+    else
+        queue:lvlup(level)
+        self:SetLevel(level)
+        caster:SpendGold( cost, DOTA_ModifyGold_PurchaseConsumable)
+    end
+end
+
+
 
 skill_player_onback = skill_player_onback or {}
 --------------------------------------------------------------------------------

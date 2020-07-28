@@ -163,6 +163,25 @@
 		"AbilityCooldown"	"0.1"
 	}
 
+	"skill_player_queue"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"player\BTNExile"
+		"ScriptFile"	"root/PlayerBuild.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
+		"MaxLevel"	"10"
+		"AbilityCooldown"	"0.1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"basecost"	"100 250 425 625 1350 1600 2375 2675 3500 0"
+			}
+		}
+	}
+
 	"skill_player_noattack"
 	{
 		"BaseClass"	"ability_datadriven"
