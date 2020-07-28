@@ -1,0 +1,79 @@
+
+"dota_shops"
+{
+
+	"consumables"
+	{
+
+	}
+
+	"attributes"
+	{
+
+	}
+
+	"weapons_armor"
+    {
+		"item"		"item_queue_huozhen"
+		"item"		"item_queue_shuizhen"
+		"item"		"item_queue_heyizhen"
+		"item"		"item_queue_baguazhen"
+		"item"		"item_queue_yanxingzhen"
+		"item"		"item_queue_fengshizhen"
+		"item"		"item_queue_chexuanzhen"
+		"item"		"item_queue_fangyuanzhen"
+		"item"		"item_queue_yulinzhen"
+		"item"		"item_queue_changshezhen"
+	}
+	"misc"
+	{
+		"item"		"item_level_queue"
+	}
+	"secretshop"
+	{
+		"item"		"item_shop_population"
+	}
+
+
+	"basics" 
+	{
+		"item"		"item_weapon_qinggangjian"
+	}
+
+	"support" 
+	{
+
+	}
+	"magics" 
+	{
+
+	}
+	"defense" 
+	{
+
+	}
+	"weapons" 
+	{
+
+		"item"		"item_jewelry_baiyuhuan"
+	}
+
+	"artifacts" 
+	{
+		"item"		"item_queue_huozhen"
+		"item"		"item_queue_shuizhen"
+		"item"		"item_queue_heyizhen"
+		"item"		"item_queue_baguazhen"
+		"item"		"item_queue_yanxingzhen"
+		"item"		"item_queue_fengshizhen"
+		"item"		"item_queue_chexuanzhen"
+		"item"		"item_queue_fangyuanzhen"
+		"item"		"item_queue_yulinzhen"
+		"item"		"item_queue_changshezhen"
+	}
+	
+	"sideshop1" {}
+	"sideshop2" {}
+
+    "pregame" {}
+}

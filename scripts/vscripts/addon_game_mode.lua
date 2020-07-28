@@ -60,6 +60,7 @@ function CAddonTemplateGameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 0.25 )
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN, 0.01 )
     GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( self, "DamageFilter" ), self )
+    GameRules:GetGameModeEntity():SetItemAddedToInventoryFilter( Dynamic_Wrap( self, "InvFilt" ), self )
     ListenToGameEvent("entity_hurt",Dynamic_Wrap(self, "entity_hurt"), self)
     ListenToGameEvent("npc_spawned",Dynamic_Wrap(self, "npc_spawned"), self)
     ListenToGameEvent("player_chat",Dynamic_Wrap(self, "player_chat"), self)
@@ -293,4 +294,43 @@ function herochange(keys)
             end
         end)
     end
+end
+
+
+function CAddonTemplateGameMode:InvFilt( filterTable )
+    local hItem   = EntIndexToHScript( filterTable.item_entindex_const )
+    local hItemPar= EntIndexToHScript( filterTable.item_parent_entindex_const )
+    local hInvPar = EntIndexToHScript( filterTable.inventory_parent_entindex_const )
+    local slot    = filterTable.suggested_slot
+
+    if hItem == nil 
+    or hInvPar == nil 
+    then return true 
+    end
+
+    local slotlist={ 'level', 'weapon', 'defend', 'jewelry', 'horses', 'format', 'queue' }
+    for k,v in pairs(slotlist) do
+        if  string.find(hItem:GetAbilityName(),v) then
+            if k==1 then
+                hItem:CastAbility()
+                return true
+            else
+                slot = k-2
+            end
+            break
+        end
+    end
+
+    local curitem = hInvPar:GetItemInSlot(slot)
+    if curitem then 
+        if curitem:GetName() == hItem:GetName() then
+            hItem:SetLevel( curitem:GetLevel()  )
+            hItem:SetCurrentCharges( curitem:GetCurrentCharges()  )
+        end
+        hInvPar:RemoveItem(curitem) 
+    end
+
+    filterTable.suggested_slot = slot
+
+    return true
 end
