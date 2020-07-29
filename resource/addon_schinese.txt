@@ -394,11 +394,15 @@
 
 		"DOTA_Tooltip_ability_skill_hero_taijun"	"太君"
 		"DOTA_Tooltip_ability_skill_hero_taijun_Description"	"君子之交 太史慈可降低受到的130X等级点攻击伤害。"
-		"DOTA_Tooltip_ability_skill_hero_tianyi"			"天义"
+		
+		"DOTA_Tooltip_ability_skill_hero_tianyi"	"天义"
 		"DOTA_Tooltip_ability_skill_hero_tianyi_Description"	"快速的挥舞武器产生旋风，5秒内持续对周围敌人造成伤害，，同时不断的将它们拉向太史慈，期间太史慈处于魔法免疫状态，并提升护甲。"
-		"DOTA_Tooltip_ability_skill_hero_tianyi_damage"		"每秒魔法伤害:"
+		"DOTA_Tooltip_ability_skill_hero_tianyi_damage"	"每秒魔法伤害:"
 		"DOTA_Tooltip_ability_skill_hero_tianyi_far_radius"	"范围:"
 		"DOTA_Tooltip_ability_skill_hero_tianyi_duration"	"持续时间:"
+		"DOTA_Tooltip_ability_skill_hero_keji"	"克己"
+		"DOTA_Tooltip_ability_skill_hero_keji_Description"	"使得吕蒙在1.5秒内隐形并向目标点快速移动，在结束隐形或被发现时都将获得技能扫射。"
+
 	// ---------------------------------------------单位技能-临天-----
 		
 		"DOTA_Tooltip_ability_skill_hero_sunjiang"	"孙江"
