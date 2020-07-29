@@ -5694,6 +5694,32 @@
 	}
 
 // 表表 7-19
+
+	"skill_hero_zhiheng"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_zhiheng.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"1.8 2.1 2.4 2.7 3.0 3.3 3.6 3.9 4.2 4.5"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"abilitynumber"	"1 2 2 3 3 4 4 5 5 6"
+			}
+		}
+	}
+
 	"skill_hero_longdan"
 	{
 		"BaseClass"	"ability_lua"

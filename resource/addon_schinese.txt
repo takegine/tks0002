@@ -373,6 +373,10 @@
 		"DOTA_Tooltip_modifier_skill_hero_qianxun_waveup_Description"	"抵抗指向性的法术攻击"
 
 	// ---------------------------------------------单位技能-表表-----
+		"DOTA_Tooltip_ability_skill_hero_zhiheng"	"制衡"
+		"DOTA_Tooltip_ability_skill_hero_zhiheng_Description"	"虚无一名敌人，另外将随机1-6名敌方远程单位进入虚无状态，一定时间内这些敌人将无法攻击，处于虚无状态的单位只会受到的火焰和闪电伤害，并且伤害比例变为166%。"
+		"DOTA_Tooltip_ability_skill_hero_zhiheng_duration"	"虚无的持续时间"
+		"DOTA_Tooltip_ability_skill_hero_zhiheng_abilitynumber"	"制衡数量"
 		"DOTA_Tooltip_ability_skill_hero_chongzhen"	"冲阵"
 		"DOTA_Tooltip_modifier_skill_hero_chongzhen_attack"	""
 		"DOTA_Tooltip_modifier_skill_hero_chongzhen_attack_Description"	""
