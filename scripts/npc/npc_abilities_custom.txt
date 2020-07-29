@@ -189,17 +189,15 @@
 		"MaxLevel"	"1"
 		"Modifiers"
 		{
-			"modifier_newAbility"
+			"modifier_player_noattack"
 			{
 				"Passive"	"1"
+				"IsHidden"	"1"
 				"States"
 				{
 					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
-				"IsHidden"	"0"
-				"Properties"	{}
-				"TextureName"	"keeper_of_the_light_spirit_form_illuminate"
 			}
 		}
 	}
@@ -215,6 +213,7 @@
 			{
 				"IsHidden"	"1"
 				"Passive"	"0"
+				"TextureName"	"keeper_of_the_light_spirit_form_illuminate"
 				"States"
 				{
 					"MODIFIER_STATE_MUTED"	"MODIFIER_STATE_VALUE_ENABLED"
