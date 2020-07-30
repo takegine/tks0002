@@ -6,7 +6,7 @@ function skill_hero_sunjun:needwaveup()
 
     local ability=self
 	local caster=self:GetCaster()
-    local owner =caster:GetOwner() or {ship{}}
+    local owner =caster:GetOwner() or {ship={}}
     if owner.ship['junzi'] then
     caster:AddNewModifier(caster,ability,'modifier_skill_hero_sunjun', {})
     end
