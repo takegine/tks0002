@@ -6227,6 +6227,55 @@
 		}
 	}
 
+	"skill_hero_pojun"
+	{  
+	    "BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_pojun.lua"
+		"AbilityTextureName"	"wuguo/ability_pojun"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"12"
+		"AbilityManaCost"	"6 7 8 9 10 11 12 13 14 15"
+		"AOERadius"	"%radius"
+		"precache"
+		{
+			"particle"	"particles/unknown.vpcf"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"450 500 550 600 650 700 750 800 850 900"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"jiangong"	"14 18 22 26 30 34 38 42 46 50"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"addarmor"	"23 26 29 32 35 38 41 44 47 50"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"chance"	"20"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"6 7 8 9 10 11 12 13 14 15"
+			}
+		}
+	}
+
+	
 // 白喵 7-19
 	"skill_hero_yinghun"
 	{
