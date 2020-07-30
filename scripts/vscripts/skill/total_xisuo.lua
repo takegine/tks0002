@@ -419,3 +419,64 @@ function chaooji_HitUnitDamage(keys)
 	ApplyDamage(damage_table)
 
 end
+
+-- Author: 西索酱
+-- Date: 01.08.2020
+-- 张合 巧变
+
+function qiaobian(keys)
+	local caster   = keys.caster
+	local target   = keys.target
+    local ability  = keys.ability
+    local owner    = caster:GetOwner() or {ship={}}
+    local heal_ori = target:IsAncient() and target:GetHealth() or caster:GetMaxHealth()
+    local backheal = heal_ori * ability:GetSpecialValueFor("lifesteal") /100
+    local radius   = ability:GetSpecialValueFor("radius")
+    local damage_type  = ability:GetAbilityDamageType()
+	local target_team  = ability:GetAbilityTargetTeam()
+	local target_types = ability:GetAbilityTargetType()
+    local target_flags = ability:GetAbilityTargetFlags()
+
+    caster:Heal(backheal, caster)
+    SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, caster, backheal, nil)
+        
+    if not caster.bfirst_qiaobiao then
+        caster.bfirst_qiaobiao = true
+        print("ddd")
+        local queue_target = target:GetItemInSlot(5)
+        local queue_caster = caster:GetItemInSlot(5)
+        if queue_target then
+            print(queue_target:GetName())
+            local modName =  "modifier_"..queue_target:GetName()
+            if caster:HasModifier(modName ) then
+                local level = math.max(queue_target:GetLevel(), queue_caster:GetLevel())
+                while queue_caster:GetLevel() < level
+                do    queue_caster:lvlup()
+                end
+            else
+                LinkLuaModifier( modName, "items/5/"..string.sub(modName,21), LUA_MODIFIER_MOTION_NONE )
+                caster:AddNewModifier( caster, queue_target, modName, {} )
+                if queue_target.needwaveup then
+                    queue_target:needwaveup()
+                end
+            end
+
+            if owner.ship['mengjie'] then
+                
+                local enemy = FindUnitsInRadius(caster:GetTeamNumber(), 
+                                    caster:GetOrigin(), 
+                                    nil, 
+                                    radius,
+                                    target_team,
+                                    target_types, 
+                                    target_flags, 
+                                    0, 
+                                    true)
+                
+                for k,v in pairs(enemy) do
+                    v:RemoveModifierByName(modName)
+                end
+            end
+        end
+    end
+end

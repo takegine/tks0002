@@ -1607,6 +1607,68 @@
 		}
 	}
 
+	"skll_hero_qiaobian"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"MaxLevel"	"10"
+		"Modifiers"
+		{
+			"modifier_skll_hero_qiaobian"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+				"Aura"	"modifier_skll_hero_qiaobian_buff"
+				"Aura_Radius"	"2000"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"	"DOTA_UNIT_TARGET_ALL"
+				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"skill/total_xisuo"
+						"Function"	"qiaobian"
+					}
+				}
+			}
+			"modifier_skll_hero_qiaobian_buff"
+			{
+				"IsHidden"	"0"
+				"IsBuff"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_BONUS"	"%mana"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"lifesteal"	"8"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"640"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"15"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"mana"	"0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0"
+			}
+		}
+	}
+
 // 先生 7-19
 	"skill_hero_huozhugedehuo"
 	{
