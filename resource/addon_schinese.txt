@@ -23,7 +23,7 @@
 		"DOTA_Tooltip_ability_item_shop_population"	"升级人口"
 
 		"DOTA_Tooltip_modifier_item_queue_fengshizhen"	"锋矢阵"
-		"DOTA_Tooltip_modifier_item_queue_fengshizhen_Description"	"攻击力提升 %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% 点"
+		"DOTA_Tooltip_modifier_item_queue_fengshizhen_Description"	"攻击力提升 %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% "
 
 	// ---------------------------------------------单位技能-西索-----
 		"DOTA_Tooltip_ability_skill_hero_rende"	"仁德"
