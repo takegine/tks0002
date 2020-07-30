@@ -414,6 +414,9 @@
 		"DOTA_Tooltip_ability_skill_hero_sunjiang_great_cleave_radius"	"分裂半径："
 		"DOTA_Tooltip_ability_skill_hero_sunjiang_great_cleave_damage"	"%分裂伤害: "
 
+		
+		"DOTA_Tooltip_ability_skill_hero_sunjun"	"孙君"
+		"DOTA_Tooltip_ability_skill_hero_sunjun_Description"	"孙策可降低受到的130*等级点攻击伤害"
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"

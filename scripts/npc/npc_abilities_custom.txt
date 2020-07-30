@@ -6190,9 +6190,17 @@
 			}
 		}
 	}
-		
-
 	
+	"skill_hero_sunjun"
+	{
+		"BaseClass"		"ability_lua"
+		"ScriptFile"	"skill/hero_sunjun.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+	}
+
+
 // 白喵 7-19
 	"skill_hero_yinghun"
 	{
