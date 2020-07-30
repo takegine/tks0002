@@ -415,8 +415,8 @@
 		
 		"DOTA_Tooltip_ability_skill_hero_sunjiang"	"孙江"
 		"DOTA_Tooltip_ability_skill_hero_sunjiang_Description"	"孙策可以获得一定比例的近战分裂能力"
-		"DOTA_Tooltip_ability_skill_hero_sunjiang_great_cleave_radius"	"分裂半径："
-		"DOTA_Tooltip_ability_skill_hero_sunjiang_great_cleave_damage"	"%分裂伤害: "
+		"DOTA_Tooltip_ability_skill_hero_sunjiang_radius"	"分裂半径："
+		"DOTA_Tooltip_ability_skill_hero_sunjiang_damage"	"%分裂伤害: "
 
 		
 		"DOTA_Tooltip_ability_skill_hero_sunjun"	"孙君"
@@ -427,6 +427,21 @@
 		"DOTA_Tooltip_ability_skill_hero_sunchuan_Description"	"孙策每次暴击都将对周围敌人造成当前生命值10%的火焰魔法伤害"
 		"DOTA_Tooltip_ability_skill_hero_sunchuan_radius"	"范围："
 		"DOTA_Tooltip_ability_skill_hero_sunchuan_damage"	"伤害: "
+
+		"DOTA_Tooltip_ability_skill_hero_pojun"	"破军"
+		"DOTA_Tooltip_ability_skill_hero_pojun_Description"	"发出恐怖的嚎叫，使周围敌人在恐惧中战栗，减少它们的攻击力。"
+		"DOTA_Tooltip_ability_skill_hero_pojun_radius"	"范围："
+		"DOTA_Tooltip_ability_skill_hero_pojun_jiangong"	"%降低攻击: "
+		"DOTA_Tooltip_ability_skill_hero_pojun_duration""持续时间: "
+
+		"DOTA_Tooltip_ability_skill_hero_jieyin"	"结姻"
+		"DOTA_Tooltip_ability_skill_hero_jieyin_Description"	"提升周围队友一定比例的最大生命值的生命回复速度。"
+		"DOTA_Tooltip_ability_skill_hero_jieyin_radius"	"范围："
+		"DOTA_Tooltip_ability_skill_hero_jieyin_heal"	"%治疗量: "
+
+		"DOTA_Tooltip_modifier_hero_jieyin_heal" "结姻"
+		"DOTA_Tooltip_modifier_hero_jieyin_heal_Description" "生命值回复提升 %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% "
+	
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"

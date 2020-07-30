@@ -6337,6 +6337,33 @@
 		}
 	}
 
+    "skill_hero_jieyin"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"ScriptFile"	"skill/hero_jieyin.lua"
+		"AbilityTextureName"	"wuguo\ability_jieyin"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"radius"			"360 400 440 480 520 560 600 640 680 720"
+			}
+			"02"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"heal"			"1 1 1 2 2 2 3 3 3 4"
+			}
+			// "03"
+			// {
+			// 			"var_type"			"FIELD_FLAOT"
+			// 			"heal_interval"			"0.25"
+			// }
+		}
+	}
 	
 // 白喵 7-19
 	"skill_hero_yinghun"
