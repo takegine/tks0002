@@ -6190,7 +6190,7 @@
 			}
 		}
 	}
-	
+
 	"skill_hero_sunjun"
 	{
 		"BaseClass"		"ability_lua"
@@ -6200,6 +6200,32 @@
 		"LevelsBetweenUpgrades"	"1"
 	}
 
+    "skill_hero_sunchuan"
+	{
+		"BaseClass"		"ability_lua"
+		"ScriptFile"	"skill/hero_sunchuan.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AOERadius"	"%radius"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"160"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"10"
+			}
+		}
+	}
 
 // 白喵 7-19
 	"skill_hero_yinghun"

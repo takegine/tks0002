@@ -417,6 +417,12 @@
 		
 		"DOTA_Tooltip_ability_skill_hero_sunjun"	"孙君"
 		"DOTA_Tooltip_ability_skill_hero_sunjun_Description"	"孙策可降低受到的130*等级点攻击伤害"
+		
+
+		"DOTA_Tooltip_ability_skill_hero_sunchuan"	"孙传"
+		"DOTA_Tooltip_ability_skill_hero_sunchuan_Description"	"孙策每次暴击都将对周围敌人造成当前生命值10%的火焰魔法伤害"
+		"DOTA_Tooltip_ability_skill_hero_sunchuan_radius"	"范围："
+		"DOTA_Tooltip_ability_skill_hero_sunchuan_damage"	"伤害: "
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"
