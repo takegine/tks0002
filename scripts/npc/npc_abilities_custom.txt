@@ -274,7 +274,7 @@
 	"skill_hero_rende"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"centaur_hoof_stomp"
+		"AbilityTextureName"	"shuguo\ability_rende"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -336,7 +336,7 @@
 	"skill_hero_yinghan"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"dragon_knight_dragon_tail"
+		"AbilityTextureName"	"shuguo\ability_yinghan"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
@@ -384,7 +384,7 @@
 	"skill_hero_wusheng"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"greevil_blade_fury"
+		"AbilityTextureName"	"shuguo\ability_wusheng"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -467,7 +467,7 @@
 	"skill_hero_jijiang"
 	{
 		"BaseClass"	"ability_lua"
-		"AbilityTextureName"	"ursa_fury_swipes"
+		"AbilityTextureName"	"shuguo\ability_jijiang"
 		"ScriptFile"	"skill/hero_jijiang.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
@@ -932,7 +932,7 @@
 		// General
 		// -------------------------------------------------------------------------------------------------------------
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"tinker_march_of_the_machines"
+		"AbilityTextureName"	"shuguo\ability_tieqi"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
@@ -1092,6 +1092,7 @@
 		// General
 		// -------------------------------------------------------------------------------------------------------------
 		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"shuguo\ability_xueji"
 		"ScriptFile"	"skill/hero_xueji.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"FightRecapLevel"	"1"
@@ -1167,16 +1168,16 @@
 		}
 	}
 
-
-
 	"skill_hero_paoxiao"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"sven_warcry"
+		"AbilityTextureName"	"shuguo\ability_paoxiao"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
 		"precache"
 		{
 			"particle"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
@@ -1273,9 +1274,8 @@
 	"skill_hero_fengdan"
 	{
 		"BaseClass"	"ability_lua"
-		"AbilityTextureName"	"phantom_assassin_coup_de_grace"
 		"ScriptFile"	"skill/hero_fengdan"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"	"10"
@@ -1305,7 +1305,7 @@
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"greevil_blade_fury"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
@@ -1355,7 +1355,7 @@
 		// General
 		// -------------------------------------------------------------------------------------------------------------
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"jakiro_macropyre"
+		"AbilityTextureName"	"shuguo\ability_huogong"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -1470,6 +1470,7 @@
 	"skill_hero_kuanggu"
 	{
 		"BaseClass"		"ability_lua"
+		"AbilityTextureName"	"shuguo\ability_kuanggu"
 		"ScriptFile"	"skill/hero_kuanggu.lua"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
