@@ -6373,6 +6373,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
+		"AbilityTextureName" "wuguo/ability_yinghun"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6390,13 +6391,14 @@
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 		"Duration"	"5"
-
+		"AbilityTextureName" "wuguo/ability_dimeng"
 		"Modifiers"
 		{
 			"modifier_hero_dimeng"
 			{
 				"IsHidden"	"1"
 				"Passive"	"1"
+				"TextureName" "wuguo/ability_dimeng"
 				"OnAttack"
 				{
 					"RunScript"
@@ -6424,6 +6426,7 @@
 		"MaxLevel"	"1"
 		"LevelsBetweenUpgrades"	"1"
 		"ScriptFile"	"skill/hero_lusi.lua"
+		//"AbilityTextureName" "wuguo/ability_lusi"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6445,6 +6448,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
+		"AbilityTextureName" "wuguo/ability_buqu"
 		"ScriptFile"	"skill/hero_buqu.lua"
 		"AbilitySpecial"
 		{
@@ -6461,6 +6465,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
+		"AbilityTextureName" "wuguo/ability_qixi"
 		"ScriptFile"	"skill/hero_qixi.lua"
 		"AbilitySpecial"
 		{
@@ -6478,6 +6483,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
+		"AbilityTextureName"	"wuguo/ability_xiaoji"
 		"ScriptFile"	"skill/hero_xiaoji.lua"
 		"AbilitySpecial"
 		{
@@ -6521,6 +6527,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
+		"AbilityTextureName" "wuguo/ability_niaoxiang"
 		"ScriptFile"	"skill/hero_niaoxiang.lua"
 		"AbilitySpecial"
 		{

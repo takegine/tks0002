@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-24 20:43:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-27 23:08:59
+* @LastEditTime: 2020-07-31 11:54:34
 --]]
 
 
@@ -50,7 +50,7 @@ end
 
 
 function modifier_hero_xiaoji:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_ALL
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
 end
 
 function modifier_hero_xiaoji:GetAuraSearchFlags()
@@ -70,6 +70,13 @@ function modifier_hero_xiaoji2:GetModifierDamageOutgoing_Percentage()
     local level = ability:GetLevel()
     return ability:GetLevelSpecialValueFor("attack", level-1)
 end
+
+
+
 function modifier_hero_xiaoji2:IsHidden()
     return false
+end
+
+function modifier_hero_xiaoji2:GetTexture()
+    return "wuguo/ability_xiaoji"
 end

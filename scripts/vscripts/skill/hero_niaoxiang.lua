@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-26 17:55:35
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-27 23:11:28
+* @LastEditTime: 2020-07-31 11:58:28
 --]]
 skill_hero_niaoxiang = {}
 
@@ -108,4 +108,9 @@ function modifier_summoned_death:OnDeath(keys)
         return
     end
     ability.number = ability.number-1
+end
+
+
+function modifier_hero_niaoxiang2:GetTexture()
+    return "wuguo/ability_niaoxiang"
 end

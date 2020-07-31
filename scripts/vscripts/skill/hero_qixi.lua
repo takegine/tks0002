@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-24 01:16:38
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-27 23:05:57
+* @LastEditTime: 2020-07-31 11:52:50
 --]]
 skill_hero_qixi = {}
 
@@ -45,4 +45,7 @@ function modifier_hero_qixi:CheckState()
     return{
         [MODIFIER_STATE_INVISIBLE] = true
     }
+end
+function modifier_hero_qixi:GetTexture()
+    return "wuguo/ability_qixi"
 end

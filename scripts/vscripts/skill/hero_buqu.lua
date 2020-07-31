@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-23 00:48:22
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-28 00:53:56
+* @LastEditTime: 2020-07-31 11:52:36
 --]]
 
 
@@ -129,4 +129,7 @@ function modifier_skill_hero_buqu2:GetMinHealth()
 end
 function modifier_skill_hero_buqu2:GetModifierMoveSpeedBonus_Percentage()
     return -30
+end
+function modifier_skill_hero_buqu2:GetTexture()
+    return "wuguo/ability_buqu"
 end

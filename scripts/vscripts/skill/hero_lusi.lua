@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-26 19:50:40
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-28 00:41:30
+* @LastEditTime: 2020-07-31 11:29:27
 --]]
 
 skill_hero_lusi = {}
@@ -52,7 +52,7 @@ end
 
 
 function modifier_hero_lusi:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_ALL
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
 end
 
 
@@ -75,3 +75,7 @@ end
 function modifier_hero_lusi2:IsHidden()
     return false
 end
+
+-- function modifier_hero_lusi2:GetTexture()
+--     return "wuguo/ability_dimeng"
+-- end

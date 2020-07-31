@@ -62,3 +62,5 @@ ApplyDamage({
 })
 end
 
+function modifier_hero_yinghun:GetTexture()
+    return "wuguo/ability_yinghun"
