@@ -2200,7 +2200,7 @@
 	 	"BountyGoldMax"	"105"
 	 }
 
-	 //  陆逊
+	 //   陆逊
 	 "npc_dota_hero_visage"
 	 {
 	 	"Ability1"	"skill_player_lvlup"
