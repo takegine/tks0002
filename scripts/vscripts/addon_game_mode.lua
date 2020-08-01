@@ -89,10 +89,11 @@ function CAddonTemplateGameMode:OnThink() return 1 end
 function CAddonTemplateGameMode:createnewherotest( data )
     local hero    = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
     local ablelist= LoadKeyValues('scripts/npc/npc_skill_custom.txt')
-    local teamid  = 3
-    if data.good then teamid = PlayerResource:GetCustomTeamAssignment(data.PlayerID) end
+    local hteam   = PlayerResource:GetCustomTeamAssignment(data.PlayerID)
+    local teamid  = data.good and hteam or 3
+    local crePos  = Entities:FindByName(nil,"creep_birth_"..(hteam-5).."_"..(teamid-3)):GetAbsOrigin() 
 
-    CreateUnitByNameAsync( data.way, Entities:FindByName(nil,"creep_birth_"..(teamid-3)):GetAbsOrigin(), true, hero, hero, teamid,  function( h )
+    CreateUnitByNameAsync( data.way, crePos, true, hero, hero, teamid,  function( h )
         h:SetControllableByPlayer( data.PlayerID, false )
         h:Hold()
         h:SetOwner(hero)
