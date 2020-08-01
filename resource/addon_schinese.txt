@@ -24,6 +24,8 @@
 
 		"DOTA_Tooltip_modifier_item_queue_fengshizhen"	"锋矢阵"
 		"DOTA_Tooltip_modifier_item_queue_fengshizhen_Description"	"攻击力提升 %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% "
+		"DOTA_Tooltip_modifier_item_queue_yulinzhen_debuff"	"鱼鳞阵"
+		"DOTA_Tooltip_modifier_item_queue_yulinzhen_debuff_Description"	"攻击力削弱 %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% <br> 魔法抗性降低 %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% "
 
 	// ---------------------------------------------单位技能-西索-----
 		"DOTA_Tooltip_ability_skill_hero_rende"	"仁德"
