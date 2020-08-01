@@ -27,6 +27,10 @@
 		"DOTA_Tooltip_modifier_item_queue_yulinzhen_debuff"	"鱼鳞阵"
 		"DOTA_Tooltip_modifier_item_queue_yulinzhen_debuff_Description"	"攻击力削弱 %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% <br> 魔法抗性降低 %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% "
 
+		"DOTA_Tooltip_modifier_item_queue_fangyuanzhen"	"方圆阵"
+		"DOTA_Tooltip_modifier_item_queue_fangyuanzhen_Description"	"魔法恢复提升 %dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% 点"
+		"DOTA_Tooltip_modifier_item_queue_fangyuanzhen_debuff"	"方圆阵"
+		"DOTA_Tooltip_modifier_item_queue_fangyuanzhen_debuff_Description"	"攻击速度降低 %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%% "
 	// ---------------------------------------------单位技能-西索-----
 		"DOTA_Tooltip_ability_skill_hero_rende"	"仁德"
 		"DOTA_Tooltip_ability_skill_hero_rende_Description"	"瞬间治疗范围内队友若干的生命值。"
