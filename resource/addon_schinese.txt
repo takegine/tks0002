@@ -36,6 +36,9 @@
 		"DOTA_Tooltip_modifier_item_queue_shuizhen_Description"	"死亡时治疗身边200范围内友军生命值 "
 		"DOTA_Tooltip_modifier_item_queue_shuizhen_debuff"	"水阵"
 		"DOTA_Tooltip_modifier_item_queue_shuizhen_debuff_Description"	"移动速度降低 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% "
+		
+		"DOTA_Tooltip_modifier_item_queue_heyizhen_debuff"	"鹤翼阵"
+		"DOTA_Tooltip_modifier_item_queue_heyizhen_debuff_Description"	"防御力降低 %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% 点 <br> 治疗效果降低 %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%% "
 	// ---------------------------------------------单位技能-西索-----
 		"DOTA_Tooltip_ability_skill_hero_rende"	"仁德"
 		"DOTA_Tooltip_ability_skill_hero_rende_Description"	"瞬间治疗范围内队友若干的生命值。"
