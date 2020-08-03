@@ -10,10 +10,11 @@ function modifier_item_queue_yanxingzhen:GetTexture ()
 end
 
 function modifier_item_queue_yanxingzhen:DeclareFunctions()
-    return  
-    {   
+    return
+    {
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE,
-        MODIFIER_EVENT_ON_TAKEDAMAGE
+        MODIFIER_EVENT_ON_ATTACKED
+
     }
 end
 
@@ -24,14 +25,15 @@ function modifier_item_queue_yanxingzhen:GetModifierPhysicalArmorBonusUniqueActi
 end
 
 
-function modifier_item_queue_yanxingzhen:OnTakeDamage(params)
+function modifier_item_queue_yanxingzhen:OnAttacked(params)
     local parent = self:GetParent()
-	if params.unit == parent then
+    local target = params.target
+	if  target == parent then
+
         local ability= self:GetAbility()
         local change = ability:GetSpecialValueFor('p2')
         local heal   = Clamp( change, 0, params.damage *0.5)
-        local owner  = parent:GetOwner() or {ship={}}  
-        local target = params.target
+        local owner  = parent:GetOwner() or {ship={}}
 
         parent:Heal(heal,parent)
         SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, parent, heal, nil)
