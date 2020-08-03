@@ -39,6 +39,9 @@
 		
 		"DOTA_Tooltip_modifier_item_queue_heyizhen_debuff"	"鹤翼阵"
 		"DOTA_Tooltip_modifier_item_queue_heyizhen_debuff_Description"	"防御力降低 %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% 点 <br> 治疗效果降低 %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%% "
+		
+		"DOTA_Tooltip_modifier_item_queue_baguazhen"	"八卦阵"
+		"DOTA_Tooltip_modifier_item_queue_baguazhen_Description"	"受到近战攻击造成 %dMODIFIER_PROPERTY_TOOLTIP%%% 反伤 <br> 受到远程攻击造成 %dMODIFIER_PROPERTY_TOOLTIP2%%% 反伤 "
 	// ---------------------------------------------单位技能-西索-----
 		"DOTA_Tooltip_ability_skill_hero_rende"	"仁德"
 		"DOTA_Tooltip_ability_skill_hero_rende_Description"	"瞬间治疗范围内队友若干的生命值。"
