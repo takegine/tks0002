@@ -117,6 +117,7 @@
 		"DOTA_Tooltip_ability_skill_hero_mashu_move"	"%移动速度增加："
 		"DOTA_Tooltip_modifier_skill_hero_mashu"	"马术光环"
 		"DOTA_Tooltip_modifier_skill_hero_mashu_Description"	"移动速度提升 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_skill_hero_chaoqi"	"一骑当千"
 	// ---------------------------------------------单位技能-先生-----
 		"DOTA_Tooltip_ability_skill_hero_jisusheji"	"极速射击"
 		"DOTA_Tooltip_ability_skill_hero_jisusheji_Description"	"在3秒内大幅度的提升攻击速度"

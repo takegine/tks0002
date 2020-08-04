@@ -382,13 +382,13 @@ end
 -- Date: 17.07.2020
 -- 马超 一骑当千
 
-function chaooji(keys)
+function chaoqi(keys)
     local ability = keys.ability
     
     ability.needwaveup = function ( ability)        
         local caster  = ability:GetCaster()
         local owner   = caster:GetOwner() or {ship={}}
-        local modName = "modifier_skill_hero_chaoqi_attack"
+        local modName = "modifier_skill_hero_chaoqi"
         if  owner.ship['yiji'] then
             ability:ApplyDataDrivenModifier( caster, caster , modName, nil )
         end
@@ -396,7 +396,7 @@ function chaooji(keys)
 
 end
 
-function chaooji_HitUnitDamage(keys)
+function chaoqi_HitUnitDamage(keys)
 
 	local caster  = keys.caster
 	local target  = keys.target

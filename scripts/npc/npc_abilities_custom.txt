@@ -1536,7 +1536,7 @@
 	"skill_hero_chaoqi"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"	"10"
@@ -1551,7 +1551,7 @@
 			"RunScript"
 			{
 				"ScriptFile"	"skill/total_xisuo"
-				"Function"		"chaoji_HitUnitDamage"
+				"Function"		"chaoqi_HitUnitDamage"
 				"Target"		"TARGET"
 			}
 		}
@@ -1559,21 +1559,21 @@
 		// -------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
-			"modifier_skill_hero_chaoqi"
+			"modifier_skill_hero_chaoqi_waveup"
 			{
 				"Passive"	"1"
-				"IsHidden"	"0"
+				"IsHidden"	"1"
 				"OnCreated"
 				{
 					"RunScript"
 					{
 						"Target"	"CASTER"
 						"ScriptFile"	"skill/total_xisuo"
-						"Function"	"chaoji"
+						"Function"	"chaoqi"
 					}
 				}
 			}
-			"modifier_skill_hero_chaoqi_attack"
+			"modifier_skill_hero_chaoqi"
 			{
 				"OnAttack"
 				{
