@@ -1470,7 +1470,7 @@
 	"skill_hero_kuanggu"
 	{
 		"BaseClass"		"ability_lua"
-		"AbilityTextureName"	"shuguo\ability_kuanggu"
+		"AbilityTextureName"	"shuguo/ability_kuanggu"
 		"ScriptFile"	"skill/hero_kuanggu.lua"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
@@ -1497,23 +1497,26 @@
 	"skill_hero_kuangguguanghuan"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"	"shuguo/ability_kuanggu"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 		"Modifiers"
 		{
-			"modifier_skill_hero_kuangguguanghuan"
+			"modifier_skill_hero_kuangguguanghuan_aura"
 			{
+				"IsHidden"  "1"
 				"Passive"	"1"
-				"Aura"	"modifier_skill_hero_kuangguguanghuan_2"
+				"Aura"	"modifier_skill_hero_kuangguguanghuan"
 				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types"	"DOTA_UNIT_TARGET_ALL"
+				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 				"Aura_ApplyToCaster"	"1"
 				"Aura_Radius"	"1600"
 			}
-			"modifier_skill_hero_kuangguguanghuan_2"
+			"modifier_skill_hero_kuangguguanghuan"
 			{
 				"Properties"
 				{
