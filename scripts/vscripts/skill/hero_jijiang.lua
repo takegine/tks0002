@@ -49,7 +49,7 @@ modifier_jijiang = modifier_jijiang or {}
 
 function modifier_jijiang:IsHidden()      return false end
 function modifier_jijiang:IsPurgable()	  return false end
-function modifier_jijiang:GetTexture ()   return "ursa_fury_swipes" end
+function modifier_jijiang:GetTexture ()   return "shuguo/ability_jijiang" end
 function modifier_jijiang:RemoveOnDeath() return true end
 
 ----------------------------------------
