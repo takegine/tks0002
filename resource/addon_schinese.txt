@@ -444,6 +444,14 @@
 		"DOTA_Tooltip_ability_skill_hero_keji"	"克己"
 		"DOTA_Tooltip_ability_skill_hero_keji_Description"	"使得吕蒙在1.5秒内隐形并向目标点快速移动，在结束隐形或被发现时都将获得技能扫射。"
 
+		"DOTA_Tooltip_ability_skill_hero_duanbing"	"短兵"
+		"DOTA_Tooltip_ability_skill_hero_duanbing_Description"	"每次攻击都将对攻击目标200范围内的敌人造成30%+等级X7%的分裂伤害。"
+		"DOTA_Tooltip_ability_skill_hero_juji"	"狙击"
+		"DOTA_Tooltip_ability_skill_hero_zhousi"	"周四"
+		"DOTA_Tooltip_ability_skill_hero_zhousi_Description"	"东吴四英杰:\n友军武将获得15%技能增强。"
+		"DOTA_Tooltip_ability_arc_lightning_datadriven"	"连营"
+		"DOTA_Tooltip_ability_arc_lightning_datadriven_Description"	"释放强力的火焰冲击，对第一个单位造成640X等级点魔法伤害，随后火焰继续向周围3-6个敌人之间弹射，每次弹射的伤害都会递减10%。"
+	
 	// ---------------------------------------------单位技能-临天-----
 		
 		"DOTA_Tooltip_ability_skill_hero_sunjiang"	"孙江"
