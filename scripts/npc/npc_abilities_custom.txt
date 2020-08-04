@@ -1128,24 +1128,24 @@
 	"skill_hero_danji"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"big_thunder_lizard_slam"
+		"AbilityTextureName"	"shuguo/ability_danqi"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 		"Modifiers"
 		{
-			"modifier_skill_hero_danji"
+			"modifier_skill_hero_danji_aura"
 			{
 				"Passive"	"1"
-				"Aura"	"modifier_skill_hero_danji_2"
-				"Aura_Radius"	"1000"
+				"Aura"	"modifier_skill_hero_danji"
+				"Aura_Radius"	"2000"
 				"IsHidden"	"1"
 				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_ApplyToCaster"	"1"
 				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MELEE_ONLY"
 				"Aura_Types"	"DOTA_UNIT_TARGET_ALL"
 			}
-			"modifier_skill_hero_danji_2"
+			"modifier_skill_hero_danji"
 			{
 				"OnAttack"
 				{
