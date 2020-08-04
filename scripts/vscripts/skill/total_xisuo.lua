@@ -480,3 +480,23 @@ function qiaobian(keys)
         end
     end
 end
+
+-- Author: 西索酱
+-- Date: 04.08.2020
+-- 魏延 飞火流星
+
+function weixing(keys)
+    local ability = keys.ability
+    local caster  = keys.caster
+    local target  = keys.target
+
+    ability.needwaveup = function ( ability)
+        local caster   = ability:GetCaster()
+        local owner   = caster:GetOwner() or {ship={}}
+
+        if owner.ship['feihuo'] then
+            ability:ApplyDataDrivenModifier( caster, caster , "modifier_skill_hero_weixing", nil  )
+        end
+
+    end
+end
