@@ -133,6 +133,8 @@
 
 		"DOTA_Tooltip_modifier_skill_hero_liusan"	"三足鼎立"	
 		
+		"DOTA_Tooltip_ability_skill_hero_bagua"	"八卦"
+		"DOTA_Tooltip_ability_skill_hero_bagua_Description"	"拥有百分之15的闪避概率"
 
 	// ---------------------------------------------单位技能-先生-----
 		"DOTA_Tooltip_ability_skill_hero_jisusheji"	"极速射击"
@@ -226,8 +228,6 @@
 		"DOTA_Tooltip_ability_tidebringer_datadriven"	"船长水刀"
 		"DOTA_Tooltip_modifier_skill_hero_kanpo"	""
 		"DOTA_Tooltip_modifier_skill_hero_kanpo_Description"	""
-		"DOTA_Tooltip_ability_skill_hero_bagua"	"八卦"
-		"DOTA_Tooltip_ability_skill_hero_bagua_Description"	"拥有百分之15的物理完美闪避概率，不会被无视闪避的效果影响"
 		"DOTA_Tooltip_ability_skill_hero_xiangle"	"享乐"
 		"DOTA_Tooltip_ability_skill_hero_xiangle_Description"	"刘禅有12%的概率躲避掉敌人的攻击"
 		"DOTA_Tooltip_ability_skill_hero_zaiqi"	"再起"

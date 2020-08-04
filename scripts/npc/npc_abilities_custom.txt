@@ -1876,6 +1876,28 @@
 		}
 	}
 
+	"skill_hero_bagua"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"shuguo/ability_bagua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"Modifiers"
+		{
+			"modifier_skill_hero_bagua"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"	"15"
+				}
+			}
+		}
+	}
+
 // 先生 7-19
 	"skill_hero_huozhugedehuo"
 	{
@@ -3372,29 +3394,6 @@
 					}
 				}
 
-			}
-		}
-	}
-
-	"skill_hero_bagua"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"	"1"
-		"LevelsBetweenUpgrades"	"1"
-		"Modifiers"
-		{
-			"modifier_skill_hero_kanpo"
-			{
-				"States"	{}
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_AVOID_CONSTANT"	"15"
-				}
-				"Passive"	"1"
-				"IsHidden"	"1"
 			}
 		}
 	}
