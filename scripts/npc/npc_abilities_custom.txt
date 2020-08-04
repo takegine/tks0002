@@ -1669,6 +1669,45 @@
 		}
 	}
 
+	"skill_hero_kongcheng"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"shuguo/ability_kongcheng"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"21 20 19 18 17 16 15 14 13 12"
+		"AbilityManaCost"	"6 8 10 12 14 16 18 20 22 24"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"modifier_skill_hero_kongcheng"
+				"Duration"	"%duration"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_skill_hero_kongcheng"
+			{
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"3.3 3.6 3.9 4.2 4.5 4.8 5.1 5.4 5.7 6.0"
+			}
+		}
+	}
+
 // 先生 7-19
 	"skill_hero_huozhugedehuo"
 	{
@@ -3238,86 +3277,6 @@
 					"MODIFIER_PROPERTY_AVOID_CONSTANT"	"15"
 				}
 				"Passive"	"1"
-				"IsHidden"	"1"
-			}
-		}
-	}
-
-	"skill_hero_kongcheng"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"	"1"
-		"LevelsBetweenUpgrades"	"1"
-		"AbilityCooldown"	"15.0"
-		"AbilityManaCost"	"0"
-		"Modifiers"
-		{
-			"modifier_skill_hero_kongcheng"
-			{
-				"Passive"	"1"
-				"OnAttacked"
-				{
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_kongcheng_2"
-					}
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_kongcheng_3"
-					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_kongcheng"
-					}
-				}
-				"IsHidden"	"1"
-				"ThinkInterval"	"3"
-				"States"	{}
-			}
-			"modifier_skill_hero_kongcheng_2"
-			{
-				"ThinkInterval"	"3"
-				"States"
-				{
-					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-				"Duration"	"3"
-				"OnIntervalThink"
-				{
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_kongcheng_2"
-					}
-				}
-			}
-			"modifier_skill_hero_kongcheng_3"
-			{
-				"OnIntervalThink"
-				{
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_kongcheng"
-					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_kongcheng_3"
-					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_skill_hero_kongcheng_2"
-					}
-				}
-				"ThinkInterval"	"15"
-				"Duration"	"15"
 				"IsHidden"	"1"
 			}
 		}
