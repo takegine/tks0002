@@ -509,7 +509,6 @@
 	"skill_hero_liutao"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"beastmaster_inner_beast"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -524,6 +523,7 @@
 		{
 			"modifier_skill_hero_liutao_needwaveup"
 			{
+				"IsHidden"	"1"
 				"Passive"	"1"
 				"OnCreated"
 				{
