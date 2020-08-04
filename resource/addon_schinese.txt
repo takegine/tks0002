@@ -112,6 +112,11 @@
 		"DOTA_Tooltip_ability_skill_hero_kongcheng_duration"	"持续时间：\n"
 		"DOTA_Tooltip_modifier_skill_hero_kongcheng"	"空城"
 
+		"DOTA_Tooltip_ability_skill_hero_mashu"	"马术"
+		"DOTA_Tooltip_ability_skill_hero_mashu_Description"	"提升周围的队友和自己额外的移动速度。"
+		"DOTA_Tooltip_ability_skill_hero_mashu_move"	"%移动速度增加："
+		"DOTA_Tooltip_modifier_skill_hero_mashu"	"马术光环"
+		"DOTA_Tooltip_modifier_skill_hero_mashu_Description"	"移动速度提升 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 	// ---------------------------------------------单位技能-先生-----
 		"DOTA_Tooltip_ability_skill_hero_jisusheji"	"极速射击"
 		"DOTA_Tooltip_ability_skill_hero_jisusheji_Description"	"在3秒内大幅度的提升攻击速度"
@@ -125,10 +130,6 @@
 		"DOTA_Tooltip_modifier_攻坚_Description"	"增加周围队友百分之4的攻击力"
 		"DOTA_Tooltip_modifier_攻坚_2"	"攻坚"
 		"DOTA_Tooltip_modifier_攻坚_2_Description"	"增加周围队友百分之4的攻击力"
-		"DOTA_Tooltip_modifier_skill_hero_mashu"	"移速光环"
-		"DOTA_Tooltip_modifier_skill_hero_mashu_Description"	"提升周围2000范围内友方单位移动速度"
-		"DOTA_Tooltip_modifier_skill_hero_mashu_2"	"移速光环"
-		"DOTA_Tooltip_modifier_skill_hero_mashu_2_Description"	"提升周围960范围内友方单位移动速度"
 		"DOTA_Tooltip_modifier_skill_hero_huihuang"	"回蓝光环"
 		"DOTA_Tooltip_modifier_skill_hero_huihuang_Description"	"能加快周围友军单位魔法值恢复速度"
 		"DOTA_Tooltip_modifier_skill_hero_huihuang_2_Description"	"能加快周围友军单位魔法值恢复速度"
@@ -390,8 +391,6 @@
 		"DOTA_Tooltip_modifier_skill_hero_weixing_2_Description"	""
 		"DOTA_Tooltip_ability_skill_hero_weixing"	"魏星"
 		"DOTA_Tooltip_ability_skill_hero_weixing_Description"	"魏延每两次攻击将召唤流星打击敌人，造成600*等级点魔法伤害。"
-		"DOTA_Tooltip_ability_skill_hero_mashu"	"马术"
-		"DOTA_Tooltip_ability_skill_hero_mashu_Description"	"提升周围的队友和自己额外的5+2x等级%移动速度。"
 
 		"DOTA_Tooltip_modifier_skill_hero_qianxun_waveup"	"法术抵挡"
 		"DOTA_Tooltip_modifier_skill_hero_qianxun_waveup_Description"	"抵抗指向性的法术攻击"
