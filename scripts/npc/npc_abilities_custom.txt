@@ -6395,6 +6395,7 @@
 		"LevelsBetweenUpgrades"	"1"
 		"ScriptFile"	"skill/hero_jieyin.lua"
 		"AbilityTextureName"	"wuguo\ability_jieyin"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE "
 		"AbilitySpecial"
 		{
 			"01"
