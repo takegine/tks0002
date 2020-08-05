@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-26 19:50:40
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-31 11:29:27
+* @LastEditTime: 2020-08-05 17:02:52
 --]]
 
 skill_hero_lusi = {}
@@ -48,7 +48,9 @@ end
 function modifier_hero_lusi:GetAuraSearchTeam()
 	return DOTA_UNIT_TARGET_TEAM_FRIENDLY
 end
-
+function modifier_hero_lusi:GetAuraSearchFlags()
+    return DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
+end
 
 
 function modifier_hero_lusi:GetAuraSearchType()

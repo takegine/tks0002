@@ -6632,4 +6632,49 @@
 			}
 		}
 	}
+	"skill_hero_fenxun"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityTextureName" "wuguo/ability_fenxun"
+		"ScriptFile"	"skill/hero_fenxun.lua"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+						"var_type"			"FIELD_FLOAT"
+						"duration_jump"			"6.0"
+			}
+			"02"
+			{
+						"var_type"			"FIELD_FLOAT"
+						"duration_speed"			"4.0"
+			}
+			"03"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"speed"			"125 150 175 200 225 250 275 300 325 350"
+			}
+		}
+	}
+	"skill_hero_saoshe"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"8"
+		"AbilityTextureName" "wuguo/ability_saoshe"
+		"ScriptFile"	"skill/hero_saoshe.lua"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"damage"			"96 320 608 960 1376 1856 2400 3008 3680 4416"
+			}
+		}
+	}
 }

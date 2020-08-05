@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-24 01:16:38
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-31 11:52:50
+* @LastEditTime: 2020-08-05 17:04:45
 --]]
 skill_hero_qixi = {}
 
@@ -20,7 +20,7 @@ function skill_hero_qixi:needwaveup()
                 radius,
                 DOTA_UNIT_TARGET_TEAM_FRIENDLY,
                 DOTA_UNIT_TARGET_HERO,
-                DOTA_UNIT_TARGET_FLAG_NONE,
+                DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
                 FIND_ANY_ORDER,
                 false
             )

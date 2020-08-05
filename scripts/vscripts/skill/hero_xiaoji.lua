@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-24 20:43:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-31 11:54:34
+* @LastEditTime: 2020-08-05 17:04:22
 --]]
 
 
@@ -54,7 +54,7 @@ function modifier_hero_xiaoji:GetAuraSearchType()
 end
 
 function modifier_hero_xiaoji:GetAuraSearchFlags()
-    return DOTA_UNIT_TARGET_FLAG_RANGED_ONLY
+    return DOTA_UNIT_TARGET_FLAG_RANGED_ONLY + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
 end
 
 LinkLuaModifier("modifier_hero_xiaoji2", "skill/hero_xiaoji.lua", LUA_MODIFIER_MOTION_NONE)

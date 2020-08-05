@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-21 21:48:10
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-27 22:59:10
+* @LastEditTime: 2020-08-04 22:38:08
 --]]
 skill_hero_yinghun = {}
 --定义技能类
@@ -61,6 +61,3 @@ ApplyDamage({
     damage       = damage
 })
 end
-
-function modifier_hero_yinghun:GetTexture()
-    return "wuguo/ability_yinghun"
