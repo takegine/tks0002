@@ -474,7 +474,7 @@
 		"DOTA_Tooltip_ability_skill_hero_pojun_radius"	"范围："
 		"DOTA_Tooltip_ability_skill_hero_pojun_jiangong"	"%降低攻击: "
 		"DOTA_Tooltip_ability_skill_hero_pojun_duration""持续时间: "
-
+		
 		"DOTA_Tooltip_ability_skill_hero_jieyin"	"结姻"
 		"DOTA_Tooltip_ability_skill_hero_jieyin_Description"	"提升周围队友一定比例的最大生命值的生命回复速度。"
 		"DOTA_Tooltip_ability_skill_hero_jieyin_radius"	"范围："
@@ -482,7 +482,16 @@
 
 		"DOTA_Tooltip_modifier_hero_jieyin_heal" "结姻"
 		"DOTA_Tooltip_modifier_hero_jieyin_heal_Description" "生命值回复提升 %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% "
-	
+
+		"DOTA_Tooltip_ability_skill_hero_tianxiang"	"天香"
+		"DOTA_Tooltip_ability_skill_hero_tianxiang_Description"	"小乔将获得一个天香护盾，期间每次受到伤害都将以转移一定比例的水伤害给附近敌人，当附近没有敌人时无法转移。"
+		"DOTA_Tooltip_ability_skill_hero_tianxiang_radius"	"范围："
+		"DOTA_Tooltip_ability_skill_hero_tianxiang_redirect"	"%转移比例: "
+		"DOTA_Tooltip_ability_skill_hero_tianxiang_duration"	"持续时间: "
+
+		"DOTA_Tooltip_modifier_skill_hero_tianxiang"	"天香护盾"
+		"DOTA_Tooltip_modifier_skill_hero_tianxiang_Description"	"转移伤害"
+
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"

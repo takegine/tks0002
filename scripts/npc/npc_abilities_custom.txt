@@ -6415,6 +6415,44 @@
 		}
 	}
 	
+		"skill_hero_tianxiang"
+	{  
+	    "BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_tianxiang.lua"
+		"AbilityTextureName"	"wuguo/ability_tianxiang"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"18 17 16 15 14 13 12 11 10 9"
+		"AOERadius"	"%radius"
+		// "precache"
+		// {
+		// 	"particle"	"particles/unknown.vpcf"
+		// }
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"400"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"redirect"	"27.5 30 32.5 35 37.5 40 42.5 45 47.5 50"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"duration"	"4"
+			}
+		}
+	}
+
 // 白喵 7-19
 	"skill_hero_yinghun"
 	{
