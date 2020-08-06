@@ -6408,11 +6408,6 @@
 						"var_type"			"FIELD_INTEGER"
 						"heal"			"1 1 1 2 2 2 3 3 3 4"
 			}
-			// "03"
-			// {
-			// 			"var_type"			"FIELD_FLAOT"
-			// 			"heal_interval"			"0.25"
-			// }
 		}
 	}
 	
@@ -6450,6 +6445,27 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"duration"	"4"
+			}
+		}
+	}
+		"skill_hero_hongyan"
+	{
+		"BaseClass"		"ability_lua"
+		"ScriptFile"	"skill/hero_hongyan.lua"
+		"AbilityTextureName"	"wuguo\ability_hongyan"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE "
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"1"
+		"AOERadius"	"%radius"
+        "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"400"
 			}
 		}
 	}

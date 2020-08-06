@@ -499,6 +499,13 @@
 		"DOTA_Tooltip_modifier_skill_hero_tianxiang"	"天香护盾"
 		"DOTA_Tooltip_modifier_skill_hero_tianxiang_Description"	"转移伤害"
 
+		"DOTA_Tooltip_ability_skill_hero_hongyan"	"红颜"
+		"DOTA_Tooltip_ability_skill_hero_hongyan_Description"	"小乔可免疫电属性伤害。"
+		"DOTA_Tooltip_ability_skill_hero_hongyan_radius"	"范围："
+
+		"DOTA_Tooltip_modifier_skill_hero_hongyan"	"红颜"
+		"DOTA_Tooltip_modifier_skill_hero_hongyan_Description"	"免疫电属性伤害。"
+
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"
