@@ -18,7 +18,7 @@ function modifier_item_queue_shuizhen:DeclareFunctions()
 end
 
 function modifier_item_queue_shuizhen:OnDeath(params)
-    print_r(params)
+
     local parent = self:GetParent()
     local ability= self:GetAbility()
     local target_team  = ability:GetAbilityTargetTeam()

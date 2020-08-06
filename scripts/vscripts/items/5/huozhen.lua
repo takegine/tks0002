@@ -76,6 +76,7 @@ function modifier_item_queue_huozhen_debuff:OnCreated()
         self.caster  = self:GetCaster()
         self.ability = self:GetAbility()
         self.parent  = self:GetParent()
+        self.team    = self.caster:GetTeamNumber()
         self.sound_explode    = "Ability.SandKing_CausticFinale"
         self.particle_explode = "particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf"
         self.particle_debuff  = "particles/units/heroes/hero_sandking/sandking_caustic_finale_debuff.vpcf"
@@ -120,7 +121,7 @@ function modifier_item_queue_huozhen_debuff:OnDestroy()
         ParticleManager:ReleaseParticleIndex(self.particle_explode_fx)
 
         local slow_modifier = nil
-        local dummy         = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, self.caster, self.caster, self.caster:GetTeamNumber() )
+        local dummy         = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, self.caster, self.caster, self.team )
         dummy.attack_type   = "fire"
         dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 
@@ -132,7 +133,7 @@ function modifier_item_queue_huozhen_debuff:OnDestroy()
         damage_table.damage       = self.damage
         damage_table.damage_flags = DOTA_DAMAGE_FLAG_NONE
 
-        local enemies = FindUnitsInRadius(self.caster:GetTeamNumber(),
+        local enemies = FindUnitsInRadius(self.team,
         self.parent:GetAbsOrigin(),
         nil,
         self.radius,
