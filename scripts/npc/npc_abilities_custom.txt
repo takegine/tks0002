@@ -6411,7 +6411,7 @@
 		}
 	}
 	
-		"skill_hero_tianxiang"
+	"skill_hero_tianxiang"
 	{  
 	    "BaseClass"	"ability_lua"
 		"ScriptFile"	"skill/hero_tianxiang.lua"
@@ -6448,7 +6448,7 @@
 			}
 		}
 	}
-		"skill_hero_hongyan"
+	"skill_hero_hongyan"
 	{
 		"BaseClass"		"ability_lua"
 		"ScriptFile"	"skill/hero_hongyan.lua"
@@ -6469,7 +6469,36 @@
 			}
 		}
 	}
+	"skill_hero_zhiba"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"wuguo\ability_zhiba"
+		"ScriptFile"	"skill/hero_zhiba.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"chance"	"5"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"2000"
+			}
+		}
+	}
 
+"skill_hero_hunzi"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"wuguo\ability_hunzi"
+		"ScriptFile"	"skill/hero_hunzi.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"1"
+	}
 // 白喵 7-19
 	"skill_hero_yinghun"
 	{

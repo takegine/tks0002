@@ -506,6 +506,9 @@
 		"DOTA_Tooltip_modifier_skill_hero_hongyan"	"红颜"
 		"DOTA_Tooltip_modifier_skill_hero_hongyan_Description"	"免疫电属性伤害。"
 
+		"DOTA_Tooltip_ability_skill_hero_hunzi"	"魂姿"
+		"DOTA_Tooltip_ability_skill_hero_hunzi_Description"	"当生命百分比低于75%时，视作你获得[英姿]和[英魂]。"
+		
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"
