@@ -1,195 +1,230 @@
-"DOTAAbilities"
+"DOTAAbilities"																																			
 {
 	// 青釭剑
-	// 参考暗灭
-	"item_weapon_qinggangjian"
-	{
-		// General
-		// -------------------------------------------------------------------------------------------------------------
-		"BaseClass"	"item_datadriven"
-		"AbilityTextureName"	"wuping_qinggangjian"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		// Item Info
-		// -------------------------------------------------------------------------------------------------------------
-		"ID"	"2000"
-		"ItemQuality"	"artifact"
-		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
-		"ItemCost"	"100"
-		"ItemDroppable"	"0"
-		"ItemSellable"	"1"
-		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemShopTags"	"damage;unique"
-		"ItemAliases"	"qinggangjian"
-		"ItemRequirements"	{}
-		"precache"
-		{
-			"particle"	"particles/items_fx/desolator_projectile.vpcf"
-			"soundfile"	"soundevents/game_sounds_items.vsndevts"
-		}
-		"Modifiers"
-		{
-			"modifier_item_desolator_datadriven"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				// "Properties"
-				// {
-				// 	"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"						"%bonus_damage"
-				// }
-				"Orb"
-				{
-					"Priority"	"DOTA_ORB_PRIORITY_ITEM"
-					"ProjectileName"	"particles/items_fx/desolator_projectile.vpcf"
-					"CastAttack"	"0"
-				}
-				"OnOrbFire"
-				{
-					"ApplyModifier"
-					{
-						"Target"	"TARGET"
-						"ModifierName"	"modifier_item_desolator_datadriven_corruption"
-					}
-					"FireSound"
-					{
-						"EffectName"	"Item_Desolator.Target"
-						"Target"	"TARGET"
-					}
-				}
-			}
-			"modifier_item_desolator_datadriven_corruption"
-			{
-				"Duration"	"%corruption_duration"
-				"Passive"	"0"
-				"IsHidden"	"0"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%corruption_armor"
-				}
-			}
-		}
-		// Special
-		// -------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			// "01"
-			// {
-			// 	"var_type"				"FIELD_INTEGER"
-			// 	"bonus_damage"			"60"
-			// }
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"corruption_armor"	"-7"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"corruption_duration"	"15.0"
-			}
-		}
-	}
+	// 参考暗灭																																	
+	"item_weapon_qinggangjian"																																		
+	{																																		
+		// General																																	
+		// -------------------------------------------------------------------------------------------------------------																																	
+		"BaseClass"	"item_datadriven"																																
+		"AbilityTextureName"	"wuping_qinggangjian"																																
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"																																
+		// Item Info																																	
+		// -------------------------------------------------------------------------------------------------------------																																	
+		"ID"	"2000"																																
+		"ItemQuality"	"artifact"																																
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"																																
+		"ItemCost"	"100"																																
+		"ItemDroppable"	"0"																																
+		"ItemSellable"	"1"																																
+		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"																																
+		"ItemShopTags"	"damage;unique"																																
+		"ItemAliases"	"qinggangjian"																																
+		"ItemRequirements"	{}																																
+		"precache"																																	
+		{																																	
+			"particle"	"particles/items_fx/desolator_projectile.vpcf"																															
+			"soundfile"	"soundevents/game_sounds_items.vsndevts"																															
+		}																																	
+		"Modifiers"																																	
+		{																																	
+			"modifier_item_desolator_datadriven"																																
+			{																																
+				"Passive"	"1"																														
+				"IsHidden"	"1"																														
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"																														
+				// "Properties"																															
+				// {																															
+				// 	"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"						"%bonus_damage"																								
+				// }																															
+				"Orb"																															
+				{																															
+					"Priority"	"DOTA_ORB_PRIORITY_ITEM"																													
+					"ProjectileName"	"particles/items_fx/desolator_projectile.vpcf"																													
+					"CastAttack"	"0"																													
+				}																															
+				"OnOrbFire"																															
+				{																															
+					"ApplyModifier"																														
+					{																														
+						"Target"	"TARGET"																												
+						"ModifierName"	"modifier_item_desolator_datadriven_corruption"																												
+					}																														
+					"FireSound"																														
+					{																														
+						"EffectName"	"Item_Desolator.Target"																												
+						"Target"	"TARGET"																												
+					}																														
+				}																															
+			}																																
+			"modifier_item_desolator_datadriven_corruption"																																
+			{																																
+				"Duration"	"%corruption_duration"																														
+				"Passive"	"0"																														
+				"IsHidden"	"0"																														
+				"Properties"																															
+				{																															
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%corruption_armor"																													
+				}																															
+			}																																
+		}																																	
+		// Special																																	
+		// -------------------------------------------------------------------------------------------------------------																																	
+		"AbilitySpecial"																																	
+		{																																	
+			// "01"																																
+			// {																																
+			// 	"var_type"				"FIELD_INTEGER"																											
+			// 	"bonus_damage"			"60"																												
+			// }																																
+			"01"																																
+			{																																
+				"var_type"	"FIELD_INTEGER"																														
+				"corruption_armor"	"-7"																														
+			}																																
+			"02"																																
+			{																																
+				"var_type"	"FIELD_FLOAT"																														
+				"corruption_duration"	"15.0"																														
+			}																																
+		}																																	
+	}																																		
 
 	// 白玉环
-	// 借鉴 戒心光环
-	"item_jewelry_baiyuhuan"
-	{
-		// General
-		// -------------------------------------------------------------------------------------------------------------
-		
-		"AbilityTextureName"	"wuping_baiyuhuan"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-		// Casting
-		// -------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"	"1200"
-		// Item Info
-		// -------------------------------------------------------------------------------------------------------------
-        "ItemAliases"	"baiyuhuan"
-        "BaseClass"	    "item_datadriven"
-		"ID"	        "2001"
-		"ItemQuality"	"artifact"
-		"ItemCost"	    "100"
-		"ItemDroppable"	"0"
-		"ItemSellable"	"1"
-		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemShopTags"	"damage;unique"
-		"ItemRequirements"	{}
-		"ItemDisplayCharges" "1"
-		"ItemInitialCharges" "1"
-		"Modifiers"
-		{
-			"modifier_heartstopper_aura_datadriven"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"Aura"	"modifier_heartstopper_debuff_datadriven"
-				"Aura_Radius"	"%aura_radius"
-				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-			}
-			"modifier_heartstopper_debuff_datadriven"
-			{
-				"IsDebuff"	"1"
-				"IsHidden"	"1"
-				"ThinkInterval"	"%aura_interval"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/2/baiyuhuan.lua"
-						"Function"	"HeartstopperAura"
-						"visibility_modifier"	"modifier_heartstopper_debuff_visibility"
-					}
-				}
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_heartstopper_debuff_visibility"
-						"Target"	"TARGET"
-					}
-				}
-			}
-			"modifier_heartstopper_debuff_visibility"
-			{
-				"IsDebuff"	"1"
-				"IsHidden"	"0"
-				"IsPurgable"	"0"
-				"Passive"	"0"
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				// If you change this, also change the AbilityCastRange above
-				"aura_radius"	"640 800 960 1120 1280"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"aura_damage"	"1 2 3 4 5 6"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"aura_interval"	"1"
-			}
-		}
-	}
-
-"item_queue_queueup"	{	"ID"	"1500"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/queueup"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"AbilityTextureName" "queue/阵型晋升"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"100 250 425 625 1350 1600 2375 2675 3500 0"	}								}	}
-"item_queue_huozhen"	{	"ID"	"1501"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/huozhen"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"AbilityTextureName" "queue/火阵"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3 6 9 12 15 18 21 24 27 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"6 7 8 9 10 11 12 13 14 15"	}	}	}
-"item_queue_shuizhen"	{	"ID"	"1502"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/shuizhen"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"AbilityTextureName" "queue/水阵"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3 6 9 12 15 18 21 24 27 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"3 6 9 12 15 18 21 24 27 30"	}	}	}
-"item_queue_heyizhen"	{	"ID"	"1503"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/heyizhen"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"AbilityTextureName" "queue/鹤翼"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"4 8 12 16 20 24 28 32 36 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"4 8 12 16 20 24 28 32 36 40"	}	}	}
-"item_queue_baguazhen"	{	"ID"	"1504"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/baguazhen"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"AbilityTextureName" "queue/八卦"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"6 12 18 24 30 36 42 48 54 60"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"4 8 12 16 20 24 28 32 36 40"	}	}	}
-"item_queue_yanxingzhen"	{	"ID"	"1505"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/yanxingzhen"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"AbilityTextureName" "queue/雁行"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"1 2 4 6 9 12 16 20 25 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"8 32 64 104 152 208 272 344 424 512"	}	}	}
-"item_queue_fengshizhen"	{	"ID"	"1506"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/fengshizhen"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"AbilityTextureName" "queue/锋矢"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"8 16 24 32 40 48 56 64 72 80"	}								}	}
-"item_queue_chexuanzhen"	{	"ID"	"1507"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/chexuanzhen"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"AbilityTextureName" "queue/车悬"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3 6 9 12 15 18 21 24 27 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"6 7 8 9 10 11 12 13 14 15"	}	}	}
-"item_queue_fangyuanzhen"	{	"ID"	"1508"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/fangyuanzhen"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"AbilityTextureName" "queue/方圆"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"6 12 18 24 30 36 42 48 54 60"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"1 1 1 2 2 2 3 3 3 4"	}	}	}
-"item_queue_yulinzhen"	{	"ID"	"1509"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/yulinzhen"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"AbilityTextureName" "queue/鱼鳞"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"13 16 19 22 25 28 31 34 37 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"12 14 16 18 22 24 26 28 30"	}	}	}
-"item_queue_changshezhen"	{	"ID"	"1510"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/changshezhen"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"AbilityTextureName" "queue/长蛇"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"4 8 12 16 20 24 28 32 36 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"1 1 1 1 2 2 2 2 3 3"	}	}	}
-
-}
+	// 借鉴 戒心光环																																
+	"item_jewelry_baiyuhuan"																																		
+	{																																		
+		// General																																	
+		// -------------------------------------------------------------------------------------------------------------																																	
+																																			
+		"AbilityTextureName"	"wuping_baiyuhuan"																																
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"																																
+		// Casting																																	
+		// -------------------------------------------------------------------------------------------------------------																																	
+		"AbilityCastRange"	"1200"																																
+		// Item Info																																	
+		// -------------------------------------------------------------------------------------------------------------																																	
+        "ItemAliases"	"baiyuhuan"																																		
+        "BaseClass"	    "item_datadriven"																																		
+		"ID"	        "2001"																																
+		"ItemQuality"	"artifact"																																
+		"ItemCost"	    "100"																																
+		"ItemDroppable"	"0"																																
+		"ItemSellable"	"1"																																
+		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"																																
+		"ItemShopTags"	"damage;unique"																																
+		"ItemRequirements"	{}																																
+		"ItemDisplayCharges" "1"																																	
+		"ItemInitialCharges" "1"																																	
+		"Modifiers"																																	
+		{																																	
+			"modifier_heartstopper_aura_datadriven"																																
+			{																																
+				"Passive"	"1"																														
+				"IsHidden"	"1"																														
+				"Aura"	"modifier_heartstopper_debuff_datadriven"																														
+				"Aura_Radius"	"%aura_radius"																														
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"																														
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"																														
+				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"																														
+			}																																
+			"modifier_heartstopper_debuff_datadriven"																																
+			{																																
+				"IsDebuff"	"1"																														
+				"IsHidden"	"1"																														
+				"ThinkInterval"	"%aura_interval"																														
+				"OnIntervalThink"																															
+				{																															
+					"RunScript"																														
+					{																														
+						"ScriptFile"	"items/2/baiyuhuan.lua"																												
+						"Function"	"HeartstopperAura"																												
+						"visibility_modifier"	"modifier_heartstopper_debuff_visibility"																												
+					}																														
+				}																															
+				"OnDestroy"																															
+				{																															
+					"RemoveModifier"																														
+					{																														
+						"ModifierName"	"modifier_heartstopper_debuff_visibility"																												
+						"Target"	"TARGET"																												
+					}																														
+				}																															
+			}																																
+			"modifier_heartstopper_debuff_visibility"																																
+			{																																
+				"IsDebuff"	"1"																														
+				"IsHidden"	"0"																														
+				"IsPurgable"	"0"																														
+				"Passive"	"0"																														
+			}																																
+		}																																	
+		"AbilitySpecial"																																	
+		{																																	
+			"01"																																
+			{																																
+				"var_type"	"FIELD_INTEGER"																														
+				// If you change this, also change the AbilityCastRange above																															
+				"aura_radius"	"640 800 960 1120 1280"																														
+			}																																
+			"02"																																
+			{																																
+				"var_type"	"FIELD_FLOAT"																														
+				"aura_damage"	"1 2 3 4 5 6"																														
+			}																																
+			"03"																																
+			{																																
+				"var_type"	"FIELD_FLOAT"																														
+				"aura_interval"	"1"																														
+			}																																
+		}																																	
+	}																																		
+																																			
+"item_weapon_001"	{	"ID"	"28001"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/001"	"AbilityTextureName"	"0001"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_weapon_002"	{	"ID"	"28002"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/002"	"AbilityTextureName"	"0002"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_weapon_003"	{	"ID"	"28003"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/003"	"AbilityTextureName"	"0003"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_weapon_004"	{	"ID"	"28004"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/004"	"AbilityTextureName"	"0004"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_weapon_005"	{	"ID"	"28005"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/005"	"AbilityTextureName"	"0005"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_weapon_006"	{	"ID"	"28006"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/006"	"AbilityTextureName"	"0006"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_weapon_007"	{	"ID"	"28007"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/007"	"AbilityTextureName"	"0007"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_weapon_008"	{	"ID"	"28008"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/008"	"AbilityTextureName"	"0008"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_weapon_009"	{	"ID"	"28009"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/009"	"AbilityTextureName"	"0009"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_weapon_010"	{	"ID"	"28010"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/010"	"AbilityTextureName"	"0010"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_weapon_011"	{	"ID"	"28011"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/011"	"AbilityTextureName"	"0011"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_weapon_012"	{	"ID"	"28012"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/012"	"AbilityTextureName"	"0012"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_horses_013"	{	"ID"	"28013"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/013"	"AbilityTextureName"	"3013"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_horses_014"	{	"ID"	"28014"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/014"	"AbilityTextureName"	"3014"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_horses_015"	{	"ID"	"28015"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/015"	"AbilityTextureName"	"3015"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_horses_016"	{	"ID"	"28016"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/016"	"AbilityTextureName"	"3016"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_horses_017"	{	"ID"	"28017"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/017"	"AbilityTextureName"	"3017"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_horses_018"	{	"ID"	"28018"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/018"	"AbilityTextureName"	"3018"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_horses_019"	{	"ID"	"28019"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/019"	"AbilityTextureName"	"3019"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_jewelry_020"	{	"ID"	"28020"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/020"	"AbilityTextureName"	"2020"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_jewelry_021"	{	"ID"	"28021"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/021"	"AbilityTextureName"	"2021"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_jewelry_022"	{	"ID"	"28022"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/022"	"AbilityTextureName"	"2022"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_jewelry_023"	{	"ID"	"28023"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/023"	"AbilityTextureName"	"2023"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_jewelry_024"	{	"ID"	"28024"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/024"	"AbilityTextureName"	"2024"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_jewelry_025"	{	"ID"	"28025"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/025"	"AbilityTextureName"	"2025"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_jewelry_026"	{	"ID"	"28026"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/026"	"AbilityTextureName"	"2026"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_defend_027"	{	"ID"	"28027"	"BaseClass"	"item_lua"	"ScriptFile"	"items/1/027"	"AbilityTextureName"	"1027"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_defend_028"	{	"ID"	"28028"	"BaseClass"	"item_lua"	"ScriptFile"	"items/1/028"	"AbilityTextureName"	"1028"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_defend_029"	{	"ID"	"28029"	"BaseClass"	"item_lua"	"ScriptFile"	"items/1/029"	"AbilityTextureName"	"1029"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_defend_030"	{	"ID"	"28030"	"BaseClass"	"item_lua"	"ScriptFile"	"items/1/030"	"AbilityTextureName"	"1030"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_format_031"	{	"ID"	"28031"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/031"	"AbilityTextureName"	"4031"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_format_032"	{	"ID"	"28032"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/032"	"AbilityTextureName"	"4032"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_format_033"	{	"ID"	"28033"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/033"	"AbilityTextureName"	"4033"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_format_034"	{	"ID"	"28034"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/034"	"AbilityTextureName"	"4034"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_format_035"	{	"ID"	"28035"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/035"	"AbilityTextureName"	"4035"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_format_036"	{	"ID"	"28036"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/036"	"AbilityTextureName"	"4036"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
+"item_queue_037"	{	"ID"	"28037"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/037"	"AbilityTextureName"	"5037"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3 6 9 12 15 18 21 24 27 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"6 7 8 9 10 11 12 13 14 15"	}	}	}
+"item_queue_038"	{	"ID"	"28038"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/038"	"AbilityTextureName"	"5038"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3 6 9 12 15 18 21 24 27 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"3 6 9 12 15 18 21 24 27 30"	}	}	}
+"item_queue_039"	{	"ID"	"28039"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/039"	"AbilityTextureName"	"5039"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"4 8 12 16 20 24 28 32 36 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"4 8 12 16 20 24 28 32 36 40"	}	}	}
+"item_queue_040"	{	"ID"	"28040"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/040"	"AbilityTextureName"	"5040"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"6 12 18 24 30 36 42 48 54 60"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"4 8 12 16 20 24 28 32 36 40"	}	}	}
+"item_queue_041"	{	"ID"	"28041"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/041"	"AbilityTextureName"	"5041"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"1 2 4 6 9 12 16 20 25 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"8 32 64 104 152 208 272 344 424 512"	}	}	}
+"item_queue_042"	{	"ID"	"28042"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/042"	"AbilityTextureName"	"5042"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"8 16 24 32 40 48 56 64 72 80"	}								}	}
+"item_queue_043"	{	"ID"	"28043"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/043"	"AbilityTextureName"	"5043"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3 6 9 12 15 18 21 24 27 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"6 7 8 9 10 11 12 13 14 15"	}	}	}
+"item_queue_044"	{	"ID"	"28044"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/044"	"AbilityTextureName"	"5044"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"6 12 18 24 30 36 42 48 54 60"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"1 1 1 2 2 2 3 3 3 4"	}	}	}
+"item_queue_045"	{	"ID"	"28045"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/045"	"AbilityTextureName"	"5045"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"13 16 19 22 25 28 31 34 37 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"12 14 16 18 22 24 26 28 30"	}	}	}
+"item_queue_046"	{	"ID"	"28046"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/046"	"AbilityTextureName"	"5046"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"4 8 12 16 20 24 28 32 36 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"1 1 1 1 2 2 2 2 3 3"	}	}	}
+																																			
+}																																			

@@ -38,24 +38,57 @@
 	"basics" 
 	{
 		"item"		"item_weapon_qinggangjian"
+		"item" "item_weapon_001"
+		"item" "item_weapon_002"
+		"item" "item_weapon_003"
+		"item" "item_weapon_004"
+		"item" "item_weapon_005"
+		"item" "item_weapon_006"
+		"item" "item_weapon_007"
+		"item" "item_weapon_008"
+		"item" "item_weapon_009"
+		"item" "item_weapon_010"
+		"item" "item_weapon_011"
+		"item" "item_weapon_012"
 	}
 
 	"support" 
 	{
-
+		"item" "item_horses_013"
+		"item" "item_horses_014"
+		"item" "item_horses_015"
+		"item" "item_horses_016"
+		"item" "item_horses_017"
+		"item" "item_horses_018"
+		"item" "item_horses_019"
 	}
 	"magics" 
 	{
-
+		"item" "item_defend_027"
+		"item" "item_defend_028"
+		"item" "item_defend_029"
+		"item" "item_defend_030"
 	}
 	"defense" 
 	{
-
+		"item" "item_format_031"
+		"item" "item_format_032"
+		"item" "item_format_033"
+		"item" "item_format_034"
+		"item" "item_format_035"
+		"item" "item_format_036"
 	}
 	"weapons" 
 	{
 
 		"item"		"item_jewelry_baiyuhuan"
+		"item" "item_jewelry_020"
+		"item" "item_jewelry_021"
+		"item" "item_jewelry_022"
+		"item" "item_jewelry_023"
+		"item" "item_jewelry_024"
+		"item" "item_jewelry_025"
+		"item" "item_jewelry_026"
 	}
 
 	"artifacts" 
@@ -70,10 +103,21 @@
 		"item"		"item_queue_fangyuanzhen"
 		"item"		"item_queue_yulinzhen"
 		"item"		"item_queue_changshezhen"
+		"item" "item_queue_037"
+		"item" "item_queue_038"
+		"item" "item_queue_039"
+		"item" "item_queue_040"
+		"item" "item_queue_041"
+		"item" "item_queue_042"
+		"item" "item_queue_043"
+		"item" "item_queue_044"
+		"item" "item_queue_045"
+		"item" "item_queue_046"
 	}
 	
 	"sideshop1" {}
 	"sideshop2" {}
 
     "pregame" {}
+
 }
