@@ -142,6 +142,7 @@
         "DOTA_Tooltip_ability_item_queue_044_Description"	""
         "DOTA_Tooltip_ability_item_queue_045_Description"	""
         "DOTA_Tooltip_ability_item_queue_046_Description"	""
+        "DOTA_Tooltip_ability_item_queue_047_Description"	""
 
         "DOTA_Tooltip_ability_item_queue_queueup_p1"	"升级消耗:\n"
         "DOTA_Tooltip_ability_item_queue_037_p1"	"攻击每层伤害:\n"
@@ -154,6 +155,7 @@
         "DOTA_Tooltip_ability_item_queue_044_p1"	"%敌方攻击速度：\n-"
         "DOTA_Tooltip_ability_item_queue_045_p1"	"%敌方攻击力：\n-"
         "DOTA_Tooltip_ability_item_queue_046_p1"	"%移动速度：\n+"
+        "DOTA_Tooltip_ability_item_queue_047_p1"	"%近战生命窃取：\n+"
 
         "DOTA_Tooltip_ability_item_queue_queueup_p2"	""
         "DOTA_Tooltip_ability_item_queue_037_p2"	"%死亡伤害:\n+"
@@ -166,6 +168,7 @@
         "DOTA_Tooltip_ability_item_queue_044_p2"	"%魔法恢复：\n+"
         "DOTA_Tooltip_ability_item_queue_045_p2"	"%敌方法术抗性：\n-"
         "DOTA_Tooltip_ability_item_queue_046_p2"	"%生命恢复：\n+"
+        "DOTA_Tooltip_ability_item_queue_047_p2"	"%远程生命窃取：\n+"
 
         "DOTA_Tooltip_ability_item_weapon_001"	"青釭剑"
         "DOTA_Tooltip_ability_item_weapon_002"	"诸葛连弩"
@@ -213,6 +216,7 @@
         "DOTA_Tooltip_ability_item_queue_044"	"方圆阵法"
         "DOTA_Tooltip_ability_item_queue_045"	"鱼鳞阵法"
         "DOTA_Tooltip_ability_item_queue_046"	"长蛇阵法"
+        "DOTA_Tooltip_ability_item_queue_047"	"偃月阵法"
 
         "DOTA_Tooltip_ability_item_weapon_001_Description"	"<h1>被动(唯一)：</h1>降低敌人点防御力。\n<h1>被动(唯一)：</h1>己方单位进攻时无视敌人主公的防具效果。"
         "DOTA_Tooltip_ability_item_weapon_002_Description"	"<h1>被动(武将)：</h1>己方远程武将会对2个附近的目标发射弩箭。\n<h1>被动(兵种)：</h1>己方兵种提高攻击速度。"
