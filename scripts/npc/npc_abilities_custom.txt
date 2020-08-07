@@ -1151,7 +1151,7 @@
 				{
 					"Lifesteal"
 					{
-						"Target"	"UNIT"
+						"Target"	"ATTACKER"
 						"LifestealPercent"	"%lifesteal"
 					}
 				}
