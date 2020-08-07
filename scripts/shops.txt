@@ -14,16 +14,16 @@
 
 	"weapons_armor"
     {
-		"item"		"item_queue_huozhen"
-		"item"		"item_queue_shuizhen"
-		"item"		"item_queue_heyizhen"
-		"item"		"item_queue_baguazhen"
-		"item"		"item_queue_yanxingzhen"
-		"item"		"item_queue_fengshizhen"
-		"item"		"item_queue_chexuanzhen"
-		"item"		"item_queue_fangyuanzhen"
-		"item"		"item_queue_yulinzhen"
-		"item"		"item_queue_changshezhen"
+		"item" "item_queue_037"
+		"item" "item_queue_038"
+		"item" "item_queue_039"
+		"item" "item_queue_040"
+		"item" "item_queue_041"
+		"item" "item_queue_042"
+		"item" "item_queue_043"
+		"item" "item_queue_044"
+		"item" "item_queue_045"
+		"item" "item_queue_046"
 	}
 	"misc"
 	{
@@ -93,16 +93,6 @@
 
 	"artifacts" 
 	{
-		"item"		"item_queue_huozhen"
-		"item"		"item_queue_shuizhen"
-		"item"		"item_queue_heyizhen"
-		"item"		"item_queue_baguazhen"
-		"item"		"item_queue_yanxingzhen"
-		"item"		"item_queue_fengshizhen"
-		"item"		"item_queue_chexuanzhen"
-		"item"		"item_queue_fangyuanzhen"
-		"item"		"item_queue_yulinzhen"
-		"item"		"item_queue_changshezhen"
 		"item" "item_queue_037"
 		"item" "item_queue_038"
 		"item" "item_queue_039"

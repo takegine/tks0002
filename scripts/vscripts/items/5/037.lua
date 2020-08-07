@@ -1,19 +1,20 @@
-item_queue_huozhen = item_queue_huozhen or class(item_class)
+item_queue_037 = item_queue_037 or class(item_class)
 
 ------------------------------------------------------------------
-LinkLuaModifier( "modifier_item_queue_huozhen","items/5/huozhen", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_huozhen = modifier_item_queue_huozhen or {}
+LinkLuaModifier( "modifier_item_queue_037","items/5/037", LUA_MODIFIER_MOTION_NONE )
+modifier_item_queue_037 = modifier_item_queue_037 or {}
 
 
-function modifier_item_queue_huozhen:GetTexture ()
-    return "queue/火阵"
+function modifier_item_queue_037:GetTexture ()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
 end
 
-function modifier_item_queue_huozhen:OnCreated()
+function modifier_item_queue_037:OnCreated()
     self:SetStackCount(1)
 end
 
-function modifier_item_queue_huozhen:DeclareFunctions()
+function modifier_item_queue_037:DeclareFunctions()
     return
     {
         MODIFIER_EVENT_ON_ATTACK_LANDED,
@@ -21,7 +22,7 @@ function modifier_item_queue_huozhen:DeclareFunctions()
     }
 end
 
-function modifier_item_queue_huozhen:OnAttackLanded( params)
+function modifier_item_queue_037:OnAttackLanded( params)
     local attacker= params.attacker
     local parent  = self:GetParent()
     if not IsServer()
@@ -56,20 +57,21 @@ function modifier_item_queue_huozhen:OnAttackLanded( params)
 end
 
 
-function modifier_item_queue_huozhen:OnTooltip( params)
+function modifier_item_queue_037:OnTooltip( params)
     local ability = self:GetAbility()
     local p1      = ability:GetSpecialValueFor('p1')
     return self:GetStackCount() * p1
 end
 
-LinkLuaModifier( "modifier_item_queue_huozhen_debuff","items/5/huozhen", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_huozhen_debuff = modifier_item_queue_huozhen_debuff or {}
+LinkLuaModifier( "modifier_item_queue_037_debuff","items/5/037", LUA_MODIFIER_MOTION_NONE )
+modifier_item_queue_037_debuff = modifier_item_queue_037_debuff or {}
 -------------------------------------------------------------------------------
-function modifier_item_queue_huozhen_debuff:GetTexture ()
-    return "queue/火阵"
+function modifier_item_queue_037_debuff:GetTexture ()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
 end
 
-function modifier_item_queue_huozhen_debuff:OnCreated()
+function modifier_item_queue_037_debuff:OnCreated()
     
     if IsServer() then
 
@@ -80,7 +82,7 @@ function modifier_item_queue_huozhen_debuff:OnCreated()
         self.sound_explode    = "Ability.SandKing_CausticFinale"
         self.particle_explode = "particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf"
         self.particle_debuff  = "particles/units/heroes/hero_sandking/sandking_caustic_finale_debuff.vpcf"
-        self.modifier_poison  = "modifier_item_queue_huozhen_debuff"
+        self.modifier_poison  = "modifier_item_queue_037_debuff"
         self.modifier_slow    = "modifier_imba_caustic_finale_debuff"
 
         -- Ability specials
@@ -100,18 +102,18 @@ function modifier_item_queue_huozhen_debuff:OnCreated()
     end
 end
 
-function modifier_item_queue_huozhen_debuff:IsHidden()
+function modifier_item_queue_037_debuff:IsHidden()
     return false
 end
 
-function modifier_item_queue_huozhen_debuff:IsPurgable()
+function modifier_item_queue_037_debuff:IsPurgable()
     return true
 end
-function modifier_item_queue_huozhen_debuff:IsDebuff()
+function modifier_item_queue_037_debuff:IsDebuff()
     return true
 end
 
-function modifier_item_queue_huozhen_debuff:OnDestroy()
+function modifier_item_queue_037_debuff:OnDestroy()
     if IsServer() then
 
         EmitSoundOn(self.sound_explode, self.parent)
@@ -151,7 +153,7 @@ function modifier_item_queue_huozhen_debuff:OnDestroy()
 end
 
 
-function modifier_item_queue_huozhen_debuff:DeclareFunctions()
+function modifier_item_queue_037_debuff:DeclareFunctions()
     return
     {
         MODIFIER_PROPERTY_TOOLTIP
@@ -159,7 +161,7 @@ function modifier_item_queue_huozhen_debuff:DeclareFunctions()
 end
 
 
-function modifier_item_queue_huozhen_debuff:OnTooltip( params)
+function modifier_item_queue_037_debuff:OnTooltip( params)
     local ability = self:GetAbility()
     local p2      = ability:GetSpecialValueFor('p2')
     return p2

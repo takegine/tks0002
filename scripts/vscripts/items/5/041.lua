@@ -1,15 +1,16 @@
-item_queue_yanxingzhen = item_queue_yanxingzhen or class(item_class)
+item_queue_041 = item_queue_041 or class(item_class)
 
 ------------------------------------------------------------------
-LinkLuaModifier( "modifier_item_queue_yanxingzhen","items/5/yanxingzhen", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_yanxingzhen = modifier_item_queue_yanxingzhen or {}
+LinkLuaModifier( "modifier_item_queue_041","items/5/041", LUA_MODIFIER_MOTION_NONE )
+modifier_item_queue_041 = modifier_item_queue_041 or {}
 
 
-function modifier_item_queue_yanxingzhen:GetTexture ()
-    return "queue/雁行"
+function modifier_item_queue_041:GetTexture ()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
 end
 
-function modifier_item_queue_yanxingzhen:DeclareFunctions()
+function modifier_item_queue_041:DeclareFunctions()
     return
     {
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE,
@@ -18,14 +19,14 @@ function modifier_item_queue_yanxingzhen:DeclareFunctions()
     }
 end
 
-function modifier_item_queue_yanxingzhen:GetModifierPhysicalArmorBonusUniqueActive()
+function modifier_item_queue_041:GetModifierPhysicalArmorBonusUniqueActive()
     local ability=self:GetAbility()
     local change = ability:GetSpecialValueFor('p1')
     return  change
 end
 
 
-function modifier_item_queue_yanxingzhen:OnAttacked(params)
+function modifier_item_queue_041:OnAttacked(params)
     local parent = self:GetParent()
     local target = params.target
 	if  target == parent then

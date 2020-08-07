@@ -1,15 +1,16 @@
-item_queue_baguazhen = item_queue_baguazhen or class(item_class)
+item_queue_040 = item_queue_040 or class(item_class)
 
 ------------------------------------------------------------------
-LinkLuaModifier( "modifier_item_queue_baguazhen","items/5/baguazhen", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_baguazhen = modifier_item_queue_baguazhen or {}
+LinkLuaModifier( "modifier_item_queue_040","items/5/040", LUA_MODIFIER_MOTION_NONE )
+modifier_item_queue_040 = modifier_item_queue_040 or {}
 
 
-function modifier_item_queue_baguazhen:GetTexture ()
-    return "queue/八卦"
+function modifier_item_queue_040:GetTexture ()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
 end
 
-function modifier_item_queue_baguazhen:DeclareFunctions()
+function modifier_item_queue_040:DeclareFunctions()
     return
     {
         MODIFIER_EVENT_ON_TAKEDAMAGE,
@@ -18,7 +19,7 @@ function modifier_item_queue_baguazhen:DeclareFunctions()
     }
 end
 
-function modifier_item_queue_baguazhen:OnTooltip()
+function modifier_item_queue_040:OnTooltip()
     local ability  = self:GetAbility()
     local parent   = self:GetParent()
     local p1       = ability:GetSpecialValueFor("p1")
@@ -26,7 +27,7 @@ function modifier_item_queue_baguazhen:OnTooltip()
     return  p1
 end
 
-function modifier_item_queue_baguazhen:OnTooltip2()
+function modifier_item_queue_040:OnTooltip2()
     local ability  = self:GetAbility()
     local parent   = self:GetParent()
     local p1       = ability:GetSpecialValueFor("p1")
@@ -34,7 +35,7 @@ function modifier_item_queue_baguazhen:OnTooltip2()
     return  p2
 end
 
-function modifier_item_queue_baguazhen:OnTakeDamage(keys)
+function modifier_item_queue_040:OnTakeDamage(keys)
 
 	if not IsServer() then return end
 

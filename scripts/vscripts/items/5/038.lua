@@ -1,15 +1,16 @@
-item_queue_shuizhen = item_queue_shuizhen or class(item_class)
+item_queue_038 = item_queue_038 or class(item_class)
 
 ------------------------------------------------------------------
-LinkLuaModifier( "modifier_item_queue_shuizhen","items/5/shuizhen", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_shuizhen = modifier_item_queue_shuizhen or {}
+LinkLuaModifier( "modifier_item_queue_038","items/5/038", LUA_MODIFIER_MOTION_NONE )
+modifier_item_queue_038 = modifier_item_queue_038 or {}
 
 
-function modifier_item_queue_shuizhen:GetTexture ()
-    return "queue/水阵"
+function modifier_item_queue_038:GetTexture ()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
 end
 
-function modifier_item_queue_shuizhen:DeclareFunctions()
+function modifier_item_queue_038:DeclareFunctions()
     return  
     {   
         MODIFIER_EVENT_ON_DEATH,
@@ -17,7 +18,7 @@ function modifier_item_queue_shuizhen:DeclareFunctions()
     }
 end
 
-function modifier_item_queue_shuizhen:OnDeath(params)
+function modifier_item_queue_038:OnDeath(params)
 
     local parent = self:GetParent()
     local ability= self:GetAbility()
@@ -40,7 +41,7 @@ function modifier_item_queue_shuizhen:OnDeath(params)
     end
 end
 
-function modifier_item_queue_shuizhen:OnTooltip()
+function modifier_item_queue_038:OnTooltip()
     local parent = self:GetParent()
     local ability= self:GetAbility()
     local change = ability:GetSpecialValueFor('p2')
@@ -48,49 +49,50 @@ function modifier_item_queue_shuizhen:OnTooltip()
     return  health *change /100
 end
 
-function modifier_item_queue_shuizhen:IsAura()
+function modifier_item_queue_038:IsAura()
 	return true
 end
 
-function modifier_item_queue_shuizhen:IsAuraActiveOnDeath()
+function modifier_item_queue_038:IsAuraActiveOnDeath()
 	return false
 end
 
-function modifier_item_queue_shuizhen:IsDebuff()
+function modifier_item_queue_038:IsDebuff()
     return false
 end
 
-function modifier_item_queue_shuizhen:GetAuraRadius()
+function modifier_item_queue_038:GetAuraRadius()
     return 2000
 end
 
-function modifier_item_queue_shuizhen:GetAuraSearchTeam()
+function modifier_item_queue_038:GetAuraSearchTeam()
 	return DOTA_UNIT_TARGET_TEAM_ENEMY
 end
 
-function modifier_item_queue_shuizhen:GetAuraSearchType()
+function modifier_item_queue_038:GetAuraSearchType()
 	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
 end
 
-function modifier_item_queue_shuizhen:GetModifierAura()
-	return "modifier_item_queue_shuizhen_debuff"
+function modifier_item_queue_038:GetModifierAura()
+	return "modifier_item_queue_038_debuff"
 end
 
-LinkLuaModifier( "modifier_item_queue_shuizhen_debuff","items/5/shuizhen", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_shuizhen_debuff = modifier_item_queue_shuizhen_debuff or {}
+LinkLuaModifier( "modifier_item_queue_038_debuff","items/5/038", LUA_MODIFIER_MOTION_NONE )
+modifier_item_queue_038_debuff = modifier_item_queue_038_debuff or {}
 -------------------------------------------------------------------------------
-function modifier_item_queue_shuizhen_debuff:GetTexture ()
-    return "queue/水阵"
+function modifier_item_queue_038_debuff:GetTexture ()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
 end
 
-function modifier_item_queue_shuizhen_debuff:DeclareFunctions()
+function modifier_item_queue_038_debuff:DeclareFunctions()
     return  
     {   
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
     }
 end
 
-function modifier_item_queue_shuizhen_debuff:GetModifierMoveSpeedBonus_Percentage()
+function modifier_item_queue_038_debuff:GetModifierMoveSpeedBonus_Percentage()
     local ability=self:GetAbility()
     local change = ability:GetSpecialValueFor('p1')
     return  -change
