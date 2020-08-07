@@ -44,6 +44,8 @@
 		"DOTA_Tooltip_modifier_item_queue_045_debuff_Description"	"攻击力 -%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% <br> 魔法抗性 -%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% "
 		"DOTA_Tooltip_modifier_item_queue_046"	"长蛇阵"
 		"DOTA_Tooltip_modifier_item_queue_046_Description"	"移动速度 +%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% <br> 生命回复 +%dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% "
+		"DOTA_Tooltip_modifier_item_queue_047"	"偃月阵"
+		"DOTA_Tooltip_modifier_item_queue_047_Description"	" +%dMODIFIER_PROPERTY_TOOLTIP%%% 吸血 "
 
 	// ---------------------------------------------单位技能-西索-----
 		"DOTA_Tooltip_ability_skill_hero_rende"	"仁德"
