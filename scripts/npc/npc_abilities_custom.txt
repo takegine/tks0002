@@ -6646,7 +6646,7 @@
 			"01"
 			{
 						"var_type"			"FIELD_INTEGER"
-						"chace"			"15"
+						"chance"			"15"
 			}
 			"02"
 			{
@@ -6721,6 +6721,47 @@
 						"var_type"			"FIELD_INTEGER"
 						"damage"			"96 320 608 960 1376 1856 2400 3008 3680 4416"
 			}
+		}
+	}
+	"skill_hero_fenwei"
+	{
+		"BaseClass"		"ability_datadriven"
+		"AbilityTextureName"		"wuguo/ability_fenwei"
+		"MaxLevel"		"10"
+		"LevelsBetweenUpgrades"		"1"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityCooldown"	"9"
+		"AbilityCastRange"	"%radius"
+		"AbilityManaCost" "%ManaCost"
+		"AOERadius"	"%radius"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"
+				{
+					"Center"    "POINT"
+					"Radius"	"%radius"
+					"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Type"	"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+					"Flags" "DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+				}
+				"ScriptFile" "skill/total_miao.lua"
+				"Function" "fenwei"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"radius"			"460 540 620 700 780 860 940 1020 1100 1180"
+			}
+			"02"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"ManaCost"			"2 4 6 8 10 12 14 16 18 20"
+			}			
 		}
 	}
 }

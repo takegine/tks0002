@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-24 01:16:38
 * @LastEditors: 白喵
-* @LastEditTime: 2020-08-05 17:04:45
+* @LastEditTime: 2020-08-09 13:18:59
 --]]
 skill_hero_qixi = {}
 
@@ -37,6 +37,9 @@ end
 LinkLuaModifier("modifier_hero_qixi", "skill/hero_qixi", LUA_MODIFIER_MOTION_NONE)
 modifier_hero_qixi = modifier_hero_qixi or {}
 function modifier_hero_qixi:OnDestroy()
+    if not IsServer() then
+        return
+    end
     local unit = self:GetParent()
     local unit_Position =  unit:GetAbsOrigin()
     unit:MoveToPositionAggressive(unit_Position)--销毁时下达攻击指令

@@ -6,7 +6,7 @@
 * @Author: 白喵
 * @Date: 2020-07-21 22:49:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-28 00:24:12
+* @LastEditTime: 2020-08-09 13:53:12
 --]]
 
 --[[
@@ -27,3 +27,23 @@ function Dimeng(keys)
 end
 
 
+function fenwei(keys)
+    local target_list = keys.target_entities
+    for _,unit in pairs(target_list) do
+        --unit:Purge(true, false, false, false, true)
+        print(unit:GetUnitName())
+        if unit:IsSummoned() then
+            unit:Kill(keys.ability,keys.caster)
+        end
+        if unit:IsIllusion() then
+            unit:Kill(keys.ability,keys.caster)
+        end
+    end
+end
+
+
+function p_kv(keys)
+    for k,v in pairs(keys) do
+        print(k,v)
+    end
+end

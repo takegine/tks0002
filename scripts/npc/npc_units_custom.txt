@@ -413,6 +413,8 @@
 		"VisionDaytimeRange"	"400"
 		// 夜晚视野范围
 		"VisionNighttimeRange"	"400"
+		//单位为召唤单位
+		"IsSummoned" "1"		
 		"Creature"
 		{
 			"HPGain"	"1000"
@@ -497,6 +499,8 @@
 		"VisionDaytimeRange"	"400"
 		// 夜晚视野范围
 		"VisionNighttimeRange"	"400"
+		//单位为召唤单位
+		"IsSummoned" "1"
 		"Creature"
 		{
 			"HPGain"	"1000"
