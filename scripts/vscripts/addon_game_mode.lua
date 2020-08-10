@@ -64,6 +64,7 @@ function CAddonTemplateGameMode:InitGameMode()
     ListenToGameEvent("entity_hurt",Dynamic_Wrap(self, "entity_hurt"), self)
     ListenToGameEvent("npc_spawned",Dynamic_Wrap(self, "npc_spawned"), self)
     ListenToGameEvent("player_chat",Dynamic_Wrap(self, "player_chat"), self)
+    ListenToGameEvent("dota_item_purchased",Dynamic_Wrap(self, "dota_item_purchased"), self)
 
     CustomGameEventManager:RegisterListener( "createnewherotest", Dynamic_Wrap(self,"createnewherotest") )
     CustomGameEventManager:RegisterListener("refreshlist",Dynamic_Wrap(self, 'refreshlist'))
@@ -201,6 +202,8 @@ function CAddonTemplateGameMode:npc_spawned(keys )
         
         local targetdummy = CreateUnitByName( "npc_dota_hero_target_dummy", Vector(0,0,0), true, nil, nil, 7 )
         targetdummy:SetBaseMagicalResistanceValue( 0 )
+        
+        CustomNetTables:SetTableValue( "ship_show", tostring(npc:GetPlayerID()),{steam=PlayerResource:GetSteamID(npc:GetPlayerID()), ships=npc.ship, items={}} )
     end
     if npc:IsHero() then
         for i=0,15 do 
@@ -245,6 +248,21 @@ function CAddonTemplateGameMode:player_chat(keys )
         local shipname = self.shiplist["skill_ship_"..list[2]] or list[2]
         GameRules:SendCustomMessage( "羁绊名："..shipname.." ，已设置:"..(list[3]=="true" and "生" or "失").."效", hero:GetTeamNumber(), 1)
         herochange("waveup")
+
+        local id = tostring(keys.playerid)
+        local my_ships = CustomNetTables:GetTableValue( "ship_show", id)
+        local encreate = function(k,v) 
+            if v then
+                table.insert(my_ships.ships, k)
+            end
+        end
+        
+        my_ships.ships ={}
+        table.foreach(hero.ship, encreate)
+        --my_ships.ships = hero.ship
+        CustomNetTables:SetTableValue( "ship_show", id, my_ships)
+        print_r(my_ships.ships)
+        print_r(hero.ship)
 
     elseif list[1]=="hero" and list[2] then
         herochange(list[2])
@@ -332,6 +350,27 @@ function CAddonTemplateGameMode:InvFilt( filterTable )
     end
 
     filterTable.suggested_slot = slot
-
+    
     return true
+end
+
+
+function CAddonTemplateGameMode:dota_item_purchased( data )
+    -- [game_event_name] => "dota_item_purchased"
+    -- [itemname] => "item_queue_038"
+    -- [game_event_listener] => 1753219076
+    -- [PlayerID] => 0
+    -- [itemcost] => 0
+    -- [splitscreenplayer] => -1
+    local id = tostring(data.PlayerID)
+    local my_ships = CustomNetTables:GetTableValue( "ship_show", id)
+    
+    local slotlist = { 'weapon', 'defend', 'jewelry', 'horses', 'format', 'queue' }
+    for k,v in pairs(slotlist) do
+        if  string.find(data.itemname,v) then
+            my_ships.items[k] = data.itemname
+            CustomNetTables:SetTableValue( "ship_show", id, my_ships)
+            break
+        end
+    end
 end
