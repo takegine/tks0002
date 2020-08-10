@@ -513,6 +513,9 @@
 		"DOTA_Tooltip_ability_skill_hero_hunzi"	"魂姿"
 		"DOTA_Tooltip_ability_skill_hero_hunzi_Description"	"当生命百分比低于75%时，视作你获得[英姿]和[英魂]。"
 		
+	    "DOTA_Tooltip_ability_skill_hero_zhiba"	"制霸"
+		"DOTA_Tooltip_ability_skill_hero_zhiba_Description"	"每有一名友军吴国武将存在时，孙策可获得的5%暴击概率。"
+
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"

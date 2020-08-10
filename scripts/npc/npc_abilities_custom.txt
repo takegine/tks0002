@@ -6476,6 +6476,9 @@
 		"AbilityTextureName"	"wuguo\ability_zhiba"
 		"ScriptFile"	"skill/hero_zhiba.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE "
 		"MaxLevel"	"1"
 		"AbilitySpecial"
 		{
