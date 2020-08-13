@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-24 01:16:38
 * @LastEditors: 白喵
-* @LastEditTime: 2020-08-09 13:18:59
+* @LastEditTime: 2020-08-14 05:41:54
 --]]
 skill_hero_qixi = {}
 
@@ -20,14 +20,13 @@ function skill_hero_qixi:needwaveup()
                 radius,
                 DOTA_UNIT_TARGET_TEAM_FRIENDLY,
                 DOTA_UNIT_TARGET_HERO,
-                DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
+                DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE + DOTA_UNIT_TARGET_FLAG_MELEE_ONLY,
                 FIND_ANY_ORDER,
                 false
             )
     for _,unit in pairs(unitlist) do
         local unit_Position = unit:GetAbsOrigin()
         local forward = unit:GetForwardVector()
-        local normal = forward:Normalized()
         unit:AddNewModifier(caster, self, "modifier_hero_qixi", {duration = 2})
         unit:MoveToPosition(unit_Position + normal * 1000)
     end
@@ -46,7 +45,8 @@ function modifier_hero_qixi:OnDestroy()
 end
 function modifier_hero_qixi:CheckState()
     return{
-        [MODIFIER_STATE_INVISIBLE] = true
+        [MODIFIER_STATE_INVISIBLE] = true,
+        [MODIFIER_STATE_NO_UNIT_COLLISION]=true
     }
 end
 function modifier_hero_qixi:GetTexture()

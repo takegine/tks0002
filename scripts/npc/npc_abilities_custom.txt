@@ -6595,7 +6595,7 @@
 		"MaxLevel"	"1"
 		"LevelsBetweenUpgrades"	"1"
 		"ScriptFile"	"skill/hero_lusi.lua"
-		//"AbilityTextureName" "wuguo/ability_lusi"
+		"AbilityTextureName" "buff_hero\zuhe_dongwusiyingjie"
 		"AbilitySpecial"
 		{
 			"01"
