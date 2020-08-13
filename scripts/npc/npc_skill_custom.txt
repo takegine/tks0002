@@ -145,6 +145,7 @@
 		"3" "skill_hero_sunchuan"         //孙传
 		"4" "skill_hero_sunjiang"         //孙江
 		"5" "skill_hero_zhiba"            //制霸
+		"6" "skill_hero_jiang"            //激昂
 	}
 
 		"npc_dota_hero_spectre"           //override_hero甘宁
