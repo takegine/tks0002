@@ -20,7 +20,7 @@ function modifier_attack:OnAttackLanded(keys)
 
 	local  parent=self:GetParent()  --获取技能释放者
 	local  target=keys.target  --获取鼠标选择的技能目标
-    local  owner =parent:GetOwner() or {ship{}}
+    local  owner =parent:GetOwner() or {ship={}}
 
 if keys.attacker ~= parent then
 	return
