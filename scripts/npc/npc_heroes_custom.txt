@@ -30,11 +30,11 @@
 		"AutoAttacksByDefault"	"0"
 		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_FLY"
 		"MovementSpeed"	"550"
-		"DisableWearables"	"1"
-		"HealthBarOffset"	"120"
 		"Model"	"models/courier/defense3_sheep/defense3_sheep.vmdl"
 		"UnitRelationShipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_COURIER"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
 		"StatusHealth"	"40"
 		"CombatClassAttack"	"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
@@ -92,6 +92,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"override_hero"	"npc_dota_hero_bristleback"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"3"
 		"TksAttackType"	"land"
 		"TksDefendType"	"fire"
@@ -148,6 +150,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"override_hero"	"npc_dota_hero_brewmaster"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"3"
 		"TksAttackType"	"fire"
 		"TksDefendType"	"fire"
@@ -204,6 +208,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"override_hero"	"npc_dota_hero_beastmaster"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"3"
 		"TksAttackType"	"land"
 		"TksDefendType"	"tree"
@@ -260,6 +266,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"override_hero"	"npc_dota_hero_clinkz"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"2"
 		"TksAttackType"	"tree"
 		"TksDefendType"	"land"
@@ -317,6 +325,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"override_hero"	"npc_dota_hero_alchemist"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"3"
 		"TksAttackType"	"land"
 		"TksDefendType"	"land"
@@ -373,6 +383,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"override_hero"	"npc_dota_hero_bloodseeker"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"3"
 		"TksAttackType"	"none"
 		"TksDefendType"	"none"
@@ -429,6 +441,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"override_hero"	"npc_dota_hero_arc_warden"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"3"
 		"TksAttackType"	"tree"
 		"TksDefendType"	"electrical"
@@ -486,6 +500,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"override_hero"	"npc_dota_hero_broodmother"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"3"
 		"TksAttackType"	"none"
 		"TksDefendType"	"none"
@@ -542,6 +558,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"override_hero"	"npc_dota_hero_abaddon"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"3"
 		"TksAttackType"	"water"
 		"TksDefendType"	"land"
@@ -598,6 +616,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"override_hero"	"npc_dota_hero_bounty_hunter"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"3"
 		"TksAttackType"	"none"
 		"TksDefendType"	"none"
@@ -654,6 +674,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"override_hero"	"npc_dota_hero_batrider"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"3"
 		"TksAttackType"	"fire"
 		"TksDefendType"	"fire"
@@ -711,6 +733,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"override_hero"	"npc_dota_hero_drow_ranger"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"2"
 		"TksAttackType"	"tree"
 		"TksDefendType"	"tree"
@@ -768,6 +792,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"override_hero"	"npc_dota_hero_antimage"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"3"
 		"TksAttackType"	"land"
 		"TksDefendType"	"fire"
@@ -824,6 +850,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"override_hero"	"npc_dota_hero_ancient_apparition"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"4"
 		"TksAttackType"	"fire"
 		"TksDefendType"	"fire"
@@ -881,6 +909,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"override_hero"	"npc_dota_hero_bane"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"3"
 		"TksAttackType"	"water"
 		"TksDefendType"	"land"
@@ -938,6 +968,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"override_hero"	"npc_dota_hero_slardar"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"2"
 		"TksAttackType"	"none"
 		"TksDefendType"	"none"
@@ -994,6 +1026,8 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"override_hero"	"npc_dota_hero_warlock"
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		"TksPopUse"	"2"
 		"TksAttackType"	"fire"
 		"TksDefendType"	"none"
@@ -1077,6 +1111,8 @@
 		"override_hero"	"npc_dota_hero_windrunner"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"3"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -1168,6 +1204,8 @@
 		"override_hero"	"npc_dota_hero_queenofpain"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"2"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -1260,6 +1298,8 @@
 		"override_hero"	"npc_dota_hero_slardar"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"3"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -1352,6 +1392,8 @@
 		"override_hero"	"npc_dota_hero_wisp"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"2"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -1444,6 +1486,8 @@
 		"override_hero"	"npc_dota_hero_razor"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"3"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -1536,6 +1580,8 @@
 		"override_hero"	"npc_dota_hero_vengefulspirit"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"3"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -1628,6 +1674,8 @@
 		"override_hero"	"npc_dota_hero_witch_doctor"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"2"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -1720,6 +1768,8 @@
 		"override_hero"	"npc_dota_hero_tidehunter"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"2"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -1812,6 +1862,8 @@
 		"override_hero"	"npc_dota_hero_tiny"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"3"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -1904,6 +1956,8 @@
 		"override_hero"	"npc_dota_hero_spectre"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"2"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -1996,6 +2050,8 @@
 		"override_hero"	"npc_dota_hero_venomancer"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"3"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -2088,6 +2144,8 @@
 		"override_hero"	"npc_dota_hero_tusk"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"3"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -2180,6 +2238,8 @@
 		"override_hero"	"npc_dota_hero_spirit_breaker"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"3"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -2272,6 +2332,8 @@
 		"override_hero"	"npc_dota_hero_visage"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"3"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -2364,6 +2426,8 @@
 		"override_hero"	"npc_dota_hero_terrorblade"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"3"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -2456,6 +2520,8 @@
 		"override_hero"	"npc_dota_hero_phantom_lancer"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"3"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
@@ -2548,6 +2614,8 @@
 		"override_hero"	"npc_dota_hero_undying"
 		//单位装备物品 1是可用
 		"HasInventory"	"1"
+		"DisableWearables"	"1"
+		"HealthBarOffset"	"280"
 		//招募消耗人口
 		"TksPopUse"	"3"
 		// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
