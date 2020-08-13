@@ -26,7 +26,7 @@ function modifier_skill_hero_jiang_attack:OnAttackLanded(keys)
 	local caster=self:GetCaster()
     local heal=keys.damage*ability:GetLevel()*3/100
     local modName = 'modifier_skill_hero_jiang_juedou'
-	if keys.attacker == parent  then
+	if  keys.attacker == parent  
 	and keys.original_damage/parent:GetAverageTrueAttackDamage( keys.target )>1.05 then
     
         local count = caster:GetAttackDamage() *(ability:GetLevel() *3 +20) /100
