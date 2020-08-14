@@ -8,6 +8,19 @@ end
 
 modifier_skill_hero_hongyan = class({})
 
+function modifier_skill_hero_hongyan:OnCreated(table)
+    if not IsServer() then
+        return
+    end
+
+	local caster = self:GetCaster()
+    local kv = {
+        electrical=100,
+        duration=-1
+    }
+    caster:AddNewModifier( caster, self , "modifier_defend_big", kv )
+end 
+
 function modifier_skill_hero_hongyan:DeclareFunctions()
     return
     {
@@ -25,8 +38,6 @@ function modifier_skill_hero_hongyan:OnTakeDamage(keys)
         local damage  = keys.damage *1.575
         local owner   = caster:GetOwner() or {ship={}}
         local healre  =  keys.damage_type == DAMAGE_TYPE_PHYSICAL and damage *2 or damage
-        parent:Heal(healre, parent)
-        SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, parent, healre, nil)
 
         if owner.ship["xiaoniao"] then 
             local healre = healre* 35 /100
@@ -47,7 +58,7 @@ function modifier_skill_hero_hongyan:OnTakeDamage(keys)
             for key,unit in pairs(units) do
                 if unit ~= caster then
                    unit:Heal(healre, parent)
-                   SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, parent, healre, nil) 
+                   SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, unit, healre, nil) 
                 end
             end 
         end 
