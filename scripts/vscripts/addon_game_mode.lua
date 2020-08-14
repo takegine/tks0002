@@ -144,7 +144,8 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     local damage_new = filterTable.damage
     local damtype    = filterTable.damagetype_const
     local killedUnit = EntIndexToHScript( filterTable.entindex_victim_const   )
-    local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const )    
+    local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const )
+    local killerReal = killerUnit:GetName()=="npc_dota_thinker" and killerUnit:GetOwner() or killerUnit
     local defend_big = killedUnit:FindAllModifiersByName( "modifier_defend_big" )
 
     if damtype == DAMAGE_TYPE_PHYSICAL then
@@ -176,9 +177,12 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     end
 
     filterTable.damage = damage_new
+    killerReal.damage_deal = damage_new
+    -- killerReal:GetOwner().damage_deal= damage_new + killerReal:GetOwner().damage_deal or 0
+    killedUnit.damage_take = damage_new
+    -- killedUnit:GetOwner().damage_take= damage_new + killedUnit:GetOwner().damage_take or 0
 
     -- 演示实际伤害模块
-        local killername = killerUnit:GetName()=="npc_dota_thinker" and killerUnit:GetOwner():GetUnitName() or killerUnit:GetUnitName()
         local print_type = damtype == DAMAGE_TYPE_PHYSICAL and "物理" or damtype == DAMAGE_TYPE_MAGICAL and "魔法" or "其他"
         local type_list  = {
             none    =  "普通",
@@ -189,7 +193,7 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
             land    =  "地",
             electrical="电"
         }
-        local messageT = "<font color='#32CD32'>"..self.namelist[killername].."</font> 对 <font color='#DC143C'>"..(self.namelist[killedUnit:GetUnitName()] or "未知").."</font> 造成 <font color='#FF1493'>"..type_list[killerUnit.attack_type].."</font> 系 <font color='#	#4682B4'>"..print_type.."</font> 的 <font color='#40E0D0'>"..string.format("%.2f", damage_new).."</font> 点伤害"
+        local messageT = "<font color='#32CD32'>"..self.namelist[killerReal:GetUnitName()].."</font> 对 <font color='#DC143C'>"..(self.namelist[killedUnit:GetUnitName()] or "未知").."</font> 造成 <font color='#FF1493'>"..type_list[killerUnit.attack_type].."</font> 系 <font color='#	#4682B4'>"..print_type.."</font> 的 <font color='#40E0D0'>"..string.format("%.2f", damage_new).."</font> 点伤害"
         GameRules:SendCustomMessage( messageT, killerUnit:GetTeamNumber(), 1)
 
     return true

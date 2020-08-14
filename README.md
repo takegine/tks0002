@@ -7,6 +7,8 @@
 
 [常用参数](##参数)
 
+[获取实际的伤害值](##属性过滤后的伤害值)
+
 
 ## 注意事项
 `2020-08-14` 更新 使用git上传的方法
@@ -177,3 +179,14 @@ end
 1. 通常不要在受到伤害后添加，那样不能减免这次伤害，只能减免之后受到的伤害。
 2. 不同的系使用的参数可以参考上方的[攻防类型](###攻击类型/防守类型)。
 3. 传参所用到的`hModiferTable`里面可以写多个减免类型。
+
+
+## 属性过滤后的伤害值
+最后一次造成的伤害是`damage_deal`
+最后一次受到的伤害是`damage_take`
+```lua
+function modifier_example:OnTakeDamge(keys)
+    local attacker = keys.attacker
+    local damage   = attacker.damage_deal
+end
+```
