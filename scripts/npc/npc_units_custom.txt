@@ -260,7 +260,7 @@
 
 	"build_zhalan"
 	{
-		"BaseClass"	"npc_dota_fort"
+		"BaseClass"	"npc_dota_building"
 		"Ability1"	""
 		"Ability2"	""
 		"Ability3"	""
@@ -277,13 +277,13 @@
 		"Ability14"	""
 		"Ability15"	""
 		"Ability16"	""
-		"Model"	"models/props_generic/barrel_01.vmdl"
-		"BoundsHullName"	"DOTA_HULL_SIZE_REGULAR"
+		"Model"	"models/imagine_assets/wood_post/wood_post_001.vmdl"
+		"BoundsHullName"	"DOTA_HULL_SIZE_FILLER"
 	}
 
 	"tower_zhugong"
 	{
-		"BaseClass"	"npc_dota_building"
+		"BaseClass"	"npc_dota_fort"
 		"Ability1"	""
 		"Ability2"	""
 		"Ability3"	""
