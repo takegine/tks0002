@@ -53,3 +53,29 @@ modifier_defend_god = class({})
 function modifier_defend_god:GetTexture() return "defend_medium" end
 function modifier_defend_god:RemoveOnDeath() return false end
 --------------------------------------------------------------------------------
+
+modifier_defend_big = modifier_defend_big or class({
+    IsHidden      = function(self) return true  end,
+    IsPurgable    = function(self) return false end,
+    IsDebuff      = function(self) return false end,
+    IsBuff        = function(self) return false end,
+    RemoveOnDeath = function(self) return false end,
+    GetAttributes = function(  ) return MODIFIER_ATTRIBUTE_MULTIPLE end
+})
+
+
+function modifier_defend_big:OnCreated( params )
+    if not IsServer() then
+        return
+    end
+
+    self.none      = params.none or 0
+    self.god       = params.god or 0
+    self.tree      = params.tree or 0
+    self.fire      = params.fire or 0
+    self.water     = params.water or 0
+    self.land      = params.land or 0
+    self.electrical= params.electrical or 0
+
+end
+--------------------------------------------------------------------------------

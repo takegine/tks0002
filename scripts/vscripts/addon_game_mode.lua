@@ -82,6 +82,8 @@ function CAddonTemplateGameMode:InitGameMode()
     insetlist(LoadKeyValues('scripts/npc/npc_heroes_custom.txt'))
     insetlist(LoadKeyValues('scripts/npc/npc_units_custom.txt'))
 
+    LinkLuaModifier("modifier_defend_big", "buff/BaseType.lua", 0)
+
 end
 
 -- Evaluate the state of the game
@@ -139,10 +141,11 @@ function CAddonTemplateGameMode:entity_hurt(keys)
 end
 
 function CAddonTemplateGameMode:DamageFilter(filterTable)
-    local damage     = filterTable.damage
+    local damage_new = filterTable.damage
     local damtype    = filterTable.damagetype_const
     local killedUnit = EntIndexToHScript( filterTable.entindex_victim_const   )
     local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const )    
+    local defend_big = killedUnit:FindAllModifiersByName( "modifier_defend_big" )
 
     if damtype == DAMAGE_TYPE_PHYSICAL then
 
@@ -150,17 +153,30 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
         local oldkang  = 1-6*armor/(100+6*armor)--1-52/48*armor/(18.75+armor)
         local newkang  = 1-armor/(100+armor)
 
-        filterTable.damage = filterTable.damage /oldkang *newkang
+        damage_new = damage_new /oldkang *newkang
     end
+
     if not self.DamageKV
     or not killerUnit.attack_type
     then return true 
     end
+
     killedUnit.defend_type  = killedUnit.defend_type or "none"
     local damage_multiplier = self.DamageKV[killerUnit.attack_type][killedUnit.defend_type] or 1
 
-    filterTable["damage"] = filterTable["damage"] * damage_multiplier
+    damage_new = damage_new * damage_multiplier
     
+    if defend_big then
+        local damage_re = 0
+        local pertenth  = function( num ) return (100-num)/10 end 
+        for _,mod in pairs(defend_big) do
+            damage_re = 100 - pertenth(mod[killerUnit.attack_type]) * pertenth( damage_re )
+        end
+        damage_new = damage_new * Clamp( pertenth( damage_re ) /10, 0, 1)
+    end
+
+    filterTable.damage = damage_new
+
     -- 演示实际伤害模块
         local killername = killerUnit:GetName()=="npc_dota_thinker" and killerUnit:GetOwner():GetUnitName() or killerUnit:GetUnitName()
         local print_type = damtype == DAMAGE_TYPE_PHYSICAL and "物理" or damtype == DAMAGE_TYPE_MAGICAL and "魔法" or "其他"
@@ -173,7 +189,7 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
             land    =  "地",
             electrical="电"
         }
-        local messageT = "<font color='#32CD32'>"..self.namelist[killername].."</font> 对 <font color='#DC143C'>"..(self.namelist[killedUnit:GetUnitName()] or "未知").."</font> 造成 <font color='#FF1493'>"..type_list[killerUnit.attack_type].."</font> 系 <font color='#	#4682B4'>"..print_type.."</font> 的 <font color='#40E0D0'>"..string.format("%.2f", filterTable.damage).."</font> 点伤害"
+        local messageT = "<font color='#32CD32'>"..self.namelist[killername].."</font> 对 <font color='#DC143C'>"..(self.namelist[killedUnit:GetUnitName()] or "未知").."</font> 造成 <font color='#FF1493'>"..type_list[killerUnit.attack_type].."</font> 系 <font color='#	#4682B4'>"..print_type.."</font> 的 <font color='#40E0D0'>"..string.format("%.2f", damage_new).."</font> 点伤害"
         GameRules:SendCustomMessage( messageT, killerUnit:GetTeamNumber(), 1)
 
     return true

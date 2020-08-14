@@ -157,3 +157,20 @@ function addwaveup ( params )
     end
 end
 ```
+
+# 减免伤害
+减免伤害可以用添加 `modifier_defend_big` 这个修饰器来做。
+
+举例一个持续7秒的减免`火`系伤害`40%` 和 `地`系伤害`10%` 的写法。
+```lua
+    local hModiferTable = {
+        fire     = 40,
+        land     = 10，
+        duration = 7
+    }
+    hCaster:AddNewModifier( hCaster, hAbility , "modifier_defend_big", hModiferTable )
+```
+注意：
+1. 通常不要在受到伤害后添加，那样不能减免这次伤害，只能减免之后受到的伤害。
+2. 不同的系使用的参数可以参考上方的[攻防类型](###攻击类型/防守类型)。
+3. 传参所用到的`hModiferTable`里面可以写多个减免类型。
