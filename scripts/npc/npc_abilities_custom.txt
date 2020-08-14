@@ -6815,4 +6815,32 @@
 			}
 		}		
 	}	
+	"skill_hero_jianxiong"
+	{
+		"BaseClass"			"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"		"10"
+		"LevelsBetweenUpgrades"		"1"
+		"AbilityManaCost" "8"
+		//"AbilityTextureName"		"weiguo/ability_fenwei"
+		"ScriptFile"	"skill/hero_jianxiong.lua"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+						"var_type"			"FIELD_FLOAT"
+						"duration"			"8.0 8.0 8.0 8.0 8.0 8.0 8.0 8.0 8.0 8.0"
+			}
+			"02"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"outgoing_damage"	"17 19 21 23 25 27 29 31 33 35"
+			}
+			"03"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"incoming_damage"	"300 300 300 300 300 300 300 300 300 300"
+			}						
+		}		
+	}	
 }
