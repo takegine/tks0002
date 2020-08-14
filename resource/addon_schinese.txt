@@ -554,6 +554,10 @@
 		"DOTA_Tooltip_ability_skill_hero_saoshe" "扫射"
 		"DOTA_Tooltip_ability_skill_hero_saoshe_Description" "短时间内不断的向周围发生弩箭，对每个击中的敌人造成水系物理伤害"
 		"DOTA_Tooltip_ability_skill_hero_saoshe_damage" "箭矢伤害:"
+		"DOTA_Tooltip_ability_skill_hero_caohu" "曹虎"
+		"DOTA_Tooltip_ability_skill_hero_saoshe_Description" "曹操获得一定的的闪避概率。"
+		"DOTA_Tooltip_ability_skill_hero_saoshe_chance" "闪避概率:"
+		"DOTA_Tooltip_modifier_hero_caohu" "虎贲护卫"
 	// ---------------------------------------------其他------
 		"DOTA_Tooltip_modifier_skill_ship_hufu"	"虎父无犬女"
 		"DOTA_Tooltip_modifier_skill_ship_yiqidangqian"	"一骑当千"

@@ -6798,4 +6798,21 @@
 			}			
 		}
 	}
+	"skill_hero_caohu"
+	{
+		"BaseClass"			"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"		"1"
+		"LevelsBetweenUpgrades"		"1"
+		//"AbilityTextureName"		"weiguo/ability_fenwei"
+		"ScriptFile"	"skill/hero_caohu.lua"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"chance"			"60"
+			}
+		}		
+	}	
 }
