@@ -70,6 +70,7 @@ function CAddonTemplateGameMode:InitGameMode()
 
     self.DamageKV = LoadKeyValues("scripts/damage_table.kv")
     self.shiplist = LoadKeyValues("scripts/羁绊名汉化.kv")
+    self.namelist = LoadKeyValues("panorama/localization/addon_schinese.txt")["Tokens"]
     self.tkUnitList = {}
     local function insetlist(list)
             table.foreach( list, function(k,v)
@@ -156,10 +157,25 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     then return true 
     end
     killedUnit.defend_type  = killedUnit.defend_type or "none"
-    print(killerUnit.attack_type, killedUnit.defend_type)
     local damage_multiplier = self.DamageKV[killerUnit.attack_type][killedUnit.defend_type] or 1
 
     filterTable["damage"] = filterTable["damage"] * damage_multiplier
+    
+    -- 演示实际伤害模块
+        local killername = killerUnit:GetName()=="npc_dota_thinker" and killerUnit:GetOwner():GetUnitName() or killerUnit:GetUnitName()
+        local print_type = damtype == DAMAGE_TYPE_PHYSICAL and "物理" or damtype == DAMAGE_TYPE_MAGICAL and "魔法" or "其他"
+        local type_list  = {
+            none    =  "普通",
+            god     =  "神",
+            tree    =  "木",
+            fire    =  "火",
+            water   =  "水",
+            land    =  "地",
+            electrical="电"
+        }
+        local messageT = "<font color='#32CD32'>"..self.namelist[killername].."</font> 对 <font color='#DC143C'>"..(self.namelist[killedUnit:GetUnitName()] or "未知").."</font> 造成 <font color='#FF1493'>"..type_list[killerUnit.attack_type].."</font> 系 <font color='#	#4682B4'>"..print_type.."</font> 的 <font color='#40E0D0'>"..string.format("%.2f", filterTable.damage).."</font> 点伤害"
+        GameRules:SendCustomMessage( messageT, killerUnit:GetTeamNumber(), 1)
+
     return true
 
 end
