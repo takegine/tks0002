@@ -5905,7 +5905,56 @@
 		}
 	}
 
-
+    "skill_hero_duanliang"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"	""
+		"AbilityUnitDamageType"	""
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_NO"
+		"CastFilterRejectCaster"	"1"
+		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"Modifiers"
+		{
+			"modifier_skill_hero_chengjie"
+			{
+				"_IsAura"	"1"
+				"Aura_Radius"	"1200"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"	""
+				"Passive"	"1"
+				"Properties"	{}
+				"IsDebuff"	"1"
+				"AllowIllusionDuplicate"	"0"
+				"Aura_ApplyToCaster"	"0"
+				"Aura"	"modifier_skill_hero_chengjie_2"
+				"States"	{}
+				"IsHidden"	"1"
+			}
+			"modifier_skill_hero_chengjie_2"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor"
+				}
+				"IsDebuff"	"1"
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"armor"	"-6 -12 -18 -24 -30 -36 -42 -48 -54 -60"
+			}
+		}
+	}
 	"skill_hero_liegong"
 	{
 		"BaseClass"	"ability_lua"

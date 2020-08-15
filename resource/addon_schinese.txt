@@ -453,7 +453,8 @@
 		"DOTA_Tooltip_ability_arc_lightning_datadriven_Description"	"释放强力的火焰冲击，对第一个单位造成640X等级点魔法伤害，随后火焰继续向周围3-6个敌人之间弹射，每次弹射的伤害都会递减10%。"
 		"DOTA_Tooltip_ability_skill_hero_chengjie"  "惩戒"
         "DOTA_Tooltip_ability_skill_hero_chengjie_Description"  "徐晃的能额外造成地系物理伤害并重创敌人，期间敌人攻击必定丢失，持续3秒。\n造成伤害：55*[(1+等级)*(等级/2)]\n冷却时间：9s"
-
+        "DOTA_Tooltip_ability_skill_hero_duanliang" "断粮"
+        "DOTA_Tooltip_ability_skill_hero_duanliang_Description" "降低周围敌人6X等级点防御力。"
 	
 	// ---------------------------------------------单位技能-临天-----
 		
