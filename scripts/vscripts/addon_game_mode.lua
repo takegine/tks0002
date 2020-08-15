@@ -234,9 +234,10 @@ function CAddonTemplateGameMode:npc_spawned(keys )
         --     targetdummy:SetRenderColor( colorlist[i*3-2], colorlist[i*3-1], colorlist[i*3] )
         --     targetdummy.defend_type = elementlist[i]
         -- end
-        
+        LinkLuaModifier("print_evasion" , "root/print_evasion" ,0)
         local targetdummy = CreateUnitByName( "npc_dota_hero_target_dummy", Vector(0,0,0), true, nil, nil, 7 )
         targetdummy:SetBaseMagicalResistanceValue( 0 )
+        targetdummy:AddNewModifier(npc, nil, "print_evasion", nil).namelist = self.namelist
     end
     if npc:IsHero() then
         for i=0,15 do 
