@@ -82,8 +82,6 @@ function CAddonTemplateGameMode:InitGameMode()
     insetlist(LoadKeyValues('scripts/npc/npc_heroes_custom.txt'))
     insetlist(LoadKeyValues('scripts/npc/npc_units_custom.txt'))
 
-    LinkLuaModifier("modifier_defend_big", "buff/BaseType.lua", 0)
-
 end
 
 -- Evaluate the state of the game
@@ -238,18 +236,21 @@ function CAddonTemplateGameMode:npc_spawned(keys )
         local targetdummy = CreateUnitByName( "npc_dota_hero_target_dummy", Vector(0,0,0), true, nil, nil, 7 )
         targetdummy:SetBaseMagicalResistanceValue( 0 )
         targetdummy:AddNewModifier(npc, nil, "print_evasion", nil).namelist = self.namelist
+    elseif self.tkUnitList[nameX] then
+        npc.attack_type = self.tkUnitList[nameX]["TksAttackType"]
+        npc.defend_type = self.tkUnitList[nameX]["TksDefendType"]
+        print(nameX, npc.attack_type, npc.defend_type)
+        
+        npc:AddNewModifier(npc, nil, "modifier_attack_" .. npc.attack_type, {})
+        npc:AddNewModifier(npc, nil, "modifier_defend_" .. npc.defend_type, {})
     end
+    
     if npc:IsHero() then
         for i=0,15 do 
             if   npc:GetAbilityByIndex(i) 
             then npc:GetAbilityByIndex(i):SetLevel(1) 
             end 
         end
-    end
-    if self.tkUnitList[nameX] then
-        npc.attack_type = self.tkUnitList[nameX]["TksAttackType"]
-        npc.defend_type = self.tkUnitList[nameX]["TksDefendType"]
-        print(nameX, npc.attack_type, npc.defend_type)
     end
 end
 
@@ -372,3 +373,18 @@ function CAddonTemplateGameMode:InvFilt( filterTable )
 
     return true
 end
+
+
+
+function LinkLuaS()
+    local typetab = {"none","tree","fire","electrical","water","land","god"}
+    local modload = "buff/BaseType.lua"
+    for _,v in pairs(typetab) do
+        print("modifier_attack_"..v)
+        LinkLuaModifier( "modifier_attack_"..v, modload, 0 )
+        LinkLuaModifier( "modifier_defend_"..v, modload, 0 )
+    end
+        LinkLuaModifier( "modifier_defend_big", modload, 0 )
+end
+
+LinkLuaS()
