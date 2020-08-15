@@ -5882,17 +5882,29 @@
 		"LevelsBetweenUpgrades"	"1"
 	}
 
-	"skill_hero_juji"
+    "skill_hero_chengjie"
 	{
 		"BaseClass"	"ability_lua"
-		"ScriptFile"	"skill/hero_juji.lua"
+		"AbilityTextureName"	""
+		"ScriptFile"	"skill/hero_chengjie.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
 		"LevelsBetweenUpgrades"	"1"
-		"AbilityCooldown"	"8"
+		"AbilityCooldown"	"9"
+		"AbilityCastRange"	"100"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"55 165 330 550 825 1155 1540 1980 2475 3025"
+			}
+		}
 	}
+
 
 	"skill_hero_liegong"
 	{
