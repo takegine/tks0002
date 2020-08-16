@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-24 01:16:38
 * @LastEditors: 白喵
-* @LastEditTime: 2020-08-14 05:41:54
+* @LastEditTime: 2020-08-16 22:50:26
 --]]
 skill_hero_qixi = {}
 
@@ -12,8 +12,7 @@ function skill_hero_qixi:needwaveup()
     local caster = self:GetCaster()
     local radius = self:GetSpecialValueFor("radius")
     local Origin = caster:GetAbsOrigin()
-    local unitlist
-    unitlist = FindUnitsInRadius(
+    local unitlist = FindUnitsInRadius(
                 caster:GetTeamNumber(),
                 Origin,
                 nil,

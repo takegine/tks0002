@@ -570,6 +570,11 @@
 		"DOTA_Tooltip_ability_skill_hero_hujia_radius" "范围:"
 		"DOTA_Tooltip_ability_skill_hero_hujia_Armor" "每层增加的护甲值:"
 		"DOTA_Tooltip_modifier_hero_hujia" "护驾"
+		"DOTA_Tooltip_ability_skill_hero_yizhong" "毅重"
+		"DOTA_Tooltip_ability_skill_hero_yizhong_Description" "减少于禁所受的的木系伤害，同时受到的火焰与闪电伤害也将基于等级降低"
+		"DOTA_Tooltip_ability_skill_hero_yizhong_tree" "%木系伤害减少百分比:"
+		"DOTA_Tooltip_ability_skill_hero_yizhong_fire" "%火系伤害减少百分比:"
+		"DOTA_Tooltip_ability_skill_hero_yizhong_electrical" "%电系伤害减少百分比:"
 	// ---------------------------------------------其他------
 		"DOTA_Tooltip_modifier_skill_ship_hufu"	"虎父无犬女"
 		"DOTA_Tooltip_modifier_skill_ship_yiqidangqian"	"一骑当千"

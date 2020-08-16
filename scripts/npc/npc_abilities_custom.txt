@@ -6652,7 +6652,7 @@
 	"skill_hero_lusi"
 	{
 		"BaseClass"	"ability_lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"MaxLevel"	"1"
 		"LevelsBetweenUpgrades"	"1"
 		"ScriptFile"	"skill/hero_lusi.lua"
@@ -6732,7 +6732,7 @@
 	"skill_hero_sunwu"
 	{
 		"BaseClass"	"ability_lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 		"ScriptFile"	"skill/hero_sunwu.lua"
@@ -6862,7 +6862,7 @@
 	"skill_hero_caohu"
 	{
 		"BaseClass"			"ability_lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"		"1"
 		"LevelsBetweenUpgrades"		"1"
 		//"AbilityTextureName"		"weiguo/ability_fenwei"
@@ -6925,5 +6925,54 @@
 						"Armor"				"3"
 			}			
 		}		
-	}	
+	}
+	"skill_hero_yuwu"
+	{
+		"BaseClass"			"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"		"10"
+		"LevelsBetweenUpgrades"		"1"
+		//"AbilityTextureName"		"weiguo/ability_yuwu"
+		"ScriptFile"	"skill/hero_yuwu.lua"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"tree"			"2"
+			}
+			"02"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"electrical"			"2"
+			}
+		}	
+	}
+		"skill_hero_yizhong"
+	{
+		"BaseClass"			"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"		"10"
+		"LevelsBetweenUpgrades"		"1"
+		"AbilityTextureName"		"weiguo/ability_yizhong"
+		"ScriptFile"	"skill/hero_yizhong.lua"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"tree"			"90"
+			}
+			"02"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"fire"			"3 6 9 12 15 18 21 24 27 30"
+			}
+			"03"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"electrical"			"3 6 9 12 15 18 21 24 27 30"
+			}
+		}		
+	}
 }

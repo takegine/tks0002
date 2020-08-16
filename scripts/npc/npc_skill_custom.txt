@@ -96,6 +96,7 @@
 	{
 		 //（暂无技能）"1" ""          //
 		 //（暂无技能）"2" ""        //
+		 //"1" "skill_hero_yuwu"
 	}
 
 		"npc_dota_hero_slardar"           //override_hero周泰
