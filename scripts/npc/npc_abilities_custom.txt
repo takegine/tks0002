@@ -6883,7 +6883,7 @@
 		"MaxLevel"		"10"
 		"LevelsBetweenUpgrades"		"1"
 		"AbilityManaCost" "8"
-		//"AbilityTextureName"		"weiguo/ability_fenwei"
+		"AbilityTextureName"		"weiguo/ability_jianxiong"
 		"ScriptFile"	"skill/hero_jianxiong.lua"
 		"AbilitySpecial"
 		{
@@ -6902,6 +6902,28 @@
 						"var_type"			"FIELD_INTEGER"
 						"incoming_damage"	"300 300 300 300 300 300 300 300 300 300"
 			}						
+		}		
+	}
+	"skill_hero_hujia"
+	{
+		"BaseClass"			"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"		"10"
+		"LevelsBetweenUpgrades"		"1"
+		"AbilityTextureName"		"weiguo/ability_hujia"
+		"ScriptFile"	"skill/hero_hujia.lua"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"radius"			"1600"
+			}
+			"02"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"Armor"				"3"
+			}			
 		}		
 	}	
 }
