@@ -64,6 +64,7 @@ function CAddonTemplateGameMode:InitGameMode()
     ListenToGameEvent("entity_hurt",Dynamic_Wrap(self, "entity_hurt"), self)
     ListenToGameEvent("npc_spawned",Dynamic_Wrap(self, "npc_spawned"), self)
     ListenToGameEvent("player_chat",Dynamic_Wrap(self, "player_chat"), self)
+    ListenToGameEvent("entity_killed",Dynamic_Wrap(self,"OnEntityKilled"), self)
 
     CustomGameEventManager:RegisterListener( "createnewherotest", Dynamic_Wrap(self,"createnewherotest") )
     CustomGameEventManager:RegisterListener("refreshlist",Dynamic_Wrap(self, 'refreshlist'))
@@ -200,6 +201,15 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
 
     return true
 
+end
+
+function CAddonTemplateGameMode:OnEntityKilled(keys)
+    local killedUnit = EntIndexToHScript( keys.entindex_killed   )
+    Timer(0.1,function()
+        if not killedUnit:IsNull() then
+        killedUnit:Destroy() 
+        end
+    end)
 end
 
 function CAddonTemplateGameMode:npc_spawned(keys )
