@@ -192,6 +192,10 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
             electrical="电"
         }
         local messageT = "<font color='#32CD32'>"..self.namelist[killerReal:GetUnitName()].."</font> 对 <font color='#DC143C'>"..(self.namelist[killedUnit:GetUnitName()] or "未知").."</font> 造成 <font color='#FF1493'>"..type_list[killerUnit.attack_type].."</font> 系 <font color='#	#4682B4'>"..print_type.."</font> 的 <font color='#40E0D0'>"..string.format("%.2f", damage_new).."</font> 点伤害"
+        if killedUnit==killerUnit 
+        and damage_new ==0 then
+            messageT = "<font color='#FF1493'>"..type_list[killerUnit.attack_type].."</font> 系 <font color='#32CD32'>傀儡</font> 清除了"
+        end
         GameRules:SendCustomMessage( messageT, killerUnit:GetTeamNumber(), 1)
 
     return true
