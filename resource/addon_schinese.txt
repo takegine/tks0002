@@ -516,6 +516,20 @@
 	    "DOTA_Tooltip_ability_skill_hero_zhiba"	"制霸"
 		"DOTA_Tooltip_ability_skill_hero_zhiba_Description"	"每有一名友军吴国武将存在时，孙策可获得的5%暴击概率。"
 
+		"DOTA_Tooltip_ability_skill_hero_tiandu"	"天妒"
+		"DOTA_Tooltip_ability_skill_hero_tiandu_Description"	"使目标身上具有一层霜冻保护，这保护层能增加护甲并使近战攻击该目标的敌人在5秒内减速。"
+		"DOTA_Tooltip_ability_skill_hero_tiandu_radius"	"范围："
+		"DOTA_Tooltip_ability_skill_hero_tiandu_armor_duration"	"护甲："
+		"DOTA_Tooltip_ability_skill_hero_tiandu_ms_slow_pct"	"移动速度："
+		"DOTA_Tooltip_ability_skill_hero_tiandu_as_slow"	"攻击速度："
+		"DOTA_Tooltip_ability_skill_hero_tiandu_duration"	"持续时间："
+
+		"DOTA_Tooltip_modifier_skill_hero_tiandu"	"天妒"
+		"DOTA_Tooltip_modifier_skill_hero_tiandu_Description"	"提高护甲。"
+
+
+
+
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"
