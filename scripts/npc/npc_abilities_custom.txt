@@ -6337,7 +6337,7 @@
 			}
 		}
 	}
-	
+
 	    "skill_hero_kurou"
     {
         "BaseClass" "ability_lua"
@@ -6360,6 +6360,18 @@
                 "speed" "36 42 48 54 60 66 72 88 104 110"
             }
         }
+    }
+	
+    "skill_hero_sunchu"
+    {
+        "BaseClass" "ability_lua"
+        "ScriptFile"    "skill/hero_sunchu.lua"
+        "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO"
+        "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "MaxLevel"  "1"
+        "RequiredLevel" "1"
+        "LevelsBetweenUpgrades" "1"
     }
 
 // 临天 7-19

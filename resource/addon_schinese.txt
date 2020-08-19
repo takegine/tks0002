@@ -458,6 +458,9 @@
         "DOTA_Tooltip_ability_skill_hero_kurou" "苦肉"
         "DOTA_Tooltip_ability_skill_hero_kurou_Description" "黄盖在短时间内燃烧自己提升25%X等级的攻击速度和30%+6%X等级的与移动速度，每秒对自己和周围的敌人造成黄盖最大生命值3%的火焰物理伤害，当生命值过低时将无法继续触发苦肉。"
 	
+        "DOTA_Tooltip_ability_skill_hero_sunchu"    "孙出"
+        "DOTA_Tooltip_ability_skill_hero_sunchu_Description"    "出生入死\n每当孙权受到伤害时都可将所有伤害转移至附近的周泰身上，多个周泰之间可以平摊此次伤害。"
+
 	// ---------------------------------------------单位技能-临天-----
 		
 		"DOTA_Tooltip_ability_skill_hero_sunjiang"	"孙江"
