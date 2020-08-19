@@ -194,7 +194,7 @@
     }
 
       //东吴四英杰  周瑜 鲁肃 吕蒙 陆逊 
-    "skill_ship_dongwu" 
+    "skill_ship_siying" 
     {
         "01" "npc_dota_hero_vengefulspirit"
         "02" "npc_dota_hero_witch_doctor"
@@ -224,7 +224,7 @@
     }
 
       //空盒自采  曹操 荀彧 
-    "skill_ship_shuangbi" 
+    "skill_ship_konghe" 
     {
         "01" "npc_dota_hero_life_stealer"
         "02" "npc_dota_hero_pugna"
@@ -232,14 +232,14 @@
 
 
       //魏氏双英  司马懿 郭嘉
-    "skill_ship_shuangbi" 
+    "skill_ship_shuangying" 
     {
         "01" "npc_dota_hero_keeper_of_the_light"
         "02" "npc_dota_hero_silencer"
     }
 
       //五子良将   张辽 乐进 徐晃 于禁 张合
-    "skill_ship_shuangbi" 
+    "skill_ship_wuzi" 
     {
         "01" "npc_dota_hero_omniknight"
         "02" "npc_dota_hero_naga_siren"
@@ -249,56 +249,56 @@
     }
 
       //仙影迷踪  曹操 左慈
-    "skill_ship_shuangbi" 
+    "skill_ship_xianying" 
     {
         "01" "npc_dota_hero_life_stealer"
 
     }
 
       //奸雄之风  曹操 曹丕 
-    "skill_ship_shuangbi" 
+    "skill_ship_jianxiong" 
     {
         "01" "npc_dota_hero_life_stealer"
         "02" "npc_dota_hero_dragon_knight"
     }
 
       //虎贲护卫  许褚 曹操
-    "skill_ship_shuangbi" 
+    "skill_ship_huben" 
     {
         "01" "npc_dota_hero_sand_king"
         "02" "npc_dota_hero_life_stealer"
     }
 
       //长驱直入  徐晃 曹仁
-    "skill_ship_shuangbi" 
+    "skill_ship_changqu" 
     {
         "01" "npc_dota_hero_treant"
 
     }
 
       //毒士之谋  曹丕 贾诩 
-    "skill_ship_shuangbi" 
+    "skill_ship_dushi" 
     {
         "01" "npc_dota_hero_dragon_knight"
         "02" "npc_dota_hero_crystal_maiden"
     }
 
       //恶来虎痴  典韦 许褚
-    "skill_ship_shuangbi" 
+    "skill_ship_elai" 
     {
         "01" "npc_dota_hero_sand_king"
         "02" "npc_dota_hero_kunkka"
     }
 
       //料敌机先  司马 张合 
-    "skill_ship_shuangbi" 
+    "skill_ship_liaodi" 
     {
         "01" "npc_dota_hero_ursa"
         "02" "npc_dota_hero_keeper_of_the_light"
     }
     
       //威震逍遥津  张辽 乐进
-    "skill_ship_shuangbi" 
+    "skill_ship_weizheng" 
     {
         "01" "npc_dota_hero_omniknight"
         "02" "npc_dota_hero_naga_siren"
