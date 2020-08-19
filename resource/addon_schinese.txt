@@ -527,9 +527,12 @@
 		"DOTA_Tooltip_modifier_skill_hero_tiandu"	"天妒"
 		"DOTA_Tooltip_modifier_skill_hero_tiandu_Description"	"提高护甲。"
 
-
-
-
+		"DOTA_Tooltip_ability_skill_hero_qiangxi"	"强袭"
+		"DOTA_Tooltip_ability_skill_hero_qiangxi_Description"	"快速的向敌人投掷飞戟，造成魔法伤害，并使其眩晕，如果敌人的生命值低于一定百分比直接秒杀，同时刷新强袭的冷却时间。"
+        "DOTA_Tooltip_ability_skill_hero_qiangxi_damage"	"伤害："
+		"DOTA_Tooltip_ability_skill_hero_qiangxi_stun_duration"	"眩晕时间:"
+		"DOTA_Tooltip_ability_skill_hero_qiangxi_kill_threshold_max_hp_pct" "%斩杀生命值百分比:"
+		
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"

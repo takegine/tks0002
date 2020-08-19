@@ -6608,13 +6608,13 @@
 		"AbilityTextureName"            "weiguo\ability_tiandu"
 		"ScriptFile"				    "skill/hero_tiandu.lua"
 		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-		"AbilityCastAnimation"   "ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastAnimation"         "ACT_DOTA_CAST_ABILITY_1"
 		"MaxLevel"                      "10"
 		"LevelsBetweenUpgrades"	        "1"
 		"AbilityCastRange"              "740 800 860 920 980 1040 1100 1160 1220 1280"
 		"AbilityCastPoint"              "0.3"
 		"AbilityCooldown"               "2"
-		"AbilityCooldown"	            "6 7 8 9 10 11 12 13 14 15"
+		"AbilityManaCost"	            "6 7 8 9 10 11 12 13 14 15"
 		// "precache"
 		// {
 		// 	"particle"                  "particles/units/heroes/hero_lich/lich_frost_armor.vpcf"
@@ -6663,6 +6663,90 @@
 			}
 		}
 	}
+	
+	"skill_hero_yiji"
+	{
+		"BaseClass"                     "ability_lua"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"            "weiguo/ability_yiji"
+		"ScriptFile"				    "skill/hero_yiji.lua"
+		"MaxLevel"                      "10"
+		"LevelsBetweenUpgrades"	        "1"
+		"AbilityCastRange"              "336 352 368 384 400 416 432 448 464 480"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"radius"                "336 352 368 384 400 416 432 448 464 480"
+			}
+			"02"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"ms_slow_pct"           "60"
+			}
+			"03"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"as_slow"               "30"
+			}
+			"04"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"wave_damage"           "256 640 1088 1600 2176 2816 3520 4288 5120 6016"
+			}
+			"05"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"duration"              "3"
+			}
+		}
+	}
+		"skill_hero_qiangxi"
+	{
+		"BaseClass"                     "ability_lua"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"            "weiguo/ability_qiangxi"
+		"ScriptFile"				    "skill/hero_qiangxi.lua"
+		"MaxLevel"                      "10"
+		"LevelsBetweenUpgrades"	        "1"
+		"AbilityCastRange"              "740 800 860 920 980 1040 1100 1160 1220 1280"
+		"AbilityCastPoint"              "0.3"
+		"AbilityCooldown"               "9"
+		"AbilityManaCost"	            "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"damage"                "300 600 900 1200 1500 1800 2100 2400 2700 3000"
+			}
+			"02"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"stun_duration"           "2"
+			}
+			"03"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"kill_threshold_max_hp_pct"               "11 12 13 14 15 16 17 18 19 20"
+			}
+			"04"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"projectile_speed"           "1500"
+			}
+		}
+	}
+	
 // 白喵 7-19
 	"skill_hero_yinghun"
 	{
