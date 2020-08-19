@@ -455,6 +455,8 @@
         "DOTA_Tooltip_ability_skill_hero_chengjie_Description"  "徐晃的能额外造成地系物理伤害并重创敌人，期间敌人攻击必定丢失，持续3秒。\n造成伤害：55*[(1+等级)*(等级/2)]\n冷却时间：9s"
         "DOTA_Tooltip_ability_skill_hero_duanliang" "断粮"
         "DOTA_Tooltip_ability_skill_hero_duanliang_Description" "降低周围敌人6X等级点防御力。"
+        "DOTA_Tooltip_ability_skill_hero_kurou" "苦肉"
+        "DOTA_Tooltip_ability_skill_hero_kurou_Description" "黄盖在短时间内燃烧自己提升25%X等级的攻击速度和30%+6%X等级的与移动速度，每秒对自己和周围的敌人造成黄盖最大生命值3%的火焰物理伤害，当生命值过低时将无法继续触发苦肉。"
 	
 	// ---------------------------------------------单位技能-临天-----
 		

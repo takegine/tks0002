@@ -6338,6 +6338,29 @@
 		}
 	}
 	
+	    "skill_hero_kurou"
+    {
+        "BaseClass" "ability_lua"
+        "ScriptFile"    "skill/hero_kurou.lua"
+        "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetFlags"    ""
+        "SpellImmunityType" "SPELL_IMMUNITY_ENEMIES_NO"
+        "MaxLevel"  "10"
+        "RequiredLevel" "1"
+        "LevelsBetweenUpgrades" "1"
+        "AbilityCooldown"   "2"
+        "AbilityManaCost"   "1"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"  "FIELD_INTEGER"
+                "speed" "36 42 48 54 60 66 72 88 104 110"
+            }
+        }
+    }
 
 // 临天 7-19
 	"skill_hero_example"
