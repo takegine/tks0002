@@ -538,7 +538,25 @@
         "DOTA_Tooltip_ability_skill_hero_qiangxi_damage"	"伤害："
 		"DOTA_Tooltip_ability_skill_hero_qiangxi_stun_duration"	"眩晕时间:"
 		"DOTA_Tooltip_ability_skill_hero_qiangxi_kill_threshold_max_hp_pct" "%斩杀生命值百分比:"
-		
+
+		"DOTA_Tooltip_ability_skill_hero_diane"	"典恶"
+		"DOTA_Tooltip_ability_skill_hero_diane_Description"	"典韦的武力属性提升30%。周围敌方单位阵亡会重置[强袭]的冷却时间。"
+        "DOTA_Tooltip_ability_skill_hero_diane_range"	"范围："
+
+		"DOTA_Tooltip_ability_skill_hero_dianzhu"	"典主"
+		"DOTA_Tooltip_ability_skill_hero_dianzhu_Description"	"当满足条件时，视作你获得[典凡]。"
+
+		"DOTA_Tooltip_ability_skill_hero_dianfan"	"典凡"
+		"DOTA_Tooltip_ability_skill_hero_dianfan_Description"	"典韦获得技能天神下凡，期间典韦对部分技能免疫，同时基础攻击、生命值和物理防御提升。"
+		"DOTA_Tooltip_ability_skill_hero_dianfan_duration"	"持续时间："
+		"DOTA_Tooltip_ability_skill_hero_dianfan_atk_pct"	"%基础攻击力："
+		"DOTA_Tooltip_ability_skill_hero_dianfan_hp_pct"	"%基础生命值："
+		"DOTA_Tooltip_ability_skill_hero_dianfan_addarmor"	"护甲："
+
+		"DOTA_Tooltip_modifier_skill_hero_dianfan"	"典凡"
+		"DOTA_Tooltip_modifier_skill_hero_dianfan_Description"	"魔法免疫。"
+
+
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"

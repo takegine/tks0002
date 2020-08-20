@@ -6732,7 +6732,17 @@
 			"04"
 			{
 				"var_type"              "FIELD_INTEGER"
-				"wave_damage"           "256 640 1088 1600 2176 2816 3520 4288 5120 6016"
+				"damage"           "256 640 1088 1600 2176 2816 3520 4288 5120 6016"
+			}
+			"05"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"wave_duration"              "3"
+			}
+			"05"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"slow_duration"              "3"
 			}
 			"05"
 			{
@@ -6795,6 +6805,50 @@
 			{
 				"var_type"              "FIELD_INTEGER"
 				"range"                "500"
+			}
+		}
+	}
+		"skill_hero_dianzhu"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo\ability_dianzhu"
+		"ScriptFile"	"skill/hero_dianzhu.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"1"
+	}
+		"skill_hero_dianfan"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo\ability_dianfan"
+		"ScriptFile"	"skill/hero_dianfan.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastAnimation"   "ACT_DOTA_CAST_ABILITY_1"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"30"
+		"AbilityManaCost"	"0"
+		"AbilityCastPoint"        "0"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"duration"              "9 10 11 12 13 14 15 16 17 18"
+			}
+			"02"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"atk_pct"                "30"
+			}
+			"03"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"hp_pct"                "30"
+			}
+			"04"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"addarmor"              "23 26 29 32 35 38 41 44 47 50"
 			}
 		}
 	}
