@@ -17,6 +17,7 @@
 		"DOTA_SUBSHOP_DEFENSE"			"书籍"
 		"DOTA_SUBSHOP_WEAPONS"			"饰品"
 		"DOTA_SUBSHOP_ARTIFACTS"		"阵法"
+		"dota_hud_error_secret_shop_not_in_range" "尚未开放购买"
 	// ---------------------------------------------item------
 		"DOTA_Tooltip_ability_item_weapon_qinggangjian"	"青釭剑(测试用）"
 		"DOTA_Tooltip_ability_item_jewelry_baiyuhuan"	"白玉环(测试用）"
@@ -537,11 +538,7 @@
         "DOTA_Tooltip_ability_skill_hero_qiangxi_damage"	"伤害："
 		"DOTA_Tooltip_ability_skill_hero_qiangxi_stun_duration"	"眩晕时间:"
 		"DOTA_Tooltip_ability_skill_hero_qiangxi_kill_threshold_max_hp_pct" "%斩杀生命值百分比:"
-
-		"DOTA_Tooltip_ability_skill_hero_diane"	"典恶"
-		"DOTA_Tooltip_ability_skill_hero_diane_Description"	"典韦的武力属性提升30%。周围敌方单位阵亡会重置[强袭]的冷却时间。"
-        "DOTA_Tooltip_ability_skill_hero_diane_range"	"范围："
-
+		
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"
