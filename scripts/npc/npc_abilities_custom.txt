@@ -6751,6 +6751,7 @@
 		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"            "weiguo/ability_qiangxi"
 		"ScriptFile"				    "skill/hero_qiangxi.lua"
+		"AbilityCastAnimation"         "ACT_DOTA_CAST_ABILITY_1"
 		"MaxLevel"                      "10"
 		"LevelsBetweenUpgrades"	        "1"
 		"AbilityCastRange"              "740 800 860 920 980 1040 1100 1160 1220 1280"
@@ -6781,7 +6782,22 @@
 			}
 		}
 	}
-	
+	    "skill_hero_diane"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo\ability_diane"
+		"ScriptFile"	"skill/hero_diane.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"range"                "500"
+			}
+		}
+	}
 // 白喵 7-19
 	"skill_hero_yinghun"
 	{
