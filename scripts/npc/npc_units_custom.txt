@@ -290,7 +290,7 @@
 		"Ability4"	""
 		"Ability5"	""
 		"Ability6"	""
-		"Ability7"	"skill_loseHP"
+		"Ability7"	"skill_player_loseHP"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""

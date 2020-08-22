@@ -6,88 +6,13 @@
 	"Version"		"1"
 
 // 西索 7-19
-	"skill_loseHP"
+	"skill_player_loseHP"
 	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"precache"
-		{
-			"particle"	"particles/world_outpost/world_outpost_channel_finish_embers.vpcf"
-			"particle"	"particles/units/heroes/hero_sniper/sniper_assassinate_startpoint.vpcf"
-			"soundfile"	"soundevents/music/valve_dota_001/game_sounds_music.vsndevts"
-			"particle"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate_impact.vpcf"
-		}
-		"Modifiers"
-		{
-			"modifier_skill_loseHP"
-			{
-				"Passive"	"1"
-				"IsHidden"	"0"
-				// 检查半径内是否有敌方单位，击杀他。
-				// --然后自己掉1点血，这个写在了死亡事件中
-				"OnIntervalThink"
-				{
-					"ActOnTargets"
-					{
-						"Target"
-						{
-							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Center"	"CASTER"
-							"Radius"	"%radius"
-						}
-						"Action"
-						{
-							"FireEffect"
-							{
-								"Target"	"TARGET"
-								"ControlPoints"	{}
-								"ControlPointEntities"	{}
-								"EffectName"	"particles/world_outpost/world_outpost_channel_finish_embers.vpcf"
-								"EffectAttachType"	"follow_origin"
-							}
-							"FireEffect"
-							{
-								"Target"	"TARGET"
-								"ControlPoints"	{}
-								"ControlPointEntities"	{}
-								"EffectName"	"particles/units/heroes/hero_sniper/sniper_assassinate_startpoint.vpcf"
-								"EffectAttachType"	"follow_overhead"
-							}
-							"Damage"
-							{
-								"Target"	"TARGET"
-								"Type"	"DAMAGE_TYPE_PURE"
-								"Damage"	"99999"
-							}
-							"FireSound"
-							{
-								"Target"	"TARGET"
-								"EffectName"	"valve_dota_001.music.killed"
-							}
-							"FireEffect"
-							{
-								"Target"	"TARGET"
-								"ControlPoints"	{}
-								"ControlPointEntities"	{}
-								"EffectName"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate_impact.vpcf"
-								"EffectAttachType"	"follow_origin"
-							}
-						}
-					}
-				}
-				"ThinkInterval"	"2"
-				"States"	{}
-				"Properties"	{}
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"350"
-			}
-		}
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"root/PlayerBuild.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
+		"MaxLevel"	"1"
 	}
 
 	"skill_player_price"
