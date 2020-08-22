@@ -302,7 +302,6 @@
 		"Ability16"	""
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
 		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
-		"Model"	"models/props_generic/tent_01a.vmdl"
 		"HasInventory"	"1"
 		"ConsideredHero"	"1"
 		"ModelScale"	"1.1"
