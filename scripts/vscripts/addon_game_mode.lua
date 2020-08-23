@@ -182,7 +182,6 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     -- killedUnit:GetOwner().damage_take= damage_new + killedUnit:GetOwner().damage_take or 0
 
     -- 演示实际伤害模块
-        local print_type = damtype == DAMAGE_TYPE_PHYSICAL and "物理" or damtype == DAMAGE_TYPE_MAGICAL and "魔法" or "其他"
         local type_list  = {
             none    =  "普通",
             god     =  "神",
@@ -192,12 +191,13 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
             land    =  "地",
             electrical="电"
         }
-        local messageT = "<font color='#32CD32'>"..self.namelist[killerReal:GetUnitName()].."</font> 对 <font color='#DC143C'>"..(self.namelist[killedUnit:GetUnitName()] or "未知").."</font> 造成 <font color='#FF1493'>"..type_list[killerUnit.attack_type].."</font> 系 <font color='#	#4682B4'>"..print_type.."</font> 的 <font color='#40E0D0'>"..string.format("%.2f", damage_new).."</font> 点伤害"
-        if killedUnit==killerUnit 
-        and damage_new ==0 then
-            messageT = "<font color='#FF1493'>"..type_list[killerUnit.attack_type].."</font> 系 <font color='#32CD32'>傀儡</font> 清除了"
-        end
-        GameRules:SendCustomMessage( messageT, killerUnit:GetTeamNumber(), 1)
+        local mes_sta = "<font color='#FF1493'>"..type_list[killerUnit.attack_type].."</font> 系"
+        local mes_att = "<font color='#32CD32'>"..(self.namelist[killerReal:GetUnitName()] or "未知").."</font>"
+        local mes_vim = "<font color='#DC143C'>"..(self.namelist[killedUnit:GetUnitName()] or "未知").."</font>"
+        local mes_typ = "<font color='#4682B4'>"..(damtype == DAMAGE_TYPE_PHYSICAL and "物理" or damtype == DAMAGE_TYPE_MAGICAL and "魔法" or "其他").."</font>"
+        local mes_dam = "<font color='#40E0D0'>"..string.format("%.2f", damage_new).."</font>"
+        local mes_tot = mes_att.." 对 "..mes_vim.." 造成 "..mes_sta..mes_typ.." 的 "..mes_dam.." 点伤害"
+        GameRules:SendCustomMessage( mes_tot, killerUnit:GetTeamNumber(), 1)
 
     return true
 

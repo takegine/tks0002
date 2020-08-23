@@ -43,6 +43,7 @@
     // ---------------------------------------------unit------
         "npc_dota_creature_gnoll_assassin"	"测试野怪"
         "npc_dota_hero_phoenix"				"信使"
+        "npc_damage_dummy"				    "伤害马甲"
         "npc_dota_hero_bristleback"         "张飞"
         "npc_dota_hero_brewmaster"          "魏延"
         "npc_dota_hero_beastmaster"         "孟获"
