@@ -1105,9 +1105,9 @@
 		"LevelsBetweenUpgrades"	"1"
 		"precache"
 		{
-			"particle"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
+			"particle"	"particles/units/heroes/hero_legion_commander/legion_commander_press_owner.vpcf"
 			"soundfile"	"soundevents/game_sounds_hero_pick.vsndevts"
-			"particle"	"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_disarm_ti6_debuff.vpcf"
+			"particle"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
 		}
 		"Modifiers"
 		{
@@ -1129,7 +1129,7 @@
 			"Modifier_skill_hero_paoxiao_attackspeed"
 			{
 				"IsHidden"	"1"
-				"EffectName"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
+				"EffectName"	"particles/units/heroes/hero_legion_commander/legion_commander_press_owner.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"Properties"
 				{
@@ -1147,7 +1147,7 @@
 			"modifer_skill_hero_paoxiao_debuff"
 			{
 				"IsDebuff"	"1"
-				"EffectName"	"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_disarm_ti6_debuff.vpcf"
+				"EffectName"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"Properties"
 				{
