@@ -6811,8 +6811,13 @@
 				"IsHidden"	"1"
 				"Passive"	"1"
 				"TextureName" "wuguo/ability_dimeng"
-				"OnAttack"
+				"OnAttackLanded"
 				{
+					"AttachEffect"
+					{
+						"EffectName" "particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf"
+						"Target" "TARGET"
+					}
 					"RunScript"
 					{
 						"ScriptFile"	"skill/total_miao.lua"

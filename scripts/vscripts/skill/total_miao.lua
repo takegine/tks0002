@@ -6,7 +6,7 @@
 * @Author: 白喵
 * @Date: 2020-07-21 22:49:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-08-09 13:53:12
+* @LastEditTime: 2020-08-28 17:50:00
 --]]
 
 --[[
@@ -21,6 +21,10 @@ function Dimeng(keys)
     local target = keys.target
     if ability:IsCooldownReady() then
         local GiveMana = ability:GetSpecialValueFor("reduce")
+        --local pfxname = "particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf"
+        --local pfx = ParticleManager:CreateParticle( pfxname, PATTACH_ABSORIGIN_FOLLOW, target)
+        --ParticleManager:SetParticleControl(pfx, 0, Vector(0, 0, 0))
+        --ParticleManager:ReleaseParticleIndex(pfx)
         target:ReduceMana(GiveMana)--减少目标蓝量
         ability:StartCooldown(5.0)--使技能进入冷却
     end

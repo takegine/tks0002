@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-08-04 11:19:20
 * @LastEditors: 白喵
-* @LastEditTime: 2020-08-04 14:49:17
+* @LastEditTime: 2020-08-28 18:21:59
 --]]
 skill_hero_fenxun = {}
 function skill_hero_fenxun:needwaveup()
@@ -152,4 +152,8 @@ end
 function modifier_hero_fenxun3:GetModifierAttackSpeedBonus_Constant()
     local ability = self:GetAbility()
     return ability:GetSpecialValueFor("speed")
+end
+
+function modifier_hero_fenxun3:GetEffectName()
+    return "particles/units/heroes/hero_legion_commander/legion_commander_press_owner.vpcf"
 end

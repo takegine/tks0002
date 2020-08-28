@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-08-04 15:02:47
 * @LastEditors: 白喵
-* @LastEditTime: 2020-08-04 22:40:55
+* @LastEditTime: 2020-08-28 17:41:29
 --]]
 skill_hero_saoshe = {}
 
@@ -14,7 +14,7 @@ function skill_hero_saoshe:OnSpellStart()
     local forward = self:GetCaster():GetForwardVector()
     local info = {
         Ability = self,
-        EffectName = "particles/dev/library/base_linear_projectile_model.vpcf",
+        EffectName = "particles/units/heroes/hero_drow/drow_multishot_proj_linear_proj.vpcf",
         vSpawnOrigin = self:GetCaster():GetAbsOrigin(),
         fDistance = 1000,
         fStartRadius = 64,

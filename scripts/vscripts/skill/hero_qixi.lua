@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-24 01:16:38
 * @LastEditors: 白喵
-* @LastEditTime: 2020-08-16 22:50:26
+* @LastEditTime: 2020-08-28 17:32:37
 --]]
 skill_hero_qixi = {}
 
@@ -26,8 +26,8 @@ function skill_hero_qixi:needwaveup()
     for _,unit in pairs(unitlist) do
         local unit_Position = unit:GetAbsOrigin()
         local forward = unit:GetForwardVector()
+        unit:MoveToPosition(unit_Position + forward * 1000)--若move在添加modifier后面 可能会位移失败
         unit:AddNewModifier(caster, self, "modifier_hero_qixi", {duration = 2})
-        unit:MoveToPosition(unit_Position + normal * 1000)
     end
 end
 
@@ -44,10 +44,9 @@ function modifier_hero_qixi:OnDestroy()
 end
 function modifier_hero_qixi:CheckState()
     return{
-        [MODIFIER_STATE_INVISIBLE] = true,
-        [MODIFIER_STATE_NO_UNIT_COLLISION]=true
+        [MODIFIER_STATE_INVISIBLE] = true
     }
 end
-function modifier_hero_qixi:GetTexture()
-    return "wuguo/ability_qixi"
+function modifier_hero_qixi:GetEffectName()
+    return "particles/units/heroes/hero_mirana/mirana_moonlight_recipient.vpcf"
 end
