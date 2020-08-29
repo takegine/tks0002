@@ -143,7 +143,7 @@ function modifier_skill_hero_kuanggu:OnHealReceived( params)
     local target_types = ability:GetAbilityTargetType()
     local target_flags = ability:GetAbilityTargetFlags()
     local radius = ability:GetSpecialValueFor("radius_ship")
-    local pfxname= "particles/econ/items/brewmaster/brewmaster_offhand_elixir/brewmaster_thunder_clap_elixir.vpcf"
+    local pfxname= "particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_shadowraze.vpcf"
     local clap_particle = ParticleManager:CreateParticle( pfxname, PATTACH_ABSORIGIN_FOLLOW, parent)
 	ParticleManager:SetParticleControl(clap_particle, 1, Vector(radius, radius, radius))
 	ParticleManager:ReleaseParticleIndex(clap_particle)
