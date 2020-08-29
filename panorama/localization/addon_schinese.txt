@@ -40,6 +40,14 @@
         "DOTA_CUSTOM6"	"队伍6"
         "DOTA_CUSTOM7"	"队伍7"
         "DOTA_CUSTOM8"	"队伍8"
+
+        "custom_end_screen_legend_head" "头像"
+        "custom_end_screen_legend_heal" "血量"
+        "custom_end_screen_legend_queue" "阵法"
+        "custom_end_screen_legend_level" "等级"
+        "custom_end_screen_legend_items" "装备"
+        "custom_end_screen_legend_ships" "羁绊"
+        "custom_end_screen_legend_side" "势力"
     // ---------------------------------------------unit------
         "npc_dota_creature_gnoll_assassin"	"测试野怪"
         "npc_dota_hero_phoenix"				"信使"
