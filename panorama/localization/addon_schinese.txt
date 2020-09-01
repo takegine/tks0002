@@ -30,10 +30,10 @@
         "clicktoget"	    "点击头像招募 {s：item_panel_name} "
         "Population_Sale"   " 点击花费 {d:number} 金币 来提升人口上限 "
 
-        "TKS_SIDE_wu" "东吴"
-        "TKS_SIDE_wei" "北魏"
-        "TKS_SIDE_shu" "西蜀"
-        "TKS_SIDE_qun" "群雄"
+        "TKS_SIDE_wuguo" "东吴"
+        "TKS_SIDE_weiguo" "北魏"
+        "TKS_SIDE_shuguo" "西蜀"
+        "TKS_SIDE_qunxiong" "群雄"
         "TKS_SIDE_undefined" "蛮荒"
         
         "DOTA_CUSTOM1"	"队伍1"

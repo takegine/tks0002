@@ -79,3 +79,10 @@ function DistancePointSegment( p, v, w )
 		return ( proj - p ):Length2D()
 	end
 end
+
+function CCustomNetTableManager:OverData( ... )
+    local name, id , key ,value =...
+    local nettable = self:GetTableValue( name, tostring(id))
+    nettable[key] = value
+    self:SetTableValue( name, tostring(id), nettable)
+end
