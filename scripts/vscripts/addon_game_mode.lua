@@ -282,6 +282,8 @@ function CAddonTemplateGameMode:player_chat(keys )
     -- userid	1
     -- splitscreenplayer	-1
     local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
+    local id = tostring(keys.playerid)
+    local player_info = CustomNetTables:GetTableValue( "player_info", id)
     local list = {}
     local count = 1
     for k in string.gmatch(keys.text, "%a+") do
@@ -297,13 +299,17 @@ function CAddonTemplateGameMode:player_chat(keys )
             "your SteamID x32:",
             PlayerResource:GetSteamAccountID(0)
         )
+    elseif list[1]=="side" and list[2] then
+        hero.side = list[2]
+
+        player_info.side = list[2]
+        CustomNetTables:SetTableValue( "player_info", id, player_info)
     elseif list[1]=="ship" and list[2] then
         hero.ship[list[2]]= list[3]=="true" or nil
         local shipname = self.shiplist["skill_ship_"..list[2]] or list[2]
         GameRules:SendCustomMessage( "羁绊名："..shipname.." ，已设置:"..(list[3]=="true" and "生" or "失").."效", hero:GetTeamNumber(), 1)
         herochange("waveup")
         
-        local id = tostring(keys.playerid)
         -- local encreate = function(k,v) 
         --     if v then
         --         table.insert(my_ships.ships.Hold, k)
@@ -322,7 +328,6 @@ function CAddonTemplateGameMode:player_chat(keys )
                 table.insert( shipsList.Lost, k)
             end
         end
-        local player_info = CustomNetTables:GetTableValue( "player_info", id)
         player_info.ships = shipsList
         CustomNetTables:SetTableValue( "player_info", id, player_info)
 

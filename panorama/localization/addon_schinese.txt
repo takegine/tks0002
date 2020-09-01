@@ -29,9 +29,13 @@
         "fulloftable"	    "点将台已满"
         "clicktoget"	    "点击头像招募 {s：item_panel_name} "
         "Population_Sale"   " 点击花费 {d:number} 金币 来提升人口上限 "
-        // "mode1"	"魏"
-        // "mode2"	"蜀"
-        // "mode3"	"吴"
+
+        "TKS_SIDE_wu" "东吴"
+        "TKS_SIDE_wei" "北魏"
+        "TKS_SIDE_shu" "西蜀"
+        "TKS_SIDE_qun" "群雄"
+        "TKS_SIDE_undefined" "蛮荒"
+        
         "DOTA_CUSTOM1"	"队伍1"
         "DOTA_CUSTOM2"	"队伍2"
         "DOTA_CUSTOM3"	"队伍3"
@@ -40,6 +44,7 @@
         "DOTA_CUSTOM6"	"队伍6"
         "DOTA_CUSTOM7"	"队伍7"
         "DOTA_CUSTOM8"	"队伍8"
+
 
         "custom_end_screen_legend_head" "头像"
         "custom_end_screen_legend_heal" "血量"

@@ -19,6 +19,12 @@ function skill_player_queue:OnSpellStart(  )
         self:SetLevel(level)
         caster:SpendGold( cost, DOTA_ModifyGold_PurchaseConsumable)
     end
+
+    
+    local id = tostring(player)
+    local player_info = CustomNetTables:GetTableValue( "player_info", id)
+    player_info.quelvl = level
+    CustomNetTables:SetTableValue( "player_info", id, player_info)
 end
 
 
