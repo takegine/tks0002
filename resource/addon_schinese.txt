@@ -559,6 +559,11 @@
 		"DOTA_Tooltip_modifier_skill_hero_dianfan"	"典凡"
 		"DOTA_Tooltip_modifier_skill_hero_dianfan_Description"	"魔法免疫。"
 
+		"DOTA_Tooltip_ability_skill_hero_lewei"	"典主"
+		"DOTA_Tooltip_ability_skill_hero_lewei_Description"	"乐进可获得远程生命窃取能力。"
+		"DOTA_Tooltip_ability_skill_hero_lewei_lifesteal_pct"	"%回复比例："
+
+
 
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"

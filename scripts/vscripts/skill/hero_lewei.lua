@@ -33,5 +33,8 @@ function modifier_skill_hero_lewei:OnAttackLanded(data)
             
             SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, self:GetParent(), lifesteal_pct * damage, nil)
         end
+end
 
+function modifier_skill_hero_lewei:IsHidden ()
+    return true
 end
