@@ -6644,35 +6644,10 @@
 				"var_type"              "FIELD_INTEGER"
 				"radius"                "336 352 368 384 400 416 432 448 464 480"
 			}
-			"02"
+			"0"
 			{
 				"var_type"              "FIELD_INTEGER"
-				"ms_slow_pct"           "60"
-			}
-			"03"
-			{
-				"var_type"              "FIELD_INTEGER"
-				"as_slow"               "30"
-			}
-			"04"
-			{
-				"var_type"              "FIELD_INTEGER"
-				"damage"           "256 640 1088 1600 2176 2816 3520 4288 5120 6016"
-			}
-			"05"
-			{
-				"var_type"              "FIELD_INTEGER"
-				"wave_duration"              "3"
-			}
-			"05"
-			{
-				"var_type"              "FIELD_INTEGER"
-				"slow_duration"              "3"
-			}
-			"05"
-			{
-				"var_type"              "FIELD_INTEGER"
-				"duration"              "3"
+				"damage"                "256 640 1088 1600 2176 2816 3520 4288 5120 6016"
 			}
 		}
 	}
@@ -6703,7 +6678,7 @@
 			"02"
 			{
 				"var_type"              "FIELD_INTEGER"
-				"stun_duration"           "2"
+				"stun_duration"         "2"
 			}
 			"03"
 			{
@@ -6774,6 +6749,23 @@
 			{
 				"var_type"              "FIELD_INTEGER"
 				"addarmor"              "23 26 29 32 35 38 41 44 47 50"
+			}
+		}
+	}
+		"skill_hero_lewei"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo\ability_lewei"
+		"ScriptFile"	"skill/hero_lewei.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"lifesteal_pct"         "3 6 9 12 15 18 21 24 27 30"
 			}
 		}
 	}
