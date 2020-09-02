@@ -530,8 +530,11 @@
 		"DOTA_Tooltip_ability_skill_hero_tiandu_as_slow"	"攻击速度："
 		"DOTA_Tooltip_ability_skill_hero_tiandu_duration"	"持续时间："
 
-		"DOTA_Tooltip_modifier_skill_hero_tiandu"	"天妒"
-		"DOTA_Tooltip_modifier_skill_hero_tiandu_Description"	"提高护甲。"
+		"DOTA_Tooltip_modifier_skill_hero_tiandu_buff"	"天妒"
+		"DOTA_Tooltip_modifier_skill_hero_tiandu_buff_Description"	"提高护甲 %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
+		"DOTA_Tooltip_modifier_skill_hero_tiandu_debuff"	"天妒"
+		"DOTA_Tooltip_modifier_skill_hero_tiandu_debuff_Description"  "攻击速度和移动速度降低25%"
+
 
 		"DOTA_Tooltip_ability_skill_hero_qiangxi"	"强袭"
 		"DOTA_Tooltip_ability_skill_hero_qiangxi_Description"	"快速的向敌人投掷飞戟，造成魔法伤害，并使其眩晕，如果敌人的生命值低于一定百分比直接秒杀，同时刷新强袭的冷却时间。"

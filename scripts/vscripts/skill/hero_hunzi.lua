@@ -36,6 +36,7 @@ function modifier_skill_hero_hunzi:OnTakeDamage(keys)
         parent:RemoveModifierByName("modifier_skill_hero_hunzi")
         parent:RemoveAbility("skill_hero_hunzi")
         
+        local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_huskar/huskar_inner_fire.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent )
     end
 end
 

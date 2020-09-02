@@ -5,24 +5,27 @@ skill_hero_dianfan = class({})
 
 modifier_skill_hero_dianfan = class({})
 
--- function modifier_skill_hero_dianfan:GetStatusEffectName()
--- 	return "particles/status_fx/status_effect_life_stealer_rage.vpcf"
--- end
 
 function skill_hero_dianfan:OnSpellStart()
     if IsServer() then
-    local caster=self:GetCaster()
-    local ability = self
-    local duration = ability:GetSpecialValueFor("duration")
-	self:GetCaster():Purge(false, true, false, false, false)
-    self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_skill_hero_dianfan", {duration = duration})
+        local caster=self:GetCaster()
+        local ability = self
+        local duration = ability:GetSpecialValueFor("duration")
+        self:GetCaster():Purge(false, true, false, false, false)
+        self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_skill_hero_dianfan", {duration = duration})
+
+        -- local pfx = ParticleManager:CreateParticle("particles/items_fx/black_king_bar_avatar.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+        -- ParticleManager:SetParticleControlEnt(pfx, 0, caster, PATTACH_ABSORIGIN_FOLLOW, nil, caster:GetAbsOrigin(), true)
+        -- ParticleManager:ReleaseParticleIndex(pfx)
+
     end
 
-    -- local dianfan_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_rage.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
-	-- ParticleManager:SetParticleControlEnt(dianfan_particle, 2, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetAbsOrigin(), true)
-	-- self:AddParticle(dianfan_particle, false, false, 0, true, false)
+
 end
 
+function modifier_skill_hero_dianfan:GetEffectName()
+    return "particles/items_fx/black_king_bar_avatar.vpcf"
+end
 
 function modifier_skill_hero_dianfan:OnRefresh()
     local caster=self:GetCaster()

@@ -27,7 +27,7 @@ function skill_hero_qiangxi:OnSpellStart()
             Target 				= target,
             Source 				= caster,
             Ability 			= self,
-            EffectName 			= "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf",
+            EffectName 			= "particles/units/heroes/hero_beastmaster/beastmaster_wildaxe_copy.vpcf",
             iMoveSpeed			= projectile_speed,
             bDodgeable 			= true,
             bVisibleToEnemies 	= true,

@@ -16,6 +16,8 @@ function modifier_skill_hero_tianxiang:DeclareFunctions()
     }
 end
 
+
+
 function modifier_skill_hero_tianxiang:OnTakeDamage(keys)
 
     local caster = self:GetCaster()
@@ -32,7 +34,6 @@ function modifier_skill_hero_tianxiang:OnTakeDamage(keys)
         local target_flags    = ability:GetAbilityTargetFlags() 
         local redirect_pct	  =	ability:GetLevelSpecialValueFor("redirect", (ability:GetLevel()-1))
         local redirect_damage =	keys.damage * (redirect_pct/100)
-
 
         local enemy = FindUnitsInRadius(caster:GetTeamNumber(), 
                                     caster:GetOrigin(), 
@@ -67,4 +68,6 @@ function modifier_skill_hero_tianxiang:OnTakeDamage(keys)
     end
 end
 
-
+function modifier_skill_hero_tianxiang:GetEffectName()
+    return "particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield.vpcf"
+end

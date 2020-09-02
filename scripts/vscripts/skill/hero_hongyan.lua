@@ -59,8 +59,14 @@ function modifier_skill_hero_hongyan:OnTakeDamage(keys)
                 if unit ~= caster then
                    unit:Heal(healre, parent)
                    SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, unit, healre, nil) 
+
+                   local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_chakra_magic.vpcf", PATTACH_POINT_FOLLOW,caster)
+                   ParticleManager:SetParticleControlEnt(pfx, 0,caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetAbsOrigin(), true)
+                   ParticleManager:SetParticleControl(pfx, 1, unit:GetAbsOrigin())
+                   ParticleManager:ReleaseParticleIndex(pfx)
                 end
             end 
         end 
     end 
 end    
+

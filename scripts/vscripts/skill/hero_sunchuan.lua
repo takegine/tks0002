@@ -32,9 +32,8 @@ function modifier_skill_hero_sunchuan:OnAttackLanded(keys)
 	local target_types = ability:GetAbilityTargetType()
     local target_flags = ability:GetAbilityTargetFlags()
     local damage  = parent:GetHealth() *ability:GetSpecialValueFor("damage" ) /100
-
-    print(target:GetUnitName())
-    
+    local pfxname = "particles/units/heroes/hero_phoenix/phoenix_fire_spirits_launch_bird.vpcf"
+  
     --判断是否暴击
     if keys.attacker == parent   
     and keys.original_damage/parent:GetAverageTrueAttackDamage(target)>1.05 then 
@@ -64,9 +63,15 @@ function modifier_skill_hero_sunchuan:OnAttackLanded(keys)
                 damage_flags = DOTA_DAMAGE_FLAG_NONE
             }
                 ApplyDamage(damage_table)
+                local pfx = ParticleManager:CreateParticle( "particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
+                ParticleManager:SetParticleControl(pfx, 0, Vector(160, 160, 160))
+                ParticleManager:ReleaseParticleIndex(pfx)
         end
     end
 end
+
+
+
 
 
 

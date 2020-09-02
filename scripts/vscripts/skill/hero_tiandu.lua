@@ -50,6 +50,10 @@ end
 
 modifier_skill_hero_tiandu_unstun=class({})  ---眩晕buff
 
+function modifier_skill_hero_tiandu_unstun:GetEffectName()
+    return "particles/econ/items/winter_wyvern/winter_wyvern_ti7/wyvern_cold_embrace_ti7buff.vpcf"
+end
+
 function modifier_skill_hero_tiandu_unstun:IsHidden ()
     return true
 end
@@ -72,16 +76,19 @@ function modifier_skill_hero_tiandu_buff:OnCreated()
 	self.caster = self:GetCaster()
 	self.ability = self:GetAbility()
 	self.parent = self:GetParent()
-	self.particle_frost_armor = "particles/units/heroes/hero_lich/lich_frost_armor.vpcf"
 	self.modifier_armor_debuff = "modifier_skill_hero_tiandu_debuff"
 
 	local armor_bonus = self.ability:GetSpecialValueFor("armor_bonus")
-	local frost_duration = self.ability:GetSpecialValueFor("frost_duration")
+    local frost_duration = self.ability:GetSpecialValueFor("frost_duration")
 
 end
 
 function modifier_skill_hero_tiandu_buff:IsHidden() return false end
 function modifier_skill_hero_tiandu_buff:IsDebuff() return false end
+
+function modifier_skill_hero_tiandu_buff:GetEffectName()
+    return "particles/econ/items/lanaya/ta_ti9_immortal_shoulders/ta_ti9_refraction.vpcf"
+end
 
 function modifier_skill_hero_tiandu_buff:DeclareFunctions()
 	local decFuncs = {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
