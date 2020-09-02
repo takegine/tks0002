@@ -6755,7 +6755,7 @@
 		"skill_hero_lewei"
 	{
 		"BaseClass"	"ability_lua"
-		"AbilityTextureName"	"weiguo\ability_lewei"
+		"AbilityTextureName"	"weiguo/ability_lewei"
 		"ScriptFile"	"skill/hero_lewei.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
