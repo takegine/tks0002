@@ -86,3 +86,16 @@ function CCustomNetTableManager:OverData( ... )
     nettable[key] = value
     self:SetTableValue( name, tostring(id), nettable)
 end
+
+
+function table.reduce(t,m)
+    for k, v in ipairs(t) do
+        if v == m then
+            table.remove(t, k)
+        end
+    end
+end
+
+function table.add(t,m)
+    t[#t+1] = m
+end

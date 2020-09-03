@@ -1,8 +1,17 @@
+--[[
+* @Description: 
+* @Author: 白喵
+* @Date: 2020-08-20 18:20:23
+* @LastEditors: 白喵
+* @LastEditTime: 2020-09-03 18:50:37
+--]]
 skill_hero_jianxiong = {}
 function skill_hero_jianxiong:needwaveup()
     local caster = self:GetCaster()
     self.unit_list = {}
+    caster.illusions = {}
     caster:AddNewModifier(caster, self, "modifier_hero_jianxiong",nil )
+    caster:AddNewModifier(caster, self, "modifier_illusions_death",nil )
 end
 
 
@@ -46,7 +55,10 @@ function modifier_hero_jianxiong:OnAttacked(keys)
     end
 
     parent:SpendMana(ability:GetManaCost(0),ability)
+    
     local illusions = CreateIllusions(parent, attacker, { duration = ability:GetSpecialValueFor("duration"),outgoing_damage = outgoing_damage-100 , incoming_damage = incoming_damage }, 1, 50, true, true )
+    illusions[1]:SetOwner(parent)--错误的拥有者
+    table.add(parent.illusions,illusions[1])
     if owner.ship['jianxiong'] then
         if attacker:IsRangedAttacker() then
             local duration = RandomFloat(1.0,2.0)
@@ -56,7 +68,7 @@ function modifier_hero_jianxiong:OnAttacked(keys)
             attacker:AddNewModifier(parent, ability, "modifier_hero_jianxiong2", { duration = duration })
         end
     end
-    ability.unit_list[#ability.unit_list+1] = attacker
+    table.add(ability.unit_list,attacker)
 end
 
 
@@ -72,4 +84,28 @@ function modifier_hero_jianxiong2:CheckState()
     else
         return {[MODIFIER_STATE_NIGHTMARED] = true}
     end
+end
+
+
+
+LinkLuaModifier("modifier_illusions_death", "skill/hero_jianxiong.lua", 0)
+modifier_illusions_death = {}
+function modifier_illusions_death:DeclareFunctions()
+    return {
+        MODIFIER_EVENT_ON_DEATH
+    }
+end
+
+function modifier_illusions_death:IsHidden()
+    return true
+end
+
+
+function modifier_illusions_death:OnDeath(keys)
+    local ability = self:GetAbility()
+    local parent = self:GetParent()
+    if keys.unit:GetOwner() ~= ability:GetCaster() or parent ~= ability:GetCaster() then
+        return
+    end
+    table.reduce(parent.illusions,keys.unit)--移除已经被释放对象的table
 end

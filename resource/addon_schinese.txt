@@ -614,6 +614,8 @@
 		"DOTA_Tooltip_ability_skill_hero_jianxiong_Description" "每次受到攻击需要消耗魔法值，从而产生一个与攻击者一模一样的幻象，幻象拥有攻击者部分攻击能力，幻象会额外承受伤害，每名敌人只能发动一次奸雄。"		
 		"DOTA_Tooltip_ability_skill_hero_jianxiong_duration" "幻象持续时间"		
 		"DOTA_Tooltip_ability_skill_hero_jianxiong_outgoing_damage" "%幻象攻击力:"
+		"DOTA_Tooltip_modifier_skill_hero_jianxiong" "奸雄之风"
+		"DOTA_Tooltip_modifier_skill_hero_jianxiong2" "奸雄之风"
 		"DOTA_Tooltip_ability_skill_hero_hujia" "护驾"
 		"DOTA_Tooltip_ability_skill_hero_hujia_Description" "每有一名友军魏国武将存在时，可增加周围友军单位护甲值"
 		"DOTA_Tooltip_ability_skill_hero_hujia_radius" "范围:"

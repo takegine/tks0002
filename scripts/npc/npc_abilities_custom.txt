@@ -7127,7 +7127,7 @@
 			}
 		}	
 	}
-		"skill_hero_yizhong"
+	"skill_hero_yizhong"
 	{
 		"BaseClass"			"ability_lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -7154,4 +7154,12 @@
 			}
 		}		
 	}
+	"skill_hero_caokong"
+	{
+		"BaseClass"			"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE|DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"		"10"
+		"LevelsBetweenUpgrades"		"1"
+		"ScriptFile"	"skill/hero_caokong.lua"
+	}	
 }
