@@ -6309,6 +6309,20 @@
 		"RequiredLevel"	"1"
 		"LevelsBetweenUpgrades"	"1"
 	}
+		"skill_hero_fankui"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo/ability_fankui"
+		"ScriptFile"	"skill/hero_fankui.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetFlags"	""
+		"SpellImmunityType"	""
+		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+	}
 
 // 临天 7-19
 	"skill_hero_example"
