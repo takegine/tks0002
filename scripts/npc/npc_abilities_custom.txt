@@ -6298,6 +6298,17 @@
         "RequiredLevel" "1"
         "LevelsBetweenUpgrades" "1"
     }
+		"skill_hero_jiuyuan"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_jiuyuan.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"MaxLevel"	"1"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+	}
 
 // 临天 7-19
 	"skill_hero_example"
