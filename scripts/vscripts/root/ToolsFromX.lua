@@ -88,14 +88,18 @@ function CCustomNetTableManager:OverData( ... )
 end
 
 
+-- function table.reduce(t,m)
+--     for k, v in ipairs(t) do
+--         if v == m then
+--             table.remove(t,k)
+--         end
+--     end
+-- end
+--迭代必须反向 否则remove会造成 k指向错误
 function table.reduce(t,m)
-    for k, v in ipairs(t) do
-        if v == m then
-            table.remove(t, k)
+    for i = #t, 1, -1 do
+        if t[i] == m then
+            table.remove(t, i)
         end
     end
-end
-
-function table.add(t,m)
-    t[#t+1] = m
 end

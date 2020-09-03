@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-08-20 18:20:23
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-03 18:50:37
+* @LastEditTime: 2020-09-03 20:22:14
 --]]
 skill_hero_jianxiong = {}
 function skill_hero_jianxiong:needwaveup()
@@ -49,7 +49,6 @@ function modifier_hero_jianxiong:OnAttacked(keys)
     if owner.ship['xianying'] then
         incoming_damage = incoming_damage/2--承受伤害减半
     end
-    print(parent:GetMana())
     if parent:GetMana() < 8 then--判断蓝量是否足够
         return
     end
@@ -58,7 +57,7 @@ function modifier_hero_jianxiong:OnAttacked(keys)
     
     local illusions = CreateIllusions(parent, attacker, { duration = ability:GetSpecialValueFor("duration"),outgoing_damage = outgoing_damage-100 , incoming_damage = incoming_damage }, 1, 50, true, true )
     illusions[1]:SetOwner(parent)--错误的拥有者
-    table.add(parent.illusions,illusions[1])
+    table.insert(parent.illusions,illusions[1])
     if owner.ship['jianxiong'] then
         if attacker:IsRangedAttacker() then
             local duration = RandomFloat(1.0,2.0)
@@ -68,7 +67,7 @@ function modifier_hero_jianxiong:OnAttacked(keys)
             attacker:AddNewModifier(parent, ability, "modifier_hero_jianxiong2", { duration = duration })
         end
     end
-    table.add(ability.unit_list,attacker)
+    table.insert(ability.unit_list,attacker)
 end
 
 

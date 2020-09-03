@@ -58,7 +58,7 @@ function modifier_skill_hero_yiji_blizzard:OnCreated()
     self.target_flags = ability:GetAbilityTargetFlags()
     self:OnIntervalThink()
     self:StartIntervalThink(1)
-    print_r(self)
+    --print_r(self)
     end
 end
 
