@@ -1,6 +1,5 @@
 
 LinkLuaModifier("modifier_skill_hero_longdan",'skill/hero_longdan.lua',0)
---LinkLuaModifier("modifier_skill_hero_longdan_baoji",'skill/hero_longdan.lua',0)
 LinkLuaModifier("modifier_skill_hero_longdan_unstun",'skill/hero_longdan.lua',0)
 LinkLuaModifier("modifier_skill_hero_longdan_addspeed",'skill/hero_longdan.lua',0)
 
@@ -37,7 +36,7 @@ function modifier_skill_hero_longdan_addspeed:DeclareFunctions()
 end
 
 function modifier_skill_hero_longdan_addspeed:GetModifierMoveSpeedBonus_Constant()
-	return 100
+	return 250
 end
 
 
@@ -57,21 +56,6 @@ function modifier_skill_hero_longdan:GetModifierPreAttack_CriticalStrike()
 	local chance =ability:GetSpecialValueFor('chance')
 	return RollPercentage(chance) and 200 or 0
 end
-
-
--- function modifier_skill_hero_longdan:OnAttackStart(keys)
--- 	local ability=self:GetAbility()
--- 	local caster=self:GetCaster()
--- 	local chance=ability:GetLevelSpecialValueFor('chance',ability:GetLevel()-1)
-
--- 	if RollPercentage(chance) then
-
--- 		if keys.attacker ~= caster then  --判断攻击者是否为赵云
--- 			return
--- 		end
--- 		caster:AddNewModifier(caster,ability,"modifier_skill_hero_longdan_baoji",{})      
--- 	end
--- end
 
 
 function modifier_skill_hero_longdan:GetModifierEvasion_Constant()
@@ -113,14 +97,15 @@ modifier_skill_hero_longdan_baoji=class({}) --暴击伤害
 function modifier_skill_hero_longdan_baoji:DeclareFunctions()
 	return{
 	MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
-	MODIFIER_EVENT_ON_ATTACK_LANDED
+	MODIFIER_EVENT_ON_ATTACK_FINISHED
 }
 end
 
 function modifier_skill_hero_longdan_baoji:GetModifierPreAttack_CriticalStrike()
 	return 200
 end
-function modifier_skill_hero_longdan_baoji:OnAttackLanded() --攻击命中  移除修饰器
+
+function modifier_skill_hero_longdan_baoji:OnAttackFinished() --攻击命中  移除修饰器
 
 	local caster=self:GetCaster()
 	local parent=self:GetParent()
