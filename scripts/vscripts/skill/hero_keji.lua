@@ -10,8 +10,9 @@ function skill_hero_keji:OnSpellStart()
 local caster=self:GetCaster()
 local ability=self
 local owner  = caster:GetOwner() or {ship={}}  
-
-
+local saoshe = parent:AddAbility("skill_hero_saoshe")
+  
+caster:EmitSound("Hero_Abaddon.DeathCoil.Cast")
 caster:AddNewModifier(caster, ability, 'modifier_skill_hero_keji', {duration=1.5})
 
 if owner.ship['siying']  then
@@ -23,14 +24,13 @@ end
 end
 
 
-
-
-
 modifier_skill_hero_keji=class({})
 
 function modifier_skill_hero_keji:DeclareFunctions()
     return{
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+        MODIFIER_EVENT_ON_ATTACK_START,
+        MODIFIER_EVENT_ON_ABILITY_EXECUTED
     }
 end
 
@@ -44,6 +44,32 @@ function modifier_skill_hero_keji:CheckState()
 }      return state
 end
 
+function modifier_skill_hero_keji:OnAttackStart(keys)
+
+    local parent=self:GetParent()
+    if keys.attacker~=parent then return end
+    parent:RemoveModifierByName("modifier_skill_hero_keji")
+    parent:RemoveModifierByName("modifier_skill_hero_keji_wudi")
+end
+
+function modifier_skill_hero_keji:OnAbilityExecuted(keys)
+    
+    local parent=self:GetParent()
+    if keys.caster~=parent then return end
+    parent:RemoveModifierByName("modifier_skill_hero_keji")
+    parent:RemoveModifierByName("modifier_skill_hero_keji_wudi")
+ end
+
+function modifier_skill_hero_keji:GetEffectName()
+    return
+        'particles/generic_hero_status/status_invisibility_start.vpcf'  
+end
+
+function modifier_skill_hero_keji:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end
+
+
 modifier_skill_hero_keji_wudi=class({})
 
 function modifier_skill_hero_keji_wudi:CheckState()
@@ -51,3 +77,4 @@ function modifier_skill_hero_keji_wudi:CheckState()
     [MODIFIER_STATE_INVULNERABLE]=true,
 }   return state
 end
+
