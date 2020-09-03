@@ -457,10 +457,13 @@
         "DOTA_Tooltip_ability_skill_hero_duanliang" "断粮"
         "DOTA_Tooltip_ability_skill_hero_duanliang_Description" "降低周围敌人6X等级点防御力。"
         "DOTA_Tooltip_ability_skill_hero_kurou" "苦肉"
-        "DOTA_Tooltip_ability_skill_hero_kurou_Description" "黄盖在短时间内燃烧自己提升25%X等级的攻击速度和30%+6%X等级的与移动速度，每秒对自己和周围的敌人造成黄盖最大生命值3%的火焰物理伤害，当生命值过低时将无法继续触发苦肉。"
-	
+        "DOTA_Tooltip_ability_skill_hero_kurou_Description" "黄盖在短时间内燃烧自己提升25%X等级的攻击速度和30%+6%X等级的与移动速度，每秒对自己和周围的敌人造成黄盖最大生命值3%的火焰物理伤害，当生命值过低时将无法继续触发苦肉。"	
         "DOTA_Tooltip_ability_skill_hero_sunchu"    "孙出"
         "DOTA_Tooltip_ability_skill_hero_sunchu_Description"    "出生入死\n每当孙权受到伤害时都可将所有伤害转移至附近的周泰身上，多个周泰之间可以平摊此次伤害。"
+		"DOTA_Tooltip_ability_skill_hero_jiuyuan"	"救援"
+		"DOTA_Tooltip_ability_skill_hero_jiuyuan_Description"	"每有一名友军吴国武将存在时，可增加周围友军单位2%生命窃取，近战窃取效果减半。"
+		"DOTA_Tooltip_ability_skill_hero_fankui"	"反馈"
+		"DOTA_Tooltip_ability_skill_hero_fankui_Description"	"周围的队友受到攻击时有一定的概率虚弱你的敌人，在3秒内攻击速度和移动速度下降25%。\n反馈概率：(20+等级*3)\n范围：900"
 
 	// ---------------------------------------------单位技能-临天-----
 		
