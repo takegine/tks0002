@@ -38,6 +38,7 @@ function modifier_skill_hero_chongzhen_heal:OnAttackLanded(keys)
 
 		heal=heal*1.5
 	end
+	
 	caster:Heal(heal,caster)
 
 	SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, parent, heal, nil)
@@ -47,22 +48,15 @@ function modifier_skill_hero_chongzhen_heal:OnAttackLanded(keys)
 	target:AddNewModifier(target,ability,"modifier_skill_hero_chongzhen_unstun",{Duration=1})
 		
 	end
+
 	end
-	return 20
+
 	end
 
 modifier_skill_hero_chongzhen_unstun=class({})  ---眩晕buff
 
 function modifier_skill_hero_chongzhen_unstun:IsHidden ()
     return true
-end
-
-function modifier_skill_hero_chongzhen_unstun:IsDebuff()
-	return  true
-end
-
-function modifier_skill_hero_chongzhen_unstun:IsStunDebuff()
-	return  true
 end
 
 function modifier_skill_hero_chongzhen_unstun:CheckState()
