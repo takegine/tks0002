@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-24 01:16:38
 * @LastEditors: 白喵
-* @LastEditTime: 2020-08-28 17:32:37
+* @LastEditTime: 2020-09-05 19:04:53
 --]]
 skill_hero_qixi = {}
 
@@ -23,7 +23,7 @@ function skill_hero_qixi:needwaveup()
                 FIND_ANY_ORDER,
                 false
             )
-    for _,unit in pairs(unitlist) do
+    for _,unit in ipairs(unitlist) do
         local unit_Position = unit:GetAbsOrigin()
         local forward = unit:GetForwardVector()
         unit:MoveToPosition(unit_Position + forward * 1000)--若move在添加modifier后面 可能会位移失败
