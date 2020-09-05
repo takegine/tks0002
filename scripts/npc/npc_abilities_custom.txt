@@ -7265,6 +7265,13 @@
 		"LevelsBetweenUpgrades"		"1"
 		"ScriptFile"	"skill/hero_caoe.lua"
 	}
-
-		
+	"skill_hero_zhangsi"
+	{
+		"BaseClass"		"ability_lua"
+		//"AbilityTextureName"		"wuguo/ability_fenwei"
+		"MaxLevel"		"10"
+		"LevelsBetweenUpgrades"		"1"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE|DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"ScriptFile"	"skill/hero_zhangsi.lua"
+	}
 }
