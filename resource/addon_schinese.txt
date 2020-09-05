@@ -562,9 +562,21 @@
 		"DOTA_Tooltip_modifier_skill_hero_dianfan"	"典凡"
 		"DOTA_Tooltip_modifier_skill_hero_dianfan_Description"	"魔法免疫。"
 
-		"DOTA_Tooltip_ability_skill_hero_lewei"	"典主"
+		"DOTA_Tooltip_ability_skill_hero_lewei"	"乐威"
 		"DOTA_Tooltip_ability_skill_hero_lewei_Description"	"乐进可获得远程生命窃取能力。"
 		"DOTA_Tooltip_ability_skill_hero_lewei_lifesteal_pct"	"%回复比例："
+
+		"DOTA_Tooltip_ability_skill_hero_lewu"	"乐五"
+		"DOTA_Tooltip_ability_skill_hero_lewu_Description"	"每次攻击对敌人额外造成基于当前生命值木系物理伤害，对BOSS最多造成（等级*100）点的木系物理伤害，当敌人生命值低于一定数值时将击毁敌人身上装备的所有宝物。"
+		"DOTA_Tooltip_ability_skill_hero_lewu_damage"	"%当前生命值："
+		"DOTA_Tooltip_ability_skill_hero_lewu_hp_pct"	"%生命值百分比："
+
+
+		"DOTA_Tooltip_ability_skill_hero_xiaoguo"	"骁果"
+		"DOTA_Tooltip_ability_skill_hero_xiaoguo_Description"	"攻击将发射多枚箭矢攻击敌人，额外攻击有30%几率触发攻击特效（攻击特效暂时未做）。"
+		"DOTA_Tooltip_ability_skill_hero_xiaoguo_arrow_count"	"箭矢数量："
+        "DOTA_Tooltip_ability_skill_hero_xiaoguo_split_radius"  "分裂范围："
+
 
 
 

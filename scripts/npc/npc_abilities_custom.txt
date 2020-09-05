@@ -6794,6 +6794,76 @@
 			}
 		}
 	}
+		"skill_hero_lewu"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo\ability_lewu"
+		"ScriptFile"	"skill/hero_lewu.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"MaxLevel"	"1"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"damage"         "8"
+			}
+			"02"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"hp_pct"         "75"
+			}
+		}	
+	}
+        "skill_hero_xiaoguo"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"skill/hero_xiaoguo.lua"
+		"AbilityTextureName"			"weiguo\ability_xiaoguo"
+		"MaxLevel"	"10"
+		"MaxLevel"	"1"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		// "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		// "AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"arrow_count"         "3 3 3 3 4 4 4 4 5 5"
+			}
+			"02"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"split_radius"         "350 400 450 500 550 600 650 700 750 800"
+			}
+		}
+	}
+	// 	"special_bonus_split_shot_modifiers"
+	// {
+	// 	"BaseClass"						"special_bonus_undefined"
+	// 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	// 	"LinkedAbility"
+	// 	{
+	// 		"01" 	"skill_hero_xiaoguo"
+	// 	}
+	// 	"AbilitySpecial"
+	// 	{
+	// 		"01"
+	// 		{
+	// 			"var_type"					"FIELD_INTEGER"
+	// 			"value"						"1"
+	// 		}
+	// 	}
+	// }
+	
 // 白喵 7-19
 	"skill_hero_yinghun"
 	{

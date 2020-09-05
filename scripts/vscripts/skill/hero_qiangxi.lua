@@ -42,6 +42,9 @@ function skill_hero_qiangxi:OnSpellStart()
     end 
 end
 
+function skill_hero_qiangxi:CastFilterResultTarget( target )
+	return UnitFilter(target, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, self:GetCaster():GetTeamNumber())
+end
 
 function skill_hero_qiangxi:OnProjectileHit_ExtraData(target, location, ExtraData)
 	if not target then
@@ -75,6 +78,18 @@ function skill_hero_qiangxi:OnProjectileHit_ExtraData(target, location, ExtraDat
     if (target:GetHealth()/target:GetMaxHealth() <= self.kill_threshold_max_hp_pct ) then
         self:GetCursorTarget():Kill(self, self.caster)
         if (target:IsHero()) then
+            ability:EndCooldown()
+        end
+        
+        if (target:IsCreep()) then
+            ability:EndCooldown()
+        end
+
+        if (target:IsBoss()) then
+            ability:EndCooldown()
+        end
+
+        if (target:IsIllusion()) then
             ability:EndCooldown()
         end
     end
