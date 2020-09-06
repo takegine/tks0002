@@ -641,6 +641,13 @@
 		"DOTA_Tooltip_ability_skill_hero_yizhong_tree" "%木系伤害减少百分比:"
 		"DOTA_Tooltip_ability_skill_hero_yizhong_fire" "%火系伤害减少百分比:"
 		"DOTA_Tooltip_ability_skill_hero_yizhong_electrical" "%电系伤害减少百分比:"
+		"DOTA_Tooltip_ability_skill_hero_luoyi" "裸衣"
+		"DOTA_Tooltip_ability_skill_hero_luoyi_Description" "一段时间内提升许褚攻击力，但防御力下降，且当许褚生命值低于60%时获得额外攻击速度加成"
+		"DOTA_Tooltip_ability_skill_hero_luoyi_duration" "持续时间:"
+		"DOTA_Tooltip_ability_skill_hero_luoyi_attack" "提升攻击力:"
+		"DOTA_Tooltip_ability_skill_hero_luoyi_reduceDef" "护甲减少:"
+		"DOTA_Tooltip_ability_skill_hero_luoyi_speed" "额外攻速:"
+		"DOTA_Tooltip_modifier_hero_luoyi" "裸衣"
 	// ---------------------------------------------其他------
 		"DOTA_Tooltip_modifier_skill_ship_hufu"	"虎父无犬女"
 		"DOTA_Tooltip_modifier_skill_ship_yiqidangqian"	"一骑当千"

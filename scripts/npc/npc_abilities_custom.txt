@@ -7274,4 +7274,38 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE|DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"ScriptFile"	"skill/hero_zhangsi.lua"
 	}
+	"skill_hero_luoyi"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"12"
+		"AbilityManaCost" "1"
+		"AbilityTextureName" "weiguo/ability_luoyi"
+		"ScriptFile"	"skill/hero_luoyi.lua"	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"attack"			"100 360 675 1075 1550 2100 2725 3425 4200 5050"
+			}			
+			"02"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"reduceDef"			"5 10 15 20 25 30 35 40 45 50"
+			}	
+			"03"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"speed"				"60"
+			}				
+			"04"
+			{
+						"var_type"			"FIELD_FLOAT"
+						"duration"			"9.0"
+			}				
+		}
+	}
 }
