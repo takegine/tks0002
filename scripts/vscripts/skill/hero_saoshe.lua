@@ -3,13 +3,20 @@
 * @Author: 白喵
 * @Date: 2020-08-04 15:02:47
 * @LastEditors: 白喵
-* @LastEditTime: 2020-08-28 17:41:29
+* @LastEditTime: 2020-09-06 21:21:11
 --]]
 skill_hero_saoshe = {}
 
 function skill_hero_saoshe:OnSpellStart()
     if not IsServer() then
         return
+    end
+    local caster = self:GetCaster()
+    if caster:HasModifier("modifier_skill_hero_keji_wudi") then
+        caster:RemoveModifierByName("modifier_skill_hero_keji_wudi")
+    end
+    if caster:HasModifier("modifier_skill_hero_keji") then
+        caster:RemoveModifierByName("modifier_skill_hero_keji")
     end
     local forward = self:GetCaster():GetForwardVector()
     local info = {
