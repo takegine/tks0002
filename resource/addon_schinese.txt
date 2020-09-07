@@ -464,7 +464,13 @@
 		"DOTA_Tooltip_ability_skill_hero_jiuyuan_Description"	"每有一名友军吴国武将存在时，可增加周围友军单位2%生命窃取，近战窃取效果减半。"
 		"DOTA_Tooltip_ability_skill_hero_fankui"	"反馈"
 		"DOTA_Tooltip_ability_skill_hero_fankui_Description"	"周围的队友受到攻击时有一定的概率虚弱你的敌人，在3秒内攻击速度和移动速度下降25%。\n反馈概率：(20+等级*3)\n范围：900"
-
+		"DOTA_Tooltip_ability_skill_hero_guicai"	"鬼才"
+		"DOTA_Tooltip_ability_skill_hero_guicai_Description"	"增加1200范围内队友15+3X等级点防御力"
+		"DOTA_Tooltip_modifier_skill_hero_guicai_2"	""
+		"DOTA_Tooltip_modifier_skill_hero_guicai_2_Description"	""
+		"DOTA_Tooltip_modifier_skill_hero_guicai"	"鬼才"
+		"DOTA_Tooltip_modifier_skill_hero_guicai_Description"	"该单位获得鬼才效果，防御力提升"
+		
 	// ---------------------------------------------单位技能-临天-----
 		
 		"DOTA_Tooltip_ability_skill_hero_sunjiang"	"孙江"
