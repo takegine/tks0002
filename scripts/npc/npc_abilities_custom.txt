@@ -6382,6 +6382,18 @@
 		"LevelsBetweenUpgrades"	"1"
 	}
 
+	"skill_hero_sishuang"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_sishuang.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	""
+		"AbilityUnitTargetTeam"	""
+		"MaxLevel"	"1"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"10"
+	}
+
 // 临天 7-19
 	"skill_hero_example"
 	{

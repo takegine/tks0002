@@ -472,6 +472,9 @@
 		"DOTA_Tooltip_modifier_skill_hero_guicai_Description"	"该单位获得鬼才效果，防御力提升"
 		"DOTA_Tooltip_ability_skill_hero_fangzhu"	"放逐"
 		"DOTA_Tooltip_ability_skill_hero_fangzhu_Description"	"每秒扣除周围敌人魔法值。"
+		"DOTA_Tooltip_ability_skill_hero_sishuang"	"司双"
+		"DOTA_Tooltip_ability_skill_hero_sishuang_Description"	"己方单位每次受到攻击都将对敌人造成当前生命值3%点的火焰魔法伤害"
+		
 		
 	// ---------------------------------------------单位技能-临天-----
 		
