@@ -470,6 +470,8 @@
 		"DOTA_Tooltip_modifier_skill_hero_guicai_2_Description"	""
 		"DOTA_Tooltip_modifier_skill_hero_guicai"	"鬼才"
 		"DOTA_Tooltip_modifier_skill_hero_guicai_Description"	"该单位获得鬼才效果，防御力提升"
+		"DOTA_Tooltip_ability_skill_hero_fangzhu"	"放逐"
+		"DOTA_Tooltip_ability_skill_hero_fangzhu_Description"	"每秒扣除周围敌人魔法值。"
 		
 	// ---------------------------------------------单位技能-临天-----
 		
