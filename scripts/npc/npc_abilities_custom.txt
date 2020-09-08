@@ -6411,6 +6411,37 @@
 		"RequiredLevel"	"1"
 		"LevelsBetweenUpgrades"	"10"
 	}
+	"skill_hero_jieming"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_jieming.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"heal"	"9 36 72 117 171 234 306 387 477 576"
+			}
+		}
+	}
+		"skill_hero_xingshang"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_xingshang.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"50"
+	}
 
 	// 临天 7-19
 	"skill_hero_example"

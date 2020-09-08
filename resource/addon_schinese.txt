@@ -467,6 +467,8 @@
 		"DOTA_Tooltip_ability_skill_hero_sishuang_Description"	"己方单位每次受到攻击都将对敌人造成当前生命值3%点的火焰魔法伤害"
 		"DOTA_Tooltip_ability_skill_hero_jieming"	"节命"
 		"DOTA_Tooltip_ability_skill_hero_jieming_Description"	"增加周围360范围内友军单位9点的生命回复速度，同时在友军单位受到伤害时有10%的概率能够恢复其最大生命值7%的生命值。"
+		"DOTA_Tooltip_ability_skill_hero_xingshang"	"行殇"
+		"DOTA_Tooltip_ability_skill_hero_xingshang_Description"	"当曹丕濒临死亡时将在短时间内处于假死状态（无敌），生命回复，同时防御力获得提升。"
 		// ---------------------------------------------单位技能-临天-----
 		"DOTA_Tooltip_ability_skill_hero_sunjiang"	"孙江"
 		"DOTA_Tooltip_ability_skill_hero_sunjiang_Description"	"孙策可以获得一定比例的近战分裂能力"
