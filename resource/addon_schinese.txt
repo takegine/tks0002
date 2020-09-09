@@ -640,6 +640,12 @@
 		"DOTA_Tooltip_ability_skill_hero_luoyi_reduceDef"	"护甲减少:"
 		"DOTA_Tooltip_ability_skill_hero_luoyi_speed"	"额外攻速:"
 		"DOTA_Tooltip_modifier_hero_luoyi"	"裸衣"
+		"DOTA_Tooltip_ability_skill_hero_quhu" "驱虎"
+		"DOTA_Tooltip_ability_skill_hero_quhu_Description" "荀彧对一名敌人施加驱虎效果，使其在6秒内减少一定的的攻击速度和移动速度，非武将（非英雄）单位的驱虎效果会持续到战斗结束。"
+		"DOTA_Tooltip_ability_skill_hero_quhu_duration" "持续时间:"
+		"DOTA_Tooltip_ability_skill_hero_quhu_attack_speed" "%攻击速度减少:"
+		"DOTA_Tooltip_ability_skill_hero_quhu_move_speed" "%移动速度减少:"
+		"DOTA_Tooltip_modifier_hero_quhu" "驱虎"
 		// ---------------------------------------------其他------
 		"DOTA_Tooltip_modifier_skill_ship_hufu"	"虎父无犬女"
 		"DOTA_Tooltip_modifier_skill_ship_yiqidangqian"	"一骑当千"

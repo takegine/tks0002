@@ -6,7 +6,7 @@
 * @Author: 白喵
 * @Date: 2020-07-21 22:49:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-08-28 17:50:00
+* @LastEditTime: 2020-09-09 15:42:34
 --]]
 
 --[[
@@ -33,7 +33,7 @@ end
 
 function fenwei(keys)
     local target_list = keys.target_entities
-    for _,unit in pairs(target_list) do
+    for _,unit in ipairs(target_list) do
         --unit:Purge(true, false, false, false, true)
         print(unit:GetUnitName())
         if unit:IsSummoned() then
@@ -45,9 +45,33 @@ function fenwei(keys)
     end
 end
 
-
-function p_kv(keys)
-    for k,v in pairs(keys) do
-        print(k,v)
+function add_quhu(keys)
+    local unit = keys.target
+    local ability = keys.ability
+    if unit:IsHero() then
+        ability:ApplyDataDrivenModifier(keys.caster, unit, "modifier_hero_quhu", {duration = ability:GetSpecialValueFor("duration")})
+    else
+        ability:ApplyDataDrivenModifier(keys.caster, unit, "modifier_hero_quhu", nil)
     end
+end
+
+function quhu(keys)
+    local owner = keys.caster:GetOwner() or {ship={}}
+    if not owner.ship['quhu'] then
+        return
+    end
+    local unitlist = keys.target_entities
+    local ability = keys.ability
+    local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
+    dummy.attack_type  = "water"
+    for _,unit in ipairs(unitlist) do
+        local info ={
+            attacker     = dummy,
+            victim       = unit,
+            damage_type  = DAMAGE_TYPE_MAGICAL,
+            damage       = ability:GetSpecialValueFor("damage")
+        }
+        ApplyDamage(info)
+    end
+    dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 end
