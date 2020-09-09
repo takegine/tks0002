@@ -28,6 +28,7 @@ local ability = self:GetAbility()
 local owner  = caster:GetOwner() or {ship={}}
 local heal=caster:GetMaxHealth()*4/100  
 local dur=caster:GetLevel()+2
+local target_flags=ability:GetAbilityTargetFlags()
 
 if owner.ship['jianxiong']  then 
     heal=caster:GetMaxHealth()*49/100  
@@ -55,8 +56,23 @@ end )
     caster:AddNewModifier(caster,ability,"modifier_xingshang_armor",{})
 end )
 
-end
+else if keys.damage>=caster:GetHealth() and not ability:IsCooldownReady()   then
+    print(caster:GetUnitName())
 
+    local enemy = FindUnitsInRadius(caster:GetTeamNumber(), 
+    caster:GetOrigin(), 
+    nil, 
+    2000,
+    DOTA_UNIT_TARGET_TEAM_ENEMY, 
+    DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+    target_flags, 
+    0, 
+    true)
+    for k,v in pairs(enemy) do
+    v:RemoveModifierByName('modifier_songwei')
+    end
+end
+end
 end
 
 
