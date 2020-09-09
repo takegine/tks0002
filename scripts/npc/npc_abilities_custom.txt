@@ -7496,4 +7496,13 @@
 			}
 		}
 	}
+	
+	"skill_hero_xue"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_xue.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE|DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+	}
 }
