@@ -6442,6 +6442,16 @@
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCooldown"	"50"
 	}
+	    "skill_hero_songwei"
+    {
+        "BaseClass" "ability_lua"
+        "AbilityTextureName"    "weiguo/ability_songwei"
+        "ScriptFile"    "skill/hero_songwei.lua"
+        "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "SpellImmunityType" "SPELL_IMMUNITY_ENEMIES_NO"
+    }
 
 	// 临天 7-19
 	"skill_hero_example"
