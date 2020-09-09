@@ -20,7 +20,7 @@ function skill_hero_sunchu_takedamage:DeclareFunctions()
 end
 
 function skill_hero_sunchu_takedamage:OnTakeDamage(keys)
-print('ontakedamage')
+
     local ability=self:GetAbility()
     local caster = self:GetCaster()
     local parent=self:GetParent()
@@ -53,7 +53,6 @@ print('ontakedamage')
 
     if #zhoutailist>=1  then  
 
-    print('heal')
 
     parent:Heal(keys.damage*1.4, caster)
 
