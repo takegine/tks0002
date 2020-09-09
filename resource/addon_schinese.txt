@@ -550,10 +550,31 @@
 		"DOTA_Tooltip_ability_skill_hero_xiaoguo"	"骁果"
 		"DOTA_Tooltip_ability_skill_hero_xiaoguo_Description"	"攻击将发射多枚箭矢攻击敌人，额外攻击有30%几率触发攻击特效（攻击特效暂时未做）。"
 		"DOTA_Tooltip_ability_skill_hero_xiaoguo_arrow_count"	"箭矢数量："
+<<<<<<< Updated upstream
 		"DOTA_Tooltip_ability_skill_hero_xiaoguo_split_radius"	"分裂范围："
 		// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2"	"不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng"	"缔盟"
+=======
+        "DOTA_Tooltip_ability_skill_hero_xiaoguo_split_radius"  "分裂范围："
+
+	    "DOTA_Tooltip_ability_skill_hero_weimu"	"帷幕"
+		"DOTA_Tooltip_ability_skill_hero_weimu_Description"	"贾诩对魔法免疫。"
+
+		"DOTA_Tooltip_ability_skill_hero_wansha"	"完杀"
+		"DOTA_Tooltip_ability_skill_hero_wansha_Description"	"降低周围范围内敌方武将的攻击速度，同时影响范围内敌方武将生命值低于35%时无法回复生命值。"
+		"DOTA_Tooltip_ability_skill_hero_wansha_radius"	"范围:"
+		"DOTA_Tooltip_ability_skill_hero_wansha_as_slow"	"攻击速度："
+
+		"DOTA_Tooltip_modifier_hero_wansha_debuff" "完杀"
+		"DOTA_Tooltip_modifier_hero_wansha_debuff_Description" "攻击速度降低 %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%% "
+
+
+
+	// ---------------------------------------------单位技能-白喵-----
+		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
+		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"
+>>>>>>> Stashed changes
 		"DOTA_Tooltip_ability_skill_hero_dimeng"	"缔盟"
 		"DOTA_Tooltip_ability_skill_hero_dimeng_Description"	"射出一道能量波从而消耗掉目标单位的魔法值"
 		"DOTA_Tooltip_ability_skill_hero_dimeng_reduce"	"魔法值:"

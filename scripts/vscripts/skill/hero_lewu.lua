@@ -42,7 +42,6 @@ function modifier_skill_hero_lewu:OnAttackLanded(keys)
         target:RemoveItem(target:GetItemInSlot(2))
         target:RemoveItem(target:GetItemInSlot(3))
         target:RemoveItem(target:GetItemInSlot(4))
-        target:RemoveItem(target:GetItemInSlot(5))
 
     end 
 

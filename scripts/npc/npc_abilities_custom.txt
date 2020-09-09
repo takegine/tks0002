@@ -6988,7 +6988,45 @@
 	// 		}
 	// 	}
 	// }
+<<<<<<< Updated upstream
 	// 白喵 7-19
+=======
+		"skill_hero_weimu"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo\ability_weimu"
+		"ScriptFile"	"skill/hero_weimu.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+	}
+	    "skill_hero_wansha"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"ScriptFile"	"skill/hero_wansha.lua"
+		"AbilityTextureName"	"wuguo\ability_wansha"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE "
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"425 450 475 500 525 550 575 600 625 650"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"as_slow"			"13 16 19 22 25 28 31 34 37 40"
+			}
+		}
+	}
+// 白喵 7-19
+>>>>>>> Stashed changes
 	"skill_hero_yinghun"
 	{
 		"BaseClass"	"ability_lua"
