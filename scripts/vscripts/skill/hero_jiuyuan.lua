@@ -30,10 +30,12 @@ function skill_hero_jiuyuan:needwaveup()
             namelist[v:GetUnitName()]=true
             count = count + 1
         end
-        v:AddNewModifier(caster, self, 'modifier_skill_hero_jiuyuan', {duration=50})
+     --   v:AddNewModifier(caster, self, 'modifier_skill_hero_jiuyuan', {duration=50})
     end
     self.count = count
-print(count)
+    for k,v in pairs(friend) do 
+        v:AddNewModifier(caster, self, 'modifier_skill_hero_jiuyuan', {duration=50})
+    end
 
 end
 
@@ -64,11 +66,13 @@ function modifier_skill_hero_jiuyuan:OnAttackLanded(keys)
         local count   = ability.count
 		--local target_armor = 0.06 *target:GetPhysicalArmorValue(false)
         local healre  = damage*2*count/100 --* (1 - target_armor/(1+math.abs( target_armor)))
-        
+
+        if not parent:IsRangedAttacker() then healre=healre/2 end
 
         parent:Heal(healre, parent)
      --   caster:Heal(healre*2, parent)
-
+     SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, parent, healre, nil)
+     
 		local lifesteal_particle = "particles/generic_gameplay/generic_lifesteal.vpcf"
 		local lifesteal_pfx = ParticleManager:CreateParticle(lifesteal_particle, PATTACH_ABSORIGIN_FOLLOW, parent)
 		ParticleManager:SetParticleControl(lifesteal_pfx, 0, parent:GetAbsOrigin())
