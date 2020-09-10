@@ -362,8 +362,6 @@
 		"DOTA_Tooltip_ability_skill_hero_junzizhijiao"	"君子之交"
 		"DOTA_Tooltip_ability_skill_hero_kongbuhaojiao"	"恐怖嚎叫"
 		"DOTA_Tooltip_ability_skill_hero_kongbuhaojiao_Description"	"发出恐怖的嚎叫，降低周围敌单位的攻击力25%，10秒。"
-		"DOTA_Tooltip_ability_skill_hero_luanwu"	"乱武"
-		"DOTA_Tooltip_ability_skill_hero_luanwu_Description"	"贾诩对敌人造成344:3441点的单体伤害和688:6882点的范围伤害，同时能在3秒内减慢敌人的25%攻击速度和50%移动速度。"
 		"DOTA_Tooltip_ability_skill_hero_qingnang"	"青囊"
 		"DOTA_Tooltip_ability_skill_hero_qingnang_Description"	"每次弹射都会削弱医疗波25%的医疗能力,召唤出一道能弹射7次的医疗能量波，对首个目标能治疗330点的生命值。\n每次弹射都会削弱医疗波25%的医疗能力,召唤出一道能弹射7次的医疗能量波，对首个目标能治疗605点的生命值。\n每次弹射都会削弱医疗波25%的医疗能力,召唤出一道能弹射7次的医疗能量波，对首个目标能治疗935点的生命值。"
 		"DOTA_Tooltip_ability_skill_hero_shanghanzbl"	"B伤寒杂病论"
@@ -552,12 +550,6 @@
 		"DOTA_Tooltip_ability_skill_hero_xiaoguo"	"骁果"
 		"DOTA_Tooltip_ability_skill_hero_xiaoguo_Description"	"攻击将发射多枚箭矢攻击敌人，额外攻击有30%几率触发攻击特效（攻击特效暂时未做）。"
 		"DOTA_Tooltip_ability_skill_hero_xiaoguo_arrow_count"	"箭矢数量："
-<<<<<<< Updated upstream
-		"DOTA_Tooltip_ability_skill_hero_xiaoguo_split_radius"	"分裂范围："
-		// ---------------------------------------------单位技能-白喵-----
-		"DOTA_Tooltip_modifier_skill_hero_buqu2"	"不屈"
-		"DOTA_Tooltip_modifier_hero_dimeng"	"缔盟"
-=======
         "DOTA_Tooltip_ability_skill_hero_xiaoguo_split_radius"  "分裂范围："
 
 	    "DOTA_Tooltip_ability_skill_hero_weimu"	"帷幕"
@@ -571,12 +563,18 @@
 		"DOTA_Tooltip_modifier_hero_wansha_debuff" "完杀"
 		"DOTA_Tooltip_modifier_hero_wansha_debuff_Description" "攻击速度降低 %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%% "
 
+		"DOTA_Tooltip_ability_skill_hero_luanwu"	"乱武"
+		"DOTA_Tooltip_ability_skill_hero_luanwu_Description"	"贾诩对敌人造成344~3441点的单体伤害和688~6882点的范围伤害，同时能在3秒内减慢敌人的25%%攻击速度和50%%移动速度。"
+		"DOTA_Tooltip_modifier_luanwu_debuff"	"乱舞"
+		"DOTA_Tooltip_modifier_luanwu_debuff_Description"	"降低25%%攻击速度和50%%移动速度"
+		"DOTA_Tooltip_modifier_luanwu_du_debuff"	"毒士之谋"
+		"DOTA_Tooltip_modifier_luanwu_du_debuff_Description"	"每秒造成一定的伤害，不致死"
+
 
 
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"
->>>>>>> Stashed changes
 		"DOTA_Tooltip_ability_skill_hero_dimeng"	"缔盟"
 		"DOTA_Tooltip_ability_skill_hero_dimeng_Description"	"射出一道能量波从而消耗掉目标单位的魔法值"
 		"DOTA_Tooltip_ability_skill_hero_dimeng_reduce"	"魔法值:"

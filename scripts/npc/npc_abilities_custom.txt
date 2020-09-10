@@ -6814,6 +6814,7 @@
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
@@ -6965,6 +6966,26 @@
 		"MaxLevel"	"1"
 		// "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		// "AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		
+		// 	"special_bonus_split_shot_modifiers"
+		// {
+		// 	"BaseClass"						"special_bonus_undefined"
+		// 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// 	"LinkedAbility"
+		// 	{
+		// 		"01" 	"skill_hero_xiaoguo"
+		// 	}
+		// 	"AbilitySpecial"
+		// 	{
+		// 		"01"
+		// 		{
+		// 			"var_type"					"FIELD_INTEGER"
+		// 			"value"						"1"
+		// 		}
+		// 	}
+		// }
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -6980,27 +7001,6 @@
 		}
 	}
 
-	// 	"special_bonus_split_shot_modifiers"
-	// {
-	// 	"BaseClass"						"special_bonus_undefined"
-	// 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-	// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	// 	"LinkedAbility"
-	// 	{
-	// 		"01" 	"skill_hero_xiaoguo"
-	// 	}
-	// 	"AbilitySpecial"
-	// 	{
-	// 		"01"
-	// 		{
-	// 			"var_type"					"FIELD_INTEGER"
-	// 			"value"						"1"
-	// 		}
-	// 	}
-	// }
-<<<<<<< Updated upstream
-	// 白喵 7-19
-=======
 		"skill_hero_weimu"
 	{
 		"BaseClass"	"ability_lua"
@@ -7010,6 +7010,7 @@
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 	}
+
 	    "skill_hero_wansha"
 	{
 		"BaseClass"	"ability_lua"
@@ -7035,8 +7036,23 @@
 			}
 		}
 	}
+
+		"skill_hero_luanwu"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo/ability_luanwu"
+		"ScriptFile"	"skill/hero_luanwu.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"12"
+	}
 // 白喵 7-19
->>>>>>> Stashed changes
 	"skill_hero_yinghun"
 	{
 		"BaseClass"	"ability_lua"
