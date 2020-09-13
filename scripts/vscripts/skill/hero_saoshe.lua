@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-08-04 15:02:47
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-06 21:21:11
+* @LastEditTime: 2020-09-13 21:48:29
 --]]
 skill_hero_saoshe = {}
 
@@ -37,10 +37,10 @@ function skill_hero_saoshe:OnSpellStart()
     }
     local angle = 0
     local func = function()
-        info.vVelocity = self:revolve(forward,angle)*1000
+        info.vVelocity = VectorRevolve(forward,angle)*1000
         ProjectileManager:CreateLinearProjectile(info)
         for var = 1,5 do
-            info.vVelocity = self:revolve(info.vVelocity,60)
+            info.vVelocity = VectorRevolve(info.vVelocity,60)
             ProjectileManager:CreateLinearProjectile(info)
         end
         angle = angle - 15
@@ -76,12 +76,6 @@ end
 
 
 
-function skill_hero_saoshe:revolve(vector,angle)--向量平面逆时针旋转
-    local x = vector.x*math.cos(math.rad(angle))-vector.y*math.sin(math.rad(angle))
-    local y = vector.x*math.sin(math.rad(angle))+vector.y*math.cos(math.rad(angle))
-    local z = vector.z
-    return Vector(x,y,z)
-end
 
 
 LinkLuaModifier("modifier_hero_saoshe", "skill/hero_saoshe.lua", 0)

@@ -103,3 +103,10 @@ function table.reduce(t,m)
         end
     end
 end
+
+function VectorRevolve(vector,angle)--向量平面逆时针旋转
+    local x = vector.x*math.cos(math.rad(angle))-vector.y*math.sin(math.rad(angle))
+    local y = vector.x*math.sin(math.rad(angle))+vector.y*math.cos(math.rad(angle))
+    local z = vector.z
+    return Vector(x,y,z)
+end
