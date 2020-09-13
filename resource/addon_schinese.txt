@@ -469,6 +469,8 @@
 		"DOTA_Tooltip_ability_skill_hero_xingshang_Description"	"当曹丕濒临死亡时将在短时间内处于假死状态（无敌），生命回复，同时防御力获得提升。"
 		"DOTA_Tooltip_ability_skill_hero_songwei"	"颂威"
 		"DOTA_Tooltip_ability_skill_hero_songwei_Description"	"每有一名友军魏国武将存在时，可降低周围敌方单位3%移动速度。"
+		"DOTA_Tooltip_ability_skill_hero_maqian"	"马千"
+		"DOTA_Tooltip_ability_skill_hero_maqian_Description"	"一骑当千:\n马岱的攻击速度提升（+等级*5%%）。"
 		// ---------------------------------------------单位技能-临天-----
 		"DOTA_Tooltip_ability_skill_hero_sunjiang"	"孙江"
 		"DOTA_Tooltip_ability_skill_hero_sunjiang_Description"	"孙策可以获得一定比例的近战分裂能力"
@@ -570,17 +572,6 @@
 		"DOTA_Tooltip_modifier_luanwu_debuff_Description"	"降低25%%攻击速度和50%%移动速度"
 		"DOTA_Tooltip_modifier_luanwu_du_debuff"	"毒士之谋"
 		"DOTA_Tooltip_modifier_luanwu_du_debuff_Description"	"每秒造成一定的伤害，不致死"
-<<<<<<< Updated upstream
-
-		"DOTA_Tooltip_ability_skill_hero_tuxi"	"突袭"
-		"DOTA_Tooltip_ability_skill_hero_tuxi_Description"	"对一条直线上的敌人造成伤害，同时眩晕敌人。"
-		"DOTA_Tooltip_ability_skill_hero_tuxi_stun_duration"	"眩晕时间:"
-		"DOTA_Tooltip_ability_skill_hero_tuxi_damage"	"伤害："
-
-	// ---------------------------------------------单位技能-白喵-----
-		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
-		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"
-=======
 		// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2"	"不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng"	"缔盟"
@@ -589,7 +580,6 @@
 		// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2"	"不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng"	"缔盟"
->>>>>>> Stashed changes
 		"DOTA_Tooltip_ability_skill_hero_dimeng"	"缔盟"
 		"DOTA_Tooltip_ability_skill_hero_dimeng_Description"	"射出一道能量波从而消耗掉目标单位的魔法值"
 		"DOTA_Tooltip_ability_skill_hero_dimeng_reduce"	"魔法值:"
@@ -708,5 +698,6 @@
 		"DOTA_Tooltip_modifier_skill_hero_lieren_3_Description"	""
 		"DOTA_Tooltip_modifier_item_sphere_target"	""
 		"DOTA_Tooltip_modifier_item_sphere_target_Description"	""
+
 	}
 }
