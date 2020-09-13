@@ -19,20 +19,15 @@ end
 
 function modifier_skill_hero_jiang_attack:OnAttackLanded(keys)
 
-
-
     local ability=self:GetAbility()
     local parent=self:GetParent()
 	local caster=self:GetCaster()
     local heal=keys.damage*ability:GetLevel()*3/100
     local modName = 'modifier_skill_hero_jiang_juedou'
-	if  keys.attacker == parent  
-	and keys.original_damage/parent:GetAverageTrueAttackDamage( keys.target )>1.05 then
-    
-        local count = caster:GetAttackDamage() *(ability:GetLevel() *3 +20) /100
-        caster:AddNewModifier(caster, ability, modName,{})  
-        caster:SetModifierStackCount( modName, caster , count)
-        caster:Heal(heal,caster)
+    if  keys.attacker == parent  and keys.original_damage/parent:GetAverageTrueAttackDamage( keys.target )>1.05 
+    then
+    caster:AddNewModifier(caster, ability, modName,{})  
+    caster:Heal(heal,caster)    
    end
 end
 
@@ -40,12 +35,17 @@ end
 
 modifier_skill_hero_jiang_juedou=class({})   --决斗加攻击
 
+function modifier_skill_hero_jiang_juedou:IsHidden()
+    return true 
+end
+
 function modifier_skill_hero_jiang_juedou:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
+    return {        
+        MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
     }
 end
 
-function modifier_skill_hero_jiang_juedou:GetModifierPreAttack_BonusDamage()
-    return self:GetStackCount()
+function modifier_skill_hero_jiang_juedou:GetModifierDamageOutgoing_Percentage()
+    local ability=self:GetAbility()
+    return  ability:GetLevel()*3+15
 end
