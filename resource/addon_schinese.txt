@@ -570,7 +570,10 @@
 		"DOTA_Tooltip_modifier_luanwu_du_debuff"	"毒士之谋"
 		"DOTA_Tooltip_modifier_luanwu_du_debuff_Description"	"每秒造成一定的伤害，不致死"
 
-
+		"DOTA_Tooltip_ability_skill_hero_tuxi"	"突袭"
+		"DOTA_Tooltip_ability_skill_hero_tuxi_Description"	"对一条直线上的敌人造成伤害，同时眩晕敌人。"
+		"DOTA_Tooltip_ability_skill_hero_tuxi_stun_duration"	"眩晕时间:"
+		"DOTA_Tooltip_ability_skill_hero_tuxi_damage"	"伤害："
 
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"

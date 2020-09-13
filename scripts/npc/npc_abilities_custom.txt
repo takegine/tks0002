@@ -6785,7 +6785,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
@@ -7037,6 +7037,7 @@
 		}
 	}
 
+
 		"skill_hero_luanwu"
 	{
 		"BaseClass"	"ability_lua"
@@ -7052,6 +7053,64 @@
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCooldown"	"12"
 	}
+
+		"skill_hero_tuxi"
+	{	
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"weiguo/ability_tuxi"
+		"ScriptFile"					"skill/hero_tuxi.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS|DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"						"10"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"				"9"
+		"AbilityManaCost"				"3 4 5 6 7 8 9 10 11 12"
+		"AbilityCastRange"				"640"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"125"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"length"			"640"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"2000"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spawn_distance"	"30"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"regen"				"6 7 8 9 10 11 12 13 14 15"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stun_duration"		"1 1 1 2 2 2 3 3 3 4"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"80 288 560 896 1296 1760 2288 2880 3536 4256"
+			}
+		}
+	}	
 // 白喵 7-19
 	"skill_hero_yinghun"
 	{
