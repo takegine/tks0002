@@ -5,13 +5,18 @@ LinkLuaModifier("modifier_skill_hero_liegong",'skill/hero_liegong.lua',0)
 LinkLuaModifier("modifier_skill_hero_baoji",'skill/hero_liegong.lua',0)
 
 
-skill_hero_liegong=class({})  --声明一个技能 
+skill_hero_liegong=class({})  
 
-function skill_hero_liegong:GetIntrinsicModifierName()  --声明技能实践  技能释放
+function skill_hero_liegong:GetIntrinsicModifierName()  
     return "modifier_skill_hero_liegong"
 end
 
 modifier_skill_hero_liegong = {}
+
+function modifier_skill_hero_liegong:IsHidden()
+    return true
+end
+
 function modifier_skill_hero_liegong:DeclareFunctions()
     return {
         MODIFIER_EVENT_ON_ATTACK_START
@@ -24,34 +29,26 @@ function modifier_skill_hero_liegong:OnAttackStart(keys)
     local chance=33
     local owner  = caster:GetOwner() or {ship={}}
 
-    if keys.attacker~=caster 
-    or not IsServer()
-    then return 
-    end
+    if keys.attacker~=caster  or not IsServer()  then return   end
 
     if  owner.ship['wuhu'] then
         chance = chance * 2
     end    
  
-
     if RollPercentage(chance) then
     caster:AddNewModifier(caster, ability , 'modifier_skill_hero_baoji', {})  -- 添加修饰器的目标：add（施法着，技能，修饰器名称，持续时间）
     end
     
     if owner.ship['feihuo'] then 
-        
+
         local damage_type  = ability:GetAbilityDamageType()
         local target_team  = ability:GetAbilityTargetTeam()
         local target_types = ability:GetAbilityTargetType()
         local target_flags = ability:GetAbilityTargetFlags()
          
-
         local list = caster.juji_amountlist
-        if list and #list ~= 0 then
-        
-            local rollenemyint = RandomInt(1, #list)  --随机一个数 在1到地方数量之间
-            
-   
+        if list and #list ~= 0 then       
+            local rollenemyint = RandomInt(1, #list)  --随机一个数 在1到地方数量之间  
             local rollenmey = list[rollenemyint]
 
             local  damage_table = {
@@ -61,7 +58,6 @@ function modifier_skill_hero_liegong:OnAttackStart(keys)
             damage       = 128*ability:GetLevel()
             }
             ApplyDamage(damage_table)
-
             rollenmey:AddNewModifier(caster, ability , 'modifier_skill_hero_feihuo_unstun', {duration=0.5}) 
      
         end
@@ -71,6 +67,10 @@ end
 
 
 modifier_skill_hero_baoji=class({})
+
+function modifier_skill_hero_baoji:IsHidden()
+    return true
+end
 
 function modifier_skill_hero_baoji:DeclareFunctions()
     return{
@@ -87,12 +87,9 @@ function modifier_skill_hero_baoji:GetModifierPreAttack_CriticalStrike()
 
     if owner.ship['wuhu']  then 
         return  200+level*15
-
     else 
         return  200+level*10
-
     end
-
 end
 
 function modifier_skill_hero_baoji:OnAttackLanded()
@@ -104,6 +101,10 @@ end
 
 
 modifier_skill_hero_feihuo_unstun=class({})  ---眩晕buff
+
+function modifier_skill_hero_feihuo_unstun:IsHidden()
+    return true
+end
 
 function modifier_skill_hero_feihuo_unstun:IsDebuff()
 	return  true

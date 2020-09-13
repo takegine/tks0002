@@ -48,7 +48,7 @@ end
 
 function modifier_skill_hero_juji:GetEffectName()
     return
-        'particles/units/heroes/hero_slardar/slardar_amp_damage.vpcf'     
+        'particles/units/heroes/hero_sniper/sniper_crosshair.vpcf'     
 end
 
 function modifier_skill_hero_juji:GetEffectAttachType()

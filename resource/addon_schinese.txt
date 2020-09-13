@@ -446,7 +446,7 @@
 		"DOTA_Tooltip_ability_skill_hero_duanliang"	"断粮"
 		"DOTA_Tooltip_ability_skill_hero_duanliang_Description"	"降低周围敌人6X等级点防御力。"
 		"DOTA_Tooltip_ability_skill_hero_kurou"	"苦肉"
-		"DOTA_Tooltip_ability_skill_hero_kurou_Description"	"黄盖在短时间内燃烧自己提升25%X等级的攻击速度和30%+6%X等级的与移动速度，每秒对自己和周围的敌人造成黄盖最大生命值3%的火焰物理伤害，当生命值过低时将无法继续触发苦肉。"
+		"DOTA_Tooltip_ability_skill_hero_kurou_Description"	"黄盖在短时间内燃烧自己提升25%%*等级的攻击速度和30%%+6X等级的移动速度，每秒对自己和周围的敌人造成黄盖最大生命值3%%的火焰物理伤害，当生命值过低时将无法继续触发苦肉。"
 		"DOTA_Tooltip_ability_skill_hero_sunchu"	"孙出"
 		"DOTA_Tooltip_ability_skill_hero_sunchu_Description"	"出生入死\n每当孙权受到伤害时都可将所有伤害转移至附近的周泰身上，多个周泰之间可以平摊此次伤害。"
 		"DOTA_Tooltip_ability_skill_hero_jiuyuan"	"救援"
@@ -467,8 +467,8 @@
 		"DOTA_Tooltip_ability_skill_hero_jieming_Description"	"增加周围360范围内友军单位9点的生命回复速度，同时在友军单位受到伤害时有10%的概率能够恢复其最大生命值7%的生命值。"
 		"DOTA_Tooltip_ability_skill_hero_xingshang"	"行殇"
 		"DOTA_Tooltip_ability_skill_hero_xingshang_Description"	"当曹丕濒临死亡时将在短时间内处于假死状态（无敌），生命回复，同时防御力获得提升。"
-		"DOTA_Tooltip_ability_skill_hero_songwei"   "颂威"
-        "DOTA_Tooltip_ability_skill_hero_songwei_Description"   "每有一名友军魏国武将存在时，可降低周围敌方单位3%移动速度。"
+		"DOTA_Tooltip_ability_skill_hero_songwei"	"颂威"
+		"DOTA_Tooltip_ability_skill_hero_songwei_Description"	"每有一名友军魏国武将存在时，可降低周围敌方单位3%移动速度。"
 		// ---------------------------------------------单位技能-临天-----
 		"DOTA_Tooltip_ability_skill_hero_sunjiang"	"孙江"
 		"DOTA_Tooltip_ability_skill_hero_sunjiang_Description"	"孙策可以获得一定比例的近战分裂能力"
@@ -550,25 +550,27 @@
 		"DOTA_Tooltip_ability_skill_hero_xiaoguo"	"骁果"
 		"DOTA_Tooltip_ability_skill_hero_xiaoguo_Description"	"攻击将发射多枚箭矢攻击敌人，额外攻击有30%几率触发攻击特效（攻击特效暂时未做）。"
 		"DOTA_Tooltip_ability_skill_hero_xiaoguo_arrow_count"	"箭矢数量："
-        "DOTA_Tooltip_ability_skill_hero_xiaoguo_split_radius"  "分裂范围："
-
-	    "DOTA_Tooltip_ability_skill_hero_weimu"	"帷幕"
+		"DOTA_Tooltip_ability_skill_hero_xiaoguo_split_radius"	"分裂范围："
+		"DOTA_Tooltip_ability_skill_hero_weimu"	"帷幕"
 		"DOTA_Tooltip_ability_skill_hero_weimu_Description"	"贾诩对魔法免疫。"
-
+		"DOTA_Tooltip_ability_skill_hero_xiaoguo_split_radius"	"分裂范围："
+		// ---------------------------------------------单位技能-白喵-----
+		"DOTA_Tooltip_modifier_skill_hero_buqu2"	"不屈"
+		"DOTA_Tooltip_modifier_hero_dimeng"	"缔盟"
+		"DOTA_Tooltip_ability_skill_hero_xiaoguo_split_radius"	"分裂范围："
 		"DOTA_Tooltip_ability_skill_hero_wansha"	"完杀"
 		"DOTA_Tooltip_ability_skill_hero_wansha_Description"	"降低周围范围内敌方武将的攻击速度，同时影响范围内敌方武将生命值低于35%时无法回复生命值。"
 		"DOTA_Tooltip_ability_skill_hero_wansha_radius"	"范围:"
 		"DOTA_Tooltip_ability_skill_hero_wansha_as_slow"	"攻击速度："
-
-		"DOTA_Tooltip_modifier_hero_wansha_debuff" "完杀"
-		"DOTA_Tooltip_modifier_hero_wansha_debuff_Description" "攻击速度降低 %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%% "
-
+		"DOTA_Tooltip_modifier_hero_wansha_debuff"	"完杀"
+		"DOTA_Tooltip_modifier_hero_wansha_debuff_Description"	"攻击速度降低 %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%% "
 		"DOTA_Tooltip_ability_skill_hero_luanwu"	"乱武"
 		"DOTA_Tooltip_ability_skill_hero_luanwu_Description"	"贾诩对敌人造成344~3441点的单体伤害和688~6882点的范围伤害，同时能在3秒内减慢敌人的25%%攻击速度和50%%移动速度。"
 		"DOTA_Tooltip_modifier_luanwu_debuff"	"乱舞"
 		"DOTA_Tooltip_modifier_luanwu_debuff_Description"	"降低25%%攻击速度和50%%移动速度"
 		"DOTA_Tooltip_modifier_luanwu_du_debuff"	"毒士之谋"
 		"DOTA_Tooltip_modifier_luanwu_du_debuff_Description"	"每秒造成一定的伤害，不致死"
+<<<<<<< Updated upstream
 
 		"DOTA_Tooltip_ability_skill_hero_tuxi"	"突袭"
 		"DOTA_Tooltip_ability_skill_hero_tuxi_Description"	"对一条直线上的敌人造成伤害，同时眩晕敌人。"
@@ -578,6 +580,16 @@
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"
+=======
+		// ---------------------------------------------单位技能-白喵-----
+		"DOTA_Tooltip_modifier_skill_hero_buqu2"	"不屈"
+		"DOTA_Tooltip_modifier_hero_dimeng"	"缔盟"
+		"DOTA_Tooltip_modifier_hero_wansha_debuff"	"完杀"
+		"DOTA_Tooltip_modifier_hero_wansha_debuff_Description"	"攻击速度降低 %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%% "
+		// ---------------------------------------------单位技能-白喵-----
+		"DOTA_Tooltip_modifier_skill_hero_buqu2"	"不屈"
+		"DOTA_Tooltip_modifier_hero_dimeng"	"缔盟"
+>>>>>>> Stashed changes
 		"DOTA_Tooltip_ability_skill_hero_dimeng"	"缔盟"
 		"DOTA_Tooltip_ability_skill_hero_dimeng_Description"	"射出一道能量波从而消耗掉目标单位的魔法值"
 		"DOTA_Tooltip_ability_skill_hero_dimeng_reduce"	"魔法值:"
@@ -643,12 +655,12 @@
 		"DOTA_Tooltip_ability_skill_hero_luoyi_reduceDef"	"护甲减少:"
 		"DOTA_Tooltip_ability_skill_hero_luoyi_speed"	"额外攻速:"
 		"DOTA_Tooltip_modifier_hero_luoyi"	"裸衣"
-		"DOTA_Tooltip_ability_skill_hero_quhu" "驱虎"
-		"DOTA_Tooltip_ability_skill_hero_quhu_Description" "荀彧对一名敌人施加驱虎效果，使其在6秒内减少一定的的攻击速度和移动速度，非武将（非英雄）单位的驱虎效果会持续到战斗结束。"
-		"DOTA_Tooltip_ability_skill_hero_quhu_duration" "持续时间:"
-		"DOTA_Tooltip_ability_skill_hero_quhu_attack_speed" "%攻击速度减少:"
-		"DOTA_Tooltip_ability_skill_hero_quhu_move_speed" "%移动速度减少:"
-		"DOTA_Tooltip_modifier_hero_quhu" "驱虎"
+		"DOTA_Tooltip_ability_skill_hero_quhu"	"驱虎"
+		"DOTA_Tooltip_ability_skill_hero_quhu_Description"	"荀彧对一名敌人施加驱虎效果，使其在6秒内减少一定的的攻击速度和移动速度，非武将（非英雄）单位的驱虎效果会持续到战斗结束。"
+		"DOTA_Tooltip_ability_skill_hero_quhu_duration"	"持续时间:"
+		"DOTA_Tooltip_ability_skill_hero_quhu_attack_speed"	"%攻击速度减少:"
+		"DOTA_Tooltip_ability_skill_hero_quhu_move_speed"	"%移动速度减少:"
+		"DOTA_Tooltip_modifier_hero_quhu"	"驱虎"
 		// ---------------------------------------------其他------
 		"DOTA_Tooltip_modifier_skill_ship_hufu"	"虎父无犬女"
 		"DOTA_Tooltip_modifier_skill_ship_yiqidangqian"	"一骑当千"
@@ -696,6 +708,5 @@
 		"DOTA_Tooltip_modifier_skill_hero_lieren_3_Description"	""
 		"DOTA_Tooltip_modifier_item_sphere_target"	""
 		"DOTA_Tooltip_modifier_item_sphere_target_Description"	""
-
 	}
 }

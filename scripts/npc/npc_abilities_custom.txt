@@ -191,6 +191,7 @@
 			{
 				"ScriptFile"	"testworking.lua"
 				"Function"	"wow"
+				"Target"	""
 			}
 		}
 	}
@@ -331,6 +332,7 @@
 					{
 						"ScriptFile"	"skill/hero_wusheng.lua"
 						"Function"	"wusheng"
+						"Target"	""
 					}
 				}
 				"IsHidden"	"1"
@@ -776,6 +778,7 @@
 					{
 						"ScriptFile"	"skill/total_xisuo"
 						"Function"	"fangquan_destroy"
+						"Target"	""
 					}
 				}
 			}
@@ -1254,6 +1257,7 @@
 					{
 						"ScriptFile"	"skill/total_xisuo"
 						"Function"	"wuji"
+						"Target"	""
 					}
 				}
 				"IsHidden"	"1"
@@ -5702,39 +5706,6 @@
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCooldown"	"6"
 		"AbilityManaCost"	"5 6 7 8 9 10 11 12 13 14 15"
-		"precache"
-		{
-			"particle"	"particles/econ/events/winter_major_2016/blink_dagger_wm_end_smoke.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
-			"particle"	"particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
-		}
-		"Modifiers"
-		{
-			"modifier_smoke_screen"
-			{
-				"Duration"	"3"
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						// fix sound!
-						"EffectName"	"Hero_Riki.Smoke_Screen"
-						"Target"	"CASTER"
-					}
-					"AttachEffect"
-					{
-						"EffectName"	"particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"	"TARGET"
-						"ControlPoints"
-						{
-							"00"	"0 0 0"
-							"01"	"%radius %radius %radius"
-						}
-					}
-				}
-			}
-		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -5965,8 +5936,8 @@
 			"soundfile"	"sounds/weapons/hero/enigma/black_hole_loop.vsnd"
 			"soundfile"	"sounds/weapons/hero/enigma/black_hole_stop.vsnd"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
-			"particle"	"particles/units/heroes/hero_enigma/enigma_blackhole.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
+			"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_ward_create.vpcf"
 		}
 		"OnSpellStart"
 		{
@@ -6012,17 +5983,6 @@
 						"EffectName"	"Hero_Enigma.Black_Hole"
 						"Target"	"CASTER"
 					}
-					"AttachEffect"
-					{
-						"EffectName"	"particles/units/heroes/hero_enigma/enigma_blackhole.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"	"CASTER"
-						"ControlPoints"
-						{
-							"00"	"0 0 0"
-							"01"	"%far_radius %far_radius %far_radius"
-						}
-					}
 					"RunScript"
 					{
 						"ScriptFile"	"scripts/vscripts/skill/hero_tianyi.lua"
@@ -6046,6 +6006,12 @@
 						"ScriptFile"	"scripts/vscripts/skill/hero_tianyi.lua"
 						"Function"	"MoveUnits"
 						"Target"	""
+					}
+					"AttachEffect"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"particles/units/heroes/hero_juggernaut/juggernaut_ward_create.vpcf"
+						"EffectAttachType"	"attach_origin"
 					}
 				}
 				"_IsAura"	"1"
@@ -6291,14 +6257,24 @@
 		"MaxLevel"	"10"
 		"RequiredLevel"	"1"
 		"LevelsBetweenUpgrades"	"1"
-		"AbilityCooldown"	"2"
+		"AbilityCooldown"	""
 		"AbilityManaCost"	"1"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"speed"	"36 42 48 54 60 66 72 88 104 110"
+				"attackspeed"	"25 50 75 100 125 150 175 200 225 250"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"movespeed"	"36 42 48 54 60 66 72 78 84 90"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"cooldown"	"25 24 23 22 21 20 19 18 17 16"
 			}
 		}
 	}
@@ -6411,6 +6387,7 @@
 		"RequiredLevel"	"1"
 		"LevelsBetweenUpgrades"	"10"
 	}
+
 	"skill_hero_jieming"
 	{
 		"BaseClass"	"ability_lua"
@@ -6430,7 +6407,8 @@
 			}
 		}
 	}
-		"skill_hero_xingshang"
+
+	"skill_hero_xingshang"
 	{
 		"BaseClass"	"ability_lua"
 		"ScriptFile"	"skill/hero_xingshang.lua"
@@ -6442,16 +6420,17 @@
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCooldown"	"50"
 	}
-	    "skill_hero_songwei"
-    {
-        "BaseClass" "ability_lua"
-        "AbilityTextureName"    "weiguo/ability_songwei"
-        "ScriptFile"    "skill/hero_songwei.lua"
-        "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-        "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "SpellImmunityType" "SPELL_IMMUNITY_ENEMIES_NO"
-    }
+
+	"skill_hero_songwei"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo/ability_songwei"
+		"ScriptFile"	"skill/hero_songwei.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+	}
 
 	// 临天 7-19
 	"skill_hero_example"
@@ -6966,7 +6945,6 @@
 		"MaxLevel"	"1"
 		// "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		// "AbilityCastPoint"				"0.4 0.4 0.4 0.4"
-		
 		// 	"special_bonus_split_shot_modifiers"
 		// {
 		// 	"BaseClass"						"special_bonus_undefined"
@@ -6985,7 +6963,6 @@
 		// 		}
 		// 	}
 		// }
-	
 		"AbilitySpecial"
 		{
 			"01"
@@ -7001,7 +6978,7 @@
 		}
 	}
 
-		"skill_hero_weimu"
+	"skill_hero_weimu"
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"weiguo\ability_weimu"
@@ -7010,6 +6987,7 @@
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 	}
+<<<<<<< Updated upstream
 
 	    "skill_hero_wansha"
 	{
@@ -7703,4 +7681,6 @@
 			}			
 		}	
 	}
+=======
+>>>>>>> Stashed changes
 }
