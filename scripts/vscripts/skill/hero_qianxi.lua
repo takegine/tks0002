@@ -17,60 +17,39 @@ function modifier_attack:DeclareFunctions()
 end
 
 function modifier_attack:OnAttackLanded(keys)   
+	
+	local  parent  =self:GetParent()  
+	local  target  =keys.target  
+    local  owner   =parent:GetOwner() or {ship={}}
+	local  ability =self:GetAbility()
+    local  chance  =ability:GetLevelSpecialValueFor("chance", (ability:GetLevel()-1) )
+	
+if not IsServer()  then  return end
+if keys.attacker ~= parent then return end
 
-	local  parent=self:GetParent()  --获取技能释放者
-	local  target=keys.target  --获取鼠标选择的技能目标
-    local  owner =parent:GetOwner() or {ship={}}
-
-if keys.attacker ~= parent then
-	return
-end
-
---  kv里面的概率
-	local ability      =self:GetAbility()
-    local chance       =ability:GetLevelSpecialValueFor("chance", (ability:GetLevel()-1) )
-    local damage_type  =ability:GetAbilityDamageType()
-    local target_types =ability:GetAbilityTargetType()
-    local target_flags =ability:GetAbilityTargetFlags()  --标识 
+if  owner.ship['shuigan'] and target:GetHealthPercent()>75 then
+    chance = 100
+end    
 
 
+if RollPercentage(chance) then
 
- if  owner.ship['shuigan'] and target:GetHealthPercent()>75 then
+	local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, parent, parent, parent:GetTeamNumber() )
+	dummy.attack_type  = "tree"
+	dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 
-     chance = 100
- end    
-
-
- if RollPercentage(chance) then
-		    local  damagetable={     --伤害表
-		    victim=target,    --技能目标
-		    attacker=parent,  --释放者
-		    damage=target:GetHealth()*0.17,    --伤害
-		    damage_type=damage_type   --伤害类型  物理
-		}
- 
+	local   damagetable={     
+		    victim=target,    
+		    attacker=dummy,  
+		    damage=target:GetHealth()*0.17,    
+		    damage_type=DAMAGE_TYPE_PHYSICAL
+		} 
 		ApplyDamage(damagetable)  	
 	 end
 	
 end
 
 
-modifier_yiji=class({})   --声明修饰器
-
-function modifier_yiji:IsDebuff()  --判断是否为debuff
-	return  false
-end
-
-function modifier_yiji:DeclareFunction()
-	return {
-	MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
-}	
-end
-
---function modifier_yiji:GetModifierAttackSpeedBonus_Constant() 
-	--local ability = self:GetAbility()
-	--return ability:GetLevel()*5
---end
 
 
 
