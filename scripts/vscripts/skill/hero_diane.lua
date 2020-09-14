@@ -12,7 +12,7 @@ function skill_hero_diane:needwaveup()
     local add = 30
     local owner = caster:GetOwner() or {ship={}}   
 
-    if owner.ship['elai'] and caster:GetUnitName()=='典韦' then 
+    if owner.ship['elai'] and caster:GetUnitName()=="npc_dota_hero_kunkka" then 
         add=add
     end
     local intStrength  = caster:GetStrength()*add  /100

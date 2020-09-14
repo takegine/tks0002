@@ -24,7 +24,7 @@ function modifier_skill_hero_hunzi:OnTakeDamage(keys)
     local ability = self:GetAbility()
     local parent  = self:GetParent()
     local health_perc   = parent:GetHealthPercent()
-    if keys.unit:GetUnitName()=='孙策' then
+    if keys.unit:GetUnitName()=="npc_dota_hero_tiny" then
         if health_perc <= 75 then
             local yingzi = parent:AddAbility("skill_hero_yingzi")
             local yinghun= parent:AddAbility("skill_hero_yinghun")

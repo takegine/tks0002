@@ -63,7 +63,7 @@ function modifier_hero_xiaoguo:OnAttack(keys)
 
                             self.split_shot_target = true
 
-                            self:GetParent():PerformAttack(enemy, false, false, true, true, true, false, false)
+                            self:GetParent():PerformAttack(enemy, false, ture, true, true, true, false, false)
 
                             target_number = target_number + 1
 

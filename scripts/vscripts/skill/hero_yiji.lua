@@ -49,8 +49,7 @@ function modifier_skill_hero_yiji_blizzard:OnCreated()
     local ability= self:GetAbility()
     -- self.modifier_slow = "modifier_skill_hero_yiji_debuff"
     self.radius = 500--radius
-    self.damage = 300 
- 
+    self.damage = 300  
     -- 伤害和范围无法获取abilities里的值
 
     -- self.dummy  = dummy
