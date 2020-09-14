@@ -13,7 +13,7 @@
 ## 注意事项
 `2020-08-14` 更新 使用git上传的方法
 1. 整理 更改区的文件，如果更改区没有文件 可以整句执行`git fetch; git branch -D 技能;git checkout 仓库/技能 ;git checkout -b 技能` 来更新本地的进度
-2. 同步到最新，在命令行中输入 `git stash --all; git fetch; git pull 仓库 技能; git stash pop -q ` 也可以在vscode的终端中输入。
+2. 同步到最新，在命令行中输入 `git stash --all; git fetch; git fetch; git branch -D 技能;git checkout 仓库/技能 ;git checkout -b 技能; git stash pop -q ` 也可以在vscode的终端中输入。
 3. 把更改区的文件 勾选`暂存` 填写`消息`，点`提交`（尽量一个技能提交一行，一个围绕一个内容的修改提交一行）
 4. 上传到仓库：在命令行中输入 `git push 仓库 技能 ` 也可以在vscode的终端中输入。
 
