@@ -6,14 +6,22 @@ LinkLuaModifier("modifier_skill_hero_keji_wudi",'skill/hero_keji.lua',0)
 skill_hero_keji=class({})
 
 function skill_hero_keji:OnSpellStart()
-
 local caster=self:GetCaster()
 local ability=self
 local owner  = caster:GetOwner() or {ship={}}  
-local saoshe = parent:AddAbility("skill_hero_saoshe")
-  
-caster:EmitSound("Hero_Abaddon.DeathCoil.Cast")
+
+
+if not IsServer() then return end
+
+if caster:HasAbility('skill_hero_saoshe') then 
 caster:AddNewModifier(caster, ability, 'modifier_skill_hero_keji', {duration=1.5})
+
+else
+caster:AddNewModifier(caster, ability, 'modifier_skill_hero_keji', {duration=1.5})
+local saoshe=caster:AddAbility("skill_hero_saoshe")
+saoshe:SetLevel(caster:GetLevel())
+
+return end
 
 if owner.ship['siying']  then
 
@@ -47,15 +55,16 @@ end
 function modifier_skill_hero_keji:OnAttackStart(keys)
 
     local parent=self:GetParent()
-    if keys.attacker~=parent then return end
+    local caster=self:GetCaster()
+    if keys.attacker~=caster then return end
     parent:RemoveModifierByName("modifier_skill_hero_keji")
     parent:RemoveModifierByName("modifier_skill_hero_keji_wudi")
 end
 
 function modifier_skill_hero_keji:OnAbilityExecuted(keys)
-    
+    local caster=self:GetCaster()
     local parent=self:GetParent()
-    if keys.caster~=parent then return end
+    if keys.caster~=caster then return end
     parent:RemoveModifierByName("modifier_skill_hero_keji")
     parent:RemoveModifierByName("modifier_skill_hero_keji_wudi")
  end

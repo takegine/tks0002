@@ -16,6 +16,10 @@ end
 
 modifier_madai_yiji=class({})
 
+function modifier_madai_yiji:IsHidden()
+    return true 
+end
+
 function modifier_madai_yiji:DeclareFunctions()
     return{
     MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT

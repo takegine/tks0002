@@ -207,6 +207,10 @@ end
 
 function CAddonTemplateGameMode:OnEntityKilled(keys)
     local killedUnit = EntIndexToHScript( keys.entindex_killed   )
+    if killedUnit.reSpawn then
+        killedUnit.reSpawn = nil
+        return
+    end
     Timer(0.1,function()
         if not killedUnit:IsNull() then
         killedUnit:Destroy() 

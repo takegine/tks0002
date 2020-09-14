@@ -13,7 +13,7 @@ end
 
 modifier_skill_hero_chongzhen_heal=class({})
 
-function modifier_skill_hero_chongzhen_heal:IsHidden ()
+function modifier_skill_hero_chongzhen_heal:IsHidden()
     return true
 end
 
@@ -35,7 +35,6 @@ function modifier_skill_hero_chongzhen_heal:OnAttackLanded(keys)
 	and keys.original_damage/parent:GetAverageTrueAttackDamage( keys.target )>1.05 then
 
 	if caster:GetItemInSlot(3) and caster:GetItemInSlot(3):GetName()=='item_horses_bailong' then
-
 		heal=heal*1.5
 	end
 	

@@ -49,8 +49,11 @@ function modifier_skill_hero_yiji_blizzard:OnCreated()
     local ability= self:GetAbility()
     -- self.modifier_slow = "modifier_skill_hero_yiji_debuff"
     self.radius = 500--radius
-	self.damage = 300 
-	-- self.dummy  = dummy
+    self.damage = 300 
+ 
+    -- 伤害和范围无法获取abilities里的值
+
+    -- self.dummy  = dummy
     self.point  = parent:GetAbsOrigin()
     self.team   = parent:GetTeamNumber()
     self.target_team  = ability:GetAbilityTargetTeam()
@@ -87,13 +90,15 @@ function modifier_skill_hero_yiji_blizzard:OnIntervalThink()
                                                 radius,
                                                 self.target_team,
                                                 self.target_types,
-                                                self.target_flags,
+                                                DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
                                                 0,
                                                 true)
 
     for _,enemy in pairs(enemies) do
     local debuff = enemy:AddNewModifier(self, ability, modifier_slow, {duration = duration})
-		-- if  enemy:IsMagicImmune() then
+        if  enemy:IsMagicImmune() then
+            return 
+        end
 			local  damage_table = {
 
                 attacker     = caster,
@@ -104,7 +109,6 @@ function modifier_skill_hero_yiji_blizzard:OnIntervalThink()
                 damage_flags = DOTA_DAMAGE_FLAG_NONE
             }
                 ApplyDamage(damage_table)
-		-- end
     end
 end
 
