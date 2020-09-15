@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-08-16 19:53:49
 * @LastEditors: 白喵
-* @LastEditTime: 2020-08-17 00:04:11
+* @LastEditTime: 2020-09-15 19:02:47
 --]]
 
 
@@ -11,7 +11,7 @@
 
 skill_hero_yizhong = {}
 
-function skill_hero_yizhong:needwaveip()
+function skill_hero_yizhong:needwaveup()
     local level = self:GetLevel()
     local caster = self:GetCaster()
     local hModifierTable =

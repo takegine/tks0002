@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-08-16 20:03:05
 * @LastEditors: 白喵
-* @LastEditTime: 2020-08-17 00:06:20
+* @LastEditTime: 2020-09-15 19:21:12
 --]]
 skill_hero_yuwu = {}
 
@@ -11,6 +11,9 @@ function skill_hero_yuwu:needwaveup()
     local caster = self:GetCaster()
     local owner = caster:GetOwner()
     if not owner then
+        return
+    end
+    if not owner.ship["wuzi"] then
         return
     end
     --获取所有武将添加 减伤buff
@@ -32,7 +35,6 @@ function skill_hero_yuwu:needwaveup()
         if unit == caster then
             return
         end
-        print(unit:GetUnitName())
         local u_lv = unit:GetLevel()
         local hModifierTable =
         {
