@@ -1,9 +1,5 @@
-// Dota2 Editor
-// Get latest version: https://github.com/zombieJ/nw-dota2editor
-
 "DOTAAbilities"
 {
-	"Version"		"1"
 
 // 西索 7-19
 	"skill_player_loseHP"
@@ -6394,16 +6390,7 @@
 		"LevelsBetweenUpgrades"	"10"
 	}
 
-// 临天 7-19
-	"skill_hero_example"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel"	"10"
-		"LevelsBetweenUpgrades"	"1"
-
-	}
-	
+// 临天 7-19	
 	"skill_hero_sunjiang"
 	{
 		"BaseClass"	"ability_lua"
