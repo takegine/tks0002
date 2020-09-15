@@ -259,7 +259,18 @@
         "npc_dota_hero_pugna"               "荀彧"
         "npc_dota_hero_sand_king"           "许褚"
         "npc_dota_hero_kunkka"              "典韦"
-        "npc_dota_hero_naga_siren"          "乐进"
+		"npc_dota_hero_naga_siren"          "乐进"
+        "npc_dota_hero_axe"        		    "颜良"
+		"npc_dota_hero_centaur"             "文丑"
+		"npc_dota_hero_chen"                "陈宫"
+		"npc_dota_hero_chaos_knight"        "高览"
+		"npc_dota_hero_death_prophet"       "貂蝉"
+		"npc_dota_hero_enigma"              "张角"
+		"npc_dota_hero_elder_titan"         "吕布"
+		"npc_dota_hero_doom_bringer"        "董卓"
+		"npc_dota_hero_disruptor"           "华佗"
+		"npc_dota_hero_furion"              "左慈"
+
 
 	// ---------------------------------------------单位技能-西索-----
 	
