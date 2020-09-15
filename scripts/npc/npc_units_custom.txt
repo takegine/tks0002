@@ -547,4 +547,259 @@
 		"Ability15"	""
 		"Ability16"	""
 	}
+	"npc_unit_huoyuansu"
+	{
+		// 单位的基类
+		"BaseClass"	"npc_dota_creature"
+		// 模型
+		"Model"	"models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"
+		// 基础设置字段
+		// 模型比例
+		"ModelScale"	"0.75"
+		// 出生等级
+		"Level"	"1"
+		// 物理护甲
+		"ArmorPhysical"	"1"
+		// 基础生命值
+		"StatusHealth"	"1000"
+		// 基础生命回复
+		"StatusHealthRegen"	"50.0"
+		// 基础魔法值
+		"StatusMana"	"1"
+		// 基础魔法恢复
+		"StatusManaRegen"	"1.0"
+		// 被击杀提供的经验奖励
+		"BountyXP"	"0"
+		// 被击杀提供的最小金钱奖励
+		"BountyGoldMin"	"28"
+		// 被击杀提供的最大金钱奖励
+		"BountyGoldMax"	"35"
+		// 移动相关
+		// 移动类型
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+		// 移动速度
+		"MovementSpeed"	"280"
+		// 白天视野范围
+		"VisionDaytimeRange"	"400"
+		// 夜晚视野范围
+		"VisionNighttimeRange"	"400"
+		//单位为召唤单位
+		"IsSummoned" "1"
+		"Creature"
+		{
+			"HPGain"	"1000"
+			"DamageGain"	"80"
+			"ArmorGain"	"1"
+			"MagicResistGain"	"0"
+			"MoveSpeedGain"	"0"
+			"BountyGain"	"0"
+			"XPGain"	"0"
+		}
+		// 技能
+		"Ability1"	""
+		"Ability2"	""
+		"Ability7"	""
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		// 普攻
+		// 最小普攻伤害
+		"AttackDamageMin"	"200"
+		// 最大普攻伤害
+		"AttackDamageMax"	"200"
+		// 普攻距离
+		"AttackRange"	"600"
+		// 普攻频率
+		"AttackRate"	"0.6"
+		// 仇恨范围
+		"AttackAcquisitionRange"	"1800"
+		// 攻击动画
+		"AttackAnimationPoint"	"0.4"
+		// 攻击类型，近战/远程
+		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		// 远程单位的普攻投射物
+		"ProjectileModel"	"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
+		// 普攻投射物的速度
+		"ProjectileSpeed"	"1000"
+		"Ability3"	""
+		"Ability4"	""
+		"Ability5"	""
+		"Ability6"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+	}
+	"npc_unit_shuiyuansu"
+	{
+		// 单位的基类
+		"BaseClass"	"npc_dota_creature"
+		// 模型
+		"Model"	"models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"
+		// 基础设置字段
+		// 模型比例
+		"ModelScale"	"0.75"
+		// 出生等级
+		"Level"	"1"
+		// 物理护甲
+		"ArmorPhysical"	"1"
+		// 基础生命值
+		"StatusHealth"	"1000"
+		// 基础生命回复
+		"StatusHealthRegen"	"50.0"
+		// 基础魔法值
+		"StatusMana"	"1"
+		// 基础魔法恢复
+		"StatusManaRegen"	"1.0"
+		// 被击杀提供的经验奖励
+		"BountyXP"	"0"
+		// 被击杀提供的最小金钱奖励
+		"BountyGoldMin"	"28"
+		// 被击杀提供的最大金钱奖励
+		"BountyGoldMax"	"35"
+		// 移动相关
+		// 移动类型
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+		// 移动速度
+		"MovementSpeed"	"280"
+		// 白天视野范围
+		"VisionDaytimeRange"	"400"
+		// 夜晚视野范围
+		"VisionNighttimeRange"	"400"
+		//单位为召唤单位
+		"IsSummoned" "1"
+		"Creature"
+		{
+			"HPGain"	"1000"
+			"DamageGain"	"80"
+			"ArmorGain"	"1"
+			"MagicResistGain"	"0"
+			"MoveSpeedGain"	"0"
+			"BountyGain"	"0"
+			"XPGain"	"0"
+		}
+		// 技能
+		"Ability1"	""
+		"Ability2"	""
+		"Ability7"	""
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		// 普攻
+		// 最小普攻伤害
+		"AttackDamageMin"	"200"
+		// 最大普攻伤害
+		"AttackDamageMax"	"200"
+		// 普攻距离
+		"AttackRange"	"600"
+		// 普攻频率
+		"AttackRate"	"0.6"
+		// 仇恨范围
+		"AttackAcquisitionRange"	"1800"
+		// 攻击动画
+		"AttackAnimationPoint"	"0.4"
+		// 攻击类型，近战/远程
+		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		// 远程单位的普攻投射物
+		"ProjectileModel"	"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
+		// 普攻投射物的速度
+		"ProjectileSpeed"	"1000"
+		"Ability3"	""
+		"Ability4"	""
+		"Ability5"	""
+		"Ability6"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+	}
+	"npc_unit_tuyuansu"
+	{
+		// 单位的基类
+		"BaseClass"	"npc_dota_creature"
+		// 模型
+		"Model"	"models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"
+		// 基础设置字段
+		// 模型比例
+		"ModelScale"	"0.75"
+		// 出生等级
+		"Level"	"1"
+		// 物理护甲
+		"ArmorPhysical"	"1"
+		// 基础生命值
+		"StatusHealth"	"1000"
+		// 基础生命回复
+		"StatusHealthRegen"	"50.0"
+		// 基础魔法值
+		"StatusMana"	"1"
+		// 基础魔法恢复
+		"StatusManaRegen"	"1.0"
+		// 被击杀提供的经验奖励
+		"BountyXP"	"0"
+		// 被击杀提供的最小金钱奖励
+		"BountyGoldMin"	"28"
+		// 被击杀提供的最大金钱奖励
+		"BountyGoldMax"	"35"
+		// 移动相关
+		// 移动类型
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+		// 移动速度
+		"MovementSpeed"	"280"
+		// 白天视野范围
+		"VisionDaytimeRange"	"400"
+		// 夜晚视野范围
+		"VisionNighttimeRange"	"400"
+		//单位为召唤单位
+		"IsSummoned" "1"
+		"Creature"
+		{
+			"HPGain"	"1000"
+			"DamageGain"	"80"
+			"ArmorGain"	"1"
+			"MagicResistGain"	"0"
+			"MoveSpeedGain"	"0"
+			"BountyGain"	"0"
+			"XPGain"	"0"
+		}
+		// 技能
+		"Ability1"	""
+		"Ability2"	""
+		"Ability7"	""
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		// 普攻
+		// 最小普攻伤害
+		"AttackDamageMin"	"200"
+		// 最大普攻伤害
+		"AttackDamageMax"	"200"
+		// 普攻距离
+		"AttackRange"	"600"
+		// 普攻频率
+		"AttackRate"	"0.6"
+		// 仇恨范围
+		"AttackAcquisitionRange"	"1800"
+		// 攻击动画
+		"AttackAnimationPoint"	"0.4"
+		// 攻击类型，近战/远程
+		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
+		// 远程单位的普攻投射物
+		"ProjectileModel"	"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
+		// 普攻投射物的速度
+		"ProjectileSpeed"	"1000"
+		"Ability3"	""
+		"Ability4"	""
+		"Ability5"	""
+		"Ability6"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+	}
 }

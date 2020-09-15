@@ -74,8 +74,8 @@
     "skill_ship_quhu" 
     {
         "01" "npc_dota_hero_bounty_hunter"
-        // "02" "npc_dota_hero_"
-        // "03" "npc_dota_hero_"
+        "02" "npc_dota_hero_pugna"
+        "03" "npc_dota_hero_elder_titan"
     }
 
     //夜梦北斗  刘备刘禅
@@ -131,8 +131,8 @@
     "skill_ship_dingli" 
     {
         "01" "npc_dota_hero_bounty_hunter"
-        // "02" "npc_dota_hero_"
-        // "03" "npc_dota_hero_"
+        "02" "npc_dota_hero_life_stealer"
+        "03" "npc_dota_hero_phantom_lancer"
     }
 
     //珠联璧合  黄月英 火诸葛
@@ -252,6 +252,7 @@
     "skill_ship_xianying" 
     {
         "01" "npc_dota_hero_life_stealer"
+        "02" "npc_dota_hero_furion"
 
     }
 
@@ -309,5 +310,70 @@
     {
         "01" "npc_dota_hero_life_stealer"
         "02" "npc_dota_hero_kunkka"
+    }
+
+      //鬼神降临  貂蝉 吕布
+    "skill_ship_guishen" 
+    {
+        "01" "npc_dota_hero_elder_titan"
+        "02" "npc_dota_hero_death_prophet"
+    }
+
+      //美人计  董卓 貂蝉
+    "skill_ship_meiren" 
+    {
+        "01" "npc_dota_hero_doom_bringer"
+        "02" "npc_dota_hero_death_prophet"
+    }
+
+      //战场武神  吕布 张辽
+    "skill_ship_zhanchang" 
+    {
+        "01" "npc_dota_hero_elder_titan"
+        "02" "npc_dota_hero_omniknight"
+    }
+
+      //掎角之势  陈宫 高顺 
+    "skill_ship_zhishi" 
+    {
+        "01" "npc_dota_hero_chen"
+
+    }
+
+      //迅析斩乱  吕布 高顺
+    "skill_ship_zhanluan" 
+    {
+        "01" "npc_dota_hero_elder_titan"
+
+    }
+
+      //权倾朝野  吕布 董卓
+    "skill_ship_quanqing" 
+    {
+        "01" "npc_dota_hero_elder_titan"
+        "02" "npc_dota_hero_doom_bringer"
+    }
+
+      //河北双雄  颜良 文丑
+    "skill_ship_shuangxiong" 
+    {
+        "01" "npc_dota_hero_axe"
+        "02" "npc_dota_hero_centaur"
+    }
+
+      //河北四庭柱  典韦 曹操
+    "skill_ship_sitingzhu" 
+    {
+        "01" "npc_dota_hero_axe"
+        "02" "npc_dota_hero_centaur"
+        "03" "npc_dota_hero_chaos_knight"
+        "04" "npc_dota_hero_ursa"
+    }
+
+      //明珠蒙尘  吕布 陈宫
+    "skill_ship_mingzhu" 
+    {
+        "01" "npc_dota_hero_chen"
+        "02" "npc_dota_hero_elder_titan"
     }
 }
