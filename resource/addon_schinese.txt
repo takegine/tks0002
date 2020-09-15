@@ -232,7 +232,6 @@
         "npc_dota_hero_windrunner"          "孙尚香"
         "npc_dota_hero_queenofpain"         "大乔"
         "npc_unit_nanmanzhanying"           "南蛮战鹰"
-        "npc_unit_bulianshi"                "步练师"
         "npc_dota_hero_slardar"             "周泰"
         "npc_dota_hero_wisp"                "小乔"
         "npc_dota_hero_razor"               "吕蒙"
@@ -263,6 +262,14 @@
         "npc_dota_hero_naga_siren"          "乐进"
 
 	// ---------------------------------------------单位技能-西索-----
+	
+		"DOTA_Tooltip_ability_skill_hero_lieren"	"烈刃,非指向性"
+		"DOTA_Tooltip_ability_skill_hero_lieren_2"	"烈刃,指向性"
+		"DOTA_Tooltip_ability_skill_hero_chaoqi"	"超骑"
+		"DOTA_Tooltip_ability_skill_hero_kuangguguanghuan"	"狂骨光环"
+		"DOTA_Tooltip_ability_skill_hero_wuji"	"武姬"
+		"DOTA_Tooltip_ability_skill_hero_fengdan"	"凤胆"
+		"DOTA_Tooltip_ability_skill_hero_liusan"	"刘三"
 		"DOTA_Tooltip_ability_skill_hero_rende"	"仁德"
 		"DOTA_Tooltip_ability_skill_hero_rende_Description"	"瞬间治疗范围内队友若干的生命值。"
 		"DOTA_Tooltip_ability_skill_hero_rende_radius"	"治疗半径："
@@ -308,7 +315,6 @@
 		"DOTA_Tooltip_ability_skill_hero_xueji_reduce_dam_per_stack"	"每层伤害减免："
 		"DOTA_Tooltip_ability_skill_hero_xueji_attack_time_per_stack"	"每层减少攻击间隔："
 		"DOTA_Tooltip_modifier_skill_hero_xueji"	"血祭"
-		"DOTA_Tooltip_ability_skill_hero_lieren"	"烈刃,非指向性"
 		"DOTA_Tooltip_ability_skill_hero_lieren_Description"	""
 		"DOTA_Tooltip_ability_skill_hero_shouwang"	"南蛮兽王"
 		"DOTA_Tooltip_ability_skill_hero_shouwang_Description"	""
