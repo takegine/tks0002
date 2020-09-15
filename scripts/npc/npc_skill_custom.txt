@@ -188,5 +188,78 @@
 	{
 		"1" "skill_hero_yinghun"          //英魂
 	}
-
+		"npc_dota_hero_silencer"          //override_hero郭嘉
+	{
+		"1" "skill_hero_tiandu"           //天妒
+		"2" "skill_hero_yiji"             //遗计
+	}
+		"npc_dota_hero_lycan"             //override_hero于禁
+	{
+		"1" "skill_hero_yizhong"          //毅重
+		"2" "skill_hero_yuwu"             //于五
+	}
+		"npc_dota_hero_ursa"              //override_hero张合 
+	{
+		"1" "skill_hero_qiaobian"         //巧变
+		"2" "skill_hero_zhangliao"        //张料
+		"3" "skill_hero_zhangsi"          //张四
+	}
+		"npc_dota_hero_treant"            //override_hero徐晃
+	{
+		"1" "skill_hero_duanliang"        //断粮
+		"2" "skill_hero_chengjie"         //惩戒
+		"3" "skill_hero_wuxu"             //五徐
+	}
+		"npc_dota_hero_omniknight"        //override_hero张辽
+	{
+		"1" "skill_hero_tuxi"             //突袭
+	}
+		"npc_dota_hero_life_stealer"      //override_hero曹操
+	{
+		"1" "skill_hero_jianxiong"        //奸雄
+		"2" "skill_hero_hujia"            //护驾
+		"3" "skill_hero_caokong"          //曹空
+		"4" "skill_hero_caohu"            //曹虎
+		"5" "skill_hero_caoe"             //曹恶
+	}
+		"npc_dota_hero_keeper_of_the_light"       //override_hero司马懿
+	{
+		"1" "skill_hero_fankui"           //反馈
+		"2" "skill_hero_guicai"           //鬼才
+		"3" "skill_hero_sishuang"         //司双
+	}
+		"npc_dota_hero_crystal_maiden"    //override_hero贾诩
+	{
+		"1" "skill_hero_luanwu"           //乱舞
+		"2" "skill_hero_weumu"            //帷幕
+		"3" "skill_hero_wansha"           //完杀
+	}
+		"npc_dota_hero_dragon_knight"     //override_hero曹丕
+	{
+		"1" "skill_hero_xingshang"        //行殇
+		"2" "skill_hero_fangzhu"          //放逐
+		"3" "skill_hero_songwei"          //颂威
+	}
+		"npc_dota_hero_pugna"             //override_hero荀彧
+	{
+		"1" "skill_hero_quhu"             //驱虎
+		"2" "skill_hero_jieming"          //节命
+	}
+		"npc_dota_hero_sand_king"         //override_hero许褚 
+	{
+		"1" "skill_hero_luoyi"            //裸衣
+		"2" "skill_hero_xue"              //许恶
+	}
+		"npc_dota_hero_kunkka"            //override_hero典韦
+	{
+		"1" "skill_hero_qiangxi"          //强袭
+		"2" "skill_hero_diane"            //典恶
+		"3" "skill_hero_dianzhu"          //典主
+	}
+		"npc_dota_hero_naga_siren"        //override_hero乐进
+	{
+		"1" "skill_hero_xiaoguo"          //骁果
+		"2" "skill_hero_lewu"             //乐五
+		"3" "skill_hero_lewei"            //乐威
+	}
 }
