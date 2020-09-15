@@ -73,7 +73,7 @@ function CAddonTemplateGameMode:InitGameMode()
 
     self.DamageKV = LoadKeyValues("scripts/damage_table.kv")
     self.shiplist = LoadKeyValues("scripts/羁绊名汉化.kv")
-    self.namelist = LoadKeyValues("panorama/localization/addon_schinese.txt")["Tokens"]
+    self.namelist = LoadKeyValues("resource/addon_schinese.txt")["Tokens"]
     self.tkUnitList = {}
     local function insetlist(list)
             table.foreach( list, function(k,v)
