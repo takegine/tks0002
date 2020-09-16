@@ -2055,7 +2055,7 @@
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL | DOTA_UNIT_TARGET_NONE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"	"5"
@@ -3626,7 +3626,7 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"omniknight_purification"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_PURE"
@@ -5082,7 +5082,7 @@
 							"Center"	"CASTER"
 							"Radius"	"%multicast_radius"
 							"Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 							"MaxTargets"	"1"
 							"Random"	"1"
 						}
@@ -5833,7 +5833,7 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"enigma_black_hole"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET|DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
@@ -5896,7 +5896,7 @@
 				"Aura"	"modifier_black_hole_debuff"
 				"Aura_Radius"	"%far_radius"
 				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 				"Duration"	"%duration"
 				"OnCreated"
 				{
@@ -6445,7 +6445,7 @@
 		"LevelsBetweenUpgrades"	"1"
 		"ScriptFile"	"skill/hero_jieyin.lua"
 		"AbilityTextureName"	"wuguo\ability_jieyin"
-		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE "
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6506,7 +6506,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	    "AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE "
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"	"1"
 		"AOERadius"	"%radius"
@@ -6527,7 +6527,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	    "AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE "
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 		"MaxLevel"	"1"
 		"AbilitySpecial"
 		{
@@ -6832,7 +6832,7 @@
 		"AbilityTextureName"	"wuguo\ability_wansha"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE "
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6872,7 +6872,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS|DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"						"10"
@@ -7594,6 +7594,91 @@
 			{
 						"var_type"			"FIELD_INTEGER"
 						"health"			"1"
+			}
+		}
+	}
+	"skill_hero_qingnang"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"qunxiong/ability_qingnang"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"	
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf"
+			"particle"		"particles/units/heroes/hero_zuus/zuus_arc_lightning_head.vpcf"
+			"soundfile"		"sounds/weapons/hero/zuus/arc_lightning.vsnd"
+		}
+		"AbilityCastRange"				"640"
+		"AbilityCastPoint"				"0.3"
+		//"AbilityDamage"					"85"
+		"AbilityCooldown"				"1"
+		//"AbilityManaCost"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_count"			"7"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"jump_delay"			"0.25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal"					"110 330 605 935 1320 1760 2255 2805 3410 4070"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_hero_qingnang"
+				"Target"		"TARGET"
+			}
+		
+			// "FireSound"
+			// {
+			// 	"EffectName"	"Hero_Zuus.ArcLightning.Cast"
+			// 	"Target"		"CASTER"
+			// }
+			
+			"RunScript"
+			{
+				"ScriptFile"	"skill/total_miao.lua"
+				"Function"		"NewInstance"
+				"particle"		"particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_hero_qingnang"
+			{
+				"IsHidden"	"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"skill/total_miao.lua"
+						"Function"		"LightningJump"
+						"particle"		"particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf"
+					}
+				}
 			}
 		}
 	}
