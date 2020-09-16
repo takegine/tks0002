@@ -7570,4 +7570,31 @@
 			}			
 		}
 	}
+	"skill_hero_xinsheng"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_xinsheng.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityTextureName" "qunxiong/ability_xinsheng"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"chance"			"14 18 22 26 30 34 38 42 46 50"
+			}
+			"02"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"radius"			"640"
+			}
+			"03"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"health"			"1"
+			}
+		}
+	}
 }
