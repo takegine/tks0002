@@ -5,5 +5,6 @@
         "game_stat",
         "Hero_Population",
         "player_info",
+        "hero_info",
     ]
 }

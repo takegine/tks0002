@@ -75,7 +75,7 @@ function CAddonTemplateGameMode:InitGameMode()
     self.shiplist = LoadKeyValues("scripts/羁绊名汉化.kv")
     self.namelist = LoadKeyValues("resource/addon_schinese.txt")["Tokens"]
     self.tkUnitList = {}
-    local function insetlist(list)
+    local insetlist = function (list)
             table.foreach( list, function(k,v)
             if type(v)=="table" then
                 self.tkUnitList[k]=v
@@ -105,34 +105,48 @@ function CAddonTemplateGameMode:createnewherotest( data )
         h:SetAcquisitionRange( 0 )
         if ablelist[data.way] then
             for c,abi in pairs( ablelist[data.way]) do
-                h:AddAbility(abi)
-                if h:HasAbility(abi) then h:FindAbilityByName(abi):SetLevel(1) end
+                    h:AddAbility(abi)
+                if  h:HasAbility(abi) then 
+                    h:FindAbilityByName(abi):SetLevel(1)
+                end
             end
         end
     end )
 end
 
 function CAddonTemplateGameMode:refreshlist()
-    local relist = {}
 
-    local function messageT(list) 
-        local ablelist = LoadKeyValues('scripts/npc/npc_skill_custom.txt')
+    local ablelist = LoadKeyValues('scripts/npc/npc_skill_custom.txt')
+    local herolist = LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
+    local unitlist = LoadKeyValues('scripts/npc/npc_Units_custom.txt')
+    local hero_info = {}
+    local unit_info = {}
+    local function messageT(...)
+        local mes, list, sendlist = ...
         local nocreate = {"npc_dota_fort","npc_dota_building", }
         for name,info in pairs(list)do
             if info == 1 
             or name == SET_FORCE_HERO
-            or info.BaseClass and info.BaseClass ~= "npc_dota_creature"
+            or ( info.BaseClass and info.BaseClass ~= "npc_dota_creature" )
             then goto continue
-            end            
-            relist['name'] = name
-            --relist['hero'] = info.override_hero 
-            relist['able'] = ablelist[info.override_hero]
-            CustomGameEventManager:Send_ServerToAllClients('hero_info', relist)
+            end
+            local relist = {
+                name = info.override_hero or name,
+                --hero = info.override_hero,
+                side = info.UnitLabel,
+                popu = info.TksPopUse,
+                price = info.TksPayedGold,
+                able = ablelist[info.override_hero],
+                }
+            sendlist[name] = relist
             :: continue ::
         end
+        CustomNetTables:SetTableValue( "hero_info", mes, sendlist )
     end
-    messageT(LoadKeyValues('scripts/npc/npc_heroes_custom.txt'))
-    messageT(LoadKeyValues('scripts/npc/npc_Units_custom.txt')) 
+    messageT("hero", herolist, hero_info)
+    messageT("unit", unitlist, unit_info) 
+
+
 end
 
 function CAddonTemplateGameMode:entity_hurt(keys)
