@@ -7447,5 +7447,32 @@
 				"move_speed"	"-30"							
 			}			
 		}	
-	}	
+	}
+	"skill_hero_jijiu"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_jijiu.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityTextureName" "qunxiong/ability_jijiu"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"recovery"			"8 11 14 17 20 23 26 29 32 35"
+			}
+			"02"
+			{
+						"var_type"			"FIELD_INTEGER"
+						"radius"			"400"
+			}
+			"03"
+			{
+						"var_type"			"FIELD_FLOAT"
+						"duration"			"3.0"
+			}
+		}
+	}
 }
