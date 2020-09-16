@@ -1,5 +1,4 @@
 LinkLuaModifier("modifier_hero_xiaoguo", 'skill/hero_xiaoguo.lua', 0)
--- LinkLuaModifier("modifier_special_bonus_split_shot_modifiers", 'skill/hero_xiaoguo.lua', 0)
 
 skill_hero_xiaoguo = skill_hero_xiaoguo or class({})
 
@@ -8,12 +7,7 @@ function skill_hero_xiaoguo:GetIntrinsicModifierName()
 end
 
 modifier_hero_xiaoguo = modifier_hero_xiaoguo or class({})
--- modifier_special_bonus_split_shot_modifiers	= modifier_special_bonus_split_shot_modifiers or class({}) 
--- (攻击特效？)
 
--- function modifier_special_bonus_split_shot_modifiers:IsHidden() 		return true end
--- function modifier_special_bonus_split_shot_modifiers:IsPurgable() 	return false end
--- function modifier_special_bonus_split_shot_modifiers:RemoveOnDeath() 	return false end
 
 function modifier_hero_xiaoguo:OnCreated()
 	self.caster = self:GetCaster()
@@ -27,7 +21,6 @@ end
 function modifier_hero_xiaoguo:DeclareFunctions()
 	return {
 		MODIFIER_EVENT_ON_ATTACK,
-		-- MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
 		MODIFIER_EVENT_ON_ORDER
 	}
 end
@@ -55,36 +48,18 @@ function modifier_hero_xiaoguo:OnAttack(keys)
                                                 false)
                 local target_number = 0
 
-                -- local apply_modifiers = self:GetParent():AddNewModifier(self:GetCaster(), self, "special_bonus_split_shot_modifiers", {})
-
                 if #enemies > 0 then
                     for _,enemy in pairs(enemies) do
                         if enemy ~= keys.target then
 
                             self.split_shot_target = true
 
-                            self:GetParent():PerformAttack(enemy, false, ture, true, true, true, false, false)
-
+                            self:GetParent():PerformAttack(enemy, false, RollPercentage(30), true, true, true, false, false)
                             target_number = target_number + 1
 
                             if target_number >= self:GetAbility():GetSpecialValueFor("arrow_count") then
                                 break
                             end
-                            -- local arrow_projectile = {hTarget = enemy,
-                            --                         hCaster = target,
-                            --                         hAbility = self.ability,
-                            --                         iMoveSpeed = self.caster:GetProjectileSpeed(),
-                            --                         EffectName = self.caster:GetRangedProjectileName(),
-                            --                         SoundName = "",
-                            --                         flRadius = 1,
-                            --                         bDodgeable = true,
-                            --                         bDestroyOnDodge = true,
-                            --                         iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
-                            --                         OnProjectileHitUnit = function(params, projectileID)
-                            --                         SplinterArrowHit(params, projectileID, self)
-                            -- end
-                            -- }
-                            -- TrackingProjectiles:Projectile(arrow_projectile)
                         end
                     end
                 end
@@ -92,17 +67,6 @@ function modifier_hero_xiaoguo:OnAttack(keys)
 		end
 	end
 end
-
--- function SplinterArrowHit(keys, projectileID, modifier)
--- 	local caster = modifier.caster
--- 	local target = keys.hTarget
-
--- 	caster:PerformAttack(target, false, false, true, true, false, false, false)
--- end
-
--- function modifier_hero_xiaoguo:GetActivityTranslationModifiers()
--- 	return "split_shot"
--- end
 
 function modifier_hero_xiaoguo:OnOrder(keys)
 	if not IsServer() or keys.unit ~= self:GetParent() or keys.order_type ~= DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO or keys.ability ~= self:GetAbility() then return end

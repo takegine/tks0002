@@ -26,7 +26,7 @@ function skill_hero_tiandu:OnSpellStart()
 
     target:AddNewModifier(caster, ability, modifier_armor, {duration = armor_duration})
 
-    if owner.ship['weishi'] then
+    if owner.ship['shuangying'] then
     -- local parent = self:GetParent()
     local units = FindUnitsInRadius(target:GetTeamNumber(),
                                     target:GetOrigin(),

@@ -6885,8 +6885,6 @@
 		"MaxLevel"	"1"	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		// "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		// "AbilityCastPoint"				"0.4 0.4 0.4 0.4"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6901,25 +6899,115 @@
 			}
 		}
 	}
-	// 	"special_bonus_split_shot_modifiers"
-	// {
-	// 	"BaseClass"						"special_bonus_undefined"
-	// 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-	// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"skill_hero_weimu"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo\ability_weimu"
+		"ScriptFile"	"skill/hero_weimu.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+	}
 
-	// 	"LinkedAbility"
-	// 	{
-	// 		"01" 	"skill_hero_xiaoguo"
-	// 	}
-	// 	"AbilitySpecial"
-	// 	{
-	// 		"01"
-	// 		{
-	// 			"var_type"					"FIELD_INTEGER"
-	// 			"value"						"1"
-	// 		}
-	// 	}
-	// }
+	    "skill_hero_wansha"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"ScriptFile"	"skill/hero_wansha.lua"
+		"AbilityTextureName"	"wuguo\ability_wansha"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE "
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"425 450 475 500 525 550 575 600 625 650"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"as_slow"			"13 16 19 22 25 28 31 34 37 40"
+			}
+		}
+	}
+
+		"skill_hero_luanwu"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo/ability_luanwu"
+		"ScriptFile"	"skill/hero_luanwu.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"12"
+	}
+
+		"skill_hero_tuxi"
+	{	
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"weiguo/ability_tuxi"
+		"ScriptFile"					"skill/hero_tuxi.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS|DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"						"10"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"				"9"
+		"AbilityManaCost"				"3 4 5 6 7 8 9 10 11 12"
+		"AbilityCastRange"				"640"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"125"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"length"			"640"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"2000"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spawn_distance"	"30"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"regen"				"6 7 8 9 10 11 12 13 14 15"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stun_duration"		"1 1 1 2 2 2 3 3 3 4"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"80 288 560 896 1296 1760 2288 2880 3536 4256"
+			}
+		}
+	}	
 	
 // 白喵 7-19
 	"skill_hero_yinghun"
