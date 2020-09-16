@@ -7608,6 +7608,7 @@
 		"AbilityTextureName"			"qunxiong/ability_qingnang"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"	
+		"CastFilterRejectCaster" "1"
 		"precache"
 		{
 			"particle"		"particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf"

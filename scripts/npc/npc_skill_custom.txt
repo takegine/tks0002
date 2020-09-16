@@ -96,7 +96,7 @@
 	{
 		 //（暂无技能）"1" ""          //
 		 //（暂无技能）"2" ""        //
-		 "1" "skill_hero_qingnang"
+		 //"1" "skill_hero_qingnang"
 	}
 
 		"npc_dota_hero_slardar"           //override_hero周泰
