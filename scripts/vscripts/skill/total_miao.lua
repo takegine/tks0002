@@ -6,7 +6,7 @@
 * @Author: 白喵
 * @Date: 2020-07-21 22:49:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-16 21:03:31
+* @LastEditTime: 2020-09-17 02:22:40
 --]]
 
 --[[
@@ -198,3 +198,13 @@ end
         ParticleManager:SetParticleControl(lightningBolt,1,Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))   
     end
 --治疗波结束    
+
+function active_split_shot(keys)
+    local ability = keys.ability
+    local caster = ability:GetCaster()
+    local split_shot = caster:GetAbilityByIndex(0)
+    print("active")
+    if split_shot:GetAbilityName() == "Summoned_split_shot" then
+        split_shot:ToggleAbility()
+    end
+end

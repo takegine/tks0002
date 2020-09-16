@@ -596,8 +596,8 @@
 			"XPGain"	"0"
 		}
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
+		"Ability1"	"Summoned_split_shot"
+		"Ability2"	"skill_active_split_shot"
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""
@@ -681,8 +681,8 @@
 			"XPGain"	"0"
 		}
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
+		"Ability1"	"Summoned_split_shot"
+		"Ability2"	"skill_active_split_shot"
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""
@@ -766,8 +766,8 @@
 			"XPGain"	"0"
 		}
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
+		"Ability1"	"Summoned_split_shot"
+		"Ability2"	"skill_active_split_shot"
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""

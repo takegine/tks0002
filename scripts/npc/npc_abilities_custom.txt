@@ -7683,4 +7683,67 @@
 			}
 		}
 	}
+	"Summoned_split_shot"
+	{
+		"BaseClass"	"medusa_split_shot"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"	"medusa_split_shot"		
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_modifier"			"0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_modifier_tooltip"	"100"
+			}
+			"03"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"2"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"split_shot_bonus_range"	"650"
+			}
+			"05"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"total_arrow_count"			"3"
+			}			
+		}
+	}
+	"skill_active_split_shot"
+	{
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"Modifiers"
+		{
+			"modifier_active_split_shot"
+			{
+				"Passive" "1"
+				"IsHidden" "1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile" "skill/total_miao.lua"
+						"Function" "active_split_shot"
+					}
+					"RemoveModifier"
+					{
+						"Target" "CASTER"
+						"ModifierName" "modifier_active_split_shot"
+					}
+				}
+			}
+		}
+	}
 }

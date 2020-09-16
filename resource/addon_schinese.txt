@@ -207,6 +207,9 @@
         "DOTA_Tooltip_ability_item_queue_037_Description"	"<h1>被动(唯一)：</h1>己方每次攻击对敌人额外造成火焰魔法伤害，往后每次攻击的额外伤害翻倍，进行攻击5次后重置。敌方死亡时对周围敌人造成死亡单位最大生命值一定比例的火焰魔法伤害。"
 
     // ---------------------------------------------unit------
+		"npc_unit_huoyuansu" 				"火元素"
+		"npc_unit_shuiyuansu"				"水元素"
+		"npc_unit_tuyuansu"					"土元素"
         "npc_dota_creature_gnoll_assassin"	"测试野怪"
         "npc_dota_hero_phoenix"				"信使"
         "npc_damage_dummy"				    "伤害马甲"
