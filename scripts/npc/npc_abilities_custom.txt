@@ -3957,93 +3957,6 @@
 		}
 	}
 
-	"skill_hero_huashen"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
-		"CastFilterRejectCaster"	"0"
-		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"	"1"
-		"LevelsBetweenUpgrades"	"1"
-		"AbilityCooldown"	"3.00"
-		"AbilityCastRange"	"850"
-		"AOERadius"	"%fanwei"
-		"precache"
-		{
-			"particle"	"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_rings.vpcf"
-			"soundfile"	"soundevents/game_sounds.vsndevts"
-			"soundfile"	"soundevents/game_sounds_ui.vsndevts"
-			"particle"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_stunned.vpcf"
-		}
-		"OnSpellStart"
-		{
-			"FireEffect"
-			{
-				"Target"	"TARGET"
-				"EffectAttachType"	"follow_overhead"
-				"ControlPoints"
-				{
-					"00"	"0 0 0"
-				}
-				"EffectName"	"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_rings.vpcf"
-			}
-			"FireSound"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"General.Illusion.Destroy"
-			}
-			"ActOnTargets"
-			{
-				"Target"
-				{
-					"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Center"	"POINT"
-					"Radius"	"%fanwei"
-				}
-				"Action"
-				{
-					"ApplyModifier"
-					{
-						"Target"	"TARGET"
-						"ModifierName"	"modifier_skill_hero_huashen"
-						"Duration"	"jinmo"
-					}
-					"FireSound"
-					{
-						"Target"	"CASTER"
-						"EffectName"	"General.InvalidTarget_AttackImmune"
-					}
-				}
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_skill_hero_huashen"
-			{
-				"Properties"	{}
-				"States"
-				{
-					"MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_PASSIVES_DISABLED"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-				"IsHidden"	"0"
-				"Duration"	"10"
-				"StatusEffectName"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_stunned.vpcf"
-				"EffectName"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_stunned.vpcf"
-				"IsPurgable"	"0"
-				"IsDebuff"	"1"
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"fanwei"	"500"
-			}
-		}
-	}
 
 	// Rewrite of Crystal Maiden Crystal Nova
 	// Author: kritth
@@ -7561,6 +7474,100 @@
 						"var_type"			"FIELD_FLOAT"
 						"duration"			"3.0"
 			}
+		}
+	}
+	"skill_hero_huashen"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"36 34 32 30 28 26 24 22 20 18"
+		"AbilityManaCost"   "6 8 10 12 14 16 18 20 22 24"
+		"AbilityCastRange"	"640 720 800 880 960 1040 1120 1200 1280 1360"
+		"AbilityTextureName"	"qunxiong/ability_huashen"
+		"AOERadius"	"%radius"
+		"precache"
+		{
+			"particle"	"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_rings.vpcf"
+			"soundfile"	"soundevents/game_sounds.vsndevts"
+			"soundfile"	"soundevents/game_sounds_ui.vsndevts"
+			"particle"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_stunned.vpcf"
+		}
+		"OnSpellStart"
+		{
+			"FireEffect"
+			{
+				"Target"	"TARGET"
+				"EffectAttachType"	"follow_overhead"
+				"ControlPoints"
+				{
+					"00"	"0 0 0"
+				}
+				"EffectName"	"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_rings.vpcf"
+			}
+			"FireSound"
+			{
+				"Target"	"CASTER"
+				"EffectName"	"General.Illusion.Destroy"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Teams"  "DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Type"	"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+					"Flags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"			
+					"Center"	"POINT"
+					"Radius"	"%radius"
+				}
+				"Action"
+				{
+					"ApplyModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"modifier_skill_hero_huashen"
+						"Duration"	"%duration"
+					}
+					"FireSound"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"General.InvalidTarget_AttackImmune"
+					}
+				}
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_skill_hero_huashen"
+			{
+				"Properties"	{}
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_PASSIVES_DISABLED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"IsHidden"	"0"
+				"StatusEffectName"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_stunned.vpcf"
+				"EffectName"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_stunned.vpcf"
+				"IsPurgable"	"0"
+				"IsDebuff"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"320"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"1 2 2 3 3 4 4 5 5 6"
+			}			
 		}
 	}
 }
