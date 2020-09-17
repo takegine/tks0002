@@ -2105,55 +2105,6 @@
 		}
 	}
 
-	"skill_hero_gongjian"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"MaxLevel"	"10"
-		"LevelsBetweenUpgrades"	"1"
-		"Modifiers"
-		{
-			"modifier_gongjian"
-			{
-				"IsBuff"	"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%gongjili"
-				}
-				"Aura_Radius"	"%banjing"
-				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"	"DOTA_UNIT_TARGET_ALL"
-				"Aura_ApplyToCaster"	"1"
-				"Passive"	"0"
-				"AllowIllusionDuplicate"	"0"
-				"IsHidden"	"0"
-			}
-			"modifier_skill_hero_gongjian"
-			{
-				"Passive"	"1"
-				"Aura_Radius"	"%fanweiquanchang"
-				"Aura"	"modifier_gongjian"
-				"Aura_ApplyToCaster"	"1"
-				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"IsHidden"	"1"
-				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"gongjili"	"4 5 6 7 8 9 10 11 12 13 14"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-			}
-		}
-	}
 
 	"skill_hero_huilan"
 	{
@@ -7744,6 +7695,28 @@
 			{
 				"ScriptFile"	"skill/total_miao.lua"
 				"Function"		"mingce_on_death"
+			}
+		}
+	}
+	"skill_hero_gongjian"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"skill/hero_gongjian.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE2"
+		"AbilityTextureName"			"qunxiong/ability_gongjian"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"900"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack"					"4 8 12 16 20 24 28 32 36 40"
 			}
 		}
 	}
