@@ -5452,7 +5452,7 @@
 		}
 	}
 
-// 表表 7-19	
+// 表表 7-19
 	"skill_hero_zhiheng"
 	{
 		"BaseClass"	"ability_lua"
@@ -5547,39 +5547,6 @@
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCooldown"	"6"
 		"AbilityManaCost"	"5 6 7 8 9 10 11 12 13 14 15"
-		"precache"
-		{
-			"particle"	"particles/econ/events/winter_major_2016/blink_dagger_wm_end_smoke.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
-			"particle"	"particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
-		}
-		"Modifiers"
-		{
-			"modifier_smoke_screen"
-			{
-				"Duration"	"3"
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						// fix sound!
-						"EffectName"	"Hero_Riki.Smoke_Screen"
-						"Target"	"CASTER"
-					}
-					"AttachEffect"
-					{
-						"EffectName"	"particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"	"TARGET"
-						"ControlPoints"
-						{
-							"00"	"0 0 0"
-							"01"	"%radius %radius %radius"
-						}
-					}
-				}
-			}
-		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -5598,8 +5565,8 @@
 	"skill_hero_qianxi"
 	{
 		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"shuguo/ability_qianxi"
 		"ScriptFile"	"skill/hero_qianxi.lua"
-		"AbilityTextureName" "shuguo/ability_qianxi"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -5667,10 +5634,10 @@
 		"LevelsBetweenUpgrades"	"1"
 	}
 
-    "skill_hero_chengjie"
+	"skill_hero_chengjie"
 	{
 		"BaseClass"	"ability_lua"
-		"AbilityTextureName"	""
+		"AbilityTextureName"	"weiguo/ability_chengjie"
 		"ScriptFile"	"skill/hero_chengjie.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -5690,9 +5657,10 @@
 		}
 	}
 
-    "skill_hero_duanliang"
+	"skill_hero_duanliang"
 	{
 		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"weiguo/ability_duanliang"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -5740,6 +5708,7 @@
 			}
 		}
 	}
+
 	"skill_hero_liegong"
 	{
 		"BaseClass"	"ability_lua"
@@ -5753,6 +5722,7 @@
 	"skill_hero_jiang"
 	{
 		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"wuguo/ability_ji ang"
 		"ScriptFile"	"skill/hero_jiang.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
@@ -5762,6 +5732,7 @@
 	"skill_hero_yingzi"
 	{
 		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"wuguo/ability_yingzi"
 		"ScriptFile"	"skill/hero_yingzi.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
@@ -5782,9 +5753,9 @@
 		// General
 		// -------------------------------------------------------------------------------------------------------------
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"enigma_black_hole"
+		"AbilityTextureName"	"wuguo/ability_tianyi"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET|DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
@@ -5808,9 +5779,11 @@
 		{
 			"soundfile"	"sounds/weapons/hero/enigma/black_hole_loop.vsnd"
 			"soundfile"	"sounds/weapons/hero/enigma/black_hole_stop.vsnd"
+			"soundfile"	"sounds/weapons/hero/juggernaut/bladefury_start_loop.vsnd"
+			"soundfile"	""
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
-			"particle"	"particles/units/heroes/hero_enigma/enigma_blackhole.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
+			"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_ward_create.vpcf"
 		}
 		"OnSpellStart"
 		{
@@ -5830,6 +5803,11 @@
 				"Target"	"CASTER"
 				"ModifierName"	"modifier_black_hole_datadriven_2"
 			}
+			"FireSound"
+			{
+				"Target"	"CASTER"
+				"EffectName"	"sounds/weapons/hero/juggernaut/bladefury_start_loop.vsnd"
+			}
 		}
 		"OnChannelFinish"
 		{
@@ -5847,7 +5825,7 @@
 				"Aura"	"modifier_black_hole_debuff"
 				"Aura_Radius"	"%far_radius"
 				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
 				"Duration"	"%duration"
 				"OnCreated"
 				{
@@ -5855,17 +5833,6 @@
 					{
 						"EffectName"	"Hero_Enigma.Black_Hole"
 						"Target"	"CASTER"
-					}
-					"AttachEffect"
-					{
-						"EffectName"	"particles/units/heroes/hero_enigma/enigma_blackhole.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"	"CASTER"
-						"ControlPoints"
-						{
-							"00"	"0 0 0"
-							"01"	"%far_radius %far_radius %far_radius"
-						}
 					}
 					"RunScript"
 					{
@@ -5890,6 +5857,12 @@
 						"ScriptFile"	"scripts/vscripts/skill/hero_tianyi.lua"
 						"Function"	"MoveUnits"
 						"Target"	""
+					}
+					"AttachEffect"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"particles/units/heroes/hero_juggernaut/juggernaut_ward_create.vpcf"
+						"EffectAttachType"	"attach_origin"
 					}
 				}
 				"_IsAura"	"1"
@@ -6092,6 +6065,7 @@
 	"skill_hero_duanbing"
 	{
 		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"wuguo/ability_duanbing"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
@@ -6123,44 +6097,57 @@
 		}
 	}
 
-	    "skill_hero_kurou"
-    {
-        "BaseClass" "ability_lua"
-        "ScriptFile"    "skill/hero_kurou.lua"
-        "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-        "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "AbilityUnitTargetFlags"    ""
-        "SpellImmunityType" "SPELL_IMMUNITY_ENEMIES_NO"
-        "MaxLevel"  "10"
-        "RequiredLevel" "1"
-        "LevelsBetweenUpgrades" "1"
-        "AbilityCooldown"   "2"
-        "AbilityManaCost"   "1"
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"  "FIELD_INTEGER"
-                "speed" "36 42 48 54 60 66 72 88 104 110"
-            }
-        }
-    }
-	
-    "skill_hero_sunchu"
-    {
-        "BaseClass" "ability_lua"
-        "ScriptFile"    "skill/hero_sunchu.lua"
-        "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO"
-        "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-        "MaxLevel"  "1"
-        "RequiredLevel" "1"
-        "LevelsBetweenUpgrades" "1"
-    }
-		"skill_hero_jiuyuan"
+	"skill_hero_kurou"
 	{
 		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"wuguo/ability_kurou"
+		"ScriptFile"	"skill/hero_kurou.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"	""
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	""
+		"AbilityManaCost"	"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"attackspeed"	"25 50 75 100 125 150 175 200 225 250"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"movespeed"	"36 42 48 54 60 66 72 78 84 90"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"cooldown"	"25 24 23 22 21 20 19 18 17 16"
+			}
+		}
+	}
+
+	"skill_hero_sunchu"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_sunchu.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"MaxLevel"	"1"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+	}
+
+	"skill_hero_jiuyuan"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"wuguo/ability_jiuyuan"
 		"ScriptFile"	"skill/hero_jiuyuan.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
@@ -6169,7 +6156,8 @@
 		"RequiredLevel"	"1"
 		"LevelsBetweenUpgrades"	"1"
 	}
-		"skill_hero_fankui"
+
+	"skill_hero_fankui"
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"weiguo/ability_fankui"
@@ -6254,6 +6242,52 @@
 		"LevelsBetweenUpgrades"	"10"
 	}
 
+	"skill_hero_jieming"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo/ability_jieming"
+		"ScriptFile"	"skill/hero_jieming.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"heal"	"9 36 72 117 171 234 306 387 477 576"
+			}
+		}
+	}
+
+	"skill_hero_xingshang"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo/ability_xingshang"
+		"ScriptFile"	"skill/hero_xingshang.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"50"
+	}
+
+	"skill_hero_songwei"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"weiguo/ability_songwei"
+		"ScriptFile"	"skill/hero_songwei.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+	}
+//
 // 临天 7-19	
 	"skill_hero_sunjiang"
 	{

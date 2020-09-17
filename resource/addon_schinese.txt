@@ -645,6 +645,7 @@
 		"DOTA_Tooltip_modifier_skill_hero_qianxun_waveup_Description"	"抵抗指向性的法术攻击"
 
 	// ---------------------------------------------单位技能-表表-----
+	
 		"DOTA_Tooltip_ability_skill_hero_zhiheng"	"制衡"
 		"DOTA_Tooltip_ability_skill_hero_zhiheng_Description"	"虚无一名敌人，另外将随机1-6名敌方远程单位进入虚无状态，一定时间内这些敌人将无法攻击，处于虚无状态的单位只会受到的火焰和闪电伤害，并且伤害比例变为166%。"
 		"DOTA_Tooltip_ability_skill_hero_zhiheng_duration"	"虚无的持续时间"
@@ -682,14 +683,14 @@
 		"DOTA_Tooltip_ability_skill_hero_zhousi_Description"	"东吴四英杰:\n友军武将获得15%技能增强。"
 		"DOTA_Tooltip_ability_arc_lightning_datadriven"	"连营"
 		"DOTA_Tooltip_ability_arc_lightning_datadriven_Description"	"释放强力的火焰冲击，对第一个单位造成640X等级点魔法伤害，随后火焰继续向周围3-6个敌人之间弹射，每次弹射的伤害都会递减10%。"
-		"DOTA_Tooltip_ability_skill_hero_chengjie"  "惩戒"
-        "DOTA_Tooltip_ability_skill_hero_chengjie_Description"  "徐晃的能额外造成地系物理伤害并重创敌人，期间敌人攻击必定丢失，持续3秒。\n造成伤害：55*[(1+等级)*(等级/2)]\n冷却时间：9s"
-        "DOTA_Tooltip_ability_skill_hero_duanliang" "断粮"
-        "DOTA_Tooltip_ability_skill_hero_duanliang_Description" "降低周围敌人6X等级点防御力。"
-        "DOTA_Tooltip_ability_skill_hero_kurou" "苦肉"
-        "DOTA_Tooltip_ability_skill_hero_kurou_Description" "黄盖在短时间内燃烧自己提升25%X等级的攻击速度和30%+6%X等级的与移动速度，每秒对自己和周围的敌人造成黄盖最大生命值3%的火焰物理伤害，当生命值过低时将无法继续触发苦肉。"	
-        "DOTA_Tooltip_ability_skill_hero_sunchu"    "孙出"
-        "DOTA_Tooltip_ability_skill_hero_sunchu_Description"    "出生入死\n每当孙权受到伤害时都可将所有伤害转移至附近的周泰身上，多个周泰之间可以平摊此次伤害。"
+		"DOTA_Tooltip_ability_skill_hero_chengjie"	"惩戒"
+		"DOTA_Tooltip_ability_skill_hero_chengjie_Description"	"徐晃的能额外造成地系物理伤害并重创敌人，期间敌人攻击必定丢失，持续3秒。\n造成伤害：55*[(1+等级)*(等级/2)]\n冷却时间：9s"
+		"DOTA_Tooltip_ability_skill_hero_duanliang"	"断粮"
+		"DOTA_Tooltip_ability_skill_hero_duanliang_Description"	"降低周围敌人6X等级点防御力。"
+		"DOTA_Tooltip_ability_skill_hero_kurou"	"苦肉"
+		"DOTA_Tooltip_ability_skill_hero_kurou_Description"	"黄盖在短时间内燃烧自己提升25%%*等级的攻击速度和30%%+6X等级的移动速度，每秒对自己和周围的敌人造成黄盖最大生命值3%%的火焰物理伤害，当生命值过低时将无法继续触发苦肉。"
+		"DOTA_Tooltip_ability_skill_hero_sunchu"	"孙出"
+		"DOTA_Tooltip_ability_skill_hero_sunchu_Description"	"出生入死\n每当孙权受到伤害时都可将所有伤害转移至附近的周泰身上，多个周泰之间可以平摊此次伤害。"
 		"DOTA_Tooltip_ability_skill_hero_jiuyuan"	"救援"
 		"DOTA_Tooltip_ability_skill_hero_jiuyuan_Description"	"每有一名友军吴国武将存在时，可增加周围友军单位2%生命窃取，近战窃取效果减半。"
 		"DOTA_Tooltip_ability_skill_hero_fankui"	"反馈"
@@ -704,7 +705,14 @@
 		"DOTA_Tooltip_ability_skill_hero_fangzhu_Description"	"每秒扣除周围敌人魔法值。"
 		"DOTA_Tooltip_ability_skill_hero_sishuang"	"司双"
 		"DOTA_Tooltip_ability_skill_hero_sishuang_Description"	"己方单位每次受到攻击都将对敌人造成当前生命值3%点的火焰魔法伤害"
-		
+		"DOTA_Tooltip_ability_skill_hero_jieming"	"节命"
+		"DOTA_Tooltip_ability_skill_hero_jieming_Description"	"增加周围360范围内友军单位9点的生命回复速度，同时在友军单位受到伤害时有10%的概率能够恢复其最大生命值7%的生命值。"
+		"DOTA_Tooltip_ability_skill_hero_xingshang"	"行殇"
+		"DOTA_Tooltip_ability_skill_hero_xingshang_Description"	"当曹丕濒临死亡时将在短时间内处于假死状态（无敌），生命回复，同时防御力获得提升。"
+		"DOTA_Tooltip_ability_skill_hero_songwei"	"颂威"
+		"DOTA_Tooltip_ability_skill_hero_songwei_Description"	"每有一名友军魏国武将存在时，可降低周围敌方单位3%移动速度。"
+		"DOTA_Tooltip_ability_skill_hero_maqian"	"马千"
+		"DOTA_Tooltip_ability_skill_hero_maqian_Description"	"一骑当千:\n马岱的攻击速度提升（+等级*5%%）。"
 		
 	// ---------------------------------------------单位技能-临天-----
 		
