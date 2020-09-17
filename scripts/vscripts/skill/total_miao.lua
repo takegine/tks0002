@@ -6,7 +6,7 @@
 * @Author: 白喵
 * @Date: 2020-07-21 22:49:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-17 18:23:03
+* @LastEditTime: 2020-09-17 18:50:05
 --]]
 
 --[[
@@ -207,6 +207,7 @@ function mingce(keys)
         local summoned_list = {"npc_unit_huoyuansu","npc_unit_shuiyuansu","npc_unit_tuyuansu"}
         local unit_name = summoned_list[RandomInt(1, 3)]
         local summoned = CreateUnitByName( unit_name, caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+        summoned:CreatureLevelUp(ability:GetLevel()-1)
         summoned:GetAbilityByIndex(0):ToggleAbility()--激活多重射
         if not ability.summoned then
             ability.summoned = {}
@@ -214,6 +215,7 @@ function mingce(keys)
         table.insert(ability.summoned,summoned)
     else
         local summoned = CreateUnitByName( "npc_unit_huoyuansu", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+        summoned:CreatureLevelUp(ability:GetLevel()-1)
         if not ability.summoned then
             ability.summoned = {}
         end
