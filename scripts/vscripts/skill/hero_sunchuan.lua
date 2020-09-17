@@ -53,7 +53,6 @@ function modifier_skill_hero_sunchuan:OnAttackLanded(keys)
         true)
 
         for key,unit in pairs(enemy) do   --找到敌人输出伤害
-            print("dddd",damage)
             local  damage_table = {
 
                 attacker     = dummy,
@@ -70,35 +69,6 @@ function modifier_skill_hero_sunchuan:OnAttackLanded(keys)
     end
 end
 
-
-
-
-
-
--- LinkLuaModifier('modifier_skill_hero_longdan_baoji', 'skill/hero_sunchuan.lua', 0)
--- function skill_hero_sunchuan:GetIntrinsicModifierName()
--- 	return "modifier_skill_hero_longdan_baoji"
--- end
-
-
--- modifier_skill_hero_longdan_baoji=class({}) --暴击伤害
-
--- function modifier_skill_hero_longdan_baoji:DeclareFunctions()
--- 	return{
--- 	MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
--- 	-- MODIFIER_EVENT_ON_ATTACK_LANDED
--- }
--- end
-
--- function modifier_skill_hero_longdan_baoji:GetModifierPreAttack_CriticalStrike()
--- 	return RollPercentage(50) and  200 or 0
--- end
-
--- function modifier_skill_hero_longdan_baoji:OnAttackLanded() --攻击命中  移除修饰器
-
--- 	local caster=self:GetCaster()
--- 	local parent=self:GetParent()
-	
--- 	parent:RemoveModifierByName("modifier_skill_hero_longdan_baoji")
-
--- end
+function modifier_skill_hero_sunchuan:IsHidden()
+    return true
+end

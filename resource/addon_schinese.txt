@@ -778,15 +778,18 @@
 		"DOTA_Tooltip_ability_skill_hero_tiandu_Description"	"使目标身上具有一层霜冻保护，这保护层能增加护甲并使近战攻击该目标的敌人在5秒内减速。"
 		"DOTA_Tooltip_ability_skill_hero_tiandu_radius"	"范围："
 		"DOTA_Tooltip_ability_skill_hero_tiandu_armor_duration"	"护甲："
-		"DOTA_Tooltip_ability_skill_hero_tiandu_ms_slow_pct"	"移动速度："
-		"DOTA_Tooltip_ability_skill_hero_tiandu_as_slow"	"攻击速度："
+		"DOTA_Tooltip_ability_skill_hero_tiandu_ms_slow_pct"	"%移动速度："
+		"DOTA_Tooltip_ability_skill_hero_tiandu_as_slow"	"%攻击速度："
 		"DOTA_Tooltip_ability_skill_hero_tiandu_duration"	"持续时间："
 
 		"DOTA_Tooltip_modifier_skill_hero_tiandu_buff"	"天妒"
 		"DOTA_Tooltip_modifier_skill_hero_tiandu_buff_Description"	"提高护甲 %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 		"DOTA_Tooltip_modifier_skill_hero_tiandu_debuff"	"天妒"
-		"DOTA_Tooltip_modifier_skill_hero_tiandu_debuff_Description"  "攻击速度和移动速度降低25%"
+		"DOTA_Tooltip_modifier_skill_hero_tiandu_debuff_Description"  "攻击速度和移动速度降低25%%"
 
+		"DOTA_Tooltip_ability_skill_hero_yiji"	"遗计"
+		"DOTA_Tooltip_ability_skill_hero_yiji_Description"	"当郭嘉死亡后会在场地上留下一阵强烈的暴风雪，每秒对其中的敌人造成魔法伤害，并且降低60%%的移动速度和30%%的攻击速度，暴风雪会持续3秒。"
+		"DOTA_Tooltip_ability_skill_hero_yiji_damage"	"伤害："
 
 		"DOTA_Tooltip_ability_skill_hero_qiangxi"	"强袭"
 		"DOTA_Tooltip_ability_skill_hero_qiangxi_Description"	"快速的向敌人投掷飞戟，造成魔法伤害，并使其眩晕，如果敌人的生命值低于一定百分比直接秒杀，同时刷新强袭的冷却时间。"
@@ -832,7 +835,7 @@
 		"DOTA_Tooltip_ability_skill_hero_wansha"	"完杀"
 		"DOTA_Tooltip_ability_skill_hero_wansha_Description"	"降低周围范围内敌方武将的攻击速度，同时影响范围内敌方武将生命值低于35%时无法回复生命值。"
 		"DOTA_Tooltip_ability_skill_hero_wansha_radius"	"范围:"
-		"DOTA_Tooltip_ability_skill_hero_wansha_as_slow"	"攻击速度："
+		"DOTA_Tooltip_ability_skill_hero_wansha_as_slow"	"%攻击速度："
 
 		"DOTA_Tooltip_modifier_hero_wansha_debuff" "完杀"
 		"DOTA_Tooltip_modifier_hero_wansha_debuff_Description" "攻击速度降低 %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%% "
@@ -848,6 +851,10 @@
 		"DOTA_Tooltip_ability_skill_hero_tuxi_Description"	"对一条直线上的敌人造成伤害，同时眩晕敌人。"
 		"DOTA_Tooltip_ability_skill_hero_tuxi_stun_duration"	"眩晕时间:"
 		"DOTA_Tooltip_ability_skill_hero_tuxi_damage"	"伤害："
+
+		"DOTA_Tooltip_ability_skill_hero_lvhu"	"吕虎"
+		"DOTA_Tooltip_ability_skill_hero_lvhu_Description"	"吕布每次被攻击都会对攻击目标造成受到伤害一定数值的火焰魔法伤害。"
+		"DOTA_Tooltip_ability_skill_hero_lvhu_injury"	"%反伤比率: "
 
 
 

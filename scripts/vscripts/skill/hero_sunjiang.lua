@@ -23,21 +23,6 @@ function modifier_skill_hero_sunjiang:DeclareFunctions()
     }  
 end
 
--- function modifier_skill_hero_sunjiang:OnAttackLanded(keys)
---     local ability = self:GetAbility()
---     local caster = self:GetCaster()
---     local owner = caster:GetOwner() or (ship{})
-
---     if kyes.target ~= caster
---      then return        
---     end
-
---     if owner.ship['jiangdong'] then
---         caster:AddNewModifire(caster,self,'modifire_skill_hero_sunjiang',{})
---     end
-
--- end
-
 function modifier_skill_hero_sunjiang:OnAttackLanded(keys)
     if IsServer() then
         
@@ -58,4 +43,9 @@ function modifier_skill_hero_sunjiang:OnAttackLanded(keys)
             end
         end
     end        
+end
+
+
+function modifier_skill_hero_sunjiang:IsHidden()
+    return true
 end

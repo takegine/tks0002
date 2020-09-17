@@ -27,7 +27,6 @@ function skill_hero_tiandu:OnSpellStart()
     target:AddNewModifier(caster, ability, modifier_armor, {duration = armor_duration})
 
     if owner.ship['shuangying'] then
-    -- local parent = self:GetParent()
     local units = FindUnitsInRadius(target:GetTeamNumber(),
                                     target:GetOrigin(),
                                     nil,
@@ -40,10 +39,6 @@ function skill_hero_tiandu:OnSpellStart()
                         
         for key,target in pairs(units) do
             target:AddNewModifier(caster,ability,"modifier_skill_hero_tiandu_unstun",{Duration=2.5})
-
-            -- if target:IsMagicImmune() then
-			--    return 
-            -- end
         end 
     end 
 end 
@@ -100,8 +95,6 @@ end
 function modifier_skill_hero_tiandu_buff:GetModifierPhysicalArmorBonus()
     local ability=self:GetAbility()
     local armor_bonus = ability:GetSpecialValueFor('armor_bonus')
-    -- self.armor_bonus = self.ability:GetSpecialValueFor("armor_bonus")
-	-- self.frost_duration = self.ability:GetSpecialValueFor("frost_duration")
     return  armor_bonus
 end
 
@@ -156,6 +149,10 @@ end
 
 function modifier_skill_hero_tiandu_debuff:GetModifierAttackSpeedBonus_Constant()
 	return self.as_slow * (-1)
+end
+
+function modifier_skill_hero_tiandu_debuff:OnRefresh()
+	self:OnCreated()
 end
 
 

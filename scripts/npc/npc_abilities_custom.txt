@@ -6906,6 +6906,29 @@
 			}
 		}
 	}	
+
+	"skill_hero_lvhu"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"skill/hero_lvhu.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"qunxiong/ability_lvhu"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"10"
+		"LevelsBetweenUpgrades"			"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"injury"				"15 20 25 30 35 40 45 50 55 60"
+			}
+		}
+	}
+
 	
 // 白喵 7-19
 	"skill_hero_yinghun"

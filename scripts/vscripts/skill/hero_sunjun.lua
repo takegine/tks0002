@@ -27,3 +27,7 @@ function modifier_skill_hero_sunjun:GetModifierPhysical_ConstantBlockSpecial()
     local ability=self:GetAbility()
     return  ability:GetLevel()*130
 end
+
+function modifier_skill_hero_sunjun:IsHidden()
+    return true
+end
