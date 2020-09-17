@@ -273,6 +273,10 @@
 		"npc_dota_hero_doom_bringer"        "董卓"
 		"npc_dota_hero_disruptor"           "华佗"
 		"npc_dota_hero_furion"              "左慈"
+		"npc_unit_huangjinbing"             "黄巾兵"
+		"npc_unit_tuyuansu"                 "土元素"
+		"npc_unit_shuiyuansu"               "水元素"
+		"npc_unit_huoyuansu"                "火元素"
 
 
 	// ---------------------------------------------单位技能-西索-----
