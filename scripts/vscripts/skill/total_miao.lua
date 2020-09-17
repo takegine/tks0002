@@ -6,7 +6,7 @@
 * @Author: 白喵
 * @Date: 2020-07-21 22:49:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-17 18:50:05
+* @LastEditTime: 2020-09-17 22:30:41
 --]]
 
 --[[
@@ -233,4 +233,53 @@ function mingce_on_death(keys)
         end
     end
     ability.summoned = nil
+end
+
+function guidao(keys)
+    local ability = keys.ability
+    local caster = ability:GetCaster()
+    local huangjin = CreateUnitByName( "npc_unit_huangjinbing", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+    local duration = ability:GetSpecialValueFor("duration")
+    huangjin:CreatureLevelUp(ability:GetLevel()-1)
+    huangjin:AddNewModifier(tmp_unit, nil, 'modifier_kill', {duration = duration} )
+    local tmp_unit
+    --if true then
+    if caster:GetItemInSlot(5) and caster:GetItemInSlot(5):GetName()=='item_format_036' then
+        guidao_huanyin(huangjin)
+        for _ = 1,8 do
+            tmp_unit = CreateUnitByName( "npc_unit_huangjinbing", huangjin:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+            tmp_unit:CreatureLevelUp(ability:GetLevel()-1)
+            guidao_huanyin(tmp_unit)
+            tmp_unit:AddNewModifier(tmp_unit, nil, 'modifier_kill', {duration = duration} )
+        end
+    else
+        for _ = 1,8 do
+            tmp_unit = CreateUnitByName( "npc_unit_huangjinbing", huangjin:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+            tmp_unit:CreatureLevelUp(ability:GetLevel()-1)
+            tmp_unit:AddNewModifier(tmp_unit, nil, 'modifier_kill', {duration = duration} )
+        end
+    end
+
+end
+function guidao_huanyin(unit)
+    local owner = unit:GetOwner()
+    unit:SetBaseDamageMax(unit:GetBaseDamageMax()*2)
+    unit:SetBaseDamageMin(unit:GetBaseDamageMin()*2)
+    --攻击力翻倍
+    for q=0,5 do
+        local oitem = owner:GetItemInSlot(q)
+        local vitem = unit:GetItemInSlot(q)
+        if    oitem 
+        and ( not vitem  or vitem:GetName() ~= oitem:GetName() ) 
+        then local additem = CreateItem( oitem:GetName(), unit, unit )
+            additem:SetLevel(oitem:GetCurrentCharges())
+            unit:RemoveItem(vitem )
+            unit:AddItem( additem )
+            if    additem 
+            and   additem.needwaveup 
+            then  additem:needwaveup()
+            end
+        end
+    end
+    --添加宝物效果
 end

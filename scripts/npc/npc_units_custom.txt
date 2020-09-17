@@ -3,6 +3,19 @@
 	// =================================================================================
 	// Creature: Gnoll Assassin
 	// =================================================================================
+	//=============碰撞体积===============
+	// 106F3E64   mov edx,server.1132FC78                   DOTA_HULL_SIZE_SMALLEST
+	// 106F3E8D   mov edx,server.1132FC60                   DOTA_HULL_SIZE_SMALL
+	// 106F3EB6   mov edx,server.1132FC48                   DOTA_HULL_SIZE_REGULAR
+	// 106F3EDF   mov edx,server.1132FC34                   DOTA_HULL_SIZE_HERO
+	// 106F3F08   mov edx,server.1132FD44                   DOTA_HULL_SIZE_SIEGE
+	// 106F3F31   mov edx,server.1132FD2C                   DOTA_HULL_SIZE_TOWER
+	// 106F3F5A   mov edx,server.1132FD14                   DOTA_HULL_SIZE_LARGE
+	// 106F3F83   mov edx,server.1132FD00                   DOTA_HULL_SIZE_HUGE
+	// 106F3FAC   mov edx,server.1132FCE8                   DOTA_HULL_SIZE_BUILDING
+	// 106F3FD2   mov edx,server.1132FCD0                   DOTA_HULL_SIZE_BARRACKS
+	// 106F3FF8   mov edx,server.1132FCB8                   DOTA_HULL_SIZE_FILLER
+	//===================================
 	"npc_dota_creature_gnoll_assassin"
 	{
 		// General
@@ -811,7 +824,9 @@
 		"Model"	"models/creeps/ice_biome/undeadtusk/undead_tuskskeleton02.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.75"
+		"ModelScale"	"0.25"
+		//碰撞体积半径
+		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
 		"Level"	"1"
 		// 物理护甲
@@ -852,8 +867,8 @@
 			"XPGain"	"0"
 		}
 		// 技能
-		"Ability1"	"Summoned_split_shot"
-		"Ability2"	"skill_player_noattack"
+		"Ability1"	"skill_player_noattack"
+		"Ability2"	""
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""

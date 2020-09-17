@@ -959,6 +959,9 @@
 		"DOTA_Tooltip_ability_skill_hero_gongjian_radius" "作用范围:"
 		"DOTA_Tooltip_ability_skill_hero_gongjian_attack" "%增加攻击力:"
 		"DOTA_Tooltip_modifier_hero_gongjian2" "攻坚"
+		"DOTA_Tooltip_ability_skill_hero_guidao" "鬼道"		
+		"DOTA_Tooltip_ability_skill_hero_guidao_Description" "召唤出九个幻影兵来协助作战，幻影兵无法被伤害，每个幻影兵的攻击力随着武将等级的提升而提升。\n持有【太平要术】时，召唤出来的幻影兵攻击力提升100%，且可享受宝物加成。"
+		"DOTA_Tooltip_ability_skill_hero_guidao_duration" "幻影兵持续时间:"
 	// ---------------------------------------------其他------
 		"DOTA_Tooltip_ability_skill_hero_tieji2222"	"类光发的波"
 		"DOTA_Tooltip_ability_skill_hero_tieji111_clone"	"类光发的波111"
