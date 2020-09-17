@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-26 22:45:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-27 23:10:37
+* @LastEditTime: 2020-09-17 18:01:18
 --]]
 skill_hero_sunwu = {}
 
@@ -42,8 +42,7 @@ function modifier_hero_sunwu:OnAttackLanded(keys)
     local max = 8--最大存在数量
     if attacker:HasModifier("modifier_hero_sunwu") then
         if ability.number < max then
-            local bulianshi = CreateUnitByName( "npc_unit_bulianshi", attacker:GetAbsOrigin(), false, attacker, attacker, attacker:GetTeamNumber())
-            FindClearSpaceForUnit(bulianshi,attacker:GetAbsOrigin(),false)
+            local bulianshi = CreateUnitByName( "npc_unit_bulianshi", attacker:GetAbsOrigin(), true, attacker, attacker, attacker:GetTeamNumber())
             bulianshi:CreatureLevelUp(ability:GetLevel()-1)
             ability.number = ability.number+1
             bulianshi:AddNewModifier(attacker, ability, 'modifier_summoned_death',nil)

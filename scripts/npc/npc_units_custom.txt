@@ -597,7 +597,7 @@
 		}
 		// 技能
 		"Ability1"	"Summoned_split_shot"
-		"Ability2"	"skill_active_split_shot"
+		"Ability2"	"skill_player_noattack"
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""
@@ -605,9 +605,9 @@
 		"Ability11"	""
 		// 普攻
 		// 最小普攻伤害
-		"AttackDamageMin"	"200"
+		"AttackDamageMin"	"80"
 		// 最大普攻伤害
-		"AttackDamageMax"	"200"
+		"AttackDamageMax"	"80"
 		// 普攻距离
 		"AttackRange"	"600"
 		// 普攻频率
@@ -682,7 +682,7 @@
 		}
 		// 技能
 		"Ability1"	"Summoned_split_shot"
-		"Ability2"	"skill_active_split_shot"
+		"Ability2"	"skill_player_noattack"
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""
@@ -690,9 +690,9 @@
 		"Ability11"	""
 		// 普攻
 		// 最小普攻伤害
-		"AttackDamageMin"	"200"
+		"AttackDamageMin"	"80"
 		// 最大普攻伤害
-		"AttackDamageMax"	"200"
+		"AttackDamageMax"	"80"
 		// 普攻距离
 		"AttackRange"	"600"
 		// 普攻频率
@@ -767,7 +767,7 @@
 		}
 		// 技能
 		"Ability1"	"Summoned_split_shot"
-		"Ability2"	"skill_active_split_shot"
+		"Ability2"	"skill_player_noattack"
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""
@@ -775,9 +775,9 @@
 		"Ability11"	""
 		// 普攻
 		// 最小普攻伤害
-		"AttackDamageMin"	"200"
+		"AttackDamageMin"	"80"
 		// 最大普攻伤害
-		"AttackDamageMax"	"200"
+		"AttackDamageMax"	"80"
 		// 普攻距离
 		"AttackRange"	"600"
 		// 普攻频率

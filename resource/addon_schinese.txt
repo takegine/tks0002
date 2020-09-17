@@ -932,6 +932,12 @@
 		"DOTA_Tooltip_ability_skill_hero_qingnang_jump_count" "弹射次数:"
 		"DOTA_Tooltip_ability_skill_hero_qingnang_radius" "弹射范围:"
 		"DOTA_Tooltip_ability_skill_hero_qingnang_heal" "治疗生命值:"
+		"DOTA_Tooltip_ability_skill_hero_mingce" "在自身附近召唤一个的火元素随机在一名敌方单位进行攻击，每个火元素具有80X等级点的火系攻击力且不可被攻击，当陈宫死亡时炎魔才会消失。"
+		"DOTA_Tooltip_ability_Summoned_split_shot" "分裂箭"
+		"DOTA_Tooltip_ability_Summoned_split_shot_Description" "使得该单位每次攻击可以攻击额外多个单位"
+		"DOTA_Tooltip_ability_Summoned_split_shot_damage_modifier_tooltip" "%攻击力百分比:"
+		"DOTA_Tooltip_ability_Summoned_split_shot_split_shot_range" "分裂范围:"
+		"DOTA_Tooltip_ability_Summoned_split_shot_arrow_count" "额外目标数:"
 	// ---------------------------------------------其他------
 		"DOTA_Tooltip_ability_skill_hero_tieji2222"	"类光发的波"
 		"DOTA_Tooltip_ability_skill_hero_tieji111_clone"	"类光发的波111"

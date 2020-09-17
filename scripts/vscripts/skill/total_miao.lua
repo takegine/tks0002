@@ -6,7 +6,7 @@
 * @Author: 白喵
 * @Date: 2020-07-21 22:49:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-17 02:22:40
+* @LastEditTime: 2020-09-17 18:23:03
 --]]
 
 --[[
@@ -199,12 +199,36 @@ end
     end
 --治疗波结束    
 
-function active_split_shot(keys)
+function mingce(keys)
     local ability = keys.ability
     local caster = ability:GetCaster()
-    local split_shot = caster:GetAbilityByIndex(0)
-    print("active")
-    if split_shot:GetAbilityName() == "Summoned_split_shot" then
-        split_shot:ToggleAbility()
+    local owner = caster:GetOwner() or {ship={}}
+    if owner.ship["mingzhu"] then
+        local summoned_list = {"npc_unit_huoyuansu","npc_unit_shuiyuansu","npc_unit_tuyuansu"}
+        local unit_name = summoned_list[RandomInt(1, 3)]
+        local summoned = CreateUnitByName( unit_name, caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+        summoned:GetAbilityByIndex(0):ToggleAbility()--激活多重射
+        if not ability.summoned then
+            ability.summoned = {}
+        end
+        table.insert(ability.summoned,summoned)
+    else
+        local summoned = CreateUnitByName( "npc_unit_huoyuansu", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+        if not ability.summoned then
+            ability.summoned = {}
+        end
+        table.insert(ability.summoned,summoned)
     end
+end
+
+function mingce_on_death(keys)
+    local ability = keys.ability
+    local caster = ability:GetCaster()
+    local summoned = ability.summoned or {}
+    for _,unit in ipairs(summoned) do
+        if not unit:IsNull() then
+            unit:ForceKill(false)
+        end
+    end
+    ability.summoned = nil
 end
