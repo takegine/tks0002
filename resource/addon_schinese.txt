@@ -856,6 +856,11 @@
 		"DOTA_Tooltip_ability_skill_hero_lvhu_Description"	"吕布每次被攻击都会对攻击目标造成受到伤害一定数值的火焰魔法伤害。"
 		"DOTA_Tooltip_ability_skill_hero_lvhu_injury"	"%反伤比率: "
 
+		"DOTA_Tooltip_ability_skill_hero_tongshuai"	"双雄-统率"
+		"DOTA_Tooltip_ability_skill_hero_tongshuai_Description"	"每次攻击都会获得统率属性，每次获得的统率属性会在15秒后失去。"
+		"DOTA_Tooltip_ability_skill_hero_tongshuai_agi_gain"	"获取统帅属性: "
+		"DOTA_Tooltip_modifier_skill_hero_tongshuai_agi"	"统率"
+		"DOTA_Tooltip_modifier_skill_hero_tongshuai_agi_Description"	"增加%dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%点统帅值"
 
 
 	// ---------------------------------------------单位技能-白喵-----

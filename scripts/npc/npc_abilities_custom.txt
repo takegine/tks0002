@@ -6929,6 +6929,26 @@
 		}
 	}
 
+	"skill_hero_tongshuai"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"skill/hero_tongshuai.lua"
+		"AbilityTextureName"			"qunxiong/ability_tongshuai"		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"MaxLevel"						"10"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi_gain"				"1 2 3 4 5 6 7 8 9 10"
+			}
+		}
+	}
 	
 // 白喵 7-19
 	"skill_hero_yinghun"
