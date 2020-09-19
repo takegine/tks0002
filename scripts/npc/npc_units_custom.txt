@@ -4,17 +4,17 @@
 	// Creature: Gnoll Assassin
 	// =================================================================================
 	//=============碰撞体积===============
-	// 106F3E64   mov edx,server.1132FC78                   DOTA_HULL_SIZE_SMALLEST
-	// 106F3E8D   mov edx,server.1132FC60                   DOTA_HULL_SIZE_SMALL
-	// 106F3EB6   mov edx,server.1132FC48                   DOTA_HULL_SIZE_REGULAR
-	// 106F3EDF   mov edx,server.1132FC34                   DOTA_HULL_SIZE_HERO
-	// 106F3F08   mov edx,server.1132FD44                   DOTA_HULL_SIZE_SIEGE
-	// 106F3F31   mov edx,server.1132FD2C                   DOTA_HULL_SIZE_TOWER
+	// 106F3E64   mov edx,server.1132FC78         8         DOTA_HULL_SIZE_SMALLEST
+	// 106F3E8D   mov edx,server.1132FC60         8         DOTA_HULL_SIZE_SMALL
+	// 106F3EB6   mov edx,server.1132FC48        16         DOTA_HULL_SIZE_REGULAR
+	// 106F3EDF   mov edx,server.1132FC34        24         DOTA_HULL_SIZE_HERO
+	// 106F3F08   mov edx,server.1132FD44        16         DOTA_HULL_SIZE_SIEGE
+	// 106F3F31   mov edx,server.1132FD2C       144         DOTA_HULL_SIZE_TOWER
 	// 106F3F5A   mov edx,server.1132FD14                   DOTA_HULL_SIZE_LARGE
-	// 106F3F83   mov edx,server.1132FD00                   DOTA_HULL_SIZE_HUGE
-	// 106F3FAC   mov edx,server.1132FCE8                   DOTA_HULL_SIZE_BUILDING
-	// 106F3FD2   mov edx,server.1132FCD0                   DOTA_HULL_SIZE_BARRACKS
-	// 106F3FF8   mov edx,server.1132FCB8                   DOTA_HULL_SIZE_FILLER
+	// 106F3F83   mov edx,server.1132FD00        80         DOTA_HULL_SIZE_HUGE
+	// 106F3FAC   mov edx,server.1132FCE8        81         DOTA_HULL_SIZE_BUILDING
+	// 106F3FD2   mov edx,server.1132FCD0       144         DOTA_HULL_SIZE_BARRACKS
+	// 106F3FF8   mov edx,server.1132FCB8        96         DOTA_HULL_SIZE_FILLER
 	//===================================
 	"npc_dota_creature_gnoll_assassin"
 	{
@@ -319,67 +319,6 @@
 		"ConsideredHero"	"1"
 		"ModelScale"	"1.1"
 		"RingRadius"	"100"
-	}
-//先生 6-13
-	"npc_dota_creature_gnoll_jinzhan"
-	{
-		"BaseClass"	"npc_dota_creature"
-		"Ability1"	""
-		"Ability2"	""
-		"Ability3"	""
-		"Ability4"	""
-		"Ability5"	""
-		"Ability6"	""
-		"Ability7"	""
-		"Ability8"	""
-		"Ability9"	""
-		"Ability10"	""
-		"Ability11"	""
-		"Ability12"	""
-		"Ability13"	""
-		"Ability14"	""
-		"Ability15"	""
-		"Ability16"	""
-		"Model"	"models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmdl"
-		"ModelScale"	"1"
-		"Level"	"3"
-		"BountyXP"	"50"
-		"BountyGoldMin"	"50"
-		"BountyGoldMax"	"100"
-		"HealthBarOffset"	"170"
-		"RingRadius"	"40"
-		"ConsideredHero"	"0"
-		"GameSoundsFile"	"soundevents/game_sounds_creeps.vsndevts"
-		"SoundSet"	"n_creep_Ranged"
-		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"	"70"
-		"AttackDamageMax"	"100"
-		"AttackRate"	"0.8"
-		"AttackAnimationPoint"	"0.4"
-		"AttackAcquisitionRange"	"800"
-		"AttackRange"	"180"
-		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"	"270"
-		"StatusHealth"	"99999"
-		"StatusMana"	"99999"
-		"StatusHealthRegen"	"0.5"
-		"StatusManaRegen"	"0.5"
-		"VisionDaytimeRange"	"400"
-		"VisionNighttimeRange"	"400"
-		"Creature"
-		{
-			"HPGain"	"50"
-			"DamageGain"	"2"
-			"ArmorGain"	"2"
-			"MagicResistGain"	"2"
-			"MoveSpeedGain"	"1"
-			"BountyGain"	"50"
-			"XPGain"	"50"
-		}
-		"TeamName"	"DOTA_TEAM_NEUTRALS"
-		"CombatClassAttack"	"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"UnitRelationShipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		"CombatClassDefend"	"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	}
 
 	"npc_damage_dummy"
