@@ -445,6 +445,7 @@ function LinkLuaS()
         LinkLuaModifier( "modifier_defend_"..v, modload, 0 )
     end
         LinkLuaModifier( "modifier_defend_big", modload, 0 )
+        LinkLuaModifier( "modifier_abi_vam", "buff/ability_vampire", 0 )
 end
 
 function CAddonTemplateGameMode:dota_item_purchased( data )
