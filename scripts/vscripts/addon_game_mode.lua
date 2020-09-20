@@ -136,15 +136,15 @@ function CAddonTemplateGameMode:refreshlist()
                 side = info.UnitLabel,
                 popu = info.TksPopUse,
                 price = info.TksPayedGold,
-                able = ablelist[info.override_hero],
                 }
+            relist.able = ablelist[relist.name]
             sendlist[name] = relist
             :: continue ::
         end
         CustomNetTables:SetTableValue( "hero_info", mes, sendlist )
     end
     messageT("hero", herolist, hero_info)
-    messageT("unit", unitlist, unit_info) 
+    messageT("unit", unitlist, unit_info)
 
 
 end
