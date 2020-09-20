@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-09-16 12:57:44
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-16 14:25:25
+* @LastEditTime: 2020-09-20 21:05:24
 --]]
 skill_hero_jijiu = {}
 function skill_hero_jijiu:needwaveup()
@@ -85,11 +85,15 @@ LinkLuaModifier("modifier_hero_jijiu3", "skill/hero_jijiu.lua", 0)
 
 
 function modifier_hero_jijiu3:DeclareFunctions()
-    return {MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE}
+    return {MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,MODIFIER_PROPERTY_OVERRIDE_ANIMATION}
 end
 
 function modifier_hero_jijiu3:IsHidden()
     return true
+end
+
+function modifier_hero_jijiu3:GetOverrideAnimation()
+    return ACT_DOTA_DIE
 end
 
 function modifier_hero_jijiu3:GetModifierHealthRegenPercentage()
