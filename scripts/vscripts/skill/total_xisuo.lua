@@ -69,7 +69,9 @@ function yinghan( keys )
 	if  not caster:HasModifier(modifierName) 
 	and caster:GetHealth() / caster:GetMaxHealth() < percentage then
 		ability:ApplyDataDrivenModifier( caster, caster, modifierName, nil )
-		caster:SetModelScale(caster:GetModelScale()+0.2)
+        caster:SetModelScale(caster:GetModelScale()+0.2)
+        
+        caster:StartGesture(ACT_DOTA_CAST_ABILITY_2)
 	end
 end
 
@@ -294,6 +296,7 @@ function paoxiao(keys)
     if RollPercentage(chance) then
         ability:ApplyDataDrivenModifier( caster, caster, attspeedmod, { duration=speed_dur })
 
+        -- caster:StartGesture(ACT_DOTA_CAST_ABILITY_1)
         if owner.ship['wuhu'] then
 
             local enemy = FindUnitsInRadius(caster:GetTeamNumber(),

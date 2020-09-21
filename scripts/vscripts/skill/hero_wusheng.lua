@@ -57,6 +57,8 @@ function wusheng(keys)
     ParticleManager:SetParticleControl(zhuan, 0, keys.attacker:GetAbsOrigin())
     ParticleManager:ReleaseParticleIndex(zhuan)
 
+    caster:StartGesture(ACT_DOTA_CAST_ABILITY_2)
+
     --范围伤害
 	local damage_table = {}
 

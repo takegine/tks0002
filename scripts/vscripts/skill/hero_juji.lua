@@ -22,6 +22,7 @@ target:AddNewModifier(caster, self, 'modifier_skill_hero_juji', {duration=durati
 caster.juji_amountlist = caster.juji_amountlist or {}
 table.insert(caster.juji_amountlist , target)
 
+        caster:StartGesture(ACT_DOTA_CAST_ABILITY_2)
 end
 
 modifier_skill_hero_juji=class({})  
