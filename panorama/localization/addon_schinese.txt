@@ -28,8 +28,11 @@
         "itemonsell"	    "流放"
         "noreadyforlvlup"	"该项目无法升级"
         "fulloftable"	    "点将台已满"
-        "clicktoget"	    "点击头像招募 {s：item_panel_name} "
+        "error_mes_not_range"	"不在范围内"
+
+        "clicktoget"	    "点击头像招募 {s:item_panel_name} "
         "Population_Sale"   " 点击花费 {d:number} 金币 来提升人口上限 "
+        "UIButton_mes_1"    "左键点击搜索 {s:search_way} 的武将，右键点击切换搜将列表为 {s:search_list}"
 
         "TKS_SIDE_wuguo" "东吴"
         "TKS_SIDE_weiguo" "北魏"
