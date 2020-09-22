@@ -100,3 +100,18 @@ function Merge(table1, table2)
     end
     return result
 end
+
+function Dynamic_Wrap ( mt, name )
+    if Convars:GetBool( 'developer' ) then
+        assert(mt ~= nil )
+        local w = function (...)
+                if not mt[name] then
+                    error(string.format( "Attempt to call %s which is undefined", name))
+                end
+                return mt[name](...)
+            end
+        return w
+    else
+        return mt[name]
+    end
+end
