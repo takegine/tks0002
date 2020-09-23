@@ -110,3 +110,6 @@ function VectorRevolve(vector,angle)--向量平面逆时针旋转
     local z = vector.z
     return Vector(x,y,z)
 end
+
+btrue = function ( this ) return true end
+bfalse= function ( this ) return false end
