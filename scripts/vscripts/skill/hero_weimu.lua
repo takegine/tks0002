@@ -14,7 +14,7 @@ function modifier_skill_hero_weimu:CheckState()
 	return {
 		[MODIFIER_STATE_MAGIC_IMMUNE] = true
     }
-    -- end
+    end
 end
 
 function modifier_skill_hero_weimu:IsHidden()

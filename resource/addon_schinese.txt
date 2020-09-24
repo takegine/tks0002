@@ -719,7 +719,7 @@
 		"DOTA_Tooltip_ability_skill_hero_sunjiang"	"孙江"
 		"DOTA_Tooltip_ability_skill_hero_sunjiang_Description"	"孙策可以获得一定比例的近战分裂能力"
 		"DOTA_Tooltip_ability_skill_hero_sunjiang_radius"	"分裂半径："
-		"DOTA_Tooltip_ability_skill_hero_sunjiang_damage"	"%分裂伤害: "
+		"DOTA_Tooltip_ability_skill_hero_sunjiang_damage"	"%分裂伤害:"
 
 		
 		"DOTA_Tooltip_ability_skill_hero_sunjun"	"孙君"
@@ -734,7 +734,7 @@
 		"DOTA_Tooltip_ability_skill_hero_pojun"	"破军"
 		"DOTA_Tooltip_ability_skill_hero_pojun_Description"	"发出恐怖的嚎叫，使周围敌人在恐惧中战栗，减少它们的攻击力。"
 		"DOTA_Tooltip_ability_skill_hero_pojun_radius"	"范围："
-		"DOTA_Tooltip_ability_skill_hero_pojun_jiangong"	"%降低攻击: "
+		"DOTA_Tooltip_ability_skill_hero_pojun_jiangong"	"%降低攻击:"
 		"DOTA_Tooltip_ability_skill_hero_pojun_duration""持续时间: "
 		
 
@@ -747,7 +747,7 @@
 		"DOTA_Tooltip_ability_skill_hero_jieyin"	"结姻"
 		"DOTA_Tooltip_ability_skill_hero_jieyin_Description"	"提升周围队友一定比例的最大生命值的生命回复速度。"
 		"DOTA_Tooltip_ability_skill_hero_jieyin_radius"	"范围："
-		"DOTA_Tooltip_ability_skill_hero_jieyin_heal"	"%治疗量: "
+		"DOTA_Tooltip_ability_skill_hero_jieyin_heal"	"%治疗量:"
 
 		"DOTA_Tooltip_modifier_hero_jieyin_heal" "结姻"
 		"DOTA_Tooltip_modifier_hero_jieyin_heal_Description" "生命值回复提升 %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% "
@@ -755,7 +755,7 @@
 		"DOTA_Tooltip_ability_skill_hero_tianxiang"	"天香"
 		"DOTA_Tooltip_ability_skill_hero_tianxiang_Description"	"小乔将获得一个天香护盾，期间每次受到伤害都将以转移一定比例的水伤害给附近敌人，当附近没有敌人时无法转移。"
 		"DOTA_Tooltip_ability_skill_hero_tianxiang_radius"	"范围："
-		"DOTA_Tooltip_ability_skill_hero_tianxiang_redirect"	"%转移比例: "
+		"DOTA_Tooltip_ability_skill_hero_tianxiang_redirect"	"%转移比例:"
 		"DOTA_Tooltip_ability_skill_hero_tianxiang_duration"	"持续时间: "
 
 		"DOTA_Tooltip_modifier_skill_hero_tianxiang"	"天香护盾"
@@ -861,7 +861,32 @@
 		"DOTA_Tooltip_ability_skill_hero_tongshuai_agi_gain"	"获取统帅属性: "
 		"DOTA_Tooltip_modifier_skill_hero_tongshuai_agi"	"统率"
 		"DOTA_Tooltip_modifier_skill_hero_tongshuai_agi_Description"	"增加%dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%点统帅值"
+		
+		"DOTA_Tooltip_ability_skill_hero_wuli"	"双雄-武力"
+		"DOTA_Tooltip_ability_skill_hero_wuli_Description"	"每次被攻击都会获得武力属性，每次获得的武力属性会在15秒后失去。"
+		"DOTA_Tooltip_ability_skill_hero_wuli_stre_gain"	"获取武力属性: "
+		"DOTA_Tooltip_modifier_skill_hero_wuli_stre"	"武力"
+		"DOTA_Tooltip_modifier_skill_hero_wuli_stre_Description"	"增加%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%点武力值"
 
+
+		"DOTA_Tooltip_ability_skill_hero_heliang"	"河良"
+		"DOTA_Tooltip_ability_skill_hero_heliang_Description"	"颜良每次攻击有30%概率向目标发出三道狼吼，每道狼吼对沿途的敌人造成闪电魔法伤害。"
+		"DOTA_Tooltip_ability_skill_hero_heliang_damage"	"伤害: "
+
+		"DOTA_Tooltip_ability_skill_hero_wensi"	"文四"
+		"DOTA_Tooltip_ability_skill_hero_wensi_Description"	"文丑每次被攻击有15%概率向目标发出三道狼吼，每道狼吼对沿途的敌人造成闪电魔法伤害。"
+		"DOTA_Tooltip_ability_skill_hero_wensi_damage"	"伤害: "
+
+		"DOTA_Tooltip_ability_skill_hero_wushuang"	"无双"
+		"DOTA_Tooltip_ability_skill_hero_wushuang_Description"	"吕布每次攻击有一定的几率秒杀敌人，对武将只造成最大生命值33%的火焰魔法伤害。"
+		"DOTA_Tooltip_ability_skill_hero_wushuang_chance"	"%几率:"
+
+		"DOTA_Tooltip_ability_skill_hero_guishen"	"鬼神"
+		"DOTA_Tooltip_ability_skill_hero_guishen_Description"	"吕布死亡时仍然会继续作战4s，不受任何伤害，移动无视碰撞体积，并且攻击速度得到提升。"
+		"DOTA_Tooltip_ability_skill_hero_guishen_atk_speed"	"%攻击速度:"
+
+		"DOTA_Tooltip_modifier_skill_hero_guishen_wraith" "鬼神降临"
+		"DOTA_Tooltip_modifier_skill_hero_guishen_wraith_Description"	"谁能杀我！"
 
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"

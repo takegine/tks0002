@@ -6951,7 +6951,159 @@
 			}
 		}
 	}
+
+			"skill_hero_wuli"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"skill/hero_wuli.lua"
+		"AbilityTextureName"			"qunxiong/ability_wuli"		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"						"10"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCooldown"				"0.5"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stre_gain"				"1 2 3 4 5 6 7 8 9 10"
+			}
+		}
+	}
 	
+	"skill_hero_heliang"
+	{	
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"qunxiong/ability_heliang"
+		"ScriptFile"					"skill/hero_heliang.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"10"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"130"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"length"			"450"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1500"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spawn_distance"	"30"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"75 300 600 975 1425 1950 2550 3225 3975 4800"
+			}
+		}
+	}	
+
+	"skill_hero_wensi"
+	{	
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"qunxiong/ability_wensi"
+		"ScriptFile"					"skill/hero_wensi.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"10"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"130"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"length"			"450"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1500"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spawn_distance"	"30"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"75 300 600 975 1425 1950 2550 3225 3975 4800"
+			}
+		}
+	}	
+
+	"skill_hero_wushuang"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"skill/hero_wushuang.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"qunxiong/ability_wushuang"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"10"
+		"LevelsBetweenUpgrades"			"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"11 12 13 14 15 16 17 18 19 20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_hp_pct"			"31 32 33 34 35 36 37 38 39 40"
+			}
+		}
+	}
+
+	"skill_hero_guishen"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"skill/hero_guishen.lua"
+		"AbilityTextureName"			"qunxiong/ability_guishen"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"						"10"
+		"LevelsBetweenUpgrades"			"1"	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"atk_speed"		"30 60 90 120 150 180 210 240 270 300"
+			}
+		}
+	}
+
 // 白喵 7-19
 	"skill_hero_yinghun"
 	{
