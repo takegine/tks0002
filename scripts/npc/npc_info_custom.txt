@@ -1,0 +1,896 @@
+"unit_info"
+{
+    "hero"
+    {
+        "npc_dota_hero_death_prophet"
+        {
+            "name" "npc_dota_hero_death_prophet"
+            "side" "qunxiong"
+            "pop" "3"
+            "price" "555"
+            "atk" "tree"
+            "def" "none"
+            "able" 
+            {
+            }
+        }
+        "npc_dota_hero_drow_ranger"
+        {
+            "name" "npc_dota_hero_drow_ranger"
+            "side" "shuguo"
+            "pop" "2"
+            "price" "375"
+            "atk" "tree"
+            "def" "tree"
+            "able"
+            {
+                "1" "skill_hero_lieren" 
+                "2" "skill_ship_nanman_zr" 
+                "3" ""
+            }
+        }
+        "npc_dota_hero_bristleback"
+        {
+            "name" "npc_dota_hero_bristleback"
+            "side" "shuguo"
+            "pop" "3"
+            "price" "325"
+            "atk" "land"
+            "def" "fire"
+            "able"
+            {
+                "1" "skill_hero_paoxiao" 
+                "2" "skill_hero_yinghan"
+            }
+        }
+        "npc_dota_hero_naga_siren"
+        {
+            "name" "npc_dota_hero_naga_siren"
+            "side" "weiguo"
+            "pop" "3"
+            "price" "666"
+            "atk" "tree"
+            "def" "electrical"
+            "able"
+            {
+                "1" "skill_hero_xiaoguo" 
+                "2" "skill_hero_lewu" 
+                "3" "skill_hero_lewei"
+            }
+        }
+        "npc_dota_hero_wisp"
+        {
+            "name" "npc_dota_hero_wisp"
+            "side" "wuguo"
+            "pop" "2"
+            "price" "325"
+            "atk" "water"
+            "def" "water"
+            "able"
+            {
+                "1" "skill_hero_tianxiang" 
+                "2" "skill_hero_hongyan"
+            }
+        }
+        "npc_dota_hero_vengefulspirit"
+        {
+            "name" "npc_dota_hero_vengefulspirit"
+            "side" "wuguo"
+            "pop" "3"
+            "price" "666"
+            "atk" "water"
+            "def" "water"
+            "able"
+            {
+                "1" "skill_hero_yingzi" 
+                "2" "skill_hero_zhousi"
+            }
+        }
+        "npc_dota_hero_spirit_breaker"
+        {
+            "name" "npc_dota_hero_spirit_breaker"
+            "side" "wuguo"
+            "pop" "3"
+            "price" "325"
+            "atk" "land"
+            "def" "electrical"
+            "able"
+            {
+                "1" "skill_hero_duanbing" 
+                "2" "skill_hero_fenxun"
+            }
+        }
+        "npc_dota_hero_tidehunter"
+        {
+            "name" "npc_dota_hero_tidehunter"
+            "side" "wuguo"
+            "pop" "2"
+            "price" "375"
+            "atk" "water"
+            "def" "land"
+            "able"
+            {
+                "1" "skill_hero_pojun"
+            }
+        }
+        "npc_dota_hero_slardar"
+        {
+            "name" "npc_dota_hero_slardar"
+            "side" "wuguo"
+            "pop" "3"
+            "price" "375"
+            "atk" "water"
+            "def" "land"
+            "able"
+            {
+                "1" "skill_hero_buqu"
+            }
+        }
+        "npc_dota_hero_disruptor"
+        {
+            "name" "npc_dota_hero_disruptor"
+            "side" "qunxiong"
+            "pop" "3"
+            "price" "666"
+            "atk" "none"
+            "def" "none"
+            "able" 
+            {
+            }
+        }
+        "npc_dota_hero_windrunner"
+        {
+            "name" "npc_dota_hero_windrunner"
+            "side" "wuguo"
+            "pop" "3"
+            "price" "499"
+            "atk" "fire"
+            "def" "water"
+            "able"
+            {
+                "1" "skill_hero_jieyin" 
+                "2" "skill_hero_xiaoji"
+            }
+        }
+        "npc_dota_hero_tiny"
+        {
+            "name" "npc_dota_hero_tiny"
+            "side" "wuguo"
+            "pop" "3"
+            "price" "666"
+            "atk" "fire"
+            "def" "electrical"
+            "able"
+            {
+                "1" "skill_hero_hunzi" 
+                "2" "skill_hero_sunjun" 
+                "3" "skill_hero_sunchuan" 
+                "4" "skill_hero_sunjiang" 
+                "5" "skill_hero_zhiba" 
+                "6" "skill_hero_jiang"
+            }
+        }
+        "npc_dota_hero_terrorblade"
+        {
+            "name" "npc_dota_hero_terrorblade"
+            "side" "wuguo"
+            "pop" "3"
+            "price" "555"
+            "atk" "fire"
+            "def" "fire"
+            "able"
+            {
+                "1" "skill_hero_yinghun"
+            }
+        }
+        "npc_dota_hero_batrider"
+        {
+            "name" "npc_dota_hero_batrider"
+            "side" "shuguo"
+            "pop" "3"
+            "price" "666"
+            "atk" "fire"
+            "def" "fire"
+            "able"
+            {
+                "1" "skill_hero_liansuo" 
+                "2" "skill_hero_yuhuo" 
+                "3" " "
+            }
+        }
+        "npc_dota_hero_lycan"
+        {
+            "name" "npc_dota_hero_lycan"
+            "side" "weiguo"
+            "pop" "3"
+            "price" "300"
+            "atk" "land"
+            "def" "none"
+            "able"
+            {
+                "1" "skill_hero_yizhong" 
+                "2" "skill_hero_yuwu"
+            }
+        }
+        "npc_dota_hero_brewmaster"
+        {
+            "name" "npc_dota_hero_brewmaster"
+            "side" "shuguo"
+            "pop" "3"
+            "price" "350"
+            "atk" "fire"
+            "def" "fire"
+            "able"
+            {
+                "1" "skill_hero_kuanggu" 
+                "2" "skill_hero_kuangguguanghuan" 
+                "3" "skill_hero_weixing"
+            }
+        }
+        "npc_dota_hero_doom_bringer"
+        {
+            "name" "npc_dota_hero_doom_bringer"
+            "side" "qunxiong"
+            "pop" "3"
+            "price" "350"
+            "atk" "fire"
+            "def" "fire"
+            "able" 
+            {
+            }
+        }
+        "npc_dota_hero_beastmaster"
+        {
+            "name" "npc_dota_hero_beastmaster"
+            "side" "shuguo"
+            "pop" "3"
+            "price" "480"
+            "atk" "land"
+            "def" "tree"
+            "able"
+            {
+                "1" "skill_hero_zaiqi" 
+                "2" "skill_ship_huoshou" 
+                "3" " "
+            }
+        }
+        "npc_dota_hero_razor"
+        {
+            "name" "npc_dota_hero_razor"
+            "side" "wuguo"
+            "pop" "3"
+            "price" "555"
+            "atk" "water"
+            "def" "water"
+            "able"
+            {
+                "1" "skill_hero_keji" 
+                "2" "skill_hero_saoshe"
+            }
+        }
+        "npc_dota_hero_warlock"
+        {
+            "name" "npc_dota_hero_warlock"
+            "side" "shuguo"
+            "pop" "2"
+            "price" "535"
+            "atk" "fire"
+            "def" "none"
+            "able" 
+            {
+            }
+        }
+        "npc_dota_hero_tusk"
+        {
+            "name" "npc_dota_hero_tusk"
+            "side" "wuguo"
+            "pop" "3"
+            "price" "425"
+            "atk" "fire"
+            "def" "fire"
+            "able"
+            {
+                "1" "skill_hero_kurou"
+            }
+        }
+        "npc_dota_hero_alchemist"
+        {
+            "name" "npc_dota_hero_alchemist"
+            "side" "shuguo"
+            "pop" "3"
+            "price" "555"
+            "atk" "land"
+            "def" "land"
+            "able"
+            {
+                "1" "skill_hero_mashu" 
+                "2" "skill_hero_tieji" 
+                "3" "skill_hero_chaoqi"
+            }
+        }
+        "npc_dota_hero_spectre"
+        {
+            "name" "npc_dota_hero_spectre"
+            "side" "wuguo"
+            "pop" "2"
+            "price" "325"
+            "atk" "electrical"
+            "def" "electrical"
+            "able"
+            {
+                "1" "skill_hero_qixi" 
+                "2" "skill_hero_fenwei"
+            }
+        }
+        "npc_dota_hero_enigma"
+        {
+            "name" "npc_dota_hero_enigma"
+            "side" "qunxiong"
+            "pop" "3"
+            "price" "666"
+            "atk" "electrical"
+            "def" "electrical"
+            "able" 
+            {
+            }
+        }
+        "npc_dota_hero_bounty_hunter"
+        {
+            "name" "npc_dota_hero_bounty_hunter"
+            "side" "shuguo"
+            "pop" "3"
+            "price" "350"
+            "atk" "none"
+            "def" "none"
+            "able"
+            {
+                "1" "skill_hero_rende" 
+                "2" "skill_hero_liutao" 
+                "3" "skill_hero_liusan" 
+                "4" "skill_hero_jijiang"
+            }
+        }
+        "npc_dota_hero_undying"
+        {
+            "name" "npc_dota_hero_undying"
+            "side" "wuguo"
+            "pop" "3"
+            "price" "300"
+            "atk" "water"
+            "def" "land"
+            "able"
+            {
+                "1" "skill_hero_tianyi" 
+                "2" "skill_hero_taijun"
+            }
+        }
+        "npc_dota_hero_queenofpain"
+        {
+            "name" "npc_dota_hero_queenofpain"
+            "side" "wuguo"
+            "pop" "2"
+            "price" "325"
+            "atk" "water"
+            "def" "water"
+            "able"
+            {}
+        }
+        "npc_dota_hero_omniknight"
+        {
+            "name" "npc_dota_hero_omniknight"
+            "side" "weiguo"
+            "pop" "3"
+            "price" "555"
+            "atk" "land"
+            "def" "none"
+            "able"
+            {
+                "1" "skill_hero_tuxi"
+            }
+        }
+        "npc_dota_hero_bloodseeker"
+        {
+            "name" "npc_dota_hero_bloodseeker"
+            "side" "shuguo"
+            "pop" "3"
+            "price" "300"
+            "atk" "none"
+            "def" "none"
+            "able"
+            {
+                "1" "skill_hero_tiaoxin"
+            }
+        }
+        "npc_dota_hero_furion"
+        {
+            "name" "npc_dota_hero_furion"
+            "side" "qunxiong"
+            "pop" "3"
+            "price" "666"
+            "atk" "none"
+            "def" "god"
+            "able" 
+            {
+            }
+        }
+        "npc_dota_hero_abaddon"
+        {
+            "name" "npc_dota_hero_abaddon"
+            "side" "shuguo"
+            "pop" "3"
+            "price" "399"
+            "atk" "water"
+            "def" "land"
+            "able"
+            {
+                "1" "skill_hero_danji" 
+                "2" "skill_hero_wusheng"
+            }
+        }
+        "npc_dota_hero_axe"
+        {
+            "name" "npc_dota_hero_axe"
+            "side" "qunxiong"
+            "pop" "3"
+            "price" "400"
+            "atk" "electrical"
+            "def" "fire"
+            "able" 
+            {
+            }
+        }
+        "npc_dota_hero_centaur"
+        {
+            "name" "npc_dota_hero_centaur"
+            "side" "qunxiong"
+            "pop" "3"
+            "price" "400"
+            "atk" "electrical"
+            "def" "fire"
+            "able" 
+            {
+            }
+        }
+        "npc_dota_hero_antimage"
+        {
+            "name" "npc_dota_hero_antimage"
+            "side" "shuguo"
+            "pop" "3"
+            "price" "325"
+            "atk" "land"
+            "def" "fire"
+            "able"
+            {
+                "1" "skill_hero_xueji" 
+                "2" "skill_hero_wuji" 
+                "3" "skill_hero_fengdan"
+            }
+        }
+        "npc_dota_hero_ursa"
+        {
+            "name" "npc_dota_hero_ursa"
+            "side" "weiguo"
+            "pop" "3"
+            "price" "350"
+            "atk" "none"
+            "def" "none"
+            "able"
+            {
+                "1" "skill_hero_qiaobian" 
+                "2" "skill_hero_zhangliao" 
+                "3" "skill_hero_zhangsi"
+            }
+        }
+        "npc_dota_hero_broodmother"
+        {
+            "name" "npc_dota_hero_broodmother"
+            "side" "shuguo"
+            "pop" "3"
+            "price" "499"
+            "atk" "none"
+            "def" "none"
+            "able"
+            {
+                "1" "skill_hero_longdan" 
+                "2" "skill_hero_chongzhen"
+            }
+        }
+        "npc_dota_hero_bane"
+        {
+            "name" "npc_dota_hero_bane"
+            "side" "shuguo"
+            "pop" "3"
+            "price" "535"
+            "atk" "water"
+            "def" "land"
+            "able"
+            {
+                "1" "skill_hero_guanxing" 
+                "2" "skill_hero_kongcheng"
+            }
+        }
+        "npc_dota_hero_clinkz"
+        {
+            "name" "npc_dota_hero_clinkz"
+            "side" "shuguo"
+            "pop" "2"
+            "price" "375"
+            "atk" "tree"
+            "def" "land"
+            "able"
+            {
+                "1" "skill_hero_mashu" 
+                "2" "skill_hero_qianxi" 
+                "3" "skill_hero_maqian"
+            }
+        }
+        "npc_dota_hero_kunkka"
+        {
+            "name" "npc_dota_hero_kunkka"
+            "side" "weiguo"
+            "pop" "3"
+            "price" "410"
+            "atk" "land"
+            "def" "fire"
+            "able"
+            {
+                "1" "skill_hero_qiangxi" 
+                "2" "skill_hero_diane" 
+                "3" "skill_hero_dianzhu"
+            }
+        }
+        "npc_dota_hero_sand_king"
+        {
+            "name" "npc_dota_hero_sand_king"
+            "side" "weiguo"
+            "pop" "3"
+            "price" "360"
+            "atk" "land"
+            "def" "land"
+            "able"
+            {
+                "1" "skill_hero_luoyi" 
+                "2" "skill_hero_xue"
+            }
+        }
+        "npc_dota_hero_phantom_lancer"
+        {
+            "name" "npc_dota_hero_phantom_lancer"
+            "side" "wuguo"
+            "pop" "3"
+            "price" "460"
+            "atk" "fire"
+            "def" "electrical"
+            "able"
+            {
+                "1" "skill_hero_zhiheng" 
+                "2" "skill_hero_jiuyuan" 
+                "3" "skill_hero_sunchu" 
+                "4" "skill_hero_sunsan"
+            }
+        }
+        "npc_dota_hero_silencer"
+        {
+            "name" "npc_dota_hero_silencer"
+            "side" "weiguo"
+            "pop" "3"
+            "price" "375"
+            "atk" "water"
+            "def" "water"
+            "able"
+            {
+                "1" "skill_hero_tiandu" 
+                "2" "skill_hero_yiji"
+            }
+        }
+        "npc_dota_hero_chen"
+        {
+            "name" "npc_dota_hero_chen"
+            "side" "qunxiong"
+            "pop" "3"
+            "price" "460"
+            "atk" "fire"
+            "def" "fire"
+            "able" 
+            {
+            }
+        }
+        "npc_dota_hero_treant"
+        {
+            "name" "npc_dota_hero_treant"
+            "side" "weiguo"
+            "pop" "3"
+            "price" "555"
+            "atk" "land"
+            "def" "fire"
+            "able"
+            {
+                "1" "skill_hero_duanliang" 
+                "2" "skill_hero_chengjie" 
+                "3" "skill_hero_wuxu"
+            }
+        }
+        "npc_dota_hero_arc_warden"
+        {
+            "name" "npc_dota_hero_arc_warden"
+            "side" "shuguo"
+            "pop" "3"
+            "price" "600"
+            "atk" "tree"
+            "def" "electrical"
+            "able"
+            {
+                "1" "skill_hero_juji" 
+                "2" "skill_hero_liegong"
+            }
+        }
+        "npc_dota_hero_ancient_apparition"
+        {
+            "name" "npc_dota_hero_ancient_apparition"
+            "side" "shuguo"
+            "pop" "4"
+            "price" "666"
+            "atk" "fire"
+            "def" "fire"
+            "able"
+            {
+                "1" "skill_hero_bagua" 
+                "2" "skill_hero_huogong" 
+                "3" "skill_hero_kanpo"
+            }
+        }
+        "npc_dota_hero_keeper_of_the_light"
+        {
+            "name" "npc_dota_hero_keeper_of_the_light"
+            "side" "weiguo"
+            "pop" "3"
+            "price" "325"
+            "atk" "fire"
+            "def" "fire"
+            "able"
+            {
+                "1" "skill_hero_fankui" 
+                "2" "skill_hero_guicai" 
+                "3" "skill_hero_sishuang"
+            }
+        }
+        "npc_dota_hero_dragon_knight"
+        {
+            "name" "npc_dota_hero_dragon_knight"
+            "side" "weiguo"
+            "pop" "3"
+            "price" "555"
+            "atk" "none"
+            "def" "none"
+            "able"
+            {
+                "1" "skill_hero_xingshang" 
+                "2" "skill_hero_fangzhu" 
+                "3" "skill_hero_songwei"
+            }
+        }
+        "npc_dota_hero_life_stealer"
+        {
+            "name" "npc_dota_hero_life_stealer"
+            "side" "weiguo"
+            "pop" "3"
+            "price" "350"
+            "atk" "none"
+            "def" "none"
+            "able"
+            {
+                "1" "skill_hero_jianxiong" 
+                "2" "skill_hero_hujia" 
+                "3" "skill_hero_caokong" 
+                "4" "skill_hero_caohu" 
+                "5" "skill_hero_caoe"
+            }
+        }
+        "npc_dota_hero_pugna"
+        {
+            "name" "npc_dota_hero_pugna"
+            "side" "weiguo"
+            "pop" "2"
+            "price" "555"
+            "atk" "water"
+            "def" "water"
+            "able"
+            {
+                "1" "skill_hero_quhu" 
+                "2" "skill_hero_jieming"
+            }
+        }
+        "npc_dota_hero_venomancer"
+        {
+            "name" "npc_dota_hero_venomancer"
+            "side" "wuguo"
+            "pop" "3"
+            "price" "375"
+            "atk" "fire"
+            "def" "fire"
+            "able"
+            {
+                "1" "skill_hero_niaoxiang"
+            }
+        }
+        "npc_dota_hero_visage"
+        {
+            "name" "npc_dota_hero_visage"
+            "side" "wuguo"
+            "pop" "3"
+            "price" "444"
+            "atk" "fire"
+            "def" "fire"
+            "able"
+            {
+                "1" "skill_hero_qianxun" 
+                "2" "skill_hero_lianying"
+            }
+        }
+        "npc_dota_hero_elder_titan"
+        {
+            "name" "npc_dota_hero_elder_titan"
+            "side" "qunxiong"
+            "pop" "4"
+            "price" "666"
+            "atk" "fire"
+            "def" "fire"
+            "able" 
+            {
+            }
+        }
+        "npc_dota_hero_witch_doctor"
+        {
+            "name" "npc_dota_hero_witch_doctor"
+            "side" "wuguo"
+            "pop" "2"
+            "price" "666"
+            "atk" "water"
+            "def" "water"
+            "able"
+            {
+                "1" "skill_hero_dimeng" 
+                "2" "skill_hero_lusi"
+            }
+        }
+        "npc_dota_hero_chaos_knight"
+        {
+            "name" "npc_dota_hero_chaos_knight"
+            "side" "qunxiong"
+            "pop" "2"
+            "price" "400"
+            "atk" "none"
+            "def" "none"
+            "able" 
+            {
+            }
+        }
+        "npc_dota_hero_crystal_maiden"
+        {
+            "name" "npc_dota_hero_crystal_maiden"
+            "side" "weiguo"
+            "pop" "3"
+            "price" "555"
+            "atk" "none"
+            "def" "none"
+            "able"
+            {
+                "1" "skill_hero_luanwu" 
+                "2" "skill_hero_weumu" 
+                "3" "skill_hero_wansha"
+            }
+        }
+    }
+
+    "unit"
+    {
+        "npc_unit_tuyuansu"
+        {
+            "name" "npc_unit_tuyuansu"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_shuiyuansu"
+        {
+            "name" "npc_unit_shuiyuansu"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_bulianshi"
+        {
+            "name" "npc_unit_bulianshi"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_huoyuansu"
+        {
+            "name" "npc_unit_huoyuansu"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_majia"
+        {
+            "name" "npc_majia"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_dota_creature_gnoll_assassin"
+        {
+            "name" "npc_dota_creature_gnoll_assassin"
+            "side" "shuguo"
+            "pop" "1"
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_nvlieshou"
+        {
+            "name" "npc_unit_nvlieshou"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_huangjinbing"
+        {
+            "name" "npc_unit_huangjinbing"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_nanmanzhanying"
+        {
+            "name" "npc_unit_nanmanzhanying"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+    }
+}
