@@ -3,12 +3,12 @@
 * @Author: 白喵
 * @Date: 2020-09-16 17:19:45
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-16 18:37:23
+* @LastEditTime: 2020-09-28 05:57:33
 --]]
 skill_hero_xinsheng = {}
 function skill_hero_xinsheng:needwaveup()
     local caster = self:GetCaster()
-    if caster:GetItemInSlot(5) and caster:GetItemInSlot(5):GetName()=='item_format_034' then
+    if caster:HasItemInInventory('item_format_034') then
         self.dunjia = true
     end
     caster:AddNewModifier(caster, self, "modifier_hero_xinsheng", nil)

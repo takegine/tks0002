@@ -6,7 +6,7 @@
 * @Author: 白喵
 * @Date: 2020-07-21 22:49:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-17 22:30:41
+* @LastEditTime: 2020-09-28 05:58:32
 --]]
 
 --[[
@@ -244,7 +244,7 @@ function guidao(keys)
     huangjin:AddNewModifier(tmp_unit, nil, 'modifier_kill', {duration = duration} )
     local tmp_unit
     --if true then
-    if caster:GetItemInSlot(5) and caster:GetItemInSlot(5):GetName()=='item_format_036' then
+    if caster:HasItemInInventory('item_format_036') then
         guidao_huanyin(huangjin)
         for _ = 1,8 do
             tmp_unit = CreateUnitByName( "npc_unit_huangjinbing", huangjin:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())

@@ -3,13 +3,13 @@
 * @Author: 白喵
 * @Date: 2020-09-16 12:57:44
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-20 21:05:24
+* @LastEditTime: 2020-09-28 05:56:55
 --]]
 skill_hero_jijiu = {}
 function skill_hero_jijiu:needwaveup()
     local caster = self:GetCaster()
     self.qingnang = nil
-    if caster:GetItemInSlot(5) and caster:GetItemInSlot(5):GetName()=='item_format_031' then
+    if caster:HasItemInInventory('item_format_031') then
         self.qingnang = true
     end
     caster:AddNewModifier(caster, self, "modifier_hero_jijiu", nil)
