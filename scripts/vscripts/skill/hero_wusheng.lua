@@ -22,7 +22,7 @@ function wusheng(keys)
     local target_flags = ability:GetAbilityTargetFlags()
     
     --判断物品：第一个格子（武器栏）是不是青龙偃月刀
-    if caster:GetItemInSlot(0) and caster:GetItemInSlot(0):GetName()=='item_weapon_009' then
+    if caster:HasItemInInventory( "item_weapon_009" ) then
         chance = chance * 2
     end
 
