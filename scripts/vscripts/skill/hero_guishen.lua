@@ -53,7 +53,7 @@ function modifier_skill_hero_guishen:OnTakeDamage(keys)
     
     parent:EmitSound("Hero_SkeletonKing.Reincarnate.Ghost")
 
-    if caster:GetItemInSlot(3) and caster:GetItemInSlot(3):GetName()=='item_horses_016'  then
+    if caster:HasItemInInventory("item_horses_016")  then
       local duration = duration * 1.5
     end  
 

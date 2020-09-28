@@ -289,7 +289,7 @@ function paoxiao(keys)
 	local target_types = ability:GetAbilityTargetType()
     local target_flags = ability:GetAbilityTargetFlags()
 
-    if  caster:GetItemInSlot(0) and caster:GetItemInSlot(0):GetName()=='item_weapon_zhangbashemao' then
+    if  caster:HasItemInInventory("item_weapon_005") then
         chance = 100
     end
 
@@ -339,9 +339,8 @@ function wuji(keys)
 	local target_types = ability:GetAbilityTargetType()
     local target_flags = ability:GetAbilityTargetFlags()
     
-    if   caster:GetItemInSlot(0) 
-    and  caster:GetItemInSlot(0):GetName()=='item_weapon_qinglongyanyuedao' 
-    then chance = chance * 2
+    if  caster:HasItemInInventory( "item_weapon_009" ) then
+        chance = chance * 2
     end
 
     if not owner.ship['hufu'] 

@@ -29,7 +29,7 @@ function guanxing(keys)
         local caster   = ability:GetCaster()
 
         --判断物品：第一个格子（武器栏）是不是诸葛连弩
-        if  caster:GetItemInSlot(0) and caster:GetItemInSlot(0):GetName()=='item_weapon_zhugeliannu' then
+        if  caster:HasItemInInventory("item_weapon_002") then
                ability:ApplyDataDrivenModifier( caster, caster , "modifier_skill_hero_guanxing_3", nil )
         end
         

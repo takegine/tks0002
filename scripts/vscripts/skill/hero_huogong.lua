@@ -19,8 +19,7 @@ function Fire_thefire( event )
     ability.startPos   = startPos
     ability.expireTime = GameRules:GetGameTime() + duration
 
-    if  caster:GetItemInSlot(0) 
-    and caster:GetItemInSlot(0):GetName()=='item_weapon_zhuqueyushan' then
+    if  caster:HasItemInInventory("item_weapon_010") then
         damage     = 1.25 * damage
         pathRadius = 1.25 * pathRadius
     end

@@ -34,7 +34,7 @@ function modifier_skill_hero_chongzhen_heal:OnAttackLanded(keys)
 	if keys.attacker == parent
 	and keys.original_damage/parent:GetAverageTrueAttackDamage( keys.target )>1.05 then
 
-	if caster:GetItemInSlot(3) and caster:GetItemInSlot(3):GetName()=='item_horses_bailong' then
+	if caster:HasItemInInventory("item_horses_018") then
 		heal=heal*1.5
 	end
 	

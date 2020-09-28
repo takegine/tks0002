@@ -37,7 +37,8 @@ function modifier_skill_hero_wushuang:OnAttackLanded(keys)
             chance = chance * 2
         end 
 
-        if caster:GetItemInSlot(0) and caster:GetItemInSlot(0):GetName()=='item_weapon_008' and (keys.target:GetHealth()/keys.target:GetMaxHealth()) <= max_hp_pct then
+        if 
+    if caster:HasItemInInventory( "item_weapon_008" ) and (keys.target:GetHealth()/keys.target:GetMaxHealth()) <= max_hp_pct then
             chance = 100 
         end
 
