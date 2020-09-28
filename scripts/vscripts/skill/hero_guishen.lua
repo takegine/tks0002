@@ -53,10 +53,14 @@ function modifier_skill_hero_guishen:OnTakeDamage(keys)
     
     parent:EmitSound("Hero_SkeletonKing.Reincarnate.Ghost")
 
-    if owner.ship['quanqing'] then
-      local duration = 6
-    end
+    if caster:GetItemInSlot(3) and caster:GetItemInSlot(3):GetName()=='item_horses_016'  then
+      local duration = duration * 1.5
+    end  
 
+    if owner.ship['quanqing'] then
+      local duration = duration * 1.5
+    end
+    
     parent:AddNewModifier(caster,ability, "modifier_skill_hero_guishen_wraith", {duration = duration, attacker = keys.attacker:entindex()})
     parent:RemoveModifierByName("modifier_skill_hero_guishen")
 	else
