@@ -124,3 +124,21 @@ function PRD(p)
         return 0
     end
 end
+
+function prdRandom(chance)
+    -- if type(chance) ~= "table" then
+    --     error("param is not a table")
+    -- end
+    if not chance.c then
+        chance.c = PRD(chance.p)
+        chance.cur = chance.c
+    end
+    local rand = RandomFloat(0,1)
+    if chance.cur >= rand then
+        chance.cur = chance.c
+        return true
+    else
+        chance.cur = chance.cur + chance.c
+        return false
+    end
+end
