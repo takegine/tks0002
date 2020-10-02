@@ -90,6 +90,7 @@
 	{
 		"1" "skill_hero_jieyin"           //结姻
 		"2" "skill_hero_xiaoji"           //枭姬
+		"3" "skill_hero_sunwu"			  //孙吴
 	}
 
 		"npc_dota_hero_queenofpain"       //override_hero大乔

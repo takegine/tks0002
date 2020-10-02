@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-26 22:45:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-17 18:01:18
+* @LastEditTime: 2020-10-02 14:13:40
 --]]
 skill_hero_sunwu = {}
 
@@ -12,6 +12,7 @@ function skill_hero_sunwu:needwaveup()
     local owner = caster:GetOwner() or {ship={}}
     if owner.ship["dongwu"] then
         self.number = 0
+        self.chance = nil
         caster:AddNewModifier(caster, self, "modifier_hero_sunwu2", nil)--添加东吴之志buff
     end
 end
@@ -38,7 +39,7 @@ function modifier_hero_sunwu:OnAttackLanded(keys)
     local ability = self:GetAbility()
     local owner = attacker:GetOwner() or {ship={}}
     local level = ability:GetLevel()
-    local duration = ability:GetLevelSpecialValueFor("duration", level-1)--持续时间
+    local duration = ability:GetSpecialValueFor("duration")--持续时间
     local max = 8--最大存在数量
     if attacker:HasModifier("modifier_hero_sunwu") then
         if ability.number < max then
@@ -80,12 +81,14 @@ function modifier_hero_sunwu2:OnAttackStart(keys)
         return
     end
     local ability = self:GetAbility()
-    local chance = ability:GetSpecialValueFor("chance")
-    local ramdom = RandomInt(1,100)
+    if not ability.chance then
+        ability.chance = {p = ability:GetSpecialValueFor("chance")}
+    end
     attacker:RemoveModifierByName("modifier_hero_sunwu")
-    if chance >= ramdom then
+    if prdRandom(ability.chance) then
         attacker:AddNewModifier(attacker, ability, "modifier_hero_sunwu", nil)
     end
+    print(ability.chance.cur)
 end
 
 

@@ -142,3 +142,14 @@ function prdRandom(chance)
         return false
     end
 end
+
+-- function test()
+--     chance = {p=15}
+--     cirtcount = 0
+--     for _ = 1,10000 do
+--         if prdRandom(chance) then
+--             cirtcount = cirtcount + 1
+--         end
+--     end
+--     print(cirtcount)  测试结果符合预期值
+-- end

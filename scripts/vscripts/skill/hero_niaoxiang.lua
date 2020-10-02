@@ -3,13 +3,14 @@
 * @Author: 白喵
 * @Date: 2020-07-26 17:55:35
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-31 11:58:28
+* @LastEditTime: 2020-10-01 07:17:24
 --]]
 skill_hero_niaoxiang = {}
 
 function skill_hero_niaoxiang:needwaveup()
     local caster = self:GetCaster()
     self.number = 0
+    self.chance = nil
     caster:AddNewModifier(caster, self, "modifier_hero_niaoxiang2", nil)--添加鸟翔buff
 end
 
@@ -82,10 +83,11 @@ function modifier_hero_niaoxiang2:OnAttackStart(keys)
         return
     end
     local ability = self:GetAbility()
-    local chance = ability:GetSpecialValueFor("chance")
-    local ramdom = RandomInt(1,100)
+    if not ability.chance then
+        ability.chance = {p = ability:GetSpecialValueFor("chance")}
+    end
     attacker:RemoveModifierByName("modifier_hero_niaoxiang")
-    if chance >= ramdom then
+    if prdRandom(ability.chance) then
         attacker:AddNewModifier(attacker, ability, "modifier_hero_niaoxiang", nil)
     end
 end
