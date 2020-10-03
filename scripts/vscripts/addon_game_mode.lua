@@ -1,5 +1,6 @@
 -- Generated from template
 SET_FORCE_HERO = "npc_dota_hero_phoenix"
+tkUnitInfo     = LoadKeyValues('scripts/npc/npc_info_custom.txt')
 
 if CAddonTemplateGameMode == nil then
 	CAddonTemplateGameMode = class({})
@@ -74,16 +75,6 @@ function CAddonTemplateGameMode:InitGameMode()
     self.DamageKV = LoadKeyValues("scripts/damage_table.kv")
     self.shiplist = LoadKeyValues("scripts/羁绊名汉化.kv")
     self.namelist = LoadKeyValues("resource/addon_schinese.txt")["Tokens"]
-    self.tkUnitList = {}
-    local insetlist = function (list)
-            table.foreach( list, function(k,v)
-            if type(v)=="table" then
-                self.tkUnitList[k]=v
-            end
-        end)
-    end
-    insetlist(LoadKeyValues('scripts/npc/npc_heroes_custom.txt'))
-    insetlist(LoadKeyValues('scripts/npc/npc_units_custom.txt'))
 
 end
 
@@ -273,13 +264,16 @@ function CAddonTemplateGameMode:npc_spawned(keys )
 
         
         CustomNetTables:SetTableValue( "player_info", tostring(npc:GetPlayerID()),{ ships={ Hold={},Lost={} } } )
-    elseif self.tkUnitList[nameX] then
-        npc.attack_type = self.tkUnitList[nameX]["TksAttackType"]
-        npc.defend_type = self.tkUnitList[nameX]["TksDefendType"]
-        print(nameX, npc.attack_type, npc.defend_type)
-        
-        npc:AddNewModifier(npc, nil, "modifier_attack_" .. npc.attack_type, {})
-        npc:AddNewModifier(npc, nil, "modifier_defend_" .. npc.defend_type, {})
+    else
+        local thisinfo = npc:IsHero() and  tkUnitInfo.hero[nameX] or tkUnitInfo.unit[nameX]
+        if thisinfo then
+            npc.attack_type = thisinfo.atk
+            npc.defend_type = thisinfo.def
+            print(nameX, npc.attack_type, npc.defend_type)
+            
+            npc:AddNewModifier(npc, nil, "modifier_attack_" .. npc.attack_type, {})
+            npc:AddNewModifier(npc, nil, "modifier_defend_" .. npc.defend_type, {})
+        end
     end
     
     if npc:IsHero() then
