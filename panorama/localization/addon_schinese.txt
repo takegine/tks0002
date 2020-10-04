@@ -39,6 +39,8 @@
         "TKS_SIDE_shuguo" "西蜀"
         "TKS_SIDE_qunxiong" "群雄"
         "TKS_SIDE_undefined" "蛮荒"
+        "TKS_SIDE_random" "随机"
+        
         
         "DOTA_CUSTOM1"	"队伍1"
         "DOTA_CUSTOM2"	"队伍2"
