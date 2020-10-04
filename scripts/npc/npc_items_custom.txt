@@ -1,231 +1,50 @@
-"DOTAAbilities"																																			
+"DOTAAbilities"
 {
-	// 青釭剑
-	// 参考暗灭																																	
-	"item_weapon_qinggangjian"																																		
-	{																																		
-		// General																																	
-		// -------------------------------------------------------------------------------------------------------------																																	
-		"BaseClass"	"item_datadriven"																																
-		"AbilityTextureName"	"28001"																																
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"																																
-		// Item Info																																	
-		// -------------------------------------------------------------------------------------------------------------																																	
-		"ID"	"2000"																																
-		"ItemQuality"	"artifact"																																
-		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"																																
-		"ItemCost"	"100"																																
-		"ItemDroppable"	"0"																																
-		"ItemSellable"	"1"																																
-		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"																																
-		"ItemShopTags"	"damage;unique"																																
-		"ItemAliases"	"qinggangjian"																																
-		"ItemRequirements"	{}																																
-		"precache"																																	
-		{																																	
-			"particle"	"particles/items_fx/desolator_projectile.vpcf"																															
-			"soundfile"	"soundevents/game_sounds_items.vsndevts"																															
-		}																																	
-		"Modifiers"																																	
-		{																																	
-			"modifier_item_desolator_datadriven"																																
-			{																																
-				"Passive"	"1"																														
-				"IsHidden"	"1"																														
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"																														
-				// "Properties"																															
-				// {																															
-				// 	"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"						"%bonus_damage"																								
-				// }																															
-				"Orb"																															
-				{																															
-					"Priority"	"DOTA_ORB_PRIORITY_ITEM"																													
-					"ProjectileName"	"particles/items_fx/desolator_projectile.vpcf"																													
-					"CastAttack"	"0"																													
-				}																															
-				"OnOrbFire"																															
-				{																															
-					"ApplyModifier"																														
-					{																														
-						"Target"	"TARGET"																												
-						"ModifierName"	"modifier_item_desolator_datadriven_corruption"																												
-					}																														
-					"FireSound"																														
-					{																														
-						"EffectName"	"Item_Desolator.Target"																												
-						"Target"	"TARGET"																												
-					}																														
-				}																															
-			}																																
-			"modifier_item_desolator_datadriven_corruption"																																
-			{																																
-				"Duration"	"%corruption_duration"																														
-				"Passive"	"0"																														
-				"IsHidden"	"0"																														
-				"Properties"																															
-				{																															
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%corruption_armor"																													
-				}																															
-			}																																
-		}																																	
-		// Special																																	
-		// -------------------------------------------------------------------------------------------------------------																																	
-		"AbilitySpecial"																																	
-		{																																	
-			// "01"																																
-			// {																																
-			// 	"var_type"				"FIELD_INTEGER"																											
-			// 	"bonus_damage"			"60"																												
-			// }																																
-			"01"																																
-			{																																
-				"var_type"	"FIELD_INTEGER"																														
-				"corruption_armor"	"-7"																														
-			}																																
-			"02"																																
-			{																																
-				"var_type"	"FIELD_FLOAT"																														
-				"corruption_duration"	"15.0"																														
-			}																																
-		}																																	
-	}																																		
-
-	// 白玉环
-	// 借鉴 戒心光环																																
-	"item_jewelry_baiyuhuan"																																		
-	{																																		
-		// General																																	
-		// -------------------------------------------------------------------------------------------------------------																																	
-																																			
-		"AbilityTextureName"	"28020"																																
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"																																
-		// Casting																																	
-		// -------------------------------------------------------------------------------------------------------------																																	
-		"AbilityCastRange"	"1200"																																
-		// Item Info																																	
-		// -------------------------------------------------------------------------------------------------------------																																	
-        "ItemAliases"	"baiyuhuan"																																		
-        "BaseClass"	    "item_datadriven"																																		
-		"ID"	        "2001"																																
-		"ItemQuality"	"artifact"																																
-		"ItemCost"	    "100"																																
-		"ItemDroppable"	"0"																																
-		"ItemSellable"	"1"																																
-		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"																																
-		"ItemShopTags"	"damage;unique"																																
-		"ItemRequirements"	{}																																
-		"ItemDisplayCharges" "1"																																	
-		"ItemInitialCharges" "1"																																	
-		"Modifiers"																																	
-		{																																	
-			"modifier_heartstopper_aura_datadriven"																																
-			{																																
-				"Passive"	"1"																														
-				"IsHidden"	"1"																														
-				"Aura"	"modifier_heartstopper_debuff_datadriven"																														
-				"Aura_Radius"	"%aura_radius"																														
-				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"																														
-				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"																														
-				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"																														
-			}																																
-			"modifier_heartstopper_debuff_datadriven"																																
-			{																																
-				"IsDebuff"	"1"																														
-				"IsHidden"	"1"																														
-				"ThinkInterval"	"%aura_interval"																														
-				"OnIntervalThink"																															
-				{																															
-					"RunScript"																														
-					{																														
-						"ScriptFile"	"items/2/baiyuhuan.lua"																												
-						"Function"	"HeartstopperAura"																												
-						"visibility_modifier"	"modifier_heartstopper_debuff_visibility"																												
-					}																														
-				}																															
-				"OnDestroy"																															
-				{																															
-					"RemoveModifier"																														
-					{																														
-						"ModifierName"	"modifier_heartstopper_debuff_visibility"																												
-						"Target"	"TARGET"																												
-					}																														
-				}																															
-			}																																
-			"modifier_heartstopper_debuff_visibility"																																
-			{																																
-				"IsDebuff"	"1"																														
-				"IsHidden"	"0"																														
-				"IsPurgable"	"0"																														
-				"Passive"	"0"																														
-			}																																
-		}																																	
-		"AbilitySpecial"																																	
-		{																																	
-			"01"																																
-			{																																
-				"var_type"	"FIELD_INTEGER"																														
-				// If you change this, also change the AbilityCastRange above																															
-				"aura_radius"	"640 800 960 1120 1280"																														
-			}																																
-			"02"																																
-			{																																
-				"var_type"	"FIELD_FLOAT"																														
-				"aura_damage"	"1 2 3 4 5 6"																														
-			}																																
-			"03"																																
-			{																																
-				"var_type"	"FIELD_FLOAT"																														
-				"aura_interval"	"1"																														
-			}																																
-		}																																	
-	}																																		
-																																			
-"item_weapon_001"	{	"ID"	"28001"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/001"	"AbilityTextureName"	"28001"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_weapon_002"	{	"ID"	"28002"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/002"	"AbilityTextureName"	"28002"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_weapon_003"	{	"ID"	"28003"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/003"	"AbilityTextureName"	"28003"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_weapon_004"	{	"ID"	"28004"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/004"	"AbilityTextureName"	"28004"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_weapon_005"	{	"ID"	"28005"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/005"	"AbilityTextureName"	"28005"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_weapon_006"	{	"ID"	"28006"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/006"	"AbilityTextureName"	"28006"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_weapon_007"	{	"ID"	"28007"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/007"	"AbilityTextureName"	"28007"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_weapon_008"	{	"ID"	"28008"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/008"	"AbilityTextureName"	"28008"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_weapon_009"	{	"ID"	"28009"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/009"	"AbilityTextureName"	"28009"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_weapon_010"	{	"ID"	"28010"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/010"	"AbilityTextureName"	"28010"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_weapon_011"	{	"ID"	"28011"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/011"	"AbilityTextureName"	"28011"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_weapon_012"	{	"ID"	"28012"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/012"	"AbilityTextureName"	"28012"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_horses_013"	{	"ID"	"28013"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/013"	"AbilityTextureName"	"28013"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_horses_014"	{	"ID"	"28014"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/014"	"AbilityTextureName"	"28014"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_horses_015"	{	"ID"	"28015"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/015"	"AbilityTextureName"	"28015"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_horses_016"	{	"ID"	"28016"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/016"	"AbilityTextureName"	"28016"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_horses_017"	{	"ID"	"28017"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/017"	"AbilityTextureName"	"28017"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_horses_018"	{	"ID"	"28018"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/018"	"AbilityTextureName"	"28018"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_horses_019"	{	"ID"	"28019"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/019"	"AbilityTextureName"	"28019"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_jewelry_020"	{	"ID"	"28020"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/020"	"AbilityTextureName"	"28020"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_jewelry_021"	{	"ID"	"28021"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/021"	"AbilityTextureName"	"28021"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_jewelry_022"	{	"ID"	"28022"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/022"	"AbilityTextureName"	"28022"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_jewelry_023"	{	"ID"	"28023"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/023"	"AbilityTextureName"	"28023"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_jewelry_024"	{	"ID"	"28024"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/024"	"AbilityTextureName"	"28024"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_jewelry_025"	{	"ID"	"28025"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/025"	"AbilityTextureName"	"28025"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_jewelry_026"	{	"ID"	"28026"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/026"	"AbilityTextureName"	"28026"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_defend_027"	{	"ID"	"28027"	"BaseClass"	"item_lua"	"ScriptFile"	"items/1/027"	"AbilityTextureName"	"28027"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_defend_028"	{	"ID"	"28028"	"BaseClass"	"item_lua"	"ScriptFile"	"items/1/028"	"AbilityTextureName"	"28028"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_defend_029"	{	"ID"	"28029"	"BaseClass"	"item_lua"	"ScriptFile"	"items/1/029"	"AbilityTextureName"	"28029"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_defend_030"	{	"ID"	"28030"	"BaseClass"	"item_lua"	"ScriptFile"	"items/1/030"	"AbilityTextureName"	"28030"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_format_031"	{	"ID"	"28031"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/031"	"AbilityTextureName"	"28031"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_format_032"	{	"ID"	"28032"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/032"	"AbilityTextureName"	"28032"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_format_033"	{	"ID"	"28033"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/033"	"AbilityTextureName"	"28033"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_format_034"	{	"ID"	"28034"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/034"	"AbilityTextureName"	"28034"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_format_035"	{	"ID"	"28035"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/035"	"AbilityTextureName"	"28035"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_format_036"	{	"ID"	"28036"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/036"	"AbilityTextureName"	"28036"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"																		}
-"item_queue_037"	{	"ID"	"28037"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/037"	"AbilityTextureName"	"28037"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3 6 9 12 15 18 21 24 27 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"6 7 8 9 10 11 12 13 14 15"	}	}	}
-"item_queue_038"	{	"ID"	"28038"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/038"	"AbilityTextureName"	"28038"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3 6 9 12 15 18 21 24 27 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"3 6 9 12 15 18 21 24 27 30"	}	}	}
-"item_queue_039"	{	"ID"	"28039"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/039"	"AbilityTextureName"	"28039"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"4 8 12 16 20 24 28 32 36 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"4 8 12 16 20 24 28 32 36 40"	}	}	}
-"item_queue_040"	{	"ID"	"28040"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/040"	"AbilityTextureName"	"28040"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"6 12 18 24 30 36 42 48 54 60"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"4 8 12 16 20 24 28 32 36 40"	}	}	}
-"item_queue_041"	{	"ID"	"28041"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/041"	"AbilityTextureName"	"28041"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"1 2 4 6 9 12 16 20 25 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"8 32 64 104 152 208 272 344 424 512"	}	}	}
-"item_queue_042"	{	"ID"	"28042"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/042"	"AbilityTextureName"	"28042"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"8 16 24 32 40 48 56 64 72 80"	}								}	}
-"item_queue_043"	{	"ID"	"28043"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/043"	"AbilityTextureName"	"28043"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3 6 9 12 15 18 21 24 27 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"6 7 8 9 10 11 12 13 14 15"	}	}	}
-"item_queue_044"	{	"ID"	"28044"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/044"	"AbilityTextureName"	"28044"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"6 12 18 24 30 36 42 48 54 60"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"1 1 1 2 2 2 3 3 3 4"	}	}	}
-"item_queue_045"	{	"ID"	"28045"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/045"	"AbilityTextureName"	"28045"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"13 16 19 22 25 28 31 34 37 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"12 14 16 18 22 24 26 28 30"	}	}	}
-"item_queue_046"	{	"ID"	"28046"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/046"	"AbilityTextureName"	"28046"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"4 8 12 16 20 24 28 32 36 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"1 1 1 1 2 2 2 2 3 3"	}	}	}
-"item_queue_047"	{	"ID"	"28047"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/047"	"AbilityTextureName"	"28047"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"6 12 18 24 30 36 42 48 54 60"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"3 6 9 12 15 18 21 24 27 30"	}	}	}
-																																			
-}																																			
+	"item_weapon_001"	{	"ID"	"28001"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/001"	"AbilityTextureName"	"28001"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"16 22 28 34 40"	}	}	}
+	"item_weapon_002"	{	"ID"	"28002"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/002"	"AbilityTextureName"	"28002"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"400 475 650 775 900"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"20 40 60 80 100"	}	}	}
+	"item_weapon_003"	{	"ID"	"28003"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/003"	"AbilityTextureName"	"28003"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"15 30 45 60 75"	}	}	}
+	"item_weapon_004"	{	"ID"	"28004"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/004"	"AbilityTextureName"	"28004"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"30 45 60 75 90"	}	}	}
+	"item_weapon_005"	{	"ID"	"28005"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/005"	"AbilityTextureName"	"28005"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"7 14 21 28 35"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"16 17 18 19 20"	}	"03"	{	"var_type"	"FIELD_INTEGER"	"p3"	"80 90 100 110 120"	}	}	}
+	"item_weapon_006"	{	"ID"	"28006"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/006"	"AbilityTextureName"	"28006"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"15 30 45 60 75"	}	}	}
+	"item_weapon_007"	{	"ID"	"28007"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/007"	"AbilityTextureName"	"28007"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"6 12 18 24 30"	}	}	}
+	"item_weapon_008"	{	"ID"	"28008"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/008"	"AbilityTextureName"	"28008"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"30 45 60 75 90"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"300"	}	}	}
+	"item_weapon_009"	{	"ID"	"28009"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/009"	"AbilityTextureName"	"28009"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"20 30 40 50 60"	}	}	}
+	"item_weapon_010"	{	"ID"	"28010"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/010"	"AbilityTextureName"	"28010"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"9 13 17 21 25"	}	}	}
+	"item_weapon_011"	{	"ID"	"28011"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/011"	"AbilityTextureName"	"28011"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"5 15 25 35 45"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"2 3 4 5 6"	}	}	}
+	"item_weapon_012"	{	"ID"	"28012"	"BaseClass"	"item_lua"	"ScriptFile"	"items/0/012"	"AbilityTextureName"	"28012"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"20 40 60 80 100"	}	}	}
+	"item_horses_013"	{	"ID"	"28013"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/013"	"AbilityTextureName"	"28013"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"960 1120 1280 1440 1600"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"10 20 30 40 50"	}	}	}
+	"item_horses_014"	{	"ID"	"28014"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/014"	"AbilityTextureName"	"28014"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"960 1120 1280 1440 1600"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"5 10 15 20 25"	}	}	}
+	"item_horses_015"	{	"ID"	"28015"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/015"	"AbilityTextureName"	"28015"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"15"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"90 130 170 210 250"	}	}	}
+	"item_horses_016"	{	"ID"	"28016"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/016"	"AbilityTextureName"	"28016"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"10 15 20 25 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"10 20 30 40 50"	}	}	}
+	"item_horses_017"	{	"ID"	"28017"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/017"	"AbilityTextureName"	"28017"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_FLOAT"	"p1"	"2.5 3.0 3.5 4.0 4.5"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"480"	}	}	}
+	"item_horses_018"	{	"ID"	"28018"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/018"	"AbilityTextureName"	"28018"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_FLOAT"	"p1"	"2.0 3.0 4.0 5.0 6.0"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"480"	}	}	}
+	"item_horses_019"	{	"ID"	"28019"	"BaseClass"	"item_lua"	"ScriptFile"	"items/3/019"	"AbilityTextureName"	"28019"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"10 25 40 55 70"	}	}	}
+	"item_jewelry_020"	{	"ID"	"28020"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/020"	"AbilityTextureName"	"28020"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"640 800 960 1120 1280"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"1 2 3 5 6"	}	}	}
+	"item_jewelry_021"	{	"ID"	"28021"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/021"	"AbilityTextureName"	"28021"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"2 3 4 5 6"	}	}	}
+	"item_jewelry_022"	{	"ID"	"28022"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/022"	"AbilityTextureName"	"28022"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"30 60 90 120 150"	}	}	}
+	"item_jewelry_023"	{	"ID"	"28023"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/023"	"AbilityTextureName"	"28023"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"20 30 40 50 60"	}	"02"	{	"var_type"	"FIELD_FLOAT"	"p2"	"1.5 1.75 2.0 2.25 2.5"	}	"03"	{	"var_type"	"FIELD_INTEGER"	"p3"	"1 2 3 4 5"	}	}	}
+	"item_jewelry_024"	{	"ID"	"28024"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/024"	"AbilityTextureName"	"28024"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3.0 4.0 5.0 6.0 7.0"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"10 12 14 16 18"	}	"03"	{	"var_type"	"FIELD_FLOAT"	"p3"	"1.4 2.8 4.2 5.6 7.0"	}	"04"	{	"var_type"	"FIELD_INTEGER"	"p4"	"1 2 3 4 5"	}	}	}
+	"item_jewelry_025"	{	"ID"	"28025"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/025"	"AbilityTextureName"	"28025"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"640 720 800 880 960"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"16 22 28 34 40"	}	"03"	{	"var_type"	"FIELD_INTEGER"	"p3"	"1000 2000 3000 4000 5000"	}	"04"	{	"var_type"	"FIELD_INTEGER"	"p4"	"1 2 3 4 5"	}	}	}
+	"item_jewelry_026"	{	"ID"	"28026"	"BaseClass"	"item_lua"	"ScriptFile"	"items/2/026"	"AbilityTextureName"	"28026"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"8 16 24 32 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"20 35 50 65 80"	}	"03"	{	"var_type"	"FIELD_INTEGER"	"p3"	"1 2 3 4 5"	}	}	}
+	"item_defend_027"	{	"ID"	"28027"	"BaseClass"	"item_lua"	"ScriptFile"	"items/1/027"	"AbilityTextureName"	"28027"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"15 20 25 30 35"	}	}	}
+	"item_defend_028"	{	"ID"	"28028"	"BaseClass"	"item_lua"	"ScriptFile"	"items/1/028"	"AbilityTextureName"	"28028"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"6 12 18 24 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"40 45 50 55 60"	}	}	}
+	"item_defend_029"	{	"ID"	"28029"	"BaseClass"	"item_lua"	"ScriptFile"	"items/1/029"	"AbilityTextureName"	"28029"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"55 60 65 70 75"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"10 20 30 40 50"	}	}	}
+	"item_defend_030"	{	"ID"	"28030"	"BaseClass"	"item_lua"	"ScriptFile"	"items/1/030"	"AbilityTextureName"	"28030"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"13 16 19 22 25"	}	}	}
+	"item_format_031"	{	"ID"	"28031"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/031"	"AbilityTextureName"	"28031"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"16 22 28 34 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"6 7 8 9 10 11 12 13 14 15"	}	}	}
+	"item_format_032"	{	"ID"	"28032"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/032"	"AbilityTextureName"	"28032"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"15 25 35 45 55"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"10 20 30 40 50"	}	}	}
+	"item_format_033"	{	"ID"	"28033"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/033"	"AbilityTextureName"	"28033"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"12 24 36 48 60"	}	}	}
+	"item_format_034"	{	"ID"	"28034"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/034"	"AbilityTextureName"	"28034"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"10 20 30 40 50"	}	}	}
+	"item_format_035"	{	"ID"	"28035"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/035"	"AbilityTextureName"	"28035"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"8 16 24 32 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"2000 4000 6000 8000 10000"	}	}	}
+	"item_format_036"	{	"ID"	"28036"	"BaseClass"	"item_lua"	"ScriptFile"	"items/4/036"	"AbilityTextureName"	"28036"	"ItemDroppable"	"0"	"SecretShop"	"1"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "5"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"2 4 6 8 10"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"30 60 90 120 150"	}	}	}
+	"item_queue_037"	{	"ID"	"28037"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/037"	"AbilityTextureName"	"28037"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3 6 9 12 15 18 21 24 27 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"6 7 8 9 10 11 12 13 14 15"	}	}	}
+	"item_queue_038"	{	"ID"	"28038"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/038"	"AbilityTextureName"	"28038"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3 6 9 12 15 18 21 24 27 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"3 6 9 12 15 18 21 24 27 30"	}	}	}
+	"item_queue_039"	{	"ID"	"28039"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/039"	"AbilityTextureName"	"28039"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"4 8 12 16 20 24 28 32 36 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"4 8 12 16 20 24 28 32 36 40"	}	}	}
+	"item_queue_040"	{	"ID"	"28040"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/040"	"AbilityTextureName"	"28040"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"6 12 18 24 30 36 42 48 54 60"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"4 8 12 16 20 24 28 32 36 40"	}	}	}
+	"item_queue_041"	{	"ID"	"28041"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/041"	"AbilityTextureName"	"28041"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"1 2 4 6 9 12 16 20 25 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"8 32 64 104 152 208 272 344 424 512"	}	}	}
+	"item_queue_042"	{	"ID"	"28042"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/042"	"AbilityTextureName"	"28042"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"8 16 24 32 40 48 56 64 72 80"	}								}	}
+	"item_queue_043"	{	"ID"	"28043"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/043"	"AbilityTextureName"	"28043"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"3 6 9 12 15 18 21 24 27 30"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"6 7 8 9 10 11 12 13 14 15"	}	}	}
+	"item_queue_044"	{	"ID"	"28044"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/044"	"AbilityTextureName"	"28044"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"6 12 18 24 30 36 42 48 54 60"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"1 1 1 2 2 2 3 3 3 4"	}	}	}
+	"item_queue_045"	{	"ID"	"28045"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/045"	"AbilityTextureName"	"28045"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"13 16 19 22 25 28 31 34 37 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"12 14 16 18 22 24 26 28 30"	}	}	}
+	"item_queue_046"	{	"ID"	"28046"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/046"	"AbilityTextureName"	"28046"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"4 8 12 16 20 24 28 32 36 40"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"1 1 1 1 2 2 2 2 3 3"	}	}	}
+	"item_queue_047"	{	"ID"	"28047"	"BaseClass"	"item_lua"	"ScriptFile"	"items/5/047"	"AbilityTextureName"	"28047"	"ItemDroppable"	"0"	"ItemSellable"	"1"	"ItemDisplayCharges" "1"	"ItemInitialCharges" "1"	"MaxUpgradeLevel" "10"	"ItemBaseLevel" "1"	"AbilitySpecial"	{	"01"	{	"var_type"	"FIELD_INTEGER"	"p1"	"6 12 18 24 30 36 42 48 54 60"	}	"02"	{	"var_type"	"FIELD_INTEGER"	"p2"	"3 6 9 12 15 18 21 24 27 30"	}	}	}
+}
