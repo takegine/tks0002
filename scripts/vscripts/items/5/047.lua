@@ -5,16 +5,16 @@ function item_queue_047:Precache()
 end
 
 ------------------------------------------------------------------
-LinkLuaModifier( "modifier_item_queue_047","items/5/047", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_047 = modifier_item_queue_047 or {}
+LinkLuaModifier( "modifier_item_queue_047_hero","items/5/047", LUA_MODIFIER_MOTION_NONE )
+modifier_item_queue_047_hero = modifier_item_queue_047_hero or {}
 
 
-function modifier_item_queue_047:GetTexture ()
+function modifier_item_queue_047_hero:GetTexture ()
     local ability = self:GetAbility()
     return "items/"..ability:GetAbilityTextureName()
 end
 
-function modifier_item_queue_047:DeclareFunctions()
+function modifier_item_queue_047_hero:DeclareFunctions()
     return  
     {   
         MODIFIER_EVENT_ON_ATTACK_LANDED,
@@ -22,7 +22,7 @@ function modifier_item_queue_047:DeclareFunctions()
     }
 end
 
-function modifier_item_queue_047:OnTooltip()
+function modifier_item_queue_047_hero:OnTooltip()
     local ability= self:GetAbility()
     local p1  = ability:GetSpecialValueFor('p1')
     local p2  = ability:GetSpecialValueFor('p2')
@@ -31,7 +31,7 @@ function modifier_item_queue_047:OnTooltip()
     return  chance
 end
 
-function modifier_item_queue_047:OnAttackLanded( keys )
+function modifier_item_queue_047_hero:OnAttackLanded( keys )
 	if IsServer() then
 		local parent = self:GetParent()
 		local target = keys.target

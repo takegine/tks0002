@@ -38,5 +38,13 @@ end
 
 
 function item_class:GetIntrinsicModifierName()
-	return "modifier_"..self:GetName()
+    local parent = self:GetParent()
+    local name = "modifier_"..self:GetName()
+    if parent:GetName() == "npc_dota_hero_phoenix" then
+        return name.."_owner"
+    elseif parent:IsHero() then
+        return name.."_hero"
+    else
+        return name.."_unit"
+    end
 end

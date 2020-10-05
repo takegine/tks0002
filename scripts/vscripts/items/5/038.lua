@@ -1,16 +1,16 @@
 item_queue_038 = item_queue_038 or class(item_class)
 
 ------------------------------------------------------------------
-LinkLuaModifier( "modifier_item_queue_038","items/5/038", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_038 = modifier_item_queue_038 or {}
+LinkLuaModifier( "modifier_item_queue_038_hero","items/5/038", LUA_MODIFIER_MOTION_NONE )
+modifier_item_queue_038_hero = modifier_item_queue_038_hero or {}
 
 
-function modifier_item_queue_038:GetTexture ()
+function modifier_item_queue_038_hero:GetTexture ()
     local ability = self:GetAbility()
     return "items/"..ability:GetAbilityTextureName()
 end
 
-function modifier_item_queue_038:DeclareFunctions()
+function modifier_item_queue_038_hero:DeclareFunctions()
     return  
     {   
         MODIFIER_EVENT_ON_DEATH,
@@ -18,7 +18,7 @@ function modifier_item_queue_038:DeclareFunctions()
     }
 end
 
-function modifier_item_queue_038:OnDeath(params)
+function modifier_item_queue_038_hero:OnDeath(params)
 
     local parent = self:GetParent()
     local ability= self:GetAbility()
@@ -41,7 +41,7 @@ function modifier_item_queue_038:OnDeath(params)
     end
 end
 
-function modifier_item_queue_038:OnTooltip()
+function modifier_item_queue_038_hero:OnTooltip()
     local parent = self:GetParent()
     local ability= self:GetAbility()
     local change = ability:GetSpecialValueFor('p2')
@@ -49,50 +49,50 @@ function modifier_item_queue_038:OnTooltip()
     return  health *change /100
 end
 
-function modifier_item_queue_038:IsAura()
+function modifier_item_queue_038_hero:IsAura()
 	return true
 end
 
-function modifier_item_queue_038:IsAuraActiveOnDeath()
+function modifier_item_queue_038_hero:IsAuraActiveOnDeath()
 	return false
 end
 
-function modifier_item_queue_038:IsDebuff()
+function modifier_item_queue_038_hero:IsDebuff()
     return false
 end
 
-function modifier_item_queue_038:GetAuraRadius()
+function modifier_item_queue_038_hero:GetAuraRadius()
     return 2000
 end
 
-function modifier_item_queue_038:GetAuraSearchTeam()
+function modifier_item_queue_038_hero:GetAuraSearchTeam()
 	return DOTA_UNIT_TARGET_TEAM_ENEMY
 end
 
-function modifier_item_queue_038:GetAuraSearchType()
+function modifier_item_queue_038_hero:GetAuraSearchType()
 	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
 end
 
-function modifier_item_queue_038:GetModifierAura()
-	return "modifier_item_queue_038_debuff"
+function modifier_item_queue_038_hero:GetModifierAura()
+	return "modifier_item_queue_038_hero_debuff"
 end
 
-LinkLuaModifier( "modifier_item_queue_038_debuff","items/5/038", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_038_debuff = modifier_item_queue_038_debuff or {}
+LinkLuaModifier( "modifier_item_queue_038_hero_debuff","items/5/038", LUA_MODIFIER_MOTION_NONE )
+modifier_item_queue_038_hero_debuff = modifier_item_queue_038_hero_debuff or {}
 -------------------------------------------------------------------------------
-function modifier_item_queue_038_debuff:GetTexture ()
+function modifier_item_queue_038_hero_debuff:GetTexture ()
     local ability = self:GetAbility()
     return "items/"..ability:GetAbilityTextureName()
 end
 
-function modifier_item_queue_038_debuff:DeclareFunctions()
+function modifier_item_queue_038_hero_debuff:DeclareFunctions()
     return  
     {   
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
     }
 end
 
-function modifier_item_queue_038_debuff:GetModifierMoveSpeedBonus_Percentage()
+function modifier_item_queue_038_hero_debuff:GetModifierMoveSpeedBonus_Percentage()
     local ability=self:GetAbility()
     local change = ability:GetSpecialValueFor('p1')
     return  -change
