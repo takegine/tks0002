@@ -24,6 +24,7 @@
 		"DOTA_Tooltip_ability_item_jewelry_baiyuhuan"	"白玉环(测试用）"
 		"DOTA_Tooltip_modifier_item_jewelry_020_debuff" "白玉环"
 		"DOTA_Tooltip_modifier_item_jewelry_021_hero" "和氏璧"
+		"DOTA_Tooltip_modifier_item_jewelry_022_hero" "玉玺"
 
 		
 		"DOTA_Tooltip_modifier_item_queue_037_hero"	"火阵"
