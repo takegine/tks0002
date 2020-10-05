@@ -121,6 +121,7 @@
 		"ConsideredHero"	"0"
 		"UseNeutralCreepBehavior"	"0"
 		"TksPopUse"	"1"
+		"HasInventory"	"1"
 	}
 
 	"npc_majia"
