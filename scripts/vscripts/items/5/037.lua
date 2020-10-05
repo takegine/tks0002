@@ -1,28 +1,16 @@
 item_queue_037 = item_queue_037 or class(item_class)
-
+modifier_item_queue_037 = modifier_item_queue_037 or {
+    GetTexture = function (self) return "items/"..self:GetAbility():GetAbilityTextureName() end,
+    OnCreated = function (self) self:SetStackCount(1) end,
+    DeclareFunctions = function () return { MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_PROPERTY_TOOLTIP } end
+}
+LinkLuaModifier( "modifier_item_queue_037_hero","items/5/037", 0 )
+LinkLuaModifier( "modifier_item_queue_037_unit","items/5/037", 0 )
+modifier_item_queue_037_hero = modifier_item_queue_037
+modifier_item_queue_037_unit = modifier_item_queue_037
 ------------------------------------------------------------------
-LinkLuaModifier( "modifier_item_queue_037_hero","items/5/037", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_037_hero = modifier_item_queue_037_hero or {}
 
-
-function modifier_item_queue_037_hero:GetTexture ()
-    local ability = self:GetAbility()
-    return "items/"..ability:GetAbilityTextureName()
-end
-
-function modifier_item_queue_037_hero:OnCreated()
-    self:SetStackCount(1)
-end
-
-function modifier_item_queue_037_hero:DeclareFunctions()
-    return
-    {
-        MODIFIER_EVENT_ON_ATTACK_LANDED,
-        MODIFIER_PROPERTY_TOOLTIP
-    }
-end
-
-function modifier_item_queue_037_hero:OnAttackLanded( params)
+function modifier_item_queue_037:OnAttackLanded( params)
     local attacker= params.attacker
     local parent  = self:GetParent()
     if not IsServer()
@@ -33,7 +21,7 @@ function modifier_item_queue_037_hero:OnAttackLanded( params)
     local target  = params.target
     local ability = self:GetAbility()
     local p1      = ability:GetSpecialValueFor('p1')
-    local modName = self:GetName()..'_debuff'
+    local modName = "modifier_item_queue_037_debuff"
     local count   = self:GetStackCount() <6 and self:GetStackCount() or 1
     local dummy   = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, parent, parent, parent:GetTeamNumber() )
     dummy.attack_type  = "fire"
@@ -56,22 +44,23 @@ function modifier_item_queue_037_hero:OnAttackLanded( params)
 
 end
 
-
-function modifier_item_queue_037_hero:OnTooltip( params)
+function modifier_item_queue_037:OnTooltip( params)
     local ability = self:GetAbility()
     local p1      = ability:GetSpecialValueFor('p1')
     return self:GetStackCount() * p1
 end
 
-LinkLuaModifier( "modifier_item_queue_037_hero_debuff","items/5/037", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_037_hero_debuff = modifier_item_queue_037_hero_debuff or {}
+LinkLuaModifier( "modifier_item_queue_037_debuff","items/5/037", LUA_MODIFIER_MOTION_NONE )
+modifier_item_queue_037_debuff = modifier_item_queue_037_debuff or {
+    IsHidden = off,
+    IsDebuff = on,
+    IsPurgable = on,
+    DeclareFunctions = function () return { MODIFIER_PROPERTY_TOOLTIP } end,
+    GetTexture = function (self) return "items/"..self:GetAbility():GetAbilityTextureName() end,
+}
 -------------------------------------------------------------------------------
-function modifier_item_queue_037_hero_debuff:GetTexture ()
-    local ability = self:GetAbility()
-    return "items/"..ability:GetAbilityTextureName()
-end
 
-function modifier_item_queue_037_hero_debuff:OnCreated()
+function modifier_item_queue_037_debuff:OnCreated()
     
     if IsServer() then
 
@@ -82,7 +71,7 @@ function modifier_item_queue_037_hero_debuff:OnCreated()
         self.sound_explode    = "Ability.SandKing_CausticFinale"
         self.particle_explode = "particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf"
         self.particle_debuff  = "particles/units/heroes/hero_sandking/sandking_caustic_finale_debuff.vpcf"
-        self.modifier_poison  = "modifier_item_queue_037_hero_debuff"
+        self.modifier_poison  = "modifier_item_queue_037_debuff"
         self.modifier_slow    = "modifier_imba_caustic_finale_debuff"
 
         -- Ability specials
@@ -102,18 +91,7 @@ function modifier_item_queue_037_hero_debuff:OnCreated()
     end
 end
 
-function modifier_item_queue_037_hero_debuff:IsHidden()
-    return false
-end
-
-function modifier_item_queue_037_hero_debuff:IsPurgable()
-    return true
-end
-function modifier_item_queue_037_hero_debuff:IsDebuff()
-    return true
-end
-
-function modifier_item_queue_037_hero_debuff:OnDestroy()
+function modifier_item_queue_037_debuff:OnDestroy()
     if IsServer() then
 
         EmitSoundOn(self.sound_explode, self.parent)
@@ -152,16 +130,7 @@ function modifier_item_queue_037_hero_debuff:OnDestroy()
     end
 end
 
-
-function modifier_item_queue_037_hero_debuff:DeclareFunctions()
-    return
-    {
-        MODIFIER_PROPERTY_TOOLTIP
-    }
-end
-
-
-function modifier_item_queue_037_hero_debuff:OnTooltip( params)
+function modifier_item_queue_037_debuff:OnTooltip( params)
     local ability = self:GetAbility()
     local p2      = ability:GetSpecialValueFor('p2')
     return p2

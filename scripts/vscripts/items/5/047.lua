@@ -1,28 +1,19 @@
 item_queue_047 = item_queue_047 or class(item_class)
+modifier_item_queue_047 = modifier_item_queue_047 or {
+    GetTexture = function (self) return "items/"..self:GetAbility():GetAbilityTextureName() end,
+    DeclareFunctions = function () return { MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_PROPERTY_TOOLTIP } end,
+}
+LinkLuaModifier( "modifier_item_queue_047_hero","items/5/047", 0 )
+LinkLuaModifier( "modifier_item_queue_047_unit","items/5/047", 0 )
+modifier_item_queue_047_hero = modifier_item_queue_047
+modifier_item_queue_047_unit = modifier_item_queue_047
+------------------------------------------------------------------
 
 function item_queue_047:Precache()
     PrecacheResource("particle", "particles/generic_gameplay/generic_lifesteal.vpcf", context)
 end
 
-------------------------------------------------------------------
-LinkLuaModifier( "modifier_item_queue_047_hero","items/5/047", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_047_hero = modifier_item_queue_047_hero or {}
-
-
-function modifier_item_queue_047_hero:GetTexture ()
-    local ability = self:GetAbility()
-    return "items/"..ability:GetAbilityTextureName()
-end
-
-function modifier_item_queue_047_hero:DeclareFunctions()
-    return  
-    {   
-        MODIFIER_EVENT_ON_ATTACK_LANDED,
-        MODIFIER_PROPERTY_TOOLTIP
-    }
-end
-
-function modifier_item_queue_047_hero:OnTooltip()
+function modifier_item_queue_047:OnTooltip()
     local ability= self:GetAbility()
     local p1  = ability:GetSpecialValueFor('p1')
     local p2  = ability:GetSpecialValueFor('p2')
@@ -31,7 +22,7 @@ function modifier_item_queue_047_hero:OnTooltip()
     return  chance
 end
 
-function modifier_item_queue_047_hero:OnAttackLanded( keys )
+function modifier_item_queue_047:OnAttackLanded( keys )
 	if IsServer() then
 		local parent = self:GetParent()
 		local target = keys.target

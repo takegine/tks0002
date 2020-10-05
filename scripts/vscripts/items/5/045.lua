@@ -1,65 +1,34 @@
 item_queue_045 = item_queue_045 or class(item_class)
-
+modifier_item_queue_045 = modifier_item_queue_045 or {
+    IsHidden = on,
+    IsAura = on,
+    IsAuraActiveOnDeath = off,
+    IsDebuff = off,
+    GetAuraRadius = function () return 2000 end,
+    GetModifierAura = function () return "modifier_item_queue_045_debuff" end,
+    GetAuraSearchTeam = function () return DOTA_UNIT_TARGET_TEAM_ENEMY end,
+    GetAuraSearchType = function ()	return DOTA_UNIT_TARGET + DOTA_UNIT_TARGET_BASIC end,
+}
+LinkLuaModifier( "modifier_item_queue_045_hero","items/5/045", 0 )
+LinkLuaModifier( "modifier_item_queue_045_unit","items/5/045", 0 )
+modifier_item_queue_045_hero = modifier_item_queue_045
+modifier_item_queue_045_unit = modifier_item_queue_045
 ------------------------------------------------------------------
-LinkLuaModifier( "modifier_item_queue_045_hero","items/5/045", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_045_hero = modifier_item_queue_045_hero or {}
-function modifier_item_queue_045_hero:IsAura()
-	return true
-end
 
-function modifier_item_queue_045_hero:IsAuraActiveOnDeath()
-	return false
-end
-
-function modifier_item_queue_045_hero:IsDebuff()
-    return false
-end
-
-function modifier_item_queue_045_hero:GetAuraRadius()
-    return 2000
-end
-
-function modifier_item_queue_045_hero:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_ENEMY
-end
-
-function modifier_item_queue_045_hero:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-end
-
-function modifier_item_queue_045_hero:GetModifierAura()
-	return "modifier_item_queue_045_hero_debuff"
-end
-
-function modifier_item_queue_045_hero:IsHidden()
-	return true
-end
-
-LinkLuaModifier( "modifier_item_queue_045_hero_debuff","items/5/045", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_045_hero_debuff = modifier_item_queue_045_hero_debuff or {}
+LinkLuaModifier( "modifier_item_queue_045_debuff","items/5/045", LUA_MODIFIER_MOTION_NONE )
+modifier_item_queue_045_debuff = modifier_item_queue_045_debuff or {
+    GetTexture = function (self) return "items/"..self:GetAbility():GetAbilityTextureName() end,
+    DeclareFunctions = function () return { MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS } end,
+}
 -------------------------------------------------------------------------------
 
-function modifier_item_queue_045_hero_debuff:GetTexture ()
-    local ability = self:GetAbility()
-    return "items/"..ability:GetAbilityTextureName()
-end
-
-function modifier_item_queue_045_hero_debuff:DeclareFunctions()
-    return  
-    {   
-        MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
-        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
-
-    }
-end
-
-function modifier_item_queue_045_hero_debuff:GetModifierDamageOutgoing_Percentage()
+function modifier_item_queue_045_debuff:GetModifierDamageOutgoing_Percentage()
     local ability=self:GetAbility()
     local change = ability:GetSpecialValueFor('p1')
     return  -change
 end
 
-function modifier_item_queue_045_hero_debuff:GetModifierMagicalResistanceBonus()
+function modifier_item_queue_045_debuff:GetModifierMagicalResistanceBonus()
     local ability=self:GetAbility()
     local change = ability:GetSpecialValueFor('p2')
     return  -change

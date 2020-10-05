@@ -1,25 +1,15 @@
 item_queue_040 = item_queue_040 or class(item_class)
-
+modifier_item_queue_040 = modifier_item_queue_040 or {
+    GetTexture = function (self) return "items/"..self:GetAbility():GetAbilityTextureName() end,
+    DeclareFunctions = function () return { MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_TOOLTIP2 } end,
+}
+LinkLuaModifier( "modifier_item_queue_040_hero","items/5/040", 0 )
+LinkLuaModifier( "modifier_item_queue_040_unit","items/5/040", 0 )
+modifier_item_queue_040_hero = modifier_item_queue_040
+modifier_item_queue_040_unit = modifier_item_queue_040
 ------------------------------------------------------------------
-LinkLuaModifier( "modifier_item_queue_040_hero","items/5/040", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_040_hero = modifier_item_queue_040_hero or {}
 
-
-function modifier_item_queue_040_hero:GetTexture ()
-    local ability = self:GetAbility()
-    return "items/"..ability:GetAbilityTextureName()
-end
-
-function modifier_item_queue_040_hero:DeclareFunctions()
-    return
-    {
-        MODIFIER_EVENT_ON_TAKEDAMAGE,
-        MODIFIER_PROPERTY_TOOLTIP,
-        MODIFIER_PROPERTY_TOOLTIP2
-    }
-end
-
-function modifier_item_queue_040_hero:OnTooltip()
+function modifier_item_queue_040:OnTooltip()
     local ability  = self:GetAbility()
     local parent   = self:GetParent()
     local p1       = ability:GetSpecialValueFor("p1")
@@ -27,7 +17,7 @@ function modifier_item_queue_040_hero:OnTooltip()
     return  p1
 end
 
-function modifier_item_queue_040_hero:OnTooltip2()
+function modifier_item_queue_040:OnTooltip2()
     local ability  = self:GetAbility()
     local parent   = self:GetParent()
     local p1       = ability:GetSpecialValueFor("p1")
@@ -35,7 +25,7 @@ function modifier_item_queue_040_hero:OnTooltip2()
     return  p2
 end
 
-function modifier_item_queue_040_hero:OnTakeDamage(keys)
+function modifier_item_queue_040:OnTakeDamage(keys)
 
 	if not IsServer() then return end
 

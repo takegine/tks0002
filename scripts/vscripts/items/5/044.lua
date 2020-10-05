@@ -1,71 +1,35 @@
 item_queue_044 = item_queue_044 or class(item_class)
-
+modifier_item_queue_044 = modifier_item_queue_044 or {
+    IsAura = on,
+    IsAuraActiveOnDeath = off,
+    IsDebuff = off,
+    GetAuraRadius = function () return 2000 end,
+    GetModifierAura = function () return "modifier_item_queue_044_debuff" end,
+    GetAuraSearchTeam = function () return DOTA_UNIT_TARGET_TEAM_ENEMY end,
+    GetAuraSearchType = function ()	return DOTA_UNIT_TARGET + DOTA_UNIT_TARGET_BASIC end,
+    GetTexture = function (self) return "items/"..self:GetAbility():GetAbilityTextureName() end,
+    DeclareFunctions = function () return { MODIFIER_PROPERTY_MANA_REGEN_CONSTANT } end,
+}
+LinkLuaModifier( "modifier_item_queue_044_hero","items/5/044", 0 )
+LinkLuaModifier( "modifier_item_queue_044_unit","items/5/044", 0 )
+modifier_item_queue_044_hero = modifier_item_queue_044
+modifier_item_queue_044_unit = modifier_item_queue_044
 ------------------------------------------------------------------
-LinkLuaModifier( "modifier_item_queue_044_hero","items/5/044", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_044_hero = modifier_item_queue_044_hero or {}
 
-function modifier_item_queue_044_hero:GetTexture ()
-    local ability = self:GetAbility()
-    return "items/"..ability:GetAbilityTextureName()
-end
-
-function modifier_item_queue_044_hero:DeclareFunctions()
-    return  
-    {   
-        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT 
-    }
-end
-
-function modifier_item_queue_044_hero:GetModifierConstantManaRegen()
+function modifier_item_queue_044:GetModifierConstantManaRegen()
     local ability=self:GetAbility()
     local change = ability:GetSpecialValueFor('p2')
     return  change
 end
 
-function modifier_item_queue_044_hero:IsAura()
-	return true
-end
-
-function modifier_item_queue_044_hero:IsAuraActiveOnDeath()
-	return false
-end
-
-function modifier_item_queue_044_hero:IsDebuff()
-    return false
-end
-
-function modifier_item_queue_044_hero:GetAuraRadius()
-    return 2000
-end
-
-function modifier_item_queue_044_hero:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_ENEMY
-end
-
-function modifier_item_queue_044_hero:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-end
-
-function modifier_item_queue_044_hero:GetModifierAura()
-	return "modifier_item_queue_044_hero_debuff"
-end
-
-LinkLuaModifier( "modifier_item_queue_044_hero_debuff","items/5/044", LUA_MODIFIER_MOTION_NONE )
-modifier_item_queue_044_hero_debuff = modifier_item_queue_044_hero_debuff or {}
+LinkLuaModifier( "modifier_item_queue_044_debuff","items/5/044", LUA_MODIFIER_MOTION_NONE )
+modifier_item_queue_044_debuff = modifier_item_queue_044_debuff or {
+    GetTexture = function (self) return "items/"..self:GetAbility():GetAbilityTextureName() end,
+    DeclareFunctions = function () return { MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT } end,
+}
 -------------------------------------------------------------------------------
-function modifier_item_queue_044_hero_debuff:GetTexture ()
-    local ability = self:GetAbility()
-    return "items/"..ability:GetAbilityTextureName()
-end
 
-function modifier_item_queue_044_hero_debuff:DeclareFunctions()
-    return  
-    {   
-        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
-    }
-end
-
-function modifier_item_queue_044_hero_debuff:GetModifierAttackSpeedBonus_Constant()
+function modifier_item_queue_044_debuff:GetModifierAttackSpeedBonus_Constant()
     local ability=self:GetAbility()
     local change = ability:GetSpecialValueFor('p1')
     return  -change
