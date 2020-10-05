@@ -111,10 +111,6 @@ function VectorRevolve(vector,angle)--向量平面逆时针旋转
     return Vector(x,y,z)
 end
 
-btrue = function ( this ) return true end
-bfalse= function ( this ) return false end
-
-
 --PRD算法的C值(war3/dota2伪随机算法)
 function PRD(p)
     if p >= 1 and p <= 100 then
@@ -142,5 +138,16 @@ function prdRandom(chance)
         return false
     end
 end
+
+-- function test()
+--     chance = {p=15}
+--     cirtcount = 0
+--     for _ = 1,10000 do
+--         if prdRandom(chance) then
+--             cirtcount = cirtcount + 1
+--         end
+--     end
+--     print(cirtcount)  测试结果符合预期值
+-- end
 
 --prd end

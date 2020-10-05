@@ -48,3 +48,7 @@ function item_class:GetIntrinsicModifierName()
         return name.."_unit"
     end
 end
+
+
+on = function ( self ) return true end
+off= function ( self ) return false end
