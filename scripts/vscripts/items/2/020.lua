@@ -15,7 +15,7 @@ function modifier_item_jewelry_020_hero:IsAuraActiveOnDeath()
 end
 
 function modifier_item_jewelry_020_hero:IsDebuff()
-    return false
+    return true
 end
 
 function modifier_item_jewelry_020_hero:GetAuraRadius()
@@ -24,6 +24,10 @@ end
 
 function modifier_item_jewelry_020_hero:GetAuraSearchTeam()
 	return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
+
+function modifier_item_jewelry_020_hero:GetAuraSearchFlags()
+    return DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
 end
 
 function modifier_item_jewelry_020_hero:GetAuraSearchType()
