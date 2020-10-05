@@ -1,3 +1,10 @@
+--[[
+* @Description: 
+* @Author: 白喵
+* @Date: 2020-10-05 08:49:38
+* @LastEditors: 白喵
+* @LastEditTime: 2020-10-05 15:35:11
+--]]
 item_jewelry_020 = item_jewelry_020 or class(item_class)
 ------------------------------------------------------------------
 LinkLuaModifier( "modifier_item_jewelry_020_owner","items/2/020", 0 )
