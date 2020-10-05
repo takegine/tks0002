@@ -22,7 +22,9 @@
 	// ---------------------------------------------item------
 		"DOTA_Tooltip_ability_item_weapon_qinggangjian"	"青釭剑(测试用）"
 		"DOTA_Tooltip_ability_item_jewelry_baiyuhuan"	"白玉环(测试用）"
+		"DOTA_Tooltip_modifier_item_jewelry_020_debuff" "白玉环"
 
+		
 		"DOTA_Tooltip_modifier_item_queue_037_hero"	"火阵"
 		"DOTA_Tooltip_modifier_item_queue_037_hero_Description"	" 下次攻击对敌人额外造成 %dMODIFIER_PROPERTY_TOOLTIP% 点火焰魔法伤害。 "
 		"DOTA_Tooltip_modifier_item_queue_038_hero"	"水阵"
