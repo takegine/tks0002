@@ -12,7 +12,7 @@ LinkLuaModifier( "modifier_item_jewelry_020_hero","items/2/020", 0 )
 LinkLuaModifier( "modifier_item_jewelry_020_unit","items/2/020", 0 )
 modifier_item_jewelry_020_owner = modifier_item_jewelry_020_owner or {IsHidden = on}--给主公（信使）的效果
 modifier_item_jewelry_020_hero = modifier_item_jewelry_020_hero or {IsHidden = on}--给武将的效果
-modifier_item_jewelry_020_unit = modifier_item_jewelry_020_unit or {IsHidden = on}--给民兵的效果
+modifier_item_jewelry_020_unit = modifier_item_jewelry_020_hero or {IsHidden = on}--给民兵的效果
 function modifier_item_jewelry_020_hero:IsAura()
 	return true
 end
