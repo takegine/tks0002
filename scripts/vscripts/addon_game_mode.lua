@@ -157,9 +157,17 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     if damtype == DAMAGE_TYPE_PHYSICAL then
 
         local armor    =  killedUnit:GetPhysicalArmorValue(false)
-        local oldkang  = 1-6*armor/(100+6*armor)--1-52/48*armor/(18.75+armor)
-        local newkang  = 1-armor/(100+armor)
-
+        local oldkang  = 1-6*armor/(100+6*math.abs(armor))--1-52/48*armor/(18.75+armor)
+        ---------------war3计算方式--------------------        
+        --local newkang = 0
+        -- if armor >= 0 then
+        --     newkang  = 1-armor/(100+math.abs(armor))
+        -- else
+        --     newkang  = 2-math.pow(1-0.01,-armor)
+        -- end
+        ---------------dota2计算方式--------------------        
+        local newkang = 1-armor/(100+math.abs(armor))
+        -----------------------------------------------
         damage_new = damage_new /oldkang *newkang
     end
 

@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-10-05 08:49:38
 * @LastEditors: 白喵
-* @LastEditTime: 2020-10-06 12:09:06
+* @LastEditTime: 2020-10-06 14:56:28
 --]]
 item_jewelry_025 = item_jewelry_025 or class(item_class)
 ------------------------------------------------------------------
@@ -27,7 +27,6 @@ function modifier_item_jewelry_025_hero:OnAttackLanded(keys)
         local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, parent, parent, parent:GetTeamNumber() )
         dummy.attack_type  = "god"
         dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
-        print(self:GetAbility():GetSpecialValueFor("p3"))
         local info = {
             victim = keys.target,
             attacker = dummy,
@@ -80,6 +79,7 @@ end
 
 function modifier_item_jewelry_025_debuff:GetModifierPhysicalArmorBonus()
     return -(self:GetAbility():GetSpecialValueFor("p2"))
+    --return 0
 end
 
 function modifier_item_jewelry_025_debuff:GetTexture()
