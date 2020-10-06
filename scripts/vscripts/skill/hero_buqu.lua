@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-07-23 00:48:22
 * @LastEditors: 白喵
-* @LastEditTime: 2020-07-31 11:52:36
+* @LastEditTime: 2020-10-06 16:25:05
 --]]
 
 
@@ -94,7 +94,7 @@ function modifier_skill_hero_buqu:OnAttacked(keys)
                 ApplyDamage({
                     victim = keys.attacker,
                     attacker = dummy,
-                    damage = keys.damage*0.6,
+                    damage = keys.attacker.damage_deal*0.6,
                     damage_type = DAMAGE_TYPE_MAGICAL,
                     damage_flags = nil,
                     ability = keys.ability
