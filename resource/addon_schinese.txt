@@ -27,6 +27,7 @@
 		"DOTA_Tooltip_modifier_item_jewelry_022_hero" "玉玺"
 		"DOTA_Tooltip_modifier_item_jewelry_023_buff" "玄武宝玉"
 		"DOTA_Tooltip_modifier_item_jewelry_024_debuff" "朱雀宝玉"
+		"DOTA_Tooltip_modifier_item_jewelry_025_debuff" "白虎宝玉"
 		
 		"DOTA_Tooltip_modifier_item_queue_037_hero"	"火阵"
 		"DOTA_Tooltip_modifier_item_queue_037_hero_Description"	" 下次攻击对敌人额外造成 %dMODIFIER_PROPERTY_TOOLTIP% 点火焰魔法伤害。 "
