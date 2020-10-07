@@ -153,6 +153,7 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const )
     local killerReal = killerUnit:GetName()=="npc_dota_thinker" and killerUnit:GetOwner() or killerUnit
     local defend_big = killedUnit:FindAllModifiersByName( "modifier_defend_big" )
+    local shield = killedUnit:FindAllModifiersByName( "modifier_shield" )
 
     if damtype == DAMAGE_TYPE_PHYSICAL then
 
@@ -180,8 +181,28 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     local damage_multiplier = self.DamageKV[killerUnit.attack_type][killedUnit.defend_type] or 1
 
     damage_new = damage_new * damage_multiplier
+
+    if shield and damage_new ~= 0 then
+        for _,mod in pairs(shield) do
+            --if (mod.shield_type ~= damtype) or (not mod[killerUnit.attack_type]) then
+            if not mod[killerUnit.attack_type] then
+                goto continue
+            end
+            if mod.shield_value > damage_new then
+                mod.shield_value = mod.shield_value - damage_new
+                damage_new = 0
+                break
+            else
+                damage_new = damage_new - mod.shield_value
+                mod.shield_value = 0
+                mod:Destroy()
+                goto continue
+            end
+            ::continue::
+        end
+    end
     
-    if defend_big then
+    if defend_big and damage_new ~= 0 then
         local damage_re = 0
         local pertenth  = function( num ) return (100-num)/10 end 
         for _,mod in pairs(defend_big) do
@@ -447,6 +468,7 @@ function LinkLuaS()
         LinkLuaModifier( "modifier_defend_"..v, modload, 0 )
     end
         LinkLuaModifier( "modifier_defend_big", modload, 0 )
+        LinkLuaModifier( "modifier_shield", modload, 0 )
         LinkLuaModifier( "modifier_abi_vam", "buff/ability_vampire", 0 )
 end
 

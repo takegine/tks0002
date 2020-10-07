@@ -63,3 +63,27 @@ function modifier_defend_big:OnCreated( params )
 
 end
 --------------------------------------------------------------------------------
+modifier_shield = class({
+    IsHidden      = function(self) return true  end,
+    IsPurgable    = function(self) return false end,
+    IsDebuff      = function(self) return false end,
+    IsBuff        = function(self) return false end,
+    RemoveOnDeath = function(self) return false end,
+    GetAttributes = function(  ) return MODIFIER_ATTRIBUTE_MULTIPLE end
+})
+
+function modifier_shield:OnCreated( params )
+    if not IsServer() then
+        return
+    end
+    --self.shield_type  = params.shield_type
+    self.shield_value = params.shield_value
+    self.none         = params.none
+    self.god          = params.god
+    self.tree         = params.tree
+    self.fire         = params.fire
+    self.water        = params.water
+    self.land         = params.land
+    self.electrical   = params.electrical
+end
+--------------------------------------------------------------------------------
