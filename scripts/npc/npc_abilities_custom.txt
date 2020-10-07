@@ -6289,6 +6289,176 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 	}
+	"skill_hero_jiuchi"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_jiuchi.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+	}
+
+	"skill_hero_zhichi"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"qunxiong/ability_zhichi"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		// Casting
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"	"0.3"
+		// Time
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"	"6.0 6.0 6.0 6.0"
+		// Cost
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"	"5"
+		"AbilityChannelTime"	"1.5"
+		// Data driven
+		// -------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_puck/puck_phase_shift.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_puck.vsndevts"
+		}
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_phase_shift_datadriven"
+				"Target"	"CASTER"
+			}
+		}
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_phase_shift_datadriven"
+				"Target"	"CASTER"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_phase_shift_datadriven"
+			{
+				"Duration"	"1.5"
+				"EffectName"	"particles/units/heroes/hero_puck/puck_phase_shift.vpcf"
+				"EffectAttachType"	"attach_origin"
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Puck.Phase_Shift"
+						"Target"	"TARGET"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/skill/hero_zhichi.lua"
+						"Function"	"HideCaster"
+						"Target"	""
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/skill/hero_zhichi.lua"
+						"Function"	"StopSound"
+						"Target"	"TARGET"
+						"sound_name"	"Hero_Puck.Phase_Shift"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/skill/hero_zhichi.lua"
+						"Function"	"ShowCaster"
+						"Target"	""
+					}
+				}
+				"States"
+				{
+					// 	"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"	// Don't use these state for a channeling ability.
+					// 	"MODIFIER_STATE_OUT_OF_GAME"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"0.75 1.50 2.25 3.25"
+			}
+		}
+	}
+
+	"skill_hero_roulin"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"qunxiong/ability_roulin"
+		"ScriptFile"	"skill/hero_roulin.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"1"
+	}
+
+	"skill_hero_lijian"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"qunxiong/ability_lijian"
+		"ScriptFile"	"skill/hero_lijian.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"5"
+		"AbilityManaCost"	"3 4 5 6 7 8 9 10 11 12"
+		"AbilityCastRange"	"500"
+	}
+
+	"skill_hero_diaogui"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_diaogui.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"MaxLevel"	"1"
+	}
+
+	"skill_hero_benghuai"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"qunxiong/ability_benghuai"
+		"ScriptFile"	"skill/hero_benghuai.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"MaxLevel"	"1"
+	}
+
+	"skill_hero_baonue"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"qunxiong/ability_baonue"
+		"ScriptFile"	"skill/hero_baonue.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"MaxLevel"	"1"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+	}	
 //
 // 临天 7-19	
 	"skill_hero_sunjiang"

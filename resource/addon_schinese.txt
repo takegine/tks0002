@@ -810,6 +810,21 @@
 		"DOTA_Tooltip_ability_skill_hero_songwei_Description"	"每有一名友军魏国武将存在时，可降低周围敌方单位3%移动速度。"
 		"DOTA_Tooltip_ability_skill_hero_maqian"	"马千"
 		"DOTA_Tooltip_ability_skill_hero_maqian_Description"	"一骑当千:\n马岱的攻击速度提升（+等级*5%%）。"
+		"DOTA_Tooltip_ability_skill_hero_zhichi_Description"	"陈宫一旦受到攻击就会进入短暂的隐身状态。"
+		"DOTA_Tooltip_ability_skill_hero_zhichi"	"智迟"
+		"DOTA_Tooltip_modifier_phase_shift_datadriven"	"智迟"
+		"DOTA_Tooltip_ability_skill_hero_jiuchi"	"酒池"
+		"DOTA_Tooltip_ability_skill_hero_roulin_Description"	"每次攻击都可获得5%%的完美闪避，在持续3秒后失去，闪避效果可持续叠加，最多叠加至50%%。"
+		"DOTA_Tooltip_ability_skill_hero_roulin"	"肉林"
+		"DOTA_Tooltip_ability_skill_hero_lijian"	"离间"
+		"DOTA_Tooltip_ability_skill_hero_lijian_Description"	"为目标添加决斗buff，在本回合提升20%%+3%%X等级的攻击力。"
+		"DOTA_Tooltip_ability_skill_hero_diaogui"	"貂鬼"
+		"DOTA_Tooltip_ability_skill_hero_diaogui_Description"	"鬼神降临\n貂蝉周围敌人的攻击速度降低30%%。"
+		"DOTA_Tooltip_ability_skill_hero_benghuai"	"崩坏"
+		"DOTA_Tooltip_ability_skill_hero_benghuai_Description"	"你将以每秒最大生命值1%%的速度流失生命值，直到你的生命值低于最大生命值的33%%。"
+		"DOTA_Tooltip_ability_skill_hero_jiuchi_Description"	"董卓下一次的攻击增加220%的攻击力。\n\n冷却时间：6s"
+		"DOTA_Tooltip_ability_skill_hero_baonue_Description"	"每有一名友军群雄武将或西凉兵种存在时，可增加周围友军单位5%%近战生命窃取，同时在击杀敌人时将额外恢复生命值，恢复数值是敌人最大生命值的15%%。\n\n多个暴虐光环效果不叠加，取最高等级"
+		"DOTA_Tooltip_ability_skill_hero_baonue"	"暴虐"		
 		
 	// ---------------------------------------------单位技能-临天-----
 		

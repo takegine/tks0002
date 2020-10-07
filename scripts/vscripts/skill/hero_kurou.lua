@@ -104,6 +104,15 @@ end
 
 modifier_kurou_damage=class({})
 
+function modifier_kurou_damage:GetEffectName()
+    return
+        'particles/econ/items/ember_spirit/ember_ti9/ember_ti9_flameguard.vpcf'     
+end
+
+function modifier_kurou_damage:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end
+
 function modifier_kurou_damage:IsHidden()
     return true 
 end 

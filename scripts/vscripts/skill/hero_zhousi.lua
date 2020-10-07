@@ -7,7 +7,6 @@ skill_hero_zhousi=class({})
 function skill_hero_zhousi:needwaveup()
 
 
-    print('zhousi')
     local caster=self:GetCaster()
     local ability=self
     local owner =caster:GetOwner() or {ship={}}
