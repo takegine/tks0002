@@ -375,6 +375,23 @@
 		"npc_unit_tuyuansu"                 "土元素"
 		"npc_unit_shuiyuansu"               "水元素"
 		"npc_unit_huoyuansu"                "火元素"
+		"npc_unit_xiongnuwushi"             "匈奴巫师"
+		"npc_unit_hebeidajishi"             "河北大戟士"
+		"npc_unit_baierbing"                "白耳兵"
+		"npc_unit_shitouren"                "傀儡石兵"
+		"npc_unit_dairenma"                 "乌桓斧骑兵"
+		"npc_unit_huangjinyaoshushi"        "黄巾妖术师"
+		"npc_unit_xiongnufubing"            "匈奴斧兵"
+		"npc_unit_toushiche"                "投石车"
+		"npc_unit_nuche"              	    "元戎弩车"
+		"npc_unit_tengjiabing"              "藤甲兵"
+		"npc_unit_nanmanzongxiong"          "南蛮棕熊"
+		"npc_unit_zbnanmanzhanying"         "南蛮战鹰"
+		"npc_unit_zbhuogongshou"            "火弓手"
+		"npc_unit_xiliangtieqi"             "西凉铁骑"
+		"npc_unit_kuleimuren"               "傀儡木人"
+		"npc_unit_huangjinwushi"            "黄巾巫师"
+		"npc_unit_nanmansaman"              "南蛮萨满"
 
 	// ---------------------------------------------单位技能-西索-----
 	
