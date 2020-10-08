@@ -181,7 +181,7 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     local damage_multiplier = self.DamageKV[killerUnit.attack_type][killedUnit.defend_type] or 1
 
     damage_new = damage_new * damage_multiplier
-
+    local shield_damage = 0
     if shield and damage_new ~= 0 then
         for _,mod in pairs(shield) do
             --if (mod.shield_type ~= damtype) or (not mod[killerUnit.attack_type]) then
@@ -190,10 +190,12 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
             end
             if mod.shield_value > damage_new then
                 mod.shield_value = mod.shield_value - damage_new
+                shield_damage = shield_damage + damage_new
                 damage_new = 0
                 break
             else
                 damage_new = damage_new - mod.shield_value
+                shield_damage = shield_damage + mod.shield_value
                 mod.shield_value = 0
                 mod:Destroy()
                 goto continue
@@ -212,9 +214,9 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     end
 
     filterTable.damage = damage_new
-    killerReal.damage_deal = damage_new
+    killerReal.damage_deal = damage_new + shield_damage
     -- killerReal:GetOwner().damage_deal= damage_new + killerReal:GetOwner().damage_deal or 0
-    killedUnit.damage_take = damage_new
+    killedUnit.damage_take = damage_new + shield_damage
     -- killedUnit:GetOwner().damage_take= damage_new + killedUnit:GetOwner().damage_take or 0
 
     -- 演示实际伤害模块
@@ -231,7 +233,7 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
         local mes_att = "<font color='#32CD32'>"..(self.namelist[killerReal:GetUnitName()] or "未知").."</font>"
         local mes_vim = "<font color='#DC143C'>"..(self.namelist[killedUnit:GetUnitName()] or "未知").."</font>"
         local mes_typ = "<font color='#4682B4'>"..(damtype == DAMAGE_TYPE_PHYSICAL and "物理" or damtype == DAMAGE_TYPE_MAGICAL and "魔法" or "其他").."</font>"
-        local mes_dam = "<font color='#40E0D0'>"..string.format("%.2f", damage_new).."</font>"
+        local mes_dam = "<font color='#40E0D0'>"..string.format("%.2f", damage_new + shield_damage).."</font>"
         local mes_tot = mes_att.." 对 "..mes_vim.." 造成 "..mes_sta..mes_typ.." 的 "..mes_dam.." 点伤害"
         GameRules:SendCustomMessage( mes_tot, killerUnit:GetTeamNumber(), 1)
 
