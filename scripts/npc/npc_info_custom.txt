@@ -892,5 +892,209 @@
             {
             }
         }
+        "npc_unit_xiongnuwushi"//匈奴巫师
+        {
+            "name" "npc_unit_xiongnuwushi"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1115"
+            "atk" "fire"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "fire"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_hebeidajishi"//河北大戟士
+        {
+            "name" "npc_unit_hebeidajishi"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1115"
+            "atk" "none"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "fire"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_baierbing"//白耳兵
+        {
+            "name" "npc_unit_baierbing"
+            "side" "shuguo" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1110"
+            "atk" "none"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "none"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_shitouren"//傀儡石兵
+        {
+            "name" "npc_unit_shitouren"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1830"
+            "atk" "land"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "land"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_dairenma"//大人马
+        {
+            "name" "npc_unit_dairenma"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1115"
+            "atk" "none"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "land"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_huangjinyaoshushi"//黄巾妖术师
+        {
+            "name" "npc_unit_huangjinyaoshushi"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1115"
+            "atk" "electrical"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "electrical"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_huangjinyaoshushi"//匈奴斧兵
+        {
+            "name" "npc_unit_huangjinyaoshushi"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1110"
+            "atk" "none"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "fire"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_toushiche"//投石车
+        {
+            "name" "npc_unit_toushiche"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1130"
+            "atk" "fire"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "tree"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_nuche"//元戎弩车
+        {
+            "name" "npc_unit_nuche"
+            "side" "shuguo" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1130"
+            "atk" "tree"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "tree"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_tengjiabing"//藤甲兵
+        {
+            "name" "npc_unit_tengjiabing"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1120"
+            "atk" "none"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "tree"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_nanmanzongxiong"//南蛮棕熊
+        {
+            "name" "npc_unit_nanmanzongxiong"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1830"
+            "atk" "electrical"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "electrical"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_zbnanmanzhanying"//南蛮战鹰（杂兵）
+        {
+            "name" "npc_unit_zbnanmanzhanying"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "860"
+            "atk" "electrical"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "electrical"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_zbhuogongshou"//火弓手（杂兵）
+        {
+            "name" "npc_unit_zbhuogongshou"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1105"
+            "atk" "fire"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "none"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_xiliangtieqi"//西凉铁骑
+        {
+            "name" "npc_unit_xiliangtieqi"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1120"
+            "atk" "land"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "land"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_kuleimuren"//傀儡木人
+        {
+            "name" "npc_unit_kuleimuren"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1125"
+            "atk" "tree"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "tree"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_huangjinwushi"//黄巾巫师
+        {
+            "name" "npc_unit_huangjinwushi"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1100"
+            "atk" "none"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "electrical"
+            "able" 
+            {
+            }
+        }
+        "npc_unit_nanmansaman"//南蛮萨满
+        {
+            "name" "npc_unit_nanmansaman"
+            "side" "qunxiong" //"shuguo"weiguo"wuguo"qunxiong"
+            "pop" "1"
+            "price" "1115"
+            "atk" "electrical"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "electrical"
+            "able" 
+            {
+            }
+        }
     }
 }
