@@ -784,114 +784,6 @@
 
     "unit"
     {
-        "npc_unit_tuyuansu"
-        {
-            "name" "npc_unit_tuyuansu"
-            "side" ""
-            "pop" ""
-            "price" ""
-            "atk" ""
-            "def" ""
-            "able" 
-            {
-            }
-        }
-        "npc_unit_shuiyuansu"
-        {
-            "name" "npc_unit_shuiyuansu"
-            "side" ""
-            "pop" ""
-            "price" ""
-            "atk" ""
-            "def" ""
-            "able" 
-            {
-            }
-        }
-        "npc_unit_bulianshi"
-        {
-            "name" "npc_unit_bulianshi"
-            "side" ""
-            "pop" ""
-            "price" ""
-            "atk" ""
-            "def" ""
-            "able" 
-            {
-            }
-        }
-        "npc_unit_huoyuansu"
-        {
-            "name" "npc_unit_huoyuansu"
-            "side" ""
-            "pop" ""
-            "price" ""
-            "atk" ""
-            "def" ""
-            "able" 
-            {
-            }
-        }
-        "npc_majia"
-        {
-            "name" "npc_majia"
-            "side" ""
-            "pop" ""
-            "price" ""
-            "atk" ""
-            "def" ""
-            "able" 
-            {
-            }
-        }
-        "npc_dota_creature_gnoll_assassin"
-        {
-            "name" "npc_dota_creature_gnoll_assassin"
-            "side" "shuguo"
-            "pop" "1"
-            "price" ""
-            "atk" ""
-            "def" ""
-            "able" 
-            {
-            }
-        }
-        "npc_unit_nvlieshou"
-        {
-            "name" "npc_unit_nvlieshou"
-            "side" ""
-            "pop" ""
-            "price" ""
-            "atk" ""
-            "def" ""
-            "able" 
-            {
-            }
-        }
-        "npc_unit_huangjinbing"
-        {
-            "name" "npc_unit_huangjinbing"
-            "side" ""
-            "pop" ""
-            "price" ""
-            "atk" ""
-            "def" ""
-            "able" 
-            {
-            }
-        }
-        "npc_unit_nanmanzhanying"
-        {
-            "name" "npc_unit_nanmanzhanying"
-            "side" ""
-            "pop" ""
-            "price" ""
-            "atk" ""
-            "def" ""
-            "able" 
-            {
-            }
-        }
         "npc_unit_xiongnuwushi"//匈奴巫师
         {
             "name" "npc_unit_xiongnuwushi"
@@ -1096,5 +988,121 @@
             {
             }
         }
+    }
+
+    "other"
+    {
+        "npc_dota_creature_gnoll_assassin"
+        {
+            "name" "npc_dota_creature_gnoll_assassin"
+            "side" "shuguo"
+            "pop" "1"
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_majia"
+        {
+            "name" "npc_majia"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_tuyuansu"
+        {
+            "name" "npc_unit_tuyuansu"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_shuiyuansu"
+        {
+            "name" "npc_unit_shuiyuansu"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_bulianshi"
+        {
+            "name" "npc_unit_bulianshi"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_huoyuansu"
+        {
+            "name" "npc_unit_huoyuansu"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_nvlieshou"
+        {
+            "name" "npc_unit_nvlieshou"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_huangjinbing"
+        {
+            "name" "npc_unit_huangjinbing"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+        "npc_unit_nanmanzhanying"
+        {
+            "name" "npc_unit_nanmanzhanying"
+            "side" ""
+            "pop" ""
+            "price" ""
+            "atk" ""
+            "def" ""
+            "able" 
+            {
+            }
+        }
+    }
+    "enemy"
+    {
+
     }
 }
