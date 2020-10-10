@@ -1,0 +1,8 @@
+map8
+{
+	material materials/overviews/map8.vmat
+	pos_x -7135
+	pos_y 8245
+	scale 14.842
+}
+
