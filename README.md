@@ -11,6 +11,11 @@
 
 
 ## 注意事项
+`2020-10-10` 更新 有三个可以使用的自定义修改器
+1. `modifier_abi_vam` 技能吸血，
+2. `modifier_defend_big` 属性伤害抗性（百分比减伤）
+3. `modifier_custom_shield` 属性伤害护盾 （有伤害抵扣上限）
+
 `2020-09-15` 更新 整理矩阵的文件夹
 1. 在这个文件上面有 `ability.conf`和`item.conf` 两个文件，把他们复制到`steamapps\common\dota 2 beta\game\dota_addons\tks0002\.dota2editor\`里面，替换原本的，就可以使用整理好的文件夹了。
 2. 修改了同步的命令

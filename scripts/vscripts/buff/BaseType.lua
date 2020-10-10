@@ -1,13 +1,10 @@
 modifier_baseType = modifier_baseType or class({
+    RemoveOnDeath = off,
     GetTexture = function(self)
         local  name = self:GetName()
         local  text = "basetype/type"..string.sub(name,16)
         return text
     end,
-
-    RemoveOnDeath = function()
-        return false
-    end
 })
 
 modifier_attack_none = class(modifier_baseType)
@@ -39,12 +36,12 @@ modifier_defend_god = class(modifier_baseType)
 --------------------------------------------------------------------------------
 
 modifier_defend_big = modifier_defend_big or class({
-    IsHidden      = function(self) return true  end,
-    IsPurgable    = function(self) return false end,
-    IsDebuff      = function(self) return false end,
-    IsBuff        = function(self) return false end,
-    RemoveOnDeath = function(self) return false end,
-    GetAttributes = function(  ) return MODIFIER_ATTRIBUTE_MULTIPLE end
+    IsHidden      = on,
+    IsPurgable    = off,
+    IsDebuff      = off,
+    IsBuff        = off,
+    RemoveOnDeath = off,
+    GetAttributes = function(  ) return MODIFIER_ATTRIBUTE_MULTIPLE end,
 })
 
 
@@ -63,16 +60,11 @@ function modifier_defend_big:OnCreated( params )
 
 end
 --------------------------------------------------------------------------------
-modifier_shield = class({
-    IsHidden      = function(self) return true  end,
-    IsPurgable    = function(self) return false end,
-    IsDebuff      = function(self) return false end,
-    IsBuff        = function(self) return false end,
-    RemoveOnDeath = function(self) return false end,
-    GetAttributes = function(  ) return MODIFIER_ATTRIBUTE_MULTIPLE end
-})
 
-function modifier_shield:OnCreated( params )
+
+modifier_custom_shield = class(modifier_defend_big)
+
+function modifier_custom_shield:OnCreated( params )
     if not IsServer() then
         return
     end
@@ -87,6 +79,7 @@ function modifier_shield:OnCreated( params )
     self.electrical   = params.electrical
 end
 --------------------------------------------------------------------------------
+
 
 modifier_player_lock=modifier_player_lock or {
     IsHidden = on,
@@ -152,3 +145,6 @@ modifier_player_lock=modifier_player_lock or {
         }
     end,
 }
+
+--------------------------------------------------------------------------------
+

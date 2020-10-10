@@ -153,7 +153,7 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const )
     local killerReal = killerUnit:GetName()=="npc_dota_thinker" and killerUnit:GetOwner() or killerUnit
     local defend_big = killedUnit:FindAllModifiersByName( "modifier_defend_big" )
-    local shield = killedUnit:FindAllModifiersByName( "modifier_shield" )
+    local shield = killedUnit:FindAllModifiersByName( "modifier_custom_shield" )
 
     if damtype == DAMAGE_TYPE_PHYSICAL then
 
@@ -470,7 +470,7 @@ function LinkLuaS()
         LinkLuaModifier( "modifier_defend_"..v, modload, 0 )
     end
         LinkLuaModifier( "modifier_defend_big", modload, 0 )
-        LinkLuaModifier( "modifier_shield", modload, 0 )
+        LinkLuaModifier( "modifier_custom_shield", modload, 0 )
         LinkLuaModifier( "modifier_abi_vam", "buff/ability_vampire", 0 )
 end
 
