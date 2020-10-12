@@ -884,9 +884,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -961,9 +961,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1038,9 +1038,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1115,9 +1115,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1192,9 +1192,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1268,9 +1268,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1344,9 +1344,9 @@
 		"VisionNighttimeRange"	"672"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1420,9 +1420,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1496,9 +1496,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1573,9 +1573,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1649,9 +1649,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1725,9 +1725,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1801,9 +1801,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1877,9 +1877,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -1953,9 +1953,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -2029,9 +2029,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
@@ -2105,9 +2105,9 @@
 		"VisionNighttimeRange"	"400"
 
 		// 技能
-		"Ability1"	""
-		"Ability2"	""
-		"Ability7"	""
+		"Ability1"	"skill_player_onsale"
+		"Ability2"	"skill_player_toggle"
+		"Ability7"	"skill_player_price"
 		"Ability8"	""
 		"Ability9"	""
 		"Ability10"	""
