@@ -18,14 +18,13 @@ function skill_hero_jijiang:needwaveup()
 	local target_types = self:GetAbilityTargetType()
     local target_flags = self:GetAbilityTargetFlags()
 
-    if caster:GetAbsOrigin().z ~=owner:GetAbsOrigin().z then print(caster:GetAbsOrigin().z) return end
 
     local units = FindUnitsInRadius(caster:GetTeamNumber(),caster:GetAbsOrigin(),nil,radius,target_team,target_types,target_flags,0,true)
     
     local count = 0
     local namelist = {}
     for k,v in pairs(units) do
-        if v:GetUnitLabel()=="shuguo" 
+        if v:GetUnitLabel()=="shuguo"
         and not namelist[v:GetUnitName()] then
             namelist[v:GetUnitName()]=true
             count = count + 1
