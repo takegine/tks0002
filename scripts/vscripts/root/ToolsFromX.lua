@@ -80,14 +80,6 @@ function DistancePointSegment( p, v, w )
 	end
 end
 
-function CCustomNetTableManager:OverData( ... )
-    local name, id , key ,value =...
-    local nettable = self:GetTableValue( name, tostring(id))
-    nettable[key] = value
-    self:SetTableValue( name, tostring(id), nettable)
-end
-
-
 -- function table.reduce(t,m)
 --     for k, v in ipairs(t) do
 --         if v == m then
@@ -160,15 +152,19 @@ function prdRandom(chance)
     end
 end
 
--- function test()
---     chance = {p=15}
---     cirtcount = 0
---     for _ = 1,10000 do
---         if prdRandom(chance) then
---             cirtcount = cirtcount + 1
---         end
---     end
---     print(cirtcount)  测试结果符合预期值
--- end
+function test()
+    for i = 20,80 do
+        cir = 0
+        cur = 0
+        srt = 0
+        for _ = 1,10000 do
+            cir = cir + (RollPercentage(i-1) and 1 or 0)
+            cur = cur + (math.random()*100<i and 1 or 0)
+            srt = srt + (RandomInt(1,100)<=i and 1 or 0)
+
+        end
+        print(i,cir,cur,srt)  --测试结果符合预期值
+    end
+end
 
 --prd end

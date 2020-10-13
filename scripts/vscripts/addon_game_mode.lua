@@ -1,24 +1,14 @@
--- Generated from template
+
 SET_FORCE_HERO = "npc_dota_hero_phoenix"
 tkUnitInfo     = LoadKeyValues('scripts/npc/npc_info_custom.txt')
 
-if CAddonTemplateGameMode == nil then
-	CAddonTemplateGameMode = class({})
-end
+CAddonTemplateGameMode = CAddonTemplateGameMode or class({})
 
 require('root/ToolsFromX')
+require('root/Expand_API')
 
-function Precache( context )
-	--[[
-		Precache things we know we'll use.  Possible file types include (but not limited to):
-			PrecacheResource( "model", "*.vmdl", context )
-			PrecacheResource( "soundfile", "*.vsndevts", context )
-			PrecacheResource( "particle", "*.vpcf", context )
-			PrecacheResource( "particle_folder", "particles/folder", context )
-	]]
-end
+function Precache( context ) end
 
--- Create the game mode when we activate
 function Activate()
 	GameRules.AddonTemplate = CAddonTemplateGameMode()
     GameRules.AddonTemplate:InitGameMode()
@@ -27,7 +17,6 @@ end
 
 function CAddonTemplateGameMode:InitGameMode()
 	print( "Template addon is loaded." )
-	--GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 	GameRules:SetPreGameTime(1)
     GameRules:SetStartingGold(9999)
     GameRules:SetStrategyTime( 0 )
@@ -47,11 +36,11 @@ function CAddonTemplateGameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetFogOfWarDisabled( true )
     GameRules:GetGameModeEntity():SetCustomGameForceHero(SET_FORCE_HERO)
     --GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1500 )
-    GameRules:GetGameModeEntity():SetHUDVisible(1,true)   --设置HUD元素，1元素可见
-    GameRules:GetGameModeEntity():SetHUDVisible(2,true)  --设置HUD元素，4元素不可见
-    GameRules:GetGameModeEntity():SetHUDVisible(3,true)  --设置HUD元素，9元素可见
-    GameRules:GetGameModeEntity():SetHUDVisible(4,true)   --设置HUD元素，1元素可见
-    GameRules:GetGameModeEntity():SetHUDVisible(5,true)   --设置HUD元素，1元素可见
+    GameRules:GetGameModeEntity():SetHUDVisible(1,true) 
+    GameRules:GetGameModeEntity():SetHUDVisible(2,true)
+    GameRules:GetGameModeEntity():SetHUDVisible(3,true)
+    GameRules:GetGameModeEntity():SetHUDVisible(4,true) 
+    GameRules:GetGameModeEntity():SetHUDVisible(5,true) 
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_STRENGTH_DAMAGE, 5 )
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_STRENGTH_HP, 100 )
     GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_STRENGTH_HP_REGEN, 0.03 )
@@ -69,8 +58,8 @@ function CAddonTemplateGameMode:InitGameMode()
     ListenToGameEvent("entity_killed",Dynamic_Wrap(self,"OnEntityKilled"), self)
     -- ListenToGameEvent("dota_item_purchased",Dynamic_Wrap(self, "dota_item_purchased"), self)
 
-    CustomGameEventManager:RegisterListener( "createnewherotest", Dynamic_Wrap(self,"createnewherotest") )
-    CustomGameEventManager:RegisterListener("refreshlist",Dynamic_Wrap(self, 'refreshlist'))
+    CustomGameEventManager:RegisterListener( "createnewherotest", createnewherotest )
+    CustomGameEventManager:RegisterListener("refreshlist",refreshlist)
 
     self.DamageKV = LoadKeyValues("scripts/damage_table.kv")
     self.shiplist = LoadKeyValues("scripts/羁绊名汉化.kv")
@@ -78,67 +67,7 @@ function CAddonTemplateGameMode:InitGameMode()
 
 end
 
--- Evaluate the state of the game
-function CAddonTemplateGameMode:OnThink() return 1 end
 
-function CAddonTemplateGameMode:createnewherotest( data )
-    local hero    = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-    local ablelist= LoadKeyValues('scripts/npc/npc_skill_custom.txt')
-    local hteam   = PlayerResource:GetCustomTeamAssignment(data.PlayerID)
-    local teamid  = data.good and hteam or 3
-    local crePos  = Entities:FindByName(nil,"creep_birth_"..(hteam-5).."_"..(teamid-3)):GetAbsOrigin() 
-
-    CreateUnitByNameAsync( data.way, crePos, true, hero, hero, teamid,  function( h )
-        h:SetControllableByPlayer( data.PlayerID, false )
-        h:Hold()
-        h:SetOwner(hero)
-        h:SetIdleAcquire( false )
-        h:SetAcquisitionRange( 0 )
-        if ablelist[data.way] then
-            for c,abi in pairs( ablelist[data.way]) do
-                    h:AddAbility(abi)
-                if  h:HasAbility(abi) then 
-                    h:FindAbilityByName(abi):SetLevel(1)
-                end
-            end
-        end
-    end )
-end
-
-function CAddonTemplateGameMode:refreshlist()
-
-    local ablelist = LoadKeyValues('scripts/npc/npc_skill_custom.txt')
-    local herolist = LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
-    local unitlist = LoadKeyValues('scripts/npc/npc_Units_custom.txt')
-    local hero_info = {}
-    local unit_info = {}
-    local function messageT(...)
-        local mes, list, sendlist = ...
-        local nocreate = {"npc_dota_fort","npc_dota_building", }
-        for name,info in pairs(list)do
-            if info == 1 
-            or name == SET_FORCE_HERO
-            or ( info.BaseClass and info.BaseClass ~= "npc_dota_creature" )
-            then goto continue
-            end
-            local relist = {
-                name = info.override_hero or name,
-                --hero = info.override_hero,
-                side = info.UnitLabel,
-                popu = info.TksPopUse,
-                price = info.TksPayedGold,
-                }
-            relist.able = ablelist[relist.name]
-            sendlist[name] = relist
-            :: continue ::
-        end
-        CustomNetTables:SetTableValue( "hero_info", mes, sendlist )
-    end
-    messageT("hero", herolist, hero_info)
-    messageT("unit", unitlist, unit_info)
-
-
-end
 
 function CAddonTemplateGameMode:entity_hurt(keys)
     local killedUnit = EntIndexToHScript( keys.entindex_killed   )
@@ -243,6 +172,7 @@ end
 
 function CAddonTemplateGameMode:OnEntityKilled(keys)
     local killedUnit = EntIndexToHScript( keys.entindex_killed   )
+
     if killedUnit.reSpawn then
         killedUnit.reSpawn = nil
         return
@@ -256,15 +186,15 @@ end
 
 function CAddonTemplateGameMode:npc_spawned(keys )
     local npc   = EntIndexToHScript(keys.entindex)
-    local nameX = npc:GetName()
-    if    nameX== "npc_dota_building"
+    local NameX = npc:GetName()
+    if    NameX== "npc_dota_building"
     or    npc.bFirstSpawned 
     then  return
     end
 
     npc.bFirstSpawned = true
 
-    if nameX==SET_FORCE_HERO then
+    if NameX==SET_FORCE_HERO then
         npc.ship={}
         -- 伤害傀儡无法使用伤害过滤器
         -- local elementlist =  { "none", "god", "tree", "fire", "electrical", "water", "land" }
@@ -296,14 +226,21 @@ function CAddonTemplateGameMode:npc_spawned(keys )
         
         CustomNetTables:SetTableValue( "player_info", tostring(npc:GetPlayerID()),{ ships={ Hold={},Lost={} } } )
     else
-        local thisinfo = npc:IsHero() and  tkUnitInfo.hero[nameX] or tkUnitInfo.unit[nameX]
+        NameX = npc:GetUnitName()
+        local thisinfo = tkUnitInfo.hero[NameX] or tkUnitInfo.unit[NameX] or tkUnitInfo.other[NameX] or tkUnitInfo.enemy[NameX]
         if thisinfo then
             npc.attack_type = thisinfo.atk
             npc.defend_type = thisinfo.def
+            table.foreach(thisinfo.able,function(_,a)
+                npc:AddAbility(a)
+            end)
             print(nameX, npc.attack_type, npc.defend_type)
             
             npc:AddNewModifier(npc, nil, "modifier_attack_" .. npc.attack_type, {})
             npc:AddNewModifier(npc, nil, "modifier_defend_" .. npc.defend_type, {})
+        else
+            print(NameX,"error create without info")
+            return
         end
     end
     
@@ -457,21 +394,6 @@ function CAddonTemplateGameMode:InvFilt( filterTable )
     filterTable.suggested_slot = slot
 
     return true
-end
-
-
-
-function LinkLuaS()
-    local typetab = {"none","tree","fire","electrical","water","land","god"}
-    local modload = "buff/BaseType.lua"
-    for _,v in pairs(typetab) do
-        print("modifier_attack_"..v)
-        LinkLuaModifier( "modifier_attack_"..v, modload, 0 )
-        LinkLuaModifier( "modifier_defend_"..v, modload, 0 )
-    end
-        LinkLuaModifier( "modifier_defend_big", modload, 0 )
-        LinkLuaModifier( "modifier_custom_shield", modload, 0 )
-        LinkLuaModifier( "modifier_abi_vam", "buff/ability_vampire", 0 )
 end
 
 function CAddonTemplateGameMode:dota_item_purchased( data )
