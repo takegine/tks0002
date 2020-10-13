@@ -392,6 +392,15 @@
 		"npc_unit_kuleimuren"               "傀儡木人"
 		"npc_unit_huangjinwushi"            "黄巾巫师"
 		"npc_unit_nanmansaman"              "南蛮萨满"
+		"npc_unit_drkuloubing"              "骷髅兵"
+		"npc_unit_dryazi"           	    "鸭子"
+		"npc_unit_drzhizhu"                 "蜘蛛"
+		"npc_unit_drxuanwu"                 "玄武"
+		"npc_unit_drzhuque"                 "朱雀"
+		"npc_unit_drbaihu"                  "白虎"
+		"npc_unit_drqinglong"               "青龙"
+		"npc_unit_drdiyuhuo"                "地狱火"
+		"npc_unit_drxuanshe"                "玄蛇"
 
 	// ---------------------------------------------单位技能-西索-----
 	

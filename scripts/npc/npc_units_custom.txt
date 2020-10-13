@@ -852,7 +852,7 @@
 		"Model"	"models/creeps/neutral_creeps/n_creep_troll_dark_b/n_creep_troll_dark_b.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -929,7 +929,7 @@
 		"Model"	"models/creeps/neutral_creeps/n_creep_troll_dark_a/n_creep_troll_dark_a.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1006,7 +1006,7 @@
 		"Model"	"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_berserker.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1083,7 +1083,7 @@
 		"Model"	"models/heroes/tiny/tiny_03/tiny03_deathsim.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1160,7 +1160,7 @@
 		"Model"	"models/creeps/neutral_creeps/n_creep_satyr_spawn_a/n_creep_satyr_spawn_a.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1236,7 +1236,7 @@
 		"Model"	"models/creeps/neutral_creeps/n_creep_satyr_b/n_creep_satyr_b.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1312,7 +1312,7 @@
 		"Model"	"models/creeps/neutral_creeps/n_creep_satyr_a/n_creep_satyr_a.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1388,7 +1388,7 @@
 		"Model"	"models/creeps/lane_creeps/creep_good_siege/creep_good_siege.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1464,7 +1464,7 @@
 		"Model"	"models/creeps/lane_creeps/creep_good_siege/creep_good_siege_deathsim.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1541,7 +1541,7 @@
 		"Model"	"models/creeps/neutral_creeps/n_creep_eimermole/n_creep_eimermole_lamp.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1617,7 +1617,7 @@
 		"Model"	"models/items/lone_druid/bear/spirit_of_the_atniw/spirit_of_the_atniw.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1693,7 +1693,7 @@
 		"Model"	"beast_heart_marauder_beast_heart_marauder_raven"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1769,7 +1769,7 @@
 		"Model"	"models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1845,7 +1845,7 @@
 		"Model"	"models/creeps/neutral_creeps/n_creep_centaur_lrg/neutral_stash_centaur.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1921,7 +1921,7 @@
 		"Model"	"models/items/furion/treant/treant_cis/treant_cis.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -1997,7 +1997,7 @@
 		"Model"	"models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -2073,7 +2073,7 @@
 		"Model"	"models/creeps/neutral_creeps/n_creep_troll_dark_b/n_creep_troll_dark_frost.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -2149,7 +2149,7 @@
 		"Model"	"models/creeps/ice_biome/undeadtusk/undead_tuskskeleton_armor01.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"1"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -2225,7 +2225,7 @@
 		"Model"	"models/items/courier/tory_the_sky_guardian/tory_the_sky_guardian.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.25"
+		"ModelScale"	"2"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 		// 出生等级
@@ -2301,7 +2301,7 @@
 		"Model"	"models/items/broodmother/spiderling/lycosidae_spiderling/lycosidae_spiderling.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"0.5"
+		"ModelScale"	"2"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_HERO"
 		// 出生等级
@@ -2377,7 +2377,7 @@
 		"Model"	"models/items/courier/nexon_turtle_02_grey/nexon_turtle_02_grey.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"2.5"
+		"ModelScale"	"5.5"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_HUGE"
 		// 出生等级
@@ -2757,7 +2757,7 @@
 		"Model"	"models/items/venomancer/ward/venomancer_hydra_snakeward/venomancer_hydra_snakeward.vmdl"
 		// 基础设置字段
 		// 模型比例
-		"ModelScale"	"2.5"
+		"ModelScale"	"4.5"
 		//碰撞体积半径
 		"BoundsHullName"	"DOTA_HULL_SIZE_HUGE"
 		// 出生等级
