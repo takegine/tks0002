@@ -32,7 +32,7 @@ function modifier_skill_hero_yiji:OnDeath(keys)
     local point   = self:GetCaster():GetAbsOrigin()
     local duration = 3
 
-    local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, parent, parent, parent:GetTeamNumber() )--
+    local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, parent, parent, parent:GetTeamNumber() )--
     dummy.attack_type   = "electrical"
     dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = duration} )
 

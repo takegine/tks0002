@@ -90,7 +90,7 @@ function skill_hero_tuxi:OnProjectileHit_ExtraData(target, location, ExtraData)
 	local modifier_stun = "modifier_tuxi_stun"
 	local main_spike = 0
 
-    local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, caster, caster, caster:GetTeamNumber() )  
+    local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )  
     dummy.attack_type  = "electrical"
     dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 

@@ -103,7 +103,7 @@ function skill_hero_wensi:OnProjectileHit_ExtraData(target, location,ExtraData)
 	local sound_impact = "Hero_NyxAssassin.Impale.Target"
 	local sound_land = "Hero_NyxAssassin.Impale.TargetLand"
 
-    local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, caster, caster, caster:GetTeamNumber() )  
+    local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )  
     dummy.attack_type  = "electrical"
     dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 

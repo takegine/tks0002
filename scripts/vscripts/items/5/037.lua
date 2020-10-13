@@ -23,7 +23,7 @@ function modifier_item_queue_037:OnAttackLanded( params)
     local p1      = ability:GetSpecialValueFor('p1')
     local modName = "modifier_item_queue_037_debuff"
     local count   = self:GetStackCount() <6 and self:GetStackCount() or 1
-    local dummy   = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, parent, parent, parent:GetTeamNumber() )
+    local dummy   = CreateUnitByName( "npc_damage_dummy", OUT_SIDE_VECTOR, false, parent, parent, parent:GetTeamNumber() )
     dummy.attack_type  = "fire"
     dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
     local damage_table = {}
@@ -101,7 +101,7 @@ function modifier_item_queue_037_debuff:OnDestroy()
         ParticleManager:ReleaseParticleIndex(self.particle_explode_fx)
 
         local slow_modifier = nil
-        local dummy         = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, self.caster, self.caster, self.team )
+        local dummy         = CreateUnitByName( "npc_damage_dummy", OUT_SIDE_VECTOR, false, self.caster, self.caster, self.team )
         dummy.attack_type   = "fire"
         dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 

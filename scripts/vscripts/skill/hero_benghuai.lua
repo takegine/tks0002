@@ -49,7 +49,7 @@ function modifier_benghuai_damage:OnAttackLanded(keys)
     if not  IsServer() then  return end
     if keys.attacker~=caster then  return  end
 
-    local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, parent, parent, parent:GetTeamNumber() )
+    local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, parent, parent, parent:GetTeamNumber() )
     dummy.attack_type  = "fire"
     dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
  

@@ -49,7 +49,7 @@ function modifier_skill_hero_tianxiang:OnTakeDamage(keys)
             parent:Heal(redirect_damage, parent)
             SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, parent, redirect_damage, nil)
 
-            local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, parent, parent, parent:GetTeamNumber() )  --水伤马甲
+            local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, parent, parent, parent:GetTeamNumber() )  --水伤马甲
             dummy.attack_type  = "water"
             dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 

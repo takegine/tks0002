@@ -60,7 +60,7 @@ function modifier_skill_hero_luanwu:OnAttack(keys)
         local target_flags = ability:GetAbilityTargetFlags()
         local damage       = ability:GetLevel()*688
 
-        local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, caster, caster, caster:GetTeamNumber() )  
+        local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )  
         dummy.attack_type  = "electrical"
         dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 
@@ -213,7 +213,7 @@ function modifier_luanwu_du_debuff:OnIntervalThink()
     local parent = self:GetParent()
     local damage_type  = ability:GetAbilityDamageType()
 
-    local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, caster, caster, caster:GetTeamNumber() )  
+    local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )  
     dummy.attack_type  = "electrical"
     dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 30} )
 

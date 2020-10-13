@@ -111,7 +111,7 @@ end
 ## 改变伤害的马甲单位
 比如我们需要释放电属性的伤害，但是单位本身的攻击属性不是电属性，那么我们可以创建一个马甲单位制造这个伤害。
 ```lua
-local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, parent, parent, parent:GetTeamNumber() )
+local dummy = CreateUnitByName( "npc_damage_dummy", OUT_SIDE_VECTOR, false, parent, parent, parent:GetTeamNumber() )
 dummy.attack_type  = "electrical"
 dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 ```

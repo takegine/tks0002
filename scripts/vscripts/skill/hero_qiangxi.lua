@@ -59,7 +59,7 @@ function skill_hero_qiangxi:OnProjectileHit_ExtraData(target, location, ExtraDat
     local projectile_speed = ability:GetSpecialValueFor("projectile_speed")
     self.kill_threshold_max_hp_pct = ability:GetSpecialValueFor("kill_threshold_max_hp_pct") / 100
 
-    local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, caster, caster, caster:GetTeamNumber() )
+    local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )
     dummy.attack_type  = "electrical"
     dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1})
 

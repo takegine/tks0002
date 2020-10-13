@@ -89,7 +89,7 @@ function modifier_skill_hero_buqu:OnAttacked(keys)
     if ability.caster:HasModifier("modifier_skill_hero_buqu2") and ability.flag == true then
         if ability.owner.ship["chusheng"] then
             if not keys.attacker:IsRangedAttacker() then
-                local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, ability.caster, ability.caster, ability.caster:GetTeamNumber() )
+                local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, ability.caster, ability.caster, ability.caster:GetTeamNumber() )
                 dummy.attack_type  = "electrical"
                 ApplyDamage({
                     victim = keys.attacker,

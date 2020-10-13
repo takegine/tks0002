@@ -49,7 +49,7 @@ function modifier_item_queue_040:OnTakeDamage(keys)
     and bit.band(damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) ~= DOTA_DAMAGE_FLAG_REFLECTION then
         EmitSoundOnClient("DOTA_Item.BladeMail.Damage", attacker:GetPlayerOwner())
 
-        local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, parent, parent, parent:GetTeamNumber() )
+        local dummy = CreateUnitByName( "npc_damage_dummy", OUT_SIDE_VECTOR, false, parent, parent, parent:GetTeamNumber() )
         dummy.attack_type  = "electrical"
         dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 

@@ -62,7 +62,7 @@ function quhu(keys)
     end
     local unitlist = keys.target_entities
     local ability = keys.ability
-    local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
+    local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
     dummy.attack_type  = "water"
     for _,unit in ipairs(unitlist) do
         local info ={

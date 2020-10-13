@@ -39,7 +39,7 @@ function modifier_skill_hero_lvhu:OnTakeDamage(keys)
 
         if attacker:GetTeamNumber() ~= parent:GetTeamNumber() and parent == target and not attacker:IsOther() then 
 
-            local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, parent, parent, parent:GetTeamNumber() )  --火伤马甲
+            local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, parent, parent, parent:GetTeamNumber() )  --火伤马甲
             dummy.attack_type  = "fire"
             dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 

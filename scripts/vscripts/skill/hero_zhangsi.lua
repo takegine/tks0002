@@ -20,7 +20,7 @@ function skill_hero_zhangsi:OnProjectileHit(hTarget,vLocation)
     end
     if hTarget then
         local caster = self:GetCaster()
-        local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, caster, caster, caster:GetTeamNumber() )
+        local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )
         dummy.attack_type  = "electrical"
         dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
         local damage = self:GetLevel() * 300

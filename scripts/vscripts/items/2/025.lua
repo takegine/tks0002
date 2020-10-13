@@ -24,7 +24,7 @@ function modifier_item_jewelry_025_hero:OnAttackLanded(keys)
         return
     end
     if keys.target:IsIllusion() or keys.target:IsSummoned() then
-        local dummy = CreateUnitByName( "npc_damage_dummy", Vector(0,0,0), false, parent, parent, parent:GetTeamNumber() )
+        local dummy = CreateUnitByName( "npc_damage_dummy", OUT_SIDE_VECTOR, false, parent, parent, parent:GetTeamNumber() )
         dummy.attack_type  = "god"
         dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
         local info = {
