@@ -8,10 +8,6 @@ modifier_item_weapon_002_hero = modifier_item_weapon_002_hero or {}--给武将�
 modifier_item_weapon_002_unit = modifier_item_weapon_002_unit or {}--给民兵的效果
 
 
-function item_weapon_002:GetIntrinsicModifierName()
-	return "modifier_item_weapon_002_hero"
-end
-
 function modifier_item_weapon_002_hero:OnCreated()
 	local ability = self:GetAbility()
     local arrow_count = 2

@@ -5,11 +5,8 @@ LinkLuaModifier( "modifier_item_weapon_008_hero","items/0/008", 0 )
 LinkLuaModifier( "modifier_item_weapon_008_unit","items/0/008", 0 )
 modifier_item_weapon_008_owner = modifier_item_weapon_008_owner or {}--给主公（信使）的效果
 modifier_item_weapon_008_hero = modifier_item_weapon_008_hero or {}--给武将的效果
-modifier_item_weapon_008_unit = class({modifier_item_weapon_008_hero})--给民兵的效果
+modifier_item_weapon_008_unit = class(modifier_item_weapon_008_hero) or class({})--给民兵的效果
 
-function item_weapon_008:GetIntrinsicModifierName()
-    return "modifier_item_weapon_008_hero"
-end
 
 function modifier_item_weapon_008_hero:DeclareFunctions()
     return { 

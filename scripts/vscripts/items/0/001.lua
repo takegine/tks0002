@@ -6,12 +6,9 @@ LinkLuaModifier( "modifier_item_weapon_001_unit","items/0/001", 0 )
 LinkLuaModifier( "modifier_item_weapon_001_hero_debuff","items/0/001", 0 )
 modifier_item_weapon_001_owner = modifier_item_weapon_001_owner or {}--给主公（信使）的效果
 modifier_item_weapon_001_hero = modifier_item_weapon_001_hero or {}--给武将的效果
-modifier_item_weapon_001_unit = class({modifier_item_weapon_001_hero})--给民兵的效果
+modifier_item_weapon_001_unit = class(modifier_item_weapon_001_hero) or class({})--给民兵的效果
 modifier_item_weapon_001_hero_debuff = modifier_item_weapon_001_hero_debuff or {}
 
-function item_weapon_001:GetIntrinsicModifierName()
-    return "modifier_item_weapon_001_hero"
-end
 
 function modifier_item_weapon_001_hero:DeclareFunctions()
     return  {  MODIFIER_EVENT_ON_ATTACK_LANDED

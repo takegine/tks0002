@@ -41,14 +41,21 @@ function modifier_skill_hero_lewu:OnAttackLanded(keys)
         ApplyDamage(damage_table)
 
         if (target:GetHealth()/target:GetMaxHealth() <= self.hp_pct ) then
-            -- if target:HasItemInInventory('item_weapon_008') then
-            --     target:AddItemByName('item_weapon_008')
-            -- end
+
+            local weapon_008 = flase 
+            if target:HasItemInInventory('item_weapon_008') then
+                weapon_008 = true
+            end 
+
             target:RemoveItem(target:GetItemInSlot(0))
             target:RemoveItem(target:GetItemInSlot(1))
             target:RemoveItem(target:GetItemInSlot(2))
             target:RemoveItem(target:GetItemInSlot(3))
             target:RemoveItem(target:GetItemInSlot(4))
+
+            if weapon_008 then 
+                target:AddItemByName('item_weapon_008') 
+            end
         end 
 
         if target:IsBoss() then 
