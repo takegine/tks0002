@@ -263,4 +263,58 @@
 		"2" "skill_hero_lewu"             //乐五
 		"3" "skill_hero_lewei"            //乐威
 	}
+		"npc_dota_hero_axe"     	      //override_hero颜良
+	{
+		"1" "skill_hero_tongshuai"        //双雄-统率
+		"2" "skill_hero_heliang"          //河良
+	}
+		"npc_dota_hero_centaur"           //override_hero文丑
+	{
+		"1" "skill_hero_wuli"             //双雄-武力
+		"2" "skill_hero_wensi"            //文四
+	}
+		"npc_dota_hero_chen"       		  //override_hero陈宫
+	{
+		"1" "skill_hero_mingce"           //明策
+		"2" "skill_hero_zhichi"           //智迟
+	}
+		"npc_dota_hero_chaos_knight"      //override_hero高栏
+	{
+		"1" "skill_hero_gongjian"         //攻坚
+
+	}
+		"npc_dota_hero_death_prophet"     //override_hero貂蝉
+	{
+		"1" "skill_hero_biyue"            //闭月
+		"2" "skill_hero_lijian"           //离间
+		"3" "skill_hero_diaogui"          //貂鬼
+	}
+		"npc_dota_hero_enigma"            //override_hero张角
+	{
+		"1" "skill_hero_guidao"           //鬼道
+
+	}
+		"npc_dota_hero_elder_titan"       //override_hero吕布
+	{
+		"1" "skill_hero_wushuang"         //无双
+		"2" "skill_hero_guishen"          //鬼神
+		"3" "skill_hero_lvhu"             //吕虎
+	}
+		"npc_dota_hero_doom_bringer"     //override_hero董卓
+	{
+		"1" "skill_hero_jiuchi"          //酒池
+		"2" "skill_hero_roulin"          //肉林
+		"3" "skill_hero_baonue"          //暴虐
+		"4" "skill_hero_benghuai"        //崩坏
+	}
+		"npc_dota_hero_disruptor"        //override_hero华佗 
+	{
+		"1" "skill_hero_qingnang"        //青囊
+		"2" "skill_hero_jijiu"           //急救
+	}
+		"npc_dota_hero_furion"           //override_hero左慈
+	{
+		"1" "skill_hero_huashen"         //化身
+		"2" "skill_hero_xinsheng"        //新生
+	}
 }
