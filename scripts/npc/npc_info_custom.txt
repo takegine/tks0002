@@ -2,7 +2,7 @@
 {
     "hero"
     {
-        "npc_dota_hero_death_prophet"
+        "npc_dota_hero_death_prophet"            //貂蝉
         {
             "name" "npc_dota_hero_death_prophet"
             "side" "qunxiong"
@@ -12,9 +12,12 @@
             "def" "none"
             "able" 
             {
+                "1" "skill_hero_biyue" 
+                "2" "skill_hero_lijian" 
+                "3" "skill_hero_diaogui"
             }
         }
-        "npc_dota_hero_drow_ranger"
+        "npc_dota_hero_drow_ranger"            //祝融
         {
             "name" "npc_dota_hero_drow_ranger"
             "side" "shuguo"
@@ -29,7 +32,7 @@
                 "3" ""
             }
         }
-        "npc_dota_hero_bristleback"
+        "npc_dota_hero_bristleback"            //张飞
         {
             "name" "npc_dota_hero_bristleback"
             "side" "shuguo"
@@ -43,7 +46,7 @@
                 "2" "skill_hero_yinghan"
             }
         }
-        "npc_dota_hero_naga_siren"
+        "npc_dota_hero_naga_siren"            //乐进
         {
             "name" "npc_dota_hero_naga_siren"
             "side" "weiguo"
@@ -58,7 +61,7 @@
                 "3" "skill_hero_lewei"
             }
         }
-        "npc_dota_hero_wisp"
+        "npc_dota_hero_wisp"            //小乔
         {
             "name" "npc_dota_hero_wisp"
             "side" "wuguo"
@@ -72,7 +75,7 @@
                 "2" "skill_hero_hongyan"
             }
         }
-        "npc_dota_hero_vengefulspirit"
+        "npc_dota_hero_vengefulspirit"            //周瑜
         {
             "name" "npc_dota_hero_vengefulspirit"
             "side" "wuguo"
@@ -86,7 +89,7 @@
                 "2" "skill_hero_zhousi"
             }
         }
-        "npc_dota_hero_spirit_breaker"
+        "npc_dota_hero_spirit_breaker"            //丁奉
         {
             "name" "npc_dota_hero_spirit_breaker"
             "side" "wuguo"
@@ -100,7 +103,7 @@
                 "2" "skill_hero_fenxun"
             }
         }
-        "npc_dota_hero_tidehunter"
+        "npc_dota_hero_tidehunter"            //徐盛
         {
             "name" "npc_dota_hero_tidehunter"
             "side" "wuguo"
@@ -113,7 +116,7 @@
                 "1" "skill_hero_pojun"
             }
         }
-        "npc_dota_hero_slardar"
+        "npc_dota_hero_slardar"            //周泰
         {
             "name" "npc_dota_hero_slardar"
             "side" "wuguo"
@@ -126,7 +129,7 @@
                 "1" "skill_hero_buqu"
             }
         }
-        "npc_dota_hero_disruptor"
+        "npc_dota_hero_disruptor"            //华佗
         {
             "name" "npc_dota_hero_disruptor"
             "side" "qunxiong"
@@ -138,7 +141,7 @@
             {
             }
         }
-        "npc_dota_hero_windrunner"
+        "npc_dota_hero_windrunner"            //孙尚香
         {
             "name" "npc_dota_hero_windrunner"
             "side" "wuguo"
@@ -152,7 +155,7 @@
                 "2" "skill_hero_xiaoji"
             }
         }
-        "npc_dota_hero_tiny"
+        "npc_dota_hero_tiny"            //孙策
         {
             "name" "npc_dota_hero_tiny"
             "side" "wuguo"
@@ -170,7 +173,7 @@
                 "6" "skill_hero_jiang"
             }
         }
-        "npc_dota_hero_terrorblade"
+        "npc_dota_hero_terrorblade"            //孙坚
         {
             "name" "npc_dota_hero_terrorblade"
             "side" "wuguo"
@@ -183,7 +186,7 @@
                 "1" "skill_hero_yinghun"
             }
         }
-        "npc_dota_hero_batrider"
+        "npc_dota_hero_batrider"            //庞统
         {
             "name" "npc_dota_hero_batrider"
             "side" "shuguo"
@@ -198,7 +201,7 @@
                 "3" " "
             }
         }
-        "npc_dota_hero_lycan"
+        "npc_dota_hero_lycan"            //于禁
         {
             "name" "npc_dota_hero_lycan"
             "side" "weiguo"
@@ -212,7 +215,7 @@
                 "2" "skill_hero_yuwu"
             }
         }
-        "npc_dota_hero_brewmaster"
+        "npc_dota_hero_brewmaster"            //魏延
         {
             "name" "npc_dota_hero_brewmaster"
             "side" "shuguo"
@@ -227,7 +230,7 @@
                 "3" "skill_hero_weixing"
             }
         }
-        "npc_dota_hero_doom_bringer"
+        "npc_dota_hero_doom_bringer"            //董卓
         {
             "name" "npc_dota_hero_doom_bringer"
             "side" "qunxiong"
@@ -237,9 +240,13 @@
             "def" "fire"
             "able" 
             {
+                "1" "skill_hero_jiuchi" 
+                "2" "skill_hero_roulin" 
+                "3" "skill_hero_baonue"
+                "4" "skill_hero_benghuai"
             }
         }
-        "npc_dota_hero_beastmaster"
+        "npc_dota_hero_beastmaster"            //孟获
         {
             "name" "npc_dota_hero_beastmaster"
             "side" "shuguo"
@@ -254,7 +261,7 @@
                 "3" " "
             }
         }
-        "npc_dota_hero_razor"
+        "npc_dota_hero_razor"            //吕蒙
         {
             "name" "npc_dota_hero_razor"
             "side" "wuguo"
@@ -268,7 +275,7 @@
                 "2" "skill_hero_saoshe"
             }
         }
-        "npc_dota_hero_warlock"
+        "npc_dota_hero_warlock"            //法正
         {
             "name" "npc_dota_hero_warlock"
             "side" "shuguo"
@@ -280,7 +287,7 @@
             {
             }
         }
-        "npc_dota_hero_tusk"
+        "npc_dota_hero_tusk"            //黄盖
         {
             "name" "npc_dota_hero_tusk"
             "side" "wuguo"
@@ -293,7 +300,7 @@
                 "1" "skill_hero_kurou"
             }
         }
-        "npc_dota_hero_alchemist"
+        "npc_dota_hero_alchemist"            //马超
         {
             "name" "npc_dota_hero_alchemist"
             "side" "shuguo"
@@ -308,7 +315,7 @@
                 "3" "skill_hero_chaoqi"
             }
         }
-        "npc_dota_hero_spectre"
+        "npc_dota_hero_spectre"            //甘宁
         {
             "name" "npc_dota_hero_spectre"
             "side" "wuguo"
@@ -322,7 +329,7 @@
                 "2" "skill_hero_fenwei"
             }
         }
-        "npc_dota_hero_enigma"
+        "npc_dota_hero_enigma"            //张角
         {
             "name" "npc_dota_hero_enigma"
             "side" "qunxiong"
@@ -334,7 +341,7 @@
             {
             }
         }
-        "npc_dota_hero_bounty_hunter"
+        "npc_dota_hero_bounty_hunter"            //刘备
         {
             "name" "npc_dota_hero_bounty_hunter"
             "side" "shuguo"
@@ -350,7 +357,7 @@
                 "4" "skill_hero_jijiang"
             }
         }
-        "npc_dota_hero_undying"
+        "npc_dota_hero_undying"            //太史慈
         {
             "name" "npc_dota_hero_undying"
             "side" "wuguo"
@@ -364,7 +371,7 @@
                 "2" "skill_hero_taijun"
             }
         }
-        "npc_dota_hero_queenofpain"
+        "npc_dota_hero_queenofpain"            //大乔
         {
             "name" "npc_dota_hero_queenofpain"
             "side" "wuguo"
@@ -375,7 +382,7 @@
             "able"
             {}
         }
-        "npc_dota_hero_omniknight"
+        "npc_dota_hero_omniknight"            //张辽
         {
             "name" "npc_dota_hero_omniknight"
             "side" "weiguo"
@@ -388,7 +395,7 @@
                 "1" "skill_hero_tuxi"
             }
         }
-        "npc_dota_hero_bloodseeker"
+        "npc_dota_hero_bloodseeker"            //姜维
         {
             "name" "npc_dota_hero_bloodseeker"
             "side" "shuguo"
@@ -401,7 +408,7 @@
                 "1" "skill_hero_tiaoxin"
             }
         }
-        "npc_dota_hero_furion"
+        "npc_dota_hero_furion"            //左慈
         {
             "name" "npc_dota_hero_furion"
             "side" "qunxiong"
@@ -411,9 +418,11 @@
             "def" "god"
             "able" 
             {
+                "1" "skill_hero_huashen" 
+                "2" "skill_hero_xinsheng"
             }
         }
-        "npc_dota_hero_abaddon"
+        "npc_dota_hero_abaddon"            //关羽
         {
             "name" "npc_dota_hero_abaddon"
             "side" "shuguo"
@@ -427,7 +436,7 @@
                 "2" "skill_hero_wusheng"
             }
         }
-        "npc_dota_hero_axe"
+        "npc_dota_hero_axe"            //颜良
         {
             "name" "npc_dota_hero_axe"
             "side" "qunxiong"
@@ -437,9 +446,11 @@
             "def" "fire"
             "able" 
             {
+                "1" "skill_hero_tongshuai" 
+                "2" "skill_hero_heliang" 
             }
         }
-        "npc_dota_hero_centaur"
+        "npc_dota_hero_centaur"            //文丑
         {
             "name" "npc_dota_hero_centaur"
             "side" "qunxiong"
@@ -449,9 +460,11 @@
             "def" "fire"
             "able" 
             {
+                "1" "skill_hero_wuli" 
+                "2" "skill_hero_wensi" 
             }
         }
-        "npc_dota_hero_antimage"
+        "npc_dota_hero_antimage"            //关银屏
         {
             "name" "npc_dota_hero_antimage"
             "side" "shuguo"
@@ -466,7 +479,7 @@
                 "3" "skill_hero_fengdan"
             }
         }
-        "npc_dota_hero_ursa"
+        "npc_dota_hero_ursa"            //张合
         {
             "name" "npc_dota_hero_ursa"
             "side" "weiguo"
@@ -481,7 +494,7 @@
                 "3" "skill_hero_zhangsi"
             }
         }
-        "npc_dota_hero_broodmother"
+        "npc_dota_hero_broodmother"            //赵云
         {
             "name" "npc_dota_hero_broodmother"
             "side" "shuguo"
@@ -495,7 +508,7 @@
                 "2" "skill_hero_chongzhen"
             }
         }
-        "npc_dota_hero_bane"
+        "npc_dota_hero_bane"            //老诸葛
         {
             "name" "npc_dota_hero_bane"
             "side" "shuguo"
@@ -509,7 +522,7 @@
                 "2" "skill_hero_kongcheng"
             }
         }
-        "npc_dota_hero_clinkz"
+        "npc_dota_hero_clinkz"            //马岱
         {
             "name" "npc_dota_hero_clinkz"
             "side" "shuguo"
@@ -524,7 +537,7 @@
                 "3" "skill_hero_maqian"
             }
         }
-        "npc_dota_hero_kunkka"
+        "npc_dota_hero_kunkka"            //典韦
         {
             "name" "npc_dota_hero_kunkka"
             "side" "weiguo"
@@ -539,7 +552,7 @@
                 "3" "skill_hero_dianzhu"
             }
         }
-        "npc_dota_hero_sand_king"
+        "npc_dota_hero_sand_king"            //许褚
         {
             "name" "npc_dota_hero_sand_king"
             "side" "weiguo"
@@ -553,7 +566,7 @@
                 "2" "skill_hero_xue"
             }
         }
-        "npc_dota_hero_phantom_lancer"
+        "npc_dota_hero_phantom_lancer"            //孙权
         {
             "name" "npc_dota_hero_phantom_lancer"
             "side" "wuguo"
@@ -569,7 +582,7 @@
                 "4" "skill_hero_sunsan"
             }
         }
-        "npc_dota_hero_silencer"
+        "npc_dota_hero_silencer"            //郭嘉
         {
             "name" "npc_dota_hero_silencer"
             "side" "weiguo"
@@ -583,7 +596,7 @@
                 "2" "skill_hero_yiji"
             }
         }
-        "npc_dota_hero_chen"
+        "npc_dota_hero_chen"            //陈宫
         {
             "name" "npc_dota_hero_chen"
             "side" "qunxiong"
@@ -593,9 +606,11 @@
             "def" "fire"
             "able" 
             {
+                "1" "skill_hero_mingce" 
+                "2" "skill_hero_zhichi" 
             }
         }
-        "npc_dota_hero_treant"
+        "npc_dota_hero_treant"            //徐晃
         {
             "name" "npc_dota_hero_treant"
             "side" "weiguo"
@@ -610,7 +625,7 @@
                 "3" "skill_hero_wuxu"
             }
         }
-        "npc_dota_hero_arc_warden"
+        "npc_dota_hero_arc_warden"            //黄忠
         {
             "name" "npc_dota_hero_arc_warden"
             "side" "shuguo"
@@ -624,7 +639,7 @@
                 "2" "skill_hero_liegong"
             }
         }
-        "npc_dota_hero_ancient_apparition"
+        "npc_dota_hero_ancient_apparition"            //火诸葛
         {
             "name" "npc_dota_hero_ancient_apparition"
             "side" "shuguo"
@@ -639,7 +654,7 @@
                 "3" "skill_hero_kanpo"
             }
         }
-        "npc_dota_hero_keeper_of_the_light"
+        "npc_dota_hero_keeper_of_the_light"            //司马懿
         {
             "name" "npc_dota_hero_keeper_of_the_light"
             "side" "weiguo"
@@ -654,7 +669,7 @@
                 "3" "skill_hero_sishuang"
             }
         }
-        "npc_dota_hero_dragon_knight"
+        "npc_dota_hero_dragon_knight"            //曹丕
         {
             "name" "npc_dota_hero_dragon_knight"
             "side" "weiguo"
@@ -669,7 +684,7 @@
                 "3" "skill_hero_songwei"
             }
         }
-        "npc_dota_hero_life_stealer"
+        "npc_dota_hero_life_stealer"            //曹操
         {
             "name" "npc_dota_hero_life_stealer"
             "side" "weiguo"
@@ -686,7 +701,7 @@
                 "5" "skill_hero_caoe"
             }
         }
-        "npc_dota_hero_pugna"
+        "npc_dota_hero_pugna"            //荀彧
         {
             "name" "npc_dota_hero_pugna"
             "side" "weiguo"
@@ -700,7 +715,7 @@
                 "2" "skill_hero_jieming"
             }
         }
-        "npc_dota_hero_venomancer"
+        "npc_dota_hero_venomancer"            //蒋钦
         {
             "name" "npc_dota_hero_venomancer"
             "side" "wuguo"
@@ -713,7 +728,7 @@
                 "1" "skill_hero_niaoxiang"
             }
         }
-        "npc_dota_hero_visage"
+        "npc_dota_hero_visage"            //陆逊
         {
             "name" "npc_dota_hero_visage"
             "side" "wuguo"
@@ -727,7 +742,7 @@
                 "2" "skill_hero_lianying"
             }
         }
-        "npc_dota_hero_elder_titan"
+        "npc_dota_hero_elder_titan"             //吕布
         {
             "name" "npc_dota_hero_elder_titan"
             "side" "qunxiong"
@@ -737,9 +752,12 @@
             "def" "fire"
             "able" 
             {
+                "1" "skill_hero_wushuang" 
+                "2" "skill_hero_guishen" 
+                "3" "skill_hero_lvhu"
             }
         }
-        "npc_dota_hero_witch_doctor"
+        "npc_dota_hero_witch_doctor"            //鲁肃
         {
             "name" "npc_dota_hero_witch_doctor"
             "side" "wuguo"
@@ -753,7 +771,7 @@
                 "2" "skill_hero_lusi"
             }
         }
-        "npc_dota_hero_chaos_knight"
+        "npc_dota_hero_chaos_knight"            //高览
         {
             "name" "npc_dota_hero_chaos_knight"
             "side" "qunxiong"
@@ -763,9 +781,10 @@
             "def" "none"
             "able" 
             {
+                "1" "skill_hero_gongjian" 
             }
         }
-        "npc_dota_hero_crystal_maiden"
+        "npc_dota_hero_crystal_maiden"            //贾诩
         {
             "name" "npc_dota_hero_crystal_maiden"
             "side" "weiguo"
