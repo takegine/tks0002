@@ -139,6 +139,8 @@
             "def" "none"
             "able" 
             {
+                "1" "skill_hero_qingnang" 
+                "2" "skill_hero_jijiu"
             }
         }
         "npc_dota_hero_windrunner"            //孙尚香
@@ -339,6 +341,7 @@
             "def" "electrical"
             "able" 
             {
+                "1" "skill_hero_guidao" 
             }
         }
         "npc_dota_hero_bounty_hunter"            //刘备
@@ -1041,8 +1044,8 @@
             "side" ""
             "pop" ""
             "price" ""
-            "atk" ""
-            "def" ""
+            "atk" "land"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "land"
             "able" 
             {
             }
@@ -1053,8 +1056,8 @@
             "side" ""
             "pop" ""
             "price" ""
-            "atk" ""
-            "def" ""
+            "atk" "water"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "water"
             "able" 
             {
             }
@@ -1065,8 +1068,8 @@
             "side" ""
             "pop" ""
             "price" ""
-            "atk" ""
-            "def" ""
+            "atk" "fire"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "none"
             "able" 
             {
             }
@@ -1077,8 +1080,8 @@
             "side" ""
             "pop" ""
             "price" ""
-            "atk" ""
-            "def" ""
+            "atk" "fire"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "fire"
             "able" 
             {
             }
@@ -1101,8 +1104,8 @@
             "side" ""
             "pop" ""
             "price" ""
-            "atk" ""
-            "def" ""
+            "atk" "electrical"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "electrical"
             "able" 
             {
             }
@@ -1113,8 +1116,8 @@
             "side" ""
             "pop" ""
             "price" ""
-            "atk" ""
-            "def" ""
+            "atk" "electrical"// 攻击类型：普通："none" 木："tree" 火："fire" 电："electrical" 水："water" 地："land" 神："god"
+            "def" "electrical"
             "able" 
             {
             }
