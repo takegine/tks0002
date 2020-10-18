@@ -32,8 +32,8 @@ function modifier_skill_hero_wensi:OnAttackLanded(keys)
 	local ability = self:GetAbility()
 	local target_point = keys.attacker:GetAbsOrigin()
     local spawn_distance = ability:GetSpecialValueFor("spawn_distance")
+    local direction = caster:GetForwardVector()
 
-    local direction = (target_point - caster:GetAbsOrigin()):Normalized()
     local spawn_point = caster:GetAbsOrigin() + direction * spawn_distance
 	local width  = ability:GetSpecialValueFor("width")
     local length = ability:GetSpecialValueFor("length")
@@ -51,9 +51,9 @@ function modifier_skill_hero_wensi:OnAttackLanded(keys)
 
     if ability:IsTrained() and 
 	not caster:PassivesDisabled() 
-		and ((keys.target == self:GetParent() 
+		and ((keys.target == caster 
 		and not keys.attacker:IsOther() 
-		and keys.attacker:GetTeamNumber() ~= keys.target:GetTeamNumber()) or (keys.attacker == self:GetCaster())) then
+		and keys.attacker:GetTeamNumber() ~= keys.target:GetTeamNumber()) or (keys.attacker == self:GetParent())) then
         if RollPercentage(15) then
             local spikes_projectile = { Ability = ability,
                                     EffectName = particle_projectile,
