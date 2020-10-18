@@ -37,12 +37,9 @@ function modifier_skill_hero_wushuang:OnAttackLanded(keys)
             chance = chance * 2
         end 
 
-        if 
     if caster:HasItemInInventory( "item_weapon_008" ) and (keys.target:GetHealth()/keys.target:GetMaxHealth()) <= max_hp_pct then
             chance = 100 
         end
-
-        if not RollPercentage(chance) then return end
 
         local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, parent, parent, parent:GetTeamNumber() )  --火伤马甲
         dummy.attack_type  = "fire"
@@ -95,6 +92,11 @@ function modifier_skill_hero_wushuang:OnAttackLanded(keys)
                         damage       = damage, 
                         damage_flags = DOTA_DAMAGE_FLAG_NONE
                     }
+                    if unit == keys.target then 
+                        damage_table.damage = 0
+                    else
+                        damage_table.damage = damage
+                    end
                         ApplyDamage(damage_table)
                     end    
 

@@ -28,14 +28,10 @@ function modifier_skill_hero_heliang:DeclareFunctions()
 end
 
 function modifier_skill_hero_heliang:OnAttackLanded(keys)
-
 	local caster = self:GetCaster()
 	local ability = self:GetAbility()
-	local target_point = keys.target:GetAbsOrigin()+450
-	local sound_cast = "Hero_NyxAssassin.Impale"  
+	local target_point = keys.target:GetAbsOrigin()
     local spawn_distance = ability:GetSpecialValueFor("spawn_distance")
-
-    EmitSoundOn(sound_cast, caster)
 
     local direction = (target_point - caster:GetAbsOrigin()):Normalized()
     local spawn_point = caster:GetAbsOrigin() + direction * spawn_distance
@@ -53,10 +49,10 @@ function modifier_skill_hero_heliang:OnAttackLanded(keys)
     local right_spawn_point = RotatePosition(caster:GetAbsOrigin(), right_QAngle, spawn_point)
     local right_direction = (right_spawn_point - caster:GetAbsOrigin()):Normalized()
 
-    if self:GetAbility():IsTrained() and 
-	keys.attacker == self:GetParent() and 
-	not self:GetParent():PassivesDisabled() and 
-	not self:GetParent():IsIllusion() then
+    if ability:IsTrained() and 
+	keys.attacker == caster and 
+	not caster:PassivesDisabled() and 
+	not caster:IsIllusion() then
         if RollPercentage(30) then
             local spikes_projectile = { Ability = ability,
                                     EffectName = particle_projectile,
@@ -99,8 +95,6 @@ function skill_hero_heliang:OnProjectileHit_ExtraData(target, location,ExtraData
 
 	local caster = self:GetCaster()
     local ability = self
-	local sound_impact = "Hero_NyxAssassin.Impale.Target"
-    local sound_land = "Hero_NyxAssassin.Impale.TargetLand"
     
     local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )  
     dummy.attack_type  = "electrical"
@@ -111,8 +105,6 @@ function skill_hero_heliang:OnProjectileHit_ExtraData(target, location,ExtraData
 	local target_team  = ability:GetAbilityTargetTeam()
 	local target_types = ability:GetAbilityTargetType()
     local target_flags = ability:GetAbilityTargetFlags()
-
-	EmitSoundOn(sound_impact, target)
 
 	local particle_impact_fx = ParticleManager:CreateParticle(particle_impact, PATTACH_ABSORIGIN, target)
 	ParticleManager:SetParticleControl(particle_impact_fx, 0, target:GetAbsOrigin())

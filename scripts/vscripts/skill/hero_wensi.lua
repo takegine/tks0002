@@ -28,14 +28,10 @@ function modifier_skill_hero_wensi:DeclareFunctions()
 end
 
 function modifier_skill_hero_wensi:OnAttackLanded(keys)
-
 	local caster = self:GetCaster()
 	local ability = self:GetAbility()
 	local target_point = keys.attacker:GetAbsOrigin()
-	local sound_cast = "Hero_NyxAssassin.Impale"  
     local spawn_distance = ability:GetSpecialValueFor("spawn_distance")
-
-    EmitSoundOn(sound_cast, caster)
 
     local direction = (target_point - caster:GetAbsOrigin()):Normalized()
     local spawn_point = caster:GetAbsOrigin() + direction * spawn_distance
@@ -53,8 +49,8 @@ function modifier_skill_hero_wensi:OnAttackLanded(keys)
     local right_spawn_point = RotatePosition(caster:GetAbsOrigin(), right_QAngle, spawn_point)
     local right_direction = (right_spawn_point - caster:GetAbsOrigin()):Normalized()
 
-    if self:GetAbility():IsTrained() and 
-	not self:GetCaster():PassivesDisabled() 
+    if ability:IsTrained() and 
+	not caster:PassivesDisabled() 
 		and ((keys.target == self:GetParent() 
 		and not keys.attacker:IsOther() 
 		and keys.attacker:GetTeamNumber() ~= keys.target:GetTeamNumber()) or (keys.attacker == self:GetCaster())) then
@@ -100,8 +96,7 @@ function skill_hero_wensi:OnProjectileHit_ExtraData(target, location,ExtraData)
 
 	local caster = self:GetCaster()
     local ability = self
-	local sound_impact = "Hero_NyxAssassin.Impale.Target"
-	local sound_land = "Hero_NyxAssassin.Impale.TargetLand"
+
 
     local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )  
     dummy.attack_type  = "electrical"
@@ -113,8 +108,6 @@ function skill_hero_wensi:OnProjectileHit_ExtraData(target, location,ExtraData)
 	local target_team  = ability:GetAbilityTargetTeam()
 	local target_types = ability:GetAbilityTargetType()
     local target_flags = ability:GetAbilityTargetFlags()
-
-	EmitSoundOn(sound_impact, target)
 
 	local particle_impact_fx = ParticleManager:CreateParticle(particle_impact, PATTACH_ABSORIGIN, target)
 	ParticleManager:SetParticleControl(particle_impact_fx, 0, target:GetAbsOrigin())
