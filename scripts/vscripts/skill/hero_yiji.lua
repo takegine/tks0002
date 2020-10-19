@@ -47,11 +47,8 @@ function modifier_skill_hero_yiji_blizzard:OnCreated()
         
     local parent = self:GetParent()
     local ability= self:GetAbility()
-    -- self.modifier_slow = "modifier_skill_hero_yiji_debuff"
-    self.radius = ability:GetLevel()*16+320--radius
-    self.damage = 300  
-
-    -- 伤害和范围无法获取abilities里的值
+    self.radius = ability:GetSpecialValueFor("radius")
+    self.damage = ability:GetSpecialValueFor("damage")
 
     -- self.dummy  = dummy
     self.point  = parent:GetAbsOrigin()
@@ -61,13 +58,11 @@ function modifier_skill_hero_yiji_blizzard:OnCreated()
     self.target_flags = ability:GetAbilityTargetFlags()
     self:OnIntervalThink()
     self:StartIntervalThink(1)
-    --print_r(self)
     end
 end
 
 function modifier_skill_hero_yiji_blizzard:OnIntervalThink()
 
-    print(self.target_team, self.target_types, self.target_flags,self.point)
     local caster = self:GetCaster()
     local ability= self:GetAbility()
     local parent = self:GetParent()
