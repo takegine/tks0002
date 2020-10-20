@@ -1,10 +1,11 @@
 --[[
-* @Description: 
-* @Author: 白喵
-* @Date: 2020-07-24 20:43:01
-* @LastEditors: 白喵
-* @LastEditTime: 2020-08-05 17:04:22
+* @Description: ,: 
+* @Author: ,: 白喵
+* @Date: ,: 2020-07-26 19:50:40
+* @LastEditors: ,: 白喵
+* @LastEditTime: ,: 2020-10-20 13:38:31
 --]]
+
 
 
 skill_hero_xiaoji = {}
@@ -66,9 +67,7 @@ function modifier_hero_xiaoji2:DeclareFunctions()
 end
 
 function modifier_hero_xiaoji2:GetModifierDamageOutgoing_Percentage()
-    local ability = self:GetAbility()
-    local level = ability:GetLevel()
-    return ability:GetLevelSpecialValueFor("attack", level-1)
+    return ability:GetSpecialValueFor("attack")
 end
 
 

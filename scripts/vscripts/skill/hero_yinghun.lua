@@ -2,8 +2,8 @@
 * @Description: 
 * @Author: 白喵
 * @Date: 2020-07-21 21:48:10
-* @LastEditors: 白喵
-* @LastEditTime: 2020-09-28 05:59:27
+* @LastEditors: ,: 白喵
+* @LastEditTime: ,: 2020-10-20 13:35:53
 --]]
 skill_hero_yinghun = {}
 --定义技能类
@@ -50,7 +50,7 @@ function modifier_hero_yinghun:OnAttackLanded(keys)
     end
     local HealthDeficit = ability.caster:GetHealthDeficit()--获取损失生命值
     local damage = HealthDeficit*ability:GetLevelSpecialValueFor("damage", ability:GetLevel()-1)/100
-    if  caster:HasItemInInventory('item_weapon_011') then
+    if  ability.caster:HasItemInInventory('item_weapon_011') then
         damage = damage*(100+50)/100--持有古淀刀伤害提升百分之50
     end
 ApplyDamage({

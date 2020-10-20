@@ -2,8 +2,8 @@
 * @Description: 
 * @Author: 白喵
 * @Date: 2020-08-20 18:20:23
-* @LastEditors: 白喵
-* @LastEditTime: 2020-09-03 20:22:14
+* @LastEditors: ,: 白喵
+* @LastEditTime: ,: 2020-10-20 13:40:55
 --]]
 skill_hero_jianxiong = {}
 function skill_hero_jianxiong:needwaveup()
@@ -40,6 +40,9 @@ function modifier_hero_jianxiong:OnAttacked(keys)
     end
     local ability = self:GetAbility()
     local attacker = keys.attacker
+    if not attacker:IsRealHero() then
+        return
+    end
     if ability:is_include(attacker) then
         return
     end
