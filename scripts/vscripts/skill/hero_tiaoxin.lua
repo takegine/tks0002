@@ -27,7 +27,7 @@ function skill_hero_tiaoxin:OnSpellStart()
         unit:AddNewModifier(caster, self, "modifier_tiaoxin", {duration=10})
         end
         else
-        if target:HasModifier("modifier_item_sphere_target") or unit:IsMagicImmune()  then  return end
+        if target:HasModifier("modifier_item_sphere_target") or target:IsMagicImmune()  then  return end
         target:AddNewModifier(caster, self, "modifier_tiaoxin", {duration=10})  
         end
 end
