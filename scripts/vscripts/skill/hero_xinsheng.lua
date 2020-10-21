@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-09-16 17:19:45
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-28 05:57:33
+* @LastEditTime: 2020-10-21 22:46:53
 --]]
 skill_hero_xinsheng = {}
 function skill_hero_xinsheng:needwaveup()
@@ -76,7 +76,12 @@ function modifier_hero_xinsheng2:OnAbilityExecuted(keys)
         if current_ability ~= nil then
             --print(current_ability:GetAbilityName(),current_ability:IsRefreshable())
             if current_ability:IsRefreshable() then
-                Timer(0.01,function() current_ability:EndCooldown() end)--事件在技能进入cd之前不能在此刷新
+                Timer(0.01,function()
+                    if current_ability:IsNull() then
+                        return
+                    end
+                    current_ability:EndCooldown()
+                end)--事件在技能进入cd之前不能在此刷新
             end
         end
     end
