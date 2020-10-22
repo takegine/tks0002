@@ -101,5 +101,5 @@ function modifier_skill_hero_baonue_kill:OnTakeDamage(keys)
     if attacker.damage>=victim:GetHealth() then
     attacker:Heal(victim:GetMaxHealth()*15/100, attacker)
     SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, attacker, victim:GetMaxHealth()*15/100, nil) ]]
-end
-end ]]
+--[[ end
+end  ]]
