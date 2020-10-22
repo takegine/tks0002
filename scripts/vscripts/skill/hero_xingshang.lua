@@ -57,7 +57,7 @@ end )
 end )
 
 else if keys.damage>=caster:GetHealth() and not ability:IsCooldownReady()   then
-    print(caster:GetUnitName())
+    --print(caster:GetUnitName())
 
     local enemy = FindUnitsInRadius(caster:GetTeamNumber(), 
     caster:GetOrigin(), 

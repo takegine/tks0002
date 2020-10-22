@@ -186,7 +186,7 @@ function modifier_skill_hero_kuanggu:OnHealthGained( params)
     self.paramstable = self.paramstable or {}
     table.foreach(params, function(k,v)
         if  self.paramstable[k] ~= v then
-            print("OnHealReceived",k,v, IsServer())
+            --print("OnHealReceived",k,v, IsServer())
             self.paramstable[k] = v
         end
     end)

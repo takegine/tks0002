@@ -17,7 +17,7 @@ function Return( event )
 	-- Damage
 	if attacker:GetTeamNumber() ~= caster:GetTeamNumber() then
 		ApplyDamage({ victim = attacker, attacker = caster, damage = return_damage, damage_type = damageType })
-		print("done "..return_damage)
+		--print("done "..return_damage)
 	end
 
 end

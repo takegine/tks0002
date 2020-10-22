@@ -88,7 +88,7 @@ function modifier_hero_sunwu2:OnAttackStart(keys)
     if prdRandom(ability.chance) then
         attacker:AddNewModifier(attacker, ability, "modifier_hero_sunwu", nil)
     end
-    print(ability.chance.cur)
+    --print(ability.chance.cur)
 end
 
 

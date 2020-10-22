@@ -86,7 +86,7 @@ function modifier_skill_hero_fengdan_crit:OnAttackLanded( params )
     caster:RemoveModifierByName("modifier_skill_hero_fengdan_crit")
 
     local crit_chance = ability:GetLevelSpecialValueFor("crit_chance", ability:GetLevel()-1)
-    print(crit_chance, ability:GetLevel())
+    --print(crit_chance, ability:GetLevel())
 end
 
 

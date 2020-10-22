@@ -218,7 +218,7 @@ end
 
 --[[if caster:GetModifierCount() then
 	for i = 0,caster:GetModifierCount() do
-	print("modifier_",caster:GetUnitName(),i,caster:GetModifierNameByIndex(i):GetName() )
+	--print("modifier_",caster:GetUnitName(),i,caster:GetModifierNameByIndex(i):GetName() )
 	end
 end
 SetOrigin(-1 * enetity:GetForwardVector())]]

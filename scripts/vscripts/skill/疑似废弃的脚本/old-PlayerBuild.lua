@@ -5,7 +5,7 @@ skill_player_onback = skill_player_onback or {}
 function skill_player_onback:CastFilterResultTarget(  hTarget ) return ChecktTarget( { hTarget = hTarget, team = self:GetCaster():GetTeamNumber()} ) end
 function skill_player_onback:GetCustomCastErrorTarget(hTarget ) return ErrorTarget( hTarget ) end
 function skill_player_onback:OnSpellStart(  )
-    print("PlayerBuild:OnBack")
+    --print("PlayerBuild:OnBack")
     
     local target   = self:GetCursorTarget()
     local caster   = self:GetCaster()
@@ -89,7 +89,7 @@ function skill_player_lvlup:OnSpellStart()
     local hero     = PlayerResource:GetSelectedHeroEntity(plid)
     local findcost = 100 --减钱
 
-    print(PlayerResource:NumTeamPlayers())
+    --print(PlayerResource:NumTeamPlayers())
 
     if not PlayerResource:Pay( plid, findcost ) then GetNewHero:UptoDJT(plid,"shopUp","poorguy") 
         else

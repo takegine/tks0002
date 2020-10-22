@@ -35,7 +35,7 @@ function fenwei(keys)
     local target_list = keys.target_entities
     for _,unit in ipairs(target_list) do
         --unit:Purge(true, false, false, false, true)
-        print(unit:GetUnitName())
+        --print(unit:GetUnitName())
         if unit:IsSummoned() then
             unit:Kill(keys.ability,keys.caster)
         end

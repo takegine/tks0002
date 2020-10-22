@@ -80,7 +80,7 @@ function skill_hero_liansuo:OnSpellStart()
 				break
 			end
 		end
-		print(link,#modifier_table)
+		--print(link,#modifier_table)
 		-- Break out of outer loop early if last loop iteration didn't successfully apply another modifier
 		if link > #modifier_table then break end
 	end

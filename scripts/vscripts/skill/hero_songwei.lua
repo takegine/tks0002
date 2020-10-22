@@ -74,7 +74,7 @@ function skill_hero_songwei:needwaveup()
    
    if not IsServer() then  return end
    if keys.unit~=caster then  return end
-   print(caster:GetUnitName())
+   --print(caster:GetUnitName())
    if caster:GetHealth()<0 then
 parent:RemoveModifierByName('modifier_songwei')
    end

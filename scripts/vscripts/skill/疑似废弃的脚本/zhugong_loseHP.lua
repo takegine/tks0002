@@ -9,15 +9,15 @@ function lostHP( keys )
 	local caster  = keys.caster  or nil
 	local target  = keys.target  or nil
 	local ability = keys.ability or nil
-	print("caster"..".."..caster:GetUnitName())
+	--print("caster"..".."..caster:GetUnitName())
 if type(target)==table then
 	for k,v in pairs(target) do
-		print("target"..k..".."..target[k]:GetUnitName())
+		--print("target"..k..".."..target[k]:GetUnitName())
 	end
 else
-	print("target"..".."..target:GetUnitName())
+	--print("target"..".."..target:GetUnitName())
 end
-	print("ability"..".."..ability:GetAbilityName())
-	print(".............................................")
+	--print("ability"..".."..ability:GetAbilityName())
+	--print(".............................................")
 end
 

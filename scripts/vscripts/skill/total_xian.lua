@@ -44,12 +44,12 @@ function guanxingjiban(keys)
     local caster  = keys.caster    
     local ability = keys.ability
 	ability.count = 1 + ( ability.count or 0)
-	print(ability.count)
+	--print(ability.count)
 	
     if ability.count > 3 then 
         ability.count=0
         --hero:AddNewModifier( hero, self, "修饰器名字", {"补充参数，没有就空着"} )
-		print("yes")
+		--print("yes")
 	end
 end
 

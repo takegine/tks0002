@@ -49,7 +49,7 @@ function skill_hero_sunchu_takedamage:OnTakeDamage(keys)
     end
     end
 
-    print(#zhoutailist)
+    --print(#zhoutailist)
 
     if #zhoutailist>=1  then  
 
