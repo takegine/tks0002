@@ -168,3 +168,23 @@ function test()
 end
 
 --prd end
+
+function damage_fix(attacker,target,damage)
+    local armor = target:GetPhysicalArmorValue(false)
+    local newkang = 1-armor/(100+math.abs(armor))
+    local damage_f
+    if not target:IsRangedAttacker() then
+        damage_f = damage-16--近战自带16减伤
+        damage_f = damage_f *newkang
+    else
+        damage_f = damage *newkang
+    end
+    if not GameRules.AddonTemplate.DamageKV
+    or not attacker.attack_type
+    then return false 
+    end
+    local damage_multiplier = GameRules.AddonTemplate.DamageKV[attacker.attack_type][target.defend_type] or 1
+    damage_f = damage_f * damage_multiplier
+    damage_f = damage_f > 0 and damage_f or 0
+    return damage_f
+end
