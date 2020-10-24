@@ -1080,7 +1080,7 @@
 		// 单位的基类
 		"BaseClass"	"npc_dota_creature"
 		// 模型
-		"Model"	"models/heroes/tiny/tiny_03/tiny03_deathsim.vmdl"
+		"Model"	"models/heroes/tiny/tiny_01/tiny_01.vmdl"
 		// 基础设置字段
 		// 模型比例
 		"ModelScale"	"1"
@@ -1690,7 +1690,7 @@
 		// 单位的基类
 		"BaseClass"	"npc_dota_creature"
 		// 模型
-		"Model"	"beast_heart_marauder_beast_heart_marauder_raven"
+		"Model"	"models/items/beastmaster/hawk/legacy_of_the_nords_legacy_of_the_nords_owl/legacy_of_the_nords_legacy_of_the_nords_owl.vmdl"
 		// 基础设置字段
 		// 模型比例
 		"ModelScale"	"1"
@@ -1842,7 +1842,7 @@
 		// 单位的基类
 		"BaseClass"	"npc_dota_creature"
 		// 模型
-		"Model"	"models/creeps/neutral_creeps/n_creep_centaur_lrg/neutral_stash_centaur.vmdl"
+		"Model"	"models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl"
 		// 基础设置字段
 		// 模型比例
 		"ModelScale"	"1"
