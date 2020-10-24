@@ -40,6 +40,7 @@
         "TKS_SIDE_qunxiong" "群雄"
         "TKS_SIDE_undefined" "蛮荒"
         "TKS_SIDE_random" "随机"
+        "TKS_SIDE_minbing" "民兵"
         
         
         "DOTA_CUSTOM1"	"队伍1"
