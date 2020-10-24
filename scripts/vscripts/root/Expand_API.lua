@@ -49,3 +49,8 @@ function refreshlist()
         do CustomNetTables:SetTableValue( "hero_info", k, v )
     end
 end
+
+
+function CCustomNetTableManager:GetStage( ... )
+    return "GAME_STAT_FINGHT"
+end

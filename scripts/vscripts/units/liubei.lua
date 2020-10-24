@@ -1,51 +1,60 @@
 function Spawn( entityKeyValues )
-	if not IsServer()    then return end--如果不是服务器发出的指令，就结束
-	if thisEntity == nil then return end--如果这个单位被删除了，就结束
-	--thisEntity:GetAbilityCount()
+	if not IsServer()
+	or thisEntity == nil 
+	then
+		return 
+	end
+	local thisname = thisEntity:GetUnitName()
+	local thisinfo = thisEntity:IsHero() and tkUnitInfo.hero[thisname] or tkUnitInfo.unit[thisname]
+	
+	skill01 = thisEntity:FindAbilityByName( thisinfo.able[1] )
+	skill02 = thisEntity:FindAbilityByName( thisinfo.able[2] )
+	skill03 = thisEntity:FindAbilityByName( thisinfo.able[3] )
+	skill04 = thisEntity:FindAbilityByName( thisinfo.able[4] )
 
-	skill01 = thisEntity:FindAbilityByName( "skill_hero_rende" )--thisEntity:GetAbilityByIndex(0)  --找到刘备的名为 仁德 的技能
 	thisEntity:SetContextThink( "PhoenixThink", PhoenixThink, 1 )--开始一个计时器
-end
 
-i = 1
+end
 
 function PhoenixThink()
 	if ( not thisEntity:IsAlive() ) then	 return -1 end
-	
-	if GameRules:IsGamePaused() == true then return  1 end--如果游戏被暂停，就只循环，不运行后面的
-    
+
+	local stage =CustomNetTables:GetStage( "stage" )
+	if stage ~= "GAME_STAT_FINGHT" 
+	or GameRules:IsGamePaused()
+	then
+		return 1
+	end
+
     --if thisEntity:GetAcquisitionRange() < 2000 then	return 0.5	end
     
 	local tEnemy  = FindUnitsInRadius( thisEntity:GetTeamNumber(), thisEntity:GetOrigin(), nil, 999, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false )
 	local tFriend = FindUnitsInRadius( thisEntity:GetTeamNumber(), thisEntity:GetOrigin(), nil, 999, DOTA_UNIT_TARGET_TEAM_FRIENDLY,DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_FARTHEST, false )
 	
-	--如果刘备有仁德，仁德不在冷却中，附近友方单位不为空
-	if skill01 ~= nil and skill01:IsFullyCastable() and tFriend[1] ~= nil then 
+	if  skill01 
+	and skill01:IsFullyCastable()
+	and tFriend[1]
+	then 
 
-		--获取施法范围内的友军
-		local tTar = FindUnitsInRadius( thisEntity:GetTeamNumber(), thisEntity:GetOrigin(), nil, skill01:GetLevelSpecialValueFor("radius",0), DOTA_UNIT_TARGET_TEAM_FRIENDLY,DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_FARTHEST, false )
-		for k,v in pairs(tTar) do--从远到近检查
-			--print("rende_liubei",k,v)
-			--如果不是主公，不是刘备自己，生命值小于最大生命值
-			if  v:GetUnitName() ~= SET_FORCE_HERO and v ~= thisEntity and v:GetMaxHealth() - v:GetHealth() > 0 then--
-				--print(v:GetMaxHealth(),v:GetHealth(),v:GetAbsOrigin())
-				--print(k,v,v:GetUnitName())
-				return spirits(v:GetAbsOrigin())--给他丢个仁德
+		local tTar = FindUnitsInRadius( thisEntity:GetTeamNumber(), thisEntity:GetOrigin(), nil, skill01:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_FRIENDLY,DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_FARTHEST, false )
+		for k,v in pairs(tTar) do
+			if  v:GetUnitName() ~= SET_FORCE_HERO
+			and v ~= thisEntity
+			and v:GetMaxHealth() - v:GetHealth() > 0
+			then
+				thisEntity:CastAbilityOnPosition(v:GetAbsOrigin(), skill01, thisEntity:GetPlayerOwnerID())
+				return 0.5
 			end
 		end
 	end
+
 	return 0.5
 end
 
 
-
-function spirits( target )
-	thisEntity:CastAbilityOnPosition(target, skill01, thisEntity:GetPlayerOwnerID())
-	return 0.5
-end
 -----------------------------------------下面没用到-------------------------------------------------------------
 
-function spirits2(target)
+function abi1(target)
 
 	ExecuteOrderFromTable({
 		UnitIndex    = thisEntity:entindex(),
@@ -58,7 +67,7 @@ function spirits2(target)
 	return 0.5
 end
 
-function launch( enemy )
+function abi2( enemy )
 
 	ExecuteOrderFromTable({
 		UnitIndex = thisEntity:entindex(),
@@ -75,7 +84,7 @@ function launch( enemy )
     return 0.1
 end
 
-function ray(enemy)
+function abi3(enemy)
 	
     ExecuteOrderFromTable({
 		UnitIndex = thisEntity:entindex(),
