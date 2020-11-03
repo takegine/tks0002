@@ -1,0 +1,41 @@
+"auto_info"
+{
+//单位目标
+    "target"
+    {
+        "1"
+        {
+            
+        }
+        "2"
+        {
+
+        }
+    }
+//点目标
+    "point"
+    {
+        "1"
+        {
+            "npc_dota_hero_bounty_hunter"   "skill_hero_rende" //刘备 仁德
+        }
+        "2"
+        {
+
+        }
+
+    }
+//无目标
+    "none"
+    {
+        "1"
+        {
+
+        }
+        "2"
+        {
+
+        }
+        
+    }
+}
