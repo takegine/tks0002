@@ -3,11 +3,11 @@ SET_UP_AUTO_LAUNCH_DELAY = 20
 SET_FIRST_HERO     ="minbing"
 MAX_LEVEL          = 10
 SET_PREGAME_TIME   = 0
-TIME_BETWEEN_ROUND = 60
-TIME_BATTER_MAX    = 60
-SET_STARTING_GOLD  = 8000
-LOCAL_POPLATION    = 10
-FOG_OF_WAR_DISABLE = true
+TIME_BETWEEN_ROUND = 25
+TIME_BATTER_MAX    = 40
+SET_STARTING_GOLD  = 80000
+LOCAL_POPLATION    = 60
+FOG_OF_WAR_DISABLE = false
 
 SET_FORCE_HERO  = "npc_dota_hero_phoenix"
 tkUnitInfo      = LoadKeyValues('scripts/npc/npc_info_custom.txt')
