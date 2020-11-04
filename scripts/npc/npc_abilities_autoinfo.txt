@@ -1,5 +1,38 @@
 "auto_info"
 {
+
+    "npc_dota_hero_bounty_hunter" //刘备
+    {
+        "1"//技能1 是仁德
+        {
+            "name"  "skill_hero_rende"
+            "deal"  "0" //攻击  0 是不触发，1是触发
+            "take"  "0" //被攻击
+        }
+    }
+
+
+    "npc_dota_hero_kunkka"
+    {
+        "1"
+        {
+            "name"  "skill_hero_qiangxi"
+            "deal"  "0"
+            "take"  "0"
+        }
+        "2"
+        {
+            "name"  "skill_hero_dianfan"
+            "deal"  "0"
+            "take"  "0"
+        }
+    }
+
+//下面的不要了，换成上面这样的按人分出来。技能类型我可以从技能里面获取，不需要这里写了
+
+
+
+
 //单位目标
     "target"
     {
