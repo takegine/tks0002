@@ -5,55 +5,22 @@
     {
         "1"
         {
-            "npc_dota_hero_bloodseeker"      "skill_hero_tiaoxin" //姜维 挑衅
+            "npc_dota_hero_silencer"         "skill_hero_tiandu"    //天妒 郭嘉
+            "npc_dota_hero_disruptor"        "skill_hero_qingnang"  //青囊 华佗
         }
         "2"
         {
-            "npc_dota_hero_arc_warden"       "skill_hero_juji" //黄忠 狙击
-        }
-        "3"
-        {
-            "npc_dota_hero_visage"           "skill_hero_lianying" //连营 陆逊
-        }
-        "4"
-        {
-            "npc_dota_hero_phantom_lancer"   "skill_hero_zhiheng" //制衡 孙权
-        }
-        "5"
-        {
-            "npc_dota_hero_pugna"            "skill_hero_jieming" //节命 荀彧
-        }
-        "6"
-        {
-            "npc_dota_hero_kunkka"           "skill_hero_qiangxi" //强袭 典韦
-        }
-        "7"
-        {
-            "npc_dota_hero_juggernaut"       "skill_hero_longhun" //龙魂 神赵云
-        }
-        "8"
-        {
-            "npc_dota_hero_shadow_shaman"    "skill_hero_lianpo" //连破 神司马
-        }
-        "9"
-        {
+            "npc_dota_hero_bloodseeker"      "skill_hero_tiaoxin"   //姜维 挑衅
+            "npc_dota_hero_arc_warden"       "skill_hero_juji"      //黄忠 狙击
+            "npc_dota_hero_visage"           "skill_hero_lianying"  //连营 陆逊
+            "npc_dota_hero_phantom_lancer"   "skill_hero_zhiheng"   //制衡 孙权
+            "npc_dota_hero_pugna"            "skill_hero_jieming"   //节命 荀彧
+            "npc_dota_hero_kunkka"           "skill_hero_qiangxi"   //强袭 典韦
+            "npc_dota_hero_juggernaut"       "skill_hero_longhun"   //龙魂 神赵云
+            "npc_dota_hero_shadow_shaman"    "skill_hero_lianpo"    //连破 神司马
             "npc_dota_hero_zuus"             "skill_hero_kuangfeng" //狂风 神诸葛
-        }
-        "10"
-        {
-            "npc_dota_hero_tinker"           "skill_hero_yeyan" //业炎 神周瑜
-        }
-        "11"
-        {
-            "npc_dota_hero_death_prophet"    "skill_hero_lijian" //离间 貂蝉
-        }
-        "12"
-        {
-            "npc_dota_hero_silencer"         "skill_hero_tiandu" //天妒 郭嘉
-        }
-        "13"
-        {
-            "npc_dota_hero_disruptor"        "skill_hero_qingnang" //青囊 华佗
+            "npc_dota_hero_tinker"           "skill_hero_yeyan"     //业炎 神周瑜
+            "npc_dota_hero_death_prophet"    "skill_hero_lijian"    //离间 貂蝉
         }
     }
 //点目标
@@ -61,26 +28,14 @@
     {
         "1"
         {
-            "npc_dota_hero_bounty_hunter"   "skill_hero_rende" //刘备 仁德
+            "npc_dota_hero_bounty_hunter"   "skill_hero_rende"  //刘备 仁德
         }
         "2"
         {
-            "npc_dota_hero_razor"   "skill_hero_keji" //吕蒙 克己
-        }
-        "3"
-        {
-            "npc_dota_hero_spectre"   "skill_hero_fenwei" //甘宁 奋威
-        }
-        "4"
-        {
-            "npc_dota_hero_furion"   "skill_hero_huashen" //左慈 化身
-        }
-        "5"
-        {
-            "npc_dota_hero_alchemist"   "skill_hero_tieji" //马超 铁骑
-        }
-        "6"
-        {
+            "npc_dota_hero_razor"           "skill_hero_keji"       //吕蒙 克己
+            "npc_dota_hero_spectre"         "skill_hero_fenwei"     //甘宁 奋威
+            "npc_dota_hero_furion"          "skill_hero_huashen"    //左慈 化身
+            "npc_dota_hero_alchemist"       "skill_hero_tieji"      //马超 铁骑
             "npc_dota_hero_ancient_apparition"   "skill_hero_huogong" //火诸葛 火攻
         }
 
@@ -90,43 +45,16 @@
     {
         "1"
         {
-            "npc_dota_hero_bane"   "skill_hero_kongcheng" //老诸葛 空城
-        }
-        "2"
-        {
-            "npc_dota_hero_tusk"   "skill_hero_kurou" //黄盖 苦肉
-        }
-        "3"
-        {
-            "npc_dota_hero_undying"   "skill_hero_tianyi" //太史慈 天义
-        }
-        "4"
-        {
-            "npc_dota_hero_tidehunter"   "skill_hero_pojun" //徐盛 破军
-        }
-        "5"
-        {
-            "npc_dota_hero_sand_king"   "skill_hero_luoyi" //许褚 裸衣
-        }
-        "6"
-        {
-            "npc_dota_hero_kunkka"   "skill_hero_dianfan" //典韦 典韦天神下凡
-        }
-        "7"
-        {
-            "npc_dota_hero_chen"   "skill_hero_mingce" //陈宫 明策
-        }
-        "8"
-        {
-            "npc_dota_hero_enigma"   "skill_hero_guidao" //张角 鬼道
-        }
-        "9"
-        {
-            "npc_dota_hero_zuus"   "skill_hero_dawu" //神诸葛 大雾
-        }
-        "10"
-        {
-            "npc_dota_hero_razor"   "skill_hero_saoshe" //吕蒙 扫射
+            "npc_dota_hero_bane"        "skill_hero_kongcheng"  //老诸葛 空城
+            "npc_dota_hero_tusk"        "skill_hero_kurou"      //黄盖 苦肉
+            "npc_dota_hero_undying"     "skill_hero_tianyi"     //太史慈 天义
+            "npc_dota_hero_tidehunter"  "skill_hero_pojun"      //徐盛 破军
+            "npc_dota_hero_sand_king"   "skill_hero_luoyi"      //许褚 裸衣
+            "npc_dota_hero_kunkka"      "skill_hero_dianfan"    //典韦 典韦天神下凡
+            "npc_dota_hero_chen"        "skill_hero_mingce"     //陈宫 明策
+            "npc_dota_hero_enigma"      "skill_hero_guidao"     //张角 鬼道
+            "npc_dota_hero_zuus"        "skill_hero_dawu"       //神诸葛 大雾
+            "npc_dota_hero_razor"       "skill_hero_saoshe"     //吕蒙 扫射
         }
     }
 }
