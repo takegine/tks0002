@@ -1,5 +1,9 @@
 "auto_info"
-{
+{       //特别的技能荀彧的节命 是单体减速 CD比持续时间短 所以可以放多个 由攻击触发施法ai 如果目标有节命BUFF 让ai对周围随机单位放节命 而不是在有节命buff的人身上继续放节命
+      //郭嘉 天妒 单体+护甲 郭嘉附近1000码左右吧 友军被攻击时AI开始放技能 谁被打对谁放 优先近战 有天妒buff的单位不会被重复释放 
+      //施法AI开关 单位如果施法AI开关关掉了 该单位的AI就不会运行  以后可能有这个需求 可以提前预埋一下这个功能
+      //黄忠标记的的AI和荀彧的节命差不多
+      //貂蝉 离间 给队友+攻击力buff  CD好就放 最好优先对等级高的单位放 有buff的单位不会被重复释放 
 
     "npc_dota_hero_bounty_hunter" //刘备
     {
@@ -12,21 +16,262 @@
     }
 
 
-    "npc_dota_hero_kunkka"
+    "npc_dota_hero_silencer"//郭嘉
     {
         "1"
         {
-            "name"  "skill_hero_qiangxi"
-            "deal"  "0"
-            "take"  "0"
-        }
-        "2"
-        {
-            "name"  "skill_hero_dianfan"
+            "name"  "skill_hero_tiandu"
             "deal"  "0"
             "take"  "0"
         }
     }
+
+    "npc_dota_hero_disruptor"//华佗
+    {
+        "1"
+        {
+            "name"  "skill_hero_qingnang"
+            "deal"  "0"
+            "take"  "0"
+        }
+    }
+
+    "npc_dota_hero_bloodseeker"//姜维
+    {
+        "1"
+        {
+            "name"  "skill_hero_tiaoxin"
+            "deal"  "1"
+            "take"  "1"
+        }
+    }
+
+    "npc_dota_hero_arc_warden"//黄忠
+    {
+        "1"
+        {
+            "name"  "skill_hero_juji"
+            "deal"  "0"
+            "take"  "0"
+        }
+    }
+
+    "npc_dota_hero_visage"//陆逊
+    {
+        "1"
+        {
+            "name"  "skill_hero_lianying"
+            "deal"  "1"
+            "take"  "0"
+        }
+    }
+
+    "npc_dota_hero_phantom_lancer"//孙权
+    {
+        "1"
+        {
+            "name"  "skill_hero_zhiheng"
+            "deal"  "1"
+            "take"  "1"
+        }
+    }
+
+    "npc_dota_hero_pugna"//荀彧
+    {
+        "1"
+        {
+            "name"  "skill_hero_jieming"
+            "deal"  "1"
+            "take"  "0"
+        }
+    }
+
+    "npc_dota_hero_kunkka"//典韦
+    {
+        "1"
+        {
+            "name"  "skill_hero_qiangxi"
+            "deal"  "1"
+            "take"  "1"
+        }
+    }
+
+    "npc_dota_hero_juggernaut"//神赵云
+    {
+        "1"
+        {
+            "name"  "skill_hero_longhun"
+            "deal"  "1"
+            "take"  "1"
+        }
+    }
+
+    "npc_dota_hero_shadow_shaman"//神司马
+    {
+        "1"
+        {
+            "name"  "skill_hero_lianpo"
+            "deal"  "1"
+            "take"  "0"
+        }
+    }
+    "npc_dota_hero_zuus"//神诸葛
+    {
+        "1"
+        {
+            "name"  "skill_hero_kuangfeng"
+            "deal"  "1"
+            "take"  "0"
+        }
+        "2"
+        {
+            "name"  "skill_hero_dawu"
+            "deal"  "0"
+            "take"  "1"
+        }
+    }
+    "npc_dota_hero_tinker"//神周瑜
+    {
+        "1"
+        {
+            "name"  "skill_hero_yeyan"
+            "deal"  "1"
+            "take"  "0"
+        }
+    }
+    "npc_dota_hero_razor"//吕蒙
+    {
+        "1"
+        {
+            "name"  "skill_hero_keji"
+            "deal"  "0"
+            "take"  "1"
+        }
+        "2"
+        {
+            "name"  "skill_hero_saoshe"
+            "deal"  "1"
+            "take"  "0"
+        }
+    }
+    "npc_dota_hero_spectre"//甘宁
+    {
+        "1"
+        {
+            "name"  "skill_hero_fenwei"
+            "deal"  "1"
+            "take"  "1"
+        }
+    }
+    "npc_dota_hero_furion"//左慈
+    {
+        "1"
+        {
+            "name"  "skill_hero_huashen"
+            "deal"  "1"
+            "take"  "0"
+        }
+    }
+    "npc_dota_hero_alchemist"//马超
+    {
+        "1"
+        {
+            "name"  "skill_hero_tieji"
+            "deal"  "1"
+            "take"  "0"
+        }
+    }
+    "npc_dota_hero_ancient_apparition"//火诸葛
+    {
+        "1"
+        {
+            "name"  "skill_hero_huogong"
+            "deal"  "1"
+            "take"  "0"
+        }
+    }
+    "npc_dota_hero_bane"//老诸葛
+    {
+        "1"
+        {
+            "name"  "skill_hero_kongcheng"
+            "deal"  "0"
+            "take"  "1"
+        }
+    }
+    "npc_dota_hero_tusk"//黄盖
+    {
+        "1"
+        {
+            "name"  "skill_hero_kurou"
+            "deal"  "1"
+            "take"  "0"
+        }
+    }
+    "npc_dota_hero_tidehunter"//徐盛
+    {
+        "1"
+        {
+            "name"  "skill_hero_pojun"
+            "deal"  "1"
+            "take"  "0"
+        }
+    }
+    "npc_dota_hero_sand_king"//许褚
+    {
+        "1"
+        {
+            "name"  "skill_hero_luoyi"
+            "deal"  "1"
+            "take"  "1"
+        }
+    }
+    "npc_dota_hero_undying"//太史慈
+    {
+        "1"
+        {
+            "name"  "skill_hero_tianyi"
+            "deal"  "1"
+            "take"  "1"
+        }
+    }
+    "npc_dota_hero_chen"//陈宫
+    {
+        "1"
+        {
+            "name"  "skill_hero_mingce"
+            "deal"  "1"
+            "take"  "0"
+        }
+        "2"
+        {
+            "name"  "skill_hero_zhichi"
+            "deal"  "0"
+            "take"  "1"
+        }
+    }
+    "npc_dota_hero_enigma"//张角
+    {
+        "1"
+        {
+            "name"  "skill_hero_guidao"
+            "deal"  "1"
+            "take"  "0"
+        }
+    }
+
+    "npc_dota_hero_death_prophet"//貂蝉
+    {
+        "1"
+        {
+            "name"  "skill_hero_lijian"
+            "deal"  "0"
+            "take"  "0"
+        }
+    }
+
+
+
 
 //下面的不要了，换成上面这样的按人分出来。技能类型我可以从技能里面获取，不需要这里写了
 
