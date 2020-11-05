@@ -193,6 +193,7 @@ function CAddonTemplateGameMode:npc_spawned(keys )
     end
 
     npc.bFirstSpawned = true
+    npc.battleinfo = {}
 
     if NameX==SET_FORCE_HERO then
         npc.ship={}
