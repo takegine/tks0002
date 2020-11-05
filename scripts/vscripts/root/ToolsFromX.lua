@@ -188,3 +188,10 @@ function damage_fix(attacker,target,damage)
     damage_f = damage_f > 0 and damage_f or 0
     return damage_f
 end
+
+function Isbitband(a,b)
+    if type(a)=="userdata" then
+        return a:BitwiseAnd(b) == b
+    end
+    return bit.band(a, b) == b
+end
