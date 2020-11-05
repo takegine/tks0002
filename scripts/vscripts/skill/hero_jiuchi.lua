@@ -119,7 +119,7 @@ function modifier_quanqing_damage:OnIntervalThink(keys)
     }
 
     ApplyDamage(damage_table)
-    local heal=caster.damage_deal*(10+caster:GetLevel()+4)/100
+    local heal=caster.battleinfo.damage_deal*(10+caster:GetLevel()+4)/100
     caster:Heal(heal,caster)
     SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, self:GetParent(),heal, nil) 
 end

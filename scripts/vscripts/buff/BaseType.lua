@@ -83,8 +83,18 @@ end
 
 modifier_player_lock=modifier_player_lock or {
     IsHidden = on,
+    DeclareFunctions = function (self ) return { MODIFIER_EVENT_ON_ATTACKED } end,
+    OnAttacked = function (self ,data)
+        if not IsServer() then return end
+        self.parent = self.parent or self:GetParent()
+        if  self.parent == data.attacker then
+            self.parent.battleinfo.deal = self.parent
+        elseif   self.parent == data.target then
+            self.parent.battleinfo.take = self.parent
+        end
+    end,
     CheckState = function (self)
-        -- if not IsServer() then return end
+        if not IsServer() then return end
         local parent = self:GetParent()
         local stage  = CustomNetTables:GetStage( "stage" )
         local bench = parent.plan and parent.bench

@@ -143,10 +143,10 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
     end
 
     filterTable.damage = damage_new
-    killerReal.damage_deal = damage_new + shield_damage
-    -- killerReal:GetOwner().damage_deal= damage_new + killerReal:GetOwner().damage_deal or 0
-    killedUnit.damage_take = damage_new + shield_damage
-    -- killedUnit:GetOwner().damage_take= damage_new + killedUnit:GetOwner().damage_take or 0
+    killerReal.battleinfo.damage_deal = damage_new + shield_damage
+    -- killerReal:GetOwner().battleinfo.damage_deal= damage_new + killerReal:GetOwner().battleinfo.damage_deal or 0
+    killedUnit.battleinfo.damage_take = damage_new + shield_damage
+    -- killedUnit:GetOwner().battleinfo.damage_take= damage_new + killedUnit:GetOwner().battleinfo.damage_take or 0
 
     -- 演示实际伤害模块
         local type_list  = {

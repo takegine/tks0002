@@ -37,7 +37,7 @@ function modifier_item_jewelry_026_hero:OnTakeDamage(keys)
     local info = {
         victim = keys.attacker,
         attacker = dummy,
-        damage = keys.attacker.damage_deal/100*self:GetAbility():GetSpecialValueFor("p2"),
+        damage = keys.attacker.battleinfo.damage_deal/100*self:GetAbility():GetSpecialValueFor("p2"),
         damage_type = DAMAGE_TYPE_MAGICAL,
         damage_flag = nil,
         ability = self:GetAbility()

@@ -199,11 +199,11 @@ end
 
 
 ## 属性过滤后的伤害值
-最后一次造成的伤害是`damage_deal`
-最后一次受到的伤害是`damage_take`
+最后一次造成的伤害是`battleinfo.damage_deal`
+最后一次受到的伤害是`battleinfo.damage_take`
 ```lua
 function modifier_example:OnTakeDamge(keys)
     local attacker = keys.attacker
-    local damage   = attacker.damage_deal
+    local damage   = attacker.battleinfo.damage_deal
 end
 ```
