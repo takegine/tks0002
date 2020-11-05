@@ -155,59 +155,62 @@ function modifier_skill_hero_tiandu_debuff:OnRefresh()
 	self:OnCreated()
 end
 
-
--- function modifier_skill_hero_tiandu_auto_cast:OnCreated()
--- 	self.caster = self:GetCaster()
--- 	self.ability = self:GetAbility()
--- 	self.modifier_frost_armor = "modifier_skill_hero_tiandu_buff"
--- 	self.autocast_radius = self.ability:GetSpecialValueFor("autocast_radius")
--- end
-
--- function modifier_skill_hero_tiandu_auto_cast:DeclareFunctions()
--- 	local decFuncs = {MODIFIER_EVENT_ON_ATTACK,
--- 		MODIFIER_EVENT_ON_RESPAWN}
--- 	return decFuncs
--- end
-
--- -- function modifier_skill_hero_tiandu_auto_cast:OnRespawn(keys)
--- -- 	-- 只适用于施法者本身的单位
--- -- 	if keys.unit == self.caster then
--- -- 		self.caster:AddNewModifier(self.caster, self.ability, self.modifier_frost_armor, {})
--- -- 	end
--- -- end
-
--- function modifier_skill_hero_tiandu_auto_cast:OnAttack(keys)
--- 	local target = keys.target
-
--- 	if not self.ability:GetAutoCastState() then
--- 		return 
--- 	end
+function skill_hero_tiandu:GetIntrinsicModifierName()
+	return "modifier_skill_hero_tiandu_auto_cast"
+end
 
 
--- 	if self.caster:GetTeamNumber() ~= target:GetTeamNumber() then
--- 		return 
--- 	end
+function modifier_skill_hero_tiandu_auto_cast:OnCreated()
+	self.caster = self:GetCaster()
+	self.ability = self:GetAbility()
+	self.modifier_frost_armor = "modifier_skill_hero_tiandu_buff"
+	self.autocast_radius = self.ability:GetSpecialValueFor("autocast_radius")
+end
 
--- 	-- if self.caster:IsChanneling() then
--- 	-- 	return 
--- 	-- end
+function modifier_skill_hero_tiandu_auto_cast:DeclareFunctions()
+	local decFuncs = {MODIFIER_EVENT_ON_ATTACK,
+		MODIFIER_EVENT_ON_RESPAWN}
+	return decFuncs
+end
 
--- 	local distance = (self.caster:GetAbsOrigin() - target:GetAbsOrigin()):Length2D()
--- 	if distance > self.autocast_radius then
--- 		return 
--- 	end
+function modifier_skill_hero_tiandu_auto_cast:OnRespawn(keys)
+	-- 只适用于施法者本身的单位
+	if keys.unit == self.caster then
+		self.caster:AddNewModifier(self.caster, self.ability, self.modifier_frost_armor, {})
+	end
+end
 
--- 	if target:HasModifier(self.modifier_frost_armor) then
--- 		return 
--- 	end
+function modifier_skill_hero_tiandu_auto_cast:OnAttack(keys)
+	local target = keys.target
 
--- 	if not self.ability:IsCooldownReady() then
--- 		return 
--- 	end
+	if not self.ability:GetAutoCastState() then
+		return 
+	end
 
--- 	self.caster:CastAbilityOnTarget(target, self.ability, self.caster:GetPlayerID())
--- end
+	if self.caster:GetTeamNumber() ~= target:GetTeamNumber() then
+		return 
+	end
 
--- function modifier_skill_hero_tiandu_auto_cast:IsHidden() return true end
--- function modifier_skill_hero_tiandu_auto_cast:IsPurgable() return false end
--- function modifier_skill_hero_tiandu_auto_cast:RemoveOnDeath() return false end
+	if self.caster:IsChanneling() then
+		return 
+	end
+
+	local distance = (self.caster:GetAbsOrigin() - target:GetAbsOrigin()):Length2D()
+	if distance > self.autocast_radius then
+		return 
+	end
+
+	if target:HasModifier(self.modifier_frost_armor) then
+		return 
+	end
+
+	if not self.ability:IsCooldownReady() then
+		return 
+	end
+
+	self.caster:CastAbilityOnTarget(target, self.ability, self.caster:GetPlayerID())
+end
+
+function modifier_skill_hero_tiandu_auto_cast:IsHidden() return true end
+function modifier_skill_hero_tiandu_auto_cast:IsPurgable() return false end
+function modifier_skill_hero_tiandu_auto_cast:RemoveOnDeath() return false end
