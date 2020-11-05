@@ -1,7 +1,6 @@
 LinkLuaModifier('modifier_skill_hero_tiandu', 'skill/hero_tiandu.lua', 0)
 LinkLuaModifier('modifier_skill_hero_tiandu_buff', 'skill/hero_tiandu.lua', 0)
 LinkLuaModifier('modifier_skill_hero_tiandu_debuff', 'skill/hero_tiandu.lua', 0)
-LinkLuaModifier('modifier_skill_hero_tiandu_auto_cast', 'skill/hero_tiandu.lua', 0)
 LinkLuaModifier('modifier_skill_hero_tiandu_unstun', 'skill/hero_tiandu.lua', 0)
 
 skill_hero_tiandu=class({})
@@ -9,7 +8,6 @@ skill_hero_tiandu=class({})
 modifier_skill_hero_tiandu = class({})
 modifier_skill_hero_tiandu_buff = class({})
 modifier_skill_hero_tiandu_debuff = class({})
-modifier_skill_hero_tiandu_auto_cast = class({})
 
 function skill_hero_tiandu:OnSpellStart()
 
@@ -154,11 +152,15 @@ end
 function modifier_skill_hero_tiandu_debuff:OnRefresh()
 	self:OnCreated()
 end
+--[[
+--天妒自动施法
+LinkLuaModifier('modifier_skill_hero_tiandu_auto_cast', 'skill/hero_tiandu.lua', 0)
+
+modifier_skill_hero_tiandu_auto_cast = class({})
 
 function skill_hero_tiandu:GetIntrinsicModifierName()
 	return "modifier_skill_hero_tiandu_auto_cast"
 end
-
 
 function modifier_skill_hero_tiandu_auto_cast:OnCreated()
 	self.caster = self:GetCaster()
@@ -183,30 +185,14 @@ end
 function modifier_skill_hero_tiandu_auto_cast:OnAttack(keys)
 	local target = keys.target
 
-	if not self.ability:GetAutoCastState() then
-		return 
-	end
-
-	if self.caster:GetTeamNumber() ~= target:GetTeamNumber() then
-		return 
-	end
-
-	if self.caster:IsChanneling() then
-		return 
-	end
-
-	local distance = (self.caster:GetAbsOrigin() - target:GetAbsOrigin()):Length2D()
-	if distance > self.autocast_radius then
-		return 
-	end
-
-	if target:HasModifier(self.modifier_frost_armor) then
-		return 
-	end
-
-	if not self.ability:IsCooldownReady() then
-		return 
-	end
+    if not self.ability:GetAutoCastState()
+    or not self.ability:IsCooldownReady()
+    or self.caster:IsChanneling()
+    or target:IsOpposingTeam(self.caster:GetTeamNumber())
+    or target:HasModifier( self.modifier_frost_armor )
+    or self.autocast_radius < (self.caster:GetAbsOrigin() - target:GetAbsOrigin()):Length2D() then
+        return
+    end
 
 	self.caster:CastAbilityOnTarget(target, self.ability, self.caster:GetPlayerID())
 end
@@ -214,3 +200,4 @@ end
 function modifier_skill_hero_tiandu_auto_cast:IsHidden() return true end
 function modifier_skill_hero_tiandu_auto_cast:IsPurgable() return false end
 function modifier_skill_hero_tiandu_auto_cast:RemoveOnDeath() return false end
+]]
