@@ -1032,6 +1032,14 @@
 		"DOTA_Tooltip_modifier_skill_hero_guishen_wraith" "鬼神降临"
 		"DOTA_Tooltip_modifier_skill_hero_guishen_wraith_Description"	"谁能杀我！"
 
+		"DOTA_Tooltip_ability_skill_hero_lianpo"	"连破"
+		"DOTA_Tooltip_ability_skill_hero_lianpo_Description"	"创造一个极度负面的空间，处于其中的敌人移动速度下降，且敌人每次受到伤害时都将额外承受45%%的纯粹伤害。"
+		"DOTA_Tooltip_ability_skill_hero_lianpo_move_speed_bonus" "%移动速度降低:"
+		"DOTA_Tooltip_ability_skill_hero_lianpo_duration" "持续时间:"
+		"DOTA_Tooltip_modifier_lianpo_jiansu"	"连破"
+		"DOTA_Tooltip_modifier_lianpo_jiansu_Description" "移动速度降低60%%且额外受到45%%伤害"
+		
+
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
 		"DOTA_Tooltip_modifier_hero_dimeng" "缔盟"

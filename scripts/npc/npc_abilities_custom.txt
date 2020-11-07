@@ -6683,15 +6683,6 @@
 		"AbilityCastPoint"              "0.3"
 		"AbilityCooldown"               "2"
 		"AbilityManaCost"	            "6 7 8 9 10 11 12 13 14 15"
-		// "precache"
-		// {
-		// 	"particle"                  "particles/units/heroes/hero_lich/lich_frost_armor.vpcf"
-		// 	"particle"                  "particles/status_fx/status_effect_frost_armor.vpcf"
-		// 	"particle"                  "particles/status_fx/status_effect_frost.vpcf"
-		// 	"particle"                  "particles/hero/lich/lich_ice_armor_freeze.vpcf"
-		// 	"soundfile"                 "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
-		// 	"soundfile"                 "soundevents/voscripts/game_sounds_vo_lich.vsndevts"
-		// }
 		"AbilitySpecial"
 		{
 			"01"
@@ -7226,6 +7217,44 @@
 			{
 				"var_type"		"FIELD_INTEGER"
 				"atk_speed"		"30 60 90 120 150 180 210 240 270 300"
+			}
+		}
+	}
+
+	"skill_hero_lianpo"
+	{
+		"BaseClass"                     "ability_lua"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING "
+		"SpellImmunityType"             "SPELL_IMMUNITY_ALLIES_YES"
+		"AbilityTextureName"            "shen\ability_lianpo"
+		"ScriptFile"				    "skill/hero_lianpo.lua"
+		"AbilityCastAnimation"         "ACT_DOTA_CAST_ABILITY_1"
+		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"MaxLevel"                      "10"
+		"LevelsBetweenUpgrades"	        "1"
+		"AbilityCastRange"              "960"
+		"AbilityCastPoint"              "0"
+		"AbilityCooldown"               "40"
+		"AbilityManaCost"	            "0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"radius"           		"960"
+			}
+			"02"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"duration"           	"6.6 7.2 7.8 8.4 9.0 9.6 10.2 10.8 11.4 12"
+			}
+			"03"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"move_speed_bonus"               "60"
 			}
 		}
 	}
