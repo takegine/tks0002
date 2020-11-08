@@ -3,6 +3,7 @@
 	Pulls the targets to the center]]
 function MoveUnits( keys )
 	local caster = keys.caster
+	if not caster then return end
 	local target = keys.target
 	local target_location = caster:GetAbsOrigin()
 	local ability = keys.ability

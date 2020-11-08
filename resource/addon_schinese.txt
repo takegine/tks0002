@@ -857,7 +857,19 @@
 		"DOTA_Tooltip_ability_skill_hero_jiuchi_Description"	"董卓下一次的攻击增加220%的攻击力。\n\n冷却时间：6s"
 		"DOTA_Tooltip_ability_skill_hero_baonue_Description"	"每有一名友军群雄武将或西凉兵种存在时，可增加周围友军单位5%%近战生命窃取，同时在击杀敌人时将额外恢复生命值，恢复数值是敌人最大生命值的15%%。\n\n多个暴虐光环效果不叠加，取最高等级"
 		"DOTA_Tooltip_ability_skill_hero_baonue"	"暴虐"		
-		
+		"DOTA_Tooltip_ability_skill_hero_yeyan"	"业炎"
+		"DOTA_Tooltip_ability_skill_hero_yeyan_Description"	"对一个目标释放极具破坏力的火炎，遭受业炎侵蚀的敌人不能施放任何技能并且每秒受到魔法伤害直到敌人死去。\n在敌人死亡时，这个效果将随机传递给附近的敌人继续产生效果。"
+		"DOTA_Tooltip_ability_skill_hero_yeyan_damage"	"伤害:"
+		"DOTA_Tooltip_ability_skill_hero_feiying"	"飞影"
+		"DOTA_Tooltip_ability_skill_hero_feiying_Description"	"视作神曹操【绝影】拥有的效果。而其它的友方单位视作拥有【爪黄飞电】的效果。\n当神曹操存在时友方单位将免疫来自【麒麟弓】的伤害。"
+		"DOTA_Tooltip_ability_skill_hero_qinyin_Description"	"降低周围的敌人移动速度，同时敌人将以每秒最大生命值2%%的速率流失体力，当敌人的生命值低于最大生命值的33%%时，琴音的效果提升至4%%。\n多个琴音光环效果不叠加，取最高等级"
+		"DOTA_Tooltip_ability_skill_hero_qinyin"	"琴音"
+		"DOTA_Tooltip_ability_skill_hero_qinyin_radius"	"范围:"
+		"DOTA_Tooltip_ability_skill_hero_qinyin_movespeed"	"%移速："
+		"DOTA_Tooltip_ability_skill_hero_guixin"	"归心"
+		"DOTA_Tooltip_ability_skill_hero_guixin_duration"	"幻象持续时间:"
+		"DOTA_Tooltip_ability_skill_hero_guixin_attackspeed"	"幻象攻速提升:"
+		"DOTA_Tooltip_ability_skill_hero_guixin_Description"	"当敌方单位死亡时将操纵它的灵魂继续为你作战一段时间，同时攻击速度提升\n此效果被沉默仍可触发。"
 	// ---------------------------------------------单位技能-临天-----
 		
 		"DOTA_Tooltip_ability_skill_hero_sunjiang"	"孙江"

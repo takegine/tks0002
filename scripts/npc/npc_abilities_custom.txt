@@ -6414,7 +6414,88 @@
 		"MaxLevel"	"1"
 		"RequiredLevel"	"1"
 		"LevelsBetweenUpgrades"	"1"
-	}	
+	}
+	"skill_hero_yeyan"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	""
+		"ScriptFile"	"skill/hero_yeyan.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"25"
+		"AbilityManaCost"	"9 18 27 36 45 54 63 72 81 90"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"128 448 864 1376 1984 2688 3488 4384 5376 6464"
+			}
+		}
+	}
+
+	"skill_hero_qinyin"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_qinyin.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_NO"
+		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"movespeed"	"4 8 12 16 20 24 28 32 36 40"
+			}
+		}
+	}
+
+	"skill_hero_feiying"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_feiying.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"MaxLevel"	"1"
+	}
+
+	"skill_hero_guixin"
+	{
+		"BaseClass"	"ability_lua"
+		"ScriptFile"	"skill/hero_guixin.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"MaxLevel"	"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"2.4 2.8 3.2 3.6 4.0 4.4 4.8 5.2 6.4 6.8"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"attackspeed"	"33 36 39 42 45 48 51 54 57 60"
+			}
+		}
+	}		
 //
 // 临天 7-19	
 	"skill_hero_sunjiang"
