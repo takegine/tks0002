@@ -57,11 +57,11 @@ end
 
 function CDOTA_BaseNPC:XinShi()
     local team = self:GetTeamNumber()
-    if team == 3 then
-        return {ship={}}
-    else
+    if Clamp(team,6,13) == team then
         local id   = PlayerResource:GetNthPlayerIDOnTeam(team,1)
         local hero = PlayerResource:GetSelectedHeroEntity(id)
         return hero
+    else
+        return {ship={}}
     end
 end
