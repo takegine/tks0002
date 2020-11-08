@@ -53,7 +53,7 @@ function Fire_thefire( event )
         bProvidesVision		= false,
     } )
 
-    local dummy = CreateUnitByName( "npc_damage_dummy", startPos, false, caster, caster, caster:GetTeamNumber() )
+    local dummy = CreateUnitByName( "npc_damage_dummy", OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )
     dummy.attack_type   = "electrical"
     ability:ApplyDataDrivenModifier( caster, dummy, dummyMod, {} )
     ability.path_radius = pathRadius
