@@ -11,38 +11,40 @@ modifier_pojun_baoji = modifier_pojun_baoji or {}
 
 
 function skill_hero_pojun:OnSpellStart()
-    local caster = self:GetCaster()
-    local ability = self  -- local ability = skill_hero_pojun
-    local owner   = caster:XinShi()
-    --local target = self:GetCursorTarget()
-    local radius = self:GetLevelSpecialValueFor("radius", self:GetLevel()-1)
-    local duration = ability:GetSpecialValueFor("duration")
+    if IsServer() and self:GetAbility() then
+        local caster = self:GetCaster()
+        local ability = self  -- local ability = skill_hero_pojun
+        local owner   = caster:GetOwner() or {ship={}}
+        --local target = self:GetCursorTarget()
+        local radius = self:GetLevelSpecialValueFor("radius", self:GetLevel()-1)
+        local duration = ability:GetSpecialValueFor("duration")
 
-    local target_team  = self:GetAbilityTargetTeam()
-	local target_types = self:GetAbilityTargetType()
-    local target_flags = self:GetAbilityTargetFlags()
+        local target_team  = self:GetAbilityTargetTeam()
+        local target_types = self:GetAbilityTargetType()
+        local target_flags = self:GetAbilityTargetFlags()
 
-    local pfx = ParticleManager:CreateParticle("particles/econ/items/sven/sven_cyclopean_marauder/sven_cyclopean_warcry.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-    ParticleManager:SetParticleControlEnt(pfx, 0, caster, PATTACH_ABSORIGIN_FOLLOW, nil, caster:GetAbsOrigin(), true)
-    ParticleManager:ReleaseParticleIndex(pfx)
+        local pfx = ParticleManager:CreateParticle("particles/econ/items/sven/sven_cyclopean_marauder/sven_cyclopean_warcry.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+        ParticleManager:SetParticleControlEnt(pfx, 0, caster, PATTACH_ABSORIGIN_FOLLOW, nil, caster:GetAbsOrigin(), true)
+        ParticleManager:ReleaseParticleIndex(pfx)
 
-    local units = FindUnitsInRadius(caster:GetTeamNumber(),
-                                    caster:GetOrigin(),
-                                    nil,
-                                    radius,
-                                    target_team,
-                                    target_types,
-                                    target_flags,
-                                    0,
-                                    true)
+        local units = FindUnitsInRadius(caster:GetTeamNumber(),
+                                        caster:GetOrigin(),
+                                        nil,
+                                        radius,
+                                        target_team,
+                                        target_types,
+                                        target_flags,
+                                        0,
+                                        true)
 
-    for key,unit in pairs(units) do
-        if  unit:IsOpposingTeam(caster:GetTeamNumber()) then
-            unit:AddNewModifier(caster, self, "modifier_pojun_jiangong", {duration=duration})
-        elseif owner.ship['moni'] then
-            unit:AddNewModifier(caster, self, "modifier_pojun_baoji", {duration=duration})
-        end
-    end 
+        for key,unit in pairs(units) do
+            if  unit:IsOpposingTeam(caster:GetTeamNumber()) then
+                unit:AddNewModifier(caster, self, "modifier_pojun_jiangong", {duration=duration})
+            elseif owner.ship['moni'] then
+                unit:AddNewModifier(caster, self, "modifier_pojun_baoji", {duration=duration})
+            end
+        end 
+    end
 end
 
 

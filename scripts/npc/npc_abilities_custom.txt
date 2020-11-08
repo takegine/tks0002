@@ -7306,7 +7306,7 @@
 	{
 		"BaseClass"                     "ability_lua"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING "
-		"SpellImmunityType"             "SPELL_IMMUNITY_ALLIES_YES"
+		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"            "shen\ability_lianpo"
 		"ScriptFile"				    "skill/hero_lianpo.lua"
 		"AbilityCastAnimation"         "ACT_DOTA_CAST_ABILITY_1"
@@ -7339,6 +7339,29 @@
 			}
 		}
 	}
+		"skill_hero_kuangbao"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"shen\ability_kuangbao"
+		"ScriptFile"	"skill/hero_kuangbao.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+	}
+		"skill_hero_shenfen"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"skill/hero_shenfen.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"shen/ability_shenfen"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"1"
+		"LevelsBetweenUpgrades"			"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	}
+
 
 // 白喵 7-19
 	"skill_hero_yinghun"

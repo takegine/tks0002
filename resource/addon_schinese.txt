@@ -1051,6 +1051,11 @@
 		"DOTA_Tooltip_modifier_lianpo_jiansu"	"连破"
 		"DOTA_Tooltip_modifier_lianpo_jiansu_Description" "移动速度降低60%%且额外受到45%%伤害"
 		
+		"DOTA_Tooltip_ability_skill_hero_kuangbao"	"狂暴"
+		"DOTA_Tooltip_ability_skill_hero_kuangbao_Description"	"每次对敌人造成伤害时，你将获得1层愤怒标记，上限15层，每层愤怒为你提供30%%的暴击概率，暴击概率超出的数值可同比值提升暴击伤害。"
+		"DOTA_Tooltip_modifier_skill_hero_kuangbao"	"我就是真三国无双！"
+		"DOTA_Tooltip_modifier_skill_hero_kuangbao_Description" "等我叠到15层你就死定了！你已经死了！"
+		
 
 	// ---------------------------------------------单位技能-白喵-----
 		"DOTA_Tooltip_modifier_skill_hero_buqu2" "不屈"
