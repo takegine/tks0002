@@ -28,7 +28,7 @@ function createnewherotest( self,data )
     local teamid  = data.good and hteam or 3
     local crePos  = Entities:FindByName(nil,"creep_birth_"..(hteam-5).."_"..(teamid-3)):GetAbsOrigin() 
 
-    CreateUnitByNameAsync( data.way, crePos, true, hero, hero, teamid,  function( h )
+    CreateUnitByNameAsync( data.way, crePos, true, nil, nil, teamid,  function( h )
         h:SetControllableByPlayer( data.PlayerID, false )
         h:Hold()
         h:SetOwner(hero)
