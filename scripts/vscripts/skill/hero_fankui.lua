@@ -26,7 +26,7 @@ function modifier_fankui_buff:OnAttack(keys)
     local parent=self:GetParent()
     local target=keys.attacker
     local caster=self:GetCaster()
-    local owner =caster:GetOwner() or {ship={}}
+    local owner =caster:XinShi()
     local  chance=ability:GetLevel()*3+20
  
     if keys.target~=parent then return end

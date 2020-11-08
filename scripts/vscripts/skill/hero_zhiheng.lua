@@ -12,7 +12,7 @@ function skill_hero_zhiheng:OnSpellStart()
    local target_flags = self:GetAbilityTargetFlags()
    local abilitynumber=self:GetLevelSpecialValueFor('abilitynumber', self:GetLevel()-1)
    local duration=self:GetLevelSpecialValueFor('duration',self:GetLevel()-1)
-   local owner  = caster:GetOwner() or {ship={}} 
+   local owner  = caster:XinShi() 
 
    if IsServer() then
     EmitSoundOn( "DOTA_Item.GhostScepter.Activate", self:GetCaster() )

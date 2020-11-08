@@ -54,3 +54,14 @@ end
 function CCustomNetTableManager:GetStage( ... )
     return "GAME_STAT_FINGHT"
 end
+
+function CDOTA_BaseNPC:XinShi()
+    local team = self:GetTeamNumber()
+    if team == 3 then
+        return {ship={}}
+    else
+        local id   = PlayerResource:GetNthPlayerIDOnTeam(team,1)
+        local hero = PlayerResource:GetSelectedHeroEntity(id)
+        return hero
+    end
+end

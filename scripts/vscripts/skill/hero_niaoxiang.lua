@@ -34,7 +34,7 @@ function modifier_hero_niaoxiang:OnAttackLanded(keys)
         return
     end
     local ability = self:GetAbility()
-    local owner = attacker:GetOwner() or {ship={}}
+    local owner = attacker:XinShi()
     local level = ability:GetLevel()
     local duration = ability:GetLevelSpecialValueFor("duration", level-1)
     local max = 3

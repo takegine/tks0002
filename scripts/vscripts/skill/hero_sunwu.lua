@@ -9,7 +9,7 @@ skill_hero_sunwu = {}
 
 function skill_hero_sunwu:needwaveup()
     local caster = self:GetCaster()
-    local owner = caster:GetOwner() or {ship={}}
+    local owner = caster:XinShi()
     if owner.ship["dongwu"] then
         self.number = 0
         self.chance = nil
@@ -37,7 +37,7 @@ function modifier_hero_sunwu:OnAttackLanded(keys)
         return
     end
     local ability = self:GetAbility()
-    local owner = attacker:GetOwner() or {ship={}}
+    local owner = attacker:XinShi()
     local level = ability:GetLevel()
     local duration = ability:GetSpecialValueFor("duration")--持续时间
     local max = 8--最大存在数量

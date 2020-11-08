@@ -25,7 +25,7 @@ function modifier_xingshang:OnTakeDamage(keys)
 local caster=self:GetCaster()
 local parent=self:GetParent()
 local ability = self:GetAbility()
-local owner  = caster:GetOwner() or {ship={}}
+local owner  = caster:XinShi()
 local heal=caster:GetMaxHealth()*4/100  
 local dur=caster:GetLevel()+2
 local target_flags=ability:GetAbilityTargetFlags()

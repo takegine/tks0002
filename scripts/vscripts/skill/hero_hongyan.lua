@@ -36,7 +36,7 @@ function modifier_skill_hero_hongyan:OnTakeDamage(keys)
         local caster = self:GetCaster()
         local ability = self:GetAbility()
         local damage  = keys.damage *1.575
-        local owner   = caster:GetOwner() or {ship={}}
+        local owner   = caster:XinShi()
         local healre  =  keys.damage_type == DAMAGE_TYPE_PHYSICAL and damage *2 or damage
 
         if owner.ship["xiaoniao"] then 

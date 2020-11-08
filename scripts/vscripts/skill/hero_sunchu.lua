@@ -29,7 +29,7 @@ function skill_hero_sunchu_takedamage:OnTakeDamage(keys)
 	local target_types = ability:GetAbilityTargetType()
     local target_flags = ability:GetAbilityTargetFlags()
 
-    local owner  = caster:GetOwner() or {ship={}}  
+    local owner  = caster:XinShi()  
 
     if keys.unit~=parent then return end
 

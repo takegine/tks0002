@@ -80,7 +80,7 @@ function modifier_skill_hero_longdan:OnAttackFail(keys)
 	local ability=self:GetAbility()
     local chance=ability:GetLevelSpecialValueFor('chance',ability:GetLevel()-1)
 	local heal=ability:GetSpecialValueFor('heal')*keys.damage/100
-	local owner  = caster:GetOwner() or {ship={}}
+	local owner  = caster:XinShi()
 	
 	if keys.target~=caster then return end
 

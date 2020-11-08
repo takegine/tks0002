@@ -8,7 +8,7 @@ function  skill_hero_lijian:OnSpellStart()
 
     local  caster=self:GetCaster()
     local  target=self:GetCursorTarget()
-    local  owner =caster:GetOwner() or {ship={}}
+    local  owner =caster:XinShi()
 
 if not  IsServer() then  return end
 

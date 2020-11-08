@@ -9,7 +9,7 @@ function weixing(keys)
     --给这个技能后置生效，这个needwaveup会在游戏中，所有羁绊添加完成，所有物品添加完成后执行。
     ability.needwaveup = function ( ability)
         local caster   = ability:GetCaster()
-        local owner   = caster:GetOwner() or {ship={}}--魏延的持有者，即 玩家操作的信使
+        local owner   = caster:XinShi()--魏延的持有者，即 玩家操作的信使
 
         --判断是否拥有对应的羁绊
         if owner.ship['feihuo'] then

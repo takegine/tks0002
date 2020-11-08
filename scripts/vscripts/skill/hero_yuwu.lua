@@ -9,7 +9,7 @@ skill_hero_yuwu = {}
 
 function skill_hero_yuwu:needwaveup()
     local caster = self:GetCaster()
-    local owner = caster:GetOwner()
+    local owner = caster:XinShi()
     if not owner then
         return
     end

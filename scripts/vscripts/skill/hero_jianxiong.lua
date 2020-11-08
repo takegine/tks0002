@@ -46,7 +46,7 @@ function modifier_hero_jianxiong:OnAttacked(keys)
     if ability:is_include(attacker) then
         return
     end
-    local owner = parent:GetOwner() or {ship={}}
+    local owner = parent:XinShi()
     local incoming_damage = ability:GetSpecialValueFor("incoming_damage")
     local outgoing_damage = ability:GetSpecialValueFor("outgoing_damage")
     if owner.ship['xianying'] then

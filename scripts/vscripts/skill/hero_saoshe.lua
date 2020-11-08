@@ -57,7 +57,7 @@ function skill_hero_saoshe:OnProjectileHit(hTarget,vLocation)
     if not IsServer() then
         return
     end
-    local owner = self:GetCaster():GetOwner() or {ship={}}
+    local owner = self:GetCaster():XinShi()
     if hTarget then
         ApplyDamage({
             damage_type = DAMAGE_TYPE_PHYSICAL,  -- 伤害类型，参考常量DAMAGE_TYPES

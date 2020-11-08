@@ -6,7 +6,7 @@ skill_hero_maqian=class({})
 function skill_hero_maqian:needwaveup()
     local caster=self:GetCaster()
 
-    local owner =caster:GetOwner() or {ship={}}
+    local owner =caster:XinShi()
 
 if  owner.ship['yiji']  then   --如果存在一骑当千的羁绊 增加攻速
     caster:AddNewModifier(caster, self, "modifier_madai_yiji", {})

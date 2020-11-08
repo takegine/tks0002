@@ -7,7 +7,7 @@ skill_hero_benghuai=class({})
 function skill_hero_benghuai:needwaveup()
 
 local  caster=self:GetCaster()
-local owner =caster:GetOwner() or {ship={}}
+local owner =caster:XinShi()
 
 caster:AddNewModifier(caster, self, 'modifier_benghuai_health', {})
 

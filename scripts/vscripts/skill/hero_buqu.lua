@@ -13,7 +13,7 @@ function skill_hero_buqu:needwaveup()
     self.flag = false
     self.caster = self:GetCaster()
     self.level = self:GetLevel()
-    self.owner = self.caster:GetOwner() or {ship = {}}
+    self.owner = self.caster:XinShi()
     self.caster:AddNewModifier(self.caster, self, "modifier_skill_hero_buqu", nil)
 end
 

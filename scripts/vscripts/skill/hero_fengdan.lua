@@ -9,7 +9,7 @@ skill_hero_fengdan = class({})
 function skill_hero_fengdan:needwaveup()
 
     local caster  = self:GetCaster()
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
     local modname = "modifier_skill_hero_fengdan"
     if  owner.ship['longyue'] then
         caster:AddNewModifier(caster, self, modname, {})
@@ -33,7 +33,7 @@ function modifier_skill_hero_fengdan:GetModifierEvasion_Constant()
     -- if IsServer() then
         local caster  = self:GetCaster()
         local ability = self:GetAbility()
-        -- local owner   = caster:GetOwner() or {ship={}}
+        -- local owner   = caster:XinShi()
         caster:GetPlayerOwnerID()
         local crit_chance = ability:GetLevelSpecialValueFor("crit_chance", ability:GetLevel()-1)
         -- return owner.ship['longyue'] and crit_chance or 0
@@ -46,7 +46,7 @@ function modifier_skill_hero_fengdan:OnAttackStart()
     -- if IsServer() then
         local caster  = self:GetCaster()
         local ability = self:GetAbility()
-        local owner   = caster:GetOwner() or {ship={}}
+        local owner   = caster:XinShi()
         local crit_chance = ability:GetLevelSpecialValueFor("crit_chance", ability:GetLevel()-1)
         if RollPercentage(crit_chance) then
             caster:AddNewModifier(caster, ability, "modifier_skill_hero_fengdan_crit", {})

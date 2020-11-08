@@ -7,7 +7,7 @@ skill_hero_guishen=class({})
 function skill_hero_guishen:needwaveup()  
     local caster=self:GetCaster()
 
-    local owner = caster:GetOwner() or {ship={}}   
+    local owner = caster:XinShi()   
 
     if owner.ship['guishen'] then
       caster:AddNewModifier(caster, self ,'modifier_skill_hero_guishen', {})
@@ -48,7 +48,7 @@ function modifier_skill_hero_guishen:OnTakeDamage(keys)
   local parent = self:GetParent()
   local caster = self:GetCaster() 
   local ability = self:GetAbility()
-  local owner = caster:GetOwner() or {ship={}}
+  local owner = caster:XinShi()
   if keys.unit == parent and self.hp <= keys.damage and parent:IsRealHero() and not parent:HasModifier("modifier_skill_hero_guishen_wraith")then
     
     parent:EmitSound("Hero_SkeletonKing.Reincarnate.Ghost")
@@ -85,7 +85,7 @@ function modifier_skill_hero_guishen_wraith:StatusEffectPriority() return 16 end
 
 function modifier_skill_hero_guishen_wraith:CheckState() 
   local caster = self:GetCaster() 
-  local owner = caster:GetOwner() or {ship={}}
+  local owner = caster:XinShi()
   return {
     [MODIFIER_STATE_MAGIC_IMMUNE] = owner.ship['mingzhu'],
     [MODIFIER_STATE_NO_HEALTH_BAR]= true, 

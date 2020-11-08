@@ -136,7 +136,7 @@ dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 ```lua
 function skill_hero_example:needwaveup()
     local caster  = self:GetCaster()
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
 
     if  owner.ship['temp'] then
         print("waveup is working")
@@ -171,7 +171,7 @@ function addwaveup ( params )
 
 	ability.needwaveup = function ( ability)
 		local caster   = ability:GetCaster()
-        local owner    = caster:GetOwner() or {ship={}}
+        local owner    = caster:XinShi()
 
         if  owner.ship['temp'] then
             print("waveup is working")

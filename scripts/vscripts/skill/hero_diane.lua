@@ -10,7 +10,7 @@ function skill_hero_diane:needwaveup()
     local caster=self:GetCaster()
     local ability =self
     local add = 30
-    local owner = caster:GetOwner() or {ship={}}   
+    local owner = caster:XinShi()   
 
     if owner.ship['elai'] and caster:GetUnitName()=="npc_dota_hero_kunkka" then 
         add=add

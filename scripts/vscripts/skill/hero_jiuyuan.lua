@@ -6,7 +6,7 @@ skill_hero_jiuyuan=class({})
 function skill_hero_jiuyuan:needwaveup()
 
 	local caster  = self:GetCaster()
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
     
 	local target_team  = self:GetAbilityTargetTeam()
 	local target_types = self:GetAbilityTargetType()

@@ -9,7 +9,7 @@ skill_hero_jijiang = skill_hero_jijiang or {}
 function skill_hero_jijiang:needwaveup()
     
 	local caster  = self:GetCaster()
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
     
     local modifierName ="modifier_jijiang"
     local radius = self:GetSpecialValueFor("radius")

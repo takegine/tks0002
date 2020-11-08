@@ -10,7 +10,7 @@ skill_hero_lvhu=class({})
 function skill_hero_lvhu:needwaveup()  
     local caster=self:GetCaster()
 
-    local owner = caster:GetOwner() or {ship={}}   --判断是否有组合
+    local owner = caster:XinShi()   --判断是否有组合
 
     if owner.ship['quhu'] then
       caster:AddNewModifier(caster, self ,'modifier_skill_hero_lvhu', {})

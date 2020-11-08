@@ -10,7 +10,7 @@ skill_hero_lusi = {}
 
 function skill_hero_lusi:needwaveup()
     local caster = self:GetCaster()
-    local owner = caster:GetOwner() or {ship={}}
+    local owner = caster:XinShi()
     if owner.ship['siying'] then
         caster:AddNewModifier(caster, self, "modifier_hero_lusi", nil)
     end

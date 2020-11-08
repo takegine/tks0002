@@ -28,7 +28,7 @@ end
 function modifier_skill_hero_jiuchi:OnAttackStart(keys)
     local ability=self:GetAbility()
     local caster=self:GetCaster()
-    local owner  = caster:GetOwner() or {ship={}}
+    local owner  = caster:XinShi()
 
     if not IsServer() then  return end
     if keys.attacker~=caster then return end  

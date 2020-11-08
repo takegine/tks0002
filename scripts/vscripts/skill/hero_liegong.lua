@@ -27,7 +27,7 @@ function modifier_skill_hero_liegong:OnAttackStart(keys)
     local ability=self:GetAbility()
     local caster=self:GetCaster()
     local chance=33
-    local owner  = caster:GetOwner() or {ship={}}
+    local owner  = caster:XinShi()
 
     if keys.attacker~=caster  or not IsServer()  then return   end
 
@@ -83,7 +83,7 @@ function modifier_skill_hero_baoji:GetModifierPreAttack_CriticalStrike()
     local caster=self:GetCaster()
     local ability=self:GetAbility()
     local level=ability:GetLevel()
-    local owner  = caster:GetOwner() or {ship={}}
+    local owner  = caster:XinShi()
 
     if owner.ship['wuhu']  then 
         return  200+level*15

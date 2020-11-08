@@ -9,7 +9,7 @@ function skill_hero_chengjie:OnSpellStart()
 
     local caster=self:GetCaster()  --获取施法着
     local target=self:GetCursorTarget() --获取施法目标
-    local owner  = caster:GetOwner() or {ship={}}  
+    local owner  = caster:XinShi()  
     local damage = self:GetLevelSpecialValueFor("damage", self:GetLevel()-1)
 
     local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )

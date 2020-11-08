@@ -10,7 +10,7 @@ function wusheng(keys)
     local target  = keys.target     --目标，这里应该是空值
     local ability = keys.ability    --技能，这里是武圣
     local attacker= keys.attacker   --攻击，触发这个脚本的攻击单位，攻击了关羽的单位
-    local owner   = caster:GetOwner() or {ship={}}--关羽的持有者，即 玩家操作的信使
+    local owner   = caster:XinShi()--关羽的持有者，即 玩家操作的信使
 
 --技能KV中的参数
     local chance  = ability:GetSpecialValueFor("chance" )

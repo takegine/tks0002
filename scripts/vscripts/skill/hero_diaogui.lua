@@ -9,7 +9,7 @@ skill_hero_diaogui=class({})
 function  skill_hero_diaogui:needwaveup()
 
 local  caster=self:GetCaster()
-local  owner =caster:GetOwner() or {ship={}}
+local  owner =caster:XinShi()
 
 if not  IsServer() then  return end
 if  owner.ship['guishen'] then

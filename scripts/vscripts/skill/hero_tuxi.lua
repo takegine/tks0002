@@ -19,7 +19,7 @@ function skill_hero_tuxi:OnSpellStart()
 	local ability = self
 	local target_point = self:GetCursorPosition()        
 	local sound_cast = "Hero_NyxAssassin.Impale" 
-    local owner = caster:GetOwner() or {ship={}}  
+    local owner = caster:XinShi()  
     local spawn_distance = ability:GetSpecialValueFor("spawn_distance")
 	local main_spike_dummy = CreateModifierThinker(self:GetCaster(), self, nil, {}, self:GetCaster():GetAbsOrigin(), self:GetCaster():GetTeamNumber(), false)
 	main_spike_dummy.hit_units = 0
@@ -83,7 +83,7 @@ function skill_hero_tuxi:OnProjectileHit_ExtraData(target, location, ExtraData)
 
 	local caster = self:GetCaster()
     local ability = self
-    local owner = caster:GetOwner() or {ship={}}  
+    local owner = caster:XinShi()  
 	local sound_impact = "Hero_NyxAssassin.Impale.Target"
 	local sound_land = "Hero_NyxAssassin.Impale.TargetLand"
 	local particle_impact = "particles/units/heroes/hero_nyx_assassin/nyx_assassin_impale_hit.vpcf"

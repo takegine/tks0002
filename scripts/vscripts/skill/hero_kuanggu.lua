@@ -23,7 +23,7 @@ end
 function skill_hero_kuanggu:needwaveup()
 
     local caster  = self:GetCaster()
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
     local count   = 0
 
     if  owner.ship['shawo'] then
@@ -75,7 +75,7 @@ function modifier_skill_hero_kuanggu:OnTakeDamageKillCredit( params)
     
     local parent   = self:GetParent()
     local ability  = self:GetAbility()
-    local owner    = parent:GetOwner() or {ship={}}
+    local owner    = parent:XinShi()
     local attacker = params.attacker
     local target   = params.target
     local damage   = params.damage
@@ -99,7 +99,7 @@ function modifier_skill_hero_kuanggu:OnHeroKilled( params)
     local ability  = self:GetAbility()
     local radius   = ability:GetSpecialValueFor("radius")
     local heallvl  = ability:GetLevelSpecialValueFor("heallvl", ability:GetLevel()-1) /100
-    local owner    = parent:GetOwner() or {ship={}}
+    local owner    = parent:XinShi()
     local unit     = params.unit
     local attacker = params.attacker
     local target   = params.target
@@ -125,7 +125,7 @@ function modifier_skill_hero_kuanggu:OnHealReceived( params)
     
     
     local parent   = self:GetParent()
-    local owner    = parent:GetOwner() or {ship={}}
+    local owner    = parent:XinShi()
     local unit     = params.unit
     local heal     = params.gain
     
@@ -174,7 +174,7 @@ end
 function modifier_skill_hero_kuanggu:OnHealthGained( params)
     
     local parent   = self:GetParent()
-    local owner    = parent:GetOwner() or {ship={}}
+    local owner    = parent:XinShi()
     local unit     = params.unit
 
     -- if not owner.ship['shawo'] 

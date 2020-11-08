@@ -15,7 +15,7 @@ function skill_hero_tiandu:OnSpellStart()
 	local ability = self
     local target = self:GetCursorTarget()
     local radius = self:GetLevelSpecialValueFor("radius", self:GetLevel()-1)
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
 	local modifier_armor = "modifier_skill_hero_tiandu_buff"
     local armor_duration = ability:GetSpecialValueFor("armor_duration")
     local target_team  = self:GetAbilityTargetTeam()

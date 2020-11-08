@@ -15,7 +15,7 @@ function skill_hero_luoyi:OnSpellStart()
         return
     end
     local caster = self:GetCaster()
-    local owner = caster:GetOwner() or {ship = {}}
+    local owner = caster:XinShi()
     caster:AddNewModifier(caster, self, "modifier_hero_luoyi", {duration = self:GetSpecialValueFor("duration")})
     if owner.ship['huben'] then
         local unistlist = FindUnitsInRadius(

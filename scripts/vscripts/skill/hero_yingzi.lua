@@ -7,7 +7,7 @@ function skill_hero_yingzi:needwaveup()
     local caster=self:GetCaster()
     local ability=self
     local add= 10 +ability:GetLevel() *6.5
-    local owner =caster:GetOwner() or {ship={}}
+    local owner =caster:XinShi()
 
     if  owner.ship['xiaoniao'] and caster:GetUnitName()=='周瑜'
     then  add=add+30

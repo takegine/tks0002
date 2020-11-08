@@ -8,7 +8,7 @@ skill_hero_keji=class({})
 function skill_hero_keji:OnSpellStart()
 local caster=self:GetCaster()
 local ability=self
-local owner  = caster:GetOwner() or {ship={}}  
+local owner  = caster:XinShi()  
 
 
 if not IsServer() then return end

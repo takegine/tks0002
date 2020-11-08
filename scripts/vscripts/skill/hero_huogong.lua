@@ -11,7 +11,7 @@ function Fire_thefire( event )
     local damage       = event.damage
     local duration	   = event.duration 
     local dummyMod     = event.dummyMod
-    local owner        = caster:GetOwner() or {ship={}}
+    local owner        = caster:XinShi()
     local damage_type  = ability:GetAbilityDamageType()
     local target_team  = ability:GetAbilityTargetTeam()
     local target_types = ability:GetAbilityTargetType()

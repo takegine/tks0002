@@ -24,7 +24,7 @@ function modifier_item_queue_041:OnAttacked(params)
         local ability= self:GetAbility()
         local change = ability:GetSpecialValueFor('p2')
         local heal   = Clamp( change, 0, params.damage *0.5)
-        local owner  = parent:GetOwner() or {ship={}}
+        local owner  = parent:XinShi()
 
         parent:Heal(heal,parent)
         SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, parent, heal, nil)

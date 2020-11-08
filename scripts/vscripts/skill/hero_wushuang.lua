@@ -19,7 +19,7 @@ function modifier_skill_hero_wushuang:OnAttackLanded(keys)
     local parent = self:GetParent()
     local ability= self:GetAbility()
     local target = keys.target 
-    local owner = caster:GetOwner() or {ship={}} 
+    local owner = caster:XinShi() 
     local chance = ability:GetSpecialValueFor("chance")
     local damage = target:GetMaxHealth()*33/100 
     local damage_type = ability:GetAbilityDamageType()

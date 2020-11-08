@@ -8,7 +8,7 @@ skill_hero_baonue=class({})
 function skill_hero_baonue:needwaveup()
 
 	local caster  = self:GetCaster()
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
     
 	local target_team  = self:GetAbilityTargetTeam()
 	local target_types = self:GetAbilityTargetType()

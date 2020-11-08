@@ -9,7 +9,7 @@ function skill_hero_zhousi:needwaveup()
 
     local caster=self:GetCaster()
     local ability=self
-    local owner =caster:GetOwner() or {ship={}}
+    local owner =caster:XinShi()
     local target_team  = self:GetAbilityTargetTeam()
     local target_types = self:GetAbilityTargetType()
     local target_flags = self:GetAbilityTargetFlags()

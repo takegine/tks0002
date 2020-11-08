@@ -68,7 +68,7 @@ function modifier_jieming_buff:OnAttackLanded(keys)
     local parent =self:GetParent()
     local caster=self:GetCaster()
     local chance=10
-    local owner  = caster:GetOwner() or {ship={}}  
+    local owner  = caster:XinShi()  
     local heal=parent:GetMaxHealth()/100*7
 
     if not IsServer() then return end

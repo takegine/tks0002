@@ -9,7 +9,7 @@ skill_hero_caokong = {}
 
 function skill_hero_caokong:needwaveup()
     local caster = self:GetCaster()
-    local owner = caster:GetOwner() or {ship = {}}
+    local owner = caster:XinShi()
     if owner.ship["konghe"] then 
         caster:AddNewModifier(caster, self, "modifier_hero_caokong", nil)
     end

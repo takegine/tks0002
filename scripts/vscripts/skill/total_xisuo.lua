@@ -10,7 +10,7 @@ function rende(keys)
     local ability = keys.ability
     local attacker= keys.attacker
     local partfri = keys.partfri
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
 
     local HPRegen = ability:GetLevelSpecialValueFor("hp_re", (ability:GetLevel()-1) )
     local damage  = ability:GetLevelSpecialValueFor("damage", (ability:GetLevel()-1) )/ 100
@@ -60,7 +60,7 @@ function yinghan( keys )
 	local caster  = keys.caster  
   --local target  = keys.target
 	local ability = keys.ability
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
 	local armor   = ability:GetLevelSpecialValueFor("armor",(ability:GetLevel()-1))
 	local modifierName = "modifier_skill_hero_yinghan_2"
 
@@ -85,7 +85,7 @@ function liutao( keys )
 
 	ability.needwaveup = function ( ability)
 		local caster   = ability:GetCaster()
-        local owner    = caster:GetOwner() or {ship={}}
+        local owner    = caster:XinShi()
         local modname  = "modifier_skill_hero_liutao"
         local duration = ability:GetSpecialValueFor("duration")
         if not owner.ship['taoyuan'] then
@@ -238,7 +238,7 @@ function tieji_HitUnitDamage(keys)
 	local caster  = keys.caster
 	local target  = keys.target
 	local ability = keys.ability
-	local owner   = caster:GetOwner() or {ship={}}
+	local owner   = caster:XinShi()
 	local damage  = ability:GetSpecialValueFor( "damage" )
     local damage_type  = ability:GetAbilityDamageType()
 
@@ -276,7 +276,7 @@ function paoxiao(keys)
 
 	local caster  = keys.caster
     local ability = keys.ability
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
     local chance  = ability:GetLevelSpecialValueFor("chance", (ability:GetLevel()-1) )
     local damage  = ability:GetLevelSpecialValueFor("damage", (ability:GetLevel()-1) )
     local radius  = ability:GetSpecialValueFor("radius")
@@ -330,7 +330,7 @@ function wuji(keys)
     local target  = keys.target
     local ability = keys.ability
     local attacker= keys.attacker
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
     
     local chance  = ability:GetLevelSpecialValueFor("chance", (ability:GetLevel()-1) )
     local damage  = ability:GetLevelSpecialValueFor("damage", (ability:GetLevel()-1) )
@@ -390,7 +390,7 @@ function chaoqi(keys)
     
     ability.needwaveup = function ( ability)        
         local caster  = ability:GetCaster()
-        local owner   = caster:GetOwner() or {ship={}}
+        local owner   = caster:XinShi()
         local modName = "modifier_skill_hero_chaoqi"
         if  owner.ship['yiji'] then
             ability:ApplyDataDrivenModifier( caster, caster , modName, nil )
@@ -431,7 +431,7 @@ function qiaobian(keys)
 	local caster   = keys.caster
 	local target   = keys.target
     local ability  = keys.ability
-    local owner    = caster:GetOwner() or {ship={}}
+    local owner    = caster:XinShi()
     local heal_ori = target:IsAncient() and target:GetHealth() or caster:GetMaxHealth()
     local backheal = heal_ori * ability:GetSpecialValueFor("lifesteal") /100
     local radius   = ability:GetSpecialValueFor("radius")
@@ -495,7 +495,7 @@ function weixing(keys)
 
     ability.needwaveup = function ( ability)
         local caster   = ability:GetCaster()
-        local owner   = caster:GetOwner() or {ship={}}
+        local owner   = caster:XinShi()
 
         if owner.ship['feihuo'] then
             ability:ApplyDataDrivenModifier( caster, caster , "modifier_skill_hero_weixing", nil  )

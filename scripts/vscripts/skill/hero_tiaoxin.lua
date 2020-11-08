@@ -5,7 +5,7 @@ function skill_hero_tiaoxin:OnSpellStart()
 
     local caster = self:GetCaster()
     local target = self:GetCursorTarget()
-    local owner  = caster:GetOwner() or {ship={}}
+    local owner  = caster:XinShi()
 
     local damage_type  = self:GetAbilityDamageType()
 	local target_team  = self:GetAbilityTargetTeam()

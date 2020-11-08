@@ -13,7 +13,7 @@ modifier_pojun_baoji = modifier_pojun_baoji or {}
 function skill_hero_pojun:OnSpellStart()
     local caster = self:GetCaster()
     local ability = self  -- local ability = skill_hero_pojun
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
     --local target = self:GetCursorTarget()
     local radius = self:GetLevelSpecialValueFor("radius", self:GetLevel()-1)
     local duration = ability:GetSpecialValueFor("duration")

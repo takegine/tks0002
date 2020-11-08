@@ -14,7 +14,7 @@ function skill_hero_kurou:OnSpellStart()
     local target_team  = self:GetAbilityTargetTeam()
 	local target_types = self:GetAbilityTargetType()
     local target_flags = self:GetAbilityTargetFlags()
-    local owner  = caster:GetOwner() or {ship={}}  
+    local owner  = caster:XinShi()  
     local forwardVec=caster:GetForwardVector()
     local direction = caster:GetAbsOrigin():Normalized()
     local spawn_point = caster:GetAbsOrigin() + direction * 500

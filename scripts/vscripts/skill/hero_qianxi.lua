@@ -20,7 +20,7 @@ function modifier_attack:OnAttackLanded(keys)
 	
 	local  parent  =self:GetParent()  
 	local  target  =keys.target  
-    local  owner   =parent:GetOwner() or {ship={}}
+    local  owner   =parent:XinShi()
 	local  ability =self:GetAbility()
     local  chance  =ability:GetLevelSpecialValueFor("chance", (ability:GetLevel()-1) )
 	

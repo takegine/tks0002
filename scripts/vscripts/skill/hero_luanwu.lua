@@ -37,7 +37,7 @@ function modifier_skill_hero_luanwu:OnAttack(keys)
     local target    = keys.target
     local point  = target:GetOrigin()
     local ability = self:GetAbility()
-    local owner = caster:GetOwner() or {ship={}}  
+    local owner = caster:XinShi()  
 
     local particle_luanwu = "particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf"
     local modifier_luanwu_debuff = "modifier_luanwu_debuff"

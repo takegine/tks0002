@@ -5,7 +5,7 @@ skill_hero_liusan = skill_hero_liusan or {}
 function skill_hero_liusan:needwaveup()
     
 	local caster  = self:GetCaster()
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
 
     if owner.ship['dingli'] then
         caster:AddNewModifier( caster, self, "modifier_skill_hero_liusan", nil )

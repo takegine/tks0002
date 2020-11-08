@@ -56,7 +56,7 @@ function add_quhu(keys)
 end
 
 function quhu(keys)
-    local owner = keys.caster:GetOwner() or {ship={}}
+    local owner = keys.caster:XinShi()
     if not owner.ship['quhu'] then
         return
     end
@@ -202,7 +202,7 @@ end
 function mingce(keys)
     local ability = keys.ability
     local caster = ability:GetCaster()
-    local owner = caster:GetOwner() or {ship={}}
+    local owner = caster:XinShi()
     if owner.ship["mingzhu"] then
         local summoned_list = {"npc_unit_huoyuansu","npc_unit_shuiyuansu","npc_unit_tuyuansu"}
         local unit_name = summoned_list[RandomInt(1, 3)]

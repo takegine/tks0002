@@ -64,7 +64,7 @@ function modifier_sishuang_buff:OnAttack(keys)
     local parent=self:GetParent()
     local target=keys.attacker
     local caster=self:GetCaster()
-    local owner =caster:GetOwner() or {ship={}}
+    local owner =caster:XinShi()
  if not IsServer() then  return  end
  if keys.target~=parent then return end
  if owner.ship['sishuang']  then 

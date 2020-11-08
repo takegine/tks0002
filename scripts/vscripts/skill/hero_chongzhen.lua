@@ -28,7 +28,7 @@ function modifier_skill_hero_chongzhen_heal:OnAttackLanded(keys)
 	local caster=self:GetCaster()
 	local ability=self:GetAbility()
 	local heal=ability:GetSpecialValueFor('heal')*keys.damage/100
- 	local owner  = caster:GetOwner() or {ship={}}  
+ 	local owner  = caster:XinShi()  
  	local target=keys.target 
 
 	if keys.attacker == parent

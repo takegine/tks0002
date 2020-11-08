@@ -12,7 +12,7 @@ skill_hero_xiaoji = {}
 
 function skill_hero_xiaoji:needwaveup()
     local caster = self:GetCaster()
-    local owner = caster:GetOwner() or {ship={}}
+    local owner = caster:XinShi()
     caster:AddNewModifier(caster, self, "modifier_hero_xiaoji", nil)
 end
 

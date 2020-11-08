@@ -12,7 +12,7 @@ function skill_hero_zhiba:needwaveup()
     local ability = self
     local modifierName ="modifier_zhiba_baoji"
     local radius = 2000
-    local owner   = caster:GetOwner() or {ship={}}
+    local owner   = caster:XinShi()
     local target_team  = self:GetAbilityTargetTeam()
 	local target_types = self:GetAbilityTargetType()
     local target_flags = self:GetAbilityTargetFlags()
