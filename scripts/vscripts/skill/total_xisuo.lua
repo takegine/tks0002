@@ -168,18 +168,15 @@ function tieji( keys )
 	local projectile_name 	= keys.projectile_name
 
 	-- 朝向
-	local 	forwardVec = targetLoc - casterLoc
-			forwardVec = forwardVec:Normalized()
+	local 	forwardVec = (targetLoc - casterLoc):Normalized()
 	local  velocityVec = Vector( forwardVec.x, forwardVec.y, 0 )
 
 	-- 背向
-	local 	backwardVec = casterLoc - targetLoc
-			backwardVec = backwardVec:Normalized()
+	local 	backwardVec = (casterLoc - targetLoc):Normalized()
 		
 	-- 纵向
 	local v = radius * backwardVec
-	local 	perpendicularVec = Vector( -v.y, v.x, v.z )
-			perpendicularVec = perpendicularVec:Normalized()
+	local 	perpendicularVec = Vector( -v.y, v.x, v.z ):Normalized()
 	
 	-- 计数
 	local pfx_count = 0
@@ -200,17 +197,21 @@ function tieji( keys )
 		iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
 		vVelocity 		= velocityVec * projectile_speed
 		}
-
+    local lastint,curint
 	-- 错峰生成波
-	Timer( function()
-			projectileTable.vSpawnOrigin = casterLoc +v + perpendicularVec * RandomInt( -radius, radius )
+    Timer( function()
+            repeat
+                curint = RandomInt( -radius, radius )
+            until(curint ~= lastint)
+            lastint = curint
+			projectileTable.vSpawnOrigin = casterLoc +v + perpendicularVec * curint
 			ProjectileManager:CreateLinearProjectile( projectileTable )
 			
 			pfx_count = pfx_count + 1
 
-			if pfx_count == wave
-			then return nil
-			else return duration / wave
+			if pfx_count ~= wave
+            then
+                return duration / wave
 			end
 		end
 	)
