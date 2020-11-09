@@ -20,36 +20,23 @@ function CCustomNetTableManager:OverData( ... )
     self:SetTableValue( name, tostring(id), nettable)
 end
 
+function CDOTA_BaseNPC:CheckLevel(lvl)
+    
+    lvl = lvl or self:GetLevel()+1
 
-function createnewherotest( self,data )
-    local hero    = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-    local ablelist= LoadKeyValues('scripts/npc/npc_skill_custom.txt')
-    local hteam   = PlayerResource:GetCustomTeamAssignment(data.PlayerID)
-    local teamid  = data.good and hteam or 3
-    local crePos  = Entities:FindByName(nil,"creep_birth_"..(hteam-5).."_"..(teamid-3)):GetAbsOrigin() 
-
-    CreateUnitByNameAsync( data.way, crePos, true, nil, nil, teamid,  function( h )
-        h:SetControllableByPlayer( data.PlayerID, false )
-        h:Hold()
-        h:SetOwner(hero)
-        h:SetIdleAcquire( false )
-        h:SetAcquisitionRange( 0 )
-        if ablelist[data.way] then
-            for c,abi in pairs( ablelist[data.way]) do
-                if  h:HasAbility(abi) then 
-                    h:FindAbilityByName(abi):SetLevel(1)
-                end
+    while( self:GetLevel() < lvl ) do
+            if   self:IsHero() then
+                 self:HeroLevelUp( false )
+            else self:CreatureLevelUp( 1 )
             end
-        end
-    end )
-end
-
-function refreshlist()
-    for k,v in pairs(LoadKeyValues('scripts/npc/npc_info_custom.txt'))
-        do CustomNetTables:SetTableValue( "hero_info", k, v )
+    end
+    
+    for i=0,15 do 
+        if  self:GetAbilityByIndex(i) then 
+            self:GetAbilityByIndex(i):SetLevel(lvl) 
+        end 
     end
 end
-
 
 function CCustomNetTableManager:GetStage( ... )
     return "GAME_STAT_FINGHT"
@@ -63,5 +50,40 @@ function CDOTA_BaseNPC:XinShi()
         return hero
     else
         return {ship={}}
+    end
+end
+
+function createnewherotest( self,data )
+    local owner   = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
+    local hteam   = PlayerResource:GetCustomTeamAssignment(data.PlayerID)
+    local teamid  = data.good and hteam or 3
+    local crePos  = Entities:FindByName(nil,"creep_birth_"..(hteam-5).."_"..(teamid-3)):GetAbsOrigin() 
+
+    v = CreateUnitByName( data.way, crePos, true,owner,owner,teamid)
+    v:Hold()
+    v:SetIdleAcquire( false )
+    v:SetAcquisitionRange( 0 )
+    v:CheckLevel(1)
+    v.battleinfo = {}
+    -- v:AddNewModifier(nil, nil, "modifier_player_lock", nil)
+    v:AddNewModifier(nil, nil, "modifier_phased", {duration=0.1})
+    -- v:BattleThink()
+    v:SetControllableByPlayer( owner:GetPlayerOwnerID(), true )
+
+    if not data.good then
+        v:SetInitialGoalEntity( 路线 )
+        v.enemy=true
+        -- table.insert(UNITS_LIST.enemy , v)
+    else
+        v:SetUnitCanRespawn(false)
+        v:SetOwner(hero)
+        -- table.insert(UNITS_LIST.defend , v)
+        -- v:FindAbilityByName('skill_player_price'):CastAbility()
+    end
+end
+
+function refreshlist()
+    for k,v in pairs(LoadKeyValues('scripts/npc/npc_info_custom.txt'))
+        do CustomNetTables:SetTableValue( "hero_info", k, v )
     end
 end
