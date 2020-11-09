@@ -10,7 +10,7 @@ modifier_item_weapon_012_unit = modifier_item_weapon_0012_unit or {}--给民兵�
 
 function item_weapon_012:GetBehavior()
     local caster = self:GetCaster()
-   return caster:GetName() == "npc_dota_hero_phoenix" and DOTA_ABILITY_BEHAVIOR_UNIT_TARGET or  DOTA_ABILITY_BEHAVIOR_PASSIVE
+   return caster:GetName() == SET_FORCE_HERO and DOTA_ABILITY_BEHAVIOR_UNIT_TARGET or  DOTA_ABILITY_BEHAVIOR_PASSIVE
 end
 
 function item_weapon_012:GetCooldown()

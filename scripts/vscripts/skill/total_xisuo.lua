@@ -24,7 +24,7 @@ function rende(keys)
         HPRegen = HPRegen * 1.5
     end
 
-    if target:GetUnitName() == "npc_dota_hero_phoenix" then
+    if target:GetUnitName() == SET_FORCE_HERO then
         return
     elseif not target:IsOpposingTeam(caster:GetTeamNumber()) then
 

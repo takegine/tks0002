@@ -144,7 +144,7 @@ end
 function ChecktTarget(  data )
     hTarget = data.hTarget
     team    = data.team
-    if hTarget:GetName()=="npc_dota_hero_phoenix" then return UF_FAIL_COURIER end
+    if hTarget:GetName()==SET_FORCE_HERO then return UF_FAIL_COURIER end
     if CustomNetTables:GetTableValue( "game_stat", "game_round_stat")["1"]~=0 then return UF_FAIL_CUSTOM end
     return UnitFilter( hTarget, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, team )
 end

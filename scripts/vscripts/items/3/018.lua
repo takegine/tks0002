@@ -12,7 +12,7 @@ modifier_item_horses_018_unit = modifier_item_horses_018_unit or {}--给民兵�
 function item_horses_018:GetBehavior()
 
     local caster = self:GetCaster()
-    return caster:GetName() == "npc_dota_hero_phoenix" and DOTA_ABILITY_BEHAVIOR_POINT or  DOTA_ABILITY_BEHAVIOR_PASSIVE
+    return caster:GetName() == SET_FORCE_HERO and DOTA_ABILITY_BEHAVIOR_POINT or  DOTA_ABILITY_BEHAVIOR_PASSIVE
 end
 
 function item_horses_018:OnSpellStart()
