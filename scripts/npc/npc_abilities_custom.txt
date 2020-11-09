@@ -3203,6 +3203,7 @@
 	"skill_hero_kanpo"
 	{
 		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"shuguo/ability_kanpo"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
