@@ -89,8 +89,10 @@ modifier_player_lock=modifier_player_lock or {
         self.parent = self.parent or self:GetParent()
         if  self.parent == data.attacker then
             self.parent.battleinfo.deal = self.parent
+            self.parent.battleinfo.deal_cur = Time()
         elseif   self.parent == data.target then
             self.parent.battleinfo.take = self.parent
+            self.parent.battleinfo.take_cur = Time()
         end
     end,
     CheckState = function (self)
