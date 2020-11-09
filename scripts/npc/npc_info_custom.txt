@@ -802,6 +802,107 @@
                 "3" "skill_hero_wansha"
             }
         }
+        "npc_dota_hero_juggernaut"            //神赵云
+        {
+            "name" "npc_dota_hero_juggernaut"
+            "side" "shuguo"
+            "pop" "5"
+            "price" "999"
+            "atk" "god"
+            "def" "god"
+            "able"
+            {
+                "1" "skill_hero_longhun" 
+                "2" "skill_hero_chongzhen" 
+                "3" "skill_hero_longdan"
+            }
+        }
+        "npc_dota_hero_shadow_shaman"            //神司马 
+        {
+            "name" "npc_dota_hero_shadow_shaman"
+            "side" "weiguo"
+            "pop" "5"
+            "price" "999"
+            "atk" "fire"
+            "def" "god"
+            "able"
+            {
+                "1" "skill_hero_lianpo" 
+                "2" "skill_hero_guicai" 
+                "3" "skill_hero_fankui"
+            }
+        }
+        "npc_dota_hero_zuus"            //神诸葛
+        {
+            "name" "npc_dota_hero_zuus"
+            "side" "shuguo"
+            "pop" "5"
+            "price" "999"
+            "atk" "god"
+            "def" "god"
+            "able"
+            {
+                "1" "skill_hero_qixing" 
+                "2" "skill_hero_kuangfeng" 
+                "3" "skill_hero_dawu"
+            }
+        }
+        "npc_dota_hero_tinker"            //神周瑜 
+        {
+            "name" "npc_dota_hero_tinker"
+            "side" "wuguo"
+            "pop" "5"
+            "price" "999"
+            "atk" "fire"
+            "def" "god"
+            "able"
+            {
+                "1" "skill_hero_yeyan" 
+                "2" "skill_hero_qinyin" 
+            }
+        }
+        "npc_dota_hero_troll_warlord"            //神关羽
+        {
+            "name" "npc_dota_hero_troll_warlord"
+            "side" "shuguo"
+            "pop" "5"
+            "price" "999"
+            "atk" "fire"
+            "def" "god"
+            "able"
+            {
+                "1" "skill_hero_wuhun" 
+            }
+        }
+        "npc_dota_hero_riki"            //神吕布
+        {
+            "name" "npc_dota_hero_riki"
+            "side" "qunxiong"
+            "pop" "5"
+            "price" "999"
+            "atk" "fire"
+            "def" "god"
+            "able"
+            {
+                "1" "skill_hero_kuangbao" 
+                "2" "skill_hero_wuqian" 
+                "3" "skill_hero_shenfen"
+            }
+        }
+        "npc_dota_hero_pudge"            //神曹操
+        {
+            "name" "npc_dota_hero_pudge"
+            "side" "weiguo"
+            "pop" "5"
+            "price" "999"
+            "atk" "god"
+            "def" "god"
+            "able"
+            {
+                "1" "skill_hero_feiying" 
+                "2" "skill_hero_guixin" 
+            }
+        }
     }
 
     "unit"
