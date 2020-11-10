@@ -1004,7 +1004,11 @@
 		"DOTA_Tooltip_modifier_hero_wansha_debuff_Description" "攻击速度降低 %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%% "
 
 		"DOTA_Tooltip_ability_skill_hero_luanwu"	"乱武"
-		"DOTA_Tooltip_ability_skill_hero_luanwu_Description"	"贾诩对敌人造成344~3441点的单体伤害和688~6882点的范围伤害，同时能在3秒内减慢敌人的25%%攻击速度和50%%移动速度。"
+		"DOTA_Tooltip_ability_skill_hero_luanwu_Description"	"贾诩攻击时对敌人造成单体伤害和范围伤害，同时能在3秒内减慢敌人的攻击速度和移动速度。"
+		"DOTA_Tooltip_ability_skill_hero_luanwu_aoe_damage"		"范围伤害："
+		"DOTA_Tooltip_ability_skill_hero_luanwu_as_slow"		"%攻击速度："
+		"DOTA_Tooltip_ability_skill_hero_luanwu_ms_slow"		"%移动速度："
+		
 		"DOTA_Tooltip_modifier_luanwu_debuff"	"乱武"
 		"DOTA_Tooltip_modifier_luanwu_debuff_Description"	"降低25%%攻击速度和50%%移动速度"
 		"DOTA_Tooltip_modifier_luanwu_du_debuff"	"毒士之谋"

@@ -58,7 +58,7 @@ function modifier_skill_hero_luanwu:OnAttack(keys)
         local target_team  = ability:GetAbilityTargetTeam()
         local target_types = ability:GetAbilityTargetType()
         local target_flags = ability:GetAbilityTargetFlags()
-        local damage       = ability:GetLevel()*688
+        local damage       = ability:GetSpecialValueFor("aoe_damage")
 
         local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )  
         dummy.attack_type  = "electrical"
@@ -114,8 +114,8 @@ function modifier_luanwu_debuff:OnCreated()
 	local caster = self:GetCaster()
     local parent = self:GetParent()
     local ability = self:GetAbility()
-    self.ms_slow_pct = -50
-    self.as_slow = -25
+    self.ms_slow_pct = ability:GetSpecialValueFor('ms_slow')
+    self.as_slow = ability:GetSpecialValueFor('as_slow')
 end
 
 function modifier_luanwu_debuff:IsHidden() return false end
@@ -136,11 +136,11 @@ function modifier_luanwu_debuff:DeclareFunctions()
 end
 
 function modifier_luanwu_debuff:GetModifierMoveSpeedBonus_Percentage()
-    return self.ms_slow_pct
+    return -self.ms_slow_pct
 end
 
 function modifier_luanwu_debuff:GetModifierAttackSpeedBonus_Constant()
-    return self.as_slow
+    return -self.as_slow
 end
 
 modifier_luanwu_du = class({})
