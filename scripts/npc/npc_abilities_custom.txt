@@ -6670,10 +6670,6 @@
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCooldown"	"18 17 16 15 14 13 12 11 10 9"
 		"AOERadius"	"%radius"
-		// "precache"
-		// {
-		// 	"particle"	"particles/unknown.vpcf"
-		// }
 		"AbilitySpecial"
 		{
 			"01"
@@ -6704,7 +6700,6 @@
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"	"1"
-		"AOERadius"	"%radius"
         "AbilitySpecial"
 		{
 			"01"
@@ -7015,7 +7010,7 @@
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 		"ScriptFile"	"skill/hero_wansha.lua"
-		"AbilityTextureName"	"wuguo\ability_wansha"
+		"AbilityTextureName"	"weiguo/ability_wansha"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -7048,6 +7043,24 @@
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCooldown"	"12"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aoe_damage"			"688 1376 2064 2752 3440 4128 4816 5504 6192 6880 "
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"as_slow"			"25"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ms_slow"			"50"
+			}
+		}
 	}
 
 		"skill_hero_tuxi"
@@ -7134,7 +7147,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"skill/hero_tongshuai.lua"
-		"AbilityTextureName"			"qunxiong/ability_tongshuai"		
+		"AbilityTextureName"			"qunxiong/ability_shuangxiongyanliang"		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -7151,11 +7164,11 @@
 		}
 	}
 
-			"skill_hero_wuli"
+	"skill_hero_wuli"
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"skill/hero_wuli.lua"
-		"AbilityTextureName"			"qunxiong/ability_wuli"		
+		"AbilityTextureName"			"qunxiong/ability_shuangxiongwenchou"		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"						"10"
@@ -7305,62 +7318,74 @@
 
 	"skill_hero_lianpo"
 	{
-		"BaseClass"                     "ability_lua"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING "
-		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"            "shen\ability_lianpo"
-		"ScriptFile"				    "skill/hero_lianpo.lua"
-		"AbilityCastAnimation"         "ACT_DOTA_CAST_ABILITY_1"
-		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"MaxLevel"                      "10"
-		"LevelsBetweenUpgrades"	        "1"
-		"AbilityCastRange"              "960"
-		"AbilityCastPoint"              "0"
-		"AbilityCooldown"               "40"
-		"AbilityManaCost"	            "0"
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"god\ability_lianpo"
+		"ScriptFile"	"skill/hero_lianpo.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING "
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCastPoint"	"0"
+		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"	"40"
+		"AbilityManaCost"	"0"
+		"AbilityCastRange"	"960"
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"              "FIELD_INTEGER"
-				"radius"           		"960"
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"960"
 			}
 			"02"
 			{
-				"var_type"              "FIELD_FLOAT"
-				"duration"           	"6.6 7.2 7.8 8.4 9.0 9.6 10.2 10.8 11.4 12"
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"6.6 7.2 7.8 8.4 9.0 9.6 10.2 10.8 11.4 12"
 			}
 			"03"
 			{
-				"var_type"              "FIELD_INTEGER"
-				"move_speed_bonus"               "60"
+				"var_type"	"FIELD_INTEGER"
+				"move_speed_bonus"	"60"
 			}
 		}
 	}
-		"skill_hero_kuangbao"
+
+	"skill_hero_kuangbao"
 	{
 		"BaseClass"	"ability_lua"
-		"AbilityTextureName"	"shen\ability_kuangbao"
+		"AbilityTextureName"	"god\ability_kuangbao"
 		"ScriptFile"	"skill/hero_kuangbao.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"1"
 		"LevelsBetweenUpgrades"	"1"
 	}
-		"skill_hero_shenfen"
+
+	"skill_hero_shenfen"
 	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"skill/hero_shenfen.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"shen/ability_shenfen"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"MaxLevel"						"1"
-		"LevelsBetweenUpgrades"			"1"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"god/ability_shenfen"
+		"ScriptFile"	"skill/hero_shenfen.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+	}
+
+	"skill_hero_wuqian"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"god\ability_wuqian"
+		"ScriptFile"	"skill/hero_wuqian.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
 	}
 
 
