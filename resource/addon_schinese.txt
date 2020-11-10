@@ -29,7 +29,7 @@
 		"DOTA_Tooltip_modifier_item_jewelry_024_debuff" "朱雀宝玉"
 		"DOTA_Tooltip_modifier_item_jewelry_025_debuff" "白虎宝玉"
 		"DOTA_Tooltip_modifier_item_jewelry_026_hero" "青龙宝玉"
-		
+
 		"DOTA_Tooltip_modifier_item_queue_037_hero"	"火阵"
 		"DOTA_Tooltip_modifier_item_queue_037_hero_Description"	" 下次攻击对敌人额外造成 %dMODIFIER_PROPERTY_TOOLTIP% 点火焰魔法伤害。 "
 		"DOTA_Tooltip_modifier_item_queue_038_hero"	"水阵"
@@ -1144,7 +1144,12 @@
 		"DOTA_Tooltip_ability_skill_hero_kuangbao"	"狂暴"
 		"DOTA_Tooltip_ability_skill_hero_kuangbao_Description"	"每次对敌人造成伤害时，你将获得1层愤怒标记，上限15层，每层愤怒为你提供30%%的暴击概率，暴击概率超出的数值可同比值提升暴击伤害。"
 		"DOTA_Tooltip_modifier_skill_hero_kuangbao"	"我就是真三国无双！"
-		"DOTA_Tooltip_modifier_skill_hero_kuangbao_Description" "等我叠到15层你就死定了！你已经死了！"
+		"DOTA_Tooltip_modifier_skill_hero_kuangbao_Description"	"等我叠到15层你就死定了！你已经死了！"
+		"DOTA_Tooltip_ability_skill_hero_shenfen"	"神愤"
+		"DOTA_Tooltip_ability_skill_hero_shenfen_Description"	"回合内仅限一次，当神吕布的愤怒标记达到15层时，将立即失去所有的愤怒标记，并对周围1600范围内的敌人发动一次无双效果，造成神属性伤害，并无视魔免。"
+		"DOTA_Tooltip_ability_skill_hero_wuqian"	"无前"
+		"DOTA_Tooltip_ability_skill_hero_wuqian_Description"	"视作你拥有满级武器【方天画戟】与技能无双，同时被神吕布所击杀的敌人无法发动被动技能效果。"
+	
 		
 
 	// ---------------------------------------------单位技能-白喵-----

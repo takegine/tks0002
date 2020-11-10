@@ -6600,13 +6600,14 @@
 	{
 		"BaseClass"	"ability_lua"
 		"ScriptFile"	"skill/hero_sunjiang.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"precache"
 		{
 			"particle"			"particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave.vpcf"
+			"particle"	"particles/units/heroes/hero_sunce/skill_hero_sunjiang.vpcf"
 		}
 		"AbilitySpecial"
 		{
@@ -6647,7 +6648,7 @@
 	{
 		"BaseClass"		"ability_lua"
 		"ScriptFile"	"skill/hero_sunjun.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 	}
@@ -6656,7 +6657,7 @@
 	{
 		"BaseClass"		"ability_lua"
 		"ScriptFile"	"skill/hero_sunchuan.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
@@ -6688,7 +6689,6 @@
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastAnimation"   "ACT_DOTA_CAST_ABILITY_1"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCastPoint"	"0.3"
@@ -6731,10 +6731,12 @@
     "skill_hero_jieyin"
 	{
 		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"wuguo\ability_jieyin"
+		"ScriptFile"	"skill/hero_jieyin.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
-		"AOERadius"	"%radius"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6797,7 +6799,16 @@
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"	"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"400"
+			}
+		}
 	}
+
 	"skill_hero_zhiba"
 	{
 		"BaseClass"	"ability_lua"
@@ -6888,7 +6899,7 @@
 			}
 		}
 	}
-	
+
 	"skill_hero_yiji"
 	{
 		"BaseClass"                     "ability_lua"
@@ -6962,7 +6973,7 @@
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"weiguo\ability_diane"
 		"ScriptFile"	"skill/hero_diane.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"1"
 	    "AbilitySpecial"
 		{
@@ -6978,7 +6989,7 @@
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"weiguo\ability_dianzhu"
 		"ScriptFile"	"skill/hero_dianzhu.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"1"
 	}
 		"skill_hero_dianfan"
@@ -7022,7 +7033,7 @@
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"weiguo/ability_lewei"
 		"ScriptFile"	"skill/hero_lewei.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 	    "AbilitySpecial"
@@ -7039,7 +7050,7 @@
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"weiguo\ability_lewu"
 		"ScriptFile"	"skill/hero_lewu.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"MaxLevel"	"1"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -7272,7 +7283,7 @@
 			}
 		}
 	}
-	
+
 	"skill_hero_heliang"
 	{	
 		"BaseClass"						"ability_lua"
@@ -7391,7 +7402,7 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"skill/hero_guishen.lua"
 		"AbilityTextureName"			"qunxiong/ability_guishen"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"						"10"
 		"LevelsBetweenUpgrades"			"1"	
@@ -7458,6 +7469,20 @@
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"god/ability_shenfen"
 		"ScriptFile"	"skill/hero_shenfen.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+	}
+
+	"skill_hero_shenfen2"
+	{
+		"BaseClass"	"ability_lua"
+		// "AbilityTextureName"	"god/ability_shenfen"
+		"ScriptFile"	"skill/hero_shenfen2.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"

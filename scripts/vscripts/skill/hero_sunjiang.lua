@@ -8,7 +8,7 @@ skill_hero_sunjiang = skill_hero_sunjiang or class({})
 function skill_hero_sunjiang:needwaveup()
     
     local caster = self:GetCaster()
-    local owner = caster:GetOwner() or (ship{})
+    local owner = caster:XinShi()
     if owner.ship['jiangdong'] then
         caster:AddNewModifier( caster, self, 'modifier_skill_hero_sunjiang',{})
     end

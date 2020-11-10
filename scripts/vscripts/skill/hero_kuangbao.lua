@@ -72,10 +72,10 @@ end
 function modifier_skill_hero_shenfen1:OnCreated()
     local ability = self:GetAbility()
     local parent  = self:GetParent()
-    local shenfen = parent:AddAbility("skill_hero_shenfen")
+    local shenfen = parent:AddAbility("skill_hero_shenfen2")
     local lvl = ability:GetLevel()
     shenfen:SetLevel(lvl)
     parent:RemoveModifierByName("modifier_skill_hero_shenfen1")
-    parent:RemoveAbility("skill_hero_shenfen")
+    parent:RemoveAbility("skill_hero_shenfen2")
 end 
 
