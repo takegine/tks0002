@@ -268,4 +268,13 @@
         }
     }
 
+    "npc_dota_hero_omniknight"//张辽
+    {
+        "1"
+        {
+            "name"  "skill_hero_tuxi"
+            "deal"  "1"
+            "take"  "1"
+        }
+    }
 }
