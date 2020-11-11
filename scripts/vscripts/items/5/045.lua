@@ -7,7 +7,7 @@ modifier_item_queue_045 = modifier_item_queue_045 or {
     GetAuraRadius = function () return 2000 end,
     GetModifierAura = function () return "modifier_item_queue_045_debuff" end,
     GetAuraSearchTeam = function () return DOTA_UNIT_TARGET_TEAM_ENEMY end,
-    GetAuraSearchType = function ()	return DOTA_UNIT_TARGET + DOTA_UNIT_TARGET_BASIC end,
+    GetAuraSearchType = function ()	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end,
 }
 LinkLuaModifier( "modifier_item_queue_045_hero","items/5/045", 0 )
 LinkLuaModifier( "modifier_item_queue_045_unit","items/5/045", 0 )
