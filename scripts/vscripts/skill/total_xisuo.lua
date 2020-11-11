@@ -290,7 +290,7 @@ function paoxiao(keys)
 	local target_types = ability:GetAbilityTargetType()
     local target_flags = ability:GetAbilityTargetFlags()
 
-    if  caster:HasItemInInventory("item_weapon_005") then
+    if  caster:GetTeamNumber()~=3 and owner:HasItemInInventory("item_weapon_005") then
         chance = 100
     end
 
@@ -311,8 +311,6 @@ function paoxiao(keys)
                 true)
 
             for k,v in pairs(enemy) do
-                print(k,v:GetUnitName(),v:GetUnitLabel())
-
                 ability:ApplyDataDrivenModifier( caster, v, debuffname, { duration=debuff_dur })
                 
             end
@@ -340,7 +338,7 @@ function wuji(keys)
 	local target_types = ability:GetAbilityTargetType()
     local target_flags = ability:GetAbilityTargetFlags()
     
-    if  caster:HasItemInInventory( "item_weapon_009" ) then
+    if  caster:GetTeamNumber()~=3 and owner:HasItemInInventory( "item_weapon_009" ) then
         chance = chance * 2
     end
 
@@ -434,37 +432,35 @@ function qiaobian(keys)
     local owner    = caster:XinShi()
     local heal_ori = target:IsAncient() and target:GetHealth() or caster:GetMaxHealth()
     local backheal = heal_ori * ability:GetSpecialValueFor("lifesteal") /100
-    local radius   = ability:GetSpecialValueFor("radius")
-    local damage_type  = ability:GetAbilityDamageType()
-	local target_team  = ability:GetAbilityTargetTeam()
-	local target_types = ability:GetAbilityTargetType()
-    local target_flags = ability:GetAbilityTargetFlags()
 
     caster:Heal(backheal, caster)
     SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, caster, backheal, nil)
         
-    if not caster.bfirst_qiaobiao then
+    if not caster.bfirst_qiaobiao 
+    and target:GetTeamNumber()~= 3 then
         caster.bfirst_qiaobiao = true
-        print("ddd")
-        local queue_target = target:GetItemInSlot(5)
-        local queue_caster = caster:GetItemInSlot(5)
+        local queue_target = target:XinShi():GetItemInSlot(5)
+        local queue_caster = owner:GetItemInSlot(5)
         if queue_target then
-            print(queue_target:GetName())
-            local modName =  "modifier_"..queue_target:GetName()
+            local modName =  "modifier_"..queue_target:GetName().."_hero"
             if caster:HasModifier(modName ) then
                 local level = math.max(queue_target:GetLevel(), queue_caster:GetLevel())
                 while queue_caster:GetLevel() < level
                 do    queue_caster:lvlup()
                 end
             else
-                LinkLuaModifier( modName, "items/5/"..string.sub(modName,21), LUA_MODIFIER_MOTION_NONE )
                 caster:AddNewModifier( caster, queue_target, modName, {} )
                 if queue_target.needwaveup then
                     queue_target:needwaveup()
                 end
             end
 
-            if owner.ship['mengjie'] then
+            if owner.ship['wuzi'] then
+                local radius   = ability:GetSpecialValueFor("radius")
+                local damage_type  = ability:GetAbilityDamageType()
+                local target_team  = ability:GetAbilityTargetTeam()
+                local target_types = ability:GetAbilityTargetType()
+                local target_flags = ability:GetAbilityTargetFlags()
                 
                 local enemy = FindUnitsInRadius(caster:GetTeamNumber(), 
                                     caster:GetOrigin(), 

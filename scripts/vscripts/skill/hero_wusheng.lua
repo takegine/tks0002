@@ -21,8 +21,8 @@ function wusheng(keys)
 	local target_types = ability:GetAbilityTargetType()
     local target_flags = ability:GetAbilityTargetFlags()
     
-    --判断物品：第一个格子（武器栏）是不是青龙偃月刀
-    if caster:HasItemInInventory( "item_weapon_009" ) then
+    --判断物品：不是叛军 且信使拥有 青龙偃月刀
+    if caster:GetTeamNumber()~=3 and owner:HasItemInInventory( "item_weapon_009" ) then
         chance = chance * 2
     end
 
