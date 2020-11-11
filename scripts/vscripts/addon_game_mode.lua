@@ -366,18 +366,32 @@ function CAddonTemplateGameMode:InvFilt( filterTable )
     local slot    = filterTable.suggested_slot
 
     if hItem == nil 
-    or hInvPar == nil 
+    or hInvPar == nil
+    or hInvPar:GetUnitName() ~= SET_FORCE_HERO
     then return true 
     end
 
     local slotlist={ 'level', 'weapon', 'defend', 'jewelry', 'horses', 'format', 'queue' }
-    for k,v in pairs(slotlist) do
-        if  string.find(hItem:GetAbilityName(),v) then
-            if k==1 then
+    local itemname = hItem:GetAbilityName()
+    for i in ipairs(slotlist) do
+        if  string.find(itemname,slotlist[i]) then
+            if i==1 then
                 hItem:CastAbility()
                 return true
             else
-                slot = k-2
+                slot = i-2
+                local modname
+                for k,v in pairs(FindUnitsInRadius(6,Vector(0,0,0),nil,9999,1,55,0,0,false)) do
+                    if v~= hInvPar then
+                        for q = 1,v:GetModifierCount() do
+                            modname = v:GetModifierNameByIndex( q )
+                            if  string.find( modname ,slotlist[i]) then
+                                v:RemoveModifierByName( modname )
+                            end
+                        end
+                        v:AddNewModifier(v, hItem, "modifier_"..hItem:GetName().."_hero", nil)
+                    end
+                end
             end
             break
         end

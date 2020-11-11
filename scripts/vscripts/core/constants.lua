@@ -11,6 +11,7 @@ FOG_OF_WAR_DISABLE = false
 
 SET_FORCE_HERO  = "npc_dota_hero_phoenix"
 tkUnitInfo      = LoadKeyValues('scripts/npc/npc_info_custom.txt')
+tkItemInfo      = LoadKeyValues('scripts/npc/npc_items_custom.txt')
 tkRounList      = LoadKeyValues('scripts/npc/npc_round_custom.txt')
 tkAutoInfo      = LoadKeyValues('scripts/npc/npc_abilities_autoinfo.txt')
 DamageKV        = LoadKeyValues("scripts/damage_table.kv")

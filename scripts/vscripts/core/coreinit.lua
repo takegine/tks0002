@@ -34,19 +34,6 @@ item_class = {
     GetBehavior = function (self)
         return DOTA_ABILITY_BEHAVIOR_PASSIVE
     end,
-
-
-    GetIntrinsicModifierName = function (self)
-        local parent = self:GetParent()
-        local name = "modifier_"..self:GetName()
-        if parent:GetName() == SET_FORCE_HERO then
-            return name.."_owner"
-        elseif parent:IsHero() then
-            return name.."_hero"
-        else
-            return name.."_unit"
-        end
-    end,
 }
 
 
