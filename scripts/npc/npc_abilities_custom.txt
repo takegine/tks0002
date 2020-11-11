@@ -6594,14 +6594,13 @@
 		"AbilityCastAnimation"   "ACT_DOTA_CAST_ABILITY_1"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
+		"AbilityCastPoint"	"0.3"
+		"AbilityCastRange"	"0"
+		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCooldown"	"12"
 		"AbilityManaCost"	"6 7 8 9 10 11 12 13 14 15"
 		"AbilityCastPoint"              "0.3"
 		"AOERadius"	"%radius"
-		"precache"
-		{
-			"particle"	"particles/unknown.vpcf"
-		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -6638,9 +6637,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
-		"ScriptFile"	"skill/hero_jieyin.lua"
-		"AbilityTextureName"	"wuguo\ability_jieyin"
-		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"AOERadius"	"%radius"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6666,6 +6663,9 @@
 	    "AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastPoint"	"0.3"
+		"AbilityCastRange"	"0"
+		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_1"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 		"AbilityCooldown"	"18 17 16 15 14 13 12 11 10 9"
@@ -6700,14 +6700,6 @@
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"	"1"
-        "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"400"
-			}
-		}
 	}
 	"skill_hero_zhiba"
 	{
@@ -7037,7 +7029,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"	"10"
