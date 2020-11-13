@@ -8208,10 +8208,10 @@
 	}
 	"skill_hero_gongjian"
 	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"skill/hero_gongjian.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE2"
-		"AbilityTextureName"			"qunxiong/ability_gongjian"
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"qunxiong/ability_gongjian"
+		"ScriptFile"	"skill/hero_gongjian.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"	
 		"AbilitySpecial"
@@ -8254,6 +8254,28 @@
 				"var_type"					"FIELD_FLOAT"
 				"duration"					"18.0"				
 			}
+		}
+	}
+	"skill_hero_qixing"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"god/ability_qixing"
+		"ScriptFile"	"skill/hero_qixing.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"count"	"7"
+			}	
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"heal"	"5"
+			}					
 		}
 	}
 }
