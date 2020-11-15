@@ -8278,4 +8278,37 @@
 			}					
 		}
 	}
+	"skill_hero_dawu"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"god/ability_dawu"
+		"ScriptFile"	"skill/hero_dawu.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"30 28 26 24 22 20 18 16 14 12"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"count"	"7"
+			}	
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"speed"	"60"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"radius"	"1024"
+			}				
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"6.0"
+			}									
+		}
+	}
 }
