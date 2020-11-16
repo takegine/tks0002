@@ -35,7 +35,7 @@
 		"HasInventory"	"1"
 		"DisableWearables"	"1"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
-		"StatusHealth"	"40"
+		"StatusHealth"	"500"
 		"CombatClassAttack"	"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"AttributeBaseStrength"	"0"
 		"AttributeStrengthGain"	"0"
