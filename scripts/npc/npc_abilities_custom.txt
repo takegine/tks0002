@@ -8311,4 +8311,37 @@
 			}									
 		}
 	}
+	"skill_hero_kuangfeng"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"god/ability_kuangfeng"
+		"ScriptFile"	"skill/hero_kuangfeng.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCooldown"	"17"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"count"	"7"
+			}			
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"hp_reduce"	"2 4 6 8 10 12 14 16 18 20"
+			}	
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"5"
+			}				
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"6.0"
+			}									
+		}
+	}	
 }
