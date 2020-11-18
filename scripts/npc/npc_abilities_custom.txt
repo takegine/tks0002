@@ -823,6 +823,7 @@
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_puck/puck_illusory_orb.vpcf"
+			"particle"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
 		}
 		"OnAbilityPhaseStart"
@@ -845,7 +846,7 @@
 				"ScriptFile"	"skill/total_xisuo"
 				"Function"	"tieji"
 				"Target"	"POINT"
-				"projectile_name"	"particles/units/heroes/hero_puck/puck_illusory_orb.vpcf"
+				"projectile_name"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
 			}
 		}
 		"OnProjectileHitUnit"
