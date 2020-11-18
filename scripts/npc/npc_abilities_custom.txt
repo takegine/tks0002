@@ -1610,7 +1610,7 @@
 			"modifier_skill_hero_qiaobian"
 			{
 				"Passive"	"1"
-				"IsHidden"	"0"
+				"IsHidden"	"1"
 				"Aura"	"modifier_skill_hero_qiaobian_buff"
 				"Aura_Radius"	"2000"
 				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"

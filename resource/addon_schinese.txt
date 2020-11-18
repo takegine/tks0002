@@ -493,7 +493,8 @@
 		"DOTA_Tooltip_ability_skill_hero_qiaobian"	"巧变"
 		"DOTA_Tooltip_ability_skill_hero_qiaobian_Description"	"提升周围友军单位%mana%的魔法恢复。张合每次攻击将窃取敌方当前生命值%lifesteal%%%的生命值，对BOSS最多吸取张合最大生命值%lifesteal%%%的生命值。首次攻击将复制敌方阵型。重复阵型效果不叠加，只取最高等级"
 		"DOTA_Tooltip_ability_skill_hero_qiaobian_Note0"	"<h1>五子良将</h1>\n张合首次发动时巧变能移除周围%radius%范围内敌人的阵型效果，并对敌人造成最大生命值%damage%%%的普通魔法伤害。"
-		
+		"DOTA_Tooltip_modifier_skill_hero_qiaobian_buff" 	"巧变"
+		"DOTA_Tooltip_modifier_skill_hero_qiaobian_buff_Description" 	"站在张合身边 魔法回复 +%fMODIFIER_PROPERTY_MANA_BONUS%"
 		"DOTA_Tooltip_ability_skill_hero_kongcheng"	"空城"
 		"DOTA_Tooltip_ability_skill_hero_kongcheng_Description"	"使得诸葛亮对所有的攻击免疫"
 		"DOTA_Tooltip_ability_skill_hero_kongcheng_duration"	"持续时间：\n"
