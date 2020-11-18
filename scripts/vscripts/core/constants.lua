@@ -7,7 +7,7 @@ TIME_BETWEEN_ROUND = 25
 TIME_BATTER_MAX    = 40
 SET_STARTING_GOLD  = 80000
 LOCAL_POPLATION    = 60
-FOG_OF_WAR_DISABLE = false
+FOG_OF_WAR_DISABLE = true
 
 SET_FORCE_HERO  = "npc_dota_hero_phoenix"
 tkUnitInfo      = LoadKeyValues('scripts/npc/npc_info_custom.txt')
