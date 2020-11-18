@@ -8,21 +8,27 @@ modifier_item_weapon_002_hero = modifier_item_weapon_002_hero or {}--给武将�
 modifier_item_weapon_002_unit = modifier_item_weapon_002_unit or {}--给民兵的效果
 
 
-function modifier_item_weapon_002_hero:OnCreated()
-	local ability = self:GetAbility()
-    local arrow_count = 2
-	local split_radius = ability:GetSpecialValueFor("p1")
-    local owner = self:GetParent()
-    if  not owner:IsRealHero() then
-        owner:AddNewModifier(owner, ability, "modifier_item_weapon_002_unit", {}) 
-    end
-end
+-- function modifier_item_weapon_002_hero:OnCreated()
+-- 	local ability = self:GetAbility()
+--     local arrow_count = 2
+-- 	local split_radius = ability:GetSpecialValueFor("p1")
+--     local owner = self:GetParent()
+--     if  not owner:IsRealHero() then
+--         owner:AddNewModifier(owner, ability, "modifier_item_weapon_002_unit", {}) 
+--     end
+-- end
 
 function modifier_item_weapon_002_hero:DeclareFunctions()
-	return {
-		MODIFIER_EVENT_ON_ATTACK,
-		MODIFIER_EVENT_ON_ORDER
-	}
+    if self:GetParent():IsRealHero() then
+        return {
+            MODIFIER_EVENT_ON_ATTACK,
+            MODIFIER_EVENT_ON_ORDER
+            }
+    else
+        return {
+            MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+            }
+    end
 end
 
 function modifier_item_weapon_002_hero:OnAttack(keys)
@@ -69,6 +75,12 @@ function modifier_item_weapon_002_hero:OnAttack(keys)
 	end
 end
 
+function modifier_item_weapon_002_hero:GetModifierAttackSpeedBonus_Constant()	
+    local ability = self:GetAbility()
+    local attack_speed  = ability:GetSpecialValueFor("p2")
+        return attack_speed        
+end
+
 function modifier_item_weapon_002_hero:OnOrder(keys)
 	if not IsServer() or keys.unit ~= self:GetParent() or keys.order_type ~= DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO or keys.ability ~= self:GetAbility() then return end
 	
@@ -82,20 +94,4 @@ end
 function modifier_item_weapon_002_hero:IsPurgable() return false end
 function modifier_item_weapon_002_hero:IsHidden()   return true  end
 function modifier_item_weapon_002_hero:IsDebuff()   return false end
-
-function modifier_item_weapon_002_unit:DeclareFunctions()
-	return {
-        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
-	}
-end
-
-function modifier_item_weapon_002_unit:GetModifierAttackSpeedBonus_Constant()	
-    local ability = self:GetAbility()
-    local attack_speed  = ability:GetSpecialValueFor("p2")
-        return attack_speed        
-end
-
-function modifier_item_weapon_002_unit:IsPurgable() return false end
-function modifier_item_weapon_002_unit:IsHidden()   return true  end
-function modifier_item_weapon_002_unit:IsDebuff()   return false end
 
