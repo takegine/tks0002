@@ -94,49 +94,49 @@
         }
     }
 
-    "npc_dota_hero_juggernaut"//神赵云
-    {
-        "1"
-        {
-            "name"  "skill_hero_longhun"
-            "deal"  "1"
-            "take"  "1"
-        }
-    }
+    // "npc_dota_hero_juggernaut"//神赵云
+    // {
+    //     "1"
+    //     {
+    //         "name"  "skill_hero_longhun"
+    //         "deal"  "1"
+    //         "take"  "1"
+    //     }
+    // }
 
-    "npc_dota_hero_shadow_shaman"//神司马
-    {
-        "1"
-        {
-            "name"  "skill_hero_lianpo"
-            "deal"  "1"
-            "take"  "0"
-        }
-    }
-    "npc_dota_hero_zuus"//神诸葛
-    {
-        "1"
-        {
-            "name"  "skill_hero_kuangfeng"
-            "deal"  "1"
-            "take"  "0"
-        }
-        "2"
-        {
-            "name"  "skill_hero_dawu"
-            "deal"  "0"
-            "take"  "1"
-        }
-    }
-    "npc_dota_hero_tinker"//神周瑜
-    {
-        "1"
-        {
-            "name"  "skill_hero_yeyan"
-            "deal"  "1"
-            "take"  "0"
-        }
-    }
+    // "npc_dota_hero_shadow_shaman"//神司马
+    // {
+    //     "1"
+    //     {
+    //         "name"  "skill_hero_lianpo"
+    //         "deal"  "1"
+    //         "take"  "0"
+    //     }
+    // }
+    // "npc_dota_hero_zuus"//神诸葛
+    // {
+    //     "1"
+    //     {
+    //         "name"  "skill_hero_kuangfeng"
+    //         "deal"  "1"
+    //         "take"  "0"
+    //     }
+    //     "2"
+    //     {
+    //         "name"  "skill_hero_dawu"
+    //         "deal"  "0"
+    //         "take"  "1"
+    //     }
+    // }
+    // "npc_dota_hero_tinker"//神周瑜
+    // {
+    //     "1"
+    //     {
+    //         "name"  "skill_hero_yeyan"
+    //         "deal"  "1"
+    //         "take"  "0"
+    //     }
+    // }
     "npc_dota_hero_razor"//吕蒙
     {
         "1"
