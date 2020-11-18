@@ -83,7 +83,12 @@ end
 
 modifier_player_lock=modifier_player_lock or {
     IsHidden = on,
-    DeclareFunctions = function (self ) return { MODIFIER_EVENT_ON_ATTACKED } end,
+    DeclareFunctions = function (self ) return { MODIFIER_EVENT_ON_ATTACK_FAIL,MODIFIER_EVENT_ON_ATTACKED } end,
+    OnAttackFail = function ( self, keys)
+        if not IsServer() then return end
+        SendOverheadEventMessage(nil, OVERHEAD_ALERT_EVADE, keys.target, 0, nil)
+        SendOverheadEventMessage(nil, OVERHEAD_ALERT_MISS, keys.attacker, 0, nil)
+    end,
     OnAttacked = function (self ,data)
         if not IsServer() then return end
         self.parent = self.parent or self:GetParent()
@@ -109,7 +114,7 @@ modifier_player_lock=modifier_player_lock or {
             [MODIFIER_STATE_ATTACK_IMMUNE]	=false,	--02攻击免疫
             [MODIFIER_STATE_SILENCED]	=false,	--03沉默，头上有沉默进度条
             [MODIFIER_STATE_MUTED]	=false,	--04锁闭，禁用物品，头上有锁闭进度条
-            [MODIFIER_STATE_STUNNED]	=false,	--05晕眩，头上有晕眩进度条
+            [MODIFIER_STATE_STUNNED]	=ready,	--05晕眩，头上有晕眩进度条
             [MODIFIER_STATE_HEXED]	=false,	--06妖术，头顶会有妖术进度条
             [MODIFIER_STATE_INVISIBLE]	=false,	--07隐身
             [MODIFIER_STATE_INVULNERABLE]	=false,	--08无敌
@@ -122,7 +127,7 @@ modifier_player_lock=modifier_player_lock or {
             [MODIFIER_STATE_CANNOT_TARGET_ENEMIES]	=false,	--15禁用单位目标命令
             [MODIFIER_STATE_CANNOT_MISS]	=false,	--16不会丢失，无视闪避
             [MODIFIER_STATE_SPECIALLY_DENIABLE]	=false,	--17可被反补
-            [MODIFIER_STATE_FROZEN]	=ready,	--18冰冻，动作会暂停
+            [MODIFIER_STATE_FROZEN]	=false,	--18冰冻，动作会暂停
             [MODIFIER_STATE_COMMAND_RESTRICTED]	=ready or bench and(plan or fight),	--19无法执行命令
             [MODIFIER_STATE_NOT_ON_MINIMAP]	= ready or bench,	--20没有小地图图标
             [MODIFIER_STATE_LOW_ATTACK_PRIORITY]	=false,	--21低攻击优先级
