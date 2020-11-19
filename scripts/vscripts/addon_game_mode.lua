@@ -1,7 +1,4 @@
 
-SET_FORCE_HERO = "npc_dota_hero_phoenix"
-tkUnitInfo     = LoadKeyValues('scripts/npc/npc_info_custom.txt')
-
 CAddonTemplateGameMode = CAddonTemplateGameMode or class({})
 
 require('root/ToolsFromX')
@@ -61,7 +58,6 @@ function CAddonTemplateGameMode:InitGameMode()
     CustomGameEventManager:RegisterListener( "createnewherotest", createnewherotest )
     CustomGameEventManager:RegisterListener("refreshlist",refreshlist)
 
-    self.DamageKV = LoadKeyValues("scripts/damage_table.kv")
     self.shiplist = LoadKeyValues("scripts/羁绊名汉化.kv")
     self.namelist = LoadKeyValues("resource/addon_schinese.txt")["Tokens"]
 
@@ -101,13 +97,12 @@ function CAddonTemplateGameMode:DamageFilter(filterTable)
         damage_new = damage_new /oldkang *newkang
     end
 
-    if not self.DamageKV
-    or not killerUnit.attack_type
+    if not killerUnit.attack_type
     then return true 
     end
 
     killedUnit.defend_type  = killedUnit.defend_type or "none"
-    local damage_multiplier = self.DamageKV[killerUnit.attack_type][killedUnit.defend_type] or 1
+    local damage_multiplier = DamageKV[killerUnit.attack_type][killedUnit.defend_type] or 1
 
     damage_new = damage_new * damage_multiplier
     local shield_damage = 0
