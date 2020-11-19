@@ -84,13 +84,13 @@ end
 modifier_player_lock=modifier_player_lock or {
     IsHidden = on,
     DeclareFunctions = function (self ) return { MODIFIER_EVENT_ON_ATTACK_FAIL,MODIFIER_EVENT_ON_ATTACKED } end,
-    OnAttackFail = function ( self, keys)
-        if not IsServer() then return end
-        SendOverheadEventMessage(nil, OVERHEAD_ALERT_EVADE, keys.target, 0, nil)
-        SendOverheadEventMessage(nil, OVERHEAD_ALERT_MISS, keys.attacker, 0, nil)
+    OnAttackFail = function ( self, data)
+        if not IsServer() or self:GetParent()~=data.attacker then return end
+        SendOverheadEventMessage(nil, OVERHEAD_ALERT_EVADE, data.target, 0, nil)
+        SendOverheadEventMessage(nil, OVERHEAD_ALERT_MISS, data.attacker, 0, nil)
     end,
     OnAttacked = function (self ,data)
-        if not IsServer() then return end
+        if not IsServer() or self:GetParent()~=data.attacker then return end
         self.parent = self.parent or self:GetParent()
         if  self.parent == data.attacker then
             self.parent.battleinfo.deal = self.parent
