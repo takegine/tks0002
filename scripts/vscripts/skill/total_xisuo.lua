@@ -437,18 +437,16 @@ function qiaobian(keys)
     SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, caster, backheal, nil)
         
     if not caster.bfirst_qiaobiao 
-    and target:GetTeamNumber()~= 3 then
+    and not target:IsOpposingSelf() then
         caster.bfirst_qiaobiao = true
         local queue_target = target:XinShi():GetItemInSlot(5)
-        local queue_caster = owner:GetItemInSlot(5)
         if queue_target then
             local modName =  "modifier_"..queue_target:GetName().."_hero"
-            if caster:HasModifier(modName ) then
-                local level = math.max(queue_target:GetLevel(), queue_caster:GetLevel())
-                while queue_caster:GetLevel() < level
-                do    queue_caster:lvlup()
+            if caster:IsOpposingSelf()
+            or owner:GetItemInSlot(5):GetLevel()<queue_target:GetLevel() then
+                if caster:HasModifier( modName ) then
+                    caster:RemoveModifierByName( modName )
                 end
-            else
                 caster:AddNewModifier( caster, queue_target, modName, {} )
                 if queue_target.needwaveup then
                     queue_target:needwaveup()
