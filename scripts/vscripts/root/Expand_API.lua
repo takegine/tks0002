@@ -87,3 +87,7 @@ function refreshlist()
         do CustomNetTables:SetTableValue( "hero_info", k, v )
     end
 end
+
+function CDOTA_BaseNPC:IsOpposingSelf()
+    return self:GetTeamNumber() == 3
+end
