@@ -5468,7 +5468,7 @@
 		}
 	}
 
-// 表表 7-19
+	// 表表 7-19
 	"skill_hero_zhiheng"
 	{
 		"BaseClass"	"ability_lua"
@@ -5645,7 +5645,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"ScriptFile"	"skill/hero_maqian.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 	}
@@ -5759,15 +5759,13 @@
 	{
 		"BaseClass"	"ability_lua"
 		"ScriptFile"	"skill/hero_taijun.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"	"10"
 		"LevelsBetweenUpgrades"	"1"
 	}
 
 	"skill_hero_tianyi"
 	{
-		// General
-		// -------------------------------------------------------------------------------------------------------------
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"wuguo/ability_tianyi"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET|DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -5784,21 +5782,11 @@
 		"AbilityCastPoint"	"0.3 0.3 0.3"
 		"AbilityCooldown"	"22 21 20 19 18 17 16 15 14 13 12"
 		"AbilityManaCost"	"6 7 8 9 10 11 12 13 14 15 16"
-		// Casting
-		// -------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"	"275"
 		"AbilityChannelTime"	"4.0 4.0 4.0"
 		"AoERadius"	"420"
-		// Precache
-		// -------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
-			"soundfile"	"sounds/weapons/hero/enigma/black_hole_loop.vsnd"
-			"soundfile"	"sounds/weapons/hero/enigma/black_hole_stop.vsnd"
-			"soundfile"	"sounds/weapons/hero/juggernaut/bladefury_start_loop.vsnd"
-			"soundfile"	""
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
 			"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_ward_create.vpcf"
 		}
 		"OnSpellStart"
@@ -5818,11 +5806,6 @@
 			{
 				"Target"	"CASTER"
 				"ModifierName"	"modifier_black_hole_datadriven_2"
-			}
-			"FireSound"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"sounds/weapons/hero/juggernaut/bladefury_start_loop.vsnd"
 			}
 		}
 		"OnChannelFinish"
@@ -5845,24 +5828,11 @@
 				"Duration"	"%duration"
 				"OnCreated"
 				{
-					"FireSound"
-					{
-						"EffectName"	"Hero_Enigma.Black_Hole"
-						"Target"	"CASTER"
-					}
 					"RunScript"
 					{
 						"ScriptFile"	"scripts/vscripts/skill/hero_tianyi.lua"
 						"Function"	"MoveUnits"
 						"Target"	""
-					}
-				}
-				"OnDestroy"
-				{
-					"FireSound"
-					{
-						"EffectName"	"Hero_Enigma.Black_Hole.Stop"
-						"Target"	"TARGET"
 					}
 				}
 				"ThinkInterval"	"%move_tick_rate"
@@ -5977,7 +5947,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"ScriptFile"	"skill/hero_zhousi.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -5990,6 +5960,7 @@
 		// General
 		// -------------------------------------------------------------------------------------------------------------
 		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"wuguo/ability_lianying"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -6014,7 +5985,6 @@
 			"particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf"
 			"particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning_head.vpcf"
 			"soundfile"	"sounds/weapons/hero/zuus/arc_lightning.vsnd"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
 		}
 		"OnSpellStart"
 		{
@@ -6022,11 +5992,6 @@
 			{
 				"ModifierName"	"modifier_arc_lightning_datadriven"
 				"Target"	"TARGET"
-			}
-			"FireSound"
-			{
-				"EffectName"	"Hero_Zuus.ArcLightning.Cast"
-				"Target"	"CASTER"
 			}
 			"RunScript"
 			{
@@ -6303,9 +6268,11 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 	}
+
 	"skill_hero_jiuchi"
 	{
 		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"qunxiong/ability_jiuchi"
 		"ScriptFile"	"skill/hero_jiuchi.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -6444,7 +6411,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"ScriptFile"	"skill/hero_diaogui.lua"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"MaxLevel"	"1"
@@ -6473,10 +6440,11 @@
 		"RequiredLevel"	"1"
 		"LevelsBetweenUpgrades"	"1"
 	}
+
 	"skill_hero_yeyan"
 	{
 		"BaseClass"	"ability_lua"
-		"AbilityTextureName"	""
+		"AbilityTextureName"	"god/ability_yeyan"
 		"ScriptFile"	"skill/hero_yeyan.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -6500,6 +6468,7 @@
 	"skill_hero_qinyin"
 	{
 		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"god/ability_qinyin"
 		"ScriptFile"	"skill/hero_qinyin.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -6525,6 +6494,7 @@
 	"skill_hero_feiying"
 	{
 		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"god/ability_feiying"
 		"ScriptFile"	"skill/hero_feiying.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -6535,6 +6505,7 @@
 	"skill_hero_guixin"
 	{
 		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"god/ability_guixin"
 		"ScriptFile"	"skill/hero_guixin.lua"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
