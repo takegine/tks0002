@@ -15,5 +15,6 @@ tkItemInfo      = LoadKeyValues('scripts/npc/npc_items_custom.txt')
 tkRounList      = LoadKeyValues('scripts/npc/npc_round_custom.txt')
 tkAutoInfo      = LoadKeyValues('scripts/npc/npc_abilities_autoinfo.txt')
 DamageKV        = LoadKeyValues("scripts/damage_table.kv")
+VipList         = LoadKeyValues("scripts/npc/vipcost.kv")
 
 OUT_SIDE_VECTOR = Vector(8192, -8192, 8192)
