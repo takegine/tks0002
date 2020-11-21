@@ -10,6 +10,10 @@ end
 
 modifier_attack=class({})
 
+function modifier_attack:IsHidden()
+	return true 
+end
+
 function modifier_attack:DeclareFunctions()
 	return {
 	MODIFIER_EVENT_ON_ATTACK_LANDED
