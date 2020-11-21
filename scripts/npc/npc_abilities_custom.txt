@@ -5468,7 +5468,7 @@
 		}
 	}
 
-	// 表表 7-19
+// 表表 7-19
 	"skill_hero_zhiheng"
 	{
 		"BaseClass"	"ability_lua"
