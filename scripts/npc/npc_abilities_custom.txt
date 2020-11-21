@@ -6524,7 +6524,76 @@
 				"attackspeed"	"33 36 39 42 45 48 51 54 57 60"
 			}
 		}
-	}		
+	}
+
+	"skill_hero_longhun"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"god/ability_longhun"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_DEAD | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"10"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCastPoint"	"0.3"
+		"AbilityCooldown"	"2"
+		"AbilityManaCost"	"0"
+		"AbilityCastRange"	"2000"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_lianying"
+				"Target"	"TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"skill/hero_longhun.lua"
+				"Function"	"NewInstance"
+				"Target"	""
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_lianying"
+			{
+				"IsHidden"	"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"skill/hero_longhun.lua"
+						"Function"	"LightningJump"
+						"particle"	"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_fireblast.vpcf"
+						"Target"	""
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"900 990 1080 1170 1260 1350 1440  1530 1620 1710"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"jump_count"	"3 3 3 4 4 4 5 5 5 6"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"jump_delay"	"0.1"
+			}
+		}
+	}
+
 //
 // 临天 7-19	
 	"skill_hero_sunjiang"
