@@ -49,7 +49,10 @@ function CDOTA_BaseNPC:XinShi()
         local hero = PlayerResource:GetSelectedHeroEntity(id)
         return hero
     else
-        return {ship={}}
+        return {
+            ship={},
+            GetTeamNumber=function(self) return 3 end,
+        }
     end
 end
 
