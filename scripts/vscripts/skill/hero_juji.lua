@@ -1,8 +1,6 @@
 
 LinkLuaModifier("modifier_skill_hero_juji",'skill/hero_juji.lua',0)
 
-
-
 skill_hero_juji = class({})  
 
 function skill_hero_juji:OnSpellStart()
@@ -18,11 +16,10 @@ function skill_hero_juji:OnSpellStart()
 target:AddNewModifier(caster, self, 'modifier_skill_hero_juji', {duration=duration})  
 
 
-
 caster.juji_amountlist = caster.juji_amountlist or {}
 table.insert(caster.juji_amountlist , target)
 
-        caster:StartGesture(ACT_DOTA_CAST_ABILITY_2)
+caster:StartGesture(ACT_DOTA_CAST_ABILITY_2)
 end
 
 modifier_skill_hero_juji=class({})  
@@ -45,8 +42,6 @@ function modifier_skill_hero_juji:CheckState()
     return state
 end
 
-
-
 function modifier_skill_hero_juji:GetEffectName()
     return
         'particles/units/heroes/hero_sniper/sniper_crosshair.vpcf'     
@@ -55,16 +50,3 @@ end
 function modifier_skill_hero_juji:GetEffectAttachType()
     return PATTACH_OVERHEAD_FOLLOW
 end
-
---function modifier_skill_hero_juji:GetOverrideAnimation(params)
-   -- return ACT_DOTA_DISABLED
---end
---function modifier_skill_hero_juji:DeclareFunctions()
-  --  local funs={
- --  MODIFIER_PROPERTY_OVERRIDE_ANIMATION
- --   }
---end
---local pfxname='particles/units/heroes/hero_slardar/slardar_amp_damage.vpcf'
---local pfx = ParticleManager:CreateParticle( pfxname, PATTACH_OVERHEAD_FOLLOW, target)
-       -- ParticleManager:SetParticleControl(pfx, 0, Vector(n, n, n))
-        --ParticleManager:ReleaseParticleIndex(pfx)

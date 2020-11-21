@@ -97,7 +97,7 @@ function modifier_yeyan:OnDestroy()
     local rollenemyint = RandomInt(1, #enemy)  
     local rollenmey = enemy[rollenemyint]
 
-    rollenmey:AddNewModifier(caster, ability, "modifier_yeyan", {duration=10})
+    rollenmey:AddNewModifier(caster, ability, "modifier_yeyan", {})
     end
 end
 
