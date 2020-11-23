@@ -6,7 +6,7 @@
 * @Author: 白喵
 * @Date: 2020-07-21 22:49:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-09-28 05:58:32
+* @LastEditTime: 2020-11-23 12:51:18
 --]]
 
 --[[
@@ -87,7 +87,8 @@ end
         local ability = keys.ability
         local jump_delay = ability:GetLevelSpecialValueFor("jump_delay", (ability:GetLevel() -1))
         local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() -1))
-        
+        local caster_team = caster:GetTeamNumber()
+        local target_vector = target:GetAbsOrigin()
         -- Applies damage to the current target
         --ApplyDamage({victim = target, attacker = caster, damage = ability:GetAbilityDamage(), damage_type = ability:GetAbilityDamageType()})
         if not ability.effect then
@@ -124,13 +125,13 @@ end
             -- Checks if there are jumps left
             if ability.jump_count[current] > 0 then
                 -- Finds units in the radius to jump to
-                local units = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), 0, false)
+                local units = FindUnitsInRadius(caster_team, target_vector, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), 0, false)
                 local closest = radius
                 local new_target
                 for i,unit in ipairs(units) do
                     -- Positioning and distance variables
                     local unit_location = unit:GetAbsOrigin()
-                    local vector_distance = target:GetAbsOrigin() - unit_location
+                    local vector_distance = target_vector - unit_location
                     local distance = (vector_distance):Length2D()
                     -- Checks if the unit is closer than the closest checked so far
                     if distance < closest then
