@@ -9,28 +9,19 @@ modifier_item_defend_027_hero = modifier_item_defend_027_hero or {}--给武将�
 modifier_item_defend_027_unit = modifier_item_defend_027_unit or {}--给民兵的效果
 
 
-function modifier_item_defend_027_hero:DeclareFunctions()
-    return{
-        MODIFIER_EVENT_ON_ATTACK_LANDED
-    }
-end
-
-function modifier_item_defend_027_hero:OnAttackLanded(keys)
+function modifier_item_defend_027_hero:needwaveup()
 
     local parent=self:GetParent()
     local ability=self:GetAbility()
     local percent=ability:GetSpecialValueFor("p1")
-    if not IsServer() then return  end
-    if keys.target~=parent then return end
 
     local hModiferTable = {
-        tree     = 50,
-        duration = 7
+        tree     = percent,
+        duration = 50
     }
     parent:AddNewModifier( parent, ability , "modifier_defend_big", hModiferTable )
 
 end
-
 
 
 
@@ -43,4 +34,6 @@ end
         land     = 10，
         duration = 7
     }
-    hCaster:AddNewModifier( hCaster, hAbility , "modifier_defend_big", hModiferTable ) ]]
+    hCaster:AddNewModifier( hCaster, hAbility , "modifier_defend_big", hModiferTable )
+``` ]]
+
