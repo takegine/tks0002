@@ -1,14 +1,14 @@
 
  LinkLuaModifier("modifier_skill_hero_miss",'skill/hero_chengjie.lua',0)
 
-skill_hero_chengjie=class({})  --声明一个技能 
+skill_hero_chengjie=class({})  
 
 
 
 function skill_hero_chengjie:OnSpellStart()
 
-    local caster=self:GetCaster()  --获取施法着
-    local target=self:GetCursorTarget() --获取施法目标
+    local caster=self:GetCaster()  
+    local target=self:GetCursorTarget() 
     local owner  = caster:XinShi()  
     local damage = self:GetLevelSpecialValueFor("damage", self:GetLevel()-1)
 
@@ -32,13 +32,9 @@ function skill_hero_chengjie:OnSpellStart()
             center_z = caster:GetAbsOrigin().z
         }
         target:AddNewModifier( caster, nil, "modifier_knockback", knockbackModifierTable )
-    
-
         damage = damage *2
-
     end
-
-    
+   
     local  damage_table = {
         attacker     = dummy,
         victim       = target,
@@ -52,6 +48,9 @@ end
 
 modifier_skill_hero_miss=class({})
 
+function modifier_skill_hero_miss:IsHidden()
+    return true 
+end 
 
 function modifier_skill_hero_miss:DeclareFunctions()
     return{
