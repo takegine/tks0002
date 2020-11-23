@@ -8302,6 +8302,14 @@
 				"Function"		"mingce_on_death"
 			}
 		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack"					"80 160 240 320 400 480 560 640 720 800"
+			}
+		}		
 	}
 	"skill_hero_gongjian"
 	{
@@ -8440,5 +8448,27 @@
 				"duration"	"6.0"
 			}									
 		}
-	}	
+	}
+	"skill_hero_wuhun"
+	{
+		"BaseClass"	"ability_lua"
+		"AbilityTextureName"	"god/ability_wuhun"
+		"ScriptFile"	"skill/hero_wuhun.lua"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"	"10"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"24 28 32 36 40 44 48 52 56 60"
+			}	
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"flag"	"2"
+			}					
+		}
+	}		
 }
