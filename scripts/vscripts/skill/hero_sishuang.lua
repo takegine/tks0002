@@ -6,14 +6,20 @@ LinkLuaModifier("modifier_sishuang_buff",'skill/hero_sishuang.lua',0)
 
 skill_hero_sishuang=class({})
 
-function skill_hero_sishuang:GetIntrinsicModifierName()  
-    return "modifier_sishuang_aura"
+function skill_hero_sishuang:needwaveup()
+
+    local caster=self:GetCaster()
+    local owner =caster:XinShi()
+    if owner.ship['sishuang']  then 
+    caster:AddNewModifier(caster, self, "modifier_sishuang_aura", {})
+    end
 end
-
-
 
 modifier_sishuang_aura=class({})
 
+function modifier_sishuang_aura:IsHidden()
+    return true
+end 
 
 function modifier_sishuang_aura:IsAura()
     return true
@@ -64,10 +70,10 @@ function modifier_sishuang_buff:OnAttack(keys)
     local parent=self:GetParent()
     local target=keys.attacker
     local caster=self:GetCaster()
-    local owner =caster:XinShi()
+ 
  if not IsServer() then  return  end
  if keys.target~=parent then return end
- if owner.ship['sishuang']  then 
+ 
  local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, parent, parent, parent:GetTeamNumber() )
  dummy.attack_type  = "fire"
  dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
@@ -81,7 +87,7 @@ function modifier_sishuang_buff:OnAttack(keys)
     damage_flags = DOTA_DAMAGE_FLAG_NONE
 }
     ApplyDamage(damage_table)
-else return end
+
 end
 
 

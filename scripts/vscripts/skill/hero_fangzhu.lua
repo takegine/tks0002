@@ -4,8 +4,9 @@ LinkLuaModifier("modifier_fangzhu_buff",'skill/hero_fangzhu.lua',0)
 
 skill_hero_fangzhu=class({})
 
-function skill_hero_fangzhu:GetIntrinsicModifierName()  
-    return "modifier_fangzhu_aura"
+function skill_hero_fangzhu:needwaveup()  
+   local caster=self:GetCaster()
+   caster:AddNewModifier(caster, self, "modifier_fangzhu_aura", {})
 end
 
 modifier_fangzhu_aura=class({})

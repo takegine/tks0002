@@ -1,6 +1,4 @@
 
-
-
 LinkLuaModifier("modifier_songwei_aura",'skill/hero_songwei.lua',0)
 LinkLuaModifier("modifier_songwei",'skill/hero_songwei.lua',0)
 
@@ -9,7 +7,6 @@ skill_hero_songwei=class({})
 function skill_hero_songwei:needwaveup()
 
     local caster=self:GetCaster()
-    --local ability=self:GetAbility() 
     local target_types = self:GetAbilityTargetType()
     local target_flags = self:GetAbilityTargetFlags()
     
@@ -23,7 +20,6 @@ function skill_hero_songwei:needwaveup()
     0, 
     true)
 
- 
     local count = 0
     local namelist = {}
     for k,v in pairs(friend) do
@@ -33,24 +29,9 @@ function skill_hero_songwei:needwaveup()
             count = count + 1
         end
     end
-    self.count = count
 
-  local enemy = FindUnitsInRadius(caster:GetTeamNumber(), 
-  caster:GetOrigin(), 
-  nil, 
-  2000,
-  DOTA_UNIT_TARGET_TEAM_ENEMY, 
-  target_types, 
-  target_flags, 
-  0, 
-  true)
-  for k,v in pairs(enemy) do
-    local mod= v:AddNewModifier(caster, self, 'modifier_songwei', {})
+   local mod= caster:AddNewModifier(caster, self, 'modifier_songwei_aura', {})
    mod:SetStackCount(count)
-  end 
---[[   local mod=caster:AddNewModifier(caster, self, 'modifier_songwei', {})
-  mod:SetStackCount(count)
-  caster:AddNewModifier(caster, self, 'modifier_songwei_aura', {}) ]]
 
  end
 
@@ -60,26 +41,19 @@ function skill_hero_songwei:needwaveup()
  function modifier_songwei:DeclareFunctions()
      return{
          MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-     --    MODIFIER_EVENT_ON_TAKEDAMAGE
      }
  end
  
  function modifier_songwei:GetModifierMoveSpeedBonus_Percentage()
-     return -self:GetStackCount()*3
+    local caster=self:GetCaster()
+    local ability=self:GetAbility()
+    local modifierName = "modifier_songwei_aura"
+    local current_stack=caster:GetModifierStackCount(modifierName, caster)
+    return -current_stack*3
  end
  
---[[ function modifier_songwei:OnTakeDamage(keys)
-   local  caster=self:GetCaster()
-   local parent=self:GetParent()
-   
-   if not IsServer() then  return end
-   if keys.unit~=caster then  return end
-   --print(caster:GetUnitName())
-   if caster:GetHealth()<0 then
-parent:RemoveModifierByName('modifier_songwei')
-   end
-end ]]
---[[  modifier_songwei_aura=class({})
+
+modifier_songwei_aura=class({})
 
 function modifier_songwei_aura:IsAura()
     return true
@@ -94,7 +68,7 @@ function modifier_songwei_aura:IsDebuff()
 end
 
 function modifier_songwei_aura:GetAuraRadius()
-    return 800
+    return 2000
 end
 
 function modifier_songwei_aura:GetAuraSearchTeam()
@@ -112,6 +86,5 @@ end
 function modifier_songwei_aura:IsHidden()
     return false
 end
-  ]]
 
- 
+

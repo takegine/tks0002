@@ -4,9 +4,10 @@ LinkLuaModifier("modifier_skill_hero_roulin",'skill/hero_roulin.lua',0)
 LinkLuaModifier("modifier_skill_hero_shanbi",'skill/hero_roulin.lua',0)
 skill_hero_roulin=class({})
 
-function skill_hero_roulin:GetIntrinsicModifierName()  
-    return "modifier_skill_hero_roulin"
-end 
+function skill_hero_roulin:needwaveup()  
+    local caster=self:GetCaster()
+    caster:AddNewModifier(caster, self, "skill_hero_roulin", {})
+ end
 
 
 modifier_skill_hero_roulin=class({})
@@ -23,16 +24,13 @@ end
 
 function modifier_skill_hero_roulin:OnAttackLanded(keys)
 
-local ability=self
 local caster=self:GetCaster()
 local modifierName = "modifier_skill_hero_shanbi"
 local ability=self:GetAbility()
-local count
 local current_stack=caster:GetModifierStackCount(modifierName, ability)
 if keys.attacker~= caster then  return end
 if not IsServer() then  return end
 
-self.count = current_stack*5
 
 if caster:HasModifier(modifierName)  and current_stack<=9  then
 
