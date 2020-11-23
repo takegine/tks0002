@@ -95,12 +95,3 @@ function LightningJump(keys)
 		ParticleManager:SetParticleControl(lightningBolt,1,Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))   
 	end
 	
-	function SiYing(keys)
-
-	local caster=keys.caster
-	local ability=keys.ability
-	local owner  = caster:XinShi()
-	if  owner.ship['siying'] then  
-    ability:EndCooldown()
-    end 
-end
