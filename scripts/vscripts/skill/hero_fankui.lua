@@ -6,17 +6,16 @@ LinkLuaModifier("modifier_fankui_aura",'skill/hero_fankui.lua',0)
 
 skill_hero_fankui=class({})
 
-function skill_hero_fankui:GetIntrinsicModifierName()  --声明技能实践  技能释放
-    return "modifier_fankui_aura"
+function skill_hero_fankui:needwaveup()  
+    local caster=self:GetCaster()
+    caster:AddNewModifier(caster, self, "modifier_fankui_aura", {})
 end
 
 
 modifier_fankui_buff=class({})
 
-
 function modifier_fankui_buff:DeclareFunctions()
     return{
-
         MODIFIER_EVENT_ON_ATTACK  
     }
 end
@@ -27,14 +26,12 @@ function modifier_fankui_buff:OnAttack(keys)
     local target=keys.attacker
     local caster=self:GetCaster()
     local owner =caster:XinShi()
-    local  chance=ability:GetLevel()*3+20
+    local  chance=ability:GetSpecialValueFor('percent')
  
     if keys.target~=parent then return end
     if RollPercentage(chance)  then
-    local mod= target:AddNewModifier(caster, ability, "modifier_fankui_jiansu", {duration=3})
-    
+    local mod= target:AddNewModifier(caster, ability, "modifier_fankui_jiansu", {duration=3})   
     mod:SetStackCount(owner.ship['liaodi'] and -2 or -1)
-
 end
 end
 
