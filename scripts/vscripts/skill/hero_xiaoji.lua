@@ -3,7 +3,7 @@
 * @Author: ,: 白喵
 * @Date: ,: 2020-07-26 19:50:40
 * @LastEditors: 白喵
-* @LastEditTime: 2020-10-21 22:35:31
+* @LastEditTime: 2020-11-23 14:31:10
 --]]
 
 
@@ -68,6 +68,9 @@ end
 
 function modifier_hero_xiaoji2:GetModifierDamageOutgoing_Percentage()
     local ability = self:GetAbility()
+    if not ability then
+        return
+    end
     return ability:GetSpecialValueFor("attack")
 end
 
