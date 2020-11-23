@@ -8,8 +8,9 @@ LinkLuaModifier("modifier_xingshang_damage",'skill/hero_xingshang.lua',0)
 
 skill_hero_xingshang=class({})
 
-function skill_hero_xingshang:GetIntrinsicModifierName()
-    return "modifier_xingshang"
+function skill_hero_xingshang:needwaveup()
+    local caster=self:GetCaster()
+    caster:AddNewModifier(caster, self, "modifier_xingshang", {})
 end
 
 modifier_xingshang=class({})
@@ -56,22 +57,6 @@ end )
     caster:AddNewModifier(caster,ability,"modifier_xingshang_armor",{})
 end )
 
-else if keys.damage>=caster:GetHealth() and not ability:IsCooldownReady()   then
-    --print(caster:GetUnitName())
-
-    local enemy = FindUnitsInRadius(caster:GetTeamNumber(), 
-    caster:GetOrigin(), 
-    nil, 
-    2000,
-    DOTA_UNIT_TARGET_TEAM_ENEMY, 
-    DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
-    target_flags, 
-    0, 
-    true)
-    for k,v in pairs(enemy) do
-    v:RemoveModifierByName('modifier_songwei')
-    end
-end
 end
 end
 
@@ -120,8 +105,8 @@ function modifier_xingshang_mana:OnAttack(keys)
  --if not IsServer() then  return end
  if caster ~= keys.target then return end
 
-keys.attacker:SetMana(keys.attacker:GetMana()-5)   --(keys.target:GetMana()-5)
-caster:SetMana(caster:GetMana()+5)      --   caster:GetMana()+5
+keys.attacker:SetMana(keys.attacker:GetMana()-5)  
+caster:SetMana(caster:GetMana()+5)  
 
 end
 
@@ -130,7 +115,7 @@ modifier_xingshang_damage=class({})
 
 function modifier_xingshang_damage:GetEffectName()
     return
-        'particles/units/heroes/hero_enigma/enigma_ambient_stars_b.vpcf'     
+        'particles/econ/events/fall_major_2015/teleport_start_fallmjr_2015_lvl2_black.vpcf'     
 end
 
 function modifier_xingshang_damage:GetEffectAttachType()
