@@ -50,13 +50,13 @@ function modifier_sishuang_aura:GetModifierAura()
 end
 
 function modifier_sishuang_aura:IsHidden()
-    return false
+    return true
 end
 
 modifier_sishuang_buff=class({})
 
 function modifier_sishuang_buff:IsHidden()
-    return  true
+    return  false
 end
 
 function modifier_sishuang_buff:DeclareFunctions()

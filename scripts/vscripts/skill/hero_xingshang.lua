@@ -15,6 +15,10 @@ end
 
 modifier_xingshang=class({})
 
+function modifier_xingshang:IsHidden()
+    return true
+end
+
 function modifier_xingshang:DeclareFunctions()
     return{
         MODIFIER_EVENT_ON_TAKEDAMAGE

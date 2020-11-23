@@ -1,6 +1,6 @@
 
 LinkLuaModifier("modifier_fangzhu_aura",'skill/hero_fangzhu.lua',0)
-LinkLuaModifier("modifier_fangzhu_buff",'skill/hero_fangzhu.lua',0)
+LinkLuaModifier("modifier_fangzhu_buff_mana",'skill/hero_fangzhu.lua',0)
 
 skill_hero_fangzhu=class({})
 
@@ -11,6 +11,9 @@ end
 
 modifier_fangzhu_aura=class({})
 
+function modifier_fangzhu_aura:IsHidden()
+    return false
+end
 
 function modifier_fangzhu_aura:IsAura()
     return true
@@ -38,26 +41,23 @@ function modifier_fangzhu_aura:GetAuraSearchType()
 end 
 
 function modifier_fangzhu_aura:GetModifierAura()
-    return 'modifier_fangzhu_buff'
+    return 'modifier_fangzhu_buff_mana'
 end
 
-function modifier_fangzhu_aura:IsHidden()
+
+modifier_fangzhu_buff_mana=class({})
+
+function modifier_fangzhu_buff_mana:IsHidden()
     return false
-end
-
-modifier_fangzhu_buff=class({})
-
-function modifier_fangzhu_buff:IsHidden()
-    return true
 end 
 
-function modifier_fangzhu_buff:DeclareFunctions()
+function modifier_fangzhu_buff_mana:DeclareFunctions()
     return{
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT
     }
 end
 
-function modifier_fangzhu_buff:GetModifierConstantManaRegen()
+function modifier_fangzhu_buff_mana:GetModifierConstantManaRegen()
     local caster=self:GetCaster()
     return -caster:GetLevel()
 end

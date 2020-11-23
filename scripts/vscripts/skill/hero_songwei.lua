@@ -84,7 +84,7 @@ function modifier_songwei_aura:GetModifierAura()
 end
 
 function modifier_songwei_aura:IsHidden()
-    return false
+    return true
 end
 
 

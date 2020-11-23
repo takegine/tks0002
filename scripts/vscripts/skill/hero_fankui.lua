@@ -27,7 +27,6 @@ function modifier_fankui_buff:OnAttack(keys)
     local caster=self:GetCaster()
     local owner =caster:XinShi()
     local  chance=ability:GetSpecialValueFor('percent')
- 
     if keys.target~=parent then return end
     if RollPercentage(chance)  then
     local mod= target:AddNewModifier(caster, ability, "modifier_fankui_jiansu", {duration=3})   
@@ -37,8 +36,9 @@ end
 
 
 modifier_fankui_jiansu=class({})
+
 function modifier_fankui_jiansu:IsHidden()
-    return true
+    return false
 end
 
 function modifier_fankui_jiansu:DeclareFunctions()
