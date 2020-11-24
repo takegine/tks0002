@@ -615,7 +615,6 @@
 		"StatusManaRegen"	"0"
 		"BountyGoldMin"	"95"
 		"BountyGoldMax"	"111"
-		"vscripts"		"units/liubei"	
 
 	}
 

@@ -3,3 +3,7 @@ resource/word_filter_cache_1.dat
 resource/addon_english.txt
 panorama/localization/addon_english.txt
 .vscode
+.废弃
+.dota2editor/backup
+模型/*
+特效/*
