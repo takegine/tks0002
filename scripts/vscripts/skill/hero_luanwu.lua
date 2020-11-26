@@ -30,78 +30,79 @@ function modifier_skill_hero_luanwu:DeclareFunctions()
 end
 
 function modifier_skill_hero_luanwu:OnAttack(keys)
+    if IsServer() then
+        local caster    = self:GetCaster()
+        local attacker  = keys.attacker
+        local parent    = self:GetParent()
+        local target    = keys.target
+        local point  = target:GetOrigin()
+        local ability = self:GetAbility()
+        local owner = caster:XinShi()  
 
-    local caster    = self:GetCaster()
-    local attacker  = keys.attacker
-    local parent    = self:GetParent()
-    local target    = keys.target
-    local point  = target:GetOrigin()
-    local ability = self:GetAbility()
-    local owner = caster:XinShi()  
+        local particle_luanwu = "particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf"
+        local modifier_luanwu_debuff = "modifier_luanwu_debuff"
+        local duration = 3
+        local radius = 200
 
-    local particle_luanwu = "particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf"
-    local modifier_luanwu_debuff = "modifier_luanwu_debuff"
-    local duration = 3
-    local radius = 200
+        if owner.ship['dushi'] then
+            CreateModifierThinker(caster, ability, "modifier_luanwu_du",{duration = 9} , point, parent:GetTeamNumber(), false)
+        end
 
-    if owner.ship['dushi'] then
-        CreateModifierThinker(caster, ability, "modifier_luanwu_du",{duration = 9} , point, parent:GetTeamNumber(), false)
-    end
+        if keys.attacker == self:GetParent() 
+        and self:GetAbility():IsFullyCastable() 
+        and not self:GetParent():IsIllusion() 
+        and not self:GetParent():PassivesDisabled()  
+        then
 
-    if keys.attacker == self:GetParent() 
-    and self:GetAbility():IsFullyCastable() 
-    and not self:GetParent():IsIllusion() 
-    and not self:GetParent():PassivesDisabled()  
-    then
+            local damage_type  = ability:GetAbilityDamageType()   
+            local target_team  = ability:GetAbilityTargetTeam()
+            local target_types = ability:GetAbilityTargetType()
+            local target_flags = ability:GetAbilityTargetFlags()
+            local damage       = ability:GetSpecialValueFor("aoe_damage")
 
-        local damage_type  = ability:GetAbilityDamageType()   
-        local target_team  = ability:GetAbilityTargetTeam()
-        local target_types = ability:GetAbilityTargetType()
-        local target_flags = ability:GetAbilityTargetFlags()
-        local damage       = ability:GetSpecialValueFor("aoe_damage")
+            local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )  
+            dummy.attack_type  = "electrical"
+            dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
 
-        local dummy = CreateUnitByName( "npc_damage_dummy",OUT_SIDE_VECTOR, false, caster, caster, caster:GetTeamNumber() )  
-        dummy.attack_type  = "electrical"
-        dummy:AddNewModifier(dummy, nil, 'modifier_kill', {duration = 0.1} )
+            target:EmitSound("Hero_Crystal.CrystalNova")
 
-        target:EmitSound("Hero_Crystal.CrystalNova")
+            local pfx = ParticleManager:CreateParticle( particle_luanwu, PATTACH_ABSORIGIN, target )
+            ParticleManager:SetParticleControl( pfx, 0, target:GetOrigin() )
+            ParticleManager:SetParticleControl( pfx, 1, Vector(200,200,200) )
+            ParticleManager:ReleaseParticleIndex( pfx )
 
-        local pfx = ParticleManager:CreateParticle( particle_luanwu, PATTACH_ABSORIGIN, target )
-        ParticleManager:SetParticleControl( pfx, 0, target:GetOrigin() )
-        ParticleManager:SetParticleControl( pfx, 1, Vector(200,200,200) )
-        ParticleManager:ReleaseParticleIndex( pfx )
+            local enemies = FindUnitsInRadius(parent:GetTeamNumber(), 
+                                            target:GetOrigin(),
+                                            nil, 
+                                            200, 
+                                            target_team, 
+                                            target_types, 
+                                            target_flags, 
+                                            0,
+                                            true)
 
-        local enemies = FindUnitsInRadius(parent:GetTeamNumber(), 
-                                        target:GetOrigin(),
-                                        nil, 
-                                        200, 
-                                        target_team, 
-                                        target_types, 
-                                        target_flags, 
-                                        0,
-                                        true)
+            local  damage_table = {
+                attacker     = dummy,
+                ability      = ability,
+                damage_type  = damage_type,
+                damage_flags = DOTA_DAMAGE_FLAG_NONE
+            }
 
-        local  damage_table = {
-            attacker     = dummy,
-            ability      = ability,
-            damage_type  = damage_type,
-            damage_flags = DOTA_DAMAGE_FLAG_NONE
-        }
+            for key,unit in pairs(enemies) do
+                local debuff = unit:AddNewModifier(caster, ability, modifier_luanwu_debuff, { duration=3})
+                if unit ~= keys.target then 
+                    damage_table.damage = damage
+                else
+                    damage_table.damage = damage*1.5
+                end
 
-        for key,unit in pairs(enemies) do
-            local debuff = unit:AddNewModifier(caster, ability, modifier_luanwu_debuff, { duration=3})
-            if unit ~= keys.target then 
-                damage_table.damage = damage
-            else
-                damage_table.damage = damage*1.5
+                damage_table.victim = unit
+                ApplyDamage(damage_table) 
             end
-
-            damage_table.victim = unit
-            ApplyDamage(damage_table) 
-		end
-		
-		self:GetAbility():UseResources(true, true, true)
-	end
+            
+            self:GetAbility():UseResources(true, true, true)
+        end
+    end
 end
 
 

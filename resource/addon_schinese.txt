@@ -742,8 +742,8 @@
 		"DOTA_Tooltip_ability_skill_hero_junzizhijiao"	"君子之交"
 		"DOTA_Tooltip_ability_skill_hero_kongbuhaojiao"	"恐怖嚎叫"
 		"DOTA_Tooltip_ability_skill_hero_kongbuhaojiao_Description"	"发出恐怖的嚎叫，降低周围敌单位的攻击力25%，10秒。"
-		"DOTA_Tooltip_ability_skill_hero_luanwu"	"乱武"
-		"DOTA_Tooltip_ability_skill_hero_luanwu_Description"	"贾诩对敌人造成344:3441点的单体伤害和688:6882点的范围伤害，同时能在3秒内减慢敌人的25%攻击速度和50%移动速度。"
+		// "DOTA_Tooltip_ability_skill_hero_luanwu"	"乱武"
+		// "DOTA_Tooltip_ability_skill_hero_luanwu_Description"	"贾诩对敌人造成344:3441点的单体伤害和688:6882点的范围伤害，同时能在3秒内减慢敌人的25%攻击速度和50%移动速度。"
 		"DOTA_Tooltip_ability_skill_hero_shanghanzbl"	"B伤寒杂病论"
 		"DOTA_Tooltip_ability_skill_hero_shanghanzbl_Description"	"医疗队友的同时会产生一道治愈的能量波，会再次对至多5名队友进行治愈，并且会随着治愈的人数衰减25%。"
 		"DOTA_Tooltip_ability_skill_hero_shensuan"	"神算"
@@ -1084,6 +1084,7 @@
 
 		"DOTA_Tooltip_ability_skill_hero_luanwu"	"乱武"
 		"DOTA_Tooltip_ability_skill_hero_luanwu_Description"	"贾诩攻击时对敌人造成单体伤害和范围伤害，同时能在3秒内减慢敌人的攻击速度和移动速度。"
+		"DOTA_Tooltip_ability_skill_hero_luanwu_damage"	"单体伤害："
 		"DOTA_Tooltip_ability_skill_hero_luanwu_aoe_damage"		"范围伤害："
 		"DOTA_Tooltip_ability_skill_hero_luanwu_as_slow"		"%攻击速度："
 		"DOTA_Tooltip_ability_skill_hero_luanwu_ms_slow"		"%移动速度："
