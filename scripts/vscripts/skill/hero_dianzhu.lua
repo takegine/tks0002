@@ -15,13 +15,14 @@ end
 
 function modifier_skill_hero_dianzhu:DeclareFunctions()
     local ability = self:GetAbility()
-    local parent  = self:GetParent()
+    -- local parent  = self:GetParent()
+    local caster = self:GetCaster()
   
-        local dianfan = parent:AddAbility("skill_hero_dianfan")
+        local dianfan = caster:AddAbility("skill_hero_dianfan")
         local lvl = ability:GetLevel()
         dianfan:SetLevel(lvl)
-        parent:RemoveModifierByName("modifier_skill_hero_dianzhu")
-        parent:RemoveAbility("skill_hero_dianzhu")
+        caster:RemoveModifierByName("modifier_skill_hero_dianzhu")
+        caster:RemoveAbility("skill_hero_dianzhu")
 end 
 
 function modifier_skill_hero_dianzhu:IsHidden()
