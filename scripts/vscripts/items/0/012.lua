@@ -68,8 +68,9 @@ if IsServer() then
                 victim = parent,
                 attacker = caster,
                 damage = self.damage,
-                damage_type = ability:GetAbilityDamageType(),
-                ability = ability
+                damage_type = DAMAGE_TYPE_PURE,
+                ability = ability,
+                damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_BYPASSES_BLOCK + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_REFLECTION,
             }
             ApplyDamage(DamageTable)
 
