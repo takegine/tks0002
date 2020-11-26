@@ -4,10 +4,15 @@ LinkLuaModifier("modifier_hero_wansha_debuff", "skill/hero_wansha.lua", 0)
 
 skill_hero_wansha = skill_hero_wansha or class({})
 
-function skill_hero_wansha:GetIntrinsicModifierName()
-	return "modifier_hero_wansha"
-end
+-- function skill_hero_wansha:GetIntrinsicModifierName()
+-- 	return "modifier_hero_wansha"
+-- end
 
+function skill_hero_wansha:needwaveup()
+    local caster = self:GetCaster()
+    local ability = self
+    caster:AddNewModifier(caster, ability, "modifier_hero_wansha", {})
+end
 
 modifier_hero_wansha = modifier_hero_wansha or class({})
 
