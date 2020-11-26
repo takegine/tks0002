@@ -93,7 +93,11 @@ function modifier_lianpo_jiansu:OnTakeDamage(keys)
         local original_damage = target.battleinfo.damage_take
         local damage = original_damage * 0.45
         -- target:SetHealth(target:GetHealth()-damage)
+        if damage < target:GetHealth() then 
         target:ModifyHealth((target:GetHealth()-damage), ability, false, DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DIRECTOR_EVENT)
+        else 
+            return 
         print(target:GetHealth(),original_damage,damage)
+        end
     end
 end
