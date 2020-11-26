@@ -10,35 +10,36 @@ modifier_skill_hero_tiandu_buff = class({})
 modifier_skill_hero_tiandu_debuff = class({})
 
 function skill_hero_tiandu:OnSpellStart()
+    if IsServer() then
+        local caster = self:GetCaster()
+        local ability = self
+        local target = self:GetCursorTarget()
+        local radius = self:GetLevelSpecialValueFor("radius", self:GetLevel()-1)
+        local owner   = caster:XinShi()
+        local modifier_armor = "modifier_skill_hero_tiandu_buff"
+        local armor_duration = ability:GetSpecialValueFor("armor_duration")
+        local target_team  = self:GetAbilityTargetTeam()
+        local target_types = self:GetAbilityTargetType()
+        local target_flags = self:GetAbilityTargetFlags()
 
-    local caster = self:GetCaster()
-	local ability = self
-    local target = self:GetCursorTarget()
-    local radius = self:GetLevelSpecialValueFor("radius", self:GetLevel()-1)
-    local owner   = caster:XinShi()
-	local modifier_armor = "modifier_skill_hero_tiandu_buff"
-    local armor_duration = ability:GetSpecialValueFor("armor_duration")
-    local target_team  = self:GetAbilityTargetTeam()
-	local target_types = self:GetAbilityTargetType()
-    local target_flags = self:GetAbilityTargetFlags()
+        target:AddNewModifier(caster, ability, modifier_armor, {duration = armor_duration})
 
-    target:AddNewModifier(caster, ability, modifier_armor, {duration = armor_duration})
-
-    if owner.ship['shuangying'] then
-    local units = FindUnitsInRadius(target:GetTeamNumber(),
-                                    target:GetOrigin(),
-                                    nil,
-                                    200,
-                                    DOTA_UNIT_TARGET_TEAM_ENEMY,
-                                    target_types,
-                                    target_flags,
-                                    0,
-                                    true)
-                        
-        for key,target in pairs(units) do
-            target:AddNewModifier(caster,ability,"modifier_skill_hero_tiandu_unstun",{Duration=2.5})
+        if owner.ship['shuangying'] then
+        local units = FindUnitsInRadius(target:GetTeamNumber(),
+                                        target:GetOrigin(),
+                                        nil,
+                                        200,
+                                        DOTA_UNIT_TARGET_TEAM_ENEMY,
+                                        target_types,
+                                        target_flags,
+                                        0,
+                                        true)
+                            
+            for key,target in pairs(units) do
+                target:AddNewModifier(caster,ability,"modifier_skill_hero_tiandu_unstun",{Duration=2.5})
+            end 
         end 
-    end 
+    end
 end 
 
 modifier_skill_hero_tiandu_unstun=class({})  ---眩晕buff
