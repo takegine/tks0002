@@ -11,7 +11,7 @@ modifier_pojun_baoji = modifier_pojun_baoji or {}
 
 
 function skill_hero_pojun:OnSpellStart()
-    if IsServer() and self:GetAbility() then
+    if IsServer() then
         local caster = self:GetCaster()
         local ability = self  -- local ability = skill_hero_pojun
         local owner   = caster:GetOwner() or {ship={}}
