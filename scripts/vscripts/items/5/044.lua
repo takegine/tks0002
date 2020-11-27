@@ -6,7 +6,7 @@ modifier_item_queue_044 = modifier_item_queue_044 or {
     GetAuraRadius = function () return 2000 end,
     GetModifierAura = function () return "modifier_item_queue_044_debuff" end,
     GetAuraSearchTeam = function () return DOTA_UNIT_TARGET_TEAM_ENEMY end,
-    GetAuraSearchType = function ()	return DOTA_UNIT_TARGET + DOTA_UNIT_TARGET_BASIC end,
+    GetAuraSearchType = function ()	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end,
     GetTexture = function (self) return "items/"..self:GetAbility():GetAbilityTextureName() end,
     DeclareFunctions = function () return { MODIFIER_PROPERTY_MANA_REGEN_CONSTANT } end,
 }
@@ -17,9 +17,7 @@ modifier_item_queue_044_unit = modifier_item_queue_044
 ------------------------------------------------------------------
 
 function modifier_item_queue_044:GetModifierConstantManaRegen()
-    local ability=self:GetAbility()
-    local change = ability:GetSpecialValueFor('p2')
-    return  change
+    return  self:GetAbilitySpecialValueFor('p2')
 end
 
 LinkLuaModifier( "modifier_item_queue_044_debuff","items/5/044", LUA_MODIFIER_MOTION_NONE )
@@ -30,7 +28,5 @@ modifier_item_queue_044_debuff = modifier_item_queue_044_debuff or {
 -------------------------------------------------------------------------------
 
 function modifier_item_queue_044_debuff:GetModifierAttackSpeedBonus_Constant()
-    local ability=self:GetAbility()
-    local change = ability:GetSpecialValueFor('p1')
-    return  -change
+    return  -self:GetAbilitySpecialValueFor('p1')
 end

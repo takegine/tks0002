@@ -10,19 +10,11 @@ modifier_item_queue_040_unit = modifier_item_queue_040
 ------------------------------------------------------------------
 
 function modifier_item_queue_040:OnTooltip()
-    local ability  = self:GetAbility()
-    local parent   = self:GetParent()
-    local p1       = ability:GetSpecialValueFor("p1")
-    local p2       = ability:GetSpecialValueFor("p2")
-    return  p1
+    return  self:GetAbilitySpecialValueFor('p1')
 end
 
 function modifier_item_queue_040:OnTooltip2()
-    local ability  = self:GetAbility()
-    local parent   = self:GetParent()
-    local p1       = ability:GetSpecialValueFor("p1")
-    local p2       = ability:GetSpecialValueFor("p2")
-    return  p2
+    return  self:GetAbilitySpecialValueFor('p2')
 end
 
 function modifier_item_queue_040:OnTakeDamage(keys)
@@ -34,6 +26,12 @@ function modifier_item_queue_040:OnTakeDamage(keys)
     local ability  = self:GetAbility()
     local attacker = keys.attacker
     local target   = keys.unit
+
+    if IsNull(parent)
+    or IsNull(ability)
+    then return
+    end
+
     local ranger   = attacker:IsRangedAttacker()
     local p1       = ability:GetSpecialValueFor("p1")
     local p2       = ability:GetSpecialValueFor("p2")
@@ -45,9 +43,10 @@ function modifier_item_queue_040:OnTakeDamage(keys)
     if target == parent
     and not attacker:IsBuilding()
     and attacker:IsOpposingTeam(parent:GetTeamNumber() )
-    and bit.band(damage_flags, DOTA_DAMAGE_FLAG_HPLOSS) ~= DOTA_DAMAGE_FLAG_HPLOSS
-    and bit.band(damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) ~= DOTA_DAMAGE_FLAG_REFLECTION then
-        EmitSoundOnClient("DOTA_Item.BladeMail.Damage", attacker:GetPlayerOwner())
+    and not Isbitband(damage_flags, DOTA_DAMAGE_FLAG_HPLOSS)
+    and not Isbitband(damage_flags, DOTA_DAMAGE_FLAG_REFLECTION)
+    then
+        EmitSoundOnClient("DOTA_Item.BladeMail.Damage", attacker:XinShi())
 
         local dummy = CreateUnitByName( "npc_damage_dummy", OUT_SIDE_VECTOR, false, parent, parent, parent:GetTeamNumber() )
         dummy.attack_type  = "electrical"

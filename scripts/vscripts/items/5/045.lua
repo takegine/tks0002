@@ -23,13 +23,9 @@ modifier_item_queue_045_debuff = modifier_item_queue_045_debuff or {
 -------------------------------------------------------------------------------
 
 function modifier_item_queue_045_debuff:GetModifierDamageOutgoing_Percentage()
-    local ability=self:GetAbility()
-    local change = ability:GetSpecialValueFor('p1')
-    return  -change
+    return  -self:GetAbilitySpecialValueFor('p1')
 end
 
 function modifier_item_queue_045_debuff:GetModifierMagicalResistanceBonus()
-    local ability=self:GetAbility()
-    local change = ability:GetSpecialValueFor('p2')
-    return  -change
+    return  -self:GetAbilitySpecialValueFor('p2')
 end

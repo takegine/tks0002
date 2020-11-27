@@ -25,13 +25,9 @@ modifier_item_queue_039_debuff = modifier_item_queue_039_debuff or {
 -------------------------------------------------------------------------------
 
 function modifier_item_queue_039_debuff:GetModifierPhysicalArmorBonus()
-    local ability=self:GetAbility()
-    local change = ability:GetSpecialValueFor('p1')
-    return  -change
+    return  -self:GetAbilitySpecialValueFor('p1')
 end
 
 function modifier_item_queue_039_debuff:GetModifierHPRegenAmplify_Percentage()
-    local ability=self:GetAbility()
-    local change = ability:GetSpecialValueFor('p2')
-    return  -change
+    return  -self:GetAbilitySpecialValueFor('p2')
 end

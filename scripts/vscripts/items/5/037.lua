@@ -35,10 +35,11 @@ function modifier_item_queue_037:OnAttackLanded( params)
     damage_table.damage       = self:OnTooltip()
     -- damage_table.damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
 
-    if not target:HasModifier(modName) then
-        target:AddNewModifier( parent, ability, modName , nil )
+    if target:HasModifier(modName) then
+        target:RemoveModifierByName(modName)
     end
 
+    target:AddNewModifier( parent, ability, modName , nil )
     ApplyDamage( damage_table )
     self:SetStackCount( count%5 +1 )
 
@@ -131,7 +132,5 @@ function modifier_item_queue_037_debuff:OnDestroy()
 end
 
 function modifier_item_queue_037_debuff:OnTooltip( params)
-    local ability = self:GetAbility()
-    local p2      = ability:GetSpecialValueFor('p2')
-    return p2
+    return self:GetAbilitySpecialValueFor('p2')
 end

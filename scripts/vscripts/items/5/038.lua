@@ -42,6 +42,10 @@ end
 function modifier_item_queue_038:OnTooltip()
     local parent = self:GetParent()
     local ability= self:GetAbility()
+    if IsNull(parent)
+    or IsNull(ability)
+    then return
+    end
     local change = ability:GetSpecialValueFor('p2')
     local health = parent:GetMaxHealth()
     return  health *change /100
@@ -56,7 +60,5 @@ modifier_item_queue_038_debuff = modifier_item_queue_038_debuff or {
 -------------------------------------------------------------------------------
 
 function modifier_item_queue_038_debuff:GetModifierMoveSpeedBonus_Percentage()
-    local ability=self:GetAbility()
-    local change = ability:GetSpecialValueFor('p1')
-    return  -change
+    return  -self:GetAbilitySpecialValueFor('p1')
 end

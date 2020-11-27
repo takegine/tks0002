@@ -10,7 +10,5 @@ modifier_item_queue_042_unit = modifier_item_queue_042
 ------------------------------------------------------------------
 
 function modifier_item_queue_042:GetModifierDamageOutgoing_Percentage()
-    local ability=self:GetAbility()
-    local change = ability:GetSpecialValueFor('p1')
-    return  change
+    return  self:GetAbilitySpecialValueFor('p1')
 end

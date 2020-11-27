@@ -11,6 +11,16 @@
 
 
 ## 注意事项
+
+`2020-11-27` 更新 添加了两个修报错的脚本
+
+    Script Runtime Error: ...ame\dota_addons\tks0002\scripts\vscripts\items\5\045.lua:27: attempt to index local 'ability' (a nil value)
+    stack traceback:
+- 类似于这种报错，若是只有返回一个技能的特殊值的话，可以用`self:GetAbilitySpecialValueFor( string )` ,
+- 如果是修改器中的效果可以用`IsNUll(entity)`来判断，`ability` `caster` `parent`
+
+- 使用参考 装备040 八卦阵法。
+
 `2020-11-11` 更新 直接让信使买东西即可，已生成的友军会加上相应的效果。
 
 `2020-10-10` 更新 有三个可以使用的自定义修改器

@@ -39,3 +39,17 @@ item_class = {
 
 on = function ( self ) return true end
 off= function ( self ) return false end
+
+function IsNull(entity)
+    return entity ==nil or entity:IsNull()
+end
+
+function CDOTA_Buff:GetAbilitySpecialValueFor( string )
+    if type(string) ~="string" then
+        return error("param #2 should be string")
+    end
+
+    local ability=self:GetAbility()
+    local value = IsNull(ability) and 0 or ability:GetSpecialValueFor(string)
+    return  value
+end

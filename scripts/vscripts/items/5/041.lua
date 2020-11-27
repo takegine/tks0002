@@ -10,9 +10,7 @@ modifier_item_queue_041_unit = modifier_item_queue_041
 ------------------------------------------------------------------
 
 function modifier_item_queue_041:GetModifierPhysicalArmorBonusUniqueActive()
-    local ability=self:GetAbility()
-    local change = ability:GetSpecialValueFor('p1')
-    return  change
+    return  self:GetAbilitySpecialValueFor('p1')
 end
 
 

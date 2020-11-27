@@ -9,7 +9,7 @@ modifier_item_queue_047_hero = modifier_item_queue_047
 modifier_item_queue_047_unit = modifier_item_queue_047
 ------------------------------------------------------------------
 
-function item_queue_047:Precache()
+function item_queue_047:Precache(context)
     PrecacheResource("particle", "particles/generic_gameplay/generic_lifesteal.vpcf", context)
 end
 

@@ -10,13 +10,10 @@ modifier_item_queue_043_unit = modifier_item_queue_043
 ------------------------------------------------------------------
 
 function modifier_item_queue_043:GetModifierAttackSpeedBonus_Constant(params)
-    local ability=self:GetAbility()
-    local change = ability:GetSpecialValueFor('p1')
-    return  change
+    return  self:GetAbilitySpecialValueFor('p1')
 end
 
 function modifier_item_queue_043:GetModifierPreAttack_CriticalStrike()
-    local ability=self:GetAbility()
-    local chance = ability:GetSpecialValueFor('p2')
+    local chance = self:GetAbilitySpecialValueFor('p2')
 	return RollPercentage(chance) and 200 or 0
 end

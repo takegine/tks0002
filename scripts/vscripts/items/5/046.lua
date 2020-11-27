@@ -10,14 +10,10 @@ modifier_item_queue_046_unit = modifier_item_queue_046
 ------------------------------------------------------------------
 
 function modifier_item_queue_046:GetModifierMoveSpeedBonus_Percentage()
-    local ability= self:GetAbility()
-    local change = ability:GetSpecialValueFor('p1')
-    return  change
+    return  self:GetAbilitySpecialValueFor('p1')
 end
 
 
 function modifier_item_queue_046:GetModifierHealthRegenPercentage()
-    local ability= self:GetAbility()
-    local change = ability:GetSpecialValueFor('p2')
-    return  change
+    return  self:GetAbilitySpecialValueFor('p2')
 end
