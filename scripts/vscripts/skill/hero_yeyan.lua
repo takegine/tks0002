@@ -74,7 +74,7 @@ function modifier_yeyan:OnDestroy()
     local caster=self:GetCaster()
     local ability=self:GetAbility()
 
-    local pfxname = "particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_call_down_explosion_impact_b.vpcf"
+    local pfxname = "particles/battlepass/healing_campfire_ward.vpcf"
     local pfx = ParticleManager:CreateParticle( pfxname, PATTACH_ABSORIGIN_FOLLOW, parent)
     ParticleManager:SetParticleControl(pfx, 1, Vector(50, 50, 50))
     ParticleManager:ReleaseParticleIndex(pfx)

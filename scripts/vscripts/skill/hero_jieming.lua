@@ -60,9 +60,9 @@ function modifier_jieming_buff:GetModifierConstantHealthRegen()
 
     local ability=self:GetAbility()
     local heal =ability:GetSpecialValueFor('heal')
-   -- print(heal)
     return heal
 end
+
 
 function modifier_jieming_buff:OnAttackLanded(keys)
     local parent =self:GetParent()
@@ -74,17 +74,16 @@ function modifier_jieming_buff:OnAttackLanded(keys)
     if not IsServer() then return end
     if keys.target~=parent  then  return end
 
-    if owner.ship['konghe']  then 
-    if RollPercentage(15)  then
+    if owner.ship['konghe']  then  chance=15 end
+
+    if RollPercentage(chance)  then
 	parent:Heal(parent:GetMaxHealth()/10,caster)
     SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, parent, heal, nil)
+    local pfxname = "particles/econ/items/kunkka/kunkka_weapon_whaleblade_retro/kunkka_spell_torrent_retro_whaleblade_water5.vpcf"
+    local pfx = ParticleManager:CreateParticle( pfxname, PATTACH_ABSORIGIN_FOLLOW, parent)
+    ParticleManager:SetParticleControl(pfx, 1, Vector(50, 50, 50))
+    ParticleManager:ReleaseParticleIndex(pfx)
     end
-   else
-    if RollPercentage(10)  then
-        parent:Heal(parent:GetMaxHealth()/10,caster)
-        SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, parent, heal, nil)
-        end
-end
 end
 
 
