@@ -110,14 +110,14 @@ modifier_player_lock=modifier_player_lock or {
         local fight = stage == "GAME_STAT_FINGHT"
         return {
             [MODIFIER_STATE_ROOTED]	=ready,	--00缠绕，头上有缠绕进度条
-            [MODIFIER_STATE_DISARMED]	=false,	--01缴械
-            [MODIFIER_STATE_ATTACK_IMMUNE]	=false,	--02攻击免疫
+            [MODIFIER_STATE_DISARMED]	=bench and fight,	--01缴械
+            [MODIFIER_STATE_ATTACK_IMMUNE]	=bench and fight,	--02攻击免疫
             [MODIFIER_STATE_SILENCED]	=false,	--03沉默，头上有沉默进度条
             [MODIFIER_STATE_MUTED]	=false,	--04锁闭，禁用物品，头上有锁闭进度条
             [MODIFIER_STATE_STUNNED]	=ready,	--05晕眩，头上有晕眩进度条
             [MODIFIER_STATE_HEXED]	=false,	--06妖术，头顶会有妖术进度条
             [MODIFIER_STATE_INVISIBLE]	=false,	--07隐身
-            [MODIFIER_STATE_INVULNERABLE]	=false,	--08无敌
+            [MODIFIER_STATE_INVULNERABLE]	=false,	--08无敌 --遍历失效
             [MODIFIER_STATE_MAGIC_IMMUNE]	=false,	--09魔法免疫
             [MODIFIER_STATE_PROVIDES_VISION]	=false,	--10提供视野
             [MODIFIER_STATE_NIGHTMARED]	=bench,	--11睡眠，头上会有睡眠进度条
