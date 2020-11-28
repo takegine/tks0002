@@ -85,8 +85,8 @@ function deal_damage( event )
     local caster 	= event.caster
     local target	= event.target
     local ability	= event.ability
-    if not ability
-    then return
+    if IsNull(ability) then
+        return
     end
 
     local dummy      = ability.dummy
@@ -95,7 +95,7 @@ function deal_damage( event )
     local targetPos  = target:GetAbsOrigin()
     targetPos.z = 0
     
-    if ability and ( targetPos - ability.startPos ):Length2D() < pathRadius then
+    if ability.startPos and ( targetPos - ability.startPos ):Length2D() < pathRadius then
         ApplyDamage( {
             ability  = ability,
             attacker = dummy,
