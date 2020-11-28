@@ -46,15 +46,15 @@ function modifier_item_horses_013_hero:GetTexture()
     return "items/"..ability:GetAbilityTextureName()
 end  
 
-modifier_attackspeed=class({})
+modifier_jueying_attackspeed=class({})
 
-function modifier_attackspeed:DeclareFunctions()
+function modifier_jueying_attackspeed:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
     }
 end
 
-function modifier_attackspeed:GetModifierAttackSpeedBonus_Constant()
+function modifier_jueying_attackspeed:GetModifierAttackSpeedBonus_Constant()
     return   -self:GetAbility():GetSpecialValueFor("p2")
 end
 
