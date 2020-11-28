@@ -1,6 +1,18 @@
 
 "dota_shops"
 {
+	"custom"
+	{
+		"boss_shop"
+		{
+			"1"
+			{
+
+				"item" "item_queue_037"
+			}
+		}
+	}
+
 
 	"consumables"
 	{

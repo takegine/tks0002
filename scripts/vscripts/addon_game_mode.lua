@@ -1,427 +1,59 @@
 
-CAddonTemplateGameMode = CAddonTemplateGameMode or class({})
+require('core/ToolsFromX')
+require('core/Game_Event')
+require('core/Expand_API')
 
-require('root/ToolsFromX')
-require('root/Expand_API')
-
-function Precache( context ) end
-
+-- Create the game mode when we activate
 function Activate()
-	GameRules.AddonTemplate = CAddonTemplateGameMode()
-    GameRules.AddonTemplate:InitGameMode()
-    LinkLuaS()
-end
-
-function CAddonTemplateGameMode:InitGameMode()
-	print( "Template addon is loaded." )
-	GameRules:SetPreGameTime(1)
-    GameRules:SetStartingGold(9999)
-    GameRules:SetStrategyTime( 0 )
-    GameRules:SetHeroSelectionTime(0.0)
-    GameRules:SetHeroSelectPenaltyTime(0)
-    GameRules:SetUseUniversalShopMode(true)
-    GameRules:SetHeroRespawnEnabled( false )
-    GameRules:SetCustomGameSetupAutoLaunchDelay(0)
-    --GameRules:EnableCustomGameSetupAutoLaunch(true)
-    GameRules:LockCustomGameSetupTeamAssignment(true)
-    GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)--死亡后自己不扣钱
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 0 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_1, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 1 )
-    GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( true )
-    GameRules:GetGameModeEntity():SetFogOfWarDisabled( true )
-    GameRules:GetGameModeEntity():SetCustomGameForceHero(SET_FORCE_HERO)
-    --GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1500 )
-    GameRules:GetGameModeEntity():SetHUDVisible(1,true) 
-    GameRules:GetGameModeEntity():SetHUDVisible(2,true)
-    GameRules:GetGameModeEntity():SetHUDVisible(3,true)
-    GameRules:GetGameModeEntity():SetHUDVisible(4,true) 
-    GameRules:GetGameModeEntity():SetHUDVisible(5,true) 
-    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_STRENGTH_DAMAGE, 5 )
-    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_STRENGTH_HP, 100 )
-    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_STRENGTH_HP_REGEN, 0.03 )
-    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_AGILITY_DAMAGE, 5 )
-    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_AGILITY_ARMOR, 0.25 )
-    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_AGILITY_ATTACK_SPEED, 1 )
-    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_DAMAGE, 5 )
-    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 0.25 )
-    GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue( DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN, 0.01 )
-    GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( self, "DamageFilter" ), self )
-    GameRules:GetGameModeEntity():SetItemAddedToInventoryFilter( Dynamic_Wrap( self, "InvFilt" ), self )
-    ListenToGameEvent("entity_hurt",Dynamic_Wrap(self, "entity_hurt"), self)
-    ListenToGameEvent("npc_spawned",Dynamic_Wrap(self, "npc_spawned"), self)
-    ListenToGameEvent("player_chat",Dynamic_Wrap(self, "player_chat"), self)
-    ListenToGameEvent("entity_killed",Dynamic_Wrap(self,"OnEntityKilled"), self)
-    -- ListenToGameEvent("dota_item_purchased",Dynamic_Wrap(self, "dota_item_purchased"), self)
-
-    CustomGameEventManager:RegisterListener( "createnewherotest", createnewherotest )
-    CustomGameEventManager:RegisterListener("refreshlist",refreshlist)
-
-    self.shiplist = LoadKeyValues("scripts/羁绊名汉化.kv")
-    self.namelist = LoadKeyValues("resource/addon_schinese.txt")["Tokens"]
-
+	local mapname = GetMapName()
+	if mapname == "map8" then
+		require("game/Supple_API")
+		require("game/Game_Think")
+		Game_Think.count =8
+	elseif  mapname == "map1" then
+		require("test/Game_Think")
+		require("test/Supple_API")
+		Game_Think.count =1
+	end
+	GameRules.CAddonGameMode = Game_Think()
+	GameRules.CAddonGameMode:init()
+	Game_Event:init()
+	require("core/Game_Rules")
+	LinkLuaS()
+    print( "Template addon is loaded." )
 end
 
 
+function Precache( context )
+	--[[
+		预缓存我们知道将使用的东西。 可能的文件类型包括（但不限于）：
+			PrecacheResource( "model", "*.vmdl", context )
+			PrecacheResource( "soundfile", "*.vsndevts", context )
+			PrecacheResource( "particle", "*.vpcf", context )
+			PrecacheResource( "particle_folder", "particles/folder", context )
 
-function CAddonTemplateGameMode:entity_hurt(keys)
-    local killedUnit = EntIndexToHScript( keys.entindex_killed   )
-    local killerUnit = EntIndexToHScript( keys.entindex_attacker )
-    --damagebits
-end
+			PrecacheEntityFromTable( string_1, handle_2, handle_3 )
+			PrecacheEntityListFromTable( handle_1, handle_2 )
+			PrecacheItemByNameSync( string_1, handle_2 )
+			PrecacheModel( modelName, context )
+			PrecacheResource( 类型, 目录, context )
+			PrecacheUnitByNameSync( string_1, handle_2, int_3 )
+			PrecacheUnitFromTableSync( handle_1, handle_2 )
+	]]
+	PrecacheResource( "model", "models/props_generic/fence_str_wood_01a.vmdl", context )
+	PrecacheResource( "model", "models/props_generic/fence_str_wood_01b.vmdl", context )
+	PrecacheResource( "model", "models/props_generic/fence_str_wood_01c.vmdl", context )
 
-function CAddonTemplateGameMode:DamageFilter(filterTable)
-    local damage_new = filterTable.damage
-    local damtype    = filterTable.damagetype_const
-    local killedUnit = EntIndexToHScript( filterTable.entindex_victim_const   )
-    local killerUnit = EntIndexToHScript( filterTable.entindex_attacker_const )
-    local killerReal = killerUnit:GetName()=="npc_dota_thinker" and killerUnit:GetOwner() or killerUnit
-    local defend_big = killedUnit:FindAllModifiersByName( "modifier_defend_big" )
-    local shield = killedUnit:FindAllModifiersByName( "modifier_custom_shield" )
+	PrecacheUnitByNameSync( SET_FORCE_HERO, context )
 
-    if damtype == DAMAGE_TYPE_PHYSICAL then
+	for _, k in pairs(tkUnitInfo) do
+		for _, v in pairs(k) do
+			PrecacheUnitByNameSync(v.name, context)
+		end
+	end
 
-        local armor    =  killedUnit:GetPhysicalArmorValue(false)
-        local oldkang  = 1-6*armor/(100+6*math.abs(armor))--1-52/48*armor/(18.75+armor)
-        ---------------war3计算方式--------------------        
-        --local newkang = 0
-        -- if armor >= 0 then
-        --     newkang  = 1-armor/(100+math.abs(armor))
-        -- else
-        --     newkang  = 2-math.pow(1-0.01,-armor)
-        -- end
-        ---------------dota2计算方式--------------------        
-        local newkang = 1-armor/(100+math.abs(armor))
-        -----------------------------------------------
-        damage_new = damage_new /oldkang *newkang
-    end
-
-    if not killerUnit.attack_type
-    then return true 
-    end
-
-    killedUnit.defend_type  = killedUnit.defend_type or "none"
-    local damage_multiplier = DamageKV[killerUnit.attack_type][killedUnit.defend_type] or 1
-
-    damage_new = damage_new * damage_multiplier
-    local shield_damage = 0
-    if shield and damage_new ~= 0 then
-        for _,mod in pairs(shield) do
-            --if (mod.shield_type ~= damtype) or (not mod[killerUnit.attack_type]) then
-            if not mod[killerUnit.attack_type] then
-                goto continue
-            end
-            if mod.shield_value > damage_new then
-                mod.shield_value = mod.shield_value - damage_new
-                shield_damage = shield_damage + damage_new
-                damage_new = 0
-                break
-            else
-                damage_new = damage_new - mod.shield_value
-                shield_damage = shield_damage + mod.shield_value
-                mod.shield_value = 0
-                mod:Destroy()
-                goto continue
-            end
-            ::continue::
-        end
-    end
-    
-    if defend_big and damage_new ~= 0 then
-        local damage_re = 0
-        local pertenth  = function( num ) return (100-num)/10 end 
-        for _,mod in pairs(defend_big) do
-            damage_re = 100 - pertenth(mod[killerUnit.attack_type]) * pertenth( damage_re )
-        end
-        damage_new = damage_new * Clamp( pertenth( damage_re ) /10, 0, 1)
-    end
-
-    filterTable.damage = damage_new
-    killerReal.battleinfo.damage_deal = damage_new + shield_damage
-    -- killerReal:GetOwner().battleinfo.damage_deal= damage_new + killerReal:GetOwner().battleinfo.damage_deal or 0
-    killedUnit.battleinfo.damage_take = damage_new + shield_damage
-    -- killedUnit:GetOwner().battleinfo.damage_take= damage_new + killedUnit:GetOwner().battleinfo.damage_take or 0
-
-    -- 演示实际伤害模块
-        local type_list  = {
-            none    =  "普通",
-            god     =  "神",
-            tree    =  "木",
-            fire    =  "火",
-            water   =  "水",
-            land    =  "地",
-            electrical="电"
-        }
-        local mes_sta = "<font color='#FF1493'>"..type_list[killerUnit.attack_type].."</font> 系"
-        local mes_att = "<font color='#32CD32'>"..(self.namelist[killerReal:GetUnitName()] or "未知").."</font>"
-        local mes_vim = "<font color='#DC143C'>"..(self.namelist[killedUnit:GetUnitName()] or "未知").."</font>"
-        local mes_typ = "<font color='#4682B4'>"..(damtype == DAMAGE_TYPE_PHYSICAL and "物理" or damtype == DAMAGE_TYPE_MAGICAL and "魔法" or "其他").."</font>"
-        local mes_dam = "<font color='#40E0D0'>"..string.format("%.2f", damage_new + shield_damage).."</font>"
-        local mes_tot = mes_att.." 对 "..mes_vim.." 造成 "..mes_sta..mes_typ.." 的 "..mes_dam.." 点伤害"
-        GameRules:SendCustomMessage( mes_tot, killerUnit:GetTeamNumber(), 1)
-
-    return true
-
-end
-
-function CAddonTemplateGameMode:OnEntityKilled(keys)
-    local killedUnit = EntIndexToHScript( keys.entindex_killed   )
-
-    if killedUnit.reSpawn then
-        killedUnit.reSpawn = nil
-        return
-    end
-    Timer(0.1,function()
-        if not killedUnit:IsNull() then
-        killedUnit:Destroy() 
-        end
-    end)
-end
-
-function CAddonTemplateGameMode:npc_spawned(keys )
-    local npc   = EntIndexToHScript(keys.entindex)
-    local NameX = npc:GetName()
-    if    NameX== "npc_dota_building"
-    or    npc.bFirstSpawned 
-    then  return
-    end
-
-    npc.bFirstSpawned = true
-    npc.battleinfo = {}
-
-    if NameX==SET_FORCE_HERO then
-        npc.ship={}
-        -- 伤害傀儡无法使用伤害过滤器
-        -- local elementlist =  { "none", "god", "tree", "fire", "electrical", "water", "land" }
-        -- local colorlist = {
-        --     255, 255, 255,--原色
-        --       0,   0,   0,--黑色
-        --       0, 255,   0,--绿色
-        --     255,   0,   0,--红色
-        --     255,   0, 255,--紫色
-        --       0,   0, 255,--蓝色
-        --     237, 189, 101,--黄色
-        --       0, 255, 255,--青色
-        -- }
-        -- for i=1,7 do
-        --     local rotationAngle =  360/8 * (1-i)
-        --     local relPos = RotatePosition( Vector(0,0,0), QAngle( 0, rotationAngle, 0 ), Vector( 0, 400 , 0) )
-        --     local absPos = GetGroundPosition( relPos , npc )
-        --     local Pos = npc:GetAbsOrigin() + npc:GetForwardVector() * i * 300
-        --     local targetdummy = CreateUnitByName( "npc_dota_hero_target_dummy", absPos, true, nil, nil, 7 )
-        --     targetdummy:SetBaseMagicalResistanceValue( 0 )
-        --     targetdummy:SetRenderColor( colorlist[i*3-2], colorlist[i*3-1], colorlist[i*3] )
-        --     targetdummy.defend_type = elementlist[i]
-        -- end
-        LinkLuaModifier("print_evasion" , "root/print_evasion" ,0)
-        local targetdummy = CreateUnitByName( "npc_dota_hero_target_dummy", Vector(0,0,0), true, nil, nil, 7 )
-        targetdummy:SetBaseMagicalResistanceValue( 0 )
-        targetdummy:AddNewModifier(npc, nil, "print_evasion", nil).namelist = self.namelist
-
-        
-        CustomNetTables:SetTableValue( "player_info", tostring(npc:GetPlayerID()),{ ships={ Hold={},Lost={} } } )
-    else
-        NameX = npc:GetUnitName()
-        local thisinfo = tkUnitInfo.hero[NameX] or tkUnitInfo.unit[NameX] or tkUnitInfo.other[NameX] or tkUnitInfo.enemy[NameX]
-        if thisinfo then
-            npc.attack_type = thisinfo.atk
-            npc.defend_type = thisinfo.def
-            table.foreach(thisinfo.able,function(_,a)
-                npc:AddAbility(a)
-            end)
-            print(nameX, npc.attack_type, npc.defend_type)
-            
-            npc:AddNewModifier(npc, nil, "modifier_attack_" .. npc.attack_type, {})
-            npc:AddNewModifier(npc, nil, "modifier_defend_" .. npc.defend_type, {})
-        else
-            print(NameX,"error create without info")
-            return
-        end
-    end
-    
-    if npc:IsHero() then
-        for i=0,15 do 
-            if   npc:GetAbilityByIndex(i) 
-            then npc:GetAbilityByIndex(i):SetLevel(1) 
-            end 
-        end
-    end
-end
-
-function CAddonTemplateGameMode:player_chat(keys )
-    -- playerid	0
-    -- game_event_listener	184549379
-    -- game_event_name	player_chat
-    -- text	ç¾ç»
-    -- teamonly	1
-    -- userid	1
-    -- splitscreenplayer	-1
-    local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
-    local list = {}
-    local count = 1
-    for k in string.gmatch(keys.text, "%a+") do
-        list[count]=k
-        count=count+1
-    end
-
-    if list[1]=="myid" then
-        print(
-            "your SteamID x64:",
-            PlayerResource:GetSteamID(0),
-            "\n",
-            "your SteamID x32:",
-            PlayerResource:GetSteamAccountID(0)
-        )
-    elseif list[1]=="side" and list[2] then
-        hero.side = list[2]
-        CustomNetTables:OverData( "player_info", keys.playerid, "side" , list[2] )
-    elseif list[1]=="ship" and list[2] then
-        hero.ship[list[2]]= list[3]=="true" or nil
-        local shipname = self.shiplist["skill_ship_"..list[2]] or list[2]
-        GameRules:SendCustomMessage( "羁绊名："..shipname.." ，已设置:"..(list[3]=="true" and "生" or "失").."效", hero:GetTeamNumber(), 1)
-        herochange("waveup")
-        
-        -- local encreate = function(k,v) 
-        --     if v then
-        --         table.insert(my_ships.ships.Hold, k)
-        --     else
-        --         table.insert(my_ships.ships.Lost, k)
-        --     end
-        -- end
-        
-        -- my_ships.ships ={}
-        -- table.foreach(hero.ship, encreate)
-        local shipsList = { Hold={},Lost={} }
-        for k,v in pairs(hero.ship) do
-            if v then
-                table.insert( shipsList.Hold, k)
-            else
-                table.insert( shipsList.Lost, k)
-            end
-        end
-        CustomNetTables:OverData( "player_info", keys.playerid, "ships" , shipsList )
-
-    elseif list[1]=="hero" and list[2] then
-        herochange(list[2])
-    end
-end
-
-function herochange(keys)
-    local reList = Entities:FindAllInSphere(Vector(0,0,0),9999)
-    
-    for k = #reList, 1, -1 do  
-        local u= reList[k] 
-
-        if not u.bFirstSpawned
-        or not u:IsAlive()
-        or u:GetName() == SET_FORCE_HERO 
-        or u:GetName() == "npc_dota_courier" 
-        then table.remove( reList , k )            
-        end
-    end
-
-    if keys=="waveup" then
-        table.foreach(reList,function(_,u)
-            for i=0,10 do
-                local abi =u:GetAbilityByIndex(i)
-                if abi and abi.needwaveup then
-                    abi:needwaveup()
-                end
-                local item = u:GetItemInSlot(i)
-                if item and item.needwaveup then
-                    item:needwaveup()
-                end
-            end
-        end)
-    elseif keys=="lvlup" then
-        table.foreach(reList,function(_,u)
-            local lvl = u:GetLevel()+1
-
-            while( u:GetLevel() < lvl ) do
-                if u:IsCreature() then u:CreatureLevelUp( 1 )
-                elseif u:IsHero() then u:HeroLevelUp( false )
-                else print(u:GetUnitName(),"cant level up") break
-                end
-            end
-            for i=0,15 do
-                if  u:GetAbilityByIndex(i) then 
-                    u:GetAbilityByIndex(i):SetLevel(lvl) 
-                end
-            end
-        end)
-    end
-end
-
-
-function CAddonTemplateGameMode:InvFilt( filterTable )
-    local hItem   = EntIndexToHScript( filterTable.item_entindex_const )
-    local hItemPar= EntIndexToHScript( filterTable.item_parent_entindex_const )
-    local hInvPar = EntIndexToHScript( filterTable.inventory_parent_entindex_const )
-    local slot    = filterTable.suggested_slot
-
-    if hItem == nil 
-    or hInvPar == nil
-    or hInvPar:GetUnitName() ~= SET_FORCE_HERO
-    then return true 
-    end
-
-    local slotlist={ 'level', 'weapon', 'defend', 'jewelry', 'horses', 'format', 'queue' }
-    local itemname = hItem:GetAbilityName()
-    for i in ipairs(slotlist) do
-        if  string.find(itemname,slotlist[i]) then
-            if i==1 then
-                hItem:CastAbility()
-                return true
-            else
-                slot = i-2
-                local modname
-                for k,v in pairs(FindUnitsInRadius(6,Vector(0,0,0),nil,9999,1,55,0,0,false)) do
-                    if v~= hInvPar then
-                        for q = 1,v:GetModifierCount() do
-                            modname = v:GetModifierNameByIndex( q )
-                            if  string.find( modname ,slotlist[i]) then
-                                v:RemoveModifierByName( modname )
-                            end
-                        end
-                        v:AddNewModifier(v, hItem, "modifier_"..hItem:GetName().."_hero", nil)
-                    end
-                end
-            end
-            break
-        end
-    end
-
-    local curitem = hInvPar:GetItemInSlot(slot)
-    if curitem then 
-        if curitem:GetName() == hItem:GetName() then
-            hItem:SetLevel( curitem:GetLevel()  )
-            hItem:SetCurrentCharges( curitem:GetCurrentCharges()  )
-        end
-        hInvPar:RemoveItem(curitem) 
-    end
-
-    filterTable.suggested_slot = slot
-
-    return true
-end
-
-function CAddonTemplateGameMode:dota_item_purchased( data )
-    -- [game_event_name] => "dota_item_purchased"
-    -- [itemname] => "item_queue_038"
-    -- [game_event_listener] => 1753219076
-    -- [PlayerID] => 0
-    -- [itemcost] => 0
-    -- [splitscreenplayer] => -1
-    local id = tostring(data.PlayerID)
-    local my_ships = CustomNetTables:GetTableValue( "ship_show", id)
-    
-    local slotlist = { 'weapon', 'defend', 'jewelry', 'horses', 'format', 'queue' }
-    for k,v in pairs(slotlist) do
-        if  string.find(data.itemname,v) then
-            my_ships.items[k] = data.itemname
-            CustomNetTables:SetTableValue( "ship_show", id, my_ships)
-            break
-        end
-    end
+	-- for item,_ in pairs(tkItemInfo) do
+	-- 	print(item)
+	-- 	PrecacheItemByNameSync( item, context )
+	-- end
 end

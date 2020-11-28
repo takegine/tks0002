@@ -18,3 +18,12 @@ DamageKV        = LoadKeyValues("scripts/npc/damage_table.kv")
 VipList         = LoadKeyValues("scripts/npc/vipcost.kv")
 
 OUT_SIDE_VECTOR = Vector(8192, -8192, 8192)
+
+-- DAMAGE_TYPES = {
+--     [0] = "DAMAGE_TYPE_NONE",
+--     [1] = "DAMAGE_TYPE_PHYSICAL",
+--     [2] = "DAMAGE_TYPE_MAGICAL",
+--     [4] = "DAMAGE_TYPE_PURE",
+--     [7] = "DAMAGE_TYPE_ALL",
+--     [8] = "DAMAGE_TYPE_HP_REMOVAL"
+-- }

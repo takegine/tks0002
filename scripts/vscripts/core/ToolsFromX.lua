@@ -1,3 +1,9 @@
+-- 这个文件主要放置通用工具，最好是通用于lua的脚本，或者是通用在任何项目下的脚本。
+-- 参与贡献：
+    -- Xavier
+    -- 西索酱
+    -- 白喵
+
 function print_r(t)
     local print_r_cache = {}
     local function sub_print_r(t, indent)
@@ -44,7 +50,9 @@ function Timer(delay,callback)
     GameRules.__vTimerNamerTable__[timerName] = true
 
     GameRules:GetGameModeEntity():SetContextThink(timerName,function()
-    if GameRules.__vTimerNamerTable__[timerName] then
+    if GameRules:IsGamePaused() then
+        return 0.1
+    elseif GameRules.__vTimerNamerTable__[timerName] then
         return callback()
     else
         return nil
@@ -80,19 +88,68 @@ function DistancePointSegment( p, v, w )
 	end
 end
 
--- function table.reduce(t,m)
---     for k, v in ipairs(t) do
---         if v == m then
---             table.remove(t,k)
---         end
---     end
--- end
+--移除表中指定值
 --迭代必须反向 否则remove会造成 k指向错误
 function table.reduce(t,m)
     for i = #t, 1, -1 do
         if t[i] == m then
             table.remove(t, i)
         end
+    end
+end
+
+--随机一个成员
+function table.member( list )
+    local tmpKeyT={}
+    local n=1
+	for k,_ in pairs( list ) do
+        tmpKeyT[n]=k
+        n=n+1
+    end
+    return list[tmpKeyT[math.random(1,n-1)]]
+end
+
+--表乱序
+function table.reorder(old)
+    local flag,new,getn = {},{},0
+    local par,qar
+
+    for id,v in pairs(old) do
+        if v then
+            table.insert(flag,id)
+            table.insert(new,v)
+        end
+        getn = id> getn and id or getn
+    end
+
+    if getn == 1 then
+        old[flag[1]] = flag[1]
+        return
+    end
+
+    local arrayinset = function(key, value)
+        par = new[key]
+        qar = value or math.random(key+1, #new)
+        new[key] = new[qar]
+        new[qar] = par
+    end
+    for i=1, #new-1 do
+        arrayinset(i)
+    end
+    for k,id in pairs(flag) do
+        while new[k] == id do
+            if id == getn then
+                local err = k
+                while new[err] == id or new[err] == old[id] do
+                    err = math.random(1, #new-1)
+                end
+                arrayinset(k, err)
+                old[flag[err]] = id
+            else
+                arrayinset(k)
+            end
+        end
+        old[id] = new[k]
     end
 end
 

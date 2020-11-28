@@ -5,7 +5,7 @@
 	"skill_player_loseHP"
 	{
 		"BaseClass"	"ability_lua"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"	"1"
@@ -14,7 +14,7 @@
 	"skill_player_price"
 	{
 		"BaseClass"	"ability_lua"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"	"1"
@@ -24,7 +24,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"player\BTNLevelTeam"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"	"1"
@@ -47,7 +47,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"player\BTNLevelTeam"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"	"1"
@@ -57,7 +57,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"player\BTNExile"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"	"1"
@@ -67,7 +67,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"player\BTNExpel"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"	"1"
@@ -77,7 +77,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"player\BTNExile"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"	"1"
@@ -88,7 +88,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"player\BTNLevelTeam"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
@@ -99,7 +99,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"player\BTNLevelTeam"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
@@ -110,7 +110,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"player\BTNLevelTeam"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
@@ -121,7 +121,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"player\BTNLevelTeam"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
@@ -132,7 +132,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"player\BTNLevelTeam"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
@@ -143,7 +143,7 @@
 	{
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"player\BTNLevelTeam"
-		"ScriptFile"	"root/PlayerBuild.lua"
+		"ScriptFile"	"game/Player_able"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
