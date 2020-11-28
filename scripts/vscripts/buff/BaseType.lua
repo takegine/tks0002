@@ -103,7 +103,7 @@ modifier_player_lock=modifier_player_lock or {
     CheckState = function (self)
         if not IsServer() then return end
         local parent = self:GetParent()
-        local stage  = CustomNetTables:GetStage( "stage" )
+        local stage  = _G.StageTable.stage
         local bench = parent.bench
         local ready = stage == "GAME_STAT_READY"
         local plan  = stage == "GAME_STAT_PLAN"

@@ -13,9 +13,9 @@ function item_weapon_012:Precache( context )
 end
 
 function item_weapon_012:CastFilterResultTarget( hTarget )
-    if IsServer() then return end
+    if not IsServer() then return end
 
-    local stage =CustomNetTables:GetStage( "stage" )
+    local stage =_G.StageTable.stage
     if stage ~= "GAME_STAT_FINGHT" then
         self.result = stage
         return UF_FAIL_CUSTOM

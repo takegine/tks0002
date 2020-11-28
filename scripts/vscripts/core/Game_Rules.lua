@@ -26,7 +26,7 @@ YOUR_RE_IN_TEST    = false
 
 -- PLAYER_ARR      = {}--所有人是否选好主公
 --GAME_STATS   = 1--0准备，1倒计时，2对战
-_G.GAME_ROUND   = 0--初始化轮数
+_G.StageTable  = {round = 0,stage = "GAME_STAT_FINGHT"}
 _G.buildpostab  = {}--所有单位位置
     tkShipList  = {}
     PLAYER_LIST = {}--随机进攻方的表
