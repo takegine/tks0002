@@ -8,6 +8,26 @@ modifier_item_weapon_012_hero = modifier_item_weapon_0012_hero or {}--给武将�
 modifier_item_weapon_012_unit = modifier_item_weapon_0012_unit or {}--给民兵的效果
 
 
+function item_weapon_012:Precache( context )
+    PrecacheResource("particle", "particles/econ/items/lina/lina_ti6/lina_ti6_laguna_blade.vpcf", context)
+end
+
+function item_weapon_012:CastFilterResultTarget( hTarget )
+    if IsServer() then return end
+
+    local stage =CustomNetTables:GetStage( "stage" )
+    if stage ~= "GAME_STAT_FINGHT" then
+        self.result = stage
+        return UF_FAIL_CUSTOM
+    end
+
+    return 0 --UF_SUCCESS
+end
+
+function item_weapon_012:GetCustomCastError() 
+    return self.result
+end
+
 function item_weapon_012:GetBehavior()
     local caster = self:GetCaster()
    return caster:GetName() == SET_FORCE_HERO and DOTA_ABILITY_BEHAVIOR_UNIT_TARGET or  DOTA_ABILITY_BEHAVIOR_PASSIVE
