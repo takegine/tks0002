@@ -157,6 +157,15 @@ function Game_Think:player_chat(keys )
             "your SteamID x32:",
             PlayerResource:GetSteamAccountID(0)
         )
+    elseif list[1]=="stage" then
+        if list[2]== "f" then
+            _G.StageTable.stage = "GAME_STAT_FINGHT"
+        elseif list[2]== "p" then
+            _G.StageTable.stage = "GAME_STAT_PLAN"
+        elseif list[2]== "r" then
+            _G.StageTable.stage = "GAME_STAT_READY"
+        end
+
     elseif list[1]=="side" and list[2] then
         hero.side = list[2]
         CustomNetTables:OverData( "player_info", keys.playerid, "side" , list[2] )

@@ -94,6 +94,7 @@
 |	ship NAME	|	使关键词NAME的羁绊失效。	|	ship wuhu	|	NAME的列表在“羁绊判断的关键词”中	|
 |   hero lvlup  |   全场单位升1级   | hero lvlup | |
 |   hero waveup  |   触发技能中的needwaveup   | hero waveup | |
+stage * |切换游戏阶段|stage r|f 对战，r 倒数 p 准备
 
 # 轮子
 
