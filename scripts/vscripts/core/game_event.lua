@@ -232,10 +232,14 @@ function Game_Event:DamageFilter( filterTable )
     if not killerReal.battleinfo then
         print("not killerReal.battleinfo",killerReal:GetUnitName(),killerUnit:GetUnitName())
     else
-    killerReal.battleinfo.damage_deal = damage_new + shield_damage
+        killerReal.battleinfo.damage_deal = damage_new + shield_damage
     -- killerReal:GetOwner().battleinfo.damage_deal= damage_new + killerReal:GetOwner().battleinfo.damage_deal or 0
     end
-    killedUnit.battleinfo.damage_take = damage_new + shield_damage
+    if not killedUnit.battleinfo then
+        print("not killedUnit.battleinfo",killedUnit:GetUnitName())
+    else
+        killedUnit.battleinfo.damage_take = damage_new + shield_damage
+    end
     -- killedUnit:GetOwner().battleinfo.damage_take= damage_new + killedUnit:GetOwner().battleinfo.damage_take or 0
 
     return true
