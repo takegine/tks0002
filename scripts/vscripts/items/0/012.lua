@@ -24,7 +24,7 @@ function item_weapon_012:CastFilterResultTarget( hTarget )
     return 0 --UF_SUCCESS
 end
 
-function item_weapon_012:GetCustomCastError() 
+function item_weapon_012:GetCustomCastErrorTarget() 
     return self.result
 end
 
@@ -119,7 +119,7 @@ if IsServer() then
                 parent:RemoveAbility("skill_hero_xingshang")
             end
 
-                parent:Kill(ability, self.caster)    
+                parent:Kill(ability, parent)    
             end
            
 
