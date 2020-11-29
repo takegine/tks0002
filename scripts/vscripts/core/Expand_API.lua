@@ -17,7 +17,7 @@ function CDOTA_BaseNPC:CheckLevel(lvl)
     end
 end
 
-function CDOTA_BaseNPC:CustomDamage( target, ability, damage, type, Attributes, flags)
+function CDOTA_BaseNPC:CustomDamage( target, ability, damage, type, Attributes, flags)--没有使用
     local damage_table = {}
 
 	damage_table.attacker     = self
@@ -37,12 +37,16 @@ function CDOTA_BaseNPC:CustomDamage( target, ability, damage, type, Attributes, 
     return ApplyDamage(damage_table)
 end
 
+function team2id( this ) return PlayerResource:GetNthPlayerIDOnTeam(this+5,1) end
+function team2pl( this ) return PlayerResource:GetSelectedHeroEntity(team2id(this)) end
+function id2team(  id  ) return PlayerResource:GetTeam( id )-5 end
+-- id2pl == PlayerResource:GetPlayer( int iPlayerID )
+-- pl2team == hero:GetTeamNumber()
+
 function CDOTA_BaseNPC:XinShi()
     local team = self:GetTeamNumber()
     if Clamp(team,6,13) == team then
-        local id   = PlayerResource:GetNthPlayerIDOnTeam(team,1)
-        local hero = PlayerResource:GetSelectedHeroEntity(id)
-        return hero
+        return team2pl( team -5 )
     else
         return {
             ship={},
@@ -68,40 +72,6 @@ function CCustomNetTableManager:OverData( ... )
     local nettable = self:GetTableValue( name, tostring(id)) or {}
     nettable[key] = value
     self:SetTableValue( name, tostring(id), nettable)
-end
-
-function CreateUnitInFight(...)
-    local v
-    local name, ori, team, lvl, site, bEnemy = ...
-    local 路线 = Entities:FindByName(nil,"creep_birth_"..site.."_0")
-    local oppo = bEnemy and site == team
-    team = oppo and DOTA_TEAM_BADGUYS or team + 5
-    local owner= Entities:GetPlayer(team)
-    ori = ori or 路线:GetOrigin()+RandomVector(20)
-    v = CreateUnitByName( name, ori, true,nil,nil,team)
-    v:CheckLevel(lvl)
-    v.battleinfo = {}
-    v:AddNewModifier(nil, nil, "modifier_player_lock", nil)
-    v:Phase()
-    v:BattleThink()
-
-    if not oppo then
-        v:SetControllableByPlayer( owner:GetPlayerOwnerID(), true )
-    end
-
-
-    if bEnemy then
-        v:SetInitialGoalEntity( 路线 )
-        v.enemy=true
-        table.insert(UNITS_LIST.enemy , v)
-    else
-        v:SetUnitCanRespawn(false)
-        v:SetOwner(owner)
-        table.insert(UNITS_LIST.defend , v)
-        v:FindAbilityByName('skill_player_price'):CastAbility()
-    end
-
-    return v
 end
 
 function BroadcastMsg( sMsg )
@@ -131,6 +101,26 @@ function LinkLuaS()
     -- for k,v in pairs(tkItemInfo) do
     --     LinkLuaModifier( "modifier_"..k.."_hero", v.ScriptFile, 0 )
     -- end
+end
+
+function damage_fix(attacker,target,damage)
+    local armor = target:GetPhysicalArmorValue(false)
+    local newkang = 1-armor/(100+math.abs(armor))
+    local damage_f
+    if not target:IsRangedAttacker() then
+        damage_f = damage-16--近战自带16减伤
+        damage_f = damage_f *newkang
+    else
+        damage_f = damage *newkang
+    end
+    if not DamageKV
+    or not attacker.attack_type
+    then return false 
+    end
+    local damage_multiplier = DamageKV[attacker.attack_type][target.defend_type] or 1
+    damage_f = damage_f * damage_multiplier
+    damage_f = damage_f > 0 and damage_f or 0
+    return damage_f
 end
 
 function pertenth ( num ) 

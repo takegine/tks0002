@@ -51,7 +51,10 @@ end
 
 function Game_Event:StateChange( keys )
     if   GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-        Timer(1,function()
+        Timer(function()
+            if PlayerResource:GetPlayerCount() <1 then
+                return 0.01
+            end
             for i=1,8 do
                 PLAYER_LIST[i] = PlayerResource:GetPlayerCountForTeam( i +5 ) == 1 and i or nil
             end
@@ -110,17 +113,16 @@ function Game_Event:OnNPCSpawned( keys )
     npc.battleinfo = {}
 
     if NameX==SET_FORCE_HERO then
+        local id = npc:GetPlayerID() --GetPlayerOwnerID()
+        local team = npc:GetTeam()--npc:GetTeamNumber()
         npc.ship={}
         npc:CheckLevel(1)
-        npc.Ticket = PlayerResource:HasCustomGameTicketForPlayerID(npc:GetPlayerOwnerID())
-
-        CreateUnitByName("tower_zhugong",
-                        Entities:Pos(npc:GetTeamNumber()-5,3),
-                        false,nil,nil,
-                        npc:GetTeamNumber()):SetOwner(npc)
-        CustomNetTables:SetTableValue( "Hero_Population", tostring(npc:GetPlayerID()),{popMax=LOCAL_POPLATION,popNow=0} )
-        CustomNetTables:SetTableValue( "player_info", tostring(npc:GetPlayerID()),{ ships={ Hold={},Lost={} } } )
-        if GetMapName=="map0" then CustomGameEventManager:Send_ServerToTeam(npc:GetTeam(), "CameraRotateHorizontal", {angle=npc:GetPlayerID()*360/8}) end
+        npc.Ticket = PlayerResource:HasCustomGameTicketForPlayerID(id)
+        npc:SetCustomHealthLabel( PlayerResource:GetPlayerName(id), COLOER_PLAYER[team-5], COLOER_PLAYER[team-4], COLOER_PLAYER[team-3] )
+        CreateUnitByName("tower_zhugong",Entities:Pos(team-5,3),false,nil,nil,team):SetOwner(npc)
+        CustomNetTables:SetTableValue( "Hero_Population", tostring(id),{popMax=LOCAL_POPLATION,popNow=0} )
+        CustomNetTables:SetTableValue( "player_info", tostring(id),{ ships={ Hold={},Lost={} } } )
+        if GetMapName=="map0" then CustomGameEventManager:Send_ServerToTeam(team, "CameraRotateHorizontal", {angle=id*360/8}) end
     else
         NameX = npc:GetUnitName()
         local thisinfo = npc:IsHero() and  tkUnitInfo.hero[NameX] or tkUnitInfo.unit[NameX] or tkUnitInfo.other[NameX] or tkUnitInfo.enemy[NameX]

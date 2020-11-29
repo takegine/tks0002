@@ -8,6 +8,7 @@ TIME_BATTER_MAX    = 40
 SET_STARTING_GOLD  = 80000
 LOCAL_POPLATION    = 60
 FOG_OF_WAR_DISABLE = true
+PER_FRAME_INTERVAL = 1/30
 
 SET_FORCE_HERO  = "npc_dota_hero_phoenix"
 tkUnitInfo      = LoadKeyValues('scripts/npc/npc_info_custom.txt')
@@ -27,3 +28,12 @@ OUT_SIDE_VECTOR = Vector(8192, -8192, 8192)
 --     [7] = "DAMAGE_TYPE_ALL",
 --     [8] = "DAMAGE_TYPE_HP_REMOVAL"
 -- }
+
+COLOER_PLAYER = {
+    0,0,255,
+    255,0,0,
+    0,255,0,
+    0,255,255,
+    255,0,255,
+    255,255,0,
+}
