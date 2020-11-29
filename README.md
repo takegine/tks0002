@@ -193,14 +193,16 @@ function addwaveup ( params )
 end
 ```
 
-## 减免伤害
+## 减免伤害--抗性
 减免伤害可以用添加 `modifier_defend_big` 这个修饰器来做。
 
-举例一个持续7秒的减免`火`系伤害`40%` 和 `地`系伤害`10%` 的写法。
+举例一个持续7秒的减免`火`系伤害`40%` 和  的写法。
+持续时间:写`-1`或者`不写`就是一直存续的buff,`TIME_BATTER_MAX` 就是持续一轮的buff。
+抗性可以用负数表示增加伤害,例如`地`系伤害额外承受`10%`。
 ```lua
     local hModiferTable = {
         fire     = 40,
-        land     = 10，
+        land     = -10，
         duration = 7
     }
     hCaster:AddNewModifier( hCaster, hAbility , "modifier_defend_big", hModiferTable )

@@ -8,20 +8,31 @@ modifier_item_defend_027_hero = modifier_item_defend_027_hero or {}--给武将�
 modifier_item_defend_027_unit = modifier_item_defend_027_unit or {}--给民兵的效果
 
 
-function modifier_item_defend_027_hero:needwaveup()
+function modifier_item_defend_027_hero:OnCreated()
+    if IsServer() then return end
 
-    local parent=self:GetParent()
-    local ability=self:GetAbility()
-    local percent=ability:GetSpecialValueFor("p1")
+    local parent = self:GetParent()
+    local ability= self:GetAbility()
+    local percent= ability:GetSpecialValueFor("p1")
 
+    self.modname = "modifier_defend_big"
+    self.parent  = parent
+    self.tree    = percent
     local hModiferTable = {
-        tree     = percent,
-        duration = 50
+        tree     = self.tree,
+        duration = TIME_BATTER_MAX
     }
-    parent:AddNewModifier( parent, ability , "modifier_defend_big", hModiferTable )
+    parent:AddNewModifier( self.parent, ability , self.name, hModiferTable )
 
 end
 
-
-
-
+function modifier_item_defend_027_hero:OnDestroy()
+    if IsServer() then return end
+    if IsNull(self.parent) then return end
+    -- self.parent:RemoveModifierByNameAndCaster( self.name, self.parent )
+    local hModiferTable = {
+        tree     = -self.tree,
+        duration = TIME_BATTER_MAX
+    }
+    self.parent:AddNewModifier( self.parent, ability , self.name, hModiferTable )
+end

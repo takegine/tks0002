@@ -132,3 +132,10 @@ function LinkLuaS()
     --     LinkLuaModifier( "modifier_"..k.."_hero", v.ScriptFile, 0 )
     -- end
 end
+
+function pertenth ( num ) 
+    if num <0 then
+        return 100/(100+num)
+    end
+        return (100-num)/100
+end

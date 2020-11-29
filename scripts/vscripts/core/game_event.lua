@@ -221,12 +221,11 @@ function Game_Event:DamageFilter( filterTable )
     end
     
     if defend_big and damage_new ~= 0 then
-        local damage_re = 0
-        local pertenth  = function( num ) return (100-num)/10 end 
+        local damage_re = 1
         for _,mod in pairs(defend_big) do
-            damage_re = 100 - pertenth(mod[killerUnit.attack_type]) * pertenth( damage_re )
+            damage_re = pertenth(mod[killerUnit.attack_type]) *damage_re
         end
-        damage_new = damage_new * Clamp( pertenth( damage_re ) /10, 0, 1)
+        damage_new = damage_new * damage_re
     end
 
     filterTable.damage = damage_new
