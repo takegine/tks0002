@@ -38,10 +38,11 @@ function CDOTA_BaseNPC:CustomDamage( target, ability, damage, type, Attributes, 
 end
 
 function team2id( this ) return PlayerResource:GetNthPlayerIDOnTeam(this+5,1) end
-function team2pl( this ) return PlayerResource:GetSelectedHeroEntity(team2id(this)) end
+function id2play(  id  ) return PlayerResource:GetSelectedHeroEntity(id) end
 function id2team(  id  ) return PlayerResource:GetTeam( id )-5 end
--- id2pl == PlayerResource:GetPlayer( int iPlayerID )
--- pl2team == hero:GetTeamNumber()
+function team2pl( this ) return id2play(team2id(this)) end
+-- pl2team == npc:GetTeamNumber()
+-- play2id == npc:GetPlayerID() --GetPlayerOwnerID()
 
 function CDOTA_BaseNPC:XinShi()
     local team = self:GetTeamNumber()
