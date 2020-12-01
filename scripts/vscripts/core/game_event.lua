@@ -7,6 +7,10 @@ function Game_Event:init()
     ListenToGameEvent("entity_killed",           Dynamic_Wrap(self, "EntityKilled"), self)
     ListenToGameEvent("npc_spawned",             Dynamic_Wrap(self, "OnNPCSpawned"), self)
 
+    -- Change random seed
+    local timeTxt = string.gsub(string.gsub(GetSystemTime(), ":", ""), "0", "")
+    math.randomseed(tonumber(timeTxt))
+
     self.mode = GameRules:GetGameModeEntity()
     self.mode:SetDamageFilter(Dynamic_Wrap(self, "DamageFilter"), self)
     self.mode:SetItemAddedToInventoryFilter( Dynamic_Wrap( self, "InventoryFilter" ), self )
