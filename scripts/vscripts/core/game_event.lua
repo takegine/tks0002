@@ -24,13 +24,16 @@ function Game_Event:ConnectFull(keys)
 
     --游戏性
     self.mode:SetBuybackEnabled(false)
-    --self.mode:SetUseCustomHeroLevels(true)
-    --self.mode:SetCustomXPRequiredToReachNextLevel(Custom_XP_Required)
     self.mode:SetLoseGoldOnDeath(false)
     self.mode:SetTopBarTeamValuesVisible( true )
+    self.mode:SetDaynightCycleDisabled(false)
     -- self.mode:SetStashPurchasingDisabled( true ) 禁用储藏室，不限购物地点
     self.mode:SetStickyItemDisabled(true)
     self.mode:SetFogOfWarDisabled( FOG_OF_WAR_DISABLE )
+    
+    -- self.mode:SetAlwaysShowPlayerInventory( true )
+    --self.mode:SetUseCustomHeroLevels(true)
+    --self.mode:SetCustomXPRequiredToReachNextLevel(Custom_XP_Required)
 
     --self.mode:SetCameraDistanceOverride( 1500 )
     --显示
