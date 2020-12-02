@@ -3,14 +3,19 @@ item_horses_018 = item_horses_018 or class(item_class)
 LinkLuaModifier( "modifier_item_horses_018_owner","items/3/018", 0 )
 LinkLuaModifier( "modifier_item_horses_018_hero","items/3/018", 0 )
 LinkLuaModifier( "modifier_item_horses_018_unit","items/3/018", 0 )
-LinkLuaModifier( "modifier_jiaoxie","items/3/018", 0 )
+LinkLuaModifier( "modifier_bailong_silenced","items/3/018", 0 )
 
 modifier_item_horses_018_owner = modifier_item_horses_018_owner or {}--给主公（信使）的效果
 modifier_item_horses_018_hero = modifier_item_horses_018_hero or {}--给武将的效果
 modifier_item_horses_018_unit = modifier_item_horses_018_unit or {}--给民兵的效果
 
-function item_horses_018:GetBehavior()
 
+function item_horses_018:GetTexture()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
+end
+
+function item_horses_018:GetBehavior()
     local caster = self:GetCaster()
     return caster:GetName() == SET_FORCE_HERO and DOTA_ABILITY_BEHAVIOR_POINT or  DOTA_ABILITY_BEHAVIOR_PASSIVE
 end
@@ -37,14 +42,17 @@ function item_horses_018:OnSpellStart()
                                     0, 
                                     true)
     for key,unit in pairs(enemy) do
-    unit:AddNewModifier(caster, self, "modifier_jiaoxie", {duration=duration})
+    unit:AddNewModifier(caster, self, "modifier_bailong_silenced", {duration=duration})
     end 
- 
 end
 
-modifier_jiaoxie=class({})
+modifier_bailong_silenced=class({})
 
-function modifier_jiaoxie:CheckState()
+function modifier_bailong_silenced:IsHidden()
+    return true
+end
+
+function modifier_bailong_silenced:CheckState()
     local state = {
     [MODIFIER_STATE_SILENCED]=true
 }      return state

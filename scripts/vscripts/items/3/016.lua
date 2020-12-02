@@ -7,6 +7,11 @@ modifier_item_horses_016_owner = modifier_item_horses_016_owner or {}--给主公
 modifier_item_horses_016_hero = modifier_item_horses_016_hero or {}--给武将的效果
 modifier_item_horses_016_unit = modifier_item_horses_016_unit or {}--给民兵的效果
 
+function modifier_item_horses_016_hero:GetTexture()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
+end
+
 function modifier_item_horses_016_hero:DeclareFunctions()
     return{
         MODIFIER_EVENT_ON_ATTACK_LANDED,

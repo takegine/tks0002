@@ -9,6 +9,11 @@ modifier_item_horses_019_hero = modifier_item_horses_019_hero or {}--给武将�
 modifier_item_horses_019_unit = modifier_item_horses_019_unit or {}--给民兵的效果
 
 
+function modifier_item_horses_019_hero:GetTexture()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
+end
+
 function modifier_item_horses_019_hero:DeclareFunctions()
     return {
         MODIFIER_EVENT_ON_ATTACK_LANDED
@@ -46,7 +51,6 @@ end
 function modifier_yinsheng:GetModifierMoveSpeedBonus_Percentage()
     return self:GetAbility():GetSpecialValueFor("p1")
 end
-
 
 function modifier_yinsheng:CheckState()
     local state = {

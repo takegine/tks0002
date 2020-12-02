@@ -9,6 +9,11 @@ modifier_item_horses_017_owner = modifier_item_horses_017_owner or {}--给主公
 modifier_item_horses_017_hero = modifier_item_horses_017_hero or {}--给武将的效果
 modifier_item_horses_017_unit = modifier_item_horses_017_unit or {}--给民兵的效果
 
+function item_horses_017:GetTexture()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
+end
+
 function item_horses_017:GetBehavior()
 
     local caster = self:GetCaster()
@@ -37,14 +42,18 @@ function item_horses_017:OnSpellStart()
                                     0, 
                                     true)
     for key,unit in pairs(enemy) do
-    unit:AddNewModifier(caster, self, "modifier_jiaoxie", {duration=duration})
+    unit:AddNewModifier(caster, self, "modifier_juxiang_jiaoxie", {duration=duration})
     end 
  
 end
 
-modifier_jiaoxie=class({})
+modifier_juxiang_jiaoxie=class({})
 
-function modifier_jiaoxie:CheckState()
+function modifier_juxiang_jiaoxie:IsHidden()
+    return true
+end
+
+function modifier_juxiang_jiaoxie:CheckState()
     local state = {
     [MODIFIER_STATE_DISARMED]=true
 }      return state
