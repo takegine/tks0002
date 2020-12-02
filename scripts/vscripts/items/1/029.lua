@@ -7,6 +7,11 @@ modifier_item_defend_029_owner = modifier_item_defend_029_owner or {}--给主公
 modifier_item_defend_029_hero = modifier_item_defend_029_hero or {}--给武将的效果
 modifier_item_defend_029_unit = modifier_item_defend_029_unit or {}--给民兵的效果
 
+function modifier_item_defend_029_hero:GetTexture()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
+end
+
 
 function modifier_item_defend_029_hero:DeclareFunctions()
     return{

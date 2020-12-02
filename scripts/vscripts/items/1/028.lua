@@ -8,6 +8,12 @@ modifier_item_defend_028_hero = modifier_item_defend_028_hero or {}--给武将�
 modifier_item_defend_028_unit = modifier_item_defend_028_unit or {}--给民兵的效果
 
 
+function modifier_item_defend_028_hero:GetTexture()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
+end
+
+
 function  modifier_item_defend_028_hero:DeclareFunctions()
 return {
     MODIFIER_PROPERTY_EVASION_CONSTANT
