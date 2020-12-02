@@ -955,6 +955,16 @@
         "DOTA_Tooltip_modifier_fangzhu_aura_Description"   "周围敌人每秒减少魔法值"    
         "DOTA_Tooltip_modifier_fangzhu_buff_mana"   "放逐" 
         "DOTA_Tooltip_modifier_fangzhu_buff_mana_Description"   "该单位每秒魔法值减%dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%" 
+		"DOTA_Tooltip_modifier_skill_hero_shanbi"   "肉林"
+        "DOTA_Tooltip_modifier_skill_hero_shanbi_Description"   "闪避提升%dMODIFIER_PROPERTY_EVASION_CONSTANT%"
+		"DOTA_Tooltip_modifier_item_defend_027_hero"   "仁王盾" 
+        "DOTA_Tooltip_modifier_item_defend_027_hero_Description"   "受到的木系伤害降低"    
+		"DOTA_Tooltip_modifier_item_defend_028_hero"   "八卦阵" 
+        "DOTA_Tooltip_modifier_item_defend_028_hero_Description"   "闪避增加%dMODIFIER_PROPERTY_EVASION_CONSTANT%%%"    
+		"DOTA_Tooltip_modifier_item_defend_029_hero"   "白银狮子" 
+        "DOTA_Tooltip_modifier_item_defend_029_hero_Description"   "免疫部分攻击带来的魔法效果"    
+		"DOTA_Tooltip_modifier_item_defend_030_hero"   "藤甲" 
+        "DOTA_Tooltip_modifier_item_defend_030_hero_Description"  "受到的近战伤害减免%dMODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE%%%"  
 
 	// ---------------------------------------------单位技能-临天-----
 		
