@@ -9,7 +9,7 @@ modifier_item_defend_027_unit = modifier_item_defend_027_unit or {}--给民兵�
 
 
 function modifier_item_defend_027_hero:OnCreated()
-    if IsServer() then return end
+    if not IsServer() then return end
 
     local parent = self:GetParent()
     local ability= self:GetAbility()
@@ -27,7 +27,7 @@ function modifier_item_defend_027_hero:OnCreated()
 end
 
 function modifier_item_defend_027_hero:OnDestroy()
-    if IsServer() then return end
+    if not IsServer() then return end
     if IsNull(self.parent) then return end
     -- self.parent:RemoveModifierByNameAndCaster( self.name, self.parent )
     local hModiferTable = {
