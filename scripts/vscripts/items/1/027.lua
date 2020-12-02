@@ -8,6 +8,11 @@ modifier_item_defend_027_hero = modifier_item_defend_027_hero or {}--给武将�
 modifier_item_defend_027_unit = modifier_item_defend_027_unit or {}--给民兵的效果
 
 
+function modifier_item_defend_027_hero:GetTexture()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
+end
+
 function modifier_item_defend_027_hero:OnCreated()
     if not IsServer() then return end
 
