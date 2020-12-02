@@ -1,7 +1,7 @@
 item_horses_013 = item_horses_013 or class(item_class)
 ------------------------------------------------------------------
 LinkLuaModifier( "modifier_item_horses_013_owner","items/3/013", 0 )
-LinkLuaModifier( "modifier_attackspeed","items/3/013", 0 )
+LinkLuaModifier( "modifier_jueying_attackspeed","items/3/013", 0 )
 LinkLuaModifier( "modifier_item_horses_013_hero","items/3/013", 0 )
 LinkLuaModifier( "modifier_item_horses_013_unit","items/3/013", 0 )
 modifier_item_horses_013_owner = modifier_item_horses_013_owner or {}--给主公（信使）的效果
@@ -22,7 +22,7 @@ function modifier_item_horses_013_hero:IsAuraActiveOnDeath()
 end 
 
 function modifier_item_horses_013_hero:IsDebuff()
-    return true
+    return false
 end
 
 function modifier_item_horses_013_hero:GetAuraRadius()
@@ -38,7 +38,7 @@ function modifier_item_horses_013_hero:GetAuraSearchType()
 end 
 
 function modifier_item_horses_013_hero:GetModifierAura()
-    return 'modifier_attackspeed'
+    return 'modifier_jueying_attackspeed'
 end
 
 function modifier_item_horses_013_hero:IsHidden()
@@ -51,6 +51,15 @@ function modifier_item_horses_013_hero:GetTexture()
 end  
 
 modifier_jueying_attackspeed=class({})
+
+function modifier_jueying_attackspeed:GetTexture()
+    local ability = self:GetAbility()
+    return "items/"..ability:GetAbilityTextureName()
+end
+
+function modifier_jueying_attackspeed:IsDebuff()
+    return true
+end
 
 function modifier_jueying_attackspeed:DeclareFunctions()
     return {

@@ -36,8 +36,8 @@ function item_horses_018:OnSpellStart()
                                     point, 
                                     nil, 
                                     raduis,
-                                    target_team, 
-                                    target_types, 
+                                    DOTA_UNIT_TARGET_TEAM_ENEMY, 
+                                    DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_BASIC, 
                                     target_flags, 
                                     0, 
                                     true)

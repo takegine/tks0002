@@ -964,8 +964,21 @@
 		"DOTA_Tooltip_modifier_item_defend_029_hero"   "白银狮子" 
         "DOTA_Tooltip_modifier_item_defend_029_hero_Description"   "免疫部分攻击带来的魔法效果"    
 		"DOTA_Tooltip_modifier_item_defend_030_hero"   "藤甲" 
-        "DOTA_Tooltip_modifier_item_defend_030_hero_Description"  "受到的近战伤害减免%dMODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE%%%"  
-
+        "DOTA_Tooltip_modifier_item_defend_030_hero_Description"  "受到的近战伤害减免%dMODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_item_horses_013_hero"   "绝影" 
+        "DOTA_Tooltip_modifier_item_horses_013_hero_Description"  "被动(唯一)：范围内敌方单位的攻击速度减少" 
+		"DOTA_Tooltip_modifier_jueying_attackspeed"   "绝影" 
+        "DOTA_Tooltip_modifier_jueying_attackspeed_Description"  "攻速降低%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%%"    
+		"DOTA_Tooltip_modifier_item_horses_014_hero"   "的卢" 
+        "DOTA_Tooltip_modifier_item_horses_014_hero_Description"  "被动(唯一)：范围内敌方单位的攻击速度减少，移动速度减少"
+		"DOTA_Tooltip_modifier_dilu_attackspeed"   "的卢" 
+        "DOTA_Tooltip_modifier_dilu_attackspeed_Description"  "攻速降低%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%%,移速降低%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"    
+		"DOTA_Tooltip_modifier_item_horses_015_hero"   "爪黄飞电" 
+        "DOTA_Tooltip_modifier_item_horses_015_hero_Description"  "被动(唯一)：己方单位的移动速度提升<br>被动(唯一)：己方单位攻击时根据移动速度给予敌人地属性物理伤害（最大移动速度为522）" 
+		"DOTA_Tooltip_modifier_item_horses_016_hero"   "赤兔" 
+        "DOTA_Tooltip_modifier_item_horses_016_hero_Description"  "被动(唯一)：己方单位的移动速度提升<br>被动(唯一)：己方近战单位每次攻击都有概率立即重置攻击间隔，进行一次无视闪避的攻击" 
+		"DOTA_Tooltip_modifier_silunche_yinsheng"   "四轮车" 
+        "DOTA_Tooltip_modifier_silunche_yinsheng_Description"  "该单位进入潜伏状态" 
 	// ---------------------------------------------单位技能-临天-----
 		
 		"DOTA_Tooltip_ability_skill_hero_sunjiang"	"孙江"

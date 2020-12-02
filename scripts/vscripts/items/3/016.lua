@@ -34,8 +34,3 @@ function modifier_item_horses_016_hero:OnAttackLanded(keys)
   end 
 
 end
-
-
---[[ void PerformAttack( handle hTarget, bool bUseCastAttackOrb, bool bProcessProcs, bool bSkipCooldown,
- bool bIgnoreInvis, bool bUseProjectile, bool bFakeAttack, bool bNeverMiss )
-Performs an attack on a target. ]]
