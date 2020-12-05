@@ -6,7 +6,7 @@
 * @Author: 白喵
 * @Date: 2020-07-21 22:49:01
 * @LastEditors: 白喵
-* @LastEditTime: 2020-11-23 12:51:18
+* @LastEditTime: 2020-12-05 12:56:49
 --]]
 
 --[[
@@ -91,6 +91,9 @@ end
         local target_vector = target:GetAbsOrigin()
         -- Applies damage to the current target
         --ApplyDamage({victim = target, attacker = caster, damage = ability:GetAbilityDamage(), damage_type = ability:GetAbilityDamageType()})
+        if ability:IsNull() then
+            return
+        end
         if not ability.effect then
             ability.effect = 1
         end

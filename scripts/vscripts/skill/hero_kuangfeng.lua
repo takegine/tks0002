@@ -3,7 +3,7 @@
 * @Author: 白喵
 * @Date: 2020-11-17 14:02:43
 * @LastEditors: 白喵
-* @LastEditTime: 2020-11-17 19:19:36
+* @LastEditTime: 2020-12-05 12:53:21
 --]]
 skill_hero_kuangfeng = {}
 function skill_hero_kuangfeng:OnSpellStart()
@@ -108,7 +108,8 @@ function modifier_kuangfeng:CheckState()
     local state = {
         [MODIFIER_STATE_INVULNERABLE] = true,
         [MODIFIER_STATE_UNSELECTABLE] = true,
-        [MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true
+        [MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
+        [MODIFIER_STATE_STUNNED] = true
     }
     return state
 end
