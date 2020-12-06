@@ -15,9 +15,13 @@ function item_horses_018:GetTexture()
     return "items/"..ability:GetAbilityTextureName()
 end
 
+function item_horses_018:GetAOERadius()
+    return self:GetSpecialValueFor( "p2" )
+end
+
 function item_horses_018:GetBehavior()
     local caster = self:GetCaster()
-    return caster:GetName() == SET_FORCE_HERO and DOTA_ABILITY_BEHAVIOR_POINT or  DOTA_ABILITY_BEHAVIOR_PASSIVE
+    return caster:GetName() == SET_FORCE_HERO and DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_AOE or  DOTA_ABILITY_BEHAVIOR_PASSIVE
 end
 
 function item_horses_018:OnSpellStart()
