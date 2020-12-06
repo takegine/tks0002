@@ -298,7 +298,7 @@
 	"tower_zhugong"
 	{
 		"BaseClass"	"npc_dota_fort"
-		"Ability1"	"skill_player_loseHP"
+		"Ability1"	"skill_player_zhugong"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
 		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
 		"HasInventory"	"1"

@@ -103,9 +103,7 @@
         "DOTA_Tooltip_modifier_skill_player_price_Description"  "该单位的当前价格为 %dMODIFIER_PROPERTY_TOOLTIP% "
         "DOTA_Tooltip_ability_skill_player_lock"	            "状态锁定"
         "DOTA_Tooltip_ability_skill_player_noattack"	        "无敌"
-        "DOTA_Tooltip_ability_skill_player_loseHP"	            "掉血"
-        "DOTA_Tooltip_modifier_skill_player_loseHP_Description"	"一旦敌方单位靠近，我会消灭他们，同时我会掉血"
-        "DOTA_Tooltip_modifier_skill_player_loseHP"	            "你来我就干掉你"
+        "DOTA_Tooltip_ability_skill_player_zhugong"	            "掉血"
         "DOTA_Tooltip_ability_item_dota_creature_gnoll_assassin"	"杂兵蜀"
         "DOTA_Tooltip_ability_item_empty_block"	                "点将台槽位"
 

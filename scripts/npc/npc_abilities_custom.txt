@@ -2,7 +2,7 @@
 {
 
 // 西索 7-19
-	"skill_player_loseHP"
+	"skill_player_zhugong"
 	{
 		"BaseClass"	"ability_lua"
 		"ScriptFile"	"game/Player_able"
