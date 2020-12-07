@@ -124,6 +124,7 @@ function Game_Event:OnNPCSpawned( keys )
         local team = npc:GetTeam()--npc:GetTeamNumber()
         npc.ship={}
         npc:CheckLevel(1)
+        npc:ModifyGold( -270, true, 0 )
         npc.Ticket = PlayerResource:HasCustomGameTicketForPlayerID(id)
         npc:SetCustomHealthLabel( PlayerResource:GetPlayerName(id), COLOER_PLAYER[team-5], COLOER_PLAYER[team-4], COLOER_PLAYER[team-3] )
         CreateUnitByName("tower_zhugong",Entities:Pos(team-5,3),false,nil,nil,team):SetOwner(npc)
