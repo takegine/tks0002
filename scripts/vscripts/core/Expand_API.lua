@@ -136,14 +136,16 @@ end
 function LinkLuaS()
     print("LinkLuaS")
     local typetab = {"none","tree","fire","electrical","water","land","god"}
-    local modload = "buff/BaseType.lua"
+    local modload = "buff/BaseType"
     for _,v in pairs(typetab) do
         LinkLuaModifier( "modifier_attack_"..v, modload, 0 )
         LinkLuaModifier( "modifier_defend_"..v, modload, 0 )
     end
-        LinkLuaModifier( "modifier_defend_big", modload, 0 )
-        LinkLuaModifier( "modifier_player_lock", modload, 0 )
-        LinkLuaModifier( "modifier_custom_shield", modload, 0 )
+        LinkLuaModifier( "modifier_defend_big", "buff/defend_big", 0 )
+        LinkLuaModifier( "modifier_player_lock", "buff/player_lock", 0 )
+        LinkLuaModifier( "modifier_custom_shield", "buff/defend_big", 0 )
+        LinkLuaModifier( "modifier_player_zhugong", "buff/zhugong", 0 )
+        LinkLuaModifier( "modifier_player_zhugong_aura", "buff/zhugong", 0 )
         LinkLuaModifier( "modifier_abi_vam", "buff/ability_vampire", 0 )
     -- for k,v in pairs(tkItemInfo) do
     --     LinkLuaModifier( "modifier_"..k.."_hero", v.ScriptFile, 0 )

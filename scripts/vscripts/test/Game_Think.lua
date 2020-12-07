@@ -56,7 +56,7 @@ function Game_Think:NewRound()
     LinkLuaModifier("print_evasion" , "test/print_evasion" ,0)
     local targetdummy = CreateUnitByName( "npc_dota_hero_target_dummy", Entities:Pos(1,1), true, nil, nil, 7 )
     targetdummy:SetBaseMagicalResistanceValue( 0 )
-    targetdummy:AddNewModifier(npc, nil, "print_evasion", nil).namelist = self.namelist
+    targetdummy:AddNewModifier(nil, nil, "print_evasion", nil).namelist = self.namelist
 end
 
 
