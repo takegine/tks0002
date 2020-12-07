@@ -2,6 +2,7 @@
 require('core/ToolsFromX')
 require('core/Game_Event')
 require('core/Expand_API')
+require('core/ShowRecord')
 
 -- Create the game mode when we activate
 function Activate()
