@@ -12,6 +12,7 @@ GameRules:EnableCustomGameSetupAutoLaunch(true)
 SendToServerConsole("snd_musicvolume 0")
 SendToServerConsole("dota_hud_healthbars 1") 
 SendToServerConsole("dota_hero_overhead_names 0")
+SendToServerConsole( "dota_easybuy 1" )
 
 GameRules:SetFirstBloodActive(false)            -- 是否开启第一滴血
 GameRules:SetHideKillMessageHeaders(true)       -- 是否隐藏击杀提示
