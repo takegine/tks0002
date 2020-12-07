@@ -5,7 +5,6 @@ Game_Think = Game_Think or class({})
 function Game_Think:init()
     SET_PREGAME_TIME = 1
     SET_STARTING_GOLD = 9999
-    SET_UP_AUTO_LAUNCH_DELAY = 0
     GameRules:SetUseUniversalShopMode(true)
 	GameRules:SetPreGameTime(1)
     GameRules:SetStartingGold(9999)

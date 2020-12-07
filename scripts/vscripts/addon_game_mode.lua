@@ -40,6 +40,7 @@ function Precache( context )
 			PrecacheUnitByNameSync( string_1, handle_2, int_3 )
 			PrecacheUnitFromTableSync( handle_1, handle_2 )
 	]]
+	if IsInToolsMode() then return end
 	PrecacheResource( "model", "models/props_generic/fence_str_wood_01a.vmdl", context )
 	PrecacheResource( "model", "models/props_generic/fence_str_wood_01b.vmdl", context )
 	PrecacheResource( "model", "models/props_generic/fence_str_wood_01c.vmdl", context )
