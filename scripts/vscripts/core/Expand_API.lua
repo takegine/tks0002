@@ -95,10 +95,20 @@ function CDOTA_BaseNPC:XinShi()
     if Clamp(team,6,13) == team then
         return team2pl( team -5 )
     else
-        return {
+        local hero = {
             ship={},
             GetTeamNumber=function(self) return 3 end,
         }
+        if testOption.ship then
+                hero.ship={
+                    mengjie=true,	jianghua=true,	dongwu=true,	dingli=true,	chuanshi=true,	hufu=true,	shuangxiong=true,	qiji=true,	qunxing=true,	junzi=true,	bihe=true,
+                    xingyue=true,	xianying=true,	qizong=true,	feihuo=true,	weizheng=true,	quhu=true,	shuangying=true,	kurou=true,	taoyuan=true,	wuzhi=true,
+                    longyue=true,	chusheng=true,	liaodi=true,	siying=true,	xiaoniao=true,	moni=true,	sitingzhu=true,	yemeng=true,	changqu=true,	elai=true,	qibu=true,
+                    luoshen=true,	zhanluan=true,	wolong=true,	konghe=true,	shuangbi=true,	wuzi=true,	zhanchang=true,	zhishi=true,	qijin=true,	shawo=true,	wuhu=true,
+                    guishen=true,	quanqing=true,	meiren=true,	nanman=true,	mingzhu=true,	yiji=true,	jianxiong=true,	xiahou=true,	huzhu=true,	dushi=true,	huben=true,
+                }
+        end
+        return hero
     end
 end
 

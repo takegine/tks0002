@@ -31,6 +31,7 @@ _G.StageTable  = {round = 0,stage = "GAME_STAT_FINGHT"}
 _G.buildpostab  = {}--所有单位位置
     tkShipList  = {}
     PLAYER_LIST = {}--随机进攻方的表
+    testOption  = {}
     UNITS_LIST  = {enemy={} ,defend={}} --场地实体清单
 
 Custom_XP_Required ={

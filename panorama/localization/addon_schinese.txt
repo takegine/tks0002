@@ -135,5 +135,25 @@
         "skill_ship_changqu"	"长驱直入"
         "skill_ship_bihe"	"珠联璧合"
 
+        "MinimizeButton_title"	"测试选项"
+        "ButtonCategory_1"	"技能"
+        "ButtonCategory_2"	"武将"
+        "ButtonCategory_3"	"清单"
+        "ButtonCategory_4" "其他选项"
+
+        "Refresh_Button"	"刷新状态"
+        "ButtonToggle_1"	"无限技能"
+        "ButtonToggle_2"	"叛军羁绊"
+        "LevelUp_Button"	"触发needwaveup"
+        "MaxLevel_Button"	"切换阶段"
+        "Enemy_Button"	"敌方英雄"
+        "SelectHero_Button" "武将清单"
+        "LevelUpEnemy_Button"	"旧清单"
+        "DummyTarget_Button"	"傀儡目标(暂无)"
+        "RemoveSpawns_Button"	"移除英雄(暂无)"
+        "SelectCosmetics_Button"	"装备新物品(暂无)"
+        "ChangeHero_Button"	"选择新英雄(暂无)"
+        "PauseDemo_Button"	"重启"
+        "QuitDemo_Button"	"退出"
     }
 }

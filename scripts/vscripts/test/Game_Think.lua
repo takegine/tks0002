@@ -21,12 +21,33 @@ function Game_Think:init()
     ListenToGameEvent("player_chat",        Dynamic_Wrap(self, "player_chat"), self)
     ListenToGameEvent("entity_hurt",        Dynamic_Wrap(self, "entity_hurt"), self)
 
+    CustomGameEventManager:RegisterListener( "testOptionChange", testOptionChange )
     CustomGameEventManager:RegisterListener( "createnewherotest", createnewherotest )
     CustomGameEventManager:RegisterListener("refreshlist",refreshlist)
+	CustomGameEventManager:RegisterListener( "testOption_01", self.testOption_01 )
+	CustomGameEventManager:RegisterListener( "testOption_02", self.testOption_02 )
+	CustomGameEventManager:RegisterListener( "testOption_03", self.testOption_03 )
+	CustomGameEventManager:RegisterListener( "testOption_04", self.testOption_04 )
+	CustomGameEventManager:RegisterListener( "testOption_05", self.testOption_05 )
+	CustomGameEventManager:RegisterListener( "testOption_06", self.testOption_06 )
+	CustomGameEventManager:RegisterListener( "testOption_07", self.testOption_07 )
+	CustomGameEventManager:RegisterListener( "testOption_08", self.testOption_08 )
+	CustomGameEventManager:RegisterListener( "testOption_09", self.testOption_09 )
+	CustomGameEventManager:RegisterListener( "testOption_15", self.testOption_15 )
+	CustomGameEventManager:RegisterListener( "testOption_16", self.testOption_16 )
+
+
+    
+    SendToServerConsole( "dota_ability_debug 0" )
 
     self.shiplist = LoadKeyValues("scripts/羁绊名汉化.kv")
     self.namelist = LoadKeyValues("resource/addon_schinese.txt")["Tokens"]
     self.slotlist = { 'weapon', 'defend', 'jewelry', 'horses', 'format', 'queue' }
+    -- local ship = {}
+    --     table.foreach(self.shiplist,function(s)
+    --         ship[string.sub(s,12)]=true
+    --     end)
+    --     print_r(ship)
 end
 
 function Game_Think:NewRound()
@@ -57,16 +78,15 @@ function Game_Think:NewRound()
     local targetdummy = CreateUnitByName( "npc_dota_hero_target_dummy", Entities:Pos(1,1), true, nil, nil, 7 )
     targetdummy:SetBaseMagicalResistanceValue( 0 )
     targetdummy:AddNewModifier(nil, nil, "print_evasion", nil).namelist = self.namelist
+    CustomUI:DynamicHud_Create( -1,"","file://{resources}/layout/custom_game/test/option.xml",nil)
 end
 
-
-function createnewherotest( self,data )
-    local owner   = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-    local hteam   = PlayerResource:GetCustomTeamAssignment(data.PlayerID)
-    local teamid  = data.good and hteam or 3
+function createnewherotest( eventSourceIndex, data )
+    -- local owner   = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
+    -- local hteam   = PlayerResource:GetCustomTeamAssignment(data.PlayerID)
+    local teamid  = data.good and 6 or 3
     local point   = data.good and 2 or 0
-    local crePos  = Entities:Pos(hteam-5,point)
-
+    local crePos  = Entities:Pos(1,point)
     v = CreateUnitByName( data.way, crePos, true,nil,nil,teamid)
     v:Hold()
     v:SetIdleAcquire( false )
@@ -76,15 +96,15 @@ function createnewherotest( self,data )
     -- v:AddNewModifier(nil, nil, "modifier_player_lock", nil)
     v:AddNewModifier(nil, nil, "modifier_phased", {duration=0.1})
     -- v:BattleThink()
-    v:SetControllableByPlayer( owner:GetPlayerOwnerID(), true )
+    v:SetControllableByPlayer( data.PlayerID, true )
 
     if not data.good then
-        v:SetInitialGoalEntity( 路线 )
+        -- v:SetInitialGoalEntity( 路线 )
         v.enemy=true
         -- table.insert(UNITS_LIST.enemy , v)
     else
         v:SetUnitCanRespawn(false)
-        v:SetOwner(hero)
+        v:SetOwner(id2play(data.PlayerID))
         -- table.insert(UNITS_LIST.defend , v)
         -- v:FindAbilityByName('skill_player_price'):CastAbility()
     end
@@ -140,7 +160,7 @@ function Game_Think:player_chat(keys )
     -- teamonly	1
     -- userid	1
     -- splitscreenplayer	-1
-    local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
+    local hero = id2play(keys.playerid)
     local list = {}
     local count = 1
     for k in string.gmatch(keys.text, "%a+") do
@@ -157,22 +177,15 @@ function Game_Think:player_chat(keys )
             PlayerResource:GetSteamAccountID(0)
         )
     elseif list[1]=="stage" then
-        if list[2]== "f" then
-            _G.StageTable.stage = "GAME_STAT_FINGHT"
-        elseif list[2]== "p" then
-            _G.StageTable.stage = "GAME_STAT_PLAN"
-        elseif list[2]== "r" then
-            _G.StageTable.stage = "GAME_STAT_READY"
-        end
+        self.testOption_05( eventSourceIndex, {msg = list[2]} )
 
     elseif list[1]=="side" and list[2] then
-        hero.side = list[2]
-        CustomNetTables:OverData( "player_info", keys.playerid, "side" , list[2] )
+
     elseif list[1]=="ship" and list[2] then
         hero.ship[list[2]]= list[3]=="true" or nil
         local shipname = self.shiplist["skill_ship_"..list[2]] or list[2]
-        GameRules:SendCustomMessage( "羁绊名："..shipname.." ，已设置:"..(list[3]=="true" and "生" or "失").."效", hero:GetTeamNumber(), 1)
-        herochange("waveup")
+        self:BroadcastMsg( "羁绊名："..shipname.." ，已设置:"..(list[3]=="true" and "生" or "失").."效" )
+        self.testOption_04()
         
         -- local encreate = function(k,v) 
         --     if v then
@@ -195,7 +208,11 @@ function Game_Think:player_chat(keys )
         CustomNetTables:OverData( "player_info", keys.playerid, "ships" , shipsList )
 
     elseif list[1]=="hero" and list[2] then
-        herochange(list[2])
+        if list[2]=="waveup" then
+            self.testOption_04()
+        elseif list[2]=="lvlup" then
+            herochange("lvlup")
+        end
     end
 end
 
@@ -281,4 +298,111 @@ function Game_Think:entity_hurt(keys)
         local mes_tot = mes_att.." 对 "..mes_vim.." 造成 "..mes_sta..mes_typ.." 的 "..mes_dam.." 点伤害"
         GameRules:SendCustomMessage( mes_tot, killerUnit:GetTeamNumber(), 1)
     --damagebits
+end
+
+function Game_Think:BroadcastMsg( sMsg )
+	-- Display a message about the button action that took place
+	--print( sMsg )
+	-- local centerMessage = {
+	-- 	message = sMsg,
+	-- 	duration = 1.0,
+	-- 	clearQueue = true -- this doesn't seem to work
+	-- }
+    -- FireGameEvent( "show_center_message", centerMessage )
+    
+    
+    GameRules:SendCustomMessage( sMsg, -1, 1)
+end
+
+function Game_Think.testOption_01( eventSourceIndex )
+	SendToServerConsole( "dota_dev hero_refresh" )
+	EmitGlobalSound( "UI.Button.Pressed" )
+end
+
+function Game_Think.testOption_02( eventSourceIndex )
+    self = Game_Think
+    self.m_bFreeSpellsEnabled = not self.m_bFreeSpellsEnabled
+    self:BroadcastMsg( "无限技能："..(self.m_bFreeSpellsEnabled and "开启" or "关闭") )
+    SendToServerConsole( "toggle dota_ability_debug" )
+    EmitGlobalSound( "UI.Button.Pressed" )
+
+	if  self.m_bFreeSpellsEnabled then
+        self.testOption_01( eventSourceIndex )
+    end
+end
+
+function Game_Think.testOption_03( eventSourceIndex, data )
+    testOption.ship  = not testOption.ship
+    Game_Think:BroadcastMsg( "叛军羁绊："..(testOption.ship and "开启" or "关闭") )
+	EmitGlobalSound( "UI.Button.Pressed" )
+end
+
+function Game_Think.testOption_04( eventSourceIndex, data )
+    local reList = Entities:FindAllInSphere(Vector(0,0,0),9999)
+    local u,abi
+    for k = #reList, 1, -1 do  
+        u= reList[k] 
+
+        if not u.bFirstSpawned
+        or not u:IsAlive()
+        or u:GetName() == SET_FORCE_HERO 
+        or u:GetName() == "npc_dota_courier" 
+        then else
+            for i=0,10 do
+                abi =u:GetAbilityByIndex(i)
+                if abi and abi.needwaveup then
+                    abi:needwaveup()
+                end
+            end
+        end
+    end
+	EmitGlobalSound( "UI.Button.Pressed" )
+end
+
+function Game_Think.testOption_05( eventSourceIndex, data )
+    local stagelist = {"f","p" ,"r" ,"GAME_STAT_FINGHT","GAME_STAT_PLAN","GAME_STAT_READY","对战回合","准备回合","即将开战"}
+    local curstage = data.msg or _G.StageTable.stage
+    local curcount = 1
+    for i in ipairs(stagelist) do
+        if stagelist[i]==curstage then
+            curcount= (i+1)%3
+            break
+        end
+    end
+    _G.StageTable.stage = stagelist[curcount+3]
+    Game_Think:BroadcastMsg( stagelist[curcount+6] )
+	EmitGlobalSound( "UI.Button.Pressed" )
+end
+
+function Game_Think.testOption_06( eventSourceIndex, data )
+    testOption.enemy  = not testOption.enemy
+	EmitGlobalSound( "UI.Button.Pressed" )
+end
+
+function Game_Think.testOption_07( eventSourceIndex, data )
+    data.way  = DOTAGameManager:GetHeroUnitNameByID( tonumber(data.str) )
+    data.good = not testOption.enemy
+    createnewherotest( eventSourceIndex, data )
+end
+
+function Game_Think.testOption_08( eventSourceIndex, data )
+    local hero = id2play(data.PlayerID)
+    hero.side = data.str
+    CustomNetTables:OverData( "player_info", data.PlayerID, "side" , data.str )
+	EmitGlobalSound( "UI.Button.Pressed" )
+end
+
+function Game_Think.testOption_09( eventSourceIndex, data )
+	EmitGlobalSound( "UI.Button.Pressed" )
+end
+
+
+function Game_Think.testOption_15( eventSourceIndex )
+    SendToServerConsole( "restart 0" )
+	EmitGlobalSound( "UI.Button.Pressed" )
+end
+
+function Game_Think.testOption_16( eventSourceIndex )
+    SendToServerConsole( "disconnect" )
+	EmitGlobalSound( "UI.Button.Pressed" )
 end
