@@ -11,6 +11,15 @@
 
 
 ## 注意事项
+`2020-12-6` 更新 两个方法 造成伤害 与 直接死亡
+1. 
+
+2. npc:remove( bOnDeath, hAbility, hCaster, bOnTakeDamage)直接死亡
+   * npc调用 `remove`直接死亡。
+   * `bOnDeath` true/false 是/否 触发修改器的OnDeath。缺省为false不触发
+   * `hAbility` 致死的物品或者技能。缺省为nil，不知道会不会报错
+   * `hCaster`  伤害源，攻击者。缺省为自己，既自杀
+   * `bOnTakeDamage` true/false 是/否 触发修改器的OnTakeDamage。缺省为false不触发
 
 `2020-11-27` 更新 添加了两个修报错的脚本
 

@@ -95,31 +95,8 @@ if IsServer() then
             ApplyDamage(DamageTable)
 
             if (parent:GetHealth() <= self.damage ) then
-                if parent:HasModifier("modifier_skill_hero_buqu") then
-                    parent:RemoveModifierByName("modifier_skill_hero_buqu")
-                    parent:RemoveAbility("skill_hero_buqu")
-                end
 
-            if parent:HasModifier("modifier_skill_hero_guishen") then 
-                parent:RemoveModifierByName("modifier_skill_hero_guishen")
-                parent:RemoveAbility("skill_hero_guishen")
-            end
-
-            if parent:HasAbility("skill_hero_sunchu") then 
-                parent:RemoveAbility("skill_hero_sunchu")
-            end
-
-            if parent:HasModifier("modifier_hero_xue") then 
-                parent:RemoveModifierByName("modifier_hero_xue")
-                parent:RemoveAbility("skill_hero_xue")
-            end
-
-            if parent:HasModifier("modifier_xingshang") then 
-                parent:RemoveModifierByName("modifier_xingshang")
-                parent:RemoveAbility("skill_hero_xingshang")
-            end
-
-                parent:Kill(ability, parent)    
+                parent:remove(false,ability, parent)
             end
            
 

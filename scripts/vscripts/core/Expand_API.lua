@@ -37,6 +37,52 @@ function CDOTA_BaseNPC:CustomDamage( target, ability, damage, type, Attributes, 
     return ApplyDamage(damage_table)
 end
 
+function CDOTA_BaseNPC:remove( bOnDeath, hAbility, hCaster, bOnTakeDamage)
+    if bOnDeath then
+        self:ForceKill(bOnTakeDamage or false)
+    else
+        local long = self:entindex()
+        local msg = {
+            entindex_killed=long,
+            entindex_attacker = hCaster~=nil and hCaster:entindex() or long,
+            entindex_inflictor= hAbility~=nil and hAbility:entindex(),
+            damagebits = 0
+        }
+        FireGameEvent( "entity_hurt",msg )
+        FireGameEvent( "entity_killed",msg )
+        self:Destroy()
+        
+        -- self:Kill(hAbility, hCaster)
+        -- self:AddNewModifier(hCaster, hAbility, 'modifier_kill', {duration=PER_FRAME_INTERVAL} )
+        -- 以下方案需要手动触发更多事件
+        -- UTIL_Remove( self )
+        
+    end
+end
+
+function CDOTA_BaseNPC:remove( bOnDeath, hAbility, hCaster, bOnTakeDamage)
+    if bOnDeath then
+        self:ForceKill(bOnTakeDamage or false)
+    else
+        local long = self:entindex()
+        local msg = {
+            entindex_killed=long,
+            entindex_attacker = hCaster~=nil and hCaster:entindex() or long,
+            entindex_inflictor= hAbility~=nil and hAbility:entindex(),
+            damagebits = 0
+        }
+        FireGameEvent( "entity_hurt",msg )
+        FireGameEvent( "entity_killed",msg )
+        self:Destroy()
+        
+        -- self:Kill(hAbility, hCaster)
+        -- self:AddNewModifier(hCaster, hAbility, 'modifier_kill', {duration=PER_FRAME_INTERVAL} )
+        -- 以下方案需要手动触发更多事件
+        -- UTIL_Remove( self )
+        
+    end
+end
+
 function team2id( this ) return PlayerResource:GetNthPlayerIDOnTeam(this+5,1) end
 function id2play(  id  ) return PlayerResource:GetSelectedHeroEntity(id) end
 function id2team(  id  ) return PlayerResource:GetTeam( id )-5 end
